@@ -21,7 +21,7 @@ const TEFileInput = (props) => {
     const [active, setActive] = useState(false)
     const [fileArray, setFileArray] = useState([])
     const [errorData, setErrorData] = useState({ error: false, message: '' })
-    const [inputKey, setInputKey] = useState('inputKey')
+    const [inputKey, setInputKey] = useState(props.resetKey || 'inputKey')
 
     const onFileChange = (e, droppedFiles) => {
         const { pattern, onChange } = props

@@ -6,14 +6,17 @@ import {
 	TEButton,
 	TERow,
 	TEFileInput,
+	TEFileRow,
 	TELabel,
 	TEMultiStepForm,
 	TEInput,
 	TEInputRow,
+	TEFileManagerRow,
 	TECheckboxInput,
 	TECheckboxGroup,
 	TERadioButtonInput,
 	TERadioButtonGroup,
+	TESegmentedGroup,
 	TETextarea,
 	TEForm,
 	TEThemeProvider,
@@ -76,6 +79,33 @@ const App = (props) => {
 							component: (
 								<div>
 									<TEFileInput onChange={(files) => console.log(files)} />
+									<TEFileManagerRow
+										fileSrc={{
+											id1: {
+												src: 'src',
+												uid: 'uid1',
+												filename: 'SomeFile1',
+												fileEnding: 'wtf',
+												path: 'path/to/file/thing',
+											},
+											id2: {
+												src: 'src',
+												uid: 'uid2',
+												filename: 'SomeFile2',
+												fileEnding: 'wtf',
+												path: 'path/to/file/thing',
+											},
+											id3: {
+												src: 'src',
+												uid: 'uid3',
+												filename: 'SomeFile3',
+												fileEnding: 'wtf',
+												path: 'path/to/file/thing',
+											},
+										}}
+										onUpload={() => console.log('onUpload')}
+										onRemove={() => console.log('onRemove')}
+									/>
 								</div>
 							),
 						},
@@ -128,6 +158,17 @@ const App = (props) => {
 							),
 						},
 					]}
+				/>
+				<TEFileRow onChange={() => console.log('TEFileRow On Change')} />
+				<TESegmentedGroup
+					labelForKey="segmentedKey"
+					title="Segmented Title"
+					onChange={(e) => console.log(e.target.value)}
+					buttonArray={['Option 1', 'Some String', 'Mark Sucks', 'Hello!']}
+					checkedValue="Mark Sucks"
+					inline
+					disabled
+					required
 				/>
 			</div>
 		</TEThemeProvider>

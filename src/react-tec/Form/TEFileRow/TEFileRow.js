@@ -1,69 +1,65 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-import Radium from 'radium'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import TERow from './../TERow'
 import TELabel from './../TELabel'
 import TEFileInput from './../TEFileInput'
 
-//import styles from './styles'
+//import {} from './styledComponents'
 
-class TEFileRow extends Component {
-    handleFileClick = (event) => {
-        event.target.value = null
+const TEFileRow = (props) => {
+    const [inputKey, setInputKey] = useState('inputKey')
+
+    const handleFileClick = (event) => {
+        setInputKey(new Date().getTime())
     }
 
-    render() {
-        const {
-            //Row
-            rowStyles,
-            size,
-            last,
+    const {
+        //Row
+        size,
+        last,
+        className,
 
-            //Label
-            labelStyles,
-            title,
+        //Label
+        title,
 
-            //Input
-            inputStyles,
-            onChange,
-            accept,
-            multiple,
-            disabled,
+        //Input
+        onChange,
+        accept,
+        multiple,
+        disabled,
 
-            //Both
-            required,
-            labelForKey,
+        //Both
+        required,
+        labelForKey,
 
-            ...rest
-        } = this.props
+        ...rest
+    } = props
 
-        return (
-            <TERow size={size} last={last} style={rowStyles}>
-                <TELabel
-                    htmlFor={labelForKey}
-                    labelText={title}
-                    style={labelStyles}
-                    required={required}
-                    disabled={disabled}
-                />
-                <TEFileInput
-                    onChange={onChange}
-                    accept={accept}
-                    onClick={this.handleFileClick}
-                    id={labelForKey}
-                    multiple={multiple}
-                    disabled={disabled}
-                    style={inputStyles}
-                    {...rest}
-                />
-            </TERow>
-        )
-    }
+    return (
+        <TERow size={size} last={last} className={className}>
+            <TELabel
+                htmlFor={labelForKey}
+                labelText={title}
+                required={required}
+                disabled={disabled}
+            />
+            <TEFileInput
+                resetKey={inputKey} //Used to reset the input.
+                onChange={onChange}
+                accept={accept}
+                onClick={handleFileClick}
+                id={labelForKey}
+                multiple={multiple}
+                disabled={disabled}
+                {...rest}
+            />
+        </TERow>
+    )
 }
 
 TEFileRow.propTypes = {
@@ -86,4 +82,4 @@ TEFileRow.propTypes = {
 
 TEFileRow.defaultProps = {}
 
-export default Radium(TEFileRow)
+export default TEFileRow

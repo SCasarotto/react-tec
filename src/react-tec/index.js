@@ -5,8 +5,8 @@ import TEButton from './Form/TEButton'
 import TECheckboxGroup from './Form/TECheckboxGroup'
 import TECheckboxInput from './Form/TECheckboxInput'
 import TEFileInput from './Form/TEFileInput'
-// import TEFileManagerRow from './Form/TEFileManagerRow'
-// import TEFileRow from './Form/TEFileRow'
+import TEFileManagerRow from './Form/TEFileManagerRow'
+import TEFileRow from './Form/TEFileRow'
 import TEForm from './Form/TEForm'
 // import TEImageRow from './Form/TEImageRow'
 import TEInput from './Form/TEInput'
@@ -17,7 +17,7 @@ import TERadioButtonGroup from './Form/TERadioButtonGroup'
 import TERadioButtonInput from './Form/TERadioButtonInput'
 import TERow from './Form/TERow'
 // import TESearchSelectRow from './Form/TESearchSelectRow'
-// import TESegmentedGroup from './Form/TESegmentedGroup'
+import TESegmentedGroup from './Form/TESegmentedGroup'
 import TETextarea from './Form/TETextarea'
 
 // import GATracking from './GATracking'
@@ -55,6 +55,8 @@ import { TEThemeContext, TEThemeProvider } from './TEThemeContext'
 export {
 	TEButton,
 	TEFileInput,
+	TEFileManagerRow,
+	TEFileRow,
 	TEForm,
 	TEInput,
 	TEInputRow,
@@ -65,6 +67,7 @@ export {
 	TERadioButtonInput,
 	TECheckboxGroup,
 	TERadioButtonGroup,
+	TESegmentedGroup,
 	TETextarea,
 	TEThemeContext,
 	TEThemeProvider,

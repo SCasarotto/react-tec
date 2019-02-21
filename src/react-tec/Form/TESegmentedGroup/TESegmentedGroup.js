@@ -1,19 +1,14 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-import Radium from 'radium'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import TERow from './../TERow'
-import TELabel from './../TELabel'
-import TERadioButtonInput from './../TERadioButtonInput'
+import { Row, Label, SegmentedContainer, LabelWrapper, Input, InputLabel } from './styledComponents'
 
-import styles from './styles'
-
-class TESegmentedGroup extends Component {
-    manipulateRowData({ rowData, labelForKey = '' }) {
+const TESegmentedGroup = (props) => {
+    const manipulateRowData = ({ rowData, labelForKey = '' }) => {
         //Allowing For Greater Shorthand
         if (typeof rowData === 'string') {
             const label = rowData
@@ -21,74 +16,61 @@ class TESegmentedGroup extends Component {
             const key = labelForKey + rowData
             return { label, value, key }
         } else if (typeof rowData === 'object') {
-            let {
-                label,
-                value: value = label,
-                key: key = labelForKey + label,
-            } = rowData
+            let { label, value: value = label, key: key = labelForKey + label } = rowData
             return { label, value, key }
         }
         return rowData
     }
 
-    render() {
-        const {
-            title,
-            onChange,
-            checkedValue,
-            buttonArray,
-            labelForKey,
-            required,
-            inline,
-            disabled,
-            size,
+    const {
+        title,
+        onChange,
+        checkedValue,
+        buttonArray,
+        labelForKey,
+        required,
+        inline,
+        disabled,
+        size,
+        last,
+        className,
+    } = props
 
-            rowStyles,
-            titleStyles,
-            groupContainerStyles,
-            labelWrapperStyles,
-            labelStyles,
-        } = this.props
+    return (
+        <Row size={size} last={last} inline={inline} className={className}>
+            <Label inline={inline} required={required} disabled={disabled}>
+                {title}
+            </Label>
+            <SegmentedContainer inline={inline}>
+                {buttonArray &&
+                    buttonArray.map((rowData, index) => {
+                        const { label, value, key } = manipulateRowData({ rowData, labelForKey })
 
-        return (
-            <TERow size={size} style={{ ...styles.row(inline), ...rowStyles }}>
-				<TELabel
-					labelText={title}
-					style={{ ...styles.title(inline), ...titleStyles }}
-					required={required}
-					disabled={disabled}
-				/>
-				<div style={{ ...styles.segmentedContainer(inline), ...groupContainerStyles }}>
-					{buttonArray && buttonArray.map((rowData, index) => {
-						const { label, value, key } = this.manipulateRowData({rowData, labelForKey})
-
-						return (
-							<div key={key} style={{ ...styles.labelWrapper, ...labelWrapperStyles }}>
-								<TERadioButtonInput
-									value={value}
-									onChange={onChange}
-									style={styles.input}
-									id={key}
-									checked={checkedValue === value}
-									disabled={disabled}
-								/>
-								<label
-									htmlFor={key}
-									key={key}
-									style={{
-										...styles.label(index === 0, index+1 === buttonArray.length, checkedValue === value, disabled),
-										...labelStyles && labelStyles(index === 0, index+1 === buttonArray.length, checkedValue === value, disabled)
-									}}
-								>
-									{label}
-								</label>
-							</div>
-						)
-					})}
-				</div>
-			</TERow>
-        )
-    }
+                        return (
+                            <LabelWrapper key={key}>
+                                <Input
+                                    value={value}
+                                    onChange={onChange}
+                                    id={key}
+                                    checked={checkedValue === value}
+                                    disabled={disabled}
+                                />
+                                <InputLabel
+                                    htmlFor={key}
+                                    key={key}
+                                    first={index === 0}
+                                    last={index + 1 === buttonArray.length}
+                                    checked={checkedValue === value}
+                                    disabled={disabled}
+                                >
+                                    {label}
+                                </InputLabel>
+                            </LabelWrapper>
+                        )
+                    })}
+            </SegmentedContainer>
+        </Row>
+    )
 }
 
 TESegmentedGroup.propTypes = {
@@ -98,6 +80,4 @@ TESegmentedGroup.propTypes = {
     labelStyles: PropTypes.func,
 }
 
-TESegmentedGroup.defaultProps = {}
-
-export default Radium(TESegmentedGroup)
+export default TESegmentedGroup
