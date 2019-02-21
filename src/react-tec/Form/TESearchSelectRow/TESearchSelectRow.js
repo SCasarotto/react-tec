@@ -1,98 +1,60 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-import Radium from 'radium'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { PowerSelect, PowerSelectMultiple } from 'react-power-select'
+import 'react-power-select/dist/react-power-select.css'
 
-import TERow from './../TERow'
 import TELabel from './../TELabel'
 
-//import styles from './styles'
+import { ContainerRow } from './styledComponents'
 
-class TESearchSelectRow extends Component {
-    render() {
-        const {
-            //Row
-            rowStyles,
-            size,
-            last,
+const TESearchSelectRow = (props) => {
+    const {
+        //Row
+        size,
+        last,
+        className,
 
-            //Label
-            title,
-            labelStyles,
-            disabled,
+        //Label
+        title,
+        required,
 
-            //Input
-            type,
-            className,
-            options,
-            onChange,
-            required,
-            placeholder,
-            optionComponent,
-            selectedOptionComponent,
-            optionLabelPath,
-            searchEnabled,
+        //Input
+        type,
+        value,
 
-            //Both
-            value,
-            labelForKey,
+        //Both
+        labelForKey,
+        disabled,
 
-            ...rest
-        } = this.props
+        ...rest
+    } = props
 
-        return (
-            <TERow size={size} last={last} style={rowStyles}>
-				<TELabel
-					htmlFor={labelForKey}
-					labelText={title}
-					style={labelStyles}
-					required={required}
-					disabled={disabled}
-				/>
-				{type === 'default' &&
-					<PowerSelect
-						options={options}
-						selected={value}
-						onChange={onChange}
-						placeholder={placeholder}
-	          			optionComponent={optionComponent}
-	          			selectedOptionComponent={selectedOptionComponent}
-	          			optionLabelPath={optionLabelPath}
-	          			searchEnabled={searchEnabled}
-						id={labelForKey}
-						disabled={disabled}
-						className={className}
-						{...rest}
-					/>
-				}
-				{type === 'multi' &&
-					<PowerSelectMultiple
-						options={options}
-						selected={value}
-						onChange={onChange}
-						placeholder={placeholder}
-	          			optionComponent={optionComponent}
-	          			selectedOptionComponent={selectedOptionComponent}
-	          			optionLabelPath={optionLabelPath}
-	          			searchEnabled={searchEnabled}
-						id={labelForKey}
-						disabled={disabled}
-						className={className}
-						{...rest}
-					/>
-				}
-			</TERow>
-        )
-    }
+    return (
+        <ContainerRow size={size} last={last} className={className} disabled={disabled}>
+            <TELabel htmlFor={labelForKey} required={required} disabled={disabled}>
+                {title}
+            </TELabel>
+            {type === 'single' && (
+                <PowerSelect selected={value} id={labelForKey} disabled={disabled} {...rest} />
+            )}
+            {type === 'multi' && (
+                <PowerSelectMultiple
+                    selected={value}
+                    id={labelForKey}
+                    disabled={disabled}
+                    {...rest}
+                />
+            )}
+        </ContainerRow>
+    )
 }
 
 TESearchSelectRow.propTypes = {
     //Row
-    rowStyles: PropTypes.object,
     size: PropTypes.string,
     last: PropTypes.bool,
 
@@ -103,24 +65,12 @@ TESearchSelectRow.propTypes = {
     onChangeKey: PropTypes.string,
 
     //Both
-    rowData: PropTypes.shape({
-        title: PropTypes.string,
-        value: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-            PropTypes.bool,
-            PropTypes.object,
-            PropTypes.array,
-        ]),
-        validLabel: PropTypes.string.isRequired,
-        valid: PropTypes.bool.isRequired,
-    }),
     labelForKey: PropTypes.string,
 }
 
 TESearchSelectRow.defaultProps = {
-    type: 'default',
-    searchEnabled: true
+    type: 'single',
+    searchEnabled: true,
 }
 
-export default Radium(TESearchSelectRow)
+export default TESearchSelectRow

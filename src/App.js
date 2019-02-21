@@ -16,6 +16,7 @@ import {
 	TECheckboxGroup,
 	TERadioButtonInput,
 	TERadioButtonGroup,
+	TESearchSelectRow,
 	TESegmentedGroup,
 	TETextarea,
 	TEForm,
@@ -29,6 +30,28 @@ const App = (props) => {
 		>
 			<div style={{ maxWidth: 900, marginLeft: 'auto', marginRight: 'auto' }}>
 				<h1 style={{ textAlign: 'center' }}>Testing React TEC</h1>
+				<TESearchSelectRow
+					labelForKey="TESearchSelectRow"
+					title="Power Select Title"
+					onChange={({ option }) => console.log('TESearchSelectRow - Single', option)}
+					options={['Option 1', 'Option 2']}
+					value="Option 1"
+				/>
+				<TESearchSelectRow
+					labelForKey="TESearchSelectRow"
+					title="Power Select Title"
+					onChange={({ options }) => console.log('TESearchSelectRow - Multi', options)}
+					options={['Option 1', 'Option 2']}
+					value={['Option 1']}
+					type="multi"
+				/>
+				<TESearchSelectRow
+					labelForKey="TESearchSelectRow"
+					title="Power Select Title"
+					onChange={({ option }) => console.log('TESearchSelectRow', option)}
+					options={['Option 1', 'Option 2']}
+					value="Option 1"
+				/>
 				<TEForm>
 					<TERow>
 						<TELabel htmlFor="test" required disabled>

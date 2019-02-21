@@ -16,7 +16,7 @@ import TEMultiStepForm from './Form/TEMultiStepForm'
 import TERadioButtonGroup from './Form/TERadioButtonGroup'
 import TERadioButtonInput from './Form/TERadioButtonInput'
 import TERow from './Form/TERow'
-// import TESearchSelectRow from './Form/TESearchSelectRow'
+import TESearchSelectRow from './Form/TESearchSelectRow'
 import TESegmentedGroup from './Form/TESegmentedGroup'
 import TETextarea from './Form/TETextarea'
 
@@ -67,6 +67,7 @@ export {
 	TERadioButtonInput,
 	TECheckboxGroup,
 	TERadioButtonGroup,
+	TESearchSelectRow,
 	TESegmentedGroup,
 	TETextarea,
 	TEThemeContext,
