@@ -1,33 +1,25 @@
 //
-//TE Version 0.1.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './styles'
 
-import Radium from 'radium'
+import { Popup, Spinner, Message } from './styledComponents'
 
-import TEPopup from './../TEPopup'
-import TESpinner from './../../TESpinner'
+const TENetworkActivity = (props) => {
+	const { visible, className, message } = props
 
-class TENetworkActivity extends Component {
-	render() {
-		const { message, visible } = this.props
-
-		return (
-			<TEPopup visible={visible} contentStyles={styles.content}>
-				{visible && <TESpinner size="large" wrapperStyle={styles.spinner} />}
-				<div style={styles.message}>{message}</div>
-			</TEPopup>
-		)
-	}
+	return (
+		<Popup visible={visible} className={className}>
+			{visible && <Spinner size="large" />}
+			{message && <Message>{message}</Message>}
+		</Popup>
+	)
 }
 
 TENetworkActivity.propTypes = {
-	numberOfRings: PropTypes.number,
+	message: PropTypes.string,
 }
 
-TENetworkActivity.defaultProps = {}
-
-export default Radium(TENetworkActivity)
+export default TENetworkActivity

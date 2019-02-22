@@ -1,36 +1,27 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Radium from 'radium'
 
-import TEPopup from './../TEPopup'
 import TEMultiStepForm from './../../Form/TEMultiStepForm'
 
-import styles from './styles'
+import { Popup } from './styledComponents'
 
-class TEPopupMultiStepForm extends Component {
-	handleSubmit = (e) => {
+const TEPopupMultiStepForm = (props) => {
+	const handleSubmit = (e) => {
 		e.preventDefault()
-		const { onSubmit } = this.props
+		const { onSubmit } = props
 		onSubmit()
 	}
-	render() {
-		const { visible, onClose, ...rest } = this.props
+	const { visible, onClose, className, ...rest } = props
 
-		return (
-			<TEPopup visible={visible} contentStyles={styles.content}>
-				<TEMultiStepForm
-					onSubmit={this.handleSubmit}
-					handleCancelOnClick={onClose}
-					containerStyles={styles.container}
-					{...rest}
-				/>
-			</TEPopup>
-		)
-	}
+	return (
+		<Popup visible={visible} className={className}>
+			<TEMultiStepForm onSubmit={handleSubmit} handleCancelOnClick={onClose} {...rest} />
+		</Popup>
+	)
 }
 
 TEPopupMultiStepForm.propTypes = {
@@ -43,4 +34,4 @@ TEPopupMultiStepForm.defaultProps = {
 	visible: false,
 }
 
-export default Radium(TEPopupMultiStepForm)
+export default TEPopupMultiStepForm

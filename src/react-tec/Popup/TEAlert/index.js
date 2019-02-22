@@ -1,3 +1,3 @@
-import TEAlert from './TEAlert';
+import TEAlert from './TEAlert'
 
-export default TEAlert;
+export default TEAlert

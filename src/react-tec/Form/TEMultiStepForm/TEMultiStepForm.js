@@ -82,13 +82,13 @@ const TEMultiStepForm = (props) => {
         }
     }
 
-    const { handleCancelOnClick, stepData, roundedButtons } = props
+    const { className, handleCancelOnClick, stepData, roundedButtons } = props
     if (!stepData || (stepData && stepData.length === 0)) {
         return null
     }
 
     return (
-        <Container>
+        <Container className={className}>
             <StepContainer>
                 <StepBar stepCount={stepData.length} />
                 {stepData.map((step, index) => {

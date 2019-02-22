@@ -1,23 +1,20 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Radium from 'radium'
 
-import styles from './styles'
+import { Background, Content } from './styledComponents'
 
-class TEPopup extends Component {
-	render() {
-		const { visible, contentStyles, children } = this.props
+const TEPopup = (props) => {
+	const { visible, className, children } = props
 
-		return (
-			<div className="TEAlert" style={styles.background(visible)}>
-				<div style={{ ...styles.content, ...contentStyles }}>{children}</div>
-			</div>
-		)
-	}
+	return (
+		<Background className={className} visible={visible}>
+			<Content>{children}</Content>
+		</Background>
+	)
 }
 
 TEPopup.propTypes = {
@@ -28,4 +25,4 @@ TEPopup.defaultProps = {
 	visible: false,
 }
 
-export default Radium(TEPopup)
+export default TEPopup

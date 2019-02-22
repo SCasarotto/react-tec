@@ -5,11 +5,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { PowerSelect, PowerSelectMultiple } from 'react-power-select'
-import 'react-power-select/dist/react-power-select.css'
+// import 'react-power-select/dist/react-power-select.css'
 
 import TELabel from './../TELabel'
+import TERow from './../TERow'
 
-import { ContainerRow } from './styledComponents'
+// import { } from './styledComponents'
+
+//NOTE:
+//
+// - At this moment there is no way to style the dropdown component with styled components.
+//
 
 const TESearchSelectRow = (props) => {
     const {
@@ -34,7 +40,7 @@ const TESearchSelectRow = (props) => {
     } = props
 
     return (
-        <ContainerRow size={size} last={last} className={className} disabled={disabled}>
+        <TERow size={size} last={last} className={className} disabled={disabled}>
             <TELabel htmlFor={labelForKey} required={required} disabled={disabled}>
                 {title}
             </TELabel>
@@ -49,7 +55,7 @@ const TESearchSelectRow = (props) => {
                     {...rest}
                 />
             )}
-        </ContainerRow>
+        </TERow>
     )
 }
 

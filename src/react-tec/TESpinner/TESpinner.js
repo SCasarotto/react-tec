@@ -1,40 +1,15 @@
 //
-//TE Version 0.1.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
+import React from 'react'
 // import PropTypes from 'prop-types'
-import Radium from 'radium'
 
-import { colorBetweenColors } from './../../helpers'
-import { colors } from './../../config/styles'
-import styles from './styles'
+import { Container, SpinnerWrapper, Ring } from './styledComponents'
 
-class TESpinner extends Component {
-    calculateRingStyles = (totalRings, ringNumber) => {
-        const { innerColor = colors.white, outerColor = colors.primary } = this.props
-
-        const maxTime = 3
-        const minTime = 1
-
-        const stepPercent = 1 / totalRings / 2
-        const colorSteps = 1 / (totalRings - 1)
-
-        const spacing = ringNumber * stepPercent
-        const timeStep = (maxTime - minTime) / totalRings
-        const thisTime = maxTime / (maxTime - timeStep * ringNumber)
-
-        return {
-            left: `${spacing * 100}%`,
-            top: `${spacing * 100}%`,
-            width: `${(1 - spacing * 2) * 100}%`,
-            height: `${(1 - spacing * 2) * 100}%`,
-            borderTopColor: colorBetweenColors(innerColor, outerColor, colorSteps * ringNumber),
-            animation: `loading ${thisTime}s linear infinite`,
-        }
-    }
-    renderRings = () => {
-        const { size } = this.props
+const TESpinner = (props) => {
+    const renderRings = () => {
+        const { size, innerColor, outerColor } = props
         let totalRings = 6
 
         switch (size) {
@@ -54,26 +29,25 @@ class TESpinner extends Component {
         let rings = []
         for (var i = 0; i < totalRings; i++) {
             rings.push(
-                <div
-                    key={`ring${i}`}
-                    style={[styles.ring, this.calculateRingStyles(totalRings, i)]}
+                <Ring
+                    key={i}
+                    ringNumber={i}
+                    totalRings={totalRings}
+                    innerColor={innerColor}
+                    outerColor={outerColor}
                 />
             )
         }
         return rings
     }
 
-    render() {
-        const { wrapperStyle, spinnerStyle, size } = this.props
+    const { size, className } = props
 
-        return (
-            <div style={{ ...styles.spinnerWrapper, ...wrapperStyle }}>
-                <div style={{ ...styles.spinner(size), ...spinnerStyle }}>{this.renderRings()}</div>
-            </div>
-        )
-    }
+    return (
+        <Container className={className}>
+            <SpinnerWrapper size={size}>{renderRings()}</SpinnerWrapper>
+        </Container>
+    )
 }
 
-TESpinner.propTypes = {}
-
-export default Radium(TESpinner)
+export default TESpinner

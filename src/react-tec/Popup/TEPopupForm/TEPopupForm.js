@@ -1,41 +1,34 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Radium from 'radium'
 
-import TEPopup from './../TEPopup'
 import TEForm from './../../Form/TEForm'
-import TEButton from './../../Form/TEButton'
-import TESubmit from './../../Form/TESubmit'
 
-import styles from './styles'
+import { Popup, FormContent, ButtonContainer, LeftButton, RightButton } from './styledComponents'
 
-class TEPopupForm extends Component {
-	handleSubmit = (e) => {
+const TEPopupForm = (props) => {
+	const handleSubmit = (e) => {
 		e.preventDefault()
-		const { onSubmit } = this.props
+		const { onSubmit } = props
 		onSubmit()
 	}
-	render() {
-		const { visible, onClose, onSubmitTitle, children } = this.props
 
-		return (
-			<TEPopup visible={visible} contentStyles={styles.content}>
-				<TEForm onSubmit={this.handleSubmit}>
-					<div style={styles.container}>{children}</div>
-					<div style={styles.buttonContainer}>
-						<TEButton onClick={onClose} style={styles.formButton('left')}>
-							Cancel
-						</TEButton>
-						<TESubmit style={styles.formButton('right')}>{onSubmitTitle}</TESubmit>
-					</div>
-				</TEForm>
-			</TEPopup>
-		)
-	}
+	const { visible, onClose, onCancelTitle, onSubmitTitle, children } = props
+
+	return (
+		<Popup visible={visible}>
+			<TEForm onSubmit={handleSubmit}>
+				<FormContent>{children}</FormContent>
+				<ButtonContainer>
+					<LeftButton onClick={onClose}>{onCancelTitle}</LeftButton>
+					<RightButton type="submit">{onSubmitTitle}</RightButton>
+				</ButtonContainer>
+			</TEForm>
+		</Popup>
+	)
 }
 
 TEPopupForm.propTypes = {
@@ -46,6 +39,8 @@ TEPopupForm.propTypes = {
 
 TEPopupForm.defaultProps = {
 	visible: false,
+	onCancelTitle: 'Cancel',
+	onSubmitTitle: 'Submit',
 }
 
-export default Radium(TEPopupForm)
+export default TEPopupForm

@@ -1,51 +1,36 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Radium from 'radium'
 
-import styles from './styles'
+import { Popup, Title, Message, ButtonContainer, LeftButton, RightButton } from './styledComponents'
 
-import TEPopup from './../TEPopup'
-import TEButton from './../../Form/TEButton'
+const TEConfirm = (props) => {
+	const {
+		title,
+		message,
+		leftOnClick,
+		leftButtonTitle,
+		rightOnClick,
+		rightButtonTitle,
+		children,
+		visible,
+		className,
+	} = props
 
-class TEConfirm extends Component {
-	render() {
-		const {
-			title,
-			message,
-			leftOnClick,
-			leftButtonTitle,
-			rightOnClick,
-			rightButtonTitle,
-			children,
-			visible,
-		} = this.props
-
-		return (
-			<TEPopup visible={visible} contentStyles={styles.content}>
-				<div style={styles.title}>{title}</div>
-				<div style={styles.message}>{message}</div>
-				{children}
-				<div style={styles.buttonContainer}>
-					<TEButton
-						onClick={leftOnClick}
-						style={{ ...styles.button, ...styles.leftButton }}
-					>
-						{leftButtonTitle}
-					</TEButton>
-					<TEButton
-						onClick={rightOnClick}
-						style={{ ...styles.button, ...styles.rightButton }}
-					>
-						{rightButtonTitle}
-					</TEButton>
-				</div>
-			</TEPopup>
-		)
-	}
+	return (
+		<Popup visible={visible} className={className}>
+			<Title>{title}</Title>
+			<Message>{message}</Message>
+			{children}
+			<ButtonContainer>
+				<LeftButton onClick={leftOnClick}>{leftButtonTitle}</LeftButton>
+				<RightButton onClick={rightOnClick}>{rightButtonTitle}</RightButton>
+			</ButtonContainer>
+		</Popup>
+	)
 }
 
 TEConfirm.propTypes = {
@@ -59,6 +44,7 @@ TEConfirm.propTypes = {
 
 TEConfirm.defaultProps = {
 	leftButtonTitle: 'Cancel',
+	rightButtonTitle: 'Confirm',
 }
 
-export default Radium(TEConfirm)
+export default TEConfirm
