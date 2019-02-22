@@ -7,9 +7,9 @@ import TEButton from './../TEButton'
 export const Wrapper = styled.div`
     ${(props) => {
         return `
-            display: 'flex',
-            flex-direction: 'column',
-            width: '100%',
+            display: flex;
+            flex-direction: column;
+            width: 100%;
         `
     }}
 `

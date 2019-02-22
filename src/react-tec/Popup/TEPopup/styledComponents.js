@@ -12,7 +12,7 @@ export const Background = styled.div`
 			top: 0;
 			bottom: 0;
 			background-color: rgba(0,0,0,0.5);
-			zIndex: 1000;
+			z-index: 1000;
 			overflow-y: auto;
 			transition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out;
 			opacity: ${visible ? 1 : 0};
