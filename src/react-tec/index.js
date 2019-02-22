@@ -8,7 +8,7 @@ import TEFileInput from './Form/TEFileInput'
 import TEFileManagerRow from './Form/TEFileManagerRow'
 import TEFileRow from './Form/TEFileRow'
 import TEForm from './Form/TEForm'
-// import TEImageRow from './Form/TEImageRow'
+import TEImageRow from './Form/TEImageRow'
 import TEInput from './Form/TEInput'
 import TEInputRow from './Form/TEInputRow'
 import TELabel from './Form/TELabel'
@@ -42,7 +42,7 @@ import TEPopupMultiStepForm from './Popup/TEPopupMultiStepForm'
 
 // import PrivateRoute from './PrivateRoute' //Not Sure Yet
 
-// import ScrollToTop from './ScrollToTop'
+// import ScrollToTop from './ScrollToTop' //Not Sure Yet
 
 // import TEHelmet from './TEHelmet' //Not Sure Yet
 
@@ -58,6 +58,7 @@ export {
 	TEFileManagerRow,
 	TEFileRow,
 	TEForm,
+	TEImageRow,
 	TEInput,
 	TEInputRow,
 	TELabel,

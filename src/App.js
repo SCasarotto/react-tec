@@ -12,6 +12,7 @@ import {
 	TEInput,
 	TEInputRow,
 	TEFileManagerRow,
+	TEImageRow,
 	TECheckboxInput,
 	TECheckboxGroup,
 	TERadioButtonInput,
@@ -61,6 +62,14 @@ const App = (props) => {
 					<TEButton onClick={() => setPopupMultiFormVisible(true)}>
 						Show Popup Multi Form
 					</TEButton>
+					<TEImageRow
+						title="Image Row"
+						onUpload={(data) => {
+							console.log('onUpload', data)
+							return Promise.resolve()
+						}}
+						onRemove={(data) => console.log('onRemove', data)}
+					/>
 					<TESearchSelectRow
 						labelForKey="TESearchSelectRow"
 						title="Power Select Title"

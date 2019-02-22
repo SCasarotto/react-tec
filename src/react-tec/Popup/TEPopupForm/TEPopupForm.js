@@ -16,10 +16,10 @@ const TEPopupForm = (props) => {
 		onSubmit()
 	}
 
-	const { visible, onClose, onCancelTitle, onSubmitTitle, children } = props
+	const { visible, onClose, onCancelTitle, onSubmitTitle, className, children } = props
 
 	return (
-		<Popup visible={visible}>
+		<Popup visible={visible} className={className}>
 			<TEForm onSubmit={handleSubmit}>
 				<FormContent>{children}</FormContent>
 				<ButtonContainer>
