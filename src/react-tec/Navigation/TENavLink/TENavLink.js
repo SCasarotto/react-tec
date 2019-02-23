@@ -1,31 +1,20 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-//import PropTypes from 'prop-types'
-import Radium from 'radium'
-
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import styles from './styles'
+// import styles from './styles'
 
-class TENavLink extends Component {
-	render() {
-		const { wrapperStyle, style, children, ...rest } = this.props
+const TENavLink = (props) => {
+	const { children, ...rest } = this.props
 
-		return (
-			<div style={{ ...styles.linkWrapper, ...wrapperStyle }}>
-				<NavLink style={{ ...styles.link, ...style }} {...rest}>
-					{children}
-				</NavLink>
-			</div>
-		)
-	}
+	return <NavLink {...rest}>{children}</NavLink>
 }
 
-TENavLink.propTypes = {}
+TENavLink.defaultProps = {
+	activeClassName: 'active',
+}
 
-TENavLink.defaultProps = {}
-
-export default Radium(TENavLink)
+export default TENavLink

@@ -1,48 +1,34 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-import Radium from 'radium'
+import React from 'react'
 
-import TENavLink from './../TENavLink'
+import { Container, Content, Ul, Li, Link } from './styledComponents'
 
-import styles from './styles'
+const TESubNavbar = (props) => {
+	const { className, links, rightComponent, ...rest } = props
 
-class TESubNavbar extends Component {
-	render() {
-		const { barStyle, links, rightComponent } = this.props
-
-		return (
-			<div style={{ ...styles.container, ...barStyle }}>
-				<div style={styles.content}>
-					<ul style={styles.navUl}>
-						{links &&
-							links.map((link) => {
-								const { to, title } = link
-								return (
-									<li style={styles.navLi} key={to}>
-										<TENavLink
-											style={styles.link}
-											wrapperStyle={styles.linkWrapper}
-											activeStyle={styles.active}
-											to={to}
-										>
-											{title}
-										</TENavLink>
-									</li>
-								)
-							})}
-					</ul>
-					{rightComponent}
-				</div>
-			</div>
-		)
-	}
+	return (
+		<Container className={className}>
+			<Content>
+				<Ul>
+					{links &&
+						links.map((link, index) => {
+							const { to, title } = link
+							return (
+								<Li key={index}>
+									<Link {...rest} to={to}>
+										{title}
+									</Link>
+								</Li>
+							)
+						})}
+				</Ul>
+				{rightComponent}
+			</Content>
+		</Container>
+	)
 }
 
-TESubNavbar.propTypes = {}
-
-TESubNavbar.defaultProps = {}
-
-export default Radium(TESubNavbar)
+export default TESubNavbar

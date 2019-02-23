@@ -1,41 +1,15 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-//import PropTypes from 'prop-types'
-import Radium from 'radium'
-
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-import styles from './styles'
+// import styles from './styles'
 
-class TELink extends Component {
-	render() {
-		const { wrapperStyle, style, children, inline, ...rest } = this.props
-
-		if (inline) {
-			return (
-				<span style={{ ...styles.linkWrapper, ...wrapperStyle }}>
-					<Link style={{ ...styles.link, ...style }} {...rest}>
-						{children}
-					</Link>
-				</span>
-			)
-		}
-
-		return (
-			<div style={{ ...styles.linkWrapper, ...wrapperStyle }}>
-				<Link style={{ ...styles.link, ...style }} {...rest}>
-					{children}
-				</Link>
-			</div>
-		)
-	}
+const TELink = (props) => {
+	const { children, ...rest } = props
+	return <Link {...rest}>{children}</Link>
 }
 
-TELink.propTypes = {}
-
-TELink.defaultProps = {}
-
-export default Radium(TELink)
+export default TELink
