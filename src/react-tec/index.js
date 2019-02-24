@@ -22,6 +22,8 @@ import TEPanel from './Layout/TEPanel'
 import TEPanelTitle from './Layout/TEPanelTitle'
 import TEPanelWrapper from './Layout/TEPanelWrapper'
 import TETitleBar from './Layout/TETitleBar'
+import TEBodyContainer from './Layout/TEBodyContainer'
+import TESideNavbar from './Layout/TESideNavbar'
 
 import TELink from './Navigation/TELink'
 import TENavLink from './Navigation/TENavLink'
@@ -75,6 +77,7 @@ export {
 	TEPanelTitle,
 	TEPanelWrapper,
 	TETitleBar,
+	TESideNavbar,
 	TEAlert,
 	TEConfirm,
 	TENetworkActivity,
@@ -85,5 +88,6 @@ export {
 	TELink,
 	TENavLink,
 	TESideNavLink,
+	TEBodyContainer,
 	TESubNavbar,
 }

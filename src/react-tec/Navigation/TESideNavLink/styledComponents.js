@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
-export const Li = styled.textarea`
+export const Li = styled.li`
 	${(props) => {
 		return `
             list-style: none;
@@ -12,13 +12,13 @@ export const Link = styled(NavLink)`
 	${(props) => {
 		const { theme } = props
 		return `
+			display: block;
 			color: ${theme.darkGray};
 			padding: 15px 20px;
-			margin-left: 10px;
-			margin-bottom: 5px
 			cursor: pointer;
-			border-left: 4px solid transparent;
+			border-left: 5px solid transparent;
 			transition: color 0.2s ease-in, border 0.2s ease-in;
+			text-decoration: none;
 
 			:active {
 				color: ${theme.primary};

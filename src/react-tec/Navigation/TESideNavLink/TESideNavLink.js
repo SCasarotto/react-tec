@@ -9,16 +9,17 @@ import { matchPath } from 'react-router'
 import { Li, Link, Title } from './styledComponents'
 
 const TESideNavLink = (props) => {
-	const { location, title, to, activePath } = props
+	const { location, title, to, children, activePath } = props
 
 	return (
 		<Li>
 			<Link
-				isActive={matchPath(location.pathname, { path: activePath || to })}
+				isActive={() => matchPath(location.pathname, { path: activePath || to })}
 				activeClassName="active"
 				to={to}
 			>
 				<Title>{title}</Title>
+				{children}
 			</Link>
 		</Li>
 	)
