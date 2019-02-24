@@ -19,7 +19,7 @@ const TESideNavbar = (props) => {
 				<MainUl>
 					{links &&
 						links.map((link, index) => {
-							const { title, activePath, to } = link
+							const { title, activePath, to, children } = link
 							return (
 								<TESideNavLink
 									key={index}
@@ -27,7 +27,9 @@ const TESideNavbar = (props) => {
 									activePath={activePath || to}
 									location={location}
 									title={title}
-								/>
+								>
+									{children}
+								</TESideNavLink>
 							)
 						})}
 				</MainUl>

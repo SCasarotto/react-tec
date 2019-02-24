@@ -18,7 +18,7 @@ const TESideNavLink = (props) => {
 				activeClassName="active"
 				to={to}
 			>
-				<Title>{title}</Title>
+				{title && <Title>{title}</Title>}
 				{children}
 			</Link>
 		</Li>
