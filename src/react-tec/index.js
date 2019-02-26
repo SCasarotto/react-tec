@@ -40,11 +40,8 @@ import TEPopupMultiStepForm from './Popup/TEPopupMultiStepForm'
 import TESpinner from './TESpinner'
 
 //Utility
-// import GATracking from './GATracking' //Not Sure Yet
-// import PrivateRoute from './PrivateRoute' //Not Sure Yet
-// import ScrollToTop from './ScrollToTop' //Not Sure Yet
-// import TEHelmet from './TEHelmet' //Not Sure Yet
-// import TESVG from './TESVG' //Not Sure Yet
+import TEScrollToTop from './Utility/TEScrollToTop'
+import TEHelmet from './Utility/TEHelmet'
 
 // import TEEmailLayout from './Email/TEEmailLayout' //Not Sure Yet
 // import TESimpleEmail from './Email/TESimpleEmail' //Not Sure Yet
@@ -90,4 +87,6 @@ export {
 	TESideNavLink,
 	TEBodyContainer,
 	TESubNavbar,
+	TEScrollToTop,
+	TEHelmet,
 }
