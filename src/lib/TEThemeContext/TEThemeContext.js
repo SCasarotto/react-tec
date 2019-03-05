@@ -1,7 +1,8 @@
-import React, { Fragment, createContext } from 'react'
+import React, { Fragment /*createContext*/ } from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
-const TEThemeContext = createContext()
+//Using Styled Components Context Instead
+// export const TEThemeContext = createContext()
 
 const initialTheme = {
 	white: '#FFFFFF',
@@ -288,7 +289,8 @@ const PowerSelectStyles = createGlobalStyle`
 	}}
 `
 
-const TEThemeProvider = (props) => {
+//Using Styled Components Context
+export const TEThemeProvider = (props) => {
 	return (
 		<ThemeProvider theme={{ ...initialTheme, ...props.theme }}>
 			<Fragment>
@@ -300,4 +302,3 @@ const TEThemeProvider = (props) => {
 	)
 }
 
-export { TEThemeProvider, TEThemeContext }

@@ -33,6 +33,7 @@ export const Message = styled.p`
 			width: 100%;
 			text-align: center;
 			font-size: 24px;
+			margin: 0px;
 			color: ${theme.white};
 		`
 	}}

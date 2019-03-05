@@ -46,7 +46,9 @@ import TEHelmet from './Utility/TEHelmet'
 // import TEEmailLayout from './Email/TEEmailLayout' //Not Sure Yet
 // import TESimpleEmail from './Email/TESimpleEmail' //Not Sure Yet
 
-import { TEThemeContext, TEThemeProvider } from './TEThemeContext'
+import { TEThemeProvider } from './TEThemeContext'
+import { TEPopupContext, TEPopupProvider } from './TEPopupContext'
+import TEAppWrapper from './TEAppWrapper'
 
 export {
 	TEButton,
@@ -67,7 +69,6 @@ export {
 	TESearchSelectRow,
 	TESegmentedGroup,
 	TETextarea,
-	TEThemeContext,
 	TEThemeProvider,
 	TEErrorLoadingAlert,
 	TEPanel,
@@ -89,4 +90,7 @@ export {
 	TESubNavbar,
 	TEScrollToTop,
 	TEHelmet,
+	TEPopupContext,
+	TEPopupProvider,
+	TEAppWrapper,
 }

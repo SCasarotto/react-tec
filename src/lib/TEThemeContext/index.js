@@ -1,3 +1,3 @@
-import { TEThemeProvider, TEThemeContext } from './TEThemeContext'
+import { TEThemeProvider /*TEThemeContext */ } from './TEThemeContext'
 
-export { TEThemeProvider, TEThemeContext }
+export { TEThemeProvider /*TEThemeContext*/ }
