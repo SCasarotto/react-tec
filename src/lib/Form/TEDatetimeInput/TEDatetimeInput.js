@@ -1,40 +1,26 @@
 //
-//TE Version 0.2.1
-//
-//
-// - Added autocomplete false by default
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-import Radium from 'radium'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import DatePicker from 'react-datepicker'
 
-//import styles from './styles'
+// import { DPicker } from './styledComponents'
 
-class TEDatetimeInput extends Component {
-    determineValue(value) {
-        //Safety for loading data
-        if (!value) {
-            return null
-        }
-        if (typeof value !== 'number') {
-            return null
-        }
-        return new Date(value)
-    }
+//TODO: Finish Component Styling
 
-    render() {
-        const { value, placeholder, ...rest } = this.props
-        return (
-            <DatePicker
-                selected={this.determineValue(value)}
-                placeholderText={placeholder}
-                {...rest}
-            />
-        )
+const determineValue = (value) => {
+    //Safety for loading data
+    if (!value || typeof value !== 'number') {
+        return null
     }
+    return new Date(value)
+}
+const TEDatetimeInput = (props) => {
+    const { value, placeholder, ...rest } = props
+    return <DatePicker selected={determineValue(value)} placeholderText={placeholder} {...rest} />
 }
 
 TEDatetimeInput.propTypes = {
@@ -52,4 +38,4 @@ TEDatetimeInput.defaultProps = {
     autoComplete: 'off',
 }
 
-export default Radium(TEDatetimeInput)
+export default TEDatetimeInput

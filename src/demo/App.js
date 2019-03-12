@@ -13,6 +13,8 @@ import {
 	TEInputRow,
 	TEFileManagerRow,
 	TEImageRow,
+	TEDatetimeInput,
+	TEDatetimeRow,
 	TECheckboxInput,
 	TECheckboxGroup,
 	TERadioButtonInput,
@@ -75,6 +77,12 @@ const App = (props) => {
 				<TEPanelWrapper>
 					<TEPanel title="Testing React TEC">
 						<h1 style={{ textAlign: 'center' }}>Testing React TEC</h1>
+						<TEDatetimeInput onChange={(date) => console.log(date)} />
+						<TEDatetimeRow
+							onChange={(date) => console.log(date)}
+							title="My Date Picker"
+							size="half"
+						/>
 						<TESpinner size="large" />
 						<TEButton
 							onClick={() => {

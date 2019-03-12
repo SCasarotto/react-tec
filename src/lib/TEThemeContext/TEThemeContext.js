@@ -1,6 +1,8 @@
 import React, { Fragment /*createContext*/ } from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
+import 'react-datepicker/dist/react-datepicker.css'
+
 //Using Styled Components Context Instead
 // export const TEThemeContext = createContext()
 
@@ -23,23 +25,24 @@ const initialTheme = {
 	shadowCenter: 'rgba(0, 0, 0, 0.1) 0px 0px 6px 0px, rgba(0, 0, 0, 0.05) 0px 0px 2px 0px',
 }
 
-const GlobalStyles = createGlobalStyle`
-	& * {
-		box-sizing: border-box;
-	}
-`
-
 //
 //TODO: Decide how to integrate base styles and my styles
 //
 //NOTE:
-//
+//PowerSelect
 // - At this moment there is no way to style the dropdown component with styled components.
 //
-const PowerSelectStyles = createGlobalStyle`
+//DatePicker
+// - At this moment there is no other way to style the wrapper components on this input.
+//
+const GlobalStyles = createGlobalStyle`
 	${(props) => {
 		const { theme } = props
 		return `
+			& * {
+				box-sizing: border-box;
+			}
+
 			.PowerSelect {
 				position: relative;
 				display: block;
@@ -285,6 +288,73 @@ const PowerSelectStyles = createGlobalStyle`
 			.tether-element {
 				z-index: 1000;
 			}
+
+			.react-datepicker-wrapper,
+			.react-datepicker__input-container {
+			    display: block;
+			    width: 100%;
+			}
+			.react-datepicker__input-container input {
+			    position: relative;
+			    display: block;
+			    width: 100%;
+			    padding: 10px;
+			    font-size: 14px;
+			    background-color: rgb(255, 255, 255);
+			    color: rgb(94, 94, 94);
+			    border: 1px solid rgb(229, 229, 229);
+			    border-radius: 5px;
+			    transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
+			}
+			.react-datepicker__input-container input:hover {
+			    border: 1px solid #373275;
+			    box-shadow: 0 0 0 1px #373275 inset;
+			}
+			.react-datepicker__day--keyboard-selected {
+			    background-color: #373275;
+			}
+			.react-datepicker__time-container
+			    .react-datepicker__time
+			    .react-datepicker__time-box
+			    ul.react-datepicker__time-list {
+			    padding: 0px;
+			}
+			.react-datepicker__time-container,
+			.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+			    width: 95px;
+			}
+			.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+			    right: 105px;
+			}
+
+			.react-datepicker__day--selected,
+			.react-datepicker__day--in-selecting-range,
+			.react-datepicker__day--in-range,
+			.react-datepicker__day--selected:hover,
+			.react-datepicker__day--in-selecting-range:hover,
+			.react-datepicker__day--in-range:hover,
+			.react-datepicker__time-container
+			    .react-datepicker__time
+			    .react-datepicker__time-box
+			    ul.react-datepicker__time-list
+			    li.react-datepicker__time-list-item--selected,
+			.react-datepicker__time-container
+			    .react-datepicker__time
+			    .react-datepicker__time-box
+			    ul.react-datepicker__time-list
+			    li.react-datepicker__time-list-item--selected:hover {
+			    background-color: #373275;
+			}
+
+			.react-datepicker__time-container
+			    .react-datepicker__time
+			    .react-datepicker__time-box
+			    ul.react-datepicker__time-list
+			    li.react-datepicker__time-list-item {
+			    line-height: 30px;
+			    padding: 0;
+			}
+
 		`
 	}}
 `
@@ -295,10 +365,8 @@ export const TEThemeProvider = (props) => {
 		<ThemeProvider theme={{ ...initialTheme, ...props.theme }}>
 			<Fragment>
 				<GlobalStyles />
-				<PowerSelectStyles />
 				{props.children}
 			</Fragment>
 		</ThemeProvider>
 	)
 }
-

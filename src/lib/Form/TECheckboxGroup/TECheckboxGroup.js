@@ -9,19 +9,19 @@ import TELabel from './../TELabel'
 
 import { Container, InputWrapper, RowWrarpper, Checkbox, Label } from './styledComponents'
 
-const TECheckboxGroup = (props) => {
-    const manipulateRowData = ({ rowData, labelForKey = '' }) => {
-        //Allowing For Greater Shorthand
-        if (typeof rowData === 'string') {
-            const label = rowData
-            const value = rowData
-            const key = labelForKey + rowData
-            return { label, value, key }
-        } else if (typeof rowData === 'object') {
-            let { label, value: value = label, key: key = labelForKey + label } = rowData
-            return { label, value, key }
-        }
+const manipulateRowData = ({ rowData, labelForKey = '' }) => {
+    //Allowing For Greater Shorthand
+    if (typeof rowData === 'string') {
+        const label = rowData
+        const value = rowData
+        const key = labelForKey + rowData
+        return { label, value, key }
+    } else if (typeof rowData === 'object') {
+        let { label, value: value = label, key: key = labelForKey + label } = rowData
+        return { label, value, key }
     }
+}
+const TECheckboxGroup = (props) => {
     const handleInputChange = (event) => {
         const { checkedValues, onChange } = props
         const { value, id } = event.target

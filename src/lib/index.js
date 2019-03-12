@@ -1,6 +1,8 @@
 import TEButton from './Form/TEButton'
 import TECheckboxGroup from './Form/TECheckboxGroup'
 import TECheckboxInput from './Form/TECheckboxInput'
+import TEDatetimeInput from './Form/TEDatetimeInput'
+import TEDatetimeRow from './Form/TEDatetimeRow'
 import TEFileInput from './Form/TEFileInput'
 import TEFileManagerRow from './Form/TEFileManagerRow'
 import TEFileRow from './Form/TEFileRow'
@@ -63,6 +65,8 @@ export {
 	TEMultiStepForm,
 	TERow,
 	TECheckboxInput,
+	TEDatetimeInput,
+	TEDatetimeRow,
 	TERadioButtonInput,
 	TECheckboxGroup,
 	TERadioButtonGroup,

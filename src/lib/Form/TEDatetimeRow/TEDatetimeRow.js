@@ -1,9 +1,8 @@
 //
-//TE Version 0.2.0
+//TE Version 0.3.0
 //
 
-import React, { Component } from 'react'
-import Radium from 'radium'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import TERow from './../TERow'
@@ -12,52 +11,44 @@ import TEDatetimeInput from './../TEDatetimeInput'
 
 //import styles from './styles'
 
-class TEDatetimeRow extends Component {
-    handleInputChange = (date) => {
-        this.props.onChange(date && date.valueOf())
+const TEDatetimeRow = (props) => {
+    const handleInputChange = (date) => {
+        props.onChange(date && date.valueOf())
     }
 
-    render() {
-        const {
-            rowStyles,
-            size,
-            last,
+    const {
+        size,
+        last,
+        className,
 
-            labelStyles,
-            title,
-            labelForKey,
+        title,
+        labelForKey,
 
-            inputClass,
-            onChange,
-            value,
-            required,
+        inputClass,
+        onChange,
+        value,
+        required,
 
-            ...rest
-        } = this.props
+        ...rest
+    } = props
 
-        return (
-            <TERow size={size} last={last} style={rowStyles}>
-                <TELabel
-                    htmlFor={labelForKey}
-                    labelText={title}
-                    style={labelStyles}
-                    required={required}
-                    disabled={rest.disabled}
-                />
-                <TEDatetimeInput
-                    value={value}
-                    onChange={this.handleInputChange}
-                    id={labelForKey}
-                    className={inputClass}
-                    {...rest}
-                />
-            </TERow>
-        )
-    }
+    return (
+        <TERow size={size} last={last} className={className}>
+            <TELabel htmlFor={labelForKey} required={required} disabled={rest.disabled}>
+                {title}
+            </TELabel>
+            <TEDatetimeInput
+                value={value}
+                onChange={handleInputChange}
+                id={labelForKey}
+                className={inputClass}
+                {...rest}
+            />
+        </TERow>
+    )
 }
 
 TEDatetimeRow.propTypes = {
-    rowStyles: PropTypes.object,
     size: PropTypes.string,
     last: PropTypes.bool,
     inputClass: PropTypes.string,
@@ -69,6 +60,4 @@ TEDatetimeRow.propTypes = {
     required: PropTypes.bool,
 }
 
-TEDatetimeRow.defaultProps = {}
-
-export default Radium(TEDatetimeRow)
+export default TEDatetimeRow
