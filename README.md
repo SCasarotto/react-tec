@@ -10,27 +10,11 @@ React TEC is a React component library built and maintained by [38th Street Stud
 
 The package can be installed via NPM:
 
-```bash
-yarn add react-tec
-```
-
-or
-
-```bash
-npm install react-tec --save
-```
+`yarn add react-tec` or `npm install react-tec --save`
 
 You will also need to install [styled-components](https://www.styled-components.com/)
 
-```bash
-yarn add styled-components
-```
-
-or
-
-```bash
-npm install styled-components --save
-```
+`yarn add styled-components` or `npm install styled-components --save`
 
 ## Usage
 
