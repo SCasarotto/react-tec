@@ -25,9 +25,9 @@ import React from 'react'
 import { TEAppWrapper } from 'react-tec'
 
 const Main = () => (
-	<TEAppWrapper>
-		<App />
-	</TEAppWrapper>
+    <TEAppWrapper>
+        <App />
+    </TEAppWrapper>
 )
 
 ReactDOM.render(<Main />, document.getElementById('root'))
