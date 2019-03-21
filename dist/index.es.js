@@ -1,5 +1,5 @@
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import React__default, { Component, createElement, useState, useEffect, Fragment, createContext, useReducer, useContext, useRef } from 'react';
+import React__default, { Component, createElement, Fragment, createContext, useReducer, useContext, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import reactDom, { findDOMNode } from 'react-dom';
 
@@ -3402,7 +3402,6 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
-//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 

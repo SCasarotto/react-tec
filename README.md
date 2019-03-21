@@ -6,6 +6,8 @@
 
 React TEC is a React component library built and maintained by [38th Street Studios](https://www.38thstreetstudios.com/). These docs will provide you with simple get started instructions and detailed examples of every component in the library.
 
+## [Documentation](https://www.react-tec.com/)
+
 ## Installation
 
 The package can be installed via NPM:
@@ -25,9 +27,9 @@ import React from 'react'
 import { TEAppWrapper } from 'react-tec'
 
 const Main = () => (
-    <TEAppWrapper>
-        <App />
-    </TEAppWrapper>
+	<TEAppWrapper>
+		<App />
+	</TEAppWrapper>
 )
 
 ReactDOM.render(<Main />, document.getElementById('root'))
