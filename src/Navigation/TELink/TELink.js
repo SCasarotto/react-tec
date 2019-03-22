@@ -5,11 +5,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// import styles from './styles'
-
-const TELink = (props) => {
-	const { children, ...rest } = props
-	return <Link {...rest}>{children}</Link>
-}
+const TELink = (props) => <Link {...props} />
 
 export default TELink

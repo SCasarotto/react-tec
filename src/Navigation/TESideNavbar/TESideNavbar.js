@@ -1,19 +1,19 @@
 import React from 'react'
-import { withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-import TESideNavLink from './../../Navigation/TESideNavLink'
+import TELink from './../TELink'
+import TESideNavLink from './../TESideNavLink'
 
 import { Container, Logo, NavContainer, MainUl } from './styledComponents'
 
 const TESideNavbar = (props) => {
-	const { sidebarWidth, location, logo, links } = props
+	const { sidebarWidth, location, logo, links, className } = props
 	return (
-		<Container sidebarWidth={sidebarWidth}>
+		<Container sidebarWidth={sidebarWidth} className={className}>
 			{logo && (
-				<Link to="/">
+				<TELink to="/">
 					<Logo src={logo} alt="brandmark" title="Rittal" />
-				</Link>
+				</TELink>
 			)}
 			<NavContainer>
 				<MainUl>
@@ -25,7 +25,6 @@ const TESideNavbar = (props) => {
 									key={index}
 									to={to}
 									activePath={activePath || to}
-									location={location}
 									title={title}
 									exact={exact}
 								>
@@ -39,8 +38,14 @@ const TESideNavbar = (props) => {
 	)
 }
 
+TESideNavbar.propTypes = {
+	sidebarWidth: PropTypes.number,
+	logo: PropTypes.string,
+	links: PropTypes.array,
+}
+
 TESideNavbar.defaultProps = {
 	sidebarWidth: 200,
 }
 
-export default withRouter(TESideNavbar)
+export default TESideNavbar

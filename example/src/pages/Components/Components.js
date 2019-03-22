@@ -70,12 +70,12 @@ const Home = (props) => {
 			/>
 			<TESubNavbar
 				links={[
-					{ title: 'Globals', to: '/components/globals' },
-					{ title: 'Layout', to: '/components/layout' },
-					{ title: 'Navigation', to: '/components/navigation' },
-					{ title: 'Form', to: '/components/form' },
-					{ title: 'Popup', to: '/components/popup' },
-					{ title: 'Utility', to: '/components/utility' },
+					{ children: 'Globals', to: '/components/globals' },
+					{ children: 'Layout', to: '/components/layout' },
+					{ children: 'Navigation', to: '/components/navigation' },
+					{ children: 'Form', to: '/components/form' },
+					{ children: 'Popup', to: '/components/popup' },
+					{ children: 'Utility', to: '/components/utility' },
 				]}
 			/>
 			<TESwitch>

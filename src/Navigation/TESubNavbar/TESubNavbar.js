@@ -3,11 +3,12 @@
 //
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { Container, Content, Ul, Li, Link } from './styledComponents'
 
 const TESubNavbar = (props) => {
-	const { className, links, rightComponent, ...rest } = props
+	const { links, rightComponent, className } = props
 
 	return (
 		<Container className={className}>
@@ -15,12 +16,9 @@ const TESubNavbar = (props) => {
 				<Ul>
 					{links &&
 						links.map((link, index) => {
-							const { to, title } = link
 							return (
 								<Li key={index}>
-									<Link {...rest} to={to}>
-										{title}
-									</Link>
+									<Link {...link} />
 								</Li>
 							)
 						})}
@@ -29,6 +27,11 @@ const TESubNavbar = (props) => {
 			</Content>
 		</Container>
 	)
+}
+
+TESubNavbar.propTypes = {
+	links: PropTypes.array,
+	rightComponent: PropTypes.node,
 }
 
 export default TESubNavbar

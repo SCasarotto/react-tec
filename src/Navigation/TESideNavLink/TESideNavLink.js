@@ -4,15 +4,15 @@
 
 import React from 'react'
 //import PropTypes from 'prop-types'
-import { matchPath } from 'react-router'
+import { matchPath, withRouter } from 'react-router'
 
 import { Li, Link, Title } from './styledComponents'
 
 const TESideNavLink = (props) => {
-	const { location, title, to, children, activePath, exact } = props
+	const { location, title, to, children, activePath, exact, className } = props
 
 	return (
-		<Li>
+		<Li className={className}>
 			<Link
 				isActive={() => matchPath(location.pathname, { path: activePath || to, exact })}
 				activeClassName="active"
@@ -30,4 +30,4 @@ TESideNavLink.defaultProps = {
 	exact: false,
 }
 
-export default TESideNavLink
+export default withRouter(TESideNavLink)

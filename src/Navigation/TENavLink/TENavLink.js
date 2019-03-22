@@ -3,18 +3,9 @@
 //
 
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
-// import styles from './styles'
+import { Link } from './styledComponents'
 
-const TENavLink = (props) => {
-	const { children, ...rest } = props
-
-	return <NavLink {...rest}>{children}</NavLink>
-}
-
-TENavLink.defaultProps = {
-	activeClassName: 'active',
-}
+const TENavLink = (props) => <Link {...props} />
 
 export default TENavLink

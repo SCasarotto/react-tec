@@ -5,13 +5,18 @@ import { useBarTitle } from './../../../context/TitleBarContext'
 
 //Include the following
 //
-// TELink
-// TENavLink
-// TERoute
 // TESideNavLink
 // TESideNavbar
 // TESwitch
 //
+
+import TELinkSection from './TELinkSection'
+import TENavLinkSection from './TENavLinkSection'
+import TERouteSection from './TERouteSection'
+import TESideNavbarSection from './TESideNavbarSection'
+import TESideNavLinkSection from './TESideNavLinkSection'
+import TESubNavbarSection from './TESubNavbarSection'
+import TESwitchSection from './TESwitchSection'
 
 const Home = (props) => {
 	useBarTitle('Components - Navigation')
@@ -25,6 +30,13 @@ const Home = (props) => {
 			<TEPanelWrapper wrapperHeight={80}>
 				<TEPanel>
 					<h1>Navigation</h1>
+					<TELinkSection />
+					<TENavLinkSection />
+					<TERouteSection />
+					<TESideNavbarSection />
+					<TESideNavLinkSection />
+					<TESubNavbarSection />
+					<TESwitchSection />
 				</TEPanel>
 			</TEPanelWrapper>
 		</Fragment>

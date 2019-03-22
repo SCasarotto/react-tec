@@ -22282,50 +22282,36 @@ var TESwitch = function TESwitch(props) {
 
 //
 
-// import styles from './styles'
-
 var TELink = function TELink(props) {
-	var children = props.children,
-	    rest = objectWithoutProperties(props, ['children']);
-
-	return React__default.createElement(
-		Link,
-		rest,
-		children
-	);
-};
-
-//
-
-// import styles from './styles'
-
-var TENavLink = function TENavLink(props) {
-	var children = props.children,
-	    rest = objectWithoutProperties(props, ['children']);
-
-
-	return React__default.createElement(
-		NavLink,
-		rest,
-		children
-	);
-};
-
-TENavLink.defaultProps = {
-	activeClassName: 'active'
+  return React__default.createElement(Link, props);
 };
 
 var _templateObject$o = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var Li = styled__default.li(_templateObject$o, function (props) {
+var Link$1 = styled__default(NavLink)(_templateObject$o, function (props) {
+	var theme = props.theme;
+
+
+	return '\n\n\t\t\t&.active{\n\t\t\t\tcolor: ' + theme.primary + '\n\t\t\t}\n\t\t';
+});
+
+//
+
+var TENavLink = function TENavLink(props) {
+  return React__default.createElement(Link$1, props);
+};
+
+var _templateObject$p = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+
+var Li = styled__default.li(_templateObject$p, function (props) {
 	return '\n            list-style: none;\n        ';
 });
-var Link$1 = styled__default(NavLink)(_templateObject$o, function (props) {
+var Link$2 = styled__default(NavLink)(_templateObject$p, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tdisplay: block;\n\t\t\tcolor: ' + theme.darkGray + ';\n\t\t\tpadding: 15px 20px;\n\t\t\tcursor: pointer;\n\t\t\tborder-left: 5px solid transparent;\n\t\t\ttransition: color 0.2s ease-in, border 0.2s ease-in;\n\t\t\ttext-decoration: none;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t&.active{\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n        ';
 });
-var Title$3 = styled__default.span(_templateObject$o, function (props) {
+var Title$3 = styled__default.span(_templateObject$p, function (props) {
 	return '\n        \tfont-size: 18px;\n        ';
 });
 
@@ -22337,14 +22323,15 @@ var TESideNavLink = function TESideNavLink(props) {
 	    to = props.to,
 	    children = props.children,
 	    activePath = props.activePath,
-	    exact = props.exact;
+	    exact = props.exact,
+	    className = props.className;
 
 
 	return React__default.createElement(
 		Li,
-		null,
+		{ className: className },
 		React__default.createElement(
-			Link$1,
+			Link$2,
 			{
 				isActive: function isActive() {
 					return matchPath(location.pathname, { path: activePath || to, exact: exact });
@@ -22367,21 +22354,23 @@ TESideNavLink.defaultProps = {
 	exact: false
 };
 
-var _templateObject$p = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var TESideNavLink$1 = withRouter(TESideNavLink);
 
-var Container$8 = styled__default.div(_templateObject$p, function (props) {
+var _templateObject$q = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+
+var Container$8 = styled__default.div(_templateObject$q, function (props) {
 	var theme = props.theme,
 	    sidebarWidth = props.sidebarWidth;
 
 	return '\n\t\t\tposition: fixed;\n\t\t\ttop: 0px;\n\t\t\tbottom: 0px;\n\t\t\tleft: 0px;\n\t\t\tmax-height: 100vh;\n\t\t\theight: 100%;\n\t\t\twidth: ' + sidebarWidth + 'px;\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\tz-index: 20;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\toverflow-y: auto;\n\t\t\tbox-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px, rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;\n\t\t';
 });
-var Logo = styled__default.img(_templateObject$p, function (props) {
+var Logo = styled__default.img(_templateObject$q, function (props) {
 	return '\n\t\t\tobject-fit: contain;\n\t\t\twidth: 100%;\n\t\t\tpadding: 30px 60px;\n\t\t';
 });
-var NavContainer = styled__default.div(_templateObject$p, function (props) {
+var NavContainer = styled__default.div(_templateObject$q, function (props) {
 	return '\n\t\t\theight: 100%;\n\t\t';
 });
-var MainUl = styled__default.ul(_templateObject$p, function (props) {
+var MainUl = styled__default.ul(_templateObject$q, function (props) {
 	return '\n\t\t\tmargin: 0px;\n\t\t\tpadding: 0px;\n\t\t';
 });
 
@@ -22389,13 +22378,14 @@ var TESideNavbar = function TESideNavbar(props) {
 	var sidebarWidth = props.sidebarWidth,
 	    location = props.location,
 	    logo = props.logo,
-	    links = props.links;
+	    links = props.links,
+	    className = props.className;
 
 	return React__default.createElement(
 		Container$8,
-		{ sidebarWidth: sidebarWidth },
+		{ sidebarWidth: sidebarWidth, className: className },
 		logo && React__default.createElement(
-			Link,
+			TELink,
 			{ to: '/' },
 			React__default.createElement(Logo, { src: logo, alt: 'brandmark', title: 'Rittal' })
 		),
@@ -22413,12 +22403,11 @@ var TESideNavbar = function TESideNavbar(props) {
 					    exact = link.exact;
 
 					return React__default.createElement(
-						TESideNavLink,
+						TESideNavLink$1,
 						{
 							key: index,
 							to: to,
 							activePath: activePath || to,
-							location: location,
 							title: title,
 							exact: exact
 						},
@@ -22430,31 +22419,35 @@ var TESideNavbar = function TESideNavbar(props) {
 	);
 };
 
+TESideNavbar.propTypes = {
+	sidebarWidth: PropTypes.number,
+	logo: PropTypes.string,
+	links: PropTypes.array
+};
+
 TESideNavbar.defaultProps = {
 	sidebarWidth: 200
 };
 
-var TESideNavbar$1 = withRouter(TESideNavbar);
+var _templateObject$r = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var _templateObject$q = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
-
-var Container$9 = styled__default.div(_templateObject$q, function (props) {
+var Container$9 = styled__default.div(_templateObject$r, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tposition: relative;\n\t\t\twidth: 100%;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\tpadding-left: 30px;\n\t\t\tbox-shadow: ' + theme.shadowBottom + ';\n\t\t\tz-index: 5;\n\n\t\t\t@media (max-width: 800px) {\n\t\t\t\tpadding-left: 25px;\n\t\t\t}\n\t\t\t@media (max-width: 650px) {\n\t\t\t\tpadding-left: 20px;\n\t\t\t}\n\t\t\t@media (max-width: 450px) {\n\t\t\t\tpadding-left: 15px;\n\t\t\t}\n\t\t';
 });
-var Content$2 = styled__default.div(_templateObject$q, function (props) {
+var Content$2 = styled__default.div(_templateObject$r, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tdisplay: flex;\n\t\t\talign-items: flex-end;\n\t\t\tjustify-content: space-between;\n\t\t\theight: 70px;\n\t\t\tborder-top: 1px solid ' + theme.lightGray + ';\n\t\t\tpadding-right: 30px;\n\n\t\t\t@media (max-width: 800px) {\n\t\t\t\theight: 65px;\n\t\t\t\tpadding-right: 25px;\n\t\t\t}\n\t\t\t@media (max-width: 650px) {\n\t\t\t\theight: 60px;\n\t\t\t\tpadding-right: 20px;\n\t\t\t}\n\t\t\t@media (max-width: 450px) {\n\t\t\t\theight: 55px;\n\t\t\t\tpadding-right: 15px;\n\t\t\t}\n\t\t';
 });
-var Ul = styled__default.ul(_templateObject$q, function (props) {
+var Ul = styled__default.ul(_templateObject$r, function (props) {
 	return '\n\t\t\tmargin: 0px;\n\t\t\tpadding: 0px;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: flex-start;\n\t\t\talign-items: flex-end;\n\t\t\toverflow-x: auto;\n\t\t';
 });
-var Li$1 = styled__default.li(_templateObject$q, function (props) {
+var Li$1 = styled__default.li(_templateObject$r, function (props) {
 	return '\n\t\t\tlist-style: none;\n\t\t\twidth: 100px;\n\t\t\tflex-shrink: 0;\n\t\t';
 });
-var Link$2 = styled__default(NavLink)(_templateObject$q, function (props) {
+var Link$3 = styled__default(TENavLink)(_templateObject$r, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tdisplay: block;\n\t\t\ttext-align: center;\n\t\t\twidth: 100%;\n\t\t\tline-height: 40px;\n\t\t\tborder-bottom: 4px solid transparent;\n\t\t\tfont-size: 16px;\n\t\t\twhite-space: nowrap;\n\t\t\ttext-decoration: none;\n\t\t\tcolor: ' + theme.darkerGray + ';\n\n\t\t\ttransition: border 0.2s ease-in, color 0.2s ease-in;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t&.active{\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t';
@@ -22463,10 +22456,9 @@ var Link$2 = styled__default(NavLink)(_templateObject$q, function (props) {
 //
 
 var TESubNavbar = function TESubNavbar(props) {
-	var className = props.className,
-	    links = props.links,
+	var links = props.links,
 	    rightComponent = props.rightComponent,
-	    rest = objectWithoutProperties(props, ['className', 'links', 'rightComponent']);
+	    className = props.className;
 
 
 	return React__default.createElement(
@@ -22479,17 +22471,10 @@ var TESubNavbar = function TESubNavbar(props) {
 				Ul,
 				null,
 				links && links.map(function (link, index) {
-					var to = link.to,
-					    title = link.title;
-
 					return React__default.createElement(
 						Li$1,
 						{ key: index },
-						React__default.createElement(
-							Link$2,
-							_extends({}, rest, { to: to }),
-							title
-						)
+						React__default.createElement(Link$3, link)
 					);
 				})
 			),
@@ -22498,22 +22483,27 @@ var TESubNavbar = function TESubNavbar(props) {
 	);
 };
 
-var _templateObject$r = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+TESubNavbar.propTypes = {
+	links: PropTypes.array,
+	rightComponent: PropTypes.node
+};
 
-var Popup$1 = styled__default(TEPopup)(_templateObject$r, function (props) {
+var _templateObject$s = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+
+var Popup$1 = styled__default(TEPopup)(_templateObject$s, function (props) {
     return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
 });
-var Title$4 = styled__default.h4(_templateObject$r, function (props) {
+var Title$4 = styled__default.h4(_templateObject$s, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
 });
-var Message$1 = styled__default.p(_templateObject$r, function (props) {
+var Message$1 = styled__default.p(_templateObject$s, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
 });
-var Button$2 = styled__default(TEButton)(_templateObject$r, function (props) {
+var Button$2 = styled__default(TEButton)(_templateObject$s, function (props) {
     var theme = props.theme;
 
     return '\n        border-top: 1px solid ' + theme.primary + ';\n        border-right: none;\n        border-bottom: none;\n        border-left: none;\n        line-height: 2;\n        border-top-left-radius: 0px;\n        border-top-right-radius: 0px;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n        transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;\n\n        :active {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        :hover {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        ';
@@ -22564,30 +22554,30 @@ TEAlert.defaultProps = {
 	buttonTitle: 'Okay'
 };
 
-var _templateObject$s = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$t = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
 
-var Popup$2 = styled__default(TEPopup)(_templateObject$s, function (props) {
+var Popup$2 = styled__default(TEPopup)(_templateObject$t, function (props) {
     return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
 });
-var Title$5 = styled__default.h4(_templateObject$s, function (props) {
+var Title$5 = styled__default.h4(_templateObject$t, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
 });
-var Message$2 = styled__default.p(_templateObject$s, function (props) {
+var Message$2 = styled__default.p(_templateObject$t, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
 });
-var ButtonContainer$2 = styled__default.div(_templateObject$s, function (props) {
+var ButtonContainer$2 = styled__default.div(_templateObject$t, function (props) {
     return '\n            overflow: hidden;\n            display: flex;\n        ';
 });
-var LeftButton$1 = styled__default(TEButton)(_templateObject$s, function (props) {
+var LeftButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
     var theme = props.theme;
 
     return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 20px;\n            border-bottom-right-radius: 0px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: 1px solid ' + theme.primary + ';\n            border-bottom: none;\n            border-left: none;\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n           }\n        ';
 });
-var RightButton$1 = styled__default(TEButton)(_templateObject$s, function (props) {
+var RightButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
     var theme = props.theme;
 
     return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 0px;\n            border-bottom-right-radius: 20px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: 1px solid ' + theme.primary + ';\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n           }\n        ';
@@ -22652,7 +22642,7 @@ TEConfirm.defaultProps = {
 	rightButtonTitle: 'Confirm'
 };
 
-var _templateObject$t = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$u = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var colorBetweenColors = function colorBetweenColors(color1, color2, percBetween) {
 	var hex = function hex(x) {
@@ -22702,10 +22692,10 @@ var calculateRingStyles = function calculateRingStyles(_ref) {
 	return '\n        left: ' + spacing * 100 + '%;\n        top: ' + spacing * 100 + '%;\n        width: ' + (1 - spacing * 2) * 100 + '%;\n        height: ' + (1 - spacing * 2) * 100 + '%;\n        border-top-color: ' + colorBetweenColors(innerColor, outerColor, colorSteps * ringNumber) + ';\n        animation: loading ' + thisTime + 's linear infinite;\n    ';
 };
 
-var Container$a = styled__default.div(_templateObject$t, function (props) {
+var Container$a = styled__default.div(_templateObject$u, function (props) {
 	return '\n\t\t\ttext-align: center;\n\t\t';
 });
-var SpinnerWrapper = styled__default.div(_templateObject$t, function (props) {
+var SpinnerWrapper = styled__default.div(_templateObject$u, function (props) {
 	var size = props.size;
 
 
@@ -22730,7 +22720,7 @@ var SpinnerWrapper = styled__default.div(_templateObject$t, function (props) {
 
 	return '\n\t\t    position: relative;\n\t\t    width: ' + width + 'px;\n\t\t    height: ' + height + 'px;\n\t\t    display: inline-block;\n\t\t';
 });
-var Ring = styled__default.div(_templateObject$t, function (props) {
+var Ring = styled__default.div(_templateObject$u, function (props) {
 	var theme = props.theme,
 	    ringNumber = props.ringNumber,
 	    totalRings = props.totalRings,
@@ -22802,15 +22792,15 @@ var TESpinner = function TESpinner(props) {
     );
 };
 
-var _templateObject$u = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$v = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var Popup$3 = styled__default(TEPopup)(_templateObject$u, function (props) {
+var Popup$3 = styled__default(TEPopup)(_templateObject$v, function (props) {
 	return '\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\n            & > div{\n\t\t\t\tbackground-color: rgba(0,0,0,0.5);\n\t\t\t\tpadding: 60px;\n\t\t\t\ttext-align: center;\n            }\n        ';
 });
-var Spinner = styled__default(TESpinner)(_templateObject$u, function (props) {
+var Spinner = styled__default(TESpinner)(_templateObject$v, function (props) {
 	return '\n            margin-bottom: 30px;\n        ';
 });
-var Message$3 = styled__default.p(_templateObject$u, function (props) {
+var Message$3 = styled__default.p(_templateObject$v, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tposition: relative;\n\t\t\twidth: 100%;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 24px;\n\t\t\tmargin: 0px;\n\t\t\tcolor: ' + theme.white + ';\n\t\t';
@@ -22840,9 +22830,9 @@ TENetworkActivity.propTypes = {
 	message: PropTypes.string
 };
 
-var _templateObject$v = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$w = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var Popup$4 = styled__default(TEPopup)(_templateObject$v, function (props) {
+var Popup$4 = styled__default(TEPopup)(_templateObject$w, function (props) {
 	return '\n\t\t\t& > div{\n\t\t\t\twidth: 90%;\n\t\t\t\tmax-width: 900px;\n\t\t\t\tmargin: 100px auto;\n\t\t\t\tpadding: 30px;\n\t\t\t}\n\t\t';
 });
 
@@ -24265,7 +24255,7 @@ TEHelmet.propTypes = {
     description: PropTypes.string
 };
 
-var _templateObject$w = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$x = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 // import 'react-datepicker/dist/react-datepicker.css'
 
@@ -24300,7 +24290,7 @@ var initialTheme = {
 	//DatePicker
 	// - At this moment there is no other way to style the wrapper components on this input.
 	//
-};var GlobalStyles = styled.createGlobalStyle(_templateObject$w, function (props) {
+};var GlobalStyles = styled.createGlobalStyle(_templateObject$x, function (props) {
 	var theme = props.theme;
 	var globalStyles = theme.globalStyles;
 
@@ -24465,7 +24455,7 @@ exports.TEPanel = TEPanel;
 exports.TEPanelTitle = TEPanelTitle;
 exports.TEPanelWrapper = TEPannelWrapper;
 exports.TETitleBar = TETitleBar;
-exports.TESideNavbar = TESideNavbar$1;
+exports.TESideNavbar = TESideNavbar;
 exports.TEAlert = TEAlert;
 exports.TEConfirm = TEConfirm;
 exports.TENetworkActivity = TENetworkActivity;
@@ -24477,7 +24467,7 @@ exports.TERoute = TERoute;
 exports.TESwitch = TESwitch;
 exports.TELink = TELink;
 exports.TENavLink = TENavLink;
-exports.TESideNavLink = TESideNavLink;
+exports.TESideNavLink = TESideNavLink$1;
 exports.TEBodyContainer = TEBodyContainer;
 exports.TESubNavbar = TESubNavbar;
 exports.TEScrollToTop = TEScrollToTop;
