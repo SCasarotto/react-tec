@@ -3411,6 +3411,7 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
+//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -24241,10 +24242,11 @@ var TEHelmet = function TEHelmet(props) {
         _props$title = props.title,
         title = _props$title === undefined ? '' : _props$title,
         _props$description = props.description,
-        description = _props$description === undefined ? '' : _props$description;
+        description = _props$description === undefined ? '' : _props$description,
+        rest = objectWithoutProperties(props, ['charSet', 'title', 'description']);
 
 
-    return React__default.createElement(Helmet_2, {
+    return React__default.createElement(Helmet_2, _extends({
         title: title,
         meta: [{
             name: 'charSet',
@@ -24253,7 +24255,12 @@ var TEHelmet = function TEHelmet(props) {
             name: 'description',
             content: description
         }]
-    });
+    }, rest));
+};
+
+TEHelmet.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string
 };
 
 var _templateObject$w = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);

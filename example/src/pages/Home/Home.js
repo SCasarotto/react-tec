@@ -22,7 +22,7 @@ const Home = (props) => {
 							rel="noopener noreferrer"
 						>
 							<img
-								src="https://badge.fury.io/js/react-tec.svg"
+								src="https://img.shields.io/npm/v/react-tec.svg"
 								alt="npm version"
 								height="18"
 							/>

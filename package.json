@@ -1,6 +1,7 @@
 {
   "name": "react-tec",
-  "version": "0.0.17",
+  "version": "0.0.19",
+  "homepage": "https://www.react-tec.com/",
   "description": "React Component Library used at 38th Street Studios",
   "author": "SCasarotto",
   "license": "MIT",

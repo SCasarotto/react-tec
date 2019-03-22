@@ -8,6 +8,8 @@ import { useBarTitle } from './../../../context/TitleBarContext'
 //TEHelment
 //TEScrollToTop
 //
+import TEHelmetSection from './TEHelmetSection'
+import TEScrollToTopSection from './TEScrollToTopSection'
 
 const Home = (props) => {
 	useBarTitle('Components - Utility')
@@ -21,6 +23,8 @@ const Home = (props) => {
 			<TEPanelWrapper wrapperHeight={80}>
 				<TEPanel>
 					<h1>Utility</h1>
+					<TEHelmetSection />
+					<TEScrollToTopSection />
 				</TEPanel>
 			</TEPanelWrapper>
 		</Fragment>
