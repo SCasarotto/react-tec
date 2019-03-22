@@ -3,11 +3,6 @@ import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
-//Include the following
-//
-//TEHelment
-//TEScrollToTop
-//
 import TEHelmetSection from './TEHelmetSection'
 import TEScrollToTopSection from './TEScrollToTopSection'
 

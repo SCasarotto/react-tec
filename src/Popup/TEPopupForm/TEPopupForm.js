@@ -34,7 +34,9 @@ const TEPopupForm = (props) => {
 TEPopupForm.propTypes = {
 	visible: PropTypes.bool.isRequired,
 	onClose: PropTypes.func.isRequired,
+	onCloseTitle: PropTypes.string,
 	onSubmit: PropTypes.func.isRequired,
+	onSubmitTitle: PropTypes.string,
 }
 
 TEPopupForm.defaultProps = {

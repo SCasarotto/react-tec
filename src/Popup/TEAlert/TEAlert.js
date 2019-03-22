@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 import { Popup, Title, Message, Button } from './styledComponents'
 
 const TEAlert = (props) => {
-	const { title, message, onClick, buttonTitle, children, visible, className } = props
+	const { title, message, onClick, buttonTitle, visible, className, children } = props
 
 	return (
 		<Popup visible={visible} className={className}>

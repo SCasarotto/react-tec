@@ -13917,7 +13917,9 @@ var TEPopupForm = function TEPopupForm(props) {
 TEPopupForm.propTypes = {
 	visible: PropTypes.bool.isRequired,
 	onClose: PropTypes.func.isRequired,
-	onSubmit: PropTypes.func.isRequired
+	onCloseTitle: PropTypes.string,
+	onSubmit: PropTypes.func.isRequired,
+	onSubmitTitle: PropTypes.string
 };
 
 TEPopupForm.defaultProps = {
@@ -22515,9 +22517,9 @@ var TEAlert = function TEAlert(props) {
 	    message = props.message,
 	    onClick = props.onClick,
 	    buttonTitle = props.buttonTitle,
-	    children = props.children,
 	    visible = props.visible,
-	    className = props.className;
+	    className = props.className,
+	    children = props.children;
 
 
 	return React__default.createElement(
@@ -22794,7 +22796,7 @@ var TESpinner = function TESpinner(props) {
 var _templateObject$u = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Popup$3 = styled(TEPopup)(_templateObject$u, function (props) {
-	return '\n            & > div{\n\t\t\t\tposition: absolute;\n\t\t\t\ttop: 50%;\n\t\t\t\tleft: 50%;\n\t\t\t\ttransform: translate(-50%, -50%);\n\t\t\t\tbackground-color: rgba(0,0,0,0.5);\n\t\t\t\tpadding: 60px;\n\t\t\t\ttext-align: center;\n            }\n        ';
+	return '\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\n            & > div{\n\t\t\t\tbackground-color: rgba(0,0,0,0.5);\n\t\t\t\tpadding: 60px;\n\t\t\t\ttext-align: center;\n            }\n        ';
 });
 var Spinner = styled(TESpinner)(_templateObject$u, function (props) {
 	return '\n            margin-bottom: 30px;\n        ';

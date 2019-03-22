@@ -6,11 +6,11 @@ import TESpinner from './../../TESpinner'
 export const Popup = styled(TEPopup)`
 	${(props) => {
 		return `
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
             & > div{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
 				background-color: rgba(0,0,0,0.5);
 				padding: 60px;
 				text-align: center;
