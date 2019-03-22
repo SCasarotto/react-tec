@@ -3,6 +3,7 @@
 //
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { PanelWrapper, Panel, Title, Message, Button } from './styledComponents'
 
@@ -17,6 +18,13 @@ const TEErrorLoadingAlert = (props) => {
 			</Panel>
 		</PanelWrapper>
 	)
+}
+
+TEErrorLoadingAlert.propTypes = {
+	title: PropTypes.string,
+	message: PropTypes.string,
+	onClick: PropTypes.func,
+	buttonTitle: PropTypes.string,
 }
 
 export default TEErrorLoadingAlert

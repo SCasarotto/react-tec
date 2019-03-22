@@ -19357,7 +19357,7 @@ var Title = styled__default.h1(_templateObject$j, function (props) {
 var ComponentWrapper = styled__default.div(_templateObject$j, function (props) {
     return '\n            width: auto;\n        ';
 });
-var Subtitle = styled__default.h2(_templateObject$j, function (props) {
+var Subtitle = styled__default.p(_templateObject$j, function (props) {
     return '\n            font-size: 18px;\n            margin-bottom: 0px;\n            margin-top: 0px;\n        ';
 });
 
@@ -19398,7 +19398,9 @@ var TEPanelTitle = function TEPanelTitle(props) {
 
 TEPanelTitle.propTypes = {
 	title: PropTypes.string,
-	subtitle: PropTypes.string
+	leftComponent: PropTypes.node,
+	subtitle: PropTypes.string,
+	rightComponent: PropTypes.node
 };
 
 var _templateObject$k = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
@@ -19514,6 +19516,13 @@ var TEErrorLoadingAlert = function TEErrorLoadingAlert(props) {
 	);
 };
 
+TEErrorLoadingAlert.propTypes = {
+	title: PropTypes.string,
+	message: PropTypes.string,
+	onClick: PropTypes.func,
+	buttonTitle: PropTypes.string
+};
+
 var _templateObject$m = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
 
 var Container$7 = styled__default.div(_templateObject$m, function (props) {
@@ -19577,7 +19586,9 @@ var TETitleBar = function TETitleBar(props) {
 
 TETitleBar.propTypes = {
 	title: PropTypes.string,
-	subtitle: PropTypes.string
+	leftComponent: PropTypes.node,
+	subtitle: PropTypes.string,
+	rightComponent: PropTypes.node
 };
 
 var _templateObject$n = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
@@ -19589,18 +19600,175 @@ var BodyContainer = styled__default.div(_templateObject$n, function (props) {
 });
 
 var TEBodyContainer = function TEBodyContainer(props) {
-	var children = props.children,
-	    rest = objectWithoutProperties(props, ['children']);
+	return React__default.createElement(BodyContainer, props);
+};
 
-	return React__default.createElement(
-		BodyContainer,
-		rest,
-		children
-	);
+TEBodyContainer.propTypes = {
+	sidebarWidth: PropTypes.number
 };
 
 TEBodyContainer.defaultProps = {
 	sidebarWidth: 200
+};
+
+var _templateObject$o = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+
+var colorBetweenColors = function colorBetweenColors(color1, color2, percBetween) {
+	var hex = function hex(x) {
+		x = x.toString(16);
+		return x.length === 1 ? '0' + x : x;
+	};
+	var color1RGB = hexToRgb(color1);
+	var color2RGB = hexToRgb(color2);
+
+	var r = Math.ceil(color1RGB.r * percBetween + color2RGB.r * (1 - percBetween));
+	var g = Math.ceil(color1RGB.g * percBetween + color2RGB.g * (1 - percBetween));
+	var b = Math.ceil(color1RGB.b * percBetween + color2RGB.b * (1 - percBetween));
+
+	return '#' + hex(r) + hex(g) + hex(b);
+};
+
+var hexToRgb = function hexToRgb(hex) {
+	// Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+	var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+	hex = hex.replace(shorthandRegex, function (m, r, g, b) {
+		return r + r + g + g + b + b;
+	});
+
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? {
+		r: parseInt(result[1], 16),
+		g: parseInt(result[2], 16),
+		b: parseInt(result[3], 16)
+	} : null;
+};
+var calculateRingStyles = function calculateRingStyles(_ref) {
+	var totalRings = _ref.totalRings,
+	    ringNumber = _ref.ringNumber,
+	    innerColor = _ref.innerColor,
+	    outerColor = _ref.outerColor;
+
+	var maxTime = 3;
+	var minTime = 1;
+
+	var stepPercent = 1 / totalRings / 2;
+	var colorSteps = 1 / (totalRings - 1);
+
+	var spacing = ringNumber * stepPercent;
+	var timeStep = (maxTime - minTime) / totalRings;
+	var thisTime = maxTime / (maxTime - timeStep * ringNumber);
+
+	return '\n        left: ' + spacing * 100 + '%;\n        top: ' + spacing * 100 + '%;\n        width: ' + (1 - spacing * 2) * 100 + '%;\n        height: ' + (1 - spacing * 2) * 100 + '%;\n        border-top-color: ' + colorBetweenColors(innerColor, outerColor, colorSteps * ringNumber) + ';\n        animation: loading ' + thisTime + 's linear infinite;\n    ';
+};
+
+var Container$8 = styled__default.div(_templateObject$o, function (props) {
+	return '\n\t\t\ttext-align: center;\n\t\t';
+});
+var SpinnerWrapper = styled__default.div(_templateObject$o, function (props) {
+	var size = props.size;
+
+
+	var width = 80;
+	var height = 80;
+	switch (size) {
+		case 'small':
+			width = 40;
+			height = 40;
+			break;
+		case 'medium':
+			width = 60;
+			height = 60;
+			break;
+		case 'large':
+			width = 80;
+			height = 80;
+			break;
+		default:
+			break;
+	}
+
+	return '\n\t\t    position: relative;\n\t\t    width: ' + width + 'px;\n\t\t    height: ' + height + 'px;\n\t\t    display: inline-block;\n\t\t';
+});
+var Ring = styled__default.div(_templateObject$o, function (props) {
+	var theme = props.theme,
+	    ringNumber = props.ringNumber,
+	    totalRings = props.totalRings,
+	    innerColor = props.innerColor,
+	    outerColor = props.outerColor;
+
+
+	var styles = '\n\t\t    position: absolute;\n\t\t    border-radius: 50%;\n\t\t    overflow: hidden;\n\t\t    border-top: 3px solid transparent;\n\t\t    border-right: 1px solid transparent;\n\t\t    border-bottom: 1px solid transparent;\n\t\t    border-left: 1px solid transparent;\n\t\t';
+
+	styles += calculateRingStyles({
+		ringNumber: ringNumber,
+		totalRings: totalRings,
+		innerColor: innerColor || theme.white,
+		outerColor: outerColor || theme.primary
+	});
+
+	return styles;
+});
+
+//
+
+var TESpinner = function TESpinner(props) {
+    var renderRings = function renderRings() {
+        var size = props.size,
+            innerColor = props.innerColor,
+            outerColor = props.outerColor;
+
+        var totalRings = 6;
+
+        switch (size) {
+            case 'small':
+                totalRings = 4;
+                break;
+            case 'medium':
+                totalRings = 5;
+                break;
+            case 'large':
+                totalRings = 6;
+                break;
+            default:
+                break;
+        }
+
+        var rings = [];
+        for (var i = 0; i < totalRings; i++) {
+            rings.push(React__default.createElement(Ring, {
+                key: i,
+                ringNumber: i,
+                totalRings: totalRings,
+                innerColor: innerColor,
+                outerColor: outerColor
+            }));
+        }
+        return rings;
+    };
+
+    var size = props.size,
+        className = props.className;
+
+
+    return React__default.createElement(
+        Container$8,
+        { className: className },
+        React__default.createElement(
+            SpinnerWrapper,
+            { size: size },
+            renderRings()
+        )
+    );
+};
+
+TESpinner.propTypes = {
+    size: PropTypes.string,
+    innerColor: PropTypes.string,
+    outerColor: PropTypes.string
+};
+
+TESpinner.defaultProps = {
+    size: 'medium'
 };
 
 function _extends$3() {
@@ -22286,9 +22454,9 @@ var TELink = function TELink(props) {
   return React__default.createElement(Link, props);
 };
 
-var _templateObject$o = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$p = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var Link$1 = styled__default(NavLink)(_templateObject$o, function (props) {
+var Link$1 = styled__default(NavLink)(_templateObject$p, function (props) {
 	var theme = props.theme;
 
 
@@ -22301,17 +22469,17 @@ var TENavLink = function TENavLink(props) {
   return React__default.createElement(Link$1, props);
 };
 
-var _templateObject$p = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$q = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var Li = styled__default.li(_templateObject$p, function (props) {
+var Li = styled__default.li(_templateObject$q, function (props) {
 	return '\n            list-style: none;\n        ';
 });
-var Link$2 = styled__default(NavLink)(_templateObject$p, function (props) {
+var Link$2 = styled__default(NavLink)(_templateObject$q, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tdisplay: block;\n\t\t\tcolor: ' + theme.darkGray + ';\n\t\t\tpadding: 15px 20px;\n\t\t\tcursor: pointer;\n\t\t\tborder-left: 5px solid transparent;\n\t\t\ttransition: color 0.2s ease-in, border 0.2s ease-in;\n\t\t\ttext-decoration: none;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t&.active{\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n        ';
 });
-var Title$3 = styled__default.span(_templateObject$p, function (props) {
+var Title$3 = styled__default.span(_templateObject$q, function (props) {
 	return '\n        \tfont-size: 18px;\n        ';
 });
 
@@ -22356,21 +22524,21 @@ TESideNavLink.defaultProps = {
 
 var TESideNavLink$1 = withRouter(TESideNavLink);
 
-var _templateObject$q = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$r = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var Container$8 = styled__default.div(_templateObject$q, function (props) {
+var Container$9 = styled__default.div(_templateObject$r, function (props) {
 	var theme = props.theme,
 	    sidebarWidth = props.sidebarWidth;
 
 	return '\n\t\t\tposition: fixed;\n\t\t\ttop: 0px;\n\t\t\tbottom: 0px;\n\t\t\tleft: 0px;\n\t\t\tmax-height: 100vh;\n\t\t\theight: 100%;\n\t\t\twidth: ' + sidebarWidth + 'px;\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\tz-index: 20;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\toverflow-y: auto;\n\t\t\tbox-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px, rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;\n\t\t';
 });
-var Logo = styled__default.img(_templateObject$q, function (props) {
+var Logo = styled__default.img(_templateObject$r, function (props) {
 	return '\n\t\t\tobject-fit: contain;\n\t\t\twidth: 100%;\n\t\t\tpadding: 30px 60px;\n\t\t';
 });
-var NavContainer = styled__default.div(_templateObject$q, function (props) {
+var NavContainer = styled__default.div(_templateObject$r, function (props) {
 	return '\n\t\t\theight: 100%;\n\t\t';
 });
-var MainUl = styled__default.ul(_templateObject$q, function (props) {
+var MainUl = styled__default.ul(_templateObject$r, function (props) {
 	return '\n\t\t\tmargin: 0px;\n\t\t\tpadding: 0px;\n\t\t';
 });
 
@@ -22382,7 +22550,7 @@ var TESideNavbar = function TESideNavbar(props) {
 	    className = props.className;
 
 	return React__default.createElement(
-		Container$8,
+		Container$9,
 		{ sidebarWidth: sidebarWidth, className: className },
 		logo && React__default.createElement(
 			TELink,
@@ -22429,25 +22597,25 @@ TESideNavbar.defaultProps = {
 	sidebarWidth: 200
 };
 
-var _templateObject$r = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$s = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
-var Container$9 = styled__default.div(_templateObject$r, function (props) {
+var Container$a = styled__default.div(_templateObject$s, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tposition: relative;\n\t\t\twidth: 100%;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\tpadding-left: 30px;\n\t\t\tbox-shadow: ' + theme.shadowBottom + ';\n\t\t\tz-index: 5;\n\n\t\t\t@media (max-width: 800px) {\n\t\t\t\tpadding-left: 25px;\n\t\t\t}\n\t\t\t@media (max-width: 650px) {\n\t\t\t\tpadding-left: 20px;\n\t\t\t}\n\t\t\t@media (max-width: 450px) {\n\t\t\t\tpadding-left: 15px;\n\t\t\t}\n\t\t';
 });
-var Content$2 = styled__default.div(_templateObject$r, function (props) {
+var Content$2 = styled__default.div(_templateObject$s, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tdisplay: flex;\n\t\t\talign-items: flex-end;\n\t\t\tjustify-content: space-between;\n\t\t\theight: 70px;\n\t\t\tborder-top: 1px solid ' + theme.lightGray + ';\n\t\t\tpadding-right: 30px;\n\n\t\t\t@media (max-width: 800px) {\n\t\t\t\theight: 65px;\n\t\t\t\tpadding-right: 25px;\n\t\t\t}\n\t\t\t@media (max-width: 650px) {\n\t\t\t\theight: 60px;\n\t\t\t\tpadding-right: 20px;\n\t\t\t}\n\t\t\t@media (max-width: 450px) {\n\t\t\t\theight: 55px;\n\t\t\t\tpadding-right: 15px;\n\t\t\t}\n\t\t';
 });
-var Ul = styled__default.ul(_templateObject$r, function (props) {
+var Ul = styled__default.ul(_templateObject$s, function (props) {
 	return '\n\t\t\tmargin: 0px;\n\t\t\tpadding: 0px;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: flex-start;\n\t\t\talign-items: flex-end;\n\t\t\toverflow-x: auto;\n\t\t';
 });
-var Li$1 = styled__default.li(_templateObject$r, function (props) {
+var Li$1 = styled__default.li(_templateObject$s, function (props) {
 	return '\n\t\t\tlist-style: none;\n\t\t\twidth: 100px;\n\t\t\tflex-shrink: 0;\n\t\t';
 });
-var Link$3 = styled__default(TENavLink)(_templateObject$r, function (props) {
+var Link$3 = styled__default(TENavLink)(_templateObject$s, function (props) {
 	var theme = props.theme;
 
 	return '\n\t\t\tdisplay: block;\n\t\t\ttext-align: center;\n\t\t\twidth: 100%;\n\t\t\tline-height: 40px;\n\t\t\tborder-bottom: 4px solid transparent;\n\t\t\tfont-size: 16px;\n\t\t\twhite-space: nowrap;\n\t\t\ttext-decoration: none;\n\t\t\tcolor: ' + theme.darkerGray + ';\n\n\t\t\ttransition: border 0.2s ease-in, color 0.2s ease-in;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t&.active{\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t';
@@ -22462,7 +22630,7 @@ var TESubNavbar = function TESubNavbar(props) {
 
 
 	return React__default.createElement(
-		Container$9,
+		Container$a,
 		{ className: className },
 		React__default.createElement(
 			Content$2,
@@ -22488,22 +22656,22 @@ TESubNavbar.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$s = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$t = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
 
-var Popup$1 = styled__default(TEPopup)(_templateObject$s, function (props) {
+var Popup$1 = styled__default(TEPopup)(_templateObject$t, function (props) {
     return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
 });
-var Title$4 = styled__default.h4(_templateObject$s, function (props) {
+var Title$4 = styled__default.h4(_templateObject$t, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
 });
-var Message$1 = styled__default.p(_templateObject$s, function (props) {
+var Message$1 = styled__default.p(_templateObject$t, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
 });
-var Button$2 = styled__default(TEButton)(_templateObject$s, function (props) {
+var Button$2 = styled__default(TEButton)(_templateObject$t, function (props) {
     var theme = props.theme;
 
     return '\n        border-top: 1px solid ' + theme.primary + ';\n        border-right: none;\n        border-bottom: none;\n        border-left: none;\n        line-height: 2;\n        border-top-left-radius: 0px;\n        border-top-right-radius: 0px;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n        transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;\n\n        :active {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        :hover {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        ';
@@ -22554,30 +22722,30 @@ TEAlert.defaultProps = {
 	buttonTitle: 'Okay'
 };
 
-var _templateObject$t = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$u = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
 
-var Popup$2 = styled__default(TEPopup)(_templateObject$t, function (props) {
+var Popup$2 = styled__default(TEPopup)(_templateObject$u, function (props) {
     return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
 });
-var Title$5 = styled__default.h4(_templateObject$t, function (props) {
+var Title$5 = styled__default.h4(_templateObject$u, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
 });
-var Message$2 = styled__default.p(_templateObject$t, function (props) {
+var Message$2 = styled__default.p(_templateObject$u, function (props) {
     var theme = props.theme;
 
     return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
 });
-var ButtonContainer$2 = styled__default.div(_templateObject$t, function (props) {
+var ButtonContainer$2 = styled__default.div(_templateObject$u, function (props) {
     return '\n            overflow: hidden;\n            display: flex;\n        ';
 });
-var LeftButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
+var LeftButton$1 = styled__default(TEButton)(_templateObject$u, function (props) {
     var theme = props.theme;
 
     return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 20px;\n            border-bottom-right-radius: 0px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: 1px solid ' + theme.primary + ';\n            border-bottom: none;\n            border-left: none;\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n           }\n        ';
 });
-var RightButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
+var RightButton$1 = styled__default(TEButton)(_templateObject$u, function (props) {
     var theme = props.theme;
 
     return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 0px;\n            border-bottom-right-radius: 20px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: 1px solid ' + theme.primary + ';\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n           }\n        ';
@@ -22640,156 +22808,6 @@ TEConfirm.propTypes = {
 TEConfirm.defaultProps = {
 	leftButtonTitle: 'Cancel',
 	rightButtonTitle: 'Confirm'
-};
-
-var _templateObject$u = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
-
-var colorBetweenColors = function colorBetweenColors(color1, color2, percBetween) {
-	var hex = function hex(x) {
-		x = x.toString(16);
-		return x.length === 1 ? '0' + x : x;
-	};
-	var color1RGB = hexToRgb(color1);
-	var color2RGB = hexToRgb(color2);
-
-	var r = Math.ceil(color1RGB.r * percBetween + color2RGB.r * (1 - percBetween));
-	var g = Math.ceil(color1RGB.g * percBetween + color2RGB.g * (1 - percBetween));
-	var b = Math.ceil(color1RGB.b * percBetween + color2RGB.b * (1 - percBetween));
-
-	return '#' + hex(r) + hex(g) + hex(b);
-};
-
-var hexToRgb = function hexToRgb(hex) {
-	// Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-	var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-	hex = hex.replace(shorthandRegex, function (m, r, g, b) {
-		return r + r + g + g + b + b;
-	});
-
-	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-	return result ? {
-		r: parseInt(result[1], 16),
-		g: parseInt(result[2], 16),
-		b: parseInt(result[3], 16)
-	} : null;
-};
-var calculateRingStyles = function calculateRingStyles(_ref) {
-	var totalRings = _ref.totalRings,
-	    ringNumber = _ref.ringNumber,
-	    innerColor = _ref.innerColor,
-	    outerColor = _ref.outerColor;
-
-	var maxTime = 3;
-	var minTime = 1;
-
-	var stepPercent = 1 / totalRings / 2;
-	var colorSteps = 1 / (totalRings - 1);
-
-	var spacing = ringNumber * stepPercent;
-	var timeStep = (maxTime - minTime) / totalRings;
-	var thisTime = maxTime / (maxTime - timeStep * ringNumber);
-
-	return '\n        left: ' + spacing * 100 + '%;\n        top: ' + spacing * 100 + '%;\n        width: ' + (1 - spacing * 2) * 100 + '%;\n        height: ' + (1 - spacing * 2) * 100 + '%;\n        border-top-color: ' + colorBetweenColors(innerColor, outerColor, colorSteps * ringNumber) + ';\n        animation: loading ' + thisTime + 's linear infinite;\n    ';
-};
-
-var Container$a = styled__default.div(_templateObject$u, function (props) {
-	return '\n\t\t\ttext-align: center;\n\t\t';
-});
-var SpinnerWrapper = styled__default.div(_templateObject$u, function (props) {
-	var size = props.size;
-
-
-	var width = 80;
-	var height = 80;
-	switch (size) {
-		case 'small':
-			width = 40;
-			height = 40;
-			break;
-		case 'medium':
-			width = 60;
-			height = 60;
-			break;
-		case 'large':
-			width = 80;
-			height = 80;
-			break;
-		default:
-			break;
-	}
-
-	return '\n\t\t    position: relative;\n\t\t    width: ' + width + 'px;\n\t\t    height: ' + height + 'px;\n\t\t    display: inline-block;\n\t\t';
-});
-var Ring = styled__default.div(_templateObject$u, function (props) {
-	var theme = props.theme,
-	    ringNumber = props.ringNumber,
-	    totalRings = props.totalRings,
-	    innerColor = props.innerColor,
-	    outerColor = props.outerColor;
-
-
-	var styles = '\n\t\t    position: absolute;\n\t\t    border-radius: 50%;\n\t\t    overflow: hidden;\n\t\t    border-top: 3px solid transparent;\n\t\t    border-right: 1px solid transparent;\n\t\t    border-bottom: 1px solid transparent;\n\t\t    border-left: 1px solid transparent;\n\t\t';
-
-	styles += calculateRingStyles({
-		ringNumber: ringNumber,
-		totalRings: totalRings,
-		innerColor: innerColor || theme.white,
-		outerColor: outerColor || theme.primary
-	});
-
-	return styles;
-});
-
-//
-
-var TESpinner = function TESpinner(props) {
-    var renderRings = function renderRings() {
-        var size = props.size,
-            innerColor = props.innerColor,
-            outerColor = props.outerColor;
-
-        var totalRings = 6;
-
-        switch (size) {
-            case 'small':
-                totalRings = 4;
-                break;
-            case 'medium':
-                totalRings = 5;
-                break;
-            case 'large':
-                totalRings = 6;
-                break;
-            default:
-                break;
-        }
-
-        var rings = [];
-        for (var i = 0; i < totalRings; i++) {
-            rings.push(React__default.createElement(Ring, {
-                key: i,
-                ringNumber: i,
-                totalRings: totalRings,
-                innerColor: innerColor,
-                outerColor: outerColor
-            }));
-        }
-        return rings;
-    };
-
-    var size = props.size,
-        className = props.className;
-
-
-    return React__default.createElement(
-        Container$a,
-        { className: className },
-        React__default.createElement(
-            SpinnerWrapper,
-            { size: size },
-            renderRings()
-        )
-    );
 };
 
 var _templateObject$v = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
@@ -24319,13 +24337,15 @@ var initialState = {
 	alertVisible: false,
 	alertTitle: '',
 	alertMessage: '',
+	alertOnClick: undefined, //Gets Defaulted
+	alertButtonTitle: 'Okay', //Gets Defaulted
 
 	confirmTitle: '',
 	confirmMessage: '',
 	confirmVisible: false,
-	confirmLeftOnClick: function confirmLeftOnClick() {},
+	confirmLeftOnClick: undefined, //Gets Defaulted
 	confirmLeftTitle: 'Cancel',
-	confirmRightOnClick: function confirmRightOnClick() {},
+	confirmRightOnClick: undefined, //Gets Defaulted
 	confirmRightTitle: '',
 
 	networkActivityVisible: false,
@@ -24359,43 +24379,53 @@ var TEPopupProvider = function TEPopupProvider(props) {
 	    state = _useReducer2[0],
 	    dispatch = _useReducer2[1];
 
+	var alertTitle = state.alertTitle,
+	    alertMessage = state.alertMessage,
+	    alertVisible = state.alertVisible,
+	    _state$alertOnClick = state.alertOnClick,
+	    alertOnClick = _state$alertOnClick === undefined ? function () {
+		return dispatch({ type: 'hide_alert' });
+	} : _state$alertOnClick,
+	    _state$alertButtonTit = state.alertButtonTitle,
+	    alertButtonTitle = _state$alertButtonTit === undefined ? 'Okay' : _state$alertButtonTit,
+	    confirmTitle = state.confirmTitle,
+	    confirmMessage = state.confirmMessage,
+	    _state$confirmLeftOnC = state.confirmLeftOnClick,
+	    confirmLeftOnClick = _state$confirmLeftOnC === undefined ? function () {
+		return dispatch({ type: 'hide_confirm' });
+	} : _state$confirmLeftOnC,
+	    confirmLeftTitle = state.confirmLeftTitle,
+	    _state$confirmRightOn = state.confirmRightOnClick,
+	    confirmRightOnClick = _state$confirmRightOn === undefined ? function () {
+		return dispatch({ type: 'hide_confirm' });
+	} : _state$confirmRightOn,
+	    confirmRightTitle = state.confirmRightTitle,
+	    confirmVisible = state.confirmVisible,
+	    networkActivityVisible = state.networkActivityVisible,
+	    networkMessage = state.networkMessage;
+
+
 	return React__default.createElement(
 		TEPopupContext.Provider,
 		{ value: { state: state, dispatch: dispatch } },
-		props.children
-	);
-};
-
-var Popups = function Popups(props) {
-	var _useContext = React.useContext(TEPopupContext),
-	    state = _useContext.state,
-	    dispatch = _useContext.dispatch;
-
-	return React__default.createElement(
-		React.Fragment,
-		null,
 		props.children,
 		React__default.createElement(TEAlert, {
-			title: state.alertTitle,
-			message: state.alertMessage,
-			onClick: function onClick() {
-				return dispatch({ type: 'hide_alert' });
-			},
-			visible: state.alertVisible
+			visible: alertVisible,
+			title: alertTitle,
+			message: alertMessage,
+			onClick: alertOnClick,
+			buttonTitle: alertButtonTitle
 		}),
 		React__default.createElement(TEConfirm, {
-			title: state.confirmTitle,
-			message: state.confirmMessage,
-			leftOnClick: state.confirmLeftOnClick,
-			leftButtonTitle: state.confirmLeftTitle,
-			rightOnClick: state.confirmRightOnClick,
-			rightButtonTitle: state.confirmRightTitle,
-			visible: state.confirmVisible
+			visible: confirmVisible,
+			title: confirmTitle,
+			message: confirmMessage,
+			leftOnClick: confirmLeftOnClick,
+			leftButtonTitle: confirmLeftTitle,
+			rightOnClick: confirmRightOnClick,
+			rightButtonTitle: confirmRightTitle
 		}),
-		React__default.createElement(TENetworkActivity, {
-			visible: state.networkActivityVisible,
-			message: state.networkMessage
-		})
+		React__default.createElement(TENetworkActivity, { visible: networkActivityVisible, message: networkMessage })
 	);
 };
 
@@ -24417,11 +24447,7 @@ var TEAppWrapper = function TEAppWrapper(props) {
 				React__default.createElement(
 					TEPopupProvider,
 					null,
-					React__default.createElement(
-						Popups,
-						null,
-						children
-					)
+					children
 				)
 			)
 		)

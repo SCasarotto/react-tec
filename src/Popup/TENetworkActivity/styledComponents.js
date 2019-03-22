@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import TEPopup from './../TEPopup'
-import TESpinner from './../../TESpinner'
+import TESpinner from './../../Layout/TESpinner'
 
 export const Popup = styled(TEPopup)`
 	${(props) => {

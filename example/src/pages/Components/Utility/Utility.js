@@ -6,7 +6,7 @@ import { useBarTitle } from './../../../context/TitleBarContext'
 import TEHelmetSection from './TEHelmetSection'
 import TEScrollToTopSection from './TEScrollToTopSection'
 
-const Home = (props) => {
+const Utility = (props) => {
 	useBarTitle('Components - Utility')
 
 	return (
@@ -26,4 +26,4 @@ const Home = (props) => {
 	)
 }
 
-export default Home
+export default Utility

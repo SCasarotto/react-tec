@@ -45,7 +45,7 @@ export const ComponentWrapper = styled.div`
         `
     }}
 `
-export const Subtitle = styled.h2`
+export const Subtitle = styled.p`
     ${(props) => {
         return `
             font-size: 18px;

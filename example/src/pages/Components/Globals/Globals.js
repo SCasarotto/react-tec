@@ -3,14 +3,11 @@ import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
-//Include the following
-//
-// TEAppWrapper
-// TEPopupContext
-// TEThemeContext
-//
+import TEAppWrapperSection from './TEAppWrapperSection'
+import TEPopupContextSection from './TEPopupContextSection'
+import TEThemeProviderSection from './TEThemeProviderSection'
 
-const Home = (props) => {
+const Globals = (props) => {
 	useBarTitle('Components - Globals')
 
 	return (
@@ -22,10 +19,13 @@ const Home = (props) => {
 			<TEPanelWrapper wrapperHeight={80}>
 				<TEPanel>
 					<h1>Globals</h1>
+					<TEAppWrapperSection />
+					<TEPopupContextSection />
+					<TEThemeProviderSection />
 				</TEPanel>
 			</TEPanelWrapper>
 		</Fragment>
 	)
 }
 
-export default Home
+export default Globals

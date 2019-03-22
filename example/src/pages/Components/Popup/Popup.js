@@ -3,11 +3,6 @@ import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
-// TENetworkActivity,
-// TEPopup,
-// TEPopupForm,
-// TEPopupMultiStepForm,
-
 import TEAlertSection from './TEAlertSection'
 import TEConfirmSection from './TEConfirmSection'
 import TENetworkActivitySection from './TENetworkActivitySection'
@@ -15,7 +10,7 @@ import TEPopupSection from './TEPopupSection'
 import TEPopupFormSection from './TEPopupFormSection'
 import TEPopupMultiStepFormSection from './TEPopupMultiStepFormSection'
 
-const Home = (props) => {
+const Popup = (props) => {
 	useBarTitle('Components - Popup')
 
 	return (
@@ -39,4 +34,4 @@ const Home = (props) => {
 	)
 }
 
-export default Home
+export default Popup

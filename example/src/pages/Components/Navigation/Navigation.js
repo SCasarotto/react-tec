@@ -3,13 +3,6 @@ import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
-//Include the following
-//
-// TESideNavLink
-// TESideNavbar
-// TESwitch
-//
-
 import TELinkSection from './TELinkSection'
 import TENavLinkSection from './TENavLinkSection'
 import TERouteSection from './TERouteSection'
@@ -18,7 +11,7 @@ import TESideNavLinkSection from './TESideNavLinkSection'
 import TESubNavbarSection from './TESubNavbarSection'
 import TESwitchSection from './TESwitchSection'
 
-const Home = (props) => {
+const Navigation = (props) => {
 	useBarTitle('Components - Navigation')
 
 	return (
@@ -43,4 +36,4 @@ const Home = (props) => {
 	)
 }
 
-export default Home
+export default Navigation

@@ -22,7 +22,9 @@ const TEPanelTitle = (props) => {
 
 TEPanelTitle.propTypes = {
 	title: PropTypes.string,
+	leftComponent: PropTypes.node,
 	subtitle: PropTypes.string,
+	rightComponent: PropTypes.node,
 }
 
 export default TEPanelTitle

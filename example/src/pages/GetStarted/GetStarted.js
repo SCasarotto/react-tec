@@ -6,7 +6,7 @@ import { useBarTitle } from './../../context/TitleBarContext'
 import Code from './../../components/Code'
 import Codeblock from './../../components/Codeblock'
 
-const Home = (props) => {
+const GetStarted = (props) => {
 	useBarTitle('Get Started')
 
 	return (
@@ -57,4 +57,4 @@ ReactDOM.render(<Main />, document.getElementById('root'))`}
 	)
 }
 
-export default Home
+export default GetStarted

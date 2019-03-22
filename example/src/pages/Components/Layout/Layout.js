@@ -12,7 +12,15 @@ import { useBarTitle } from './../../../context/TitleBarContext'
 // TETitleBar
 //
 
-const Home = (props) => {
+import TEBodyContainerSection from './TEBodyContainerSection'
+import TEErrorLoadingAlertSection from './TEErrorLoadingAlertSection'
+import TEPanelSection from './TEPanelSection'
+import TEPanelTitleSection from './TEPanelTitleSection'
+import TEPanelWrapperSection from './TEPanelWrapperSection'
+import TESpinnerSection from './TESpinnerSection'
+import TETitleBarSection from './TETitleBarSection'
+
+const Layout = (props) => {
 	useBarTitle('Components - Layout')
 
 	return (
@@ -24,10 +32,17 @@ const Home = (props) => {
 			<TEPanelWrapper wrapperHeight={80}>
 				<TEPanel>
 					<h1>Layout</h1>
+					<TEBodyContainerSection />
+					<TEErrorLoadingAlertSection />
+					<TEPanelSection />
+					<TEPanelTitleSection />
+					<TEPanelWrapperSection />
+					<TESpinnerSection />
+					<TETitleBarSection />
 				</TEPanel>
 			</TEPanelWrapper>
 		</Fragment>
 	)
 }
 
-export default Home
+export default Layout

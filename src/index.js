@@ -26,6 +26,7 @@ import TEPanelTitle from './Layout/TEPanelTitle'
 import TEPanelWrapper from './Layout/TEPanelWrapper'
 import TETitleBar from './Layout/TETitleBar'
 import TEBodyContainer from './Layout/TEBodyContainer'
+import TESpinner from './Layout/TESpinner'
 
 import TERoute from './Navigation/TERoute'
 import TESwitch from './Navigation/TESwitch'
@@ -42,8 +43,6 @@ import TEPopup from './Popup/TEPopup'
 import TEPopupForm from './Popup/TEPopupForm'
 import TEPopupMultiStepForm from './Popup/TEPopupMultiStepForm'
 
-import TESpinner from './TESpinner'
-
 //Utility
 import TEScrollToTop from './Utility/TEScrollToTop'
 import TEHelmet from './Utility/TEHelmet'
@@ -51,9 +50,10 @@ import TEHelmet from './Utility/TEHelmet'
 // import TEEmailLayout from './Email/TEEmailLayout' //Not Sure Yet
 // import TESimpleEmail from './Email/TESimpleEmail' //Not Sure Yet
 
-import { TEThemeProvider } from './TEThemeContext'
-import { TEPopupContext, TEPopupProvider } from './TEPopupContext'
-import TEAppWrapper from './TEAppWrapper'
+//Globals
+import { TEThemeProvider } from './Globals/TEThemeContext'
+import { TEPopupContext, TEPopupProvider } from './Globals/TEPopupContext'
+import TEAppWrapper from './Globals/TEAppWrapper'
 
 export {
 	TEButton,

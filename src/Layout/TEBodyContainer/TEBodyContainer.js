@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { BodyContainer } from './styledComponents'
 
-const TEBodyContainer = (props) => {
-	const { children, ...rest } = props
-	return <BodyContainer {...rest}>{children}</BodyContainer>
+const TEBodyContainer = (props) => <BodyContainer {...props} />
+
+TEBodyContainer.propTypes = {
+	sidebarWidth: PropTypes.number,
 }
 
 TEBodyContainer.defaultProps = {

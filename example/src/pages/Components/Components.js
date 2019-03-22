@@ -19,6 +19,7 @@ import Popup from './Popup'
 import Utility from './Utility'
 
 const Base = () => {
+	useBarTitle('Components')
 	return (
 		<TEPanelWrapper wrapperHeight={80}>
 			<TEPanel>
@@ -59,9 +60,7 @@ const Base = () => {
 	)
 }
 
-const Home = (props) => {
-	useBarTitle('Components')
-
+const Components = (props) => {
 	return (
 		<Fragment>
 			<TEHelmet
@@ -91,4 +90,4 @@ const Home = (props) => {
 	)
 }
 
-export default Home
+export default Components

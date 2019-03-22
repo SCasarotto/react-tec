@@ -29,7 +29,7 @@ import TESearchSelectRowSection from './TESearchSelectRowSection'
 import TESegmentedGroupSection from './TESegmentedGroupSection'
 import TETextareaSection from './TETextareaSection'
 
-const Home = (props) => {
+const Form = (props) => {
 	useBarTitle('Components - Form')
 
 	return (
@@ -68,4 +68,4 @@ const Home = (props) => {
 	)
 }
 
-export default Home
+export default Form

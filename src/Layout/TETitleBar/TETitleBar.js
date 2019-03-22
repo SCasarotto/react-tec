@@ -24,7 +24,9 @@ const TETitleBar = (props) => {
 
 TETitleBar.propTypes = {
 	title: PropTypes.string,
+	leftComponent: PropTypes.node,
 	subtitle: PropTypes.string,
+	rightComponent: PropTypes.node,
 }
 
 export default TETitleBar

@@ -17,7 +17,7 @@ const Layout = (props) => {
 					{ title: 'Components', to: '/components' },
 				]}
 			/>
-			<TEBodyContainer wrapperHeight={80}>
+			<TEBodyContainer>
 				<TETitleBar title={barTitle} />
 				{children}
 			</TEBodyContainer>
