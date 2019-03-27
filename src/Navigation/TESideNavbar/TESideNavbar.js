@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-import TELink from './../TELink'
 import TESideNavLink from './../TESideNavLink'
 
 import { Container, Logo, NavContainer, MainUl } from './styledComponents'
@@ -11,9 +11,9 @@ const TESideNavbar = (props) => {
 	return (
 		<Container sidebarWidth={sidebarWidth} className={className}>
 			{logo && (
-				<TELink to="/">
+				<Link to="/">
 					<Logo src={logo} alt="brandmark" title="Rittal" />
-				</TELink>
+				</Link>
 			)}
 			<NavContainer>
 				<MainUl>

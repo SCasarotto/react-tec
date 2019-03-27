@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
-import { TEHelmet, TEPanel, TEPanelWrapper, TELink } from 'react-tec'
+import { Link } from 'react-router-dom'
+
+import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../context/TitleBarContext'
 
@@ -49,7 +51,7 @@ ReactDOM.render(<Main />, document.getElementById('root'))`}
 					</Codeblock>
 					<p>
 						From here you can now start to use the different React TEC{' '}
-						<TELink to="/components">components</TELink>.
+						<Link to="/components">components</Link>.
 					</p>
 				</TEPanel>
 			</TEPanelWrapper>

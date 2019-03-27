@@ -28,10 +28,6 @@ import TETitleBar from './Layout/TETitleBar'
 import TEBodyContainer from './Layout/TEBodyContainer'
 import TESpinner from './Layout/TESpinner'
 
-import TERoute from './Navigation/TERoute'
-import TESwitch from './Navigation/TESwitch'
-import TELink from './Navigation/TELink'
-import TENavLink from './Navigation/TENavLink'
 import TESideNavLink from './Navigation/TESideNavLink'
 import TESideNavbar from './Navigation/TESideNavbar'
 import TESubNavbar from './Navigation/TESubNavbar'
@@ -91,10 +87,6 @@ export {
 	TEPopupForm,
 	TEPopupMultiStepForm,
 	TESpinner,
-	TERoute,
-	TESwitch,
-	TELink,
-	TENavLink,
 	TESideNavLink,
 	TEBodyContainer,
 	TESubNavbar,

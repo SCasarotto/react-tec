@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import TENavLink from './../TENavLink'
+import { NavLink } from 'react-router-dom'
 
 export const Container = styled.div`
 	${(props) => {
@@ -72,7 +72,7 @@ export const Li = styled.li`
 		`
 	}}
 `
-export const Link = styled(TENavLink)`
+export const Link = styled(NavLink)`
 	${(props) => {
 		const { theme } = props
 		return `

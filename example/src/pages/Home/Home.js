@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
-import { TEHelmet, TEPanel, TEPanelWrapper, TELink } from 'react-tec'
+import { Link } from 'react-router-dom'
+
+import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../context/TitleBarContext'
 
@@ -36,11 +38,11 @@ const Home = (props) => {
 						examples of every component in the library.
 					</p>
 					<h2>
-						<TELink to="/get-started">Get Started</TELink>
+						<Link to="/get-started">Get Started</Link>
 					</h2>
 					<p>Use these instructions to get up and running with React TEC.</p>
 					<h2>
-						<TELink to="/components">Components</TELink>
+						<Link to="/components">Components</Link>
 					</h2>
 					<p>
 						The components documentation is broken down into different components types
@@ -48,29 +50,29 @@ const Home = (props) => {
 					</p>
 					<ul>
 						<li>
-							<TELink to="/components/globals">Globals</TELink> - App wrappers of some
+							<Link to="/components/globals">Globals</Link> - App wrappers of some
 							global contexts (navigation, popups, overlays, etc.)
 						</li>
 						<li>
-							<TELink to="/components/layout">Layout</TELink> - Page layout components
+							<Link to="/components/layout">Layout</Link> - Page layout components
 							(page wrapper, side bar, title bar, etc.)
 						</li>
 						<li>
-							<TELink to="/components/navigation">Navigation</TELink> - Navigational
+							<Link to="/components/navigation">Navigation</Link> - Navigational
 							components (links, navbar, sidenav, etc.)
 						</li>
 						<li>
-							<TELink to="/components/form">Form</TELink> - Form inputs of all shapes
-							and sizes (Largest of all component types)
+							<Link to="/components/form">Form</Link> - Form inputs of all shapes and
+							sizes (Largest of all component types)
 						</li>
 						<li>
-							<TELink to="/components/popup">Popup</TELink> - Simple popup (modal)
+							<Link to="/components/popup">Popup</Link> - Simple popup (modal)
 							components (network activity, alert, confirm, etc.)
 						</li>
 						<li>
-							<TELink to="/components/utility">Utility</TELink> - Misc components used
-							for some functionality but having no visual impact (Will likely be
-							replaced by hooks)
+							<Link to="/components/utility">Utility</Link> - Misc components used for
+							some functionality but having no visual impact (Will likely be replaced
+							by hooks)
 						</li>
 					</ul>
 				</TEPanel>

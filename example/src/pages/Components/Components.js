@@ -1,13 +1,6 @@
 import React, { Fragment } from 'react'
-import {
-	TEHelmet,
-	TESubNavbar,
-	TEPanelWrapper,
-	TEPanel,
-	TELink,
-	TESwitch,
-	TERoute,
-} from 'react-tec'
+import { Link, Route, Switch } from 'react-router-dom'
+import { TEHelmet, TESubNavbar, TEPanelWrapper, TEPanel } from 'react-tec'
 
 import { useBarTitle } from './../../context/TitleBarContext'
 
@@ -30,27 +23,27 @@ const Base = () => {
 				</p>
 				<ul>
 					<li>
-						<TELink to="/components/globals">Globals</TELink> - App wrappers of some
-						global contexts (navigation, popups, overlays, etc.)
+						<Link to="/components/globals">Globals</Link> - App wrappers of some global
+						contexts (navigation, popups, overlays, etc.)
 					</li>
 					<li>
-						<TELink to="/components/layout">Layout</TELink> - Page layout components
-						(page wrapper, side bar, title bar, etc.)
+						<Link to="/components/layout">Layout</Link> - Page layout components (page
+						wrapper, side bar, title bar, etc.)
 					</li>
 					<li>
-						<TELink to="/components/navigation">Navigation</TELink> - Navigational
+						<Link to="/components/navigation">Navigation</Link> - Navigational
 						components (links, navbar, sidenav, etc.)
 					</li>
 					<li>
-						<TELink to="/components/form">Form</TELink> - Form inputs of all shapes and
+						<Link to="/components/form">Form</Link> - Form inputs of all shapes and
 						sizes (Largest of all component types)
 					</li>
 					<li>
-						<TELink to="/components/popup">Popup</TELink> - Simple popup (modal)
-						components (network activity, alert, confirm, etc.)
+						<Link to="/components/popup">Popup</Link> - Simple popup (modal) components
+						(network activity, alert, confirm, etc.)
 					</li>
 					<li>
-						<TELink to="/components/utility">Utility</TELink> - Misc components used for
+						<Link to="/components/utility">Utility</Link> - Misc components used for
 						some functionality but having no visual impact (Will likely be replaced by
 						hooks)
 					</li>
@@ -77,15 +70,15 @@ const Components = (props) => {
 					{ children: 'Utility', to: '/components/utility' },
 				]}
 			/>
-			<TESwitch>
-				<TERoute path="/components" exact component={Base} />
-				<TERoute path="/components/globals" component={Globals} />
-				<TERoute path="/components/layout" component={Layout} />
-				<TERoute path="/components/navigation" component={Navigation} />
-				<TERoute path="/components/form" component={Form} />
-				<TERoute path="/components/popup" component={Popup} />
-				<TERoute path="/components/utility" component={Utility} />
-			</TESwitch>
+			<Switch>
+				<Route path="/components" exact component={Base} />
+				<Route path="/components/globals" component={Globals} />
+				<Route path="/components/layout" component={Layout} />
+				<Route path="/components/navigation" component={Navigation} />
+				<Route path="/components/form" component={Form} />
+				<Route path="/components/popup" component={Popup} />
+				<Route path="/components/utility" component={Utility} />
+			</Switch>
 		</Fragment>
 	)
 }

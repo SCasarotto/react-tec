@@ -1,6 +1,6 @@
 {
   "name": "react-tec",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://www.react-tec.com/",
   "description": "React Component Library used at 38th Street Studios",
   "author": "SCasarotto",
@@ -24,15 +24,15 @@
     "react-datepicker": "^2.1.0",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.4.0",
-    "react-power-select": "^1.0.0-beta.15",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-power-select": "^1.0.0-beta.15"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "styled-components": "^4.1.3"
+    "styled-components": "^4.1.3",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
