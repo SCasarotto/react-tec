@@ -3413,6 +3413,7 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
+//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -19772,6 +19773,36 @@ TESpinner.defaultProps = {
     size: 'medium'
 };
 
+var TEPrivateRoute = function TEPrivateRoute(props) {
+	var isAuthenticated = props.isAuthenticated,
+	    hasPermissions = props.hasPermissions,
+	    authPath = props.authPath,
+	    accessDeniedPath = props.accessDeniedPath,
+	    Component = props.component,
+	    rest = objectWithoutProperties(props, ['isAuthenticated', 'hasPermissions', 'authPath', 'accessDeniedPath', 'component']);
+
+	return React__default.createElement(reactRouterDom.Route, _extends({}, rest, {
+		render: function render(props) {
+			if (isAuthenticated && hasPermissions) {
+				return Component ? React__default.createElement(Component, props) : React__default.createElement(reactRouterDom.Route, rest);
+			} else if (!isAuthenticated) {
+				return React__default.createElement(reactRouterDom.Redirect, { to: authPath });
+			} else if (!hasPermissions) {
+				return React__default.createElement(reactRouterDom.Redirect, { to: accessDeniedPath });
+			} else {
+				//Can't Happen
+				return null;
+			}
+		}
+	}));
+};
+
+TEPrivateRoute.defaultProps = {
+	hasPermissions: true,
+	authPath: '/signin',
+	accessDeniedPath: '/403'
+};
+
 var _templateObject$p = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Li = styled__default.li(_templateObject$p, function (props) {
@@ -21792,6 +21823,7 @@ exports.TEPopup = TEPopup;
 exports.TEPopupForm = TEPopupForm;
 exports.TEPopupMultiStepForm = TEPopupMultiStepForm;
 exports.TESpinner = TESpinner;
+exports.TEPrivateRoute = TEPrivateRoute;
 exports.TESideNavLink = TESideNavLink$1;
 exports.TEBodyContainer = TEBodyContainer;
 exports.TESubNavbar = TESubNavbar;

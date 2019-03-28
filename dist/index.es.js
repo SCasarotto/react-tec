@@ -2,7 +2,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import React__default, { Component, createElement, useState, useEffect, Fragment, createContext, useReducer, useRef } from 'react';
 import PropTypes from 'prop-types';
 import reactDom, { findDOMNode } from 'react-dom';
-import { NavLink, Link, withRouter as withRouter$1, BrowserRouter } from 'react-router-dom';
+import { Route, Redirect, NavLink, Link, withRouter as withRouter$1, BrowserRouter } from 'react-router-dom';
 import { matchPath, withRouter } from 'react-router';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
@@ -3404,6 +3404,7 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
+//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -19763,6 +19764,36 @@ TESpinner.defaultProps = {
     size: 'medium'
 };
 
+var TEPrivateRoute = function TEPrivateRoute(props) {
+	var isAuthenticated = props.isAuthenticated,
+	    hasPermissions = props.hasPermissions,
+	    authPath = props.authPath,
+	    accessDeniedPath = props.accessDeniedPath,
+	    Component$$1 = props.component,
+	    rest = objectWithoutProperties(props, ['isAuthenticated', 'hasPermissions', 'authPath', 'accessDeniedPath', 'component']);
+
+	return React__default.createElement(Route, _extends({}, rest, {
+		render: function render(props) {
+			if (isAuthenticated && hasPermissions) {
+				return Component$$1 ? React__default.createElement(Component$$1, props) : React__default.createElement(Route, rest);
+			} else if (!isAuthenticated) {
+				return React__default.createElement(Redirect, { to: authPath });
+			} else if (!hasPermissions) {
+				return React__default.createElement(Redirect, { to: accessDeniedPath });
+			} else {
+				//Can't Happen
+				return null;
+			}
+		}
+	}));
+};
+
+TEPrivateRoute.defaultProps = {
+	hasPermissions: true,
+	authPath: '/signin',
+	accessDeniedPath: '/403'
+};
+
 var _templateObject$p = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Li = styled.li(_templateObject$p, function (props) {
@@ -21748,5 +21779,5 @@ var TEAppWrapper = function TEAppWrapper(props) {
 	);
 };
 
-export { TEButton, TEFileInput, TEFileManagerRow, TEFileRow, TEForm, TEImageRow, TEInput, TEInputRow, TELabel, TEMultiStepForm, TERow, TECheckboxInput, TEDatetimeInput, TEDatetimeRow, TERadioButtonInput, TECheckboxGroup, TERadioButtonGroup, TESearchSelectInput, TESearchSelectRow, TESegmentedGroup, TETextarea, TEThemeProvider, TEErrorLoadingAlert, TEPanel, TEPanelTitle, TEPannelWrapper as TEPanelWrapper, TETitleBar, TESideNavbar, TEAlert, TEConfirm, TENetworkActivity, TEPopup, TEPopupForm, TEPopupMultiStepForm, TESpinner, TESideNavLink$1 as TESideNavLink, TEBodyContainer, TESubNavbar, TEScrollToTop, TEHelmet, TEPopupContext, TEPopupProvider, TEAppWrapper };
+export { TEButton, TEFileInput, TEFileManagerRow, TEFileRow, TEForm, TEImageRow, TEInput, TEInputRow, TELabel, TEMultiStepForm, TERow, TECheckboxInput, TEDatetimeInput, TEDatetimeRow, TERadioButtonInput, TECheckboxGroup, TERadioButtonGroup, TESearchSelectInput, TESearchSelectRow, TESegmentedGroup, TETextarea, TEThemeProvider, TEErrorLoadingAlert, TEPanel, TEPanelTitle, TEPannelWrapper as TEPanelWrapper, TETitleBar, TESideNavbar, TEAlert, TEConfirm, TENetworkActivity, TEPopup, TEPopupForm, TEPopupMultiStepForm, TESpinner, TEPrivateRoute, TESideNavLink$1 as TESideNavLink, TEBodyContainer, TESubNavbar, TEScrollToTop, TEHelmet, TEPopupContext, TEPopupProvider, TEAppWrapper };
 //# sourceMappingURL=index.es.js.map

@@ -28,6 +28,7 @@ import TETitleBar from './Layout/TETitleBar'
 import TEBodyContainer from './Layout/TEBodyContainer'
 import TESpinner from './Layout/TESpinner'
 
+import TEPrivateRoute from './Navigation/TEPrivateRoute'
 import TESideNavLink from './Navigation/TESideNavLink'
 import TESideNavbar from './Navigation/TESideNavbar'
 import TESubNavbar from './Navigation/TESubNavbar'
@@ -87,6 +88,7 @@ export {
 	TEPopupForm,
 	TEPopupMultiStepForm,
 	TESpinner,
+	TEPrivateRoute,
 	TESideNavLink,
 	TEBodyContainer,
 	TESubNavbar,
