@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <!-- and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). -->
 
+## 0.1.0 - 03-28-2019
+
+### Changed
+
+-   Moved react-router and react-router-dom to peer dependencies instead of dependencies.
+
+### Removed
+
+All of these were basically just wrapper components
+
+-   TELink
+-   TENavLink
+-   TERoute
+-   TESwitch
+
 ## 0.1.0 - 03-22-2019
 
 ### INITIAL RELEASE!

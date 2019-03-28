@@ -14,9 +14,9 @@ The package can be installed via NPM:
 
 `yarn add react-tec` or `npm install react-tec --save`
 
-You will also need to install [styled-components](https://www.styled-components.com/)
+You will also need to install [styled-components](https://www.styled-components.com/) [react-route and react-router-dom](https://reacttraining.com/react-router/).
 
-`yarn add styled-components` or `npm install styled-components --save`
+`yarn add styled-components react-router react-router-dom` or `npm install styled-components react-router react-router-dom --save`
 
 ## Usage
 

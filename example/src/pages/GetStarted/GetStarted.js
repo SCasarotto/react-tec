@@ -26,11 +26,17 @@ const GetStarted = (props) => {
 					</p>
 					<p>
 						You will also need to install{' '}
-						<a href="https://www.styled-components.com/">styled-components</a>
+						<a href="https://www.styled-components.com/">styled-components</a>,{' '}
+						<a href="https://reacttraining.com/react-router/">
+							react-route and react-router-dom
+						</a>
+						.
 					</p>
 					<p>
-						<Code>yarn add styled-components</Code> or{' '}
-						<Code>npm install styled-components --save</Code>
+						<Code>yarn add styled-components react-router react-router-dom</Code> or{' '}
+						<Code>
+							npm install styled-components react-router react-router-dom --save
+						</Code>
 					</p>
 					<h2>Hello World</h2>
 					<p>
