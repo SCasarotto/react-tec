@@ -1,3 +1,3 @@
-import TEInput from './TEInput';
+import TEInput from './TEInput'
 
-export default TEInput;
+export default TEInput

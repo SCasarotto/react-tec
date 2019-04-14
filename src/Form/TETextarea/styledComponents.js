@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Textarea = styled.textarea`
-    ${(props) => {
-        const { disabled, theme } = props
+	${(props) => {
+		const { disabled, theme } = props
 
-        return `
+		return `
             position: relative;
             display: block;
             width: 100%;
@@ -30,5 +30,5 @@ export const Textarea = styled.textarea`
                 box-shadow: 0 0 0 1px ${disabled ? theme.lighterGray : theme.primary} inset;
             }
         `
-    }}
+	}}
 `

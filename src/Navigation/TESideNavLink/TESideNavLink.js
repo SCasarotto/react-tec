@@ -15,11 +15,12 @@ const TESideNavLink = (props) => {
 		<Li className={className}>
 			<Link
 				isActive={() => matchPath(location.pathname, { path: activePath || to, exact })}
-				activeClassName="active"
+				activeClassName='active'
 				to={to}
 				exact={exact}
+				className='TESideNavLinkLink'
 			>
-				{title && <Title>{title}</Title>}
+				{title && <Title className='TESideNavLinkTitle'>{title}</Title>}
 				{children}
 			</Link>
 		</Li>

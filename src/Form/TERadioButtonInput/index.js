@@ -1,3 +1,3 @@
-import TERadioButtonInput from './TERadioButtonInput';
+import TERadioButtonInput from './TERadioButtonInput'
 
-export default TERadioButtonInput;
+export default TERadioButtonInput

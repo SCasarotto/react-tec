@@ -5,23 +5,23 @@ import TELabel from './../TELabel'
 import TECheckboxInput from './../TECheckboxInput'
 
 export const Container = styled(TERow)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             margin-bottom: 10px;
             display: inline-block;
             vertical-align: top;
         `
-    }}
+	}}
 `
 export const InputWrapper = styled.div`
-    ${(props) => {
-        const { scrolling, theme } = props
-        return `
+	${(props) => {
+		const { scrolling, theme } = props
+		return `
             display: flex;
             flex-wrap: wrap;
             ${
-                scrolling
-                    ? `
+				scrolling
+					? `
                     height: 300px;
                     overflow-y: scroll;
                     background-color: ${theme.white};
@@ -29,36 +29,36 @@ export const InputWrapper = styled.div`
                     border: 1px solid ${theme.lightGray};
                     border-radius: 5;
                 `
-                    : ''
-            }
+					: ''
+			}
         `
-    }}
+	}}
 `
 
 export const RowWrarpper = styled(TERow)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             margin-bottom: 5px;
             display: flex;
             align-items: center;
         `
-    }}
+	}}
 `
 
 export const Checkbox = styled(TECheckboxInput)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: inline-block;
             vertical-align: middle;
             cursor: pointer;
         `
-    }}
+	}}
 `
 export const Label = styled(TELabel)`
-    ${(props) => {
-        const { theme, disabled } = props
+	${(props) => {
+		const { theme, disabled } = props
 
-        return `
+		return `
             width: auto;
             display: inline-block;
             vertical-align: middle;
@@ -72,5 +72,5 @@ export const Label = styled(TELabel)`
                 fontSize: 12px;
             };
         `
-    }}
+	}}
 `

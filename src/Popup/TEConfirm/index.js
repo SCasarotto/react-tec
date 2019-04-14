@@ -1,3 +1,3 @@
-import TEConfirm from './TEConfirm';
+import TEConfirm from './TEConfirm'
 
-export default TEConfirm;
+export default TEConfirm

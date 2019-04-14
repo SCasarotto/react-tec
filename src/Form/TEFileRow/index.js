@@ -1,3 +1,3 @@
-import TEFileRow from './TEFileRow';
+import TEFileRow from './TEFileRow'
 
-export default TEFileRow;
+export default TEFileRow

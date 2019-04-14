@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             position: relative;
             width: 100%;
             background-color: ${theme.white};
@@ -20,11 +20,11 @@ export const Container = styled.div`
                 padding-left: 15px;
             }
         `
-    }}
+	}}
 `
 export const Content = styled.div`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -44,12 +44,12 @@ export const Content = styled.div`
                 padding-right: 15px;
             }
         `
-    }}
+	}}
 `
 export const Title = styled.h1`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             font-size: 36px;
             margin-top: 0px;
             margin-bottom: 0px;
@@ -68,21 +68,21 @@ export const Title = styled.h1`
                 font-size: 20px;
             }
         `
-    }}
+	}}
 `
 export const ComponentWrapper = styled.div`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             width: auto;
         `
-    }}
+	}}
 `
 export const Subtitle = styled.h2`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             font-size: 22px;
             margin-bottom: 0px;
             margin-top: 0px;
         `
-    }}
+	}}
 `

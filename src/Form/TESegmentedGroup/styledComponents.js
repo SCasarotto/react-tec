@@ -5,24 +5,24 @@ import TELabel from './../TELabel'
 import TERadioButtonInput from './../TERadioButtonInput'
 
 export const Row = styled(TERow)`
-    ${(props) => {
-        const { inline } = props
+	${(props) => {
+		const { inline } = props
 
-        if (inline) {
-            return `
+		if (inline) {
+			return `
                 display: flex;
                 justify-content: space-between;
             `
-        } else {
-            return ``
-        }
-    }}
+		} else {
+			return ``
+		}
+	}}
 `
 export const Label = styled(TELabel)`
-    ${(props) => {
-        const { inline } = props
+	${(props) => {
+		const { inline } = props
 
-        return `
+		return `
             width: ${inline ? 'auto' : '100%'};
             align-self: ${inline ? 'center' : 'auto'};
             text-align: left;
@@ -35,43 +35,43 @@ export const Label = styled(TELabel)`
                 font-size: 16px;
             }
         `
-    }}
+	}}
 `
 export const SegmentedContainer = styled.div`
-    ${(props) => {
-        const { inline } = props
+	${(props) => {
+		const { inline } = props
 
-        if (inline) {
-            return `
+		if (inline) {
+			return `
                 display: inline-block;
                 width: auto;
                 white-space: nowrap;
                 align-self: center;
             `
-        } else {
-            return ``
-        }
-    }}
+		} else {
+			return ``
+		}
+	}}
 `
 export const LabelWrapper = styled.div`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: inline-block;
             width: auto;
         `
-    }}
+	}}
 `
 export const Input = styled(TERadioButtonInput)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: none;
         `
-    }}
+	}}
 `
 export const InputLabel = styled(TELabel)`
-    ${(props) => {
-        const { first, last, checked, disabled, theme } = props
-        let styles = `
+	${(props) => {
+		const { first, last, checked, disabled, theme } = props
+		let styles = `
             display: inline-block;
             width: auto;
             border: 1px solid ${checked ? theme.primary : theme.lightGray};
@@ -97,19 +97,19 @@ export const InputLabel = styled(TELabel)`
             }
         `
 
-        if (first) {
-            styles += `
+		if (first) {
+			styles += `
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
             `
-        }
-        if (last) {
-            styles += `
+		}
+		if (last) {
+			styles += `
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px;
             `
-        }
+		}
 
-        return styles
-    }}
+		return styles
+	}}
 `

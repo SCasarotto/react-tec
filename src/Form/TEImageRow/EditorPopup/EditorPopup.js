@@ -24,6 +24,7 @@ const TEImageUpload = (props) => {
 	const editor = useRef(null)
 
 	const {
+		className,
 		visible,
 		file,
 
@@ -37,11 +38,12 @@ const TEImageUpload = (props) => {
 			visible={visible}
 			onSubmit={() => onSubmit(editor.current)}
 			onClose={onCancel}
-			onCancelTitle="Cancel"
+			onCancelTitle='Cancel'
 			onSubmitTitle={onSubmitTitle}
+			className={className}
 		>
-			<Container>
-				<Row>
+			<Container className='TEImageRowPopupContainer'>
+				<Row className='TEImageRowPopupRow'>
 					<AvatarEditor
 						ref={editor}
 						image={file}
@@ -54,27 +56,36 @@ const TEImageUpload = (props) => {
 						rotate={rotation}
 					/>
 				</Row>
-				<Row>
-					<TELabel htmlFor="scale">Zoom</TELabel>
+				<Row className='TEImageRowPopupRow'>
+					<TELabel htmlFor='scale' className='TEImageRowPopupZoomTitle'>
+						Zoom
+					</TELabel>
 					<input
-						name="scale"
-						id="scale"
-						type="range"
+						name='scale'
+						id='scale'
+						type='range'
 						onChange={(e) => setEditorScale(Number(e.target.value))}
-						min="0.5"
-						max="2.5"
-						step="0.01"
+						min='0.5'
+						max='2.5'
+						step='0.01'
 						value={editorScale}
+						className='TEImageRowPopupZoomSlider'
 					/>
 				</Row>
-				<Row>
-					<TELabel>Rotate</TELabel>
-					<RotateButtonWrapper>
-						<RotateButton onClick={() => setRotation(rotation + 90)}>
-							<UndoRotationIcon />
+				<Row className='TEImageRowPopupRow'>
+					<TELabel className='TEImageRowPopupRotateLabel'>Rotate</TELabel>
+					<RotateButtonWrapper className='TEImageRowPopupRotateButtonWrapper'>
+						<RotateButton
+							className='TEImageRowPopupRotateButton'
+							onClick={() => setRotation(rotation + 90)}
+						>
+							<UndoRotationIcon className='TEImageRowPopupRotateIcon' />
 						</RotateButton>
-						<RotateButton onClick={() => setRotation(rotation - 90)}>
-							<RedoRotationIcon />
+						<RotateButton
+							className='TEImageRowPopupRotateButton'
+							onClick={() => setRotation(rotation - 90)}
+						>
+							<RedoRotationIcon className='TEImageRowPopupRotateIcon' />
 						</RotateButton>
 					</RotateButtonWrapper>
 				</Row>
@@ -82,8 +93,6 @@ const TEImageUpload = (props) => {
 		</TEPopupForm>
 	)
 }
-
-TEImageUpload.propTypes = {}
 
 TEImageUpload.defaultProps = {
 	onSubmitTitle: 'Submit',

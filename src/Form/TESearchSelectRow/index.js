@@ -1,3 +1,3 @@
-import TESearchSelectRow from './TESearchSelectRow';
+import TESearchSelectRow from './TESearchSelectRow'
 
-export default TESearchSelectRow;
+export default TESearchSelectRow

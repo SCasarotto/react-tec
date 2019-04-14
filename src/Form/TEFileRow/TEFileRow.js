@@ -12,41 +12,44 @@ import TEFileInput from './../TEFileInput'
 //import {} from './styledComponents'
 
 const TEFileRow = (props) => {
-    const {
-        //Row
-        size,
-        last,
-        className,
+	const {
+		//Row
+		size,
+		last,
+		className,
 
-        //Label
-        title,
+		//Label
+		title,
 
-        //Both
-        labelForKey,
+		//Both
+		labelForKey,
 
-        ...rest
-    } = props
+		...rest
+	} = props
 
-    return (
-        <TERow size={size} last={last} className={className}>
-            <TELabel htmlFor={labelForKey} required={rest.required} disabled={rest.disabled}>
-                {title}
-            </TELabel>
-            <TEFileInput id={labelForKey} {...rest} />
-        </TERow>
-    )
+	return (
+		<TERow size={size} last={last} className={className}>
+			<TELabel
+				htmlFor={labelForKey}
+				required={rest.required}
+				disabled={rest.disabled}
+				className='TEFileRowTitle'
+			>
+				{title}
+			</TELabel>
+			<TEFileInput id={labelForKey} className='TEFileRowInput' {...rest} />
+		</TERow>
+	)
 }
 
 TEFileRow.propTypes = {
-    //Row
-    size: PropTypes.string,
-    last: PropTypes.bool,
-    title: PropTypes.string,
+	//Row
+	size: PropTypes.string,
+	last: PropTypes.bool,
+	title: PropTypes.string,
 
-    //Both
-    labelForKey: PropTypes.string,
+	//Both
+	labelForKey: PropTypes.string,
 }
-
-TEFileRow.defaultProps = {}
 
 export default TEFileRow

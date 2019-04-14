@@ -4,20 +4,20 @@ import TEPopup from './../TEPopup'
 import TEButton from './../../Form/TEButton'
 
 export const Popup = styled(TEPopup)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             & > div{
                 width: 90%;
                 max-width: 600px;
                 margin: 100px auto;
             }
         `
-    }}
+	}}
 `
 export const Title = styled.h4`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             position: relative;
             width: 100%;
             text-align: center;
@@ -26,12 +26,12 @@ export const Title = styled.h4`
             color: ${theme.darkerGray};
             padding: 30px 30px 0px 30px;
         `
-    }}
+	}}
 `
 export const Message = styled.p`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             position: relative;
             width: 100%;
             text-align: center;
@@ -41,20 +41,20 @@ export const Message = styled.p`
             padding: 0px 40px;
             color: ${theme.darkerGray};
         `
-    }}
+	}}
 `
 export const ButtonContainer = styled.div`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             overflow: hidden;
             display: flex;
         `
-    }}
+	}}
 `
 export const LeftButton = styled(TEButton)`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             width: 50%;
             font-size: 18px;
             line-height: 2;
@@ -84,12 +84,12 @@ export const LeftButton = styled(TEButton)`
                 border-left: none;
            }
         `
-    }}
+	}}
 `
 export const RightButton = styled(TEButton)`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             width: 50%;
             font-size: 18px;
             line-height: 2;
@@ -119,5 +119,5 @@ export const RightButton = styled(TEButton)`
                 border-left: 1px solid ${theme.primary};
            }
         `
-    }}
+	}}
 `

@@ -122,78 +122,78 @@ TEButton.defaultProps = {
 	type: 'button'
 };
 
-var _templateObject$1 = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$1 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Label = styled__default.label(_templateObject$1, function (props) {
-    var disabled = props.disabled,
-        htmlFor = props.htmlFor,
-        theme = props.theme;
+  var disabled = props.disabled,
+      htmlFor = props.htmlFor,
+      theme = props.theme;
 
 
-    var cursor = 'default';
-    if (htmlFor) {
-        cursor = 'pointer';
-    }
-    if (disabled) {
-        cursor = 'not-allowed';
-    }
+  var cursor = 'default';
+  if (htmlFor) {
+    cursor = 'pointer';
+  }
+  if (disabled) {
+    cursor = 'not-allowed';
+  }
 
-    return '\n            position: relative;\n            display: block;\n            width: auto;\n            box-sizing: border-box;\n            margin-bottom: 3px;\n            font-size: 18px;\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n            cursor: ' + cursor + ';\n\n            @media (max-width: 550px) {\n                font-size: 16px;\n            }\n        ';
+  return '\n            position: relative;\n            display: block;\n            width: auto;\n            box-sizing: border-box;\n            margin-bottom: 3px;\n            font-size: 18px;\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n            cursor: ' + cursor + ';\n\n            @media (max-width: 550px) {\n                font-size: 16px;\n            }\n        ';
 });
 
 //
 
 var TELabel = function TELabel(props) {
-    var children = props.children,
-        required = props.required,
-        rest = objectWithoutProperties(props, ['children', 'required']);
+	var children = props.children,
+	    required = props.required,
+	    rest = objectWithoutProperties(props, ['children', 'required']);
 
-    return React__default.createElement(
-        Label,
-        rest,
-        children,
-        required ? ' *' : ''
-    );
+	return React__default.createElement(
+		Label,
+		rest,
+		children,
+		required ? ' *' : ''
+	);
 };
 
 TELabel.propTypes = {
-    htmlFor: PropTypes.string,
-    required: PropTypes.bool,
-    disabled: PropTypes.bool
+	htmlFor: PropTypes.string,
+	required: PropTypes.bool,
+	disabled: PropTypes.bool
 };
 
-var _templateObject$2 = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$2 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Row = styled__default.div(_templateObject$2, function (props) {
-    var size = props.size,
-        last = props.last;
+	var size = props.size,
+	    last = props.last;
 
 
-    var width = '100%';
-    switch (size) {
-        case 'full':
-            width = '100%';
-            break;
-        case 'two-third':
-            width = '66.66%';
-            break;
-        case 'half':
-            width = '50%';
-            break;
-        case 'third':
-            width = '33.33%';
-            break;
-        case 'forth':
-            width = '25%';
-            break;
-        case 'condensed':
-            width = 'auto';
-            break;
-        default:
-            break;
-    }
+	var width = '100%';
+	switch (size) {
+		case 'full':
+			width = '100%';
+			break;
+		case 'two-third':
+			width = '66.66%';
+			break;
+		case 'half':
+			width = '50%';
+			break;
+		case 'third':
+			width = '33.33%';
+			break;
+		case 'forth':
+			width = '25%';
+			break;
+		case 'condensed':
+			width = 'auto';
+			break;
+		default:
+			break;
+	}
 
-    return '\n            position: relative;\n            display: inline-block;\n            vertical-align: top;\n            margin-bottom: 10px;\n            text-align: left;\n            box-sizing: border-box;\n            width: ' + width + ';\n            padding-left: ' + (size !== 'full' && last ? '5px' : '0px') + ';\n            padding-right: ' + (size !== 'full' && !last ? '5px' : '0px') + ';\n        ';
+	return '\n            position: relative;\n            display: inline-block;\n            vertical-align: top;\n            margin-bottom: 10px;\n            text-align: left;\n            box-sizing: border-box;\n            width: ' + width + ';\n            padding-left: ' + (size !== 'full' && last ? '5px' : '0px') + ';\n            padding-right: ' + (size !== 'full' && !last ? '5px' : '0px') + ';\n        ';
 });
 
 //
@@ -224,138 +224,148 @@ var TECheckboxInput = function TECheckboxInput(props) {
 	return React__default.createElement(Input, _extends({}, props, { type: 'checkbox' }));
 };
 
-var _templateObject$4 = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$4 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Container = styled__default(TERow)(_templateObject$4, function (props) {
-    return '\n            margin-bottom: 10px;\n            display: inline-block;\n            vertical-align: top;\n        ';
+  return '\n            margin-bottom: 10px;\n            display: inline-block;\n            vertical-align: top;\n        ';
 });
 var InputWrapper = styled__default.div(_templateObject$4, function (props) {
-    var scrolling = props.scrolling,
-        theme = props.theme;
+  var scrolling = props.scrolling,
+      theme = props.theme;
 
-    return '\n            display: flex;\n            flex-wrap: wrap;\n            ' + (scrolling ? '\n                    height: 300px;\n                    overflow-y: scroll;\n                    background-color: ' + theme.white + ';\n                    padding: 10px;\n                    border: 1px solid ' + theme.lightGray + ';\n                    border-radius: 5;\n                ' : '') + '\n        ';
+  return '\n            display: flex;\n            flex-wrap: wrap;\n            ' + (scrolling ? '\n                    height: 300px;\n                    overflow-y: scroll;\n                    background-color: ' + theme.white + ';\n                    padding: 10px;\n                    border: 1px solid ' + theme.lightGray + ';\n                    border-radius: 5;\n                ' : '') + '\n        ';
 });
 
 var RowWrarpper = styled__default(TERow)(_templateObject$4, function (props) {
-    return '\n            margin-bottom: 5px;\n            display: flex;\n            align-items: center;\n        ';
+  return '\n            margin-bottom: 5px;\n            display: flex;\n            align-items: center;\n        ';
 });
 
 var Checkbox = styled__default(TECheckboxInput)(_templateObject$4, function (props) {
-    return '\n            display: inline-block;\n            vertical-align: middle;\n            cursor: pointer;\n        ';
+  return '\n            display: inline-block;\n            vertical-align: middle;\n            cursor: pointer;\n        ';
 });
 var Label$1 = styled__default(TELabel)(_templateObject$4, function (props) {
-    var theme = props.theme,
-        disabled = props.disabled;
+  var theme = props.theme,
+      disabled = props.disabled;
 
 
-    return '\n            width: auto;\n            display: inline-block;\n            vertical-align: middle;\n            padding-left: 10px;\n            margin-bottom: 0px;\n            cursor: pointer;\n            fontSize: 14px;\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n\n            @media (max-width: 550px) {\n                fontSize: 12px;\n            };\n        ';
+  return '\n            width: auto;\n            display: inline-block;\n            vertical-align: middle;\n            padding-left: 10px;\n            margin-bottom: 0px;\n            cursor: pointer;\n            fontSize: 14px;\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n\n            @media (max-width: 550px) {\n                fontSize: 12px;\n            };\n        ';
 });
 
 //
 
 var manipulateRowData = function manipulateRowData(_ref) {
-    var rowData = _ref.rowData,
-        _ref$labelForKey = _ref.labelForKey,
-        labelForKey = _ref$labelForKey === undefined ? '' : _ref$labelForKey;
+	var rowData = _ref.rowData,
+	    _ref$labelForKey = _ref.labelForKey,
+	    labelForKey = _ref$labelForKey === undefined ? '' : _ref$labelForKey;
 
-    //Allowing For Greater Shorthand
-    if (typeof rowData === 'string') {
-        var label = rowData;
-        var value = rowData;
-        var key = labelForKey + rowData;
-        return { label: label, value: value, key: key };
-    } else if ((typeof rowData === 'undefined' ? 'undefined' : _typeof(rowData)) === 'object') {
-        var _label = rowData.label,
-            _rowData$value = rowData.value,
-            _value = _rowData$value === undefined ? _label : _rowData$value,
-            _rowData$key = rowData.key,
-            _key = _rowData$key === undefined ? labelForKey + _label : _rowData$key;
+	//Allowing For Greater Shorthand
+	if (typeof rowData === 'string') {
+		var label = rowData;
+		var value = rowData;
+		var key = labelForKey + rowData;
+		return { label: label, value: value, key: key };
+	} else if ((typeof rowData === 'undefined' ? 'undefined' : _typeof(rowData)) === 'object') {
+		var _label = rowData.label,
+		    _rowData$value = rowData.value,
+		    _value = _rowData$value === undefined ? _label : _rowData$value,
+		    _rowData$key = rowData.key,
+		    _key = _rowData$key === undefined ? labelForKey + _label : _rowData$key;
 
-        return { label: _label, value: _value, key: _key };
-    }
+		return { label: _label, value: _value, key: _key };
+	}
 };
 var TECheckboxGroup = function TECheckboxGroup(props) {
-    var handleInputChange = function handleInputChange(event) {
-        var checkedValues = props.checkedValues,
-            onChange = props.onChange;
-        var value = event.target.value;
+	var handleInputChange = function handleInputChange(event) {
+		var checkedValues = props.checkedValues,
+		    onChange = props.onChange;
+		var value = event.target.value;
 
 
-        var newValues = [].concat(toConsumableArray(checkedValues));
-        if (checkedValues) {
-            if (checkedValues.includes(value)) {
-                newValues = newValues.filter(function (e) {
-                    return e !== value;
-                });
-            } else {
-                newValues.push(value);
-            }
-        }
-        onChange(newValues, event);
-    };
+		var newValues = [].concat(toConsumableArray(checkedValues));
+		if (checkedValues) {
+			if (checkedValues.includes(value)) {
+				newValues = newValues.filter(function (e) {
+					return e !== value;
+				});
+			} else {
+				newValues.push(value);
+			}
+		}
+		onChange(newValues, event);
+	};
 
-    var size = props.size,
-        last = props.last,
-        title = props.title,
-        required = props.required,
-        rowSize = props.rowSize,
-        disabled = props.disabled,
-        checkedValues = props.checkedValues,
-        buttonArray = props.buttonArray,
-        labelForKey = props.labelForKey;
+	var size = props.size,
+	    last = props.last,
+	    className = props.className,
+	    title = props.title,
+	    required = props.required,
+	    rowSize = props.rowSize,
+	    disabled = props.disabled,
+	    checkedValues = props.checkedValues,
+	    buttonArray = props.buttonArray,
+	    labelForKey = props.labelForKey;
 
 
-    return React__default.createElement(
-        Container,
-        { size: size, last: last },
-        React__default.createElement(
-            TELabel,
-            { disabled: disabled, required: required },
-            title
-        ),
-        React__default.createElement(
-            InputWrapper,
-            null,
-            buttonArray && buttonArray.map(function (rowData) {
-                var _manipulateRowData = manipulateRowData({
-                    rowData: rowData,
-                    labelForKey: labelForKey
-                }),
-                    label = _manipulateRowData.label,
-                    value = _manipulateRowData.value,
-                    key = _manipulateRowData.key;
+	return React__default.createElement(
+		Container,
+		{ size: size, last: last, className: className },
+		React__default.createElement(
+			TELabel,
+			{ disabled: disabled, required: required, className: 'TECheckboxGroupTitle' },
+			title
+		),
+		React__default.createElement(
+			InputWrapper,
+			{ className: 'TECheckboxGroupInputWrapper' },
+			buttonArray && buttonArray.map(function (rowData) {
+				var _manipulateRowData = manipulateRowData({
+					rowData: rowData,
+					labelForKey: labelForKey
+				}),
+				    label = _manipulateRowData.label,
+				    value = _manipulateRowData.value,
+				    key = _manipulateRowData.key;
 
-                return React__default.createElement(
-                    RowWrarpper,
-                    { key: key, size: rowSize },
-                    React__default.createElement(Checkbox, {
-                        value: value,
-                        onChange: handleInputChange,
-                        id: key,
-                        checked: checkedValues && checkedValues.includes(value),
-                        disabled: disabled
-                    }),
-                    React__default.createElement(
-                        Label$1,
-                        { htmlFor: key, disabled: disabled },
-                        label
-                    )
-                );
-            })
-        )
-    );
+				return React__default.createElement(
+					RowWrarpper,
+					{
+						key: key,
+						size: rowSize,
+						className: 'TECheckboxGroupRowWrapper'
+					},
+					React__default.createElement(Checkbox, {
+						value: value,
+						onChange: handleInputChange,
+						id: key,
+						checked: checkedValues && checkedValues.includes(value),
+						disabled: disabled,
+						className: 'TECheckboxGroupCheckbox'
+					}),
+					React__default.createElement(
+						Label$1,
+						{
+							htmlFor: key,
+							disabled: disabled,
+							className: 'TECheckboxGroupLabel'
+						},
+						label
+					)
+				);
+			})
+		)
+	);
 };
 
 TECheckboxGroup.propTypes = {
-    onChange: PropTypes.func.isRequired,
-    scrolling: PropTypes.bool,
-    buttonArray: PropTypes.array.isRequired,
-    checkedValues: PropTypes.array.isRequired,
-    labelForKey: PropTypes.string.isRequired
+	onChange: PropTypes.func.isRequired,
+	scrolling: PropTypes.bool,
+	buttonArray: PropTypes.array.isRequired,
+	checkedValues: PropTypes.array.isRequired,
+	labelForKey: PropTypes.string.isRequired
 };
 
 TECheckboxGroup.defaultProps = {
-    scrolling: false
+	scrolling: false
 };
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -3413,6 +3423,7 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
+//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -30394,31 +30405,31 @@ var PRESELECT_CHANGE_VIA_NAVIGATE = "navigate";
 //
 
 var determineValue = function determineValue(value) {
-    if (!value) {
-        //Without this a value of '' was causing an error...
-        return null;
-    }
-    if (typeof value === 'string' || typeof value === 'number') {
-        return new Date(value);
-    }
-    return value;
+	if (!value) {
+		//Without this a value of '' was causing an error...
+		return null;
+	}
+	if (typeof value === 'string' || typeof value === 'number') {
+		return new Date(value);
+	}
+	return value;
 };
 var TEDatetimeInput = function TEDatetimeInput(props) {
-    var value = props.value,
-        placeholder = props.placeholder,
-        rest = objectWithoutProperties(props, ['value', 'placeholder']);
+	var value = props.value,
+	    placeholder = props.placeholder,
+	    rest = objectWithoutProperties(props, ['value', 'placeholder']);
 
-    return React__default.createElement(DatePicker, _extends({ selected: determineValue(value), placeholderText: placeholder }, rest));
+	return React__default.createElement(DatePicker, _extends({ selected: determineValue(value), placeholderText: placeholder }, rest));
 };
 
 TEDatetimeInput.propTypes = {
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Date)]),
-    placeholder: PropTypes.string,
-    autoComplete: PropTypes.string
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Date)]),
+	placeholder: PropTypes.string,
+	autoComplete: PropTypes.string
 };
 
 TEDatetimeInput.defaultProps = {
-    autoComplete: 'off'
+	autoComplete: 'off'
 };
 
 //
@@ -30426,34 +30437,39 @@ TEDatetimeInput.defaultProps = {
 //import styles from './styles'
 
 var TEDatetimeRow = function TEDatetimeRow(props) {
-    var size = props.size,
-        last = props.last,
-        className = props.className,
-        title = props.title,
-        labelForKey = props.labelForKey,
-        rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
+	var size = props.size,
+	    last = props.last,
+	    className = props.className,
+	    title = props.title,
+	    labelForKey = props.labelForKey,
+	    rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
 
 
-    return React__default.createElement(
-        TERow,
-        { size: size, last: last, className: className },
-        React__default.createElement(
-            TELabel,
-            { htmlFor: labelForKey, required: rest.required, disabled: rest.disabled },
-            title
-        ),
-        React__default.createElement(TEDatetimeInput, _extends({ id: labelForKey }, rest))
-    );
+	return React__default.createElement(
+		TERow,
+		{ size: size, last: last, className: className },
+		React__default.createElement(
+			TELabel,
+			{
+				htmlFor: labelForKey,
+				required: rest.required,
+				disabled: rest.disabled,
+				className: 'TEDatetimeRowTitle'
+			},
+			title
+		),
+		React__default.createElement(TEDatetimeInput, _extends({ id: labelForKey }, rest, { className: 'TEDatetimeRowDateInput' }))
+	);
 };
 
 TEDatetimeRow.propTypes = {
-    size: PropTypes.string,
-    last: PropTypes.bool,
-    labelForKey: PropTypes.string,
-    onChange: PropTypes.func,
-    title: PropTypes.string,
-    disabled: PropTypes.bool,
-    required: PropTypes.bool
+	size: PropTypes.string,
+	last: PropTypes.bool,
+	labelForKey: PropTypes.string,
+	onChange: PropTypes.func,
+	title: PropTypes.string,
+	disabled: PropTypes.bool,
+	required: PropTypes.bool
 };
 
 var DefaultContext = {
@@ -30559,231 +30575,215 @@ var FaRegWindowClose = function (props) {
 };
 FaRegWindowClose.displayName = "FaRegWindowClose";
 
-var _templateObject$5 = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$5 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Wrapper = styled__default.div(_templateObject$5, function (props) {
-    return '\n            display: flex;\n            flex-direction: column;\n            width: 100%;\n        ';
+  return '\n            display: flex;\n            flex-direction: column;\n            width: 100%;\n        ';
 });
 var InputWrapper$1 = styled__default.div(_templateObject$5, function (props) {
-    var theme = props.theme,
-        disabled = props.disabled,
-        active = props.active;
+  var theme = props.theme,
+      disabled = props.disabled,
+      active = props.active;
 
-    var styles = '\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            width: 100%;\n            background-color: ' + theme.white + ';\n            border-radius: 5px;\n            padding-right: 5px;\n\n            transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n        ';
+  var styles = '\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            width: 100%;\n            background-color: ' + theme.white + ';\n            border-radius: 5px;\n            padding-right: 5px;\n\n            transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n        ';
 
-    if (disabled) {
-        styles += '\n                border: 1px solid ' + theme.lighterGray + ';\n                box-shadow: none;\n            ';
-    } else if (active) {
-        styles += '\n                border: 1px solid ' + theme.primary + ';\n                box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n            ';
-    } else {
-        styles += '\n                border: 1px solid ' + theme.lightGray + ';\n                box-shadow: none;\n\n                :hover {\n                    border: 1px solid ' + theme.primary + ';\n                    box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n                }\n                :active {\n                    border: 1px solid ' + theme.primary + ';\n                    box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n                }\n            ';
-    }
+  if (disabled) {
+    styles += '\n                border: 1px solid ' + theme.lighterGray + ';\n                box-shadow: none;\n            ';
+  } else if (active) {
+    styles += '\n                border: 1px solid ' + theme.primary + ';\n                box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n            ';
+  } else {
+    styles += '\n                border: 1px solid ' + theme.lightGray + ';\n                box-shadow: none;\n\n                :hover {\n                    border: 1px solid ' + theme.primary + ';\n                    box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n                }\n                :active {\n                    border: 1px solid ' + theme.primary + ';\n                    box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n                }\n            ';
+  }
 
-    return styles;
+  return styles;
 });
 var Label$2 = styled__default.label(_templateObject$5, function (props) {
-    var theme = props.theme,
-        disabled = props.disabled,
-        active = props.active;
+  var theme = props.theme,
+      disabled = props.disabled,
+      active = props.active;
 
-    var cursor = 'pointer';
-    if (disabled) {
-        cursor = 'not-allowed';
-    } else if (active) {
-        cursor = 'copy';
-    }
+  var cursor = 'pointer';
+  if (disabled) {
+    cursor = 'not-allowed';
+  } else if (active) {
+    cursor = 'copy';
+  }
 
-    return '\n            display: block;\n            width: 100%;\n            font-size: 14px;\n            color: ' + (disabled ? theme.gray : theme.darkGray) + ';\n            padding: 10px;\n            cursor: ' + cursor + ';\n        ';
+  return '\n            display: block;\n            width: 100%;\n            font-size: 14px;\n            color: ' + (disabled ? theme.gray : theme.darkGray) + ';\n            padding: 10px;\n            cursor: ' + cursor + ';\n        ';
 });
 
 var LabelCopy = styled__default.span(_templateObject$5, function (props) {
-    return '\n\n        ';
+  return '\n\n        ';
 });
 
 var LabelIcon = styled__default(FaFileUpload)(_templateObject$5, function (props) {
-    return '\n            margin-right: 10px;\n            vertical-align: middle;\n            font-size: 18px;\n        ';
+  return '\n            margin-right: 10px;\n            vertical-align: middle;\n            font-size: 18px;\n        ';
 });
 
 var Input$1 = styled__default.input(_templateObject$5, function (props) {
-    return '\n            display: none;\n        ';
+  return '\n            display: none;\n        ';
 });
 
 var ClearButton = styled__default(TEButton)(_templateObject$5, function (props) {
-    return '\n            width: auto;\n            padding: 5px 10px;\n            text-align: center;\n        ';
+  return '\n            width: auto;\n            padding: 5px 10px;\n            text-align: center;\n        ';
 });
 
 var ButtonIcon = styled__default(FaRegWindowClose)(_templateObject$5, function (props) {
-    return '\n            color: inherit;\n            display: block;\n        ';
+  return '\n            color: inherit;\n            display: block;\n        ';
 });
 
 var ErrorMessage = styled__default.span(_templateObject$5, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            display: block;\n            padding-top: 5px;\n            padding-bottom: 5px;\n            font-size: 14px;\n            color: ' + theme.errorRed + ';\n        ';
+  return '\n            display: block;\n            padding-top: 5px;\n            padding-bottom: 5px;\n            font-size: 14px;\n            color: ' + theme.errorRed + ';\n        ';
 });
 
 //
 
 var TEFileInput = function TEFileInput(props) {
-    var _useState = React.useState(false),
-        _useState2 = slicedToArray(_useState, 2),
-        active = _useState2[0],
-        setActive = _useState2[1];
+	var _useState = React.useState(false),
+	    _useState2 = slicedToArray(_useState, 2),
+	    active = _useState2[0],
+	    setActive = _useState2[1];
 
-    var _useState3 = React.useState([]),
-        _useState4 = slicedToArray(_useState3, 2),
-        fileArray = _useState4[0],
-        setFileArray = _useState4[1];
+	var _useState3 = React.useState([]),
+	    _useState4 = slicedToArray(_useState3, 2),
+	    fileArray = _useState4[0],
+	    setFileArray = _useState4[1];
 
-    var _useState5 = React.useState({ error: false, message: '' }),
-        _useState6 = slicedToArray(_useState5, 2),
-        errorData = _useState6[0],
-        setErrorData = _useState6[1];
+	var _useState5 = React.useState({ error: false, message: '' }),
+	    _useState6 = slicedToArray(_useState5, 2),
+	    errorData = _useState6[0],
+	    setErrorData = _useState6[1];
 
-    var _useState7 = React.useState(props.resetKey || 'inputKey'),
-        _useState8 = slicedToArray(_useState7, 2),
-        inputKey = _useState8[0],
-        setInputKey = _useState8[1];
+	var _useState7 = React.useState(props.resetKey || 'inputKey'),
+	    _useState8 = slicedToArray(_useState7, 2),
+	    inputKey = _useState8[0],
+	    setInputKey = _useState8[1];
 
-    var onFileChange = function onFileChange(e, droppedFiles) {
-        var pattern = props.pattern,
-            onChange = props.onChange;
+	var onFileChange = function onFileChange(e, droppedFiles) {
+		var pattern = props.pattern,
+		    onChange = props.onChange;
 
-        var files = e.target.files || droppedFiles;
+		var files = e.target.files || droppedFiles;
 
-        if (!files) {
-            console.error('No file provided to input.');
-            return;
-        }
+		if (!files) {
+			console.error('No file provided to input.');
+			return;
+		}
 
-        //Validate Files
-        if (pattern && pattern instanceof RegExp) {
-            for (var i = 0; i < files.length; i++) {
-                if (!files[i].type.match(pattern)) {
-                    console.warn('One of the selected files is not of the correct type.');
-                    setErrorData({
-                        error: true,
-                        message: 'One of the selected files is not of the correct type.'
-                    });
-                    return;
-                }
-            }
-        }
+		//Validate Files
+		if (pattern && pattern instanceof RegExp) {
+			for (var i = 0; i < files.length; i++) {
+				if (!files[i].type.match(pattern)) {
+					console.warn('One of the selected files is not of the correct type.');
+					setErrorData({
+						error: true,
+						message: 'One of the selected files is not of the correct type.'
+					});
+					return;
+				}
+			}
+		}
 
-        setFileArray(files);
-        setErrorData({
-            error: false,
-            message: ''
-        });
-        onChange(files);
+		setFileArray(files);
+		setErrorData({
+			error: false,
+			message: ''
+		});
+		onChange(files);
+	};
+	var onDragEnter = function onDragEnter(e) {
+		return setActive(true);
+	};
+	var onDragLeave = function onDragLeave(e) {
+		return setActive(false);
+	};
+	var onDragOver = function onDragOver(e) {
+		return e.preventDefault();
+	};
+	var onDrop = function onDrop(e) {
+		e.preventDefault();
+		setActive(false);
+		onFileChange(e, e.dataTransfer.files);
+	};
+	var handleClearInput = function handleClearInput() {
+		setInputKey(new Date().getTime()); //This will reset the input
+		setFileArray([]);
+		setErrorData({
+			error: false,
+			message: ''
+		});
+	};
 
-        // const readFile = (file) => {
-        //     const { name } = file
-        //     const reader = new FileReader()
-
-        //     reader.onload = (e) => {
-        //         const { fileArray } = this.state
-        //         const updateFileArray = [...fileArray, { name, value: reader.result }]
-        //         this.setState({
-        //             fileArray: updateFileArray,
-        //             error: false,
-        //             errorMessage: '',
-        //         })
-        //         onChange(updateFileArray)
-        //     }
-
-        //     reader.readAsDataURL(file)
-        // }
-
-        // for (let i = 0; i < files.length; i++) {
-        //     readFile(files[i])
-        // }
-    };
-    var onDragEnter = function onDragEnter(e) {
-        return setActive(true);
-    };
-    var onDragLeave = function onDragLeave(e) {
-        return setActive(false);
-    };
-    var onDragOver = function onDragOver(e) {
-        return e.preventDefault();
-    };
-    var onDrop = function onDrop(e) {
-        e.preventDefault();
-        setActive(false);
-        onFileChange(e, e.dataTransfer.files);
-    };
-    var handleClearInput = function handleClearInput() {
-        setInputKey(new Date().getTime()); //This will reset the input
-        setFileArray([]);
-        setErrorData({
-            error: false,
-            message: ''
-        });
-    };
-
-    var disabled = props.disabled,
-        className = props.className,
-        _props$placeholder = props.placeholder,
-        placeholder = _props$placeholder === undefined ? 'Choose a file...' : _props$placeholder,
-        rest = objectWithoutProperties(props, ['disabled', 'className', 'placeholder']);
+	var disabled = props.disabled,
+	    className = props.className,
+	    _props$placeholder = props.placeholder,
+	    placeholder = _props$placeholder === undefined ? 'Choose a file...' : _props$placeholder,
+	    rest = objectWithoutProperties(props, ['disabled', 'className', 'placeholder']);
 
 
-    var labelCopy = placeholder;
-    if (fileArray && fileArray.length === 1) {
-        labelCopy = fileArray[0].name;
-    } else if (fileArray && fileArray.length > 1) {
-        labelCopy = fileArray.length + ' files selected';
-    }
+	var labelCopy = placeholder;
+	if (fileArray && fileArray.length === 1) {
+		labelCopy = fileArray[0].name;
+	} else if (fileArray && fileArray.length > 1) {
+		labelCopy = fileArray.length + ' files selected';
+	}
 
-    return React__default.createElement(
-        Wrapper,
-        { className: className },
-        React__default.createElement(
-            InputWrapper$1,
-            {
-                onDragEnter: onDragEnter,
-                onDragLeave: onDragLeave,
-                onDragOver: onDragOver,
-                onDrop: onDrop,
-                active: active,
-                disabled: disabled
-            },
-            React__default.createElement(
-                Label$2,
-                { active: active, disabled: disabled },
-                React__default.createElement(
-                    LabelCopy,
-                    null,
-                    React__default.createElement(LabelIcon, null),
-                    labelCopy
-                ),
-                React__default.createElement(Input$1, _extends({}, rest, {
-                    disabled: disabled,
-                    type: 'file',
-                    key: inputKey,
-                    onChange: onFileChange
-                }))
-            ),
-            React__default.createElement(
-                ClearButton,
-                { onClick: handleClearInput, disabled: disabled },
-                React__default.createElement(ButtonIcon, null)
-            )
-        ),
-        errorData && errorData.error && React__default.createElement(
-            ErrorMessage,
-            null,
-            errorData.message
-        )
-    );
+	return React__default.createElement(
+		Wrapper,
+		{ className: className },
+		React__default.createElement(
+			InputWrapper$1,
+			{
+				onDragEnter: onDragEnter,
+				onDragLeave: onDragLeave,
+				onDragOver: onDragOver,
+				onDrop: onDrop,
+				active: active,
+				disabled: disabled,
+				className: 'TEFileInputInputWrapper'
+			},
+			React__default.createElement(
+				Label$2,
+				{ active: active, disabled: disabled, className: 'TEFileInputLabel' },
+				React__default.createElement(
+					LabelCopy,
+					{ className: 'TEFileInputCopy' },
+					React__default.createElement(LabelIcon, { className: 'TEFileInputIcon' }),
+					labelCopy
+				),
+				React__default.createElement(Input$1, _extends({}, rest, {
+					disabled: disabled,
+					type: 'file',
+					key: inputKey,
+					onChange: onFileChange,
+					className: 'TEFileInputInput'
+				}))
+			),
+			React__default.createElement(
+				ClearButton,
+				{
+					onClick: handleClearInput,
+					disabled: disabled,
+					className: 'TEFileInputClearButton'
+				},
+				React__default.createElement(ButtonIcon, { className: 'TEFileInputClearIcon' })
+			)
+		),
+		errorData && errorData.error && React__default.createElement(
+			ErrorMessage,
+			{ className: 'TEFileInputErrorMessage' },
+			errorData.message
+		)
+	);
 };
 
 TEFileInput.propTypes = {
-    onChange: PropTypes.func.isRequired,
-    accept: PropTypes.string, //OS Hint of file type for dialog - NOT safety check of type
-    // pattern: PropTypes.RegExp, //This is the actual strict catch. Regex // Don't know regex proptype
-    disabled: PropTypes.bool
+	onChange: PropTypes.func.isRequired,
+	accept: PropTypes.string, //OS Hint of file type for dialog - NOT safety check of type
+	// pattern: PropTypes.RegExp, //This is the actual strict catch. Regex // Don't know regex proptype
+	disabled: PropTypes.bool
 };
 
 var _templateObject$6 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
@@ -30823,134 +30823,143 @@ var Input$2 = styled__default(TEFileInput)(_templateObject$6, function (props) {
 //
 
 var TEFileManagerRow = function TEFileManagerRow(props) {
-    var _useState = React.useState('inputKey'),
-        _useState2 = slicedToArray(_useState, 2),
-        inputKey = _useState2[0],
-        setInputKey = _useState2[1];
+	var _useState = React.useState('inputKey'),
+	    _useState2 = slicedToArray(_useState, 2),
+	    inputKey = _useState2[0],
+	    setInputKey = _useState2[1];
 
-    var onFileChange = function onFileChange(fileList) {
-        var onUpload = props.onUpload;
+	var onFileChange = function onFileChange(fileList) {
+		var onUpload = props.onUpload;
 
-        onUpload(fileList).then(function () {
-            setInputKey(new Date().getTime());
-        }).catch(function (error) {
-            console.log(error);
-            setInputKey(new Date().getTime());
-        });
-    };
+		onUpload(fileList).then(function () {
+			setInputKey(new Date().getTime());
+		}).catch(function (error) {
+			console.log(error);
+			setInputKey(new Date().getTime());
+		});
+	};
 
-    var size = props.size,
-        last = props.last,
-        className = props.className,
-        title = props.title,
-        fileSrc = props.fileSrc,
-        maxNumber = props.maxNumber,
-        accept = props.accept,
-        pattern = props.pattern,
-        disabled = props.disabled,
-        onRemove = props.onRemove,
-        required = props.required,
-        labelForKey = props.labelForKey;
+	var size = props.size,
+	    last = props.last,
+	    className = props.className,
+	    title = props.title,
+	    fileSrc = props.fileSrc,
+	    maxNumber = props.maxNumber,
+	    accept = props.accept,
+	    pattern = props.pattern,
+	    disabled = props.disabled,
+	    onRemove = props.onRemove,
+	    required = props.required,
+	    labelForKey = props.labelForKey;
 
 
-    var fileSrcArray = [];
-    if (fileSrc) {
-        for (var uid in fileSrc) {
-            fileSrcArray.push(_extends({}, fileSrc[uid], { uid: uid }));
-        }
-    }
+	var fileSrcArray = [];
+	if (fileSrc) {
+		for (var uid in fileSrc) {
+			fileSrcArray.push(_extends({}, fileSrc[uid], { uid: uid }));
+		}
+	}
 
-    var labelText = title;
-    if (maxNumber > 1 && fileSrcArray) {
-        labelText = title + ' (' + fileSrcArray.length + '/' + maxNumber + ')';
-    }
+	var labelText = title;
+	if (maxNumber > 1 && fileSrcArray) {
+		labelText = title + ' (' + fileSrcArray.length + '/' + maxNumber + ')';
+	}
 
-    return React__default.createElement(
-        WrapperRow,
-        { size: size, last: last, className: className },
-        React__default.createElement(TELabel, {
-            htmlFor: labelForKey,
-            labelText: labelText,
-            required: required,
-            disabled: disabled
-        }),
-        React__default.createElement(
-            FileRowWrapper,
-            null,
-            fileSrcArray && fileSrcArray.map(function (imgSrcData) {
-                var src = imgSrcData.src,
-                    uid = imgSrcData.uid,
-                    filename = imgSrcData.filename,
-                    fileEnding = imgSrcData.fileEnding,
-                    path = imgSrcData.path;
+	return React__default.createElement(
+		WrapperRow,
+		{ size: size, last: last, className: className },
+		React__default.createElement(
+			TELabel,
+			{
+				htmlFor: labelForKey,
+				required: required,
+				disabled: disabled,
+				className: 'TEFileManagerRowTitle'
+			},
+			labelText
+		),
+		React__default.createElement(
+			FileRowWrapper,
+			{ className: 'TEFileManagerRowWrapper' },
+			fileSrcArray && fileSrcArray.map(function (imgSrcData) {
+				var src = imgSrcData.src,
+				    uid = imgSrcData.uid,
+				    filename = imgSrcData.filename,
+				    fileEnding = imgSrcData.fileEnding,
+				    path = imgSrcData.path;
 
-                return React__default.createElement(
-                    FileWrapper,
-                    { key: uid },
-                    React__default.createElement(
-                        FileName,
-                        null,
-                        filename,
-                        '.',
-                        fileEnding
-                    ),
-                    React__default.createElement(
-                        DownloadFileButton,
-                        {
-                            href: src,
-                            target: '_blank',
-                            rel: 'noopener noreferrer',
-                            key: uid,
-                            download: filename
-                        },
-                        React__default.createElement(DownloadImageButtonIcon, null)
-                    ),
-                    React__default.createElement(
-                        ClearFileButton,
-                        { onClick: function onClick() {
-                                return onRemove({ uid: uid, path: path });
-                            } },
-                        React__default.createElement(ClearFileButtonIcon, null)
-                    )
-                );
-            }),
-            (maxNumber === 0 || !fileSrcArray || fileSrcArray && fileSrcArray.length < maxNumber) && React__default.createElement(Input$2, {
-                key: inputKey //Used to reset the input
-                , id: labelForKey,
-                onChange: onFileChange,
-                disabled: disabled,
-                required: required
-                // multiple={maxNumber === 0 || maxNumber > 1} //For simplicity making it a single file
-                , accept: accept,
-                pattern: pattern
-            })
-        )
-    );
+				return React__default.createElement(
+					FileWrapper,
+					{ key: uid, className: 'TEFileManagerFileRow' },
+					React__default.createElement(
+						FileName,
+						{ className: 'TEFileManagerFileName' },
+						filename,
+						'.',
+						fileEnding
+					),
+					React__default.createElement(
+						DownloadFileButton,
+						{
+							href: src,
+							target: '_blank',
+							rel: 'noopener noreferrer',
+							key: uid,
+							download: filename,
+							className: 'TEFileManagerDownloadButton'
+						},
+						React__default.createElement(DownloadImageButtonIcon, { className: 'TEFileManagerDownloadIcon' })
+					),
+					React__default.createElement(
+						ClearFileButton,
+						{
+							onClick: function onClick() {
+								return onRemove({ uid: uid, path: path });
+							},
+							className: 'TEFileManagerClearButton'
+						},
+						React__default.createElement(ClearFileButtonIcon, { className: 'TEFileManagerClearIcon' })
+					)
+				);
+			}),
+			(maxNumber === 0 || !fileSrcArray || fileSrcArray && fileSrcArray.length < maxNumber) && React__default.createElement(Input$2, {
+				key: inputKey //Used to reset the input
+				, id: labelForKey,
+				onChange: onFileChange,
+				disabled: disabled,
+				required: required
+				// multiple={maxNumber === 0 || maxNumber > 1} //For simplicity making it a single file
+				, accept: accept,
+				pattern: pattern,
+				className: 'TEFileManagerInput'
+			})
+		)
+	);
 };
 
 TEFileManagerRow.propTypes = {
-    //Row
-    size: PropTypes.string,
-    last: PropTypes.bool,
+	//Row
+	size: PropTypes.string,
+	last: PropTypes.bool,
 
-    //Input
-    onUpload: PropTypes.func.isRequired,
-    onRemove: PropTypes.func.isRequired,
-    accept: PropTypes.string,
-    // accept: PropTypes.Regexp, //Don't know protype for regex
-    maxNumber: PropTypes.number,
-    onChangeKey: PropTypes.string,
-    disabled: PropTypes.bool,
+	//Input
+	onUpload: PropTypes.func.isRequired,
+	onRemove: PropTypes.func.isRequired,
+	accept: PropTypes.string,
+	// accept: PropTypes.Regexp, //Don't know protype for regex
+	maxNumber: PropTypes.number,
+	onChangeKey: PropTypes.string,
+	disabled: PropTypes.bool,
 
-    //Both
-    labelForKey: PropTypes.string
+	//Both
+	labelForKey: PropTypes.string
 };
 
 TEFileManagerRow.defaultProps = {
-    accept: '.',
-    pattern: /./,
-    maxNumber: 0,
-    multiple: false //Not implemented for multiple so defaulting for safety
+	accept: '.',
+	pattern: /./,
+	maxNumber: 0,
+	multiple: false //Not implemented for multiple so defaulting for safety
 };
 
 //
@@ -30958,37 +30967,40 @@ TEFileManagerRow.defaultProps = {
 //import {} from './styledComponents'
 
 var TEFileRow = function TEFileRow(props) {
-    var size = props.size,
-        last = props.last,
-        className = props.className,
-        title = props.title,
-        labelForKey = props.labelForKey,
-        rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
+	var size = props.size,
+	    last = props.last,
+	    className = props.className,
+	    title = props.title,
+	    labelForKey = props.labelForKey,
+	    rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
 
 
-    return React__default.createElement(
-        TERow,
-        { size: size, last: last, className: className },
-        React__default.createElement(
-            TELabel,
-            { htmlFor: labelForKey, required: rest.required, disabled: rest.disabled },
-            title
-        ),
-        React__default.createElement(TEFileInput, _extends({ id: labelForKey }, rest))
-    );
+	return React__default.createElement(
+		TERow,
+		{ size: size, last: last, className: className },
+		React__default.createElement(
+			TELabel,
+			{
+				htmlFor: labelForKey,
+				required: rest.required,
+				disabled: rest.disabled,
+				className: 'TEFileRowTitle'
+			},
+			title
+		),
+		React__default.createElement(TEFileInput, _extends({ id: labelForKey, className: 'TEFileRowInput' }, rest))
+	);
 };
 
 TEFileRow.propTypes = {
-    //Row
-    size: PropTypes.string,
-    last: PropTypes.bool,
-    title: PropTypes.string,
+	//Row
+	size: PropTypes.string,
+	last: PropTypes.bool,
+	title: PropTypes.string,
 
-    //Both
-    labelForKey: PropTypes.string
+	//Both
+	labelForKey: PropTypes.string
 };
-
-TEFileRow.defaultProps = {};
 
 var _templateObject$7 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
@@ -31032,7 +31044,7 @@ var TEPopup = function TEPopup(props) {
 		{ className: className, visible: visible },
 		React__default.createElement(
 			Content,
-			null,
+			{ className: 'TEPopupContent' },
 			children
 		)
 	);
@@ -31091,23 +31103,26 @@ var TEPopupForm = function TEPopupForm(props) {
 		{ visible: visible, className: className },
 		React__default.createElement(
 			TEForm,
-			{ onSubmit: handleSubmit },
+			{ onSubmit: handleSubmit, className: 'TEPopupFormForm' },
 			React__default.createElement(
 				FormContent,
-				null,
+				{ className: 'TEPopupFormContent' },
 				children
 			),
 			React__default.createElement(
 				ButtonContainer,
-				null,
+				{ className: 'TEPopupFormButtonContainer' },
 				React__default.createElement(
 					LeftButton,
-					{ onClick: onClose },
+					{
+						onClick: onClose,
+						className: 'TEPopupFormButton TEPopupFormLeftButton'
+					},
 					onCancelTitle
 				),
 				React__default.createElement(
 					RightButton,
-					{ type: 'submit' },
+					{ type: 'submit', className: 'TEPopupFormButton TEPopupFormRightButton' },
 					onSubmitTitle
 				)
 			)
@@ -31165,7 +31180,8 @@ var TEImageUpload = function TEImageUpload(props) {
 
 	var editor = React.useRef(null);
 
-	var visible = props.visible,
+	var className = props.className,
+	    visible = props.visible,
 	    file = props.file,
 	    onCancel = props.onCancel,
 	    _onSubmit = props.onSubmit,
@@ -31181,14 +31197,15 @@ var TEImageUpload = function TEImageUpload(props) {
 			},
 			onClose: onCancel,
 			onCancelTitle: 'Cancel',
-			onSubmitTitle: onSubmitTitle
+			onSubmitTitle: onSubmitTitle,
+			className: className
 		},
 		React__default.createElement(
 			Container$1,
-			null,
+			{ className: 'TEImageRowPopupContainer' },
 			React__default.createElement(
 				Row$1,
-				null,
+				{ className: 'TEImageRowPopupRow' },
 				React__default.createElement(dist, {
 					ref: editor,
 					image: file,
@@ -31203,10 +31220,10 @@ var TEImageUpload = function TEImageUpload(props) {
 			),
 			React__default.createElement(
 				Row$1,
-				null,
+				{ className: 'TEImageRowPopupRow' },
 				React__default.createElement(
 					TELabel,
-					{ htmlFor: 'scale' },
+					{ htmlFor: 'scale', className: 'TEImageRowPopupZoomTitle' },
 					'Zoom'
 				),
 				React__default.createElement('input', {
@@ -31219,41 +31236,46 @@ var TEImageUpload = function TEImageUpload(props) {
 					min: '0.5',
 					max: '2.5',
 					step: '0.01',
-					value: editorScale
+					value: editorScale,
+					className: 'TEImageRowPopupZoomSlider'
 				})
 			),
 			React__default.createElement(
 				Row$1,
-				null,
+				{ className: 'TEImageRowPopupRow' },
 				React__default.createElement(
 					TELabel,
-					null,
+					{ className: 'TEImageRowPopupRotateLabel' },
 					'Rotate'
 				),
 				React__default.createElement(
 					RotateButtonWrapper,
-					null,
+					{ className: 'TEImageRowPopupRotateButtonWrapper' },
 					React__default.createElement(
 						RotateButton,
-						{ onClick: function onClick() {
+						{
+							className: 'TEImageRowPopupRotateButton',
+							onClick: function onClick() {
 								return setRotation(rotation + 90);
-							} },
-						React__default.createElement(UndoRotationIcon, null)
+							}
+						},
+						React__default.createElement(UndoRotationIcon, { className: 'TEImageRowPopupRotateIcon' })
 					),
 					React__default.createElement(
 						RotateButton,
-						{ onClick: function onClick() {
+						{
+							className: 'TEImageRowPopupRotateButton',
+							onClick: function onClick() {
 								return setRotation(rotation - 90);
-							} },
-						React__default.createElement(RedoRotationIcon, null)
+							}
+						},
+						React__default.createElement(RedoRotationIcon, { className: 'TEImageRowPopupRotateIcon' })
 					)
 				)
 			)
 		)
 	);
 };
-
-TEImageUpload.propTypes = {};
 
 TEImageUpload.defaultProps = {
 	onSubmitTitle: 'Submit'
@@ -31301,194 +31323,203 @@ var ErrorMessage$1 = styled__default.span(_templateObject$b, function (props) {
 //
 
 var TEImageRow = function TEImageRow(props) {
-    var _useState = React.useState(false),
-        _useState2 = slicedToArray(_useState, 2),
-        editorVisible = _useState2[0],
-        setEditorVisible = _useState2[1];
+	var _useState = React.useState(false),
+	    _useState2 = slicedToArray(_useState, 2),
+	    editorVisible = _useState2[0],
+	    setEditorVisible = _useState2[1];
 
-    var _useState3 = React.useState(undefined),
-        _useState4 = slicedToArray(_useState3, 2),
-        file = _useState4[0],
-        setFile = _useState4[1];
+	var _useState3 = React.useState(undefined),
+	    _useState4 = slicedToArray(_useState3, 2),
+	    file = _useState4[0],
+	    setFile = _useState4[1];
 
-    var _useState5 = React.useState({ error: false, message: '' }),
-        _useState6 = slicedToArray(_useState5, 2),
-        errorData = _useState6[0],
-        setErrorData = _useState6[1];
+	var _useState5 = React.useState({ error: false, message: '' }),
+	    _useState6 = slicedToArray(_useState5, 2),
+	    errorData = _useState6[0],
+	    setErrorData = _useState6[1];
 
-    var _useState7 = React.useState(props.resetKey || 'inputKey'),
-        _useState8 = slicedToArray(_useState7, 2),
-        inputKey = _useState8[0],
-        setInputKey = _useState8[1];
+	var _useState7 = React.useState(props.resetKey || 'inputKey'),
+	    _useState8 = slicedToArray(_useState7, 2),
+	    inputKey = _useState8[0],
+	    setInputKey = _useState8[1];
 
-    var handleClearImage = function handleClearImage(data) {
-        props.onRemove(data);
-    };
-    var handleCancelEditor = function handleCancelEditor() {
-        setErrorData({ error: false, message: '' });
-        setFile(undefined);
-        setInputKey(new Date().getTime());
-    };
-    var handleEditorSubmit = function handleEditorSubmit(editor) {
-        //TODO: Test if loading this from above will cause errors
-        // const { file } = this.state
-        var onUpload = props.onUpload;
-
-
-        var data = { file: file, editor: editor };
-        onUpload(data).then(function () {
-            setEditorVisible(false);
-            setErrorData({ error: false, message: '' });
-            setFile(undefined);
-            setInputKey(new Date().getTime());
-        }).catch(function (error) {
-            console.log(error);
-            setEditorVisible(false);
-            setErrorData({ error: false, message: '' });
-            setFile(undefined);
-            setInputKey(new Date().getTime());
-        });
-    };
-
-    var onFileChange = function onFileChange(e) {
-        var pattern = props.pattern;
-        var files = e.target.files;
+	var handleClearImage = function handleClearImage(data) {
+		props.onRemove(data);
+	};
+	var handleCancelEditor = function handleCancelEditor() {
+		setErrorData({ error: false, message: '' });
+		setFile(undefined);
+		setInputKey(new Date().getTime());
+	};
+	var handleEditorSubmit = function handleEditorSubmit(editor) {
+		//TODO: Test if loading this from above will cause errors
+		// const { file } = this.state
+		var onUpload = props.onUpload;
 
 
-        if (!files) {
-            console.error('No file provided to input.');
-            return;
-        }
+		var data = { file: file, editor: editor };
+		onUpload(data).then(function () {
+			setEditorVisible(false);
+			setErrorData({ error: false, message: '' });
+			setFile(undefined);
+			setInputKey(new Date().getTime());
+		}).catch(function (error) {
+			console.log(error);
+			setEditorVisible(false);
+			setErrorData({ error: false, message: '' });
+			setFile(undefined);
+			setInputKey(new Date().getTime());
+		});
+	};
 
-        var file = files[0];
-
-        //Validate Files
-        if (pattern && pattern instanceof RegExp) {
-            if (!file.type.match(pattern)) {
-                console.warn('The selected file is not an image.');
-                setErrorData({ error: true, message: 'The selected file is not an image.' });
-                setInputKey(new Date().getTime());
-                return;
-            }
-        }
-
-        setErrorData({ error: false, message: '' });
-        setFile(file);
-        setEditorVisible(true);
-    };
-
-    var className = props.className,
-        size = props.size,
-        last = props.last,
-        title = props.title,
-        imgSrc = props.imgSrc,
-        maxNumber = props.maxNumber,
-        accept = props.accept,
-        disabled = props.disabled,
-        required = props.required,
-        labelForKey = props.labelForKey;
+	var onFileChange = function onFileChange(e) {
+		var pattern = props.pattern;
+		var files = e.target.files;
 
 
-    var imgSrcArray = [];
-    if (imgSrc) {
-        for (var uid in imgSrc) {
-            imgSrcArray.push(_extends({}, imgSrc[uid], { uid: uid }));
-        }
-    }
+		if (!files) {
+			console.error('No file provided to input.');
+			return;
+		}
 
-    var labelText = title;
-    if (maxNumber > 1 && imgSrcArray) {
-        labelText = title + ' (' + imgSrcArray.length + '/' + maxNumber + ')';
-    }
+		var file = files[0];
 
-    return React__default.createElement(
-        TERow,
-        { size: size, last: last, className: className },
-        React__default.createElement(
-            TELabel,
-            { htmlFor: labelForKey, required: required, disabled: disabled },
-            labelText
-        ),
-        React__default.createElement(
-            ImageRowWrapper,
-            null,
-            imgSrcArray && imgSrcArray.map(function (imgSrcData) {
-                var src = imgSrcData.src,
-                    uid = imgSrcData.uid,
-                    path = imgSrcData.path;
+		//Validate Files
+		if (pattern && pattern instanceof RegExp) {
+			if (!file.type.match(pattern)) {
+				console.warn('The selected file is not an image.');
+				setErrorData({ error: true, message: 'The selected file is not an image.' });
+				setInputKey(new Date().getTime());
+				return;
+			}
+		}
 
-                return React__default.createElement(
-                    ImageWrapper,
-                    { key: uid },
-                    React__default.createElement(
-                        'a',
-                        { href: src, target: '_blank', rel: 'noopener noreferrer' },
-                        React__default.createElement(Image$1, { src: src, alt: uid })
-                    ),
-                    React__default.createElement(
-                        ClearImageButton,
-                        { onClick: function onClick() {
-                                return handleClearImage({ uid: uid, path: path });
-                            } },
-                        React__default.createElement(ClearImageButtonIcon, null)
-                    )
-                );
-            }),
-            (maxNumber === 0 || !imgSrcArray || imgSrcArray && imgSrcArray.length < maxNumber) && !disabled && React__default.createElement(
-                Label$3,
-                { disabled: disabled },
-                React__default.createElement(
-                    'div',
-                    null,
-                    React__default.createElement(UploadIcon, null)
-                ),
-                React__default.createElement(Input$3, {
-                    key: inputKey //Used to reset input
-                    , type: 'file',
-                    accept: accept,
-                    onChange: onFileChange
-                })
-            )
-        ),
-        errorData && errorData.error && React__default.createElement(
-            ErrorMessage$1,
-            null,
-            errorData.message
-        ),
-        React__default.createElement(TEImageUpload, {
-            visible: editorVisible,
-            file: file,
-            onCancel: handleCancelEditor,
-            onSubmit: handleEditorSubmit
-        })
-    );
+		setErrorData({ error: false, message: '' });
+		setFile(file);
+		setEditorVisible(true);
+	};
+
+	var className = props.className,
+	    size = props.size,
+	    last = props.last,
+	    title = props.title,
+	    imgSrc = props.imgSrc,
+	    maxNumber = props.maxNumber,
+	    accept = props.accept,
+	    disabled = props.disabled,
+	    required = props.required,
+	    labelForKey = props.labelForKey;
+
+
+	var imgSrcArray = [];
+	if (imgSrc) {
+		for (var uid in imgSrc) {
+			imgSrcArray.push(_extends({}, imgSrc[uid], { uid: uid }));
+		}
+	}
+
+	var labelText = title;
+	if (maxNumber > 1 && imgSrcArray) {
+		labelText = title + ' (' + imgSrcArray.length + '/' + maxNumber + ')';
+	}
+
+	return React__default.createElement(
+		TERow,
+		{ size: size, last: last, className: className },
+		React__default.createElement(
+			TELabel,
+			{
+				htmlFor: labelForKey,
+				required: required,
+				disabled: disabled,
+				className: 'TEImageRowTitle'
+			},
+			labelText
+		),
+		React__default.createElement(
+			ImageRowWrapper,
+			{ className: 'TEImageRowWrapper' },
+			imgSrcArray && imgSrcArray.map(function (imgSrcData) {
+				var src = imgSrcData.src,
+				    uid = imgSrcData.uid,
+				    path = imgSrcData.path;
+
+				return React__default.createElement(
+					ImageWrapper,
+					{ key: uid, className: 'TEImageRowImageWrapper' },
+					React__default.createElement(
+						'a',
+						{ href: src, target: '_blank', rel: 'noopener noreferrer' },
+						React__default.createElement(Image$1, { src: src, alt: uid, className: 'TEImageRowImage' })
+					),
+					React__default.createElement(
+						ClearImageButton,
+						{
+							onClick: function onClick() {
+								return handleClearImage({ uid: uid, path: path });
+							},
+							className: 'TEImageRowClearButton'
+						},
+						React__default.createElement(ClearImageButtonIcon, { className: 'TEImageRowClearIcon' })
+					)
+				);
+			}),
+			(maxNumber === 0 || !imgSrcArray || imgSrcArray && imgSrcArray.length < maxNumber) && !disabled && React__default.createElement(
+				Label$3,
+				{ disabled: disabled },
+				React__default.createElement(
+					'div',
+					null,
+					React__default.createElement(UploadIcon, null)
+				),
+				React__default.createElement(Input$3, {
+					key: inputKey //Used to reset input
+					, type: 'file',
+					accept: accept,
+					onChange: onFileChange
+				})
+			)
+		),
+		errorData && errorData.error && React__default.createElement(
+			ErrorMessage$1,
+			{ className: 'TEImageRowErrorMessage' },
+			errorData.message
+		),
+		React__default.createElement(TEImageUpload, {
+			visible: editorVisible,
+			file: file,
+			onCancel: handleCancelEditor,
+			onSubmit: handleEditorSubmit,
+			className: 'TEImageRowPopup'
+		})
+	);
 };
 
 TEImageRow.propTypes = {
-    //Row
-    size: PropTypes.string,
-    last: PropTypes.bool,
+	//Row
+	size: PropTypes.string,
+	last: PropTypes.bool,
 
-    //Input
-    onUpload: PropTypes.func.isRequired,
-    onRemove: PropTypes.func.isRequired,
-    accept: PropTypes.string,
-    // accept: PropTypes.Regexp, //Don't know protype for regex
-    maxNumber: PropTypes.number,
-    onChangeKey: PropTypes.string,
-    disabled: PropTypes.bool,
+	//Input
+	onUpload: PropTypes.func.isRequired,
+	onRemove: PropTypes.func.isRequired,
+	accept: PropTypes.string,
+	// accept: PropTypes.Regexp, //Don't know protype for regex
+	maxNumber: PropTypes.number,
+	onChangeKey: PropTypes.string,
+	disabled: PropTypes.bool,
 
-    //Both
-    labelForKey: PropTypes.string
+	//Both
+	labelForKey: PropTypes.string
 };
 
 TEImageRow.defaultProps = {
-    accept: 'image/*',
-    pattern: /image-*/,
-    maxNumber: 0
+	accept: 'image/*',
+	pattern: /image-*/,
+	maxNumber: 0
 };
 
-var _templateObject$c = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$c = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Input$4 = styled__default.input(_templateObject$c, function (props) {
     var disabled = props.disabled,
@@ -31501,23 +31532,23 @@ var Input$4 = styled__default.input(_templateObject$c, function (props) {
 //
 
 var TEInput = function TEInput(props) {
-    return React__default.createElement(Input$4, props);
+	return React__default.createElement(Input$4, props);
 };
 
 TEInput.propTypes = {
-    style: PropTypes.object,
-    type: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func.isRequired,
-    disabled: PropTypes.bool
+	style: PropTypes.object,
+	type: PropTypes.string.isRequired,
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	onChange: PropTypes.func.isRequired,
+	disabled: PropTypes.bool
 };
 
 TEInput.defaultProps = {
-    type: 'text',
-    disabled: false
+	type: 'text',
+	disabled: false
 };
 
-var _templateObject$d = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$d = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Textarea = styled__default.textarea(_templateObject$d, function (props) {
     var disabled = props.disabled,
@@ -31530,336 +31561,353 @@ var Textarea = styled__default.textarea(_templateObject$d, function (props) {
 //
 
 var TETextarea = function TETextarea(props) {
-    return React__default.createElement(Textarea, props);
+	return React__default.createElement(Textarea, props);
 };
 
 TETextarea.propTypes = {
-    style: PropTypes.object,
-    type: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func.isRequired,
-    disabled: PropTypes.bool
+	style: PropTypes.object,
+	type: PropTypes.string.isRequired,
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	onChange: PropTypes.func.isRequired,
+	disabled: PropTypes.bool
 };
 
 TETextarea.defaultProps = {
-    type: 'text',
-    disabled: false
+	type: 'text',
+	disabled: false
 };
 
 //
 
 var TEInputRow = function TEInputRow(props) {
-    var size = props.size,
-        last = props.last,
-        title = props.title,
-        type = props.type,
-        onChange = props.onChange,
-        disabled = props.disabled,
-        value = props.value,
-        required = props.required,
-        labelForKey = props.labelForKey,
-        rest = objectWithoutProperties(props, ['size', 'last', 'title', 'type', 'onChange', 'disabled', 'value', 'required', 'labelForKey']);
+	var size = props.size,
+	    last = props.last,
+	    className = props.className,
+	    title = props.title,
+	    type = props.type,
+	    onChange = props.onChange,
+	    disabled = props.disabled,
+	    value = props.value,
+	    required = props.required,
+	    labelForKey = props.labelForKey,
+	    rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'type', 'onChange', 'disabled', 'value', 'required', 'labelForKey']);
 
 
-    return React__default.createElement(
-        TERow,
-        { size: size, last: last },
-        React__default.createElement(
-            TELabel,
-            { htmlFor: labelForKey, required: required, disabled: disabled },
-            title
-        ),
-        type !== 'textarea' ? React__default.createElement(TEInput, _extends({
-            type: type,
-            value: value,
-            onChange: onChange,
-            id: labelForKey,
-            disabled: disabled
-        }, rest)) : React__default.createElement(TETextarea, _extends({
-            value: value,
-            onChange: onChange,
-            id: labelForKey,
-            disabled: disabled
-        }, rest))
-    );
+	return React__default.createElement(
+		TERow,
+		{ size: size, last: last, className: className },
+		React__default.createElement(
+			TELabel,
+			{
+				htmlFor: labelForKey,
+				required: required,
+				disabled: disabled,
+				className: 'TEInputRowTitle'
+			},
+			title
+		),
+		type !== 'textarea' ? React__default.createElement(TEInput, _extends({
+			type: type,
+			value: value,
+			onChange: onChange,
+			id: labelForKey,
+			disabled: disabled,
+			className: 'TEInputRowInput'
+		}, rest)) : React__default.createElement(TETextarea, _extends({
+			value: value,
+			onChange: onChange,
+			id: labelForKey,
+			disabled: disabled,
+			className: 'TEInputRowInput'
+		}, rest))
+	);
 };
 
 TEInputRow.propTypes = {
-    //Row
-    rowStyles: PropTypes.object,
-    size: PropTypes.string,
-    last: PropTypes.bool,
+	//Row
+	rowStyles: PropTypes.object,
+	size: PropTypes.string,
+	last: PropTypes.bool,
 
-    //Input
-    inputStyles: PropTypes.object,
-    type: PropTypes.string,
-    onChange: PropTypes.func,
-    onChangeKey: PropTypes.string,
-    disabled: PropTypes.bool,
+	//Input
+	inputStyles: PropTypes.object,
+	type: PropTypes.string,
+	onChange: PropTypes.func,
+	onChangeKey: PropTypes.string,
+	disabled: PropTypes.bool,
 
-    //Both
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    labelForKey: PropTypes.string
+	//Both
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	labelForKey: PropTypes.string
 };
 
-var _templateObject$e = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$e = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Container$2 = styled__default.div(_templateObject$e, function (props) {
-    return '\n        ';
+	return '\n        ';
 });
 var StepContainer = styled__default.div(_templateObject$e, function (props) {
-    return '\n            width: 100%;\n            display: flex;\n            position: relative;\n            margin-bottom: 30px;\n\n            @media (max-width: 500px) {\n                margin-bottom: 15;\n            }\n        ';
+	return '\n            width: 100%;\n            display: flex;\n            position: relative;\n            margin-bottom: 30px;\n\n            @media (max-width: 500px) {\n                margin-bottom: 15;\n            }\n        ';
 });
 var StepBar = styled__default.div(_templateObject$e, function (props) {
-    var stepCount = props.stepCount,
-        theme = props.theme;
+	var stepCount = props.stepCount,
+	    theme = props.theme;
 
-    return '\n            position: absolute;\n            top: 14px;\n            background-color: ' + theme.primary + ';\n            height: 2px;\n            width: ' + (100 - 100 / stepCount) + '%;\n            left: ' + 100 / stepCount / 2 + '%;\n        ';
+	return '\n            position: absolute;\n            top: 14px;\n            background-color: ' + theme.primary + ';\n            height: 2px;\n            width: ' + (100 - 100 / stepCount) + '%;\n            left: ' + 100 / stepCount / 2 + '%;\n        ';
 });
 var StepWrapper = styled__default.div(_templateObject$e, function (props) {
-    var stepCount = props.stepCount;
+	var stepCount = props.stepCount;
 
-    return '\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            width: ' + 100 / stepCount + '%\n        ';
+	return '\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            width: ' + 100 / stepCount + '%\n        ';
 });
 var StepNumber = styled__default.div(_templateObject$e, function (props) {
-    var active = props.active,
-        theme = props.theme;
+	var active = props.active,
+	    theme = props.theme;
 
-    return '\n            text-align: center;\n            width: 30px;\n            height: 30px;\n            margin-bottom: 10px;\n            line-height: 30px;\n            border: 1px solid ' + theme.primary + ';\n            z-index: 1;\n            background-color: ' + (active ? theme.primary : theme.white) + ';\n            color: ' + (active ? theme.white : theme.primary) + ';\n            transition: color 0.2s ease-in, background-color 0.2s ease-in;\n        ';
+	return '\n            text-align: center;\n            width: 30px;\n            height: 30px;\n            margin-bottom: 10px;\n            line-height: 30px;\n            border: 1px solid ' + theme.primary + ';\n            z-index: 1;\n            background-color: ' + (active ? theme.primary : theme.white) + ';\n            color: ' + (active ? theme.white : theme.primary) + ';\n            transition: color 0.2s ease-in, background-color 0.2s ease-in;\n        ';
 });
 var StepTitle = styled__default.span(_templateObject$e, function (props) {
-    return '\n            text-align: center;\n            font-size: 18px;\n            display: block;\n\n            @media (max-width: 500px) {\n                font-size: 16px;\n            }\n            @media (max-width: 350px) {\n                font-size: 14px;\n            }\n        ';
+	return '\n            text-align: center;\n            font-size: 18px;\n            display: block;\n\n            @media (max-width: 500px) {\n                font-size: 16px;\n            }\n            @media (max-width: 350px) {\n                font-size: 14px;\n            }\n        ';
 });
 
 var Form$1 = styled__default(TEForm)(_templateObject$e, function (props) {
-    return '\n            margin-bottom: 30px;\n        ';
+	return '\n            margin-bottom: 30px;\n        ';
 });
 var ButtonContainer$1 = styled__default.div(_templateObject$e, function (props) {
-    return '\n            display: flex;\n        ';
+	return '\n            display: flex;\n        ';
 });
 
 //TODO: Return to this and figure out way to handle popups and panel use cases without being weird to use in general
 var StepButton = styled__default(TEButton)(_templateObject$e, function (props) {
-    // const { position, rounded, singleButton, theme } = props
-    // let styles = `
-    //     padding: 10px 20px;
-    //     color: ${theme.primary};
-    //     background-color: ${theme.white};
-    //     border-top: 1px solid ${theme.primary};
-    //     border-bottom: none;
-    //     transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;
-    // `
+	// const { position, rounded, singleButton, theme } = props
+	// let styles = `
+	//     padding: 10px 20px;
+	//     color: ${theme.primary};
+	//     background-color: ${theme.white};
+	//     border-top: 1px solid ${theme.primary};
+	//     border-bottom: none;
+	//     transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;
+	// `
 
-    // switch (position) {
-    //     case 'left':
-    //         styles += `
-    //                 border-left: none;
-    //                 border-right: 1px solid ${theme.primary};
+	// switch (position) {
+	//     case 'left':
+	//         styles += `
+	//                 border-left: none;
+	//                 border-right: 1px solid ${theme.primary};
 
-    //                 border-bottom-left-radius: ${rounded ? '5px' : '0px'};
-    //                 border-top-right-radius: 0px;
-    //                 border-top-left-radius: 0px;
-    //                 border-bottom-right-radius: 0px;
+	//                 border-bottom-left-radius: ${rounded ? '5px' : '0px'};
+	//                 border-top-right-radius: 0px;
+	//                 border-top-left-radius: 0px;
+	//                 border-bottom-right-radius: 0px;
 
-    //                 :hover {
-    //                     color: ${theme.white};
-    //                     background-color: ${theme.primary};
-    //                     border-top: 1px solid ${theme.primary};
-    //                     border-left: none;
-    //                     border-right: 1px solid ${theme.primary};
-    //                     border-bottom: none;
-    //                 }
-    //                 :active {
-    //                     color: ${theme.white};
-    //                     background-color: ${theme.primary};
-    //                     border-top: 1px solid ${theme.primary};
-    //                     border-left: none;
-    //                     border-right: 1px solid ${theme.primary};
-    //                     border-bottom: none;
-    //                 }
-    //             `
-    //         break
-    //     case 'right':
-    //         styles += `
-    //                 border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
-    //                 border-right: none;
+	//                 :hover {
+	//                     color: ${theme.white};
+	//                     background-color: ${theme.primary};
+	//                     border-top: 1px solid ${theme.primary};
+	//                     border-left: none;
+	//                     border-right: 1px solid ${theme.primary};
+	//                     border-bottom: none;
+	//                 }
+	//                 :active {
+	//                     color: ${theme.white};
+	//                     background-color: ${theme.primary};
+	//                     border-top: 1px solid ${theme.primary};
+	//                     border-left: none;
+	//                     border-right: 1px solid ${theme.primary};
+	//                     border-bottom: none;
+	//                 }
+	//             `
+	//         break
+	//     case 'right':
+	//         styles += `
+	//                 border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
+	//                 border-right: none;
 
-    //                 border-bottom-right-radius: ${rounded ? '5px' : '0px'};
-    //                 border-bottom-left-radius: ${singleButton && rounded ? '5px' : '0px'};
-    //                 border-top-right-radius: 0px;
-    //                 border-top-left-radius: 0px;
+	//                 border-bottom-right-radius: ${rounded ? '5px' : '0px'};
+	//                 border-bottom-left-radius: ${singleButton && rounded ? '5px' : '0px'};
+	//                 border-top-right-radius: 0px;
+	//                 border-top-left-radius: 0px;
 
-    //                 :hover {
-    //                     color: ${theme.white};
-    //                     background-color: ${theme.primary};
-    //                     border-top: 1px solid ${theme.primary};
-    //                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
-    //                     border-right: none;
-    //                     border-bottom: none;
-    //                 }
-    //                 :active {
-    //                     color: ${theme.white};
-    //                     background-color: ${theme.primary};
-    //                     border-top: 1px solid ${theme.primary};
-    //                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
-    //                     border-right: none;
-    //                     border-bottom: none;
-    //                 }
-    //             `
-    //         break
-    //     default:
-    //         break
-    // }
+	//                 :hover {
+	//                     color: ${theme.white};
+	//                     background-color: ${theme.primary};
+	//                     border-top: 1px solid ${theme.primary};
+	//                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
+	//                     border-right: none;
+	//                     border-bottom: none;
+	//                 }
+	//                 :active {
+	//                     color: ${theme.white};
+	//                     background-color: ${theme.primary};
+	//                     border-top: 1px solid ${theme.primary};
+	//                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
+	//                     border-right: none;
+	//                     border-bottom: none;
+	//                 }
+	//             `
+	//         break
+	//     default:
+	//         break
+	// }
 
-    return '';
+	return '';
 });
 
 //
 
 var TEMultiStepForm = function TEMultiStepForm(props) {
-    var _useState = React.useState(0),
-        _useState2 = slicedToArray(_useState, 2),
-        currentStep = _useState2[0],
-        setCurrentStep = _useState2[1];
+	var _useState = React.useState(0),
+	    _useState2 = slicedToArray(_useState, 2),
+	    currentStep = _useState2[0],
+	    setCurrentStep = _useState2[1];
 
-    var updateAndEmitStep = function updateAndEmitStep(step) {
-        var onStepChange = props.onStepChange;
+	var updateAndEmitStep = function updateAndEmitStep(step) {
+		var onStepChange = props.onStepChange;
 
-        setCurrentStep(step);
-        if (onStepChange) {
-            onStepChange(step);
-        }
-    };
-    var handlePreviousPressed = function handlePreviousPressed() {
-        var handleCancelOnClick = props.handleCancelOnClick,
-            stepData = props.stepData;
-
-
-        var moveBack = function moveBack() {
-            if (currentStep === 0) {
-                if (handleCancelOnClick) {
-                    handleCancelOnClick();
-                }
-            } else {
-                updateAndEmitStep(currentStep - 1);
-            }
-        };
-
-        if (stepData && stepData[currentStep] && stepData[currentStep].onPrevious) {
-            stepData[currentStep].onPrevious().then(function () {
-                return moveBack();
-            }).catch(function (error) {
-                return console.log(error);
-            });
-        } else {
-            moveBack();
-        }
-    };
-    var handleNextPressed = function handleNextPressed() {
-        var onSubmit = props.onSubmit,
-            stepData = props.stepData;
+		setCurrentStep(step);
+		if (onStepChange) {
+			onStepChange(step);
+		}
+	};
+	var handlePreviousPressed = function handlePreviousPressed() {
+		var handleCancelOnClick = props.handleCancelOnClick,
+		    stepData = props.stepData;
 
 
-        var moveForward = function moveForward() {
-            if (currentStep + 1 === stepData.length) {
-                onSubmit().then(function () {
-                    updateAndEmitStep(0);
-                }).catch(function (error) {
-                    return console.log(error);
-                });
-            } else {
-                updateAndEmitStep(currentStep + 1);
-            }
-        };
+		var moveBack = function moveBack() {
+			if (currentStep === 0) {
+				if (handleCancelOnClick) {
+					handleCancelOnClick();
+				}
+			} else {
+				updateAndEmitStep(currentStep - 1);
+			}
+		};
 
-        if (stepData && stepData[currentStep] && stepData[currentStep].onNext) {
-            stepData[currentStep].onNext().then(function () {
-                return moveForward();
-            }).catch(function (error) {
-                return console.log(error);
-            });
-        } else {
-            moveForward();
-        }
-    };
-
-    var className = props.className,
-        handleCancelOnClick = props.handleCancelOnClick,
-        stepData = props.stepData,
-        roundedButtons = props.roundedButtons;
-
-    if (!stepData || stepData && stepData.length === 0) {
-        return null;
-    }
-
-    return React__default.createElement(
-        Container$2,
-        { className: className },
-        React__default.createElement(
-            StepContainer,
-            null,
-            React__default.createElement(StepBar, { stepCount: stepData.length }),
-            stepData.map(function (step, index) {
-                var title = step.title;
+		if (stepData && stepData[currentStep] && stepData[currentStep].onPrevious) {
+			stepData[currentStep].onPrevious().then(function () {
+				return moveBack();
+			}).catch(function (error) {
+				return console.log(error);
+			});
+		} else {
+			moveBack();
+		}
+	};
+	var handleNextPressed = function handleNextPressed() {
+		var onSubmit = props.onSubmit,
+		    stepData = props.stepData;
 
 
-                return React__default.createElement(
-                    StepWrapper,
-                    { key: index, stepCount: stepData.length },
-                    React__default.createElement(
-                        StepNumber,
-                        { active: currentStep === index },
-                        index + 1
-                    ),
-                    React__default.createElement(
-                        StepTitle,
-                        null,
-                        title
-                    )
-                );
-            })
-        ),
-        React__default.createElement(
-            Form$1,
-            null,
-            stepData[currentStep] && stepData[currentStep].component
-        ),
-        React__default.createElement(
-            ButtonContainer$1,
-            null,
-            (handleCancelOnClick || currentStep > 0) && React__default.createElement(
-                StepButton,
-                {
-                    onClick: handlePreviousPressed,
-                    position: 'left',
-                    rounded: roundedButtons
-                },
-                currentStep === 0 ? 'cancel' : 'previous'
-            ),
-            React__default.createElement(
-                StepButton,
-                {
-                    onClick: handleNextPressed,
-                    position: 'right',
-                    rounded: roundedButtons,
-                    singleButton: !handleCancelOnClick && currentStep === 0
-                },
-                currentStep + 1 === stepData.length ? 'submit' : 'next'
-            )
-        )
-    );
+		var moveForward = function moveForward() {
+			if (currentStep + 1 === stepData.length) {
+				onSubmit().then(function () {
+					updateAndEmitStep(0);
+				}).catch(function (error) {
+					return console.log(error);
+				});
+			} else {
+				updateAndEmitStep(currentStep + 1);
+			}
+		};
+
+		if (stepData && stepData[currentStep] && stepData[currentStep].onNext) {
+			stepData[currentStep].onNext().then(function () {
+				return moveForward();
+			}).catch(function (error) {
+				return console.log(error);
+			});
+		} else {
+			moveForward();
+		}
+	};
+
+	var className = props.className,
+	    handleCancelOnClick = props.handleCancelOnClick,
+	    stepData = props.stepData,
+	    roundedButtons = props.roundedButtons;
+
+	if (!stepData || stepData && stepData.length === 0) {
+		return null;
+	}
+
+	return React__default.createElement(
+		Container$2,
+		{ className: className },
+		React__default.createElement(
+			StepContainer,
+			{ className: 'TEMultiStepFormStepContainer' },
+			React__default.createElement(StepBar, { stepCount: stepData.length, className: 'TEMultiStepFormStepBar' }),
+			stepData.map(function (step, index) {
+				var title = step.title;
+
+
+				return React__default.createElement(
+					StepWrapper,
+					{
+						key: index,
+						stepCount: stepData.length,
+						className: 'TEMultiStepFormStepWrapper'
+					},
+					React__default.createElement(
+						StepNumber,
+						{
+							active: currentStep === index,
+							className: 'TEMultiStepFormStepNumber'
+						},
+						index + 1
+					),
+					React__default.createElement(
+						StepTitle,
+						{ className: 'TEMultiStepFormStepTitle' },
+						title
+					)
+				);
+			})
+		),
+		React__default.createElement(
+			Form$1,
+			{ className: 'TEMultiStepFormForm' },
+			stepData[currentStep] && stepData[currentStep].component
+		),
+		React__default.createElement(
+			ButtonContainer$1,
+			{ className: 'TEMultiStepFormButtonContainer' },
+			(handleCancelOnClick || currentStep > 0) && React__default.createElement(
+				StepButton,
+				{
+					onClick: handlePreviousPressed,
+					position: 'left',
+					rounded: roundedButtons,
+					className: 'TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft'
+				},
+				currentStep === 0 ? 'cancel' : 'previous'
+			),
+			React__default.createElement(
+				StepButton,
+				{
+					onClick: handleNextPressed,
+					position: 'right',
+					rounded: roundedButtons,
+					singleButton: !handleCancelOnClick && currentStep === 0,
+					className: 'TEMultiStepFormStepButton TEMultiStepFormStepButtonright'
+				},
+				currentStep + 1 === stepData.length ? 'submit' : 'next'
+			)
+		)
+	);
 };
 
 TEMultiStepForm.propTypes = {
-    onStepChange: PropTypes.func,
-    onSubmit: PropTypes.func.isRequired,
-    stepData: PropTypes.arrayOf(PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        component: PropTypes.element,
-        onPrevious: PropTypes.func,
-        onNext: PropTypes.func
-    }).isRequired).isRequired,
-    roundedButtons: PropTypes.bool
+	onStepChange: PropTypes.func,
+	onSubmit: PropTypes.func.isRequired,
+	stepData: PropTypes.arrayOf(PropTypes.shape({
+		title: PropTypes.string.isRequired,
+		component: PropTypes.element,
+		onPrevious: PropTypes.func,
+		onNext: PropTypes.func
+	}).isRequired).isRequired,
+	roundedButtons: PropTypes.bool
 };
 
 var _templateObject$f = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
@@ -31874,109 +31922,118 @@ var TERadioButtonInput = function TERadioButtonInput(props) {
   return React__default.createElement(Input$5, _extends({}, props, { type: 'radio' }));
 };
 
-var _templateObject$g = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$g = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Container$3 = styled__default(TERow)(_templateObject$g, function (props) {
-    return '\n            margin-bottom: 10px;\n            display: inline-block;\n            vertical-align: top;\n        ';
+  return '\n            margin-bottom: 10px;\n            display: inline-block;\n            vertical-align: top;\n        ';
 });
 var InputWrapper$2 = styled__default.div(_templateObject$g, function (props) {
-    return '\n            display: flex;\n            flex-wrap: wrap;\n        ';
+  return '\n            display: flex;\n            flex-wrap: wrap;\n        ';
 });
 
-var RowWrarpper$1 = styled__default(TERow)(_templateObject$g, function (props) {
-    return '\n            margin-bottom: 5px;\n            display: flex;\n            align-items: center;\n        ';
+var RowWrapper = styled__default(TERow)(_templateObject$g, function (props) {
+  return '\n            margin-bottom: 5px;\n            display: flex;\n            align-items: center;\n        ';
 });
 
 var RadioButton = styled__default(TERadioButtonInput)(_templateObject$g, function (props) {
-    return '\n            display: inline-block;\n            vertical-align: middle;\n            cursor: pointer;\n        ';
+  return '\n            display: inline-block;\n            vertical-align: middle;\n            cursor: pointer;\n        ';
 });
 var Label$4 = styled__default(TELabel)(_templateObject$g, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
 
-    return '\n            width: auto;\n            display: inline-block;\n            vertical-align: middle;\n            padding-left: 10px;\n            margin-bottom: 0px;\n            cursor: pointer;\n            font-size: 14px;\n\n            @media (max-width: 550px) {\n                font-size: 12px;\n            }\n        ';
+  return '\n            width: auto;\n            display: inline-block;\n            vertical-align: middle;\n            padding-left: 10px;\n            margin-bottom: 0px;\n            cursor: pointer;\n            font-size: 14px;\n\n            @media (max-width: 550px) {\n                font-size: 12px;\n            }\n        ';
 });
 
 //
 
 var manipulateRowData$1 = function manipulateRowData(_ref) {
-    var rowData = _ref.rowData,
-        _ref$labelForKey = _ref.labelForKey,
-        labelForKey = _ref$labelForKey === undefined ? '' : _ref$labelForKey;
+	var rowData = _ref.rowData,
+	    _ref$labelForKey = _ref.labelForKey,
+	    labelForKey = _ref$labelForKey === undefined ? '' : _ref$labelForKey;
 
-    //Allowing For Greater Shorthand
-    if (typeof rowData === 'string') {
-        var label = rowData;
-        var value = rowData;
-        var key = labelForKey + rowData;
-        return { label: label, value: value, key: key };
-    } else if ((typeof rowData === 'undefined' ? 'undefined' : _typeof(rowData)) === 'object') {
-        var _label = rowData.label,
-            _rowData$value = rowData.value,
-            _value = _rowData$value === undefined ? _label : _rowData$value,
-            _rowData$key = rowData.key,
-            _key = _rowData$key === undefined ? labelForKey + _label : _rowData$key;
+	//Allowing For Greater Shorthand
+	if (typeof rowData === 'string') {
+		var label = rowData;
+		var value = rowData;
+		var key = labelForKey + rowData;
+		return { label: label, value: value, key: key };
+	} else if ((typeof rowData === 'undefined' ? 'undefined' : _typeof(rowData)) === 'object') {
+		var _label = rowData.label,
+		    _rowData$value = rowData.value,
+		    _value = _rowData$value === undefined ? _label : _rowData$value,
+		    _rowData$key = rowData.key,
+		    _key = _rowData$key === undefined ? labelForKey + _label : _rowData$key;
 
-        return { label: _label, value: _value, key: _key };
-    }
-    return rowData;
+		return { label: _label, value: _value, key: _key };
+	}
+	return rowData;
 };
 var TERadioButtonGroup = function TERadioButtonGroup(props) {
-    var size = props.size,
-        last = props.last,
-        title = props.title,
-        onChange = props.onChange,
-        checkedValue = props.checkedValue,
-        buttonArray = props.buttonArray,
-        labelForKey = props.labelForKey,
-        disabled = props.disabled,
-        required = props.required,
-        rowSize = props.rowSize,
-        className = props.className;
+	var size = props.size,
+	    last = props.last,
+	    title = props.title,
+	    onChange = props.onChange,
+	    checkedValue = props.checkedValue,
+	    buttonArray = props.buttonArray,
+	    labelForKey = props.labelForKey,
+	    disabled = props.disabled,
+	    required = props.required,
+	    rowSize = props.rowSize,
+	    className = props.className;
 
 
-    return React__default.createElement(
-        Container$3,
-        { size: size, last: last, className: className },
-        React__default.createElement(
-            TELabel,
-            { disabled: disabled, required: required },
-            title
-        ),
-        React__default.createElement(
-            InputWrapper$2,
-            null,
-            buttonArray && buttonArray.map(function (rowData) {
-                var _manipulateRowData = manipulateRowData$1({ rowData: rowData, labelForKey: labelForKey }),
-                    label = _manipulateRowData.label,
-                    value = _manipulateRowData.value,
-                    key = _manipulateRowData.key;
+	return React__default.createElement(
+		Container$3,
+		{ size: size, last: last, className: className },
+		React__default.createElement(
+			TELabel,
+			{ disabled: disabled, required: required, className: 'TERadioButtonGroupTitle' },
+			title
+		),
+		React__default.createElement(
+			InputWrapper$2,
+			{ className: 'TERadioButtonGroupInputWrapper' },
+			buttonArray && buttonArray.map(function (rowData) {
+				var _manipulateRowData = manipulateRowData$1({ rowData: rowData, labelForKey: labelForKey }),
+				    label = _manipulateRowData.label,
+				    value = _manipulateRowData.value,
+				    key = _manipulateRowData.key;
 
-                return React__default.createElement(
-                    RowWrarpper$1,
-                    { key: key, size: rowSize },
-                    React__default.createElement(RadioButton, {
-                        value: value,
-                        onChange: onChange,
-                        id: key,
-                        checked: checkedValue === value,
-                        disabled: disabled
-                    }),
-                    React__default.createElement(
-                        Label$4,
-                        { htmlFor: key, disabled: disabled },
-                        label
-                    )
-                );
-            })
-        )
-    );
+				return React__default.createElement(
+					RowWrapper,
+					{
+						key: key,
+						size: rowSize,
+						className: 'TERadioButtonGroupRowWrapper'
+					},
+					React__default.createElement(RadioButton, {
+						value: value,
+						onChange: onChange,
+						id: key,
+						checked: checkedValue === value,
+						disabled: disabled,
+						className: 'TERadioButtonGroupRadioButton'
+					}),
+					React__default.createElement(
+						Label$4,
+						{
+							htmlFor: key,
+							disabled: disabled,
+							className: 'TERadioButtonGroupLabel'
+						},
+						label
+					)
+				);
+			})
+		)
+	);
 };
 
 TERadioButtonGroup.propTypes = {
-    title: PropTypes.string,
-    onChange: PropTypes.func,
-    labelForKey: PropTypes.string
+	title: PropTypes.string,
+	onChange: PropTypes.func,
+	labelForKey: PropTypes.string
 };
 
 var tether = createCommonjsModule(function (module, exports) {
@@ -36307,28 +36364,28 @@ var lib_3 = lib$1.PowerSelect;
 //
 
 var TESearchSelectInput = function TESearchSelectInput(props) {
-    var type = props.type,
-        value = props.value,
-        rest = objectWithoutProperties(props, ['type', 'value']);
+	var type = props.type,
+	    value = props.value,
+	    rest = objectWithoutProperties(props, ['type', 'value']);
 
 
-    if (type === 'single') {
-        return React__default.createElement(lib_3, _extends({ selected: value }, rest));
-    }
-    if (type === 'multi') {
-        return React__default.createElement(lib_1, _extends({ selected: value }, rest));
-    }
+	if (type === 'single') {
+		return React__default.createElement(lib_3, _extends({ selected: value }, rest));
+	}
+	if (type === 'multi') {
+		return React__default.createElement(lib_1, _extends({ selected: value }, rest));
+	}
 
-    return React__default.createElement(lib_3, _extends({ selected: value }, rest));
+	return React__default.createElement(lib_3, _extends({ selected: value }, rest));
 };
 
 TESearchSelectInput.propTypes = {
-    type: PropTypes.string
+	type: PropTypes.string
 };
 
 TESearchSelectInput.defaultProps = {
-    type: 'single',
-    searchEnabled: true
+	type: 'single',
+	searchEnabled: true
 };
 
 //
@@ -36341,182 +36398,197 @@ TESearchSelectInput.defaultProps = {
 //
 
 var TESearchSelectRow = function TESearchSelectRow(props) {
-    var size = props.size,
-        last = props.last,
-        className = props.className,
-        title = props.title,
-        labelForKey = props.labelForKey,
-        rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
+	var size = props.size,
+	    last = props.last,
+	    className = props.className,
+	    title = props.title,
+	    labelForKey = props.labelForKey,
+	    rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
 
 
-    return React__default.createElement(
-        TERow,
-        { size: size, last: last, className: className, required: rest.required },
-        React__default.createElement(
-            TELabel,
-            { htmlFor: labelForKey, required: rest.required, disabled: rest.disabled },
-            title
-        ),
-        React__default.createElement(TESearchSelectInput, _extends({ id: labelForKey }, rest))
-    );
+	return React__default.createElement(
+		TERow,
+		{ size: size, last: last, className: className, required: rest.required },
+		React__default.createElement(
+			TELabel,
+			{
+				htmlFor: labelForKey,
+				required: rest.required,
+				disabled: rest.disabled,
+				className: 'TESearchSelectRowTitle'
+			},
+			title
+		),
+		React__default.createElement(TESearchSelectInput, _extends({ id: labelForKey, className: 'TESearchSelectRowInput' }, rest))
+	);
 };
 
 TESearchSelectRow.propTypes = {
-    //Row
-    size: PropTypes.string,
-    last: PropTypes.bool,
-    title: PropTypes.string,
-    type: PropTypes.string,
-    labelForKey: PropTypes.string
+	//Row
+	size: PropTypes.string,
+	last: PropTypes.bool,
+	title: PropTypes.string,
+	type: PropTypes.string,
+	labelForKey: PropTypes.string
 };
 
 TESearchSelectRow.defaultProps = {
-    type: 'single',
-    searchEnabled: true
+	type: 'single',
+	searchEnabled: true
 };
 
-var _templateObject$h = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$h = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Row$2 = styled__default(TERow)(_templateObject$h, function (props) {
-    var inline = props.inline;
+  var inline = props.inline;
 
 
-    if (inline) {
-        return '\n                display: flex;\n                justify-content: space-between;\n            ';
-    } else {
-        return '';
-    }
+  if (inline) {
+    return '\n                display: flex;\n                justify-content: space-between;\n            ';
+  } else {
+    return '';
+  }
 });
 var Label$5 = styled__default(TELabel)(_templateObject$h, function (props) {
-    var inline = props.inline;
+  var inline = props.inline;
 
 
-    return '\n            width: ' + (inline ? 'auto' : '100%') + ';\n            align-self: ' + (inline ? 'center' : 'auto') + ';\n            text-align: left;\n            display: block;\n            margin-bottom: ' + (inline ? '0px' : '5px') + ';\n            padding-right: ' + (inline ? '10px' : '0px') + ';\n            font-size: 18px;\n\n            @media (max-width: 550px) {\n                font-size: 16px;\n            }\n        ';
+  return '\n            width: ' + (inline ? 'auto' : '100%') + ';\n            align-self: ' + (inline ? 'center' : 'auto') + ';\n            text-align: left;\n            display: block;\n            margin-bottom: ' + (inline ? '0px' : '5px') + ';\n            padding-right: ' + (inline ? '10px' : '0px') + ';\n            font-size: 18px;\n\n            @media (max-width: 550px) {\n                font-size: 16px;\n            }\n        ';
 });
 var SegmentedContainer = styled__default.div(_templateObject$h, function (props) {
-    var inline = props.inline;
+  var inline = props.inline;
 
 
-    if (inline) {
-        return '\n                display: inline-block;\n                width: auto;\n                white-space: nowrap;\n                align-self: center;\n            ';
-    } else {
-        return '';
-    }
+  if (inline) {
+    return '\n                display: inline-block;\n                width: auto;\n                white-space: nowrap;\n                align-self: center;\n            ';
+  } else {
+    return '';
+  }
 });
 var LabelWrapper = styled__default.div(_templateObject$h, function (props) {
-    return '\n            display: inline-block;\n            width: auto;\n        ';
+  return '\n            display: inline-block;\n            width: auto;\n        ';
 });
 var Input$6 = styled__default(TERadioButtonInput)(_templateObject$h, function (props) {
-    return '\n            display: none;\n        ';
+  return '\n            display: none;\n        ';
 });
 var InputLabel = styled__default(TELabel)(_templateObject$h, function (props) {
-    var first = props.first,
-        last = props.last,
-        checked = props.checked,
-        disabled = props.disabled,
-        theme = props.theme;
+  var first = props.first,
+      last = props.last,
+      checked = props.checked,
+      disabled = props.disabled,
+      theme = props.theme;
 
-    var styles = '\n            display: inline-block;\n            width: auto;\n            border: 1px solid ' + (checked ? theme.primary : theme.lightGray) + ';\n            padding: 8px 15px;\n            margin: 0px;\n            background-color: ' + (checked ? theme.primary : theme.white) + ';\n            font-size: 14px;\n            color: ' + (checked ? theme.white : theme.darkGray) + '\n            cursor: ' + (disabled ? 'not-allowed' : 'pointer') + ';\n            pointer-events: ' + (disabled ? 'none' : 'auto') + ';\n\n            transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\n            :hover {\n                color: ' + (disabled && !checked ? theme.gray : theme.white) + ';\n                background-color: ' + (disabled && !checked ? theme.white : theme.primary) + ';\n                border: 1px solid ' + (disabled && !checked ? theme.lightGray : theme.primary) + ';\n            }\n            :active {\n                color: ' + (disabled && !checked ? theme.gray : theme.white) + ';\n                background-color: ' + (disabled && !checked ? theme.white : theme.primary) + ';\n                border: 1px solid ' + (disabled && !checked ? theme.lightGray : theme.primary) + ';\n            }\n        ';
+  var styles = '\n            display: inline-block;\n            width: auto;\n            border: 1px solid ' + (checked ? theme.primary : theme.lightGray) + ';\n            padding: 8px 15px;\n            margin: 0px;\n            background-color: ' + (checked ? theme.primary : theme.white) + ';\n            font-size: 14px;\n            color: ' + (checked ? theme.white : theme.darkGray) + '\n            cursor: ' + (disabled ? 'not-allowed' : 'pointer') + ';\n            pointer-events: ' + (disabled ? 'none' : 'auto') + ';\n\n            transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\n            :hover {\n                color: ' + (disabled && !checked ? theme.gray : theme.white) + ';\n                background-color: ' + (disabled && !checked ? theme.white : theme.primary) + ';\n                border: 1px solid ' + (disabled && !checked ? theme.lightGray : theme.primary) + ';\n            }\n            :active {\n                color: ' + (disabled && !checked ? theme.gray : theme.white) + ';\n                background-color: ' + (disabled && !checked ? theme.white : theme.primary) + ';\n                border: 1px solid ' + (disabled && !checked ? theme.lightGray : theme.primary) + ';\n            }\n        ';
 
-    if (first) {
-        styles += '\n                border-top-left-radius: 5px;\n                border-bottom-left-radius: 5px;\n            ';
-    }
-    if (last) {
-        styles += '\n                border-top-right-radius: 5px;\n                border-bottom-right-radius: 5px;\n            ';
-    }
+  if (first) {
+    styles += '\n                border-top-left-radius: 5px;\n                border-bottom-left-radius: 5px;\n            ';
+  }
+  if (last) {
+    styles += '\n                border-top-right-radius: 5px;\n                border-bottom-right-radius: 5px;\n            ';
+  }
 
-    return styles;
+  return styles;
 });
 
 //
 
 var manipulateRowData$2 = function manipulateRowData(_ref) {
-    var rowData = _ref.rowData,
-        _ref$labelForKey = _ref.labelForKey,
-        labelForKey = _ref$labelForKey === undefined ? '' : _ref$labelForKey;
+	var rowData = _ref.rowData,
+	    _ref$labelForKey = _ref.labelForKey,
+	    labelForKey = _ref$labelForKey === undefined ? '' : _ref$labelForKey;
 
-    //Allowing For Greater Shorthand
-    if (typeof rowData === 'string') {
-        var label = rowData;
-        var value = rowData;
-        var key = labelForKey + rowData;
-        return { label: label, value: value, key: key };
-    } else if ((typeof rowData === 'undefined' ? 'undefined' : _typeof(rowData)) === 'object') {
-        var _label = rowData.label,
-            _rowData$value = rowData.value,
-            _value = _rowData$value === undefined ? _label : _rowData$value,
-            _rowData$key = rowData.key,
-            _key = _rowData$key === undefined ? labelForKey + _label : _rowData$key;
+	//Allowing For Greater Shorthand
+	if (typeof rowData === 'string') {
+		var label = rowData;
+		var value = rowData;
+		var key = labelForKey + rowData;
+		return { label: label, value: value, key: key };
+	} else if ((typeof rowData === 'undefined' ? 'undefined' : _typeof(rowData)) === 'object') {
+		var _label = rowData.label,
+		    _rowData$value = rowData.value,
+		    _value = _rowData$value === undefined ? _label : _rowData$value,
+		    _rowData$key = rowData.key,
+		    _key = _rowData$key === undefined ? labelForKey + _label : _rowData$key;
 
-        return { label: _label, value: _value, key: _key };
-    }
-    return rowData;
+		return { label: _label, value: _value, key: _key };
+	}
+	return rowData;
 };
 var TESegmentedGroup = function TESegmentedGroup(props) {
-    var title = props.title,
-        onChange = props.onChange,
-        checkedValue = props.checkedValue,
-        buttonArray = props.buttonArray,
-        labelForKey = props.labelForKey,
-        required = props.required,
-        inline = props.inline,
-        disabled = props.disabled,
-        size = props.size,
-        last = props.last,
-        className = props.className;
+	var title = props.title,
+	    onChange = props.onChange,
+	    checkedValue = props.checkedValue,
+	    buttonArray = props.buttonArray,
+	    labelForKey = props.labelForKey,
+	    required = props.required,
+	    inline = props.inline,
+	    disabled = props.disabled,
+	    size = props.size,
+	    last = props.last,
+	    className = props.className;
 
 
-    return React__default.createElement(
-        Row$2,
-        { size: size, last: last, inline: inline, className: className },
-        React__default.createElement(
-            Label$5,
-            { inline: inline, required: required, disabled: disabled },
-            title
-        ),
-        React__default.createElement(
-            SegmentedContainer,
-            { inline: inline },
-            buttonArray && buttonArray.map(function (rowData, index) {
-                var _manipulateRowData = manipulateRowData$2({ rowData: rowData, labelForKey: labelForKey }),
-                    label = _manipulateRowData.label,
-                    value = _manipulateRowData.value,
-                    key = _manipulateRowData.key;
+	return React__default.createElement(
+		Row$2,
+		{ size: size, last: last, inline: inline, className: className },
+		React__default.createElement(
+			Label$5,
+			{
+				inline: inline,
+				required: required,
+				disabled: disabled,
+				className: 'TESegmentedGroupTitle'
+			},
+			title
+		),
+		React__default.createElement(
+			SegmentedContainer,
+			{ inline: inline, className: 'TESegmentedGroupSegmentedContainer' },
+			buttonArray && buttonArray.map(function (rowData, index) {
+				var _manipulateRowData = manipulateRowData$2({ rowData: rowData, labelForKey: labelForKey }),
+				    label = _manipulateRowData.label,
+				    value = _manipulateRowData.value,
+				    key = _manipulateRowData.key;
 
-                return React__default.createElement(
-                    LabelWrapper,
-                    { key: key },
-                    React__default.createElement(Input$6, {
-                        value: value,
-                        onChange: onChange,
-                        id: key,
-                        checked: checkedValue === value,
-                        disabled: disabled
-                    }),
-                    React__default.createElement(
-                        InputLabel,
-                        {
-                            htmlFor: key,
-                            key: key,
-                            first: index === 0,
-                            last: index + 1 === buttonArray.length,
-                            checked: checkedValue === value,
-                            disabled: disabled
-                        },
-                        label
-                    )
-                );
-            })
-        )
-    );
+				return React__default.createElement(
+					LabelWrapper,
+					{
+						key: key,
+						className: 'TESegmentedGroupSegmentedLabelWrapper'
+					},
+					React__default.createElement(Input$6, {
+						value: value,
+						onChange: onChange,
+						id: key,
+						checked: checkedValue === value,
+						disabled: disabled,
+						className: 'TESegmentedGroupSegmentedInput'
+					}),
+					React__default.createElement(
+						InputLabel,
+						{
+							htmlFor: key,
+							key: key,
+							first: index === 0,
+							last: index + 1 === buttonArray.length,
+							checked: checkedValue === value,
+							disabled: disabled,
+							className: 'TESegmentedGroupSegmentedLabel'
+						},
+						label
+					)
+				);
+			})
+		)
+	);
 };
 
 TESegmentedGroup.propTypes = {
-    title: PropTypes.string,
-    size: PropTypes.string,
-    last: PropTypes.bool,
-    inline: PropTypes.bool,
-    onChange: PropTypes.func
+	title: PropTypes.string,
+	size: PropTypes.string,
+	last: PropTypes.bool,
+	inline: PropTypes.bool,
+	onChange: PropTypes.func
 };
 
 var _templateObject$i = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
@@ -36534,29 +36606,30 @@ var TEPannelWrapper = function TEPannelWrapper(props) {
   return React__default.createElement(Container$4, props);
 };
 
-var _templateObject$j = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$j = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Container$5 = styled__default.div(_templateObject$j, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            width: 100%;\n            backgroundColor: ' + theme.white + ';\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding-bottom: 10px;\n            margin-bottom: 20px;\n            border-bottom: 1px solid ' + theme.lightGray + ';\n        ';
+  return '\n            width: 100%;\n            backgroundColor: ' + theme.white + ';\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding-bottom: 10px;\n            margin-bottom: 20px;\n            border-bottom: 1px solid ' + theme.lightGray + ';\n        ';
 });
 var Title = styled__default.h1(_templateObject$j, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            text-align: left;\n            font-size: 30px;\n            margin-top: 0px;\n            margin-bottom: 0px;\n            color: ' + theme.primary + ';\n            line-height: 1;\n\n            @media (max-width: 1000px) {\n                font-size: 28px;\n            }\n            @media (max-width: 800px) {\n                font-size: 24px;\n            }\n            @media (max-width: 650px) {\n                font-size: 20px;\n            }\n        ';
+  return '\n            text-align: left;\n            font-size: 30px;\n            margin-top: 0px;\n            margin-bottom: 0px;\n            color: ' + theme.primary + ';\n            line-height: 1;\n\n            @media (max-width: 1000px) {\n                font-size: 28px;\n            }\n            @media (max-width: 800px) {\n                font-size: 24px;\n            }\n            @media (max-width: 650px) {\n                font-size: 20px;\n            }\n        ';
 });
 var ComponentWrapper = styled__default.div(_templateObject$j, function (props) {
-    return '\n            width: auto;\n        ';
+  return '\n            width: auto;\n        ';
 });
 var Subtitle = styled__default.p(_templateObject$j, function (props) {
-    return '\n            font-size: 18px;\n            margin-bottom: 0px;\n            margin-top: 0px;\n        ';
+  return '\n            font-size: 18px;\n            margin-bottom: 0px;\n            margin-top: 0px;\n        ';
 });
 
 //
 
 var TEPanelTitle = function TEPanelTitle(props) {
-	var title = props.title,
+	var className = props.className,
+	    title = props.title,
 	    leftComponent = props.leftComponent,
 	    subtitle = props.subtitle,
 	    rightComponent = props.rightComponent;
@@ -36564,25 +36637,25 @@ var TEPanelTitle = function TEPanelTitle(props) {
 
 	return React__default.createElement(
 		Container$5,
-		null,
+		{ className: className },
 		title && React__default.createElement(
 			Title,
-			null,
+			{ className: 'TEpanelTitleTitle' },
 			title
 		),
 		leftComponent && React__default.createElement(
 			ComponentWrapper,
-			null,
+			{ className: 'TEpanelTitleLeftComponentWrapper' },
 			leftComponent
 		),
 		subtitle && React__default.createElement(
 			Subtitle,
-			null,
+			{ className: 'TEpanelTitleSubTitle' },
 			subtitle
 		),
 		rightComponent && React__default.createElement(
 			ComponentWrapper,
-			null,
+			{ className: 'TEpanelTitleRightComponentWrapper' },
 			rightComponent
 		)
 	);
@@ -36595,7 +36668,7 @@ TEPanelTitle.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$k = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$k = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Container$6 = styled__default.div(_templateObject$k, function (props) {
     var theme = props.theme,
@@ -36628,33 +36701,34 @@ var Container$6 = styled__default.div(_templateObject$k, function (props) {
 //
 
 var TEPanel = function TEPanel(props) {
-    var size = props.size,
-        className = props.className,
-        title = props.title,
-        leftComponent = props.leftComponent,
-        subtitle = props.subtitle,
-        rightComponent = props.rightComponent,
-        children = props.children;
+	var size = props.size,
+	    className = props.className,
+	    title = props.title,
+	    leftComponent = props.leftComponent,
+	    subtitle = props.subtitle,
+	    rightComponent = props.rightComponent,
+	    children = props.children;
 
-    return React__default.createElement(
-        Container$6,
-        { className: className, size: size },
-        (title || leftComponent || subtitle || rightComponent) && React__default.createElement(TEPanelTitle, {
-            title: title,
-            leftComponent: leftComponent,
-            subtitle: subtitle,
-            rightComponent: rightComponent
-        }),
-        children
-    );
+	return React__default.createElement(
+		Container$6,
+		{ className: className, size: size },
+		(title || leftComponent || subtitle || rightComponent) && React__default.createElement(TEPanelTitle, {
+			title: title,
+			leftComponent: leftComponent,
+			subtitle: subtitle,
+			rightComponent: rightComponent,
+			className: 'TEPanelTitleBar'
+		}),
+		children
+	);
 };
 
 TEPanel.propTypes = {
-    size: PropTypes.string
+	size: PropTypes.string
 };
 
 TEPanel.defaultProps = {
-    size: 'full'
+	size: 'full'
 };
 
 var _templateObject$l = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
@@ -36678,30 +36752,31 @@ var Button$1 = styled__default(TEButton)(_templateObject$l, function (props) {
 //
 
 var TEErrorLoadingAlert = function TEErrorLoadingAlert(props) {
-	var title = props.title,
+	var className = props.className,
+	    title = props.title,
 	    message = props.message,
 	    onClick = props.onClick,
 	    buttonTitle = props.buttonTitle;
 
 	return React__default.createElement(
 		PanelWrapper,
-		null,
+		{ className: className },
 		React__default.createElement(
 			Panel,
 			null,
 			title && React__default.createElement(
 				Title$1,
-				null,
+				{ className: 'TEErrorLoadingAlertTitle' },
 				title
 			),
 			message && React__default.createElement(
 				Message,
-				null,
+				{ className: 'TEErrorLoadingAlertMessage' },
 				message
 			),
 			buttonTitle && React__default.createElement(
 				Button$1,
-				{ onClick: onClick },
+				{ onClick: onClick, className: 'TEErrorLoadingAlertButton' },
 				buttonTitle
 			)
 		)
@@ -36715,7 +36790,7 @@ TEErrorLoadingAlert.propTypes = {
 	buttonTitle: PropTypes.string
 };
 
-var _templateObject$m = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$m = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Container$7 = styled__default.div(_templateObject$m, function (props) {
     var theme = props.theme;
@@ -36740,7 +36815,8 @@ var Subtitle$1 = styled__default.h2(_templateObject$m, function (props) {
 //
 
 var TETitleBar = function TETitleBar(props) {
-	var title = props.title,
+	var className = props.className,
+	    title = props.title,
 	    leftComponent = props.leftComponent,
 	    subtitle = props.subtitle,
 	    rightComponent = props.rightComponent;
@@ -36748,28 +36824,28 @@ var TETitleBar = function TETitleBar(props) {
 
 	return React__default.createElement(
 		Container$7,
-		null,
+		{ className: className },
 		React__default.createElement(
 			Content$1,
-			null,
+			{ className: 'TETitlebarContent' },
 			title && React__default.createElement(
 				Title$2,
-				null,
+				{ className: 'TETitlebarTitle' },
 				title
 			),
 			leftComponent && React__default.createElement(
 				ComponentWrapper$1,
-				null,
+				{ className: 'TETitlebarLeftComponent' },
 				leftComponent
 			),
 			subtitle && React__default.createElement(
 				Subtitle$1,
-				null,
+				{ className: 'TETitlebarSubtitle' },
 				subtitle
 			),
 			rightComponent && React__default.createElement(
 				ComponentWrapper$1,
-				null,
+				{ className: 'TETitlebarRightComponent' },
 				rightComponent
 			)
 		)
@@ -36783,12 +36859,12 @@ TETitleBar.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$n = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$n = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var BodyContainer = styled__default.div(_templateObject$n, function (props) {
-    var sidebarWidth = props.sidebarWidth;
+  var sidebarWidth = props.sidebarWidth;
 
-    return '\n            position: relative;\n            width: calc(100% - ' + sidebarWidth + 'px);\n            min-height: 100%;\n            margin-left: ' + sidebarWidth + 'px;\n        ';
+  return '\n            position: relative;\n            width: calc(100% - ' + sidebarWidth + 'px);\n            min-height: 100%;\n            margin-left: ' + sidebarWidth + 'px;\n        ';
 });
 
 var TEBodyContainer = function TEBodyContainer(props) {
@@ -36904,63 +36980,64 @@ var Ring = styled__default.div(_templateObject$o, function (props) {
 //
 
 var TESpinner = function TESpinner(props) {
-    var renderRings = function renderRings() {
-        var size = props.size,
-            innerColor = props.innerColor,
-            outerColor = props.outerColor;
+	var renderRings = function renderRings() {
+		var size = props.size,
+		    innerColor = props.innerColor,
+		    outerColor = props.outerColor;
 
-        var totalRings = 6;
+		var totalRings = 6;
 
-        switch (size) {
-            case 'small':
-                totalRings = 4;
-                break;
-            case 'medium':
-                totalRings = 5;
-                break;
-            case 'large':
-                totalRings = 6;
-                break;
-            default:
-                break;
-        }
+		switch (size) {
+			case 'small':
+				totalRings = 4;
+				break;
+			case 'medium':
+				totalRings = 5;
+				break;
+			case 'large':
+				totalRings = 6;
+				break;
+			default:
+				break;
+		}
 
-        var rings = [];
-        for (var i = 0; i < totalRings; i++) {
-            rings.push(React__default.createElement(Ring, {
-                key: i,
-                ringNumber: i,
-                totalRings: totalRings,
-                innerColor: innerColor,
-                outerColor: outerColor
-            }));
-        }
-        return rings;
-    };
+		var rings = [];
+		for (var i = 0; i < totalRings; i++) {
+			rings.push(React__default.createElement(Ring, {
+				key: i,
+				ringNumber: i,
+				totalRings: totalRings,
+				innerColor: innerColor,
+				outerColor: outerColor,
+				className: 'TESpinnerRing TESpinnerRing' + (i + 1)
+			}));
+		}
+		return rings;
+	};
 
-    var size = props.size,
-        className = props.className;
+	var size = props.size,
+	    className = props.className;
 
 
-    return React__default.createElement(
-        Container$8,
-        { className: className },
-        React__default.createElement(
-            SpinnerWrapper,
-            { size: size },
-            renderRings()
-        )
-    );
+	return React__default.createElement(
+		Container$8,
+		{ className: className },
+		React__default.createElement(
+			SpinnerWrapper,
+			{ size: size, className: 'TESpinnerContainer' },
+			renderRings()
+		)
+	);
 };
 
 TESpinner.propTypes = {
-    size: PropTypes.string,
-    innerColor: PropTypes.string,
-    outerColor: PropTypes.string
+	size: PropTypes.string,
+	innerColor: PropTypes.string,
+	outerColor: PropTypes.string
 };
 
 TESpinner.defaultProps = {
-    size: 'medium'
+	size: 'medium'
 };
 
 var TEPrivateRoute = function TEPrivateRoute(props) {
@@ -37030,11 +37107,12 @@ var TESideNavLink = function TESideNavLink(props) {
 				},
 				activeClassName: 'active',
 				to: to,
-				exact: exact
+				exact: exact,
+				className: 'TESideNavLinkLink'
 			},
 			title && React__default.createElement(
 				Title$3,
-				null,
+				{ className: 'TESideNavLinkTitle' },
 				title
 			),
 			children
@@ -37068,7 +37146,6 @@ var MainUl = styled__default.ul(_templateObject$q, function (props) {
 
 var TESideNavbar = function TESideNavbar(props) {
 	var sidebarWidth = props.sidebarWidth,
-	    location = props.location,
 	    logo = props.logo,
 	    links = props.links,
 	    className = props.className;
@@ -37078,15 +37155,15 @@ var TESideNavbar = function TESideNavbar(props) {
 		{ sidebarWidth: sidebarWidth, className: className },
 		logo && React__default.createElement(
 			reactRouterDom.Link,
-			{ to: '/' },
-			React__default.createElement(Logo, { src: logo, alt: 'brandmark', title: 'Rittal' })
+			{ to: '/', className: 'TESideNavbarLogoLink' },
+			React__default.createElement(Logo, { src: logo, alt: 'logo', className: 'TESideNavbarLogo' })
 		),
 		React__default.createElement(
 			NavContainer,
-			null,
+			{ className: 'TESideNavbarNavContainer' },
 			React__default.createElement(
 				MainUl,
-				null,
+				{ className: 'TESideNavbarMainUl' },
 				links && links.map(function (link, index) {
 					var title = link.title,
 					    activePath = link.activePath,
@@ -37101,7 +37178,8 @@ var TESideNavbar = function TESideNavbar(props) {
 							to: to,
 							activePath: activePath || to,
 							title: title,
-							exact: exact
+							exact: exact,
+							className: 'TESideNavbarNavLink'
 						},
 						children
 					);
@@ -37158,15 +37236,15 @@ var TESubNavbar = function TESubNavbar(props) {
 		{ className: className },
 		React__default.createElement(
 			Content$2,
-			null,
+			{ className: 'TESubNavbarContent' },
 			React__default.createElement(
 				Ul,
-				null,
+				{ className: 'TESubNavbarUl' },
 				links && links.map(function (link, index) {
 					return React__default.createElement(
 						Li$1,
-						{ key: index },
-						React__default.createElement(Link$1, link)
+						{ key: index, className: 'TESubNavbarLi' },
+						React__default.createElement(Link$1, _extends({ className: 'TESubNavbarLink' }, link))
 					);
 				})
 			),
@@ -37180,25 +37258,25 @@ TESubNavbar.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$s = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$s = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Popup$1 = styled__default(TEPopup)(_templateObject$s, function (props) {
-    return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
+  return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
 });
 var Title$4 = styled__default.h4(_templateObject$s, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
+  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
 });
 var Message$1 = styled__default.p(_templateObject$s, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
+  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
 });
 var Button$2 = styled__default(TEButton)(_templateObject$s, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n        border-top: 1px solid ' + theme.primary + ';\n        border-right: none;\n        border-bottom: none;\n        border-left: none;\n        line-height: 2;\n        border-top-left-radius: 0px;\n        border-top-right-radius: 0px;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n        transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;\n\n        :active {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        :hover {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        ';
+  return '\n        border-top: 1px solid ' + theme.primary + ';\n        border-right: none;\n        border-bottom: none;\n        border-left: none;\n        line-height: 2;\n        border-top-left-radius: 0px;\n        border-top-right-radius: 0px;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n        transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;\n\n        :active {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        :hover {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        ';
 });
 
 //
@@ -37218,18 +37296,18 @@ var TEAlert = function TEAlert(props) {
 		{ visible: visible, className: className },
 		React__default.createElement(
 			Title$4,
-			null,
+			{ className: 'TEAlertTitle' },
 			title
 		),
 		React__default.createElement(
 			Message$1,
-			null,
+			{ className: 'TEAlertMessage' },
 			message
 		),
 		children,
 		React__default.createElement(
 			Button$2,
-			{ onClick: onClick },
+			{ onClick: onClick, className: 'TEAlertButton' },
 			buttonTitle
 		)
 	);
@@ -37246,33 +37324,33 @@ TEAlert.defaultProps = {
 	buttonTitle: 'Okay'
 };
 
-var _templateObject$t = taggedTemplateLiteral(['\n    ', '\n'], ['\n    ', '\n']);
+var _templateObject$t = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
 
 var Popup$2 = styled__default(TEPopup)(_templateObject$t, function (props) {
-    return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
+  return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
 });
 var Title$5 = styled__default.h4(_templateObject$t, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
+  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
 });
 var Message$2 = styled__default.p(_templateObject$t, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
+  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
 });
 var ButtonContainer$2 = styled__default.div(_templateObject$t, function (props) {
-    return '\n            overflow: hidden;\n            display: flex;\n        ';
+  return '\n            overflow: hidden;\n            display: flex;\n        ';
 });
 var LeftButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 20px;\n            border-bottom-right-radius: 0px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: 1px solid ' + theme.primary + ';\n            border-bottom: none;\n            border-left: none;\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n           }\n        ';
+  return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 20px;\n            border-bottom-right-radius: 0px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: 1px solid ' + theme.primary + ';\n            border-bottom: none;\n            border-left: none;\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n           }\n        ';
 });
 var RightButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
-    var theme = props.theme;
+  var theme = props.theme;
 
-    return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 0px;\n            border-bottom-right-radius: 20px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: 1px solid ' + theme.primary + ';\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n           }\n        ';
+  return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 0px;\n            border-bottom-right-radius: 20px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: 1px solid ' + theme.primary + ';\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n           }\n        ';
 });
 
 //
@@ -37294,26 +37372,29 @@ var TEConfirm = function TEConfirm(props) {
 		{ visible: visible, className: className },
 		React__default.createElement(
 			Title$5,
-			null,
+			{ className: 'TEConfirmTitle' },
 			title
 		),
 		React__default.createElement(
 			Message$2,
-			null,
+			{ className: 'TEConfirmMessage' },
 			message
 		),
 		children,
 		React__default.createElement(
 			ButtonContainer$2,
-			null,
+			{ className: 'TEConfirmButtonoContainer' },
 			React__default.createElement(
 				LeftButton$1,
-				{ onClick: leftOnClick },
+				{ onClick: leftOnClick, className: 'TEConfirmButton TEConfirmLeftButton' },
 				leftButtonTitle
 			),
 			React__default.createElement(
 				RightButton$1,
-				{ onClick: rightOnClick },
+				{
+					onClick: rightOnClick,
+					className: 'TEConfirmButton TEConfirmRightButton'
+				},
 				rightButtonTitle
 			)
 		)
@@ -37359,10 +37440,10 @@ var TENetworkActivity = function TENetworkActivity(props) {
 	return React__default.createElement(
 		Popup$3,
 		{ visible: visible, className: className },
-		React__default.createElement(Spinner, { size: 'large' }),
+		React__default.createElement(Spinner, { size: 'large', className: 'TENetworkActivitySpinner' }),
 		message && React__default.createElement(
 			Message$3,
-			null,
+			{ className: 'TENetworkActivityMessage' },
 			message
 		)
 	);
@@ -37396,7 +37477,11 @@ var TEPopupMultiStepForm = function TEPopupMultiStepForm(props) {
 	return React__default.createElement(
 		Popup$4,
 		{ visible: visible, className: className },
-		React__default.createElement(TEMultiStepForm, _extends({ onSubmit: handleSubmit, handleCancelOnClick: onClose }, rest))
+		React__default.createElement(TEMultiStepForm, _extends({
+			onSubmit: handleSubmit,
+			handleCancelOnClick: onClose,
+			className: 'TEPopupMultiStepFormMultiStepForm'
+		}, rest))
 	);
 };
 
@@ -38771,30 +38856,30 @@ var Helmet_2 = Helmet_1.Helmet;
 //
 
 var TEHelmet = function TEHelmet(props) {
-    var _props$charSet = props.charSet,
-        charSet = _props$charSet === undefined ? 'utf-8' : _props$charSet,
-        _props$title = props.title,
-        title = _props$title === undefined ? '' : _props$title,
-        _props$description = props.description,
-        description = _props$description === undefined ? '' : _props$description,
-        rest = objectWithoutProperties(props, ['charSet', 'title', 'description']);
+	var _props$charSet = props.charSet,
+	    charSet = _props$charSet === undefined ? 'utf-8' : _props$charSet,
+	    _props$title = props.title,
+	    title = _props$title === undefined ? '' : _props$title,
+	    _props$description = props.description,
+	    description = _props$description === undefined ? '' : _props$description,
+	    rest = objectWithoutProperties(props, ['charSet', 'title', 'description']);
 
 
-    return React__default.createElement(Helmet_2, _extends({
-        title: title,
-        meta: [{
-            name: 'charSet',
-            content: charSet
-        }, {
-            name: 'description',
-            content: description
-        }]
-    }, rest));
+	return React__default.createElement(Helmet_2, _extends({
+		title: title,
+		meta: [{
+			name: 'charSet',
+			content: charSet
+		}, {
+			name: 'description',
+			content: description
+		}]
+	}, rest));
 };
 
 TEHelmet.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string
+	title: PropTypes.string,
+	description: PropTypes.string
 };
 
 var _templateObject$w = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);

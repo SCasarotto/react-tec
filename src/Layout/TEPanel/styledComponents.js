@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    ${(props) => {
-        const { theme, size } = props
+	${(props) => {
+		const { theme, size } = props
 
-        let styles = `
+		let styles = `
             position: relative;
             background-color: ${theme.white};
             border-radius: 5px;
@@ -28,39 +28,39 @@ export const Container = styled.div`
             }
         `
 
-        switch (size) {
-            case 'full':
-                styles += `width: 100%;`
-                break
-            case 'two-third':
-                styles += `
+		switch (size) {
+			case 'full':
+				styles += `width: 100%;`
+				break
+			case 'two-third':
+				styles += `
                     width: calc(66.666% - 20px);
                     @media (max-width: 700px) {
                         width: 100%;
                     }
                 `
-                break
-            case 'half':
-                styles += `
+				break
+			case 'half':
+				styles += `
                     width: calc(50% - 15px);
                     @media (max-width: 700px) {
                         width: 100%;
                     }
                 `
-                break
-            case 'third':
-                styles += `
+				break
+			case 'third':
+				styles += `
                     width: calc(33.333% - 10px);
                     @media (max-width: 700px) {
                         width: 100%;
                     }
                 `
-                break
-            default:
-                styles += `width: 100%;`
-                break
-        }
+				break
+			default:
+				styles += `width: 100%;`
+				break
+		}
 
-        return styles
-    }}
+		return styles
+	}}
 `

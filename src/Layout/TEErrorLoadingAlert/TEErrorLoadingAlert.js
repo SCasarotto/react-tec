@@ -8,13 +8,17 @@ import PropTypes from 'prop-types'
 import { PanelWrapper, Panel, Title, Message, Button } from './styledComponents'
 
 const TEErrorLoadingAlert = (props) => {
-	const { title, message, onClick, buttonTitle } = props
+	const { className, title, message, onClick, buttonTitle } = props
 	return (
-		<PanelWrapper>
+		<PanelWrapper className={className}>
 			<Panel>
-				{title && <Title>{title}</Title>}
-				{message && <Message>{message}</Message>}
-				{buttonTitle && <Button onClick={onClick}>{buttonTitle}</Button>}
+				{title && <Title className='TEErrorLoadingAlertTitle'>{title}</Title>}
+				{message && <Message className='TEErrorLoadingAlertMessage'>{message}</Message>}
+				{buttonTitle && (
+					<Button onClick={onClick} className='TEErrorLoadingAlertButton'>
+						{buttonTitle}
+					</Button>
+				)}
 			</Panel>
 		</PanelWrapper>
 	)

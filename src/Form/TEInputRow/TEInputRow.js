@@ -11,70 +11,78 @@ import TEInput from './../TEInput'
 import TETextarea from './../TETextarea'
 
 const TEInputRow = (props) => {
-    const {
-        //Row
-        size,
-        last,
+	const {
+		//Row
+		size,
+		last,
+		className,
 
-        //Label
-        title,
+		//Label
+		title,
 
-        //Input
-        type,
-        onChange,
-        disabled,
-        value,
+		//Input
+		type,
+		onChange,
+		disabled,
+		value,
 
-        //Both
-        required,
-        labelForKey,
+		//Both
+		required,
+		labelForKey,
 
-        ...rest
-    } = props
+		...rest
+	} = props
 
-    return (
-        <TERow size={size} last={last}>
-            <TELabel htmlFor={labelForKey} required={required} disabled={disabled}>
-                {title}
-            </TELabel>
-            {type !== 'textarea' ? (
-                <TEInput
-                    type={type}
-                    value={value}
-                    onChange={onChange}
-                    id={labelForKey}
-                    disabled={disabled}
-                    {...rest}
-                />
-            ) : (
-                <TETextarea
-                    value={value}
-                    onChange={onChange}
-                    id={labelForKey}
-                    disabled={disabled}
-                    {...rest}
-                />
-            )}
-        </TERow>
-    )
+	return (
+		<TERow size={size} last={last} className={className}>
+			<TELabel
+				htmlFor={labelForKey}
+				required={required}
+				disabled={disabled}
+				className='TEInputRowTitle'
+			>
+				{title}
+			</TELabel>
+			{type !== 'textarea' ? (
+				<TEInput
+					type={type}
+					value={value}
+					onChange={onChange}
+					id={labelForKey}
+					disabled={disabled}
+					className='TEInputRowInput'
+					{...rest}
+				/>
+			) : (
+				<TETextarea
+					value={value}
+					onChange={onChange}
+					id={labelForKey}
+					disabled={disabled}
+					className='TEInputRowInput'
+					{...rest}
+				/>
+			)}
+		</TERow>
+	)
 }
 
 TEInputRow.propTypes = {
-    //Row
-    rowStyles: PropTypes.object,
-    size: PropTypes.string,
-    last: PropTypes.bool,
+	//Row
+	rowStyles: PropTypes.object,
+	size: PropTypes.string,
+	last: PropTypes.bool,
 
-    //Input
-    inputStyles: PropTypes.object,
-    type: PropTypes.string,
-    onChange: PropTypes.func,
-    onChangeKey: PropTypes.string,
-    disabled: PropTypes.bool,
+	//Input
+	inputStyles: PropTypes.object,
+	type: PropTypes.string,
+	onChange: PropTypes.func,
+	onChangeKey: PropTypes.string,
+	disabled: PropTypes.bool,
 
-    //Both
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    labelForKey: PropTypes.string,
+	//Both
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	labelForKey: PropTypes.string,
 }
 
 export default TEInputRow

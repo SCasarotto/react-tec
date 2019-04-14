@@ -1,3 +1,3 @@
-import TESegmentedGroup from './TESegmentedGroup';
+import TESegmentedGroup from './TESegmentedGroup'
 
-export default TESegmentedGroup;
+export default TESegmentedGroup

@@ -12,8 +12,8 @@ const TENetworkActivity = (props) => {
 
 	return (
 		<Popup visible={visible} className={className}>
-			<Spinner size="large" />
-			{message && <Message>{message}</Message>}
+			<Spinner size='large' className='TENetworkActivitySpinner' />
+			{message && <Message className='TENetworkActivityMessage'>{message}</Message>}
 		</Popup>
 	)
 }

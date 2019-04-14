@@ -52,32 +52,32 @@ const TESideNavLinkSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<ul>
 	<TESideNavLink to="/" title="Home" exact />
 	<TESideNavLink to="/components/globals" title="Globals" />
-	<TESideNavLink to="/components/layouts" title="Layouts" />
+	<TESideNavLink to="/components/layout" title="Layout" />
 	<TESideNavLink to="/components/navigation" title="Navigation" />
 	<TESideNavLink to="/components/form" title="Form" />
 	<TESideNavLink to="/components/popup" title="Popup" />
 	<TESideNavLink
-		to="/components/navigation"
+		to="/components/utility"
 		activePath="/components"
 		title="Utility"
 	/>
 </ul>`}
 			>
 				<ul>
-					<TESideNavLink to="/" title="Home" exact />
-					<TESideNavLink to="/components/globals" title="Globals" />
-					<TESideNavLink to="/components/layouts" title="Layouts" />
-					<TESideNavLink to="/components/navigation" title="Navigation" />
-					<TESideNavLink to="/components/form" title="Form" />
-					<TESideNavLink to="/components/popup" title="Popup" />
+					<TESideNavLink to='/' title='Home' exact />
+					<TESideNavLink to='/components/globals' title='Globals' />
+					<TESideNavLink to='/components/layout' title='Layout' />
+					<TESideNavLink to='/components/navigation' title='Navigation' />
+					<TESideNavLink to='/components/form' title='Form' />
+					<TESideNavLink to='/components/popup' title='Popup' />
 					<TESideNavLink
-						to="/components/navigation"
-						activePath="/components"
-						title="Utility"
+						to='/components/utility'
+						activePath='/components'
+						title='Utility'
 					/>
 				</ul>
 			</ExampleBlock>

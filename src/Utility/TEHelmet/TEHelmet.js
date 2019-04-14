@@ -16,29 +16,29 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 const TEHelmet = (props) => {
-    const { charSet = 'utf-8', title = '', description = '', ...rest } = props
+	const { charSet = 'utf-8', title = '', description = '', ...rest } = props
 
-    return (
-        <Helmet
-            title={title}
-            meta={[
-                {
-                    name: 'charSet',
-                    content: charSet,
-                },
-                {
-                    name: 'description',
-                    content: description,
-                },
-            ]}
-            {...rest}
-        />
-    )
+	return (
+		<Helmet
+			title={title}
+			meta={[
+				{
+					name: 'charSet',
+					content: charSet,
+				},
+				{
+					name: 'description',
+					content: description,
+				},
+			]}
+			{...rest}
+		/>
+	)
 }
 
 TEHelmet.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
+	title: PropTypes.string,
+	description: PropTypes.string,
 }
 
 export default TEHelmet

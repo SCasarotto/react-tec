@@ -12,7 +12,7 @@ const TEPopup = (props) => {
 
 	return (
 		<Background className={className} visible={visible}>
-			<Content>{children}</Content>
+			<Content className='TEPopupContent'>{children}</Content>
 		</Background>
 	)
 }

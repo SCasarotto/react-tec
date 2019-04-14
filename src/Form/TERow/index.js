@@ -1,3 +1,3 @@
-import TERow from './TERow';
+import TERow from './TERow'
 
-export default TERow;
+export default TERow

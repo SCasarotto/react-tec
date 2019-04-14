@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Input = styled.input`
-    ${(props) => {
-        const { disabled, theme } = props
+	${(props) => {
+		const { disabled, theme } = props
 
-        return `
+		return `
             position: relative;
             display: block;
             width: 100%;
@@ -27,5 +27,5 @@ export const Input = styled.input`
                 box-shadow: 0 0 0 1px ${theme.primary} inset;
             }
         `
-    }}
+	}}
 `

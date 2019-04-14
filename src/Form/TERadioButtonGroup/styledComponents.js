@@ -5,47 +5,47 @@ import TELabel from './../TELabel'
 import TERadioButtonInput from './../TERadioButtonInput'
 
 export const Container = styled(TERow)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             margin-bottom: 10px;
             display: inline-block;
             vertical-align: top;
         `
-    }}
+	}}
 `
 export const InputWrapper = styled.div`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: flex;
             flex-wrap: wrap;
         `
-    }}
+	}}
 `
 
-export const RowWrarpper = styled(TERow)`
-    ${(props) => {
-        return `
+export const RowWrapper = styled(TERow)`
+	${(props) => {
+		return `
             margin-bottom: 5px;
             display: flex;
             align-items: center;
         `
-    }}
+	}}
 `
 
 export const RadioButton = styled(TERadioButtonInput)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: inline-block;
             vertical-align: middle;
             cursor: pointer;
         `
-    }}
+	}}
 `
 export const Label = styled(TELabel)`
-    ${(props) => {
-        const { theme } = props
+	${(props) => {
+		const { theme } = props
 
-        return `
+		return `
             width: auto;
             display: inline-block;
             vertical-align: middle;
@@ -58,5 +58,5 @@ export const Label = styled(TELabel)`
                 font-size: 12px;
             }
         `
-    }}
+	}}
 `

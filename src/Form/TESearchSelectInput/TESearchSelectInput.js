@@ -15,25 +15,25 @@ import { PowerSelect, PowerSelectMultiple } from 'react-power-select'
 //
 
 const TESearchSelectInput = (props) => {
-    const { type, value, ...rest } = props
+	const { type, value, ...rest } = props
 
-    if (type === 'single') {
-        return <PowerSelect selected={value} {...rest} />
-    }
-    if (type === 'multi') {
-        return <PowerSelectMultiple selected={value} {...rest} />
-    }
+	if (type === 'single') {
+		return <PowerSelect selected={value} {...rest} />
+	}
+	if (type === 'multi') {
+		return <PowerSelectMultiple selected={value} {...rest} />
+	}
 
-    return <PowerSelect selected={value} {...rest} />
+	return <PowerSelect selected={value} {...rest} />
 }
 
 TESearchSelectInput.propTypes = {
-    type: PropTypes.string,
+	type: PropTypes.string,
 }
 
 TESearchSelectInput.defaultProps = {
-    type: 'single',
-    searchEnabled: true,
+	type: 'single',
+	searchEnabled: true,
 }
 
 export default TESearchSelectInput

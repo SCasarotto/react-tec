@@ -1,3 +1,3 @@
-import TERadioButtonGroup from './TERadioButtonGroup';
+import TERadioButtonGroup from './TERadioButtonGroup'
 
-export default TERadioButtonGroup;
+export default TERadioButtonGroup

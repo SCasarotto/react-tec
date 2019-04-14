@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             width: 100%;
             backgroundColor: ${theme.white};
             display: flex;
@@ -13,12 +13,12 @@ export const Container = styled.div`
             margin-bottom: 20px;
             border-bottom: 1px solid ${theme.lightGray};
         `
-    }}
+	}}
 `
 export const Title = styled.h1`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             text-align: left;
             font-size: 30px;
             margin-top: 0px;
@@ -36,21 +36,21 @@ export const Title = styled.h1`
                 font-size: 20px;
             }
         `
-    }}
+	}}
 `
 export const ComponentWrapper = styled.div`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             width: auto;
         `
-    }}
+	}}
 `
 export const Subtitle = styled.p`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             font-size: 18px;
             margin-bottom: 0px;
             margin-top: 0px;
         `
-    }}
+	}}
 `

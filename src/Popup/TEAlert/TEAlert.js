@@ -12,10 +12,12 @@ const TEAlert = (props) => {
 
 	return (
 		<Popup visible={visible} className={className}>
-			<Title>{title}</Title>
-			<Message>{message}</Message>
+			<Title className='TEAlertTitle'>{title}</Title>
+			<Message className='TEAlertMessage'>{message}</Message>
 			{children}
-			<Button onClick={onClick}>{buttonTitle}</Button>
+			<Button onClick={onClick} className='TEAlertButton'>
+				{buttonTitle}
+			</Button>
 		</Popup>
 	)
 }

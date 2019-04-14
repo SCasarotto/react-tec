@@ -5,18 +5,18 @@ import { FaFileUpload, FaRegWindowClose } from 'react-icons/fa'
 import TEButton from './../TEButton'
 
 export const Wrapper = styled.div`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: flex;
             flex-direction: column;
             width: 100%;
         `
-    }}
+	}}
 `
 export const InputWrapper = styled.div`
-    ${(props) => {
-        const { theme, disabled, active } = props
-        let styles = `
+	${(props) => {
+		const { theme, disabled, active } = props
+		let styles = `
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -28,18 +28,18 @@ export const InputWrapper = styled.div`
             transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
         `
 
-        if (disabled) {
-            styles += `
+		if (disabled) {
+			styles += `
                 border: 1px solid ${theme.lighterGray};
                 box-shadow: none;
             `
-        } else if (active) {
-            styles += `
+		} else if (active) {
+			styles += `
                 border: 1px solid ${theme.primary};
                 box-shadow: 0 0 0 1px ${theme.primary} inset;
             `
-        } else {
-            styles += `
+		} else {
+			styles += `
                 border: 1px solid ${theme.lightGray};
                 box-shadow: none;
 
@@ -52,22 +52,22 @@ export const InputWrapper = styled.div`
                     box-shadow: 0 0 0 1px ${theme.primary} inset;
                 }
             `
-        }
+		}
 
-        return styles
-    }}
+		return styles
+	}}
 `
 export const Label = styled.label`
-    ${(props) => {
-        const { theme, disabled, active } = props
-        let cursor = 'pointer'
-        if (disabled) {
-            cursor = 'not-allowed'
-        } else if (active) {
-            cursor = 'copy'
-        }
+	${(props) => {
+		const { theme, disabled, active } = props
+		let cursor = 'pointer'
+		if (disabled) {
+			cursor = 'not-allowed'
+		} else if (active) {
+			cursor = 'copy'
+		}
 
-        return `
+		return `
             display: block;
             width: 100%;
             font-size: 14px;
@@ -75,63 +75,63 @@ export const Label = styled.label`
             padding: 10px;
             cursor: ${cursor};
         `
-    }}
+	}}
 `
 
 export const LabelCopy = styled.span`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
 
         `
-    }}
+	}}
 `
 
 export const LabelIcon = styled(FaFileUpload)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             margin-right: 10px;
             vertical-align: middle;
             font-size: 18px;
         `
-    }}
+	}}
 `
 
 export const Input = styled.input`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             display: none;
         `
-    }}
+	}}
 `
 
 export const ClearButton = styled(TEButton)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             width: auto;
             padding: 5px 10px;
             text-align: center;
         `
-    }}
+	}}
 `
 
 export const ButtonIcon = styled(FaRegWindowClose)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             color: inherit;
             display: block;
         `
-    }}
+	}}
 `
 
 export const ErrorMessage = styled.span`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             display: block;
             padding-top: 5px;
             padding-bottom: 5px;
             font-size: 14px;
             color: ${theme.errorRed};
         `
-    }}
+	}}
 `

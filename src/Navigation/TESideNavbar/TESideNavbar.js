@@ -7,16 +7,16 @@ import TESideNavLink from './../TESideNavLink'
 import { Container, Logo, NavContainer, MainUl } from './styledComponents'
 
 const TESideNavbar = (props) => {
-	const { sidebarWidth, location, logo, links, className } = props
+	const { sidebarWidth, logo, links, className } = props
 	return (
 		<Container sidebarWidth={sidebarWidth} className={className}>
 			{logo && (
-				<Link to="/">
-					<Logo src={logo} alt="brandmark" title="Rittal" />
+				<Link to='/' className='TESideNavbarLogoLink'>
+					<Logo src={logo} alt='logo' className='TESideNavbarLogo' />
 				</Link>
 			)}
-			<NavContainer>
-				<MainUl>
+			<NavContainer className='TESideNavbarNavContainer'>
+				<MainUl className='TESideNavbarMainUl'>
 					{links &&
 						links.map((link, index) => {
 							const { title, activePath, to, children, exact } = link
@@ -27,6 +27,7 @@ const TESideNavbar = (props) => {
 									activePath={activePath || to}
 									title={title}
 									exact={exact}
+									className='TESideNavbarNavLink'
 								>
 									{children}
 								</TESideNavLink>

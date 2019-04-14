@@ -1,3 +1,3 @@
-import TEPopup from './TEPopup';
+import TEPopup from './TEPopup'
 
-export default TEPopup;
+export default TEPopup

@@ -4,20 +4,20 @@ import TEPopup from './../TEPopup'
 import TEButton from './../../Form/TEButton'
 
 export const Popup = styled(TEPopup)`
-    ${(props) => {
-        return `
+	${(props) => {
+		return `
             & > div{
                 width: 90%;
                 max-width: 600px;
                 margin: 100px auto;
             }
         `
-    }}
+	}}
 `
 export const Title = styled.h4`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             position: relative;
             width: 100%;
             text-align: center;
@@ -26,12 +26,12 @@ export const Title = styled.h4`
             color: ${theme.darkerGray};
             padding: 30px 30px 0px 30px;
         `
-    }}
+	}}
 `
 export const Message = styled.p`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
             position: relative;
             width: 100%;
             text-align: center;
@@ -41,12 +41,12 @@ export const Message = styled.p`
             padding: 0px 40px;
             color: ${theme.darkerGray};
         `
-    }}
+	}}
 `
 export const Button = styled(TEButton)`
-    ${(props) => {
-        const { theme } = props
-        return `
+	${(props) => {
+		const { theme } = props
+		return `
         border-top: 1px solid ${theme.primary};
         border-right: none;
         border-bottom: none;
@@ -75,5 +75,5 @@ export const Button = styled(TEButton)`
             border-left: none;
         }
         `
-    }}
+	}}
 `

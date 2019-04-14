@@ -1,3 +1,3 @@
-import TEFileInput from './TEFileInput';
+import TEFileInput from './TEFileInput'
 
-export default TEFileInput;
+export default TEFileInput

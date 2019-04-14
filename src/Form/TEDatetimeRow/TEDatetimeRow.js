@@ -12,35 +12,40 @@ import TEDatetimeInput from './../TEDatetimeInput'
 //import styles from './styles'
 
 const TEDatetimeRow = (props) => {
-    const {
-        size,
-        last,
-        className,
+	const {
+		size,
+		last,
+		className,
 
-        title,
-        labelForKey,
+		title,
+		labelForKey,
 
-        ...rest
-    } = props
+		...rest
+	} = props
 
-    return (
-        <TERow size={size} last={last} className={className}>
-            <TELabel htmlFor={labelForKey} required={rest.required} disabled={rest.disabled}>
-                {title}
-            </TELabel>
-            <TEDatetimeInput id={labelForKey} {...rest} />
-        </TERow>
-    )
+	return (
+		<TERow size={size} last={last} className={className}>
+			<TELabel
+				htmlFor={labelForKey}
+				required={rest.required}
+				disabled={rest.disabled}
+				className='TEDatetimeRowTitle'
+			>
+				{title}
+			</TELabel>
+			<TEDatetimeInput id={labelForKey} {...rest} className='TEDatetimeRowDateInput' />
+		</TERow>
+	)
 }
 
 TEDatetimeRow.propTypes = {
-    size: PropTypes.string,
-    last: PropTypes.bool,
-    labelForKey: PropTypes.string,
-    onChange: PropTypes.func,
-    title: PropTypes.string,
-    disabled: PropTypes.bool,
-    required: PropTypes.bool,
+	size: PropTypes.string,
+	last: PropTypes.bool,
+	labelForKey: PropTypes.string,
+	onChange: PropTypes.func,
+	title: PropTypes.string,
+	disabled: PropTypes.bool,
+	required: PropTypes.bool,
 }
 
 export default TEDatetimeRow

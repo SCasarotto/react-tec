@@ -1,3 +1,3 @@
-import TEMultiStepForm from './TEMultiStepForm';
+import TEMultiStepForm from './TEMultiStepForm'
 
-export default TEMultiStepForm;
+export default TEMultiStepForm

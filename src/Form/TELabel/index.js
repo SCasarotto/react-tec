@@ -1,3 +1,3 @@
-import TELabel from './TELabel';
+import TELabel from './TELabel'
 
-export default TELabel;
+export default TELabel

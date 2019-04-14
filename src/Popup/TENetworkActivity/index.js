@@ -1,3 +1,3 @@
-import TENetworkActivity from './TENetworkActivity';
+import TENetworkActivity from './TENetworkActivity'
 
-export default TENetworkActivity;
+export default TENetworkActivity

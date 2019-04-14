@@ -1,3 +1,3 @@
-import TETextarea from './TETextarea';
+import TETextarea from './TETextarea'
 
-export default TETextarea;
+export default TETextarea

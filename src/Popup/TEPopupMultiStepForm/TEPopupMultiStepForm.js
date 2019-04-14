@@ -19,7 +19,12 @@ const TEPopupMultiStepForm = (props) => {
 
 	return (
 		<Popup visible={visible} className={className}>
-			<TEMultiStepForm onSubmit={handleSubmit} handleCancelOnClick={onClose} {...rest} />
+			<TEMultiStepForm
+				onSubmit={handleSubmit}
+				handleCancelOnClick={onClose}
+				className='TEPopupMultiStepFormMultiStepForm'
+				{...rest}
+			/>
 		</Popup>
 	)
 }

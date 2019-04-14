@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
 export const Label = styled.label`
-    ${(props) => {
-        const { disabled, htmlFor, theme } = props
+	${(props) => {
+		const { disabled, htmlFor, theme } = props
 
-        let cursor = 'default'
-        if (htmlFor) {
-            cursor = 'pointer'
-        }
-        if (disabled) {
-            cursor = 'not-allowed'
-        }
+		let cursor = 'default'
+		if (htmlFor) {
+			cursor = 'pointer'
+		}
+		if (disabled) {
+			cursor = 'not-allowed'
+		}
 
-        return `
+		return `
             position: relative;
             display: block;
             width: auto;
@@ -26,5 +26,5 @@ export const Label = styled.label`
                 font-size: 16px;
             }
         `
-    }}
+	}}
 `

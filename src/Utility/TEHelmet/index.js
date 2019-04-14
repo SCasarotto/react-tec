@@ -1,3 +1,3 @@
-import TEHelmet from './TEHelmet';
+import TEHelmet from './TEHelmet'
 
-export default TEHelmet;
+export default TEHelmet

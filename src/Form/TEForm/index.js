@@ -1,3 +1,3 @@
-import TEForm from './TEForm';
+import TEForm from './TEForm'
 
-export default TEForm;
+export default TEForm

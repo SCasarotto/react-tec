@@ -12,13 +12,13 @@ const TESubNavbar = (props) => {
 
 	return (
 		<Container className={className}>
-			<Content>
-				<Ul>
+			<Content className='TESubNavbarContent'>
+				<Ul className='TESubNavbarUl'>
 					{links &&
 						links.map((link, index) => {
 							return (
-								<Li key={index}>
-									<Link {...link} />
+								<Li key={index} className='TESubNavbarLi'>
+									<Link className='TESubNavbarLink' {...link} />
 								</Li>
 							)
 						})}

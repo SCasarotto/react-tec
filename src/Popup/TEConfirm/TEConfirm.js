@@ -22,12 +22,19 @@ const TEConfirm = (props) => {
 
 	return (
 		<Popup visible={visible} className={className}>
-			<Title>{title}</Title>
-			<Message>{message}</Message>
+			<Title className='TEConfirmTitle'>{title}</Title>
+			<Message className='TEConfirmMessage'>{message}</Message>
 			{children}
-			<ButtonContainer>
-				<LeftButton onClick={leftOnClick}>{leftButtonTitle}</LeftButton>
-				<RightButton onClick={rightOnClick}>{rightButtonTitle}</RightButton>
+			<ButtonContainer className='TEConfirmButtonoContainer'>
+				<LeftButton onClick={leftOnClick} className='TEConfirmButton TEConfirmLeftButton'>
+					{leftButtonTitle}
+				</LeftButton>
+				<RightButton
+					onClick={rightOnClick}
+					className='TEConfirmButton TEConfirmRightButton'
+				>
+					{rightButtonTitle}
+				</RightButton>
 			</ButtonContainer>
 		</Popup>
 	)
