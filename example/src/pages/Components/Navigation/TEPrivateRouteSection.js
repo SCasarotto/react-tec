@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
@@ -8,12 +9,15 @@ import PropsTable from './../../../components/PropsTable'
 const TEPrivateRouteSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEPrivateRoute</h2>
+			<ComponentTitle
+				title='TEPrivateRoute'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Navigation/TEPrivateRoute/TEPrivateRoute.js'
+			/>
 			<p>
 				<Code>TEPrivateRoute</Code> provides an easy way to redirect a user if they are not
 				signed in or don't have the appropriate user permissions. In addition to the props
 				below, review the props of a{' '}
-				<a href="https://reacttraining.com/react-router/web/api/Route">
+				<a href='https://reacttraining.com/react-router/web/api/Route'>
 					route from react-router
 				</a>
 				. You will want to be careful when using a <Code>path='/'</Code> or some other path

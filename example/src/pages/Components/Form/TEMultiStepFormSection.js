@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEMultiStepForm, TEInput } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEMultiStepFormSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEMultiStepForm</h2>
+			<ComponentTitle
+				title='TEMultiStepForm'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEMultiStepForm/TEMultiStepForm.js'
+			/>
 			<p>
 				Multiple step form container. <Code>TEMultiStepForm</Code> provides a quick and easy
 				way to break a form into multiple parts and present the user with one part at a
@@ -62,7 +66,7 @@ const TEMultiStepFormSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEMultiStepForm
 	onSubmit={(e) => {
 		alert('Submitted!')

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TESegmentedGroup } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -11,7 +12,10 @@ const TESegmentedGroupSection = () => {
 	const [checkedValue, setCheckedValue] = useState('')
 	return (
 		<ComponentSection>
-			<h2>TESegmentedGroup</h2>
+			<ComponentTitle
+				title='TESegmentedGroup'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESegmentedGroup/TESegmentedGroup.js'
+			/>
 			<p>
 				<Code>TESegmentedGroup</Code> is a stylized <Code>TERadioButtonGroup</Code>. This
 				component mimics the style of iOS's Segmented Controls.
@@ -91,7 +95,7 @@ const TESegmentedGroupSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TESegmentedGroup
 	labelForKey="TERadioButtonGroup"
 	title="My Radio Button Group"
@@ -101,15 +105,15 @@ const TESegmentedGroupSection = () => {
 />`}
 			>
 				<TESegmentedGroup
-					labelForKey="TESegmentedGroup"
-					title="My Radio Button Group"
+					labelForKey='TESegmentedGroup'
+					title='My Radio Button Group'
 					onChange={(e) => setCheckedValue(e.target.value)}
 					checkedValue={checkedValue}
 					buttonArray={['value1', 'valueTwo', 'OtherValue']}
 				/>
 			</ExampleBlock>
 			<ExampleBlock
-				title="Inline"
+				title='Inline'
 				code={`<TESegmentedGroup
 	labelForKey="TESegmentedGroupInline"
 	title="My Radio Button Group"
@@ -120,8 +124,8 @@ const TESegmentedGroupSection = () => {
 />`}
 			>
 				<TESegmentedGroup
-					labelForKey="TESegmentedGroupInline"
-					title="My Radio Button Group"
+					labelForKey='TESegmentedGroupInline'
+					title='My Radio Button Group'
 					onChange={(e) => setCheckedValue(e.target.value)}
 					checkedValue={checkedValue}
 					buttonArray={['value1', 'valueTwo', 'OtherValue']}

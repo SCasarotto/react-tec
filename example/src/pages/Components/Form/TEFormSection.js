@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEForm, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import ExampleBlock from './../../../components/ExampleBlock'
@@ -9,21 +10,24 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEFormSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEForm</h2>
+			<ComponentTitle
+				title='TEForm'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEForm/TEForm.js'
+			/>
 			<p>
 				A simple button component. <Code>TEForm</Code> is simply a styled HTML{' '}
 				<Code>{'<form>'}</Code>. All props are passed right through to the form. Reference{' '}
 				<a
-					href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"
-					target="_blank"
-					rel="noopener noreferrer"
+					href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form'
+					target='_blank'
+					rel='noopener noreferrer'
 				>
 					HTML documentation for more information
 				</a>
 				.
 			</p>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEForm
 	onSubmit={(e) => {
 		e.preventDefault()
@@ -39,7 +43,7 @@ const TEFormSection = () => {
 						alert('Submitted!')
 					}}
 				>
-					<TEButton type="submit">Submit</TEButton>
+					<TEButton type='submit'>Submit</TEButton>
 				</TEForm>
 			</ExampleBlock>
 		</ComponentSection>

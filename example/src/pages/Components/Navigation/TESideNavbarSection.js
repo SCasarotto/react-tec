@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
@@ -8,7 +9,10 @@ import PropsTable from './../../../components/PropsTable'
 const TESideNavbarSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TESideNavbar</h2>
+			<ComponentTitle
+				title='TESideNavbar'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Navigation/TESideNavbar/TESideNavbar.js'
+			/>
 			<p>
 				<Code>TESideNavbar</Code> is the sidebar component you see to the left of this page.
 				Below is the code for the left nav.

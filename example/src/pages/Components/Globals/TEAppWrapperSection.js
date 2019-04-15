@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
@@ -8,7 +9,10 @@ import PropsTable from './../../../components/PropsTable'
 const TEAppWrapperSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEAppWrapper</h2>
+			<ComponentTitle
+				title='TEAppWrapper'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Globals/TEAppWrapper/TEAppWrapper.js'
+			/>
 			<p>
 				<Code>TEAppWrapper</Code> is meant to be the single top level wrapping element you
 				need. Having said that, it does contain a number of things.{' '}
@@ -26,9 +30,9 @@ const TEAppWrapperSection = () => {
 			<p>
 				Here <Code>BrowserRouter</Code> comes from{' '}
 				<a
-					href="https://reacttraining.com/react-router/web/api/BrowserRouter"
-					target="_blank"
-					rel="noopener noreferrer"
+					href='https://reacttraining.com/react-router/web/api/BrowserRouter'
+					target='_blank'
+					rel='noopener noreferrer'
 				>
 					react-router-com
 				</a>

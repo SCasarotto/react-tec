@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEFileManagerRow } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEFileManagerRowSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEFileManagerRowSection</h2>
+			<ComponentTitle
+				title='TEFileManagerRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEFileManagerRow/TEFileManagerRow.js'
+			/>
 			<p>
 				A component to manage uploading, downloading, and deleting files. This component
 				contains a <Code>TERow</Code>, <Code>TELabel</Code>, <Code>TEFileInput</Code> and
@@ -117,7 +121,7 @@ const TEFileManagerRowSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEFileManagerRow
 	fileSrc={{
 		uid1: {

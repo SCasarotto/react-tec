@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 import { TEPopupContext, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
@@ -11,7 +12,10 @@ const TEPopupContextSection = () => {
 	const { dispatch } = useContext(TEPopupContext)
 	return (
 		<ComponentSection>
-			<h2>TEPopupContext & TEPopupProvider</h2>
+			<ComponentTitle
+				title='TEPopupContext & TEPopupProvider'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Globals/TEPopupContext/TEPopupContext.js'
+			/>
 			<p>
 				<Code>TEPopupContext</Code> and <Code>TEPopupProvider</Code> are used to globally
 				show <Code>TEAlert</Code>, <Code>TEConfirm</Code> and <Code>TENetworkActivity</Code>
@@ -29,7 +33,7 @@ const TEPopupContextSection = () => {
 			</p>
 			<Codeblock>{`const { dispatch } = useContext(TEPopupContext)`}</Codeblock>
 			<ExampleBlock
-				title="TEAlert"
+				title='TEAlert'
 				code={`
 <TEButton
 	onClick={() =>
@@ -67,7 +71,7 @@ const TEPopupContextSection = () => {
 				</TEButton>
 			</ExampleBlock>
 			<ExampleBlock
-				title="TEConfirm"
+				title='TEConfirm'
 				code={`
 <TEButton
 	onClick={() =>
@@ -106,7 +110,7 @@ const TEPopupContextSection = () => {
 				</TEButton>
 			</ExampleBlock>
 			<ExampleBlock
-				title="TENetworkActivity"
+				title='TENetworkActivity'
 				code={`<TEButton
 	onClick={() => {
 		dispatch({

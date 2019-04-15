@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TECheckboxInput } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import ExampleBlock from './../../../components/ExampleBlock'
@@ -9,22 +10,25 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TECheckboxInputSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TECheckboxInput</h2>
+			<ComponentTitle
+				title='TECheckboxInput'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TECheckboxInput/TECheckboxInput.js'
+			/>
 			<p>
 				A simple checkbox component. <Code>TECheckboxInput</Code> is simply a styled HTML{' '}
 				<Code>{'<input type="checkbox">'}</Code>. All props are passed right through to the
 				checkbox. Reference{' '}
 				<a
-					href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox"
-					target="_blank"
-					rel="noopener noreferrer"
+					href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox'
+					target='_blank'
+					rel='noopener noreferrer'
 				>
 					HTML documentation for more information
 				</a>
 				.
 			</p>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TECheckboxInput
 	onChange={(e) => console.log(e.target.value)}
 	value="agreeToEmailSpam"
@@ -32,7 +36,7 @@ const TECheckboxInputSection = () => {
 			>
 				<TECheckboxInput
 					onChange={(e) => console.log(e.target.value)}
-					value="agreeToEmailSpam"
+					value='agreeToEmailSpam'
 				/>
 			</ExampleBlock>
 		</ComponentSection>

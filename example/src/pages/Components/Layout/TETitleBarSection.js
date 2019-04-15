@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
@@ -8,7 +9,10 @@ import PropsTable from './../../../components/PropsTable'
 const TETitleBarSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TETitleBar</h2>
+			<ComponentTitle
+				title='TETitleBar'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Layout/TETitleBar/TETitleBar.js'
+			/>
 			<p>
 				<Code>TETitleBar</Code> simple title bar seen at the top of all of the pages. The
 				code used in this site is below.

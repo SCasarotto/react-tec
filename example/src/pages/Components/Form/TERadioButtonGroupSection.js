@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TERadioButtonGroup } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -11,7 +12,10 @@ const TERadioButtonGroupSection = () => {
 	const [checkedValue, setCheckedValue] = useState('')
 	return (
 		<ComponentSection>
-			<h2>TERadioButtonGroup</h2>
+			<ComponentTitle
+				title='TERadioButtonGroup'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TERadioButtonGroup/TERadioButtonGroup.js'
+			/>
 			<p>
 				A component containing a <Code>TERow</Code>, a <Code>TELabel</Code>, and a group of{' '}
 				<Code>TERadioInput</Code> cooresponding <Code>TELabel</Code>.
@@ -92,7 +96,7 @@ const TERadioButtonGroupSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TERadioButtonGroup
 	labelForKey="TERadioButtonGroup"
 	title="My Radio Button Group"
@@ -102,8 +106,8 @@ const TERadioButtonGroupSection = () => {
 />`}
 			>
 				<TERadioButtonGroup
-					labelForKey="TERadioButtonGroup"
-					title="My Radio Button Group"
+					labelForKey='TERadioButtonGroup'
+					title='My Radio Button Group'
 					onChange={(e) => setCheckedValue(e.target.value)}
 					checkedValue={checkedValue}
 					buttonArray={['value1', 'valueTwo', 'OtherValue']}

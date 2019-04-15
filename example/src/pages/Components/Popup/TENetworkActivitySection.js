@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TENetworkActivity, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -12,7 +13,10 @@ const TENetworkActivitySection = () => {
 
 	return (
 		<ComponentSection>
-			<h2>TENetworkActivity</h2>
+			<ComponentTitle
+				title='TENetworkActivity'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Popup/TENetworkActivity/TENetworkActivity.js'
+			/>
 			<p>
 				<Code>TENetworkActivity</Code> is an overlay to indicate some network request or
 				long running process is taking place.
@@ -32,7 +36,7 @@ const TENetworkActivitySection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TENetworkActivity message="Loading..." visible={visible} />
 <TEButton
 	onClick={() => {
@@ -43,7 +47,7 @@ const TENetworkActivitySection = () => {
 	Do some 2 second long process
 </TEButton>`}
 			>
-				<TENetworkActivity message="Loading..." visible={visible} />
+				<TENetworkActivity message='Loading...' visible={visible} />
 				<TEButton
 					onClick={() => {
 						setVisible(true)

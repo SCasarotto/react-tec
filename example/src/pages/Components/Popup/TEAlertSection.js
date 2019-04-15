@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEAlert, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -13,7 +14,10 @@ const TEAlertSection = () => {
 
 	return (
 		<ComponentSection>
-			<h2>TEAlert</h2>
+			<ComponentTitle
+				title='TEAlert'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Popup/TEAlert/TEAlert.js'
+			/>
 			<p>
 				<Code>TEAlert</Code> is a simple alert popup typically used to display error or
 				success messages.
@@ -49,7 +53,7 @@ const TEAlertSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEAlert
 	title="TEAlert!"
 	message="You have been alerted to stay alert."
@@ -59,15 +63,15 @@ const TEAlertSection = () => {
 <TEButton onClick={() => setVisible(true)}>Get Alerted</TEButton>`}
 			>
 				<TEAlert
-					title="TEAlert!"
-					message="You have been alerted to stay alert."
+					title='TEAlert!'
+					message='You have been alerted to stay alert.'
 					onClick={() => setVisible(false)}
 					visible={visible}
 				/>
 				<TEButton onClick={() => setVisible(true)}>Get Alerted</TEButton>
 			</ExampleBlock>
 			<ExampleBlock
-				title="Children"
+				title='Children'
 				code={`<TEAlert
 	title="TEAlert!"
 	message="You have been alerted to stay alert."
@@ -82,11 +86,11 @@ const TEAlertSection = () => {
 <TEButton onClick={() => setVisible2(true)}>Get Alerted</TEButton>`}
 			>
 				<TEAlert
-					title="TEAlert!"
-					message="You have been alerted to stay alert."
+					title='TEAlert!'
+					message='You have been alerted to stay alert.'
 					onClick={() => setVisible2(false)}
 					visible={visible2}
-					buttonTitle="Cancel"
+					buttonTitle='Cancel'
 				>
 					<p style={{ textAlign: 'center' }}>
 						Some extra components passed into the body

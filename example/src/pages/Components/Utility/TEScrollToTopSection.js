@@ -1,12 +1,16 @@
 import React from 'react'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 
 const TEScrollToTopSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEScrollToTop</h2>
+			<ComponentTitle
+				title='TEScrollToTop'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Utility/TEScrollToTop/TEScrollToTop.js'
+			/>
 			<p>
 				<Code>TEScrollToTop</Code> is really just a simple hook. Look at the source code.
 				When the react router location changes the page scrolls back to the top. This is

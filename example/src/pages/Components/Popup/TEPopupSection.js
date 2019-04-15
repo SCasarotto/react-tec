@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEPopup, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -12,7 +13,10 @@ const TEPopupSection = () => {
 
 	return (
 		<ComponentSection>
-			<h2>TEPopup</h2>
+			<ComponentTitle
+				title='TEPopup'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Popup/TEPopup/TEPopup.js'
+			/>
 			<p>
 				<Code>TEPopup</Code> simple popup component.
 			</p>
@@ -26,7 +30,7 @@ const TEPopupSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEPopup visible={visible}>
 	<h1 style={{ textAlign: 'center' }}>Some Title</h1>
 	<TEButton onClick={() => setVisible(false)}>Close Button</TEButton>

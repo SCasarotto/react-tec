@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEDatetimeInput } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -11,10 +12,13 @@ const TEDatetimeInputSection = () => {
 	const [date, setDate] = useState('')
 	return (
 		<ComponentSection>
-			<h2>TEDatetimeInput</h2>
+			<ComponentTitle
+				title='TEDatetimeInput'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEDatetimeInput/TEDatetimeInput.js'
+			/>
 			<p>
 				<Code>TEDatetimeInput</Code> is simply a styled{' '}
-				<a href="https://reactdatepicker.com/" target="_blank" rel="noopener noreferrer">
+				<a href='https://reactdatepicker.com/' target='_blank' rel='noopener noreferrer'>
 					React DatePicker
 				</a>{' '}
 				Component. A few props have been adjusted or defaulted.
@@ -48,13 +52,13 @@ const TEDatetimeInputSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEDatetimeInput value={date} onChange={(date) => setDate(date)} />`}
 			>
 				<TEDatetimeInput value={date} onChange={(date) => setDate(date)} />
 			</ExampleBlock>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEDatetimeInput
 	value={date}
 	onChange={(date) => setDate(date.getTime())}
@@ -67,9 +71,9 @@ const TEDatetimeInputSection = () => {
 				<TEDatetimeInput
 					value={date}
 					onChange={(date) => setDate(date.getTime())}
-					timeFormat="h:mm aa"
+					timeFormat='h:mm aa'
 					timeIntervals={15}
-					dateFormat="MMMM d, yyyy h:mm aa"
+					dateFormat='MMMM d, yyyy h:mm aa'
 					showTimeSelect
 				/>
 			</ExampleBlock>

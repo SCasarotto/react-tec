@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEConfirm, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -13,7 +14,10 @@ const TEConfirmSection = () => {
 
 	return (
 		<ComponentSection>
-			<h2>TEConfirm</h2>
+			<ComponentTitle
+				title='TEConfirm'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Popup/TEConfirm/TEConfirm.js'
+			/>
 			<p>
 				<Code>TEConfirm</Code> is a simple confirm popup typically used to have the user
 				confirm their action.
@@ -59,7 +63,7 @@ const TEConfirmSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEConfirm
 	title="TEConfirm!"
 	message="Are you super sure?"
@@ -70,8 +74,8 @@ const TEConfirmSection = () => {
 <TEButton onClick={() => setVisible(true)}>Confirm Your Action</TEButton>`}
 			>
 				<TEConfirm
-					title="TEConfirm!"
-					message="Are you super sure?"
+					title='TEConfirm!'
+					message='Are you super sure?'
 					leftOnClick={() => setVisible(false)}
 					rightOnClick={() => setVisible(false)}
 					visible={visible}
@@ -79,7 +83,7 @@ const TEConfirmSection = () => {
 				<TEButton onClick={() => setVisible(true)}>Confirm Your Action</TEButton>
 			</ExampleBlock>
 			<ExampleBlock
-				title="Children"
+				title='Children'
 				code={`<TEConfirm
 	title="TEConfirm!"
 	message="Are you super sure?"
@@ -96,13 +100,13 @@ const TEConfirmSection = () => {
 <TEButton onClick={() => setVisible2(true)}>Confirm Your Action</TEButton>`}
 			>
 				<TEConfirm
-					title="TEConfirm!"
-					message="Are you super sure?"
+					title='TEConfirm!'
+					message='Are you super sure?'
 					visible={visible2}
 					leftOnClick={() => setVisible2(false)}
-					leftButtonTitle="No"
+					leftButtonTitle='No'
 					rightOnClick={() => setVisible2(false)}
-					rightButtonTitle="Yes"
+					rightButtonTitle='Yes'
 				>
 					<p style={{ textAlign: 'center' }}>
 						Some extra components passed into the body

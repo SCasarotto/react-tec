@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEDatetimeRow } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -11,7 +12,10 @@ const TEDatetimeRowSection = () => {
 	const [date, setDate] = useState()
 	return (
 		<ComponentSection>
-			<h2>TEDatetimeRow</h2>
+			<ComponentTitle
+				title='TEDatetimeRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEDatetimeRow/TEDatetimeRow.js'
+			/>
 			<p>
 				A form row with title and <Code>TEDatetimeInput</Code>. In additiona to the props
 				below, reference all props for <Code>TEDatetimeInput</Code>.
@@ -53,7 +57,7 @@ const TEDatetimeRowSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEDatetimeRow
 	title='My DatetimeRow'
 	labelForKey='SomeUniqueKey'
@@ -62,8 +66,8 @@ const TEDatetimeRowSection = () => {
 />`}
 			>
 				<TEDatetimeRow
-					title="My DatetimeRow"
-					labelForKey="SomeUniqueKey"
+					title='My DatetimeRow'
+					labelForKey='SomeUniqueKey'
 					onChange={(date) => setDate(date)}
 					value={date}
 				/>

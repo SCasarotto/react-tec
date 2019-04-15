@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
@@ -8,7 +9,10 @@ import PropsTable from './../../../components/PropsTable'
 const TESubNavbarSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TESubNavbar</h2>
+			<ComponentTitle
+				title='TESubNavbar'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Navigation/TESubNavbar/TESubNavbar.js'
+			/>
 			<p>
 				<Code>TESubNavbar</Code> is the navigational bar just under to top{' '}
 				<Code>TETitleBar</Code>. Below is the code for the top subnav.

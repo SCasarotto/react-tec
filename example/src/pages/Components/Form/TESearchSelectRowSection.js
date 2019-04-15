@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TESearchSelectRow } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -11,7 +12,10 @@ const TESearchSelectRowSection = () => {
 	const [value, setValue] = useState()
 	return (
 		<ComponentSection>
-			<h2>TESearchSelectRow</h2>
+			<ComponentTitle
+				title='TESearchSelectRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESearchSelectRow/TESearchSelectRow.js'
+			/>
 			<p>
 				A form row with title and <Code>TESearchSelectInput</Code>. In additiona to the
 				props below, reference all props for <Code>TESearchSelectInput</Code>.
@@ -53,7 +57,7 @@ const TESearchSelectRowSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TESearchSelectRow
 	title="My Search Select Row"
 	labelForKey="SomeUniqueKey123"
@@ -63,8 +67,8 @@ const TESearchSelectRowSection = () => {
 />`}
 			>
 				<TESearchSelectRow
-					title="My Search Select Row"
-					labelForKey="SomeUniqueKey123"
+					title='My Search Select Row'
+					labelForKey='SomeUniqueKey123'
 					options={['value2', 'otherValue2', 'Click Me2!', 'No No Pick Me2!!!']}
 					onChange={({ option }) => setValue(option)}
 					value={value}

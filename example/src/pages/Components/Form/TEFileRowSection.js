@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEFileRow } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEFileRowSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEFileRow</h2>
+			<ComponentTitle
+				title='TEFileRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEFileRow/TEFileRow.js'
+			/>
 			<p>
 				A form row with title and <Code>TEFileRow</Code>. In additiona to the props below,
 				reference all props for <Code>TEFileRow</Code>.
@@ -52,7 +56,7 @@ const TEFileRowSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEFileRow
 	title="My FileRow"
 	labelForKey="SomeUniqueKey2"
@@ -60,8 +64,8 @@ const TEFileRowSection = () => {
 />`}
 			>
 				<TEFileRow
-					title="My FileRow"
-					labelForKey="SomeUniqueKey2"
+					title='My FileRow'
+					labelForKey='SomeUniqueKey2'
 					onChange={(files) => console.log(files)}
 				/>
 			</ExampleBlock>

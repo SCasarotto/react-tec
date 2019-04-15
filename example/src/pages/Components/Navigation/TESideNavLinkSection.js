@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TESideNavLink } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TESideNavLinkSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TESideNavLink</h2>
+			<ComponentTitle
+				title='TESideNavLink'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Navigation/TESideNavLink/TESideNavLink.js'
+			/>
 			<p>
 				<Code>TESideNavLink</Code> is a stylized <Code>TENavLink</Code> built specifically
 				for left navbars.

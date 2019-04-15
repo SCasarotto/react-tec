@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEInputRow } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEInputRowSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEInputRow</h2>
+			<ComponentTitle
+				title='TEInputRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEInputRow/TEInputRow.js'
+			/>
 			<p>
 				A component containing a <Code>TERow</Code>, a <Code>TELabel</Code> and either a{' '}
 				<Code>TEInput</Code> or a <Code>TETextarea</Code>. In addition to the props below,
@@ -59,7 +63,7 @@ const TEInputRowSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEInputRow
 	title="My Input"
 	labelForKey="SomeUniqueKey42"
@@ -67,13 +71,13 @@ const TEInputRowSection = () => {
 />`}
 			>
 				<TEInputRow
-					title="My Input"
-					labelForKey="SomeUniqueKey42"
+					title='My Input'
+					labelForKey='SomeUniqueKey42'
 					onChange={(e) => console.log(e.target.value)}
 				/>
 			</ExampleBlock>
 			<ExampleBlock
-				title="Textarea"
+				title='Textarea'
 				code={`<TEInputRow
 	type="textarea"
 	title="My Textarea"
@@ -82,9 +86,9 @@ const TEInputRowSection = () => {
 />`}
 			>
 				<TEInputRow
-					type="textarea"
-					title="My Textarea"
-					labelForKey="SomeUniqueKey666"
+					type='textarea'
+					title='My Textarea'
+					labelForKey='SomeUniqueKey666'
 					onChange={(e) => console.log(e.target.value)}
 				/>
 			</ExampleBlock>

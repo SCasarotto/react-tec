@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TESearchSelectInput } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -12,13 +13,16 @@ const TESearchSelectInputSection = () => {
 	const [multiValue, setMultiValue] = useState([])
 	return (
 		<ComponentSection>
-			<h2>TESearchSelectInput</h2>
+			<ComponentTitle
+				title='TESearchSelectInput'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESearchSelectInput/TESearchSelectInput.js'
+			/>
 			<p>
 				<Code>TESearchSelectInput</Code> is simply a styled{' '}
 				<a
-					href="https://github.com/selvagsz/react-power-select"
-					target="_blank"
-					rel="noopener noreferrer"
+					href='https://github.com/selvagsz/react-power-select'
+					target='_blank'
+					rel='noopener noreferrer'
 				>
 					React Power Select
 				</a>{' '}
@@ -52,7 +56,7 @@ const TESearchSelectInputSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Single"
+				title='Single'
 				code={`<TESearchSelectInput
 	onChange={({option}) => console.log(option)}
 	options={['value1', 'otherValue', 'Click Me!', 'No No Pick Me!!!']}
@@ -68,7 +72,7 @@ const TESearchSelectInputSection = () => {
 				/>
 			</ExampleBlock>
 			<ExampleBlock
-				title="Multi"
+				title='Multi'
 				code={`<TESearchSelectInput
 	type="multi"
 	onChange={({ options }) => {
@@ -80,7 +84,7 @@ const TESearchSelectInputSection = () => {
 />`}
 			>
 				<TESearchSelectInput
-					type="multi"
+					type='multi'
 					onChange={({ options }) => {
 						console.log(options)
 						setMultiValue(options)

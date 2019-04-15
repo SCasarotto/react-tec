@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEPopupForm, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -12,7 +13,10 @@ const TEPopupFormSection = () => {
 
 	return (
 		<ComponentSection>
-			<h2>TEPopupForm</h2>
+			<ComponentTitle
+				title='TEPopupForm'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Popup/TEPopupForm/TEPopupForm.js'
+			/>
 			<p>
 				<Code>TEPopupForm</Code> iis a combination of <Code>TEForm</Code> and{' '}
 				<Code>TEPopup</Code>.
@@ -48,7 +52,7 @@ const TEPopupFormSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEPopupForm
 	visible={visible}
 	onClose={() => setVisible(false)}

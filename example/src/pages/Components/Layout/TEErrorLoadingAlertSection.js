@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEErrorLoadingAlert } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEErrorLoadingAlertSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEErrorLoadingAlert</h2>
+			<ComponentTitle
+				title='TEErrorLoadingAlert'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Layout/TEErrorLoadingAlert/TEErrorLoadingAlert.js'
+			/>
 			<p>
 				<Code>TEErrorLoadingAlert</Code> in a simple component built inside of a{' '}
 				<Code>TEPanelWrapper</Code> and <Code>TEPanel</Code> typically used when there is a
@@ -42,7 +46,7 @@ const TEErrorLoadingAlertSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEErrorLoadingAlert
 	title="Error Loading"
 	message="There appears to be an error loading the data you requested."
@@ -53,12 +57,12 @@ const TEErrorLoadingAlertSection = () => {
 />`}
 			>
 				<TEErrorLoadingAlert
-					title="Error Loading"
-					message="There appears to be an error loading the data you requested."
+					title='Error Loading'
+					message='There appears to be an error loading the data you requested.'
 					onClick={() => {
 						alert('Button Clicked')
 					}}
-					buttonTitle="Go Back"
+					buttonTitle='Go Back'
 				/>
 			</ExampleBlock>
 		</ComponentSection>

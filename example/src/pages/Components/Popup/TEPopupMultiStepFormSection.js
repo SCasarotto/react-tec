@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEPopupMultiStepForm, TELabel, TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -12,7 +13,10 @@ const TEPopupMultiStepFormSection = () => {
 
 	return (
 		<ComponentSection>
-			<h2>TEPopupMultiStepForm</h2>
+			<ComponentTitle
+				title='TEPopupMultiStepForm'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Popup/TEPopupMultiStepForm/TEPopupMultiStepForm.js'
+			/>
 			<p>
 				<Code>TEPopupMultiStepForm</Code> is a combination of <Code>TEPopup</Code> and{' '}
 				<Code>TEMultiStepForm</Code>. Besides the props below, reference{' '}
@@ -28,7 +32,7 @@ const TEPopupMultiStepFormSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEPopupMultiStepForm
 	visible={visible}
 	onClose={() => setVisible(false)}
@@ -88,7 +92,7 @@ const TEPopupMultiStepFormSection = () => {
 							title: 'Step210',
 							component: (
 								<div>
-									<TELabel htmlFor="test" required disabled>
+									<TELabel htmlFor='test' required disabled>
 										Label
 									</TELabel>
 								</div>
@@ -98,7 +102,7 @@ const TEPopupMultiStepFormSection = () => {
 							title: 'Step#3',
 							component: (
 								<div>
-									<TELabel htmlFor="test" required disabled>
+									<TELabel htmlFor='test' required disabled>
 										S33
 									</TELabel>
 								</div>
@@ -108,7 +112,7 @@ const TEPopupMultiStepFormSection = () => {
 							title: 'Step444',
 							component: (
 								<div>
-									<TELabel htmlFor="test" required disabled>
+									<TELabel htmlFor='test' required disabled>
 										A4A4
 									</TELabel>
 								</div>

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
@@ -7,7 +8,10 @@ import ComponentSection from './../../../components/ComponentSection'
 const TEThemeProviderSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEThemeProvider</h2>
+			<ComponentTitle
+				title='TEThemeProvider'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Globals/TEThemeContext/TEThemeContext.js'
+			/>
 			<p>
 				<Code>TEThemeProvider</Code> is required to wrap any React TEC components because it
 				sets up the styled-components theme used by all of them. Theming in React TEC is not

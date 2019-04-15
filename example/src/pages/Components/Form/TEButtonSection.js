@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEButton } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import ExampleBlock from './../../../components/ExampleBlock'
@@ -9,15 +10,18 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEButtonSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEButton</h2>
+			<ComponentTitle
+				title='TEButton'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEButton/TEButton.js'
+			/>
 			<p>
 				A simple button component. <Code>TEButton</Code> is simply a styled HTML{' '}
 				<Code>{'<button>'}</Code>. All props are passed right through to the button.
 				Reference{' '}
 				<a
-					href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
-					target="_blank"
-					rel="noopener noreferrer"
+					href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button'
+					target='_blank'
+					rel='noopener noreferrer'
 				>
 					HTML documentation for more information
 				</a>
@@ -28,7 +32,7 @@ const TEButtonSection = () => {
 				of normal HTML where it is defaulted to <Code>'submit'</Code>.
 			</p>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TEButton
 	onClick={() => {
 		alert('Clicked!')

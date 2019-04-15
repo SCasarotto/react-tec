@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TECheckboxGroup } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
 import ExampleBlock from './../../../components/ExampleBlock'
@@ -10,7 +11,10 @@ const TECheckboxGroupSection = () => {
 	const [checkedValues, setCheckedValues] = useState([])
 	return (
 		<ComponentSection>
-			<h2>TECheckboxGroup</h2>
+			<ComponentTitle
+				title='TECheckboxGroup'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TECheckboxGroup/TECheckboxGroup.js'
+			/>
 			<p>A form row with title and group of checkboxes and cooresponding labels.</p>
 			<PropsTable
 				propArray={[
@@ -94,7 +98,7 @@ const TECheckboxGroupSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`<TECheckboxGroup
 	labelForKey="TECheckboxGroup"
 	title="My Checkbox Group"
@@ -104,8 +108,8 @@ const TECheckboxGroupSection = () => {
 />`}
 			>
 				<TECheckboxGroup
-					labelForKey="TECheckboxGroup"
-					title="My Checkbox Group"
+					labelForKey='TECheckboxGroup'
+					title='My Checkbox Group'
 					onChange={(checkedValues) => setCheckedValues(checkedValues)}
 					checkedValues={checkedValues}
 					buttonArray={['value1', 'valueTwo', 'OtherValue']}

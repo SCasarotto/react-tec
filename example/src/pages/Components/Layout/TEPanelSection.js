@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEPanelWrapper, TEPanel } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEPanelSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEPanel</h2>
+			<ComponentTitle
+				title='TEPanel'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Layout/TEPanel/TEPanel.js'
+			/>
 			<p>
 				<Code>TEPanel</Code> simple containing element containing a{' '}
 				<Code>TEPanelTitle</Code>. Is expected to be used as a child of{' '}
@@ -28,7 +32,7 @@ const TEPanelSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic (full)"
+				title='Basic (full)'
 				code={`<TEPanelWrapper>
 	<TEPanel title="TEPanel Example" subtitle="Isn't it cool?">
 		<p>Some Content Inside</p>
@@ -36,13 +40,13 @@ const TEPanelSection = () => {
 </TEPanelWrapper>`}
 			>
 				<TEPanelWrapper>
-					<TEPanel title="TEPanel Example" subtitle="Isn't it cool?">
+					<TEPanel title='TEPanel Example' subtitle="Isn't it cool?">
 						<p>Some Content Inside</p>
 					</TEPanel>
 				</TEPanelWrapper>
 			</ExampleBlock>
 			<ExampleBlock
-				title="Half"
+				title='Half'
 				code={`<TEPanelWrapper>
 	<TEPanel size="half">
 		<p>Some Content Inside</p>
@@ -53,10 +57,10 @@ const TEPanelSection = () => {
 </TEPanelWrapper>`}
 			>
 				<TEPanelWrapper>
-					<TEPanel size="half">
+					<TEPanel size='half'>
 						<p>Some Content Inside</p>
 					</TEPanel>
-					<TEPanel size="half">
+					<TEPanel size='half'>
 						<p>Some Content Inside</p>
 					</TEPanel>
 				</TEPanelWrapper>

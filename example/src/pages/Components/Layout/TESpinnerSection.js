@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TESpinner } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TESpinnerSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TESpinner</h2>
+			<ComponentTitle
+				title='TESpinner'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Layout/TESpinner/TESpinner.js'
+			/>
 			<p>
 				<Code>TESpinner</Code> is the greatest loading spinner of all time.
 			</p>
@@ -34,14 +38,14 @@ const TESpinnerSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock title="Basic (medium)" code={`<TESpinner />`}>
+			<ExampleBlock title='Basic (medium)' code={`<TESpinner />`}>
 				<TESpinner />
 			</ExampleBlock>
-			<ExampleBlock title="Small" code={`<TESpinner size='small' />`}>
-				<TESpinner size="small" />
+			<ExampleBlock title='Small' code={`<TESpinner size='small' />`}>
+				<TESpinner size='small' />
 			</ExampleBlock>
-			<ExampleBlock title="Large" code={`<TESpinner size='large' />`}>
-				<TESpinner size="large" />
+			<ExampleBlock title='Large' code={`<TESpinner size='large' />`}>
+				<TESpinner size='large' />
 			</ExampleBlock>
 		</ComponentSection>
 	)

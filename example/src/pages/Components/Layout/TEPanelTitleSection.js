@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TEPanelTitle } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -10,7 +11,10 @@ import ExampleBlock from './../../../components/ExampleBlock'
 const TEPanelTitleSection = () => {
 	return (
 		<ComponentSection>
-			<h2>TEPanelTitle</h2>
+			<ComponentTitle
+				title='TEPanelTitle'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Layout/TEPanelTitle/TEPanelTitle.js'
+			/>
 			<p>
 				<Code>TEPanelTitle</Code> simple title row typically used in the{' '}
 				<Code>TEPanel</Code>.
@@ -40,13 +44,13 @@ const TEPanelTitleSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic (text)"
+				title='Basic (text)'
 				code={`<TEPanelTitle title="Title" subtitle="Subtitle" />`}
 			>
-				<TEPanelTitle title="Title" subtitle="Subtitle" />
+				<TEPanelTitle title='Title' subtitle='Subtitle' />
 			</ExampleBlock>
 			<ExampleBlock
-				title="Basic (components)"
+				title='Basic (components)'
 				code={`<TEPanelTitle
 	leftComponent={<button>Some Button</button>}
 	rightComponent={<input />}

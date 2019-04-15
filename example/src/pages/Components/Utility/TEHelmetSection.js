@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { TEInputRow, TEHelmet } from 'react-tec'
 
+import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
@@ -12,13 +13,16 @@ const TEHelmetSection = () => {
 
 	return (
 		<ComponentSection>
-			<h2>TEHelmet</h2>
+			<ComponentTitle
+				title='TEHelmet'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Utility/TEHelmet/TEHelmet.js'
+			/>
 			<p>
 				<Code>TEHelmet</Code> is just a wrapper around a{' '}
 				<a
-					href="https://github.com/nfl/react-helmet"
-					target="_blank"
-					rel="noopener noreferrer"
+					href='https://github.com/nfl/react-helmet'
+					target='_blank'
+					rel='noopener noreferrer'
 				>
 					React Helmet
 				</a>{' '}
@@ -41,7 +45,7 @@ const TEHelmetSection = () => {
 				]}
 			/>
 			<ExampleBlock
-				title="Basic"
+				title='Basic'
 				code={`{title && <TEHelmet title={title} />}
 <TEInputRow
 	title="Type to change the page title"
@@ -52,8 +56,8 @@ const TEHelmetSection = () => {
 			>
 				{title && <TEHelmet title={title} />}
 				<TEInputRow
-					title="Type to change the page title"
-					labelForKey="setPageTitle"
+					title='Type to change the page title'
+					labelForKey='setPageTitle'
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 				/>
