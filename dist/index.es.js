@@ -37044,9 +37044,19 @@ var TEPrivateRoute = function TEPrivateRoute(props) {
 			if (isAuthenticated && hasPermissions) {
 				return Component$$1 ? React__default.createElement(Component$$1, props) : React__default.createElement(Route, rest);
 			} else if (!isAuthenticated) {
-				return React__default.createElement(Redirect, { to: authPath });
+				return React__default.createElement(Redirect, {
+					to: {
+						pathname: { authPath: authPath },
+						state: { fromPath: rest.path }
+					}
+				});
 			} else if (!hasPermissions) {
-				return React__default.createElement(Redirect, { to: accessDeniedPath });
+				return React__default.createElement(Redirect, {
+					to: {
+						pathname: { accessDeniedPath: accessDeniedPath },
+						state: { fromPath: rest.path }
+					}
+				});
 			} else {
 				//Can't Happen
 				return null;

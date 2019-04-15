@@ -30,13 +30,13 @@ const TEPrivateRouteSection = () => {
 						prop: 'isAuthenticated',
 						type: 'boolean',
 						note:
-							'Whether the user is authenticated. If false, the user will be redirected to the "authPath".',
+							'Whether the user is authenticated. If false, the user will be redirected to the "authPath". The path the user was redirected from will be included in the state under "fromPath".',
 					},
 					{
 						prop: 'hasPermissions',
 						type: 'boolean',
 						note:
-							'Whether the user has appropriate permissions. This is used when a user is signed in but they try to navigate to a page they do not have appropriate permissions for. If false, the user will be redirected to the "accessDeniedPath".',
+							'Whether the user has appropriate permissions. This is used when a user is signed in but they try to navigate to a page they do not have appropriate permissions for. If false, the user will be redirected to the "accessDeniedPath".  The path the user was redirected from will be included in the state under "fromPath".',
 					},
 					{
 						prop: 'authPath',
