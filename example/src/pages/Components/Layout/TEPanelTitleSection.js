@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEPanelTitle } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEPanelTitleSection = () => {
 	return (
@@ -43,24 +40,16 @@ const TEPanelTitleSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic (text)'
-				code={`<TEPanelTitle title="Title" subtitle="Subtitle" />`}
-			>
-				<TEPanelTitle title='Title' subtitle='Subtitle' />
-			</ExampleBlock>
-			<ExampleBlock
-				title='Basic (components)'
-				code={`<TEPanelTitle
-	leftComponent={<button>Some Button</button>}
-	rightComponent={<input />}
-/>`}
-			>
-				<TEPanelTitle
-					leftComponent={<button>Some Button</button>}
-					rightComponent={<input />}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/56wxz?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEPanelTitle'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

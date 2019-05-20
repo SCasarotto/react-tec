@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEFileManagerRow } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEFileManagerRowSection = () => {
 	return (
@@ -120,70 +117,16 @@ const TEFileManagerRowSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEFileManagerRow
-	fileSrc={{
-		uid1: {
-			src:
-				'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png',
-			filename: 'SomeFile',
-			fileEnding: 'png',
-			path: 'some/path/to/where/i/have/this/file',
-		},
-		uid2: {
-			src:
-				'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png',
-			filename: 'SomeTotallyDifferentFile',
-			fileEnding: 'png',
-			path: 'some/path/to/where/i/have/this/file',
-		},
-		uid3: {
-			src:
-				'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png',
-			filename: 'NotTheSameFileAsThoseOtherOnes',
-			fileEnding: 'png',
-			path: 'some/path/to/where/i/have/this/file',
-		},
-	}}
-	onUpload={(files) => {
-		console.log(files)
-		Promise.resolve()
-	}}
-	onRemove={(data) => console.log(data)}
-/>`}
-			>
-				<TEFileManagerRow
-					fileSrc={{
-						uid1: {
-							src:
-								'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png',
-							filename: 'SomeFile',
-							fileEnding: 'png',
-							path: 'some/path/to/where/i/have/this/file',
-						},
-						uid2: {
-							src:
-								'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png',
-							filename: 'SomeTotallyDifferentFile',
-							fileEnding: 'png',
-							path: 'some/path/to/where/i/have/this/file',
-						},
-						uid3: {
-							src:
-								'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png',
-							filename: 'NotTheSameFileAsThoseOtherOnes',
-							fileEnding: 'png',
-							path: 'some/path/to/where/i/have/this/file',
-						},
-					}}
-					onUpload={(files) => {
-						console.log(files)
-						Promise.resolve()
-					}}
-					onRemove={(data) => console.log(data)}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/bzt87?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEFileManagerRow'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
-
-import { TESearchSelectInput } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TESearchSelectInputSection = () => {
-	const [singleValue, setSingleValue] = useState('')
-	const [multiValue, setMultiValue] = useState([])
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -55,44 +50,16 @@ const TESearchSelectInputSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Single'
-				code={`<TESearchSelectInput
-	onChange={({option}) => console.log(option)}
-	options={['value1', 'otherValue', 'Click Me!', 'No No Pick Me!!!']}
-/>`}
-			>
-				<TESearchSelectInput
-					onChange={({ option }) => {
-						console.log(option)
-						setSingleValue(option)
-					}}
-					options={['value1', 'otherValue', 'Click Me!', 'No No Pick Me!!!']}
-					value={singleValue}
-				/>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Multi'
-				code={`<TESearchSelectInput
-	type="multi"
-	onChange={({ options }) => {
-		console.log(options)
-		setMultiValue(options)
-	}}
-	options={['value2', 'otherValue2', 'Click Me2!', 'No No Pick Me2!!!']}
-	value={multiValue}
-/>`}
-			>
-				<TESearchSelectInput
-					type='multi'
-					onChange={({ options }) => {
-						console.log(options)
-						setMultiValue(options)
-					}}
-					options={['value2', 'otherValue2', 'Click Me2!', 'No No Pick Me2!!!']}
-					value={multiValue}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/yuwmk?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TESearchSelectInput'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

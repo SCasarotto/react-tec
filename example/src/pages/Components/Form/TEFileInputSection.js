@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEFileInput } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEFileInputSection = () => {
 	return (
@@ -49,28 +46,16 @@ const TEFileInputSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEFileInput onChamge={(files) => console.log(files)}/>`}
-			>
-				<TEFileInput onChange={(files) => console.log(files)} />
-			</ExampleBlock>
-			<ExampleBlock
-				title='Multiple Images'
-				code={`<TEFileInput
-	onChange={(files) => console.log(files)}
-	accept="image/*"
-	pattern={/image-*/}
-	multiple
-/>`}
-			>
-				<TEFileInput
-					onChange={(files) => console.log(files)}
-					accept='image/*'
-					pattern={/image-*/}
-					multiple
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/3x3y8?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEFileInput'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

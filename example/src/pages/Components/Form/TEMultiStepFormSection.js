@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEMultiStepForm, TEInput } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEMultiStepFormSection = () => {
 	return (
@@ -65,74 +62,16 @@ const TEMultiStepFormSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEMultiStepForm
-	onSubmit={(e) => {
-		alert('Submitted!')
-		return Promise.resolve()
-	}}
-	stepData={[
-		{
-			title: 'Step 1',
-			component: <TEInput onChange={(e) => console.log(e.target.value)} />,
-			onNext: () => {
-				console.log('Heading to step 2!')
-				return Promise.resolve()
-			},
-		},
-		{
-			title: 'Step 22',
-			component: <TEInput onChange={(e) => console.log(e.target.value)} />,
-			onPrevious: () => {
-				console.log('Heading back to step 1!')
-				return Promise.resolve()
-			},
-			onNext: () => {
-				console.log('Heading to step 3!')
-				return Promise.resolve()
-			},
-		},
-		{
-			title: 'Step 333',
-			component: <TEInput onChange={(e) => console.log(e.target.value)} />,
-		},
-	]}
-/>`}
-			>
-				<TEMultiStepForm
-					onSubmit={(e) => {
-						alert('Submitted!')
-						return Promise.resolve()
-					}}
-					stepData={[
-						{
-							title: 'Step 1',
-							component: <TEInput onChange={(e) => console.log(e.target.value)} />,
-							onNext: () => {
-								console.log('Heading to step 2!')
-								return Promise.resolve()
-							},
-						},
-						{
-							title: 'Step 22',
-							component: <TEInput onChange={(e) => console.log(e.target.value)} />,
-							onPrevious: () => {
-								console.log('Heading back to step 1!')
-								return Promise.resolve()
-							},
-							onNext: () => {
-								console.log('Heading to step 3!')
-								return Promise.resolve()
-							},
-						},
-						{
-							title: 'Step 333',
-							component: <TEInput onChange={(e) => console.log(e.target.value)} />,
-						},
-					]}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/b9d58?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEMultiStepForm'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

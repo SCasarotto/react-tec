@@ -1,11 +1,8 @@
 import React from 'react'
 
-import { TEButton } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEButtonSection = () => {
 	return (
@@ -31,24 +28,16 @@ const TEButtonSection = () => {
 				Note: The button's <Code>type</Code> is defaulted to <Code>'button'</Code> instead
 				of normal HTML where it is defaulted to <Code>'submit'</Code>.
 			</p>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEButton
-	onClick={() => {
-		alert('Clicked!')
-	}}
->
-	Click Me!
-</TEButton>`}
-			>
-				<TEButton
-					onClick={() => {
-						alert('Clicked!')
-					}}
-				>
-					Click Me!
-				</TEButton>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/reacttec-tebutton-zknhh?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEButton'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

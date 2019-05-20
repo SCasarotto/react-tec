@@ -1,17 +1,11 @@
-import React, { useState } from 'react'
-
-import { TEAlert, TEButton } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEAlertSection = () => {
-	const [visible, setVisible] = useState(false)
-	const [visible2, setVisible2] = useState(false)
-
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -52,52 +46,16 @@ const TEAlertSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEAlert
-	title="TEAlert!"
-	message="You have been alerted to stay alert."
-	onClick={() => setVisible(false)}
-	visible={visible}
-/>
-<TEButton onClick={() => setVisible(true)}>Get Alerted</TEButton>`}
-			>
-				<TEAlert
-					title='TEAlert!'
-					message='You have been alerted to stay alert.'
-					onClick={() => setVisible(false)}
-					visible={visible}
-				/>
-				<TEButton onClick={() => setVisible(true)}>Get Alerted</TEButton>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Children'
-				code={`<TEAlert
-	title="TEAlert!"
-	message="You have been alerted to stay alert."
-	onClick={() => setVisible2(false)}
-	visible={visible2}
-	buttonTitle="Cancel"
->
-	<p style={{ textAlign: 'center' }}>
-		Some extra components passed into the body
-	</p>
-</TEAlert>
-<TEButton onClick={() => setVisible2(true)}>Get Alerted</TEButton>`}
-			>
-				<TEAlert
-					title='TEAlert!'
-					message='You have been alerted to stay alert.'
-					onClick={() => setVisible2(false)}
-					visible={visible2}
-					buttonTitle='Cancel'
-				>
-					<p style={{ textAlign: 'center' }}>
-						Some extra components passed into the body
-					</p>
-				</TEAlert>
-				<TEButton onClick={() => setVisible2(true)}>Get Alerted</TEButton>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/gcxc3?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEAlert'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
-
-import { TEPopupMultiStepForm, TELabel, TEButton } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEPopupMultiStepFormSection = () => {
-	const [visible, setVisible] = useState(false)
-
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -31,97 +26,16 @@ const TEPopupMultiStepFormSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEPopupMultiStepForm
-	visible={visible}
-	onClose={() => setVisible(false)}
-	onSubmit={() =>
-		new Promise((res, rej) => {
-			console.log('TEMultiStepForm Submit')
-			return res()
-		})
-	}
-	stepData={[
-		{
-			title: 'Step210',
-			component: (
-				<div>
-					<TELabel htmlFor="test" required disabled>
-						Label
-					</TELabel>
-				</div>
-			),
-		},
-		{
-			title: 'Step#3',
-			component: (
-				<div>
-					<TELabel htmlFor="test" required disabled>
-						S33
-					</TELabel>
-				</div>
-			),
-		},
-		{
-			title: 'Step444',
-			component: (
-				<div>
-					<TELabel htmlFor="test" required disabled>
-						A4A4
-					</TELabel>
-				</div>
-			),
-		},
-	]}
-/>
-<TEButton onClick={() => setVisible(true)}>Show TEPopupMultiStepForm</TEButton>`}
-			>
-				<TEPopupMultiStepForm
-					visible={visible}
-					onClose={() => setVisible(false)}
-					onSubmit={() =>
-						new Promise((res, rej) => {
-							console.log('TEMultiStepForm Submit')
-							setVisible(false)
-							return res()
-						})
-					}
-					stepData={[
-						{
-							title: 'Step210',
-							component: (
-								<div>
-									<TELabel htmlFor='test' required disabled>
-										Label
-									</TELabel>
-								</div>
-							),
-						},
-						{
-							title: 'Step#3',
-							component: (
-								<div>
-									<TELabel htmlFor='test' required disabled>
-										S33
-									</TELabel>
-								</div>
-							),
-						},
-						{
-							title: 'Step444',
-							component: (
-								<div>
-									<TELabel htmlFor='test' required disabled>
-										A4A4
-									</TELabel>
-								</div>
-							),
-						},
-					]}
-				/>
-				<TEButton onClick={() => setVisible(true)}>Show TEPopupMultiStepForm</TEButton>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/lvkd7?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEPopupMultiStepForm'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

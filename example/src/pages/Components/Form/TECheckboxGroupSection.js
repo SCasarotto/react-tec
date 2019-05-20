@@ -1,14 +1,10 @@
-import React, { useState } from 'react'
-
-import { TECheckboxGroup } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TECheckboxGroupSection = () => {
-	const [checkedValues, setCheckedValues] = useState([])
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -97,24 +93,16 @@ const TECheckboxGroupSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TECheckboxGroup
-	labelForKey="TECheckboxGroup"
-	title="My Checkbox Group"
-	onChange={(checkedValues) => setCheckedValues(checkedValues)}
-	checkedValues={checkedValues}
-	buttonArray={['value1', 'valueTwo', 'OtherValue']}
-/>`}
-			>
-				<TECheckboxGroup
-					labelForKey='TECheckboxGroup'
-					title='My Checkbox Group'
-					onChange={(checkedValues) => setCheckedValues(checkedValues)}
-					checkedValues={checkedValues}
-					buttonArray={['value1', 'valueTwo', 'OtherValue']}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/e1nzt?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TECheckboxGroup'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

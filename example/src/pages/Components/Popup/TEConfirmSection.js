@@ -1,17 +1,11 @@
-import React, { useState } from 'react'
-
-import { TEConfirm, TEButton } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEConfirmSection = () => {
-	const [visible, setVisible] = useState(false)
-	const [visible2, setVisible2] = useState(false)
-
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -62,58 +56,16 @@ const TEConfirmSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEConfirm
-	title="TEConfirm!"
-	message="Are you super sure?"
-	leftOnClick={() => setVisible(false)}
-	rightOnClick={() => setVisible(false)}
-	visible={visible}
-/>
-<TEButton onClick={() => setVisible(true)}>Confirm Your Action</TEButton>`}
-			>
-				<TEConfirm
-					title='TEConfirm!'
-					message='Are you super sure?'
-					leftOnClick={() => setVisible(false)}
-					rightOnClick={() => setVisible(false)}
-					visible={visible}
-				/>
-				<TEButton onClick={() => setVisible(true)}>Confirm Your Action</TEButton>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Children'
-				code={`<TEConfirm
-	title="TEConfirm!"
-	message="Are you super sure?"
-	visible={visible2}
-	leftOnClick={() => setVisible2(false)}
-	leftButtonTitle="No"
-	rightOnClick={() => setVisible2(false)}
-	rightButtonTitle="Yes"
->
-	<p style={{ textAlign: 'center' }}>
-		Some extra components passed into the body
-	</p>
-</TEConfirm>
-<TEButton onClick={() => setVisible2(true)}>Confirm Your Action</TEButton>`}
-			>
-				<TEConfirm
-					title='TEConfirm!'
-					message='Are you super sure?'
-					visible={visible2}
-					leftOnClick={() => setVisible2(false)}
-					leftButtonTitle='No'
-					rightOnClick={() => setVisible2(false)}
-					rightButtonTitle='Yes'
-				>
-					<p style={{ textAlign: 'center' }}>
-						Some extra components passed into the body
-					</p>
-				</TEConfirm>
-				<TEButton onClick={() => setVisible2(true)}>Confirm Your Action</TEButton>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/lt7wu?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEConfirm'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

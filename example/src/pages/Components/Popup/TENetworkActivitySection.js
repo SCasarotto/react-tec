@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
-
-import { TENetworkActivity, TEButton } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TENetworkActivitySection = () => {
-	const [visible, setVisible] = useState(false)
-
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -35,28 +30,16 @@ const TENetworkActivitySection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TENetworkActivity message="Loading..." visible={visible} />
-<TEButton
-	onClick={() => {
-		setVisible(true)
-		setTimeout(() => setVisible(false), 2000)
-	}}
->
-	Do some 2 second long process
-</TEButton>`}
-			>
-				<TENetworkActivity message='Loading...' visible={visible} />
-				<TEButton
-					onClick={() => {
-						setVisible(true)
-						setTimeout(() => setVisible(false), 2000)
-					}}
-				>
-					Do some 2 second long process
-				</TEButton>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/icwr7?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TENetworkActivity'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

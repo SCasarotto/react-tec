@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEErrorLoadingAlert } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEErrorLoadingAlertSection = () => {
 	return (
@@ -45,26 +42,16 @@ const TEErrorLoadingAlertSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEErrorLoadingAlert
-	title="Error Loading"
-	message="There appears to be an error loading the data you requested."
-	onClick={() => {
-		alert('Button Clicked')
-	}}
-	buttonTitle="Go Back"
-/>`}
-			>
-				<TEErrorLoadingAlert
-					title='Error Loading'
-					message='There appears to be an error loading the data you requested.'
-					onClick={() => {
-						alert('Button Clicked')
-					}}
-					buttonTitle='Go Back'
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/8gfqc?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEErrorLoadingAlert'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

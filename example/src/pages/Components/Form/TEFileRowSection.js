@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEFileRow } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEFileRowSection = () => {
 	return (
@@ -55,20 +52,16 @@ const TEFileRowSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEFileRow
-	title="My FileRow"
-	labelForKey="SomeUniqueKey2"
-	onChange={(files) => console.log(files)}
-/>`}
-			>
-				<TEFileRow
-					title='My FileRow'
-					labelForKey='SomeUniqueKey2'
-					onChange={(files) => console.log(files)}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/7gvw4?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEFileRow'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

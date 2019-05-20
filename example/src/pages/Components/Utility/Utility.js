@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link, Switch, Route } from 'react-router-dom'
 import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
@@ -12,14 +13,26 @@ const Utility = (props) => {
 	return (
 		<Fragment>
 			<TEHelmet
-				title="React TEC | Components - Utility"
-				description="React TEC is a component library used by 38th Street Studios LLC"
+				title='React TEC | Components - Utility'
+				description='React TEC is a component library used by 38th Street Studios LLC'
 			/>
 			<TEPanelWrapper wrapperHeight={80}>
-				<TEPanel>
-					<h1>Utility</h1>
-					<TEHelmetSection />
-					<TEScrollToTopSection />
+				<TEPanel title='Utility Component'>
+					<ul>
+						<li>
+							<Link to='/components/utility/TEHelmet'>TEHelmet</Link>
+						</li>
+						<li>
+							<Link to='/components/utility/TEScrollToTop'>TEScrollToTop</Link>
+						</li>
+					</ul>
+					<Switch>
+						<Route path='/components/utility/TEHelmet' component={TEHelmetSection} />
+						<Route
+							path='/components/utility/TEScrollToTop'
+							component={TEScrollToTopSection}
+						/>
+					</Switch>
 				</TEPanel>
 			</TEPanelWrapper>
 		</Fragment>

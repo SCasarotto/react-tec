@@ -36,14 +36,17 @@ const initialTheme = {
 // - At this moment there is no other way to style the wrapper components on this input.
 //
 const GlobalStyles = createGlobalStyle`
-	${(props) => {
-		const { theme } = props
-		const { globalStyles } = theme
-
-		return `
 			& * {
 				box-sizing: border-box;
 			}
+
+			@keyframes TESpinnerLoading {
+					to {
+							-webkit-transform: rotate(1turn);
+							transform: rotate(1turn)
+					}
+			}
+			
 
 			/*
 			*
@@ -56,8 +59,8 @@ const GlobalStyles = createGlobalStyle`
 				width: 100%;
 				font-size: 16px;
 				cursor: pointer;
-				background-color: ${theme.white};
-				border: 1px solid ${theme.lightGray};
+				background-color: ${(props) => props.theme.white};
+				border: 1px solid ${(props) => props.theme.lightGray};
 				border-radius: 5px;
 				box-sizing: border-box;
 				transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
@@ -66,7 +69,7 @@ const GlobalStyles = createGlobalStyle`
 				box-sizing: border-box;
 			}
 			.PowerSelect.white-border {
-				border: 1px solid ${theme.white};
+				border: 1px solid ${(props) => props.theme.white};
 			}
 			.PowerSelect:focus {
 				outline: none;
@@ -74,14 +77,14 @@ const GlobalStyles = createGlobalStyle`
 			.PowerSelect--focused {
 			}
 			.PowerSelect--disabled {
-				background-color: ${theme.lighterGray};
+				background-color: ${(props) => props.theme.lighterGray};
 				cursor: not-allowed;
 			}
 			.PowerSelect--disabled .PowerSelect__Trigger {
 				pointer-events: none;
 			}
 			.PowerSelect--disabled .PowerSelect__TriggerInput {
-				background-color: ${theme.lighterGray};
+				background-color: ${(props) => props.theme.lighterGray};
 			}
 			.PowerSelect--open {
 				border-bottom-right-radius: 0;
@@ -99,8 +102,8 @@ const GlobalStyles = createGlobalStyle`
 				text-overflow: ellipsis;
 			}
 			.PowerSelect__Menu {
-				background-color: ${theme.white};
-				border: 1px solid ${theme.lightGray};
+				background-color: ${(props) => props.theme.white};
+				border: 1px solid ${(props) => props.theme.lightGray};
 			}
 			.PowerSelect__Menu.white-border__Menu {
 				border: none;
@@ -120,7 +123,7 @@ const GlobalStyles = createGlobalStyle`
 			.PowerSelect__OptGroup__Label {
 				font-weight: 700;
 				font-size: 0.9em;
-				color: ${theme.darkerGray};
+				color: ${(props) => props.theme.darkerGray};
 				padding: 8px 0 4px;
 			}
 			.PowerSelect__Option {
@@ -131,17 +134,17 @@ const GlobalStyles = createGlobalStyle`
 				background-color: rgba(55, 50, 117 0.5);
 			}
 			.PowerSelect__Option--disabled {
-				color: ${theme.darkGray};
+				color: ${(props) => props.theme.darkGray};
 				cursor: not-allowed;
 			}
 			.PowerSelect__Option--highlighted {
-				background-color: ${theme.lighterGray};
+				background-color: ${(props) => props.theme.lighterGray};
 			}
 			.PowerSelect__BeforeOptions {
 				padding: 8px 12px;
 			}
 			.PowerSelect__Placeholder {
-				color: ${theme.gray};
+				color: ${(props) => props.theme.gray};
 				font-size: 14px;
 			}
 			.PowerSelect__SearchInputContainer {
@@ -154,13 +157,13 @@ const GlobalStyles = createGlobalStyle`
 				padding: 4px 8px;
 				line-height: 1.4;
 				font-size: inherit;
-				border: 1px solid ${theme.gray};
+				border: 1px solid ${(props) => props.theme.gray};
 				border-radius: 2px;
 				cursor: pointer;
 				box-sizing: border-box;
 			}
 			.PowerSelect__SearchInput:focus {
-				border-color: ${theme.primary};
+				border-color: ${(props) => props.theme.primary};
 				outline: none;
 			}
 			.PowerSelect__TriggerInput {
@@ -191,7 +194,7 @@ const GlobalStyles = createGlobalStyle`
 			}
 			.PowerSelect__TriggerLabel {
 				padding: 6px 22px 6px 8px;
-				color: ${theme.darkerGray};
+				color: ${(props) => props.theme.darkerGray};
 			}
 			.PowerSelect__Trigger__LHS + .PowerSelect__TriggerLabel {
 				padding-left: 4px;
@@ -204,16 +207,16 @@ const GlobalStyles = createGlobalStyle`
 			.PowerSelect__TriggerStatus:before {
 				content: '';
 				display: block;
-				border-top: 4px solid ${theme.primary};
+				border-top: 4px solid ${(props) => props.theme.primary};
 				border-left: 4px solid transparent;
 				border-right: 4px solid transparent;
 			}
 			.PowerSelect__Clear {
 				padding: 4px;
-				color: ${theme.gray};
+				color: ${(props) => props.theme.gray};
 			}
 			.PowerSelect__Clear:hover {
-				color: ${theme.darkerGay};
+				color: ${(props) => props.theme.darkerGay};
 			}
 			.PowerSelect__Clear:before {
 				content: "\\D7";
@@ -261,7 +264,7 @@ const GlobalStyles = createGlobalStyle`
 				margin-left: 4px;
 				background-color: #ebeeff;
 				border: 1px solid #c6cfff;
-				color: ${theme.darkerGray}
+				color: ${(props) => props.theme.darkerGray};
 				border-radius: 3px;
 			}
 			.PowerSelectMultiple__SelectedOption__Close,
@@ -1018,11 +1021,11 @@ const GlobalStyles = createGlobalStyle`
 			    transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
 			}
 			.react-datepicker__input-container input:hover {
-			    border: 1px solid ${theme.primary};
-			    box-shadow: 0 0 0 1px ${theme.primary} inset;
+			    border: 1px solid ${(props) => props.theme.primary};
+			    box-shadow: 0 0 0 1px ${(props) => props.theme.primary} inset;
 			}
 			.react-datepicker__day--keyboard-selected {
-			    background-color: ${theme.primary};
+			    background-color: ${(props) => props.theme.primary};
 			}
 			.react-datepicker__time-container
 			    .react-datepicker__time
@@ -1054,7 +1057,7 @@ const GlobalStyles = createGlobalStyle`
 			    .react-datepicker__time-box
 			    ul.react-datepicker__time-list
 			    li.react-datepicker__time-list-item--selected:hover {
-			    background-color: ${theme.primary};
+			    background-color: ${(props) => props.theme.primary};
 			}
 
 			.react-datepicker__time-container
@@ -1065,9 +1068,7 @@ const GlobalStyles = createGlobalStyle`
 			    line-height: 30px;
 			    padding: 0;
 			}
-			${globalStyles}
-		`
-	}}
+			${(props) => props.theme.globalStyles}
 `
 
 //Using Styled Components Context

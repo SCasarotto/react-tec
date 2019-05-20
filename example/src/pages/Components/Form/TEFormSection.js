@@ -1,11 +1,8 @@
 import React from 'react'
 
-import { TEForm, TEButton } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEFormSection = () => {
 	return (
@@ -15,7 +12,7 @@ const TEFormSection = () => {
 				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEForm/TEForm.js'
 			/>
 			<p>
-				A simple button component. <Code>TEForm</Code> is simply a styled HTML{' '}
+				A simple form component. <Code>TEForm</Code> is simply a styled HTML{' '}
 				<Code>{'<form>'}</Code>. All props are passed right through to the form. Reference{' '}
 				<a
 					href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form'
@@ -26,26 +23,16 @@ const TEFormSection = () => {
 				</a>
 				.
 			</p>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEForm
-	onSubmit={(e) => {
-		e.preventDefault()
-		alert('Submitted!')
-	}}
->
-	<TEButton type="submit">Submit</TEButton>
-</TEForm>`}
-			>
-				<TEForm
-					onSubmit={(e) => {
-						e.preventDefault()
-						alert('Submitted!')
-					}}
-				>
-					<TEButton type='submit'>Submit</TEButton>
-				</TEForm>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/4ph7c?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEForm'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

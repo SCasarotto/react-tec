@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
-
-import { TEDatetimeRow } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEDatetimeRowSection = () => {
-	const [date, setDate] = useState()
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -56,22 +52,16 @@ const TEDatetimeRowSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEDatetimeRow
-	title='My DatetimeRow'
-	labelForKey='SomeUniqueKey'
-	onChange={(date) => setDate}
-	value={date}
-/>`}
-			>
-				<TEDatetimeRow
-					title='My DatetimeRow'
-					labelForKey='SomeUniqueKey'
-					onChange={(date) => setDate(date)}
-					value={date}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/smhx9?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEDatetimeRow'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

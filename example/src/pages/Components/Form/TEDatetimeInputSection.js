@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
-
-import { TEDatetimeInput } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEDatetimeInputSection = () => {
-	const [date, setDate] = useState('')
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -51,32 +47,16 @@ const TEDatetimeInputSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEDatetimeInput value={date} onChange={(date) => setDate(date)} />`}
-			>
-				<TEDatetimeInput value={date} onChange={(date) => setDate(date)} />
-			</ExampleBlock>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEDatetimeInput
-	value={date}
-	onChange={(date) => setDate(date.getTime())}
-	timeFormat="h:mm aa"
-	timeIntervals={15}
-	dateFormat="MMMM d, yyyy h:mm aa"
-	showTimeSelect
-/>`}
-			>
-				<TEDatetimeInput
-					value={date}
-					onChange={(date) => setDate(date.getTime())}
-					timeFormat='h:mm aa'
-					timeIntervals={15}
-					dateFormat='MMMM d, yyyy h:mm aa'
-					showTimeSelect
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/ye5kr?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEDatetimeInput'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

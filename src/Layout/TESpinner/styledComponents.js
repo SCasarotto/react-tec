@@ -48,7 +48,7 @@ const calculateRingStyles = ({ totalRings, ringNumber, innerColor, outerColor })
         width: ${(1 - spacing * 2) * 100}%;
         height: ${(1 - spacing * 2) * 100}%;
         border-top-color: ${colorBetweenColors(innerColor, outerColor, colorSteps * ringNumber)};
-        animation: loading ${thisTime}s linear infinite;
+        animation: TESpinnerLoading ${thisTime}s linear infinite;
     `
 }
 

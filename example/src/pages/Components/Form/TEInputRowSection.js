@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEInputRow } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEInputRowSection = () => {
 	return (
@@ -62,36 +59,16 @@ const TEInputRowSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEInputRow
-	title="My Input"
-	labelForKey="SomeUniqueKey42"
-	onChange={(e) => console.log(e.target.value)}
-/>`}
-			>
-				<TEInputRow
-					title='My Input'
-					labelForKey='SomeUniqueKey42'
-					onChange={(e) => console.log(e.target.value)}
-				/>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Textarea'
-				code={`<TEInputRow
-	type="textarea"
-	title="My Textarea"
-	labelForKey="SomeUniqueKey666"
-	onChange={(e) => console.log(e.target.value)}
-/>`}
-			>
-				<TEInputRow
-					type='textarea'
-					title='My Textarea'
-					labelForKey='SomeUniqueKey666'
-					onChange={(e) => console.log(e.target.value)}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/kykno?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEInputRow'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

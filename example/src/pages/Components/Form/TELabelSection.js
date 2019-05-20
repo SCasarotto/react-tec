@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TELabel } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TELabelSection = () => {
 	return (
@@ -47,15 +44,16 @@ const TELabelSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock title='Basic' code={`<TELabel>Some Label</TELabel>`}>
-				<TELabel>Some Label</TELabel>
-			</ExampleBlock>
-			<ExampleBlock title='Required' code={`<TELabel required>Some Label</TELabel>`}>
-				<TELabel required>Some Label</TELabel>
-			</ExampleBlock>
-			<ExampleBlock title='Disabled' code={`<TELabel disabled>Some Label</TELabel>`}>
-				<TELabel disabled>Some Label</TELabel>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/lw2y6?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TELabel'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

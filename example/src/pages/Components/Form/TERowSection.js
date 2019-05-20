@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TERow, TEInput } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TERowSection = () => {
 	return (
@@ -35,92 +32,16 @@ const TERowSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic (Full)'
-				code={`<TERow>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>`}
-			>
-				<TERow>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Half'
-				code={`<TERow size='half'>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>
-<TERow size='half' last>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>`}
-			>
-				<TERow size='half'>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-				<TERow size='half' last>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Third'
-				code={`<TERow size='two-third'>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>
-<TERow size='third' last>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>`}
-			>
-				<TERow size='two-third'>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-				<TERow size='third' last>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Forth'
-				code={`<TERow size='half'>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>
-<TERow size='forth'>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>
-<TERow size='forth' last>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>`}
-			>
-				<TERow size='half'>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-				<TERow size='forth'>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-				<TERow size='forth' last>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Condensed (width: auto)'
-				code={`<TERow size="condensed">
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>
-<TERow size="condensed">
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>
-<TERow size="condensed" last>
-	<TEInput onChange={(e) => console.log(e.target.value)} />
-</TERow>`}
-			>
-				<TERow size='condensed'>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-				<TERow size='condensed'>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-				<TERow size='condensed' last>
-					<TEInput onChange={(e) => console.log(e.target.value)} />
-				</TERow>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/4xf0m?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TERow'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
-
-import { TESegmentedGroup } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TESegmentedGroupSection = () => {
-	const [checkedValue, setCheckedValue] = useState('')
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -94,44 +90,16 @@ const TESegmentedGroupSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TESegmentedGroup
-	labelForKey="TERadioButtonGroup"
-	title="My Radio Button Group"
-	onChange={(e) => setCheckedValue(e.target.value)}
-	checkedValue={checkedValue}
-	buttonArray={['value1', 'valueTwo', 'OtherValue']}
-/>`}
-			>
-				<TESegmentedGroup
-					labelForKey='TESegmentedGroup'
-					title='My Radio Button Group'
-					onChange={(e) => setCheckedValue(e.target.value)}
-					checkedValue={checkedValue}
-					buttonArray={['value1', 'valueTwo', 'OtherValue']}
-				/>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Inline'
-				code={`<TESegmentedGroup
-	labelForKey="TESegmentedGroupInline"
-	title="My Radio Button Group"
-	onChange={(e) => setCheckedValue(e.target.value)}
-	checkedValue={checkedValue}
-	buttonArray={['value1', 'valueTwo', 'OtherValue']}
-	inline
-/>`}
-			>
-				<TESegmentedGroup
-					labelForKey='TESegmentedGroupInline'
-					title='My Radio Button Group'
-					onChange={(e) => setCheckedValue(e.target.value)}
-					checkedValue={checkedValue}
-					buttonArray={['value1', 'valueTwo', 'OtherValue']}
-					inline
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/stjs8?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TESegmentedGroup'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

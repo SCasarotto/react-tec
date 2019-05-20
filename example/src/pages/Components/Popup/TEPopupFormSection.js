@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
-
-import { TEPopupForm, TEButton } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEPopupFormSection = () => {
-	const [visible, setVisible] = useState(false)
-
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -51,26 +46,16 @@ const TEPopupFormSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TEPopupForm
-	visible={visible}
-	onClose={() => setVisible(false)}
-	onSubmit={() => setVisible(false)}
->
-	<p style={{ textAlign: 'center' }}>Some form goes here!</p>
-</TEPopupForm>
-<TEButton onClick={() => setVisible(true)}>View Popup Form</TEButton>`}
-			>
-				<TEPopupForm
-					visible={visible}
-					onClose={() => setVisible(false)}
-					onSubmit={() => setVisible(false)}
-				>
-					<p style={{ textAlign: 'center' }}>Some form goes here!</p>
-				</TEPopupForm>
-				<TEButton onClick={() => setVisible(true)}>View Popup Form</TEButton>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/1hlf7?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEPopupForm'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

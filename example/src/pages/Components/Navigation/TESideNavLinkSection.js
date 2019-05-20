@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TESideNavLink } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TESideNavLinkSection = () => {
 	return (
@@ -55,36 +52,16 @@ const TESideNavLinkSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<ul>
-	<TESideNavLink to="/" title="Home" exact />
-	<TESideNavLink to="/components/globals" title="Globals" />
-	<TESideNavLink to="/components/layout" title="Layout" />
-	<TESideNavLink to="/components/navigation" title="Navigation" />
-	<TESideNavLink to="/components/form" title="Form" />
-	<TESideNavLink to="/components/popup" title="Popup" />
-	<TESideNavLink
-		to="/components/utility"
-		activePath="/components"
-		title="Utility"
-	/>
-</ul>`}
-			>
-				<ul>
-					<TESideNavLink to='/' title='Home' exact />
-					<TESideNavLink to='/components/globals' title='Globals' />
-					<TESideNavLink to='/components/layout' title='Layout' />
-					<TESideNavLink to='/components/navigation' title='Navigation' />
-					<TESideNavLink to='/components/form' title='Form' />
-					<TESideNavLink to='/components/popup' title='Popup' />
-					<TESideNavLink
-						to='/components/utility'
-						activePath='/components'
-						title='Utility'
-					/>
-				</ul>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/06h16?fontsize=12&module=%2Fsrc%2FExample.js'
+				title='TESideNavLink'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

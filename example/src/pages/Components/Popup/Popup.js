@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link, Switch, Route } from 'react-router-dom'
 import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
@@ -16,18 +17,50 @@ const Popup = (props) => {
 	return (
 		<Fragment>
 			<TEHelmet
-				title="React TEC | Components - Popup"
-				description="React TEC is a component library used by 38th Street Studios LLC"
+				title='React TEC | Components - Popup'
+				description='React TEC is a component library used by 38th Street Studios LLC'
 			/>
 			<TEPanelWrapper wrapperHeight={80}>
-				<TEPanel>
-					<h1>Popup</h1>
-					<TEAlertSection />
-					<TEConfirmSection />
-					<TENetworkActivitySection />
-					<TEPopupSection />
-					<TEPopupFormSection />
-					<TEPopupMultiStepFormSection />
+				<TEPanel title='Popup Components'>
+					<ul>
+						<li>
+							<Link to='/components/popup/TEAlert'>TEAlert</Link>
+						</li>
+						<li>
+							<Link to='/components/popup/TEConfirm'>TEConfirm</Link>
+						</li>
+						<li>
+							<Link to='/components/popup/TENetworkActivity'>TENetworkActivity</Link>
+						</li>
+						<li>
+							<Link to='/components/popup/TEPopup'>TEPopup</Link>
+						</li>
+						<li>
+							<Link to='/components/popup/TEPopupForm'>TEPopupForm</Link>
+						</li>
+						<li>
+							<Link to='/components/popup/TEPopupMultiStepForm'>
+								TEPopupMultiStepForm
+							</Link>
+						</li>
+					</ul>
+					<Switch>
+						<Route path='/components/popup/TEAlert' component={TEAlertSection} />
+						<Route path='/components/popup/TEConfirm' component={TEConfirmSection} />
+						<Route
+							path='/components/popup/TENetworkActivity'
+							component={TENetworkActivitySection}
+						/>
+						<Route path='/components/popup/TEPopup' component={TEPopupSection} />
+						<Route
+							path='/components/popup/TEPopupForm'
+							component={TEPopupFormSection}
+						/>
+						<Route
+							path='/components/popup/TEPopupMultiStepForm'
+							component={TEPopupMultiStepFormSection}
+						/>
+					</Switch>
 				</TEPanel>
 			</TEPanelWrapper>
 		</Fragment>

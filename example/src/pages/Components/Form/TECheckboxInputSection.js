@@ -1,11 +1,8 @@
 import React from 'react'
 
-import { TECheckboxInput } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TECheckboxInputSection = () => {
 	return (
@@ -27,18 +24,16 @@ const TECheckboxInputSection = () => {
 				</a>
 				.
 			</p>
-			<ExampleBlock
-				title='Basic'
-				code={`<TECheckboxInput
-	onChange={(e) => console.log(e.target.value)}
-	value="agreeToEmailSpam"
-/>`}
-			>
-				<TECheckboxInput
-					onChange={(e) => console.log(e.target.value)}
-					value='agreeToEmailSpam'
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/318sr?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TECheckboxInput'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

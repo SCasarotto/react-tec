@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TEPanelWrapper, TEPanel } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEPanelSection = () => {
 	return (
@@ -31,40 +28,16 @@ const TEPanelSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic (full)'
-				code={`<TEPanelWrapper>
-	<TEPanel title="TEPanel Example" subtitle="Isn't it cool?">
-		<p>Some Content Inside</p>
-	</TEPanel>
-</TEPanelWrapper>`}
-			>
-				<TEPanelWrapper>
-					<TEPanel title='TEPanel Example' subtitle="Isn't it cool?">
-						<p>Some Content Inside</p>
-					</TEPanel>
-				</TEPanelWrapper>
-			</ExampleBlock>
-			<ExampleBlock
-				title='Half'
-				code={`<TEPanelWrapper>
-	<TEPanel size="half">
-		<p>Some Content Inside</p>
-	</TEPanel>
-	<TEPanel size="half">
-		<p>Some Content Inside</p>
-	</TEPanel>
-</TEPanelWrapper>`}
-			>
-				<TEPanelWrapper>
-					<TEPanel size='half'>
-						<p>Some Content Inside</p>
-					</TEPanel>
-					<TEPanel size='half'>
-						<p>Some Content Inside</p>
-					</TEPanel>
-				</TEPanelWrapper>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/gqpd8?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEPanel'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

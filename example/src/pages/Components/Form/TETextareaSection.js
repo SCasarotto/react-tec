@@ -1,11 +1,8 @@
 import React from 'react'
 
-import { TETextarea } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TETextareaSection = () => {
 	return (
@@ -26,12 +23,16 @@ const TETextareaSection = () => {
 				</a>
 				.
 			</p>
-			<ExampleBlock
-				title='Basic'
-				code={`<TETextarea onChange={(e) => console.log(e.target.value)} />`}
-			>
-				<TETextarea onChange={(e) => console.log(e.target.value)} />
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/i6ywb?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TETextarea'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
-
-import { TESearchSelectRow } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TESearchSelectRowSection = () => {
-	const [value, setValue] = useState()
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -56,24 +52,16 @@ const TESearchSelectRowSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock
-				title='Basic'
-				code={`<TESearchSelectRow
-	title="My Search Select Row"
-	labelForKey="SomeUniqueKey123"
-	options={['value2', 'otherValue2', 'Click Me2!', 'No No Pick Me2!!!']}
-	onChange={({option}) => setValue(option)}
-	value={value}
-/>`}
-			>
-				<TESearchSelectRow
-					title='My Search Select Row'
-					labelForKey='SomeUniqueKey123'
-					options={['value2', 'otherValue2', 'Click Me2!', 'No No Pick Me2!!!']}
-					onChange={({ option }) => setValue(option)}
-					value={value}
-				/>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/nltjk?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TESearchSelectRow'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

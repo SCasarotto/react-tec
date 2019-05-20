@@ -1,15 +1,11 @@
-import React, { useContext } from 'react'
-
-import { TEPopupContext, TEButton } from 'react-tec'
+import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TEPopupContextSection = () => {
-	const { dispatch } = useContext(TEPopupContext)
 	return (
 		<ComponentSection>
 			<ComponentTitle
@@ -31,110 +27,16 @@ const TEPopupContextSection = () => {
 				And then access it through the <Code>TEPopupContext</Code> via the many different
 				ways of access a context. In this example I use <Code>useContext</Code> as follows:
 			</p>
-			<Codeblock>{`const { dispatch } = useContext(TEPopupContext)`}</Codeblock>
-			<ExampleBlock
-				title='TEAlert'
-				code={`
-<TEButton
-	onClick={() =>
-		dispatch({
-			type: 'show_alert',
-			payload: {
-				alertTitle: 'Alert Title From Context',
-				alertMessage:
-					'This is a message for my alert coming from TEPopupContext',
-				//alertButtonTitle: 'Okay' //These are the default values
-				//alertOnClick: () => dispatch({ type: 'hide_confirm' }), //These are the default values
-
-			},
-		})
-	}
->
-	Show Alert From Context
-</TEButton>`}
-			>
-				<TEButton
-					onClick={() =>
-						dispatch({
-							type: 'show_alert',
-							payload: {
-								alertTitle: 'Alert Title From Context',
-								alertMessage:
-									'This is a message for my alert coming from TEPopupContext',
-								//alertButtonTitle: 'Okay' //These are the default values
-								//alertOnClick: () => dispatch({ type: 'hide_confirm' }), //These are the default values
-							},
-						})
-					}
-				>
-					Show Alert From Context
-				</TEButton>
-			</ExampleBlock>
-			<ExampleBlock
-				title='TEConfirm'
-				code={`
-<TEButton
-	onClick={() =>
-		dispatch({
-			type: 'show_confirm',
-			payload: {
-				confirmTitle: 'Confirm Title From Context',
-				confirmMessage: 'Confirm Message From Context',
-				//confirmLeftOnClick: () => dispatch({ type: 'hide_confirm' }), //These are the default values
-				confirmLeftTitle: 'Cancel',
-				//confirmRightOnClick: () => dispatch({ type: 'hide_confirm' }), //These are the default values
-				confirmRightTitle: 'Confirm',
-			},
-		})
-	}
->
-	Show Confirm From Context
-</TEButton>`}
-			>
-				<TEButton
-					onClick={() =>
-						dispatch({
-							type: 'show_confirm',
-							payload: {
-								confirmTitle: 'Confirm Title From Context',
-								confirmMessage: 'Confirm Message From Context',
-								//confirmLeftOnClick: () => dispatch({ type: 'hide_confirm' }), //These are the default values
-								confirmLeftTitle: 'Cancel',
-								//confirmRightOnClick: () => dispatch({ type: 'hide_confirm' }), //These are the default values
-								confirmRightTitle: 'Confirm',
-							},
-						})
-					}
-				>
-					Show Confirm From Context
-				</TEButton>
-			</ExampleBlock>
-			<ExampleBlock
-				title='TENetworkActivity'
-				code={`<TEButton
-	onClick={() => {
-		dispatch({
-			type: 'show_network_activity',
-			payload: 'Loading From Context...',
-		})
-		setTimeout(() => dispatch({ type: 'hide_network_activity' }), 1000)
-	}}
->
-	Show Network Activity From Context
-</TEButton>`}
-			>
-				<TEButton
-					onClick={() => {
-						dispatch({
-							type: 'show_network_activity',
-							payload: 'Loading From Context...',
-						})
-						setTimeout(() => dispatch({ type: 'hide_network_activity' }), 1000)
-					}}
-				>
-					Show Network Activity From Context
-				</TEButton>
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/fzd72?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TEPopupContext & TEPopupProvider'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

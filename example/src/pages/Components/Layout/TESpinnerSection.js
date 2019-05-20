@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { TESpinner } from 'react-tec'
-
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
-import ExampleBlock from './../../../components/ExampleBlock'
 
 const TESpinnerSection = () => {
 	return (
@@ -38,15 +35,16 @@ const TESpinnerSection = () => {
 					},
 				]}
 			/>
-			<ExampleBlock title='Basic (medium)' code={`<TESpinner />`}>
-				<TESpinner />
-			</ExampleBlock>
-			<ExampleBlock title='Small' code={`<TESpinner size='small' />`}>
-				<TESpinner size='small' />
-			</ExampleBlock>
-			<ExampleBlock title='Large' code={`<TESpinner size='large' />`}>
-				<TESpinner size='large' />
-			</ExampleBlock>
+			<iframe
+				src='https://codesandbox.io/embed/bnjkt?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js'
+				title='TESpinner'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }
