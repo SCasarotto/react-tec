@@ -2,7 +2,6 @@ import React from 'react'
 
 import ComponentTitle from './../../../components/ComponentTitle'
 import Code from './../../../components/Code'
-import Codeblock from './../../../components/Codeblock'
 import ComponentSection from './../../../components/ComponentSection'
 import PropsTable from './../../../components/PropsTable'
 
@@ -28,40 +27,40 @@ const TEPrivateRouteSection = () => {
 				propArray={[
 					{
 						prop: 'isAuthenticated',
-						type: 'boolean',
+						type: 'function',
 						note:
-							'Whether the user is authenticated. If false, the user will be redirected to the "authPath". The path the user was redirected from will be included in the state under "fromPath".',
+							'A function that returns a bool describing whether the user is authenticated. If false, the user will be redirected to the "authPath". The path the user was redirected from will be included in the state under "fromPath".',
 					},
 					{
 						prop: 'hasPermissions',
-						type: 'boolean',
+						type: 'function',
 						note:
-							'Whether the user has appropriate permissions. This is used when a user is signed in but they try to navigate to a page they do not have appropriate permissions for. If false, the user will be redirected to the "accessDeniedPath".  The path the user was redirected from will be included in the state under "fromPath".',
+							'A function that returns a bool describing whether the user has appropriate permissions. This is used when a user is signed in but they try to navigate to a page they do not have appropriate permissions for. If false, the user will be redirected to the "accessDeniedPath".  The path the user was redirected from will be included in the state under "fromPath".',
 					},
 					{
 						prop: 'authPath',
 						type: 'string',
 						note:
-							'path to redirect the user to when "isAuthenticated" is false. Default: "/signin"',
+							'path to redirect the user to when "isAuthenticated" returns false. Default: "/signin"',
 					},
 					{
 						prop: 'accessDeniedPath',
 						type: 'string',
 						note:
-							'path to redirect the user to when "hasPermissions" is false. Default: "/403"',
+							'path to redirect the user to when "hasPermissions" returns false. Default: "/403"',
 					},
 				]}
 			/>
-			<Codeblock>
-				{`<TEPrivateRoute
-	path='/'
-	exact
-	isAuthenticated={firebase.auth().currentUser}
-	hasPermissions={userModel.permissions.admin}
-	authPath="/login"
-	accessDeniedPath="/permission-denied"
-/>`}
-			</Codeblock>
+			<iframe
+				src='https://codesandbox.io/embed/ytc7i?fontsize=12&module=%2Fsrc%2FExample.js'
+				title='TEPrivateRoute'
+				style={{
+					width: '100%',
+					height: 500,
+					border: 'none',
+				}}
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+			/>
 		</ComponentSection>
 	)
 }

@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <!-- and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). -->
 
+## 0.1.7 - 05-28-2019
+
+### Changed
+
+-   Addresses #5:
+    -   Removed background color from `TEPanelWrapper`
+    -   Removed the `wrapperHeight` props as it was only used to extend the background color.
+    -   Added the background color from `TEPanelWrapper` to `TEBodyContainer`.
+    -   Updated `TEBodyContainer` `min-height` styling from `100%` -> `100vh`
+
+### Added
+
+-   `useTEPopups` - This provides easy functions to call instead of remembering the dispatch keys in `TEPopupContext`. Addresses #7.
+-   Added a `Header` component prop to `TESideNavbar`. This allows for a custom header component instead of simply passing a prop to the logo img src. Addresses #8
+-   Updated `TEPrivateRoute`'s `isAuthenticated` and `hasPermissions` props to be functions that receive all the props from React Router. This allows more dynamic handling of authentication. Addresses #13
+
+### Bug Fixes
+
+-   Fixed redirect issues fixed with `TEPrivateRoute`
+
 ## 0.1.6 - 05-20-2019
 
 ### Changed

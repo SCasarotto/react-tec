@@ -1,3 +1,3 @@
-import { TEPopupContext, TEPopupProvider } from './TEPopupContext'
+import { TEPopupContext, TEPopupProvider, useTEPopups } from './TEPopupContext'
 
-export { TEPopupContext, TEPopupProvider }
+export { TEPopupContext, TEPopupProvider, useTEPopups }

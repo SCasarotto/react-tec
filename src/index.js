@@ -49,7 +49,7 @@ import TEHelmet from './Utility/TEHelmet'
 
 //Globals
 import { TEThemeProvider } from './Globals/TEThemeContext'
-import { TEPopupContext, TEPopupProvider } from './Globals/TEPopupContext'
+import { TEPopupContext, TEPopupProvider, useTEPopups } from './Globals/TEPopupContext'
 import TEAppWrapper from './Globals/TEAppWrapper'
 
 export {
@@ -96,5 +96,6 @@ export {
 	TEHelmet,
 	TEPopupContext,
 	TEPopupProvider,
+	useTEPopups,
 	TEAppWrapper,
 }

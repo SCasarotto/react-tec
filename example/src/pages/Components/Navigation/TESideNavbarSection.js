@@ -26,6 +26,12 @@ const TESideNavbarSection = () => {
 							'Number of pixels wide the bar is. This is important because TEBodyContainer should be provided the same number so they do not overlap. Default: 200',
 					},
 					{
+						prop: 'Header',
+						type: 'React Component',
+						note:
+							'A Component that replaces the default image. This is best used to place a more customized logo or general header component. If this prop is used the logo will not be displayed.',
+					},
+					{
 						prop: 'logo',
 						type: 'string',
 						note: 'The src of the top <img>.',

@@ -10,26 +10,29 @@ const TEPrivateRoute = (props) => {
 		component: Component,
 		...rest
 	} = props
+
 	return (
 		<Route
 			{...rest}
 			render={(props) => {
-				if (isAuthenticated && hasPermissions) {
+				const isAuthed = isAuthenticated(props)
+				const hasPerms = hasPermissions(props)
+				if (isAuthed && hasPerms) {
 					return Component ? <Component {...props} /> : <Route {...rest} />
-				} else if (!isAuthenticated) {
+				} else if (!isAuthed) {
 					return (
 						<Redirect
 							to={{
-								pathname: { authPath },
+								pathname: authPath,
 								state: { fromPath: rest.path },
 							}}
 						/>
 					)
-				} else if (!hasPermissions) {
+				} else if (!hasPerms) {
 					return (
 						<Redirect
 							to={{
-								pathname: { accessDeniedPath },
+								pathname: accessDeniedPath,
 								state: { fromPath: rest.path },
 							}}
 						/>

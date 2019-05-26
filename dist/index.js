@@ -19465,14 +19465,9 @@ TESegmentedGroup.propTypes = {
 	onChange: PropTypes.func
 };
 
-var _templateObject$i = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$i = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-flow: row wrap;\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\tpadding: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t}\n'], ['\n\tdisplay: flex;\n\tflex-flow: row wrap;\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\tpadding: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t}\n']);
 
-var Container$4 = styled__default.div(_templateObject$i, function (props) {
-	var theme = props.theme,
-	    wrapperHeight = props.wrapperHeight;
-
-	return '\n\t\t\tdisplay: flex;\n\t\t\tflex-flow: row wrap;\n\t\t\tjustify-content: space-between;\n\t\t\talign-items: flex-start;\n\t\t\tpadding: 30px;\n\t\t\tbackground-color: ' + theme.lighterGray + ';\n\t\t\tmin-height: ' + (wrapperHeight ? 'calc(100vh - ' + wrapperHeight + 'px)' : '100%') + ';\n\n\t\t\t@media (max-width: 800px) {\n\t\t\t\tpadding: 25px;\n\t\t\t}\n\t\t\t@media (max-width: 650px) {\n\t\t\t\tpadding: 20px;\n\t\t\t}\n\t\t\t@media (max-width: 450px) {\n\t\t\t\tpadding: 15px;\n\t\t\t}\n\t\t';
-});
+var Container$4 = styled__default.div(_templateObject$i);
 
 //
 
@@ -19555,6 +19550,9 @@ var Container$6 = styled__default.div(_templateObject$k, function (props) {
         case 'full':
             styles += 'width: 100%;';
             break;
+        case 'three-quarter':
+            styles += '\n                    width: calc(75% - 20px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+            break;
         case 'two-third':
             styles += '\n                    width: calc(66.666% - 20px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
             break;
@@ -19564,6 +19562,14 @@ var Container$6 = styled__default.div(_templateObject$k, function (props) {
         case 'third':
             styles += '\n                    width: calc(33.333% - 10px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
             break;
+        case 'quarter':
+            styles += '\n                    width: calc(25% - 10px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+            break;
+
+        case 'condensed':
+            styles += '\n                    width: auto;\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+            break;
+
         default:
             styles += 'width: 100%;';
             break;
@@ -19733,12 +19739,14 @@ TETitleBar.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$n = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$n = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: calc(100% - ', 'px);\n\tmin-height: 100vh;\n\tmargin-left: ', 'px;\n\tbackground-color: ', ';\n'], ['\n\tposition: relative;\n\twidth: calc(100% - ', 'px);\n\tmin-height: 100vh;\n\tmargin-left: ', 'px;\n\tbackground-color: ', ';\n']);
 
 var BodyContainer = styled__default.div(_templateObject$n, function (props) {
-  var sidebarWidth = props.sidebarWidth;
-
-  return '\n            position: relative;\n            width: calc(100% - ' + sidebarWidth + 'px);\n            min-height: 100%;\n            margin-left: ' + sidebarWidth + 'px;\n        ';
+	return props.sidebarWidth;
+}, function (props) {
+	return props.sidebarWidth;
+}, function (props) {
+	return props.theme.lighterGray;
 });
 
 var TEBodyContainer = function TEBodyContainer(props) {
@@ -19922,21 +19930,24 @@ var TEPrivateRoute = function TEPrivateRoute(props) {
 	    Component = props.component,
 	    rest = objectWithoutProperties(props, ['isAuthenticated', 'hasPermissions', 'authPath', 'accessDeniedPath', 'component']);
 
+
 	return React__default.createElement(reactRouterDom.Route, _extends({}, rest, {
 		render: function render(props) {
-			if (isAuthenticated && hasPermissions) {
+			var isAuthed = isAuthenticated(props);
+			var hasPerms = hasPermissions(props);
+			if (isAuthed && hasPerms) {
 				return Component ? React__default.createElement(Component, props) : React__default.createElement(reactRouterDom.Route, rest);
-			} else if (!isAuthenticated) {
+			} else if (!isAuthed) {
 				return React__default.createElement(reactRouterDom.Redirect, {
 					to: {
-						pathname: { authPath: authPath },
+						pathname: authPath,
 						state: { fromPath: rest.path }
 					}
 				});
-			} else if (!hasPermissions) {
+			} else if (!hasPerms) {
 				return React__default.createElement(reactRouterDom.Redirect, {
 					to: {
-						pathname: { accessDeniedPath: accessDeniedPath },
+						pathname: accessDeniedPath,
 						state: { fromPath: rest.path }
 					}
 				});
@@ -20031,13 +20042,15 @@ var MainUl = styled__default.ul(_templateObject$q, function (props) {
 var TESideNavbar = function TESideNavbar(props) {
 	var sidebarWidth = props.sidebarWidth,
 	    logo = props.logo,
+	    Header = props.Header,
 	    links = props.links,
 	    className = props.className;
 
 	return React__default.createElement(
 		Container$9,
 		{ sidebarWidth: sidebarWidth, className: className },
-		logo && React__default.createElement(
+		Header,
+		logo && !Header && React__default.createElement(
 			reactRouterDom.Link,
 			{ to: '/', className: 'TESideNavbarLogoLink' },
 			React__default.createElement(Logo, { src: logo, alt: 'logo', className: 'TESideNavbarLogo' })
@@ -20076,6 +20089,7 @@ var TESideNavbar = function TESideNavbar(props) {
 TESideNavbar.propTypes = {
 	sidebarWidth: PropTypes.number,
 	logo: PropTypes.string,
+	Header: PropTypes.node,
 	links: PropTypes.array
 };
 
@@ -21922,6 +21936,76 @@ var TEPopupProvider = function TEPopupProvider(props) {
 	);
 };
 
+var useTEPopups = function useTEPopups() {
+	var _useContext = React.useContext(TEPopupContext),
+	    dispatch = _useContext.dispatch;
+
+	//TEAlert
+
+
+	var showAlert = function showAlert(_ref) {
+		var title = _ref.title,
+		    message = _ref.message,
+		    onClick = _ref.onClick,
+		    buttonTitle = _ref.buttonTitle;
+		return dispatch({
+			type: 'show_alert',
+			payload: {
+				alertTitle: title,
+				alertMessage: message,
+				alertOnClick: onClick,
+				alertButtonTitle: buttonTitle
+			}
+		});
+	};
+	var hideAlert = function hideAlert() {
+		return dispatch({ type: 'hide_alert' });
+	};
+
+	//TEConfirm
+	var showConfirm = function showConfirm(_ref2) {
+		var title = _ref2.title,
+		    message = _ref2.message,
+		    leftOnClick = _ref2.leftOnClick,
+		    leftTitle = _ref2.leftTitle,
+		    rightOnClick = _ref2.rightOnClick,
+		    rightTitle = _ref2.rightTitle;
+		return dispatch({
+			type: 'show_confirm',
+			payload: {
+				confirmTitle: title,
+				confirmMessage: message,
+				confirmLeftOnClick: leftOnClick,
+				confirmLeftTitle: leftTitle,
+				confirmRightOnClick: rightOnClick,
+				confirmRightTitle: rightTitle
+			}
+		});
+	};
+	var hideConfirm = function hideConfirm() {
+		return { type: 'hide_confirm' };
+	};
+
+	var showNetworkActivity = function showNetworkActivity(message) {
+		return dispatch({
+			type: 'show_network_activity',
+			payload: message
+		});
+	};
+	var hideNetworkActivity = function hideNetworkActivity() {
+		return dispatch({ type: 'hide_network_activity' });
+	};
+
+	return {
+		showAlert: showAlert,
+		hideAlert: hideAlert,
+		showConfirm: showConfirm,
+		hideConfirm: hideConfirm,
+		showNetworkActivity: showNetworkActivity,
+		hideNetworkActivity: hideNetworkActivity
+	};
+};
+
 var TEAppWrapper = function TEAppWrapper(props) {
 	var theme = props.theme,
 	    globalStyles = props.globalStyles,
@@ -21990,5 +22074,6 @@ exports.TEScrollToTop = TEScrollToTop;
 exports.TEHelmet = TEHelmet;
 exports.TEPopupContext = TEPopupContext;
 exports.TEPopupProvider = TEPopupProvider;
+exports.useTEPopups = useTEPopups;
 exports.TEAppWrapper = TEAppWrapper;
 //# sourceMappingURL=index.js.map

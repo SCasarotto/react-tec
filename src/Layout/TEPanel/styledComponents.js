@@ -32,6 +32,14 @@ export const Container = styled.div`
 			case 'full':
 				styles += `width: 100%;`
 				break
+			case 'three-quarter':
+				styles += `
+                    width: calc(75% - 20px);
+                    @media (max-width: 700px) {
+                        width: 100%;
+                    }
+                `
+				break
 			case 'two-third':
 				styles += `
                     width: calc(66.666% - 20px);
@@ -56,6 +64,24 @@ export const Container = styled.div`
                     }
                 `
 				break
+			case 'quarter':
+				styles += `
+                    width: calc(25% - 10px);
+                    @media (max-width: 700px) {
+                        width: 100%;
+                    }
+                `
+				break
+
+			case 'condensed':
+				styles += `
+                    width: auto;
+                    @media (max-width: 700px) {
+                        width: 100%;
+                    }
+                `
+				break
+
 			default:
 				styles += `width: 100%;`
 				break

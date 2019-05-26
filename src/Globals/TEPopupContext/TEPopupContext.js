@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useReducer, useContext } from 'react'
 import TEAlert from './../../Popup/TEAlert'
 import TEConfirm from './../../Popup/TEConfirm'
 import TENetworkActivity from './../../Popup/TENetworkActivity'
@@ -86,4 +86,52 @@ export const TEPopupProvider = (props) => {
 			<TENetworkActivity visible={networkActivityVisible} message={networkMessage} />
 		</TEPopupContext.Provider>
 	)
+}
+
+export const useTEPopups = () => {
+	const { dispatch } = useContext(TEPopupContext)
+
+	//TEAlert
+	const showAlert = ({ title, message, onClick, buttonTitle }) =>
+		dispatch({
+			type: 'show_alert',
+			payload: {
+				alertTitle: title,
+				alertMessage: message,
+				alertOnClick: onClick,
+				alertButtonTitle: buttonTitle,
+			},
+		})
+	const hideAlert = () => dispatch({ type: 'hide_alert' })
+
+	//TEConfirm
+	const showConfirm = ({ title, message, leftOnClick, leftTitle, rightOnClick, rightTitle }) =>
+		dispatch({
+			type: 'show_confirm',
+			payload: {
+				confirmTitle: title,
+				confirmMessage: message,
+				confirmLeftOnClick: leftOnClick,
+				confirmLeftTitle: leftTitle,
+				confirmRightOnClick: rightOnClick,
+				confirmRightTitle: rightTitle,
+			},
+		})
+	const hideConfirm = () => ({ type: 'hide_confirm' })
+
+	const showNetworkActivity = (message) =>
+		dispatch({
+			type: 'show_network_activity',
+			payload: message,
+		})
+	const hideNetworkActivity = () => dispatch({ type: 'hide_network_activity' })
+
+	return {
+		showAlert,
+		hideAlert,
+		showConfirm,
+		hideConfirm,
+		showNetworkActivity,
+		hideNetworkActivity,
+	}
 }

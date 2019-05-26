@@ -24,7 +24,7 @@ const TEPanelSection = () => {
 						prop: 'size',
 						type: 'string',
 						note:
-							'Used to place multiple panels in a row. Options: ["full", "two-third" , "half", "third"]',
+							'Used to place multiple panels in a row. Options: ["full", "three-quarter", two-third", "half", "third", "quarter", "condensed"]',
 					},
 				]}
 			/>
