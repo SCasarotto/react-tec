@@ -9584,7 +9584,6 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
-//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -19509,22 +19508,22 @@ var TEPanelTitle = function TEPanelTitle(props) {
 		{ className: className },
 		title && React__default.createElement(
 			Title,
-			{ className: 'TEpanelTitleTitle' },
+			{ className: 'TEPanelTitleTitle' },
 			title
 		),
 		leftComponent && React__default.createElement(
 			ComponentWrapper,
-			{ className: 'TEpanelTitleLeftComponentWrapper' },
+			{ className: 'TEPanelTitleLeftComponentWrapper' },
 			leftComponent
 		),
 		subtitle && React__default.createElement(
 			Subtitle,
-			{ className: 'TEpanelTitleSubTitle' },
+			{ className: 'TEPanelTitleSubTitle' },
 			subtitle
 		),
 		rightComponent && React__default.createElement(
 			ComponentWrapper,
-			{ className: 'TEpanelTitleRightComponentWrapper' },
+			{ className: 'TEPanelTitleRightComponentWrapper' },
 			rightComponent
 		)
 	);

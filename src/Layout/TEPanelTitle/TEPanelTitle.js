@@ -12,15 +12,15 @@ const TEPanelTitle = (props) => {
 
 	return (
 		<Container className={className}>
-			{title && <Title className='TEpanelTitleTitle'>{title}</Title>}
+			{title && <Title className='TEPanelTitleTitle'>{title}</Title>}
 			{leftComponent && (
-				<ComponentWrapper className='TEpanelTitleLeftComponentWrapper'>
+				<ComponentWrapper className='TEPanelTitleLeftComponentWrapper'>
 					{leftComponent}
 				</ComponentWrapper>
 			)}
-			{subtitle && <Subtitle className='TEpanelTitleSubTitle'>{subtitle}</Subtitle>}
+			{subtitle && <Subtitle className='TEPanelTitleSubTitle'>{subtitle}</Subtitle>}
 			{rightComponent && (
-				<ComponentWrapper className='TEpanelTitleRightComponentWrapper'>
+				<ComponentWrapper className='TEPanelTitleRightComponentWrapper'>
 					{rightComponent}
 				</ComponentWrapper>
 			)}
