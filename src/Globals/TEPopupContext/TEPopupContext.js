@@ -117,7 +117,7 @@ export const useTEPopups = () => {
 				confirmRightTitle: rightTitle,
 			},
 		})
-	const hideConfirm = () => ({ type: 'hide_confirm' })
+	const hideConfirm = () => dispatch({ type: 'hide_confirm' })
 
 	const showNetworkActivity = (message) =>
 		dispatch({

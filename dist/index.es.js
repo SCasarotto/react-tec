@@ -1,5 +1,5 @@
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import React__default, { Component, createElement, useState, Fragment, useEffect, createContext, useReducer, useContext, useRef } from 'react';
+import React__default, { Component, createElement, useState, useEffect, Fragment, createContext, useReducer, useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import reactDom, { findDOMNode } from 'react-dom';
 import { Route, Redirect, NavLink, Link, withRouter as withRouter$1, BrowserRouter } from 'react-router-dom';
@@ -9575,6 +9575,7 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
+//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -21973,7 +21974,7 @@ var useTEPopups = function useTEPopups() {
 		});
 	};
 	var hideConfirm = function hideConfirm() {
-		return { type: 'hide_confirm' };
+		return dispatch({ type: 'hide_confirm' });
 	};
 
 	var showNetworkActivity = function showNetworkActivity(message) {
