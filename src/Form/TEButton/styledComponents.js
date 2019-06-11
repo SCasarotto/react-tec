@@ -16,6 +16,7 @@ export const Button = styled.button`
             box-sizing: border-box;
 
 			color: ${disabled ? theme.gray : theme.darkerGray};
+			background-color: ${theme.white};
 			border: 1px solid ${disabled ? theme.lighterGray : theme.lightGray};
 
 			transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;
