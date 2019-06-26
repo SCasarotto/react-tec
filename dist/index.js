@@ -10493,6 +10493,14 @@ function isSameDay$1(date1, date2) {
   }
 }
 
+function isEqual$1(date1, date2) {
+  if (date1 && date2) {
+    return isEqual(date1, date2);
+  } else {
+    return !date1 && !date2;
+  }
+}
+
 function isDayInRange(day, startDate, endDate) {
   var valid = void 0;
   try {
@@ -10504,13 +10512,16 @@ function isDayInRange(day, startDate, endDate) {
 }
 
 function getDefaultLocale() {
-  return window.__localeId__;
+  var scope = typeof window !== "undefined" ? window : global;
+
+  return scope.__localeId__;
 }
 
 function getLocaleObject(localeSpec) {
   if (typeof localeSpec === "string") {
     // Treat it as a locale name registered by registerLocale
-    return window.__localeData__ ? window.__localeData__[localeSpec] : null;
+    var scope = typeof window !== "undefined" ? window : global;
+    return scope.__localeData__ ? scope.__localeData__[localeSpec] : null;
   } else {
     // Treat it as a raw date-fns locale object
     return localeSpec;
@@ -10563,7 +10574,7 @@ function isMonthinRange(startDate, endDate, m, day) {
   if (startDateYear === endDateYear && startDateYear === dayYear) {
     return startDateMonth <= m && m <= endDateMonth;
   } else if (startDateYear < endDateYear) {
-    return dayYear === startDateYear && (startDateMonth <= m || endDateMonth < m) || dayYear === endDateYear && (startDateMonth > m || endDateMonth >= m) || dayYear < endDateYear && dayYear > startDateYear;
+    return dayYear === startDateYear && startDateMonth <= m || dayYear === endDateYear && endDateMonth >= m || dayYear < endDateYear && dayYear > startDateYear;
   }
 }
 
@@ -11407,11 +11418,11 @@ var Day = function (_React$Component) {
         return false;
       }
 
-      if (selectsStart && endDate && (isBefore(selectingDate, endDate) || isEqual(selectingDate, endDate))) {
+      if (selectsStart && endDate && (isBefore(selectingDate, endDate) || isEqual$1(selectingDate, endDate))) {
         return isDayInRange(day, selectingDate, endDate);
       }
 
-      if (selectsEnd && startDate && (isAfter(selectingDate, startDate) || isEqual(selectingDate, startDate))) {
+      if (selectsEnd && startDate && (isAfter(selectingDate, startDate) || isEqual$1(selectingDate, startDate))) {
         return isDayInRange(day, startDate, selectingDate);
       }
 
@@ -11787,7 +11798,7 @@ var Month = function (_React$Component) {
         className: this.getClassNames(),
         onMouseLeave: this.handleMouseLeave,
         role: "listbox",
-        "aria-label": "month-" + formatDate(this.props.day, "YYYY-MM")
+        "aria-label": "month-" + formatDate(this.props.day, "yyyy-MM")
       },
       showMonthYearPicker ? this.renderMonths() : this.renderWeeks()
     );
@@ -11808,7 +11819,9 @@ var Time = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = possibleConstructorReturn$1(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.handleClick = function (time) {
+    return _ret = (_temp = (_this = possibleConstructorReturn$1(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
+      height: null
+    }, _this.handleClick = function (time) {
       if ((_this.props.minTime || _this.props.maxTime) && isTimeInDisabledRange(time, _this.props) || _this.props.excludeTimes && isTimeDisabled(time, _this.props.excludeTimes) || _this.props.includeTimes && !isTimeDisabled(time, _this.props.includeTimes)) {
         return;
       }
@@ -11871,15 +11884,18 @@ var Time = function (_React$Component) {
   Time.prototype.componentDidMount = function componentDidMount() {
     // code to ensure selected time will always be in focus within time window when it first appears
     this.list.scrollTop = Time.calcCenterPosition(this.props.monthRef ? this.props.monthRef.clientHeight - this.header.clientHeight : this.list.clientHeight, this.centerLi);
+    if (this.props.monthRef && this.header) {
+      this.setState({
+        height: this.props.monthRef.clientHeight - this.header.clientHeight
+      });
+    }
   };
 
   Time.prototype.render = function render() {
     var _this2 = this;
 
-    var height = null;
-    if (this.props.monthRef && this.header) {
-      height = this.props.monthRef.clientHeight - this.header.clientHeight;
-    }
+    var height = this.state.height;
+
 
     return React__default.createElement(
       "div",
@@ -12692,14 +12708,6 @@ function hasPreSelectionChanged(date1, date2) {
   return date1 !== date2;
 }
 
-function hasSelectionChanged(date1, date2) {
-  if (date1 && date2) {
-    return !isEqual(date1, date2);
-  }
-
-  return false;
-}
-
 /**
  * General datepicker component.
  */
@@ -12924,7 +12932,7 @@ var DatePicker = function (_React$Component) {
         return;
       }
 
-      if (!isSameDay$1(_this.props.selected, changedDate) || _this.props.allowSameDay) {
+      if (!isEqual$1(_this.props.selected, changedDate) || _this.props.allowSameDay) {
         if (changedDate !== null) {
           if (_this.props.selected) {
             var selected = _this.props.selected;
@@ -13218,7 +13226,7 @@ var DatePicker = function (_React$Component) {
         highlightDates: getHightLightDaysMap(this.props.highlightDates)
       });
     }
-    if (!prevState.focused && hasSelectionChanged(prevProps.selected, this.props.selected)) {
+    if (!prevState.focused && !isEqual$1(prevProps.selected, this.props.selected)) {
       this.setState({ inputValue: null });
     }
   };
