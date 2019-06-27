@@ -4,37 +4,24 @@ import TEPopup from './../TEPopup'
 import TESpinner from './../../Layout/TESpinner'
 
 export const Popup = styled(TEPopup)`
-	${(props) => {
-		return `
-			display: flex;
-			justify-content: center;
-			align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-            & > div{
-				background-color: rgba(0,0,0,0.5);
-				padding: 60px;
-				text-align: center;
-            }
-        `
-	}}
+	.TEPopupContent {
+		background-color: rgba(0, 0, 0, 0.5);
+		padding: 60px;
+		text-align: center;
+	}
 `
 export const Spinner = styled(TESpinner)`
-	${(props) => {
-		return `
-            margin-bottom: 30px;
-        `
-	}}
+	margin-bottom: 30px;
 `
 export const Message = styled.p`
-	${(props) => {
-		const { theme } = props
-		return `
-			position: relative;
-			width: 100%;
-			text-align: center;
-			font-size: 24px;
-			margin: 0px;
-			color: ${theme.white};
-		`
-	}}
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	margin: 0px;
+	color: ${(props) => props.theme.white};
 `

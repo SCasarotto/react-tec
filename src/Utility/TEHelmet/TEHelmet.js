@@ -1,8 +1,4 @@
 //
-//TE Version 0.3.0
-//
-
-//
 // TODO:
 // - Review good defaults
 // - Setup good context provider

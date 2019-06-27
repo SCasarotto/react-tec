@@ -1,7 +1,3 @@
-//
-//TE Version 0.3.0
-//
-
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 

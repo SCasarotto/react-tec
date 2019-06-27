@@ -5,111 +5,79 @@ import TELabel from './../TELabel'
 import TERadioButtonInput from './../TERadioButtonInput'
 
 export const Row = styled(TERow)`
-	${(props) => {
-		const { inline } = props
-
-		if (inline) {
-			return `
-                display: flex;
-                justify-content: space-between;
-            `
-		} else {
-			return ``
-		}
-	}}
+	${(props) => (props.inline ? 'display: flex; justify-content: space-between;' : '')}
 `
 export const Label = styled(TELabel)`
-	${(props) => {
-		const { inline } = props
+	width: ${(props) => (props.inline ? 'auto' : '100%')};
+	align-self: ${(props) => (props.inline ? 'center' : 'auto')};
+	text-align: left;
+	display: block;
+	margin-bottom: ${(props) => (props.inline ? '0px' : '5px')};
+	padding-right: ${(props) => (props.inline ? '10px' : '0px')};
+	font-size: 18px;
 
-		return `
-            width: ${inline ? 'auto' : '100%'};
-            align-self: ${inline ? 'center' : 'auto'};
-            text-align: left;
-            display: block;
-            margin-bottom: ${inline ? '0px' : '5px'};
-            padding-right: ${inline ? '10px' : '0px'};
-            font-size: 18px;
-
-            @media (max-width: 550px) {
-                font-size: 16px;
-            }
-        `
-	}}
+	@media (max-width: 550px) {
+		font-size: 16px;
+	}
 `
 export const SegmentedContainer = styled.div`
-	${(props) => {
-		const { inline } = props
-
-		if (inline) {
-			return `
+	${(props) =>
+		props.inline
+			? `
                 display: inline-block;
                 width: auto;
                 white-space: nowrap;
                 align-self: center;
             `
-		} else {
-			return ``
-		}
-	}}
+			: ''}
 `
 export const LabelWrapper = styled.div`
-	${(props) => {
-		return `
-            display: inline-block;
-            width: auto;
-        `
-	}}
+	display: inline-block;
+	width: auto;
 `
 export const Input = styled(TERadioButtonInput)`
-	${(props) => {
-		return `
-            display: none;
-        `
-	}}
+	display: none;
 `
 export const InputLabel = styled(TELabel)`
+	display: inline-block;
+	width: auto;
+	border: 1px solid ${(props) => (props.checked ? props.theme.primary : props.theme.lightGray)};
+	padding: 8px 15px;
+	margin: 0px;
+	background-color: ${(props) => (props.checked ? props.theme.primary : props.theme.white)};
+	font-size: 14px;
+	color: ${(props) => (props.checked ? props.theme.white : props.theme.darkGray)};
+	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+	pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
+
+	transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;
+
+	:hover,
+	:active {
+		color: ${(props) =>
+			props.disabled && !props.checked ? props.theme.gray : props.theme.white};
+		background-color: ${(props) =>
+			props.disabled && !props.checked ? props.theme.white : props.theme.primary};
+		border: 1px solid
+			${(props) =>
+				props.disabled && !props.checked ? props.theme.lightGray : props.theme.primary};
+	}
 	${(props) => {
-		const { first, last, checked, disabled, theme } = props
-		let styles = `
-            display: inline-block;
-            width: auto;
-            border: 1px solid ${checked ? theme.primary : theme.lightGray};
-            padding: 8px 15px;
-            margin: 0px;
-            background-color: ${checked ? theme.primary : theme.white};
-            font-size: 14px;
-            color: ${checked ? theme.white : theme.darkGray}
-            cursor: ${disabled ? 'not-allowed' : 'pointer'};
-            pointer-events: ${disabled ? 'none' : 'auto'};
+		const { first, last } = props
 
-            transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;
-
-            :hover {
-                color: ${disabled && !checked ? theme.gray : theme.white};
-                background-color: ${disabled && !checked ? theme.white : theme.primary};
-                border: 1px solid ${disabled && !checked ? theme.lightGray : theme.primary};
-            }
-            :active {
-                color: ${disabled && !checked ? theme.gray : theme.white};
-                background-color: ${disabled && !checked ? theme.white : theme.primary};
-                border: 1px solid ${disabled && !checked ? theme.lightGray : theme.primary};
-            }
-        `
-
-		if (first) {
-			styles += `
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-            `
-		}
 		if (last) {
-			styles += `
+			return `
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px;
             `
 		}
+		if (first) {
+			return `
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            `
+		}
 
-		return styles
+		return ''
 	}}
 `

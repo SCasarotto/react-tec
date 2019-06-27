@@ -15,7 +15,7 @@ const TEDatetimeInputSection = () => {
 			<p>
 				<Code>TEDatetimeInput</Code> is simply a styled{' '}
 				<a href='https://reactdatepicker.com/' target='_blank' rel='noopener noreferrer'>
-					React DatePicker
+					React Datepicker
 				</a>{' '}
 				Component. A few props have been adjusted or defaulted.
 			</p>
@@ -44,6 +44,12 @@ const TEDatetimeInputSection = () => {
 						type: 'string',
 						note:
 							'Sets the HTML property to disable showing past entries since its not common you are typing into the input and the autocomplete can get in the way of the datepicker popup. *Default: "off"',
+					},
+					{
+						prop: 'withTEPortal',
+						type: 'boolean',
+						note:
+							'This prop provides similar functionality to the normal withPortal provided by React Datepicker however this uses a TEButton instead of the normal input. This is a customized component similar to React Datepicker\'s "withPortal inline Example". The primary reason this was created was to aviod the input focus that occured with their example. See examples below',
 					},
 				]}
 			/>

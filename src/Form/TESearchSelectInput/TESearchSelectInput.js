@@ -1,13 +1,7 @@
-//
-//TE Version 0.3.0
-//
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import { PowerSelect, PowerSelectMultiple } from 'react-power-select'
 // import 'react-power-select/dist/react-power-select.css'
-
-// import { } from './styledComponents'
 
 //NOTE:
 //

@@ -1,18 +1,11 @@
-//
-//TE Version 0.3.0
-//
-
 import React from 'react'
 import PropTypes from 'prop-types'
-
-// import 'react-power-select/dist/react-power-select.css'
 
 import TERow from './../TERow'
 import TELabel from './../TELabel'
 import TESearchSelectInput from './../TESearchSelectInput'
 
-// import { } from './styledComponents'
-
+// import 'react-power-select/dist/react-power-select.css'
 //NOTE:
 //
 // - At this moment there is no way to style the dropdown component with styled components.

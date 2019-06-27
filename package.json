@@ -1,6 +1,6 @@
 {
 	"name": "react-tec",
-	"version": "0.1.12",
+	"version": "0.1.13-beta.0",
 	"homepage": "https://www.react-tec.com/",
 	"description": "React Component Library used at 38th Street Studios",
 	"author": "SCasarotto",
@@ -20,6 +20,7 @@
 		"start": "rollup -c -w"
 	},
 	"dependencies": {
+		"date-fns": "^2.0.0-alpha.23",
 		"react-avatar-editor": "^11.0.7",
 		"react-datepicker": "^2.7.0",
 		"react-helmet": "^5.2.1",

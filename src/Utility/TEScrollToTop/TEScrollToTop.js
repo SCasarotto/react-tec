@@ -1,7 +1,3 @@
-//
-//TE Version 0.3.0
-//
-
 import { useEffect } from 'react'
 
 import { withRouter } from 'react-router-dom'

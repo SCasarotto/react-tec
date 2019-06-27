@@ -102,17 +102,23 @@ var toConsumableArray = function (arr) {
   }
 };
 
-var _templateObject = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 18px;\n\tpadding: 5px 20px;\n\ttext-align: center;\n\tcursor: ', ';\n\tborder-radius: 5px;\n\tbox-sizing: border-box;\n\n\tcolor: ', ';\n\tbackground-color: ', ';\n\tborder: 1px solid\n\t\t', ';\n\n\ttransition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid ', ';\n\t}\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 18px;\n\tpadding: 5px 20px;\n\ttext-align: center;\n\tcursor: ', ';\n\tborder-radius: 5px;\n\tbox-sizing: border-box;\n\n\tcolor: ', ';\n\tbackground-color: ', ';\n\tborder: 1px solid\n\t\t', ';\n\n\ttransition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid ', ';\n\t}\n']);
 
 var Button = styled__default.button(_templateObject, function (props) {
-	var disabled = props.disabled,
-	    theme = props.theme;
-
-
-	return '\n\t\t\tposition: relative;\n\t\t\tdisplay: block;\n\t\t\twidth: 100%;\n\t\t\tfont-size: 18px;\n\t\t\tpadding: 5px 20px;\n\t\t\ttext-align: center;\n\t\t\tcursor: ' + (disabled ? 'not-allowed' : 'pointer') + ';\n\t\t\tborder-radius: 5px;\n            box-sizing: border-box;\n\n\t\t\tcolor: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\tborder: 1px solid ' + (disabled ? theme.lighterGray : theme.lightGray) + ';\n\n\t\t\ttransition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tborder: 1px solid ' + theme.primary + ';\n\t\t\t}\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tborder: 1px solid ' + theme.primary + ';\n\t\t\t}\n\t\t';
+	return props.disabled ? 'not-allowed' : 'pointer';
+}, function (props) {
+	return props.disabled ? props.theme.gray : props.theme.darkerGray;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.lightGray;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-
-//
 
 var TEButton = function TEButton(props) {
 	return React__default.createElement(Button, props);
@@ -122,26 +128,23 @@ TEButton.defaultProps = {
 	type: 'button'
 };
 
-var _templateObject$1 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$1 = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: auto;\n\tbox-sizing: border-box;\n\tmargin-bottom: 3px;\n\tfont-size: 18px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n\t', '\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: auto;\n\tbox-sizing: border-box;\n\tmargin-bottom: 3px;\n\tfont-size: 18px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n\t', '\n']);
 
 var Label = styled__default.label(_templateObject$1, function (props) {
-  var disabled = props.disabled,
-      htmlFor = props.htmlFor,
-      theme = props.theme;
+	return props.disabled ? props.theme.gray : props.theme.darkerGray;
+}, function (props) {
+	var disabled = props.disabled,
+	    htmlFor = props.htmlFor;
 
 
-  var cursor = 'default';
-  if (htmlFor) {
-    cursor = 'pointer';
-  }
-  if (disabled) {
-    cursor = 'not-allowed';
-  }
-
-  return '\n            position: relative;\n            display: block;\n            width: auto;\n            box-sizing: border-box;\n            margin-bottom: 3px;\n            font-size: 18px;\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n            cursor: ' + cursor + ';\n\n            @media (max-width: 550px) {\n                font-size: 16px;\n            }\n        ';
+	if (disabled) {
+		return 'cursor: not-allowed;';
+	}
+	if (htmlFor) {
+		return 'cursor: pointer;';
+	}
+	return 'cursor: default;';
 });
-
-//
 
 var TELabel = function TELabel(props) {
 	var children = props.children,
@@ -162,41 +165,33 @@ TELabel.propTypes = {
 	disabled: PropTypes.bool
 };
 
-var _templateObject$2 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$2 = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tmargin-bottom: 10px;\n\ttext-align: left;\n\tbox-sizing: border-box;\n\tpadding-left: ', ';\n\tpadding-right: ', ';\n\n\t', '\n'], ['\n\tposition: relative;\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tmargin-bottom: 10px;\n\ttext-align: left;\n\tbox-sizing: border-box;\n\tpadding-left: ', ';\n\tpadding-right: ', ';\n\n\t', '\n']);
 
 var Row = styled__default.div(_templateObject$2, function (props) {
-	var size = props.size,
-	    last = props.last;
+	return props.size !== 'full' && props.last ? '5px' : '0px';
+}, function (props) {
+	return props.size !== 'full' && !props.last ? '5px' : '0px';
+}, function (props) {
+	var size = props.size;
 
 
-	var width = '100%';
 	switch (size) {
 		case 'full':
-			width = '100%';
-			break;
+			return 'width: 100%;';
 		case 'two-third':
-			width = '66.66%';
-			break;
+			return 'width: 66.66%;';
 		case 'half':
-			width = '50%';
-			break;
+			return 'width: 50%;';
 		case 'third':
-			width = '33.33%';
-			break;
+			return 'width: 33.33%;';
 		case 'forth':
-			width = '25%';
-			break;
+			return 'width: 25%;';
 		case 'condensed':
-			width = 'auto';
-			break;
+			return 'width: auto;';
 		default:
-			break;
+			return 'width: 100%;';
 	}
-
-	return '\n            position: relative;\n            display: inline-block;\n            vertical-align: top;\n            margin-bottom: 10px;\n            text-align: left;\n            box-sizing: border-box;\n            width: ' + width + ';\n            padding-left: ' + (size !== 'full' && last ? '5px' : '0px') + ';\n            padding-right: ' + (size !== 'full' && !last ? '5px' : '0px') + ';\n        ';
 });
-
-//
 
 var TERow = function TERow(props) {
 	return React__default.createElement(Row, props);
@@ -212,46 +207,41 @@ TERow.defaultProps = {
 	last: false
 };
 
-var _templateObject$3 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$3 = taggedTemplateLiteral(['\n\tcursor: pointer;\n\tbox-sizing: border-box;\n'], ['\n\tcursor: pointer;\n\tbox-sizing: border-box;\n']);
 
-var Input = styled__default.input(_templateObject$3, function (props) {
-	return '\n\t\t\tcursor: pointer;\n            box-sizing: border-box;\n\t\t';
-});
-
-//
+var Input = styled__default.input(_templateObject$3);
 
 var TECheckboxInput = function TECheckboxInput(props) {
 	return React__default.createElement(Input, _extends({}, props, { type: 'checkbox' }));
 };
 
-var _templateObject$4 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$4 = taggedTemplateLiteral(['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n'], ['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n']),
+    _templateObject2 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\theight: ', ';\n\toverflow-y: ', ';\n\tbackground-color: ', ';\n\tpadding: ', ';\n\tborder: ', ';\n\tpadding: ', ';\n'], ['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\theight: ', ';\n\toverflow-y: ', ';\n\tbackground-color: ', ';\n\tpadding: ', ';\n\tborder: ', ';\n\tpadding: ', ';\n']),
+    _templateObject3 = taggedTemplateLiteral(['\n\tmargin-bottom: 5px;\n\tdisplay: flex;\n\talign-items: center;\n'], ['\n\tmargin-bottom: 5px;\n\tdisplay: flex;\n\talign-items: center;\n']),
+    _templateObject4 = taggedTemplateLiteral(['\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tcursor: pointer;\n'], ['\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tcursor: pointer;\n']),
+    _templateObject5 = taggedTemplateLiteral(['\n\twidth: auto;\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tpadding-left: 10px;\n\tmargin-bottom: 0px;\n\tcursor: pointer;\n\tfont-size: 14px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfontsize: 12px;\n\t}\n'], ['\n\twidth: auto;\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tpadding-left: 10px;\n\tmargin-bottom: 0px;\n\tcursor: pointer;\n\tfont-size: 14px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfontsize: 12px;\n\t}\n']);
 
-var Container = styled__default(TERow)(_templateObject$4, function (props) {
-  return '\n            margin-bottom: 10px;\n            display: inline-block;\n            vertical-align: top;\n        ';
-});
-var InputWrapper = styled__default.div(_templateObject$4, function (props) {
-  var scrolling = props.scrolling,
-      theme = props.theme;
-
-  return '\n            display: flex;\n            flex-wrap: wrap;\n            ' + (scrolling ? '\n                    height: 300px;\n                    overflow-y: scroll;\n                    background-color: ' + theme.white + ';\n                    padding: 10px;\n                    border: 1px solid ' + theme.lightGray + ';\n                    border-radius: 5;\n                ' : '') + '\n        ';
-});
-
-var RowWrarpper = styled__default(TERow)(_templateObject$4, function (props) {
-  return '\n            margin-bottom: 5px;\n            display: flex;\n            align-items: center;\n        ';
-});
-
-var Checkbox = styled__default(TECheckboxInput)(_templateObject$4, function (props) {
-  return '\n            display: inline-block;\n            vertical-align: middle;\n            cursor: pointer;\n        ';
-});
-var Label$1 = styled__default(TELabel)(_templateObject$4, function (props) {
-  var theme = props.theme,
-      disabled = props.disabled;
-
-
-  return '\n            width: auto;\n            display: inline-block;\n            vertical-align: middle;\n            padding-left: 10px;\n            margin-bottom: 0px;\n            cursor: pointer;\n            fontSize: 14px;\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n\n            @media (max-width: 550px) {\n                fontSize: 12px;\n            };\n        ';
+var Container = styled__default(TERow)(_templateObject$4);
+var InputWrapper = styled__default.div(_templateObject2, function (props) {
+	return props.scrolling ? '300px' : 'auto';
+}, function (props) {
+	return props.scrolling ? 'scroll' : 'visible';
+}, function (props) {
+	return props.scrolling ? props.theme.white : 'transparent';
+}, function (props) {
+	return props.scrolling ? '0px' : '10px';
+}, function (props) {
+	return props.scrolling ? '1px solid ' + props.theme.lightGray : 'none';
+}, function (props) {
+	return props.scrolling ? '5px' : '0px';
 });
 
-//
+var RowWrarpper = styled__default(TERow)(_templateObject3);
+
+var Checkbox = styled__default(TECheckboxInput)(_templateObject4);
+var Label$1 = styled__default(TELabel)(_templateObject5, function (props) {
+	return props.disabled ? props.theme.gray : props.theme.darkerGray;
+});
 
 var manipulateRowData = function manipulateRowData(_ref) {
 	var rowData = _ref.rowData,
@@ -13283,7 +13273,27 @@ var DatePicker = function (_React$Component) {
 var PRESELECT_CHANGE_VIA_INPUT = "input";
 var PRESELECT_CHANGE_VIA_NAVIGATE = "navigate";
 
-//
+// This file is generated automatically by `scripts/build/indices.js`. Please, don't change it.
+
+var _templateObject$5 = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tpadding: 10px;\n\tbox-sizing: border-box;\n\tcursor: ', ';\n\tborder-radius: 5px;\n\tbackground-color: ', ';\n\tcolor: ', ';\n\ttext-align: left;\n\n\tborder: 1px solid\n\t\t', ';\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\n\t:hover,\n\t:active {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t\tbackground-color: ', ';\n\t\tcolor: ', ';\n\t}\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tpadding: 10px;\n\tbox-sizing: border-box;\n\tcursor: ', ';\n\tborder-radius: 5px;\n\tbackground-color: ', ';\n\tcolor: ', ';\n\ttext-align: left;\n\n\tborder: 1px solid\n\t\t', ';\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\n\t:hover,\n\t:active {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t\tbackground-color: ', ';\n\t\tcolor: ', ';\n\t}\n']);
+
+var Button$1 = styled__default(TEButton)(_templateObject$5, function (props) {
+	return props.disabled ? 'not-allowed' : 'pointer';
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.disabled ? props.theme.gray : props.theme.darkerGray;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.lightGray;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.disabled ? props.theme.gray : props.theme.darkerGray;
+});
 
 var determineValue = function determineValue(value) {
 	if (!value) {
@@ -13298,7 +13308,41 @@ var determineValue = function determineValue(value) {
 var TEDatetimeInput = function TEDatetimeInput(props) {
 	var value = props.value,
 	    placeholder = props.placeholder,
-	    rest = objectWithoutProperties(props, ['value', 'placeholder']);
+	    withTEPortal = props.withTEPortal,
+	    rest = objectWithoutProperties(props, ['value', 'placeholder', 'withTEPortal']);
+
+	var _useState = React.useState(false),
+	    _useState2 = slicedToArray(_useState, 2),
+	    showPortal = _useState2[0],
+	    setShowPortal = _useState2[1];
+
+	if (withTEPortal) {
+		var dateFormat = rest.dateFormat,
+		    _onChange = rest.onChange;
+
+		return React__default.createElement(
+			React.Fragment,
+			null,
+			React__default.createElement(
+				Button$1,
+				{ onClick: function onClick() {
+						return setShowPortal(!showPortal);
+					} },
+				format(determineValue(value), dateFormat)
+			),
+			showPortal && React__default.createElement(DatePicker, _extends({
+				selected: determineValue(value),
+				placeholderText: placeholder,
+				withPortal: true,
+				inline: true
+			}, rest, {
+				onChange: function onChange(date) {
+					_onChange(date);
+					setShowPortal(false);
+				}
+			}))
+		);
+	}
 
 	return React__default.createElement(DatePicker, _extends({ selected: determineValue(value), placeholderText: placeholder }, rest));
 };
@@ -13310,12 +13354,9 @@ TEDatetimeInput.propTypes = {
 };
 
 TEDatetimeInput.defaultProps = {
-	autoComplete: 'off'
+	autoComplete: 'off',
+	dateFormat: 'MM/DD/YYYY'
 };
-
-//
-
-//import styles from './styles'
 
 var TEDatetimeRow = function TEDatetimeRow(props) {
 	var size = props.size,
@@ -13457,67 +13498,61 @@ var FaRegWindowClose = function (props) {
 };
 FaRegWindowClose.displayName = "FaRegWindowClose";
 
-var _templateObject$5 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$6 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-direction: column;\n\twidth: 100%;\n'], ['\n\tdisplay: flex;\n\tflex-direction: column;\n\twidth: 100%;\n']),
+    _templateObject2$1 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: center;\n\twidth: 100%;\n\tbackground-color: ', ';\n\tborder-radius: 5px;\n\tpadding-right: 5px;\n\n\t', '\n\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t}\n'], ['\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: center;\n\twidth: 100%;\n\tbackground-color: ', ';\n\tborder-radius: 5px;\n\tpadding-right: 5px;\n\n\t', '\n\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t}\n']),
+    _templateObject3$1 = taggedTemplateLiteral(['\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tcolor: ', ';\n\tpadding: 10px;\n\n\t', '\n'], ['\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tcolor: ', ';\n\tpadding: 10px;\n\n\t', '\n']),
+    _templateObject4$1 = taggedTemplateLiteral([''], ['']),
+    _templateObject5$1 = taggedTemplateLiteral(['\n\tmargin-right: 10px;\n\tvertical-align: middle;\n\tfont-size: 18px;\n'], ['\n\tmargin-right: 10px;\n\tvertical-align: middle;\n\tfont-size: 18px;\n']),
+    _templateObject6 = taggedTemplateLiteral(['\n\tdisplay: none;\n'], ['\n\tdisplay: none;\n']),
+    _templateObject7 = taggedTemplateLiteral(['\n\twidth: auto;\n\tpadding: 5px 10px;\n\ttext-align: center;\n'], ['\n\twidth: auto;\n\tpadding: 5px 10px;\n\ttext-align: center;\n']),
+    _templateObject8 = taggedTemplateLiteral(['\n\tcolor: inherit;\n\tdisplay: block;\n'], ['\n\tcolor: inherit;\n\tdisplay: block;\n']),
+    _templateObject9 = taggedTemplateLiteral(['\n\tdisplay: block;\n\tpadding-top: 5px;\n\tpadding-bottom: 5px;\n\tfont-size: 14px;\n\tcolor: ', ';\n'], ['\n\tdisplay: block;\n\tpadding-top: 5px;\n\tpadding-bottom: 5px;\n\tfont-size: 14px;\n\tcolor: ', ';\n']);
 
-var Wrapper = styled__default.div(_templateObject$5, function (props) {
-  return '\n            display: flex;\n            flex-direction: column;\n            width: 100%;\n        ';
+var Wrapper = styled__default.div(_templateObject$6);
+var InputWrapper$1 = styled__default.div(_templateObject2$1, function (props) {
+	return props.theme.white;
+}, function (props) {
+	var theme = props.theme,
+	    disabled = props.disabled,
+	    active = props.active;
+
+	if (active) {
+		return '\n                border: 1px solid ' + theme.primary + ';\n                box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n            ';
+	} else if (disabled) {
+		return '\n                border: 1px solid ' + theme.lighterGray + ';\n                box-shadow: none;\n            ';
+	}
+	return '\n\t\t\tborder: 1px solid ' + theme.lightGray + ';\n\t\t\tbox-shadow: none;\n\t\t';
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var InputWrapper$1 = styled__default.div(_templateObject$5, function (props) {
-  var theme = props.theme,
-      disabled = props.disabled,
-      active = props.active;
+var Label$2 = styled__default.label(_templateObject3$1, function (props) {
+	return props.disabled ? props.theme.gray : props.theme.darkGray;
+}, function (props) {
+	var disabled = props.disabled,
+	    active = props.active;
 
-  var styles = '\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            width: 100%;\n            background-color: ' + theme.white + ';\n            border-radius: 5px;\n            padding-right: 5px;\n\n            transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n        ';
-
-  if (disabled) {
-    styles += '\n                border: 1px solid ' + theme.lighterGray + ';\n                box-shadow: none;\n            ';
-  } else if (active) {
-    styles += '\n                border: 1px solid ' + theme.primary + ';\n                box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n            ';
-  } else {
-    styles += '\n                border: 1px solid ' + theme.lightGray + ';\n                box-shadow: none;\n\n                :hover {\n                    border: 1px solid ' + theme.primary + ';\n                    box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n                }\n                :active {\n                    border: 1px solid ' + theme.primary + ';\n                    box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n                }\n            ';
-  }
-
-  return styles;
-});
-var Label$2 = styled__default.label(_templateObject$5, function (props) {
-  var theme = props.theme,
-      disabled = props.disabled,
-      active = props.active;
-
-  var cursor = 'pointer';
-  if (disabled) {
-    cursor = 'not-allowed';
-  } else if (active) {
-    cursor = 'copy';
-  }
-
-  return '\n            display: block;\n            width: 100%;\n            font-size: 14px;\n            color: ' + (disabled ? theme.gray : theme.darkGray) + ';\n            padding: 10px;\n            cursor: ' + cursor + ';\n        ';
-});
-
-var LabelCopy = styled__default.span(_templateObject$5, function (props) {
-  return '\n\n        ';
-});
-
-var LabelIcon = styled__default(FaFileUpload)(_templateObject$5, function (props) {
-  return '\n            margin-right: 10px;\n            vertical-align: middle;\n            font-size: 18px;\n        ';
+	if (disabled) {
+		return 'cursor: not-allowed';
+	} else if (active) {
+		return 'cursor: copy';
+	}
+	return 'cursor: pointer';
 });
 
-var Input$1 = styled__default.input(_templateObject$5, function (props) {
-  return '\n            display: none;\n        ';
-});
+var LabelCopy = styled__default.span(_templateObject4$1);
 
-var ClearButton = styled__default(TEButton)(_templateObject$5, function (props) {
-  return '\n            width: auto;\n            padding: 5px 10px;\n            text-align: center;\n        ';
-});
+var LabelIcon = styled__default(FaFileUpload)(_templateObject5$1);
 
-var ButtonIcon = styled__default(FaRegWindowClose)(_templateObject$5, function (props) {
-  return '\n            color: inherit;\n            display: block;\n        ';
-});
+var Input$1 = styled__default.input(_templateObject6);
 
-var ErrorMessage = styled__default.span(_templateObject$5, function (props) {
-  var theme = props.theme;
+var ClearButton = styled__default(TEButton)(_templateObject7);
 
-  return '\n            display: block;\n            padding-top: 5px;\n            padding-bottom: 5px;\n            font-size: 14px;\n            color: ' + theme.errorRed + ';\n        ';
+var ButtonIcon = styled__default(FaRegWindowClose)(_templateObject8);
+
+var ErrorMessage = styled__default.span(_templateObject9, function (props) {
+	return props.theme.errorRed;
 });
 
 //
@@ -13668,41 +13703,40 @@ TEFileInput.propTypes = {
 	disabled: PropTypes.bool
 };
 
-var _templateObject$6 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$7 = taggedTemplateLiteral(['\n\tmax-width: 600px;\n'], ['\n\tmax-width: 600px;\n']),
+    _templateObject2$2 = taggedTemplateLiteral([''], ['']),
+    _templateObject3$2 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 5px;\n\tborder: 1px solid ', ';\n\tbackground-color: ', ';\n'], ['\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 5px;\n\tborder: 1px solid ', ';\n\tbackground-color: ', ';\n']),
+    _templateObject4$2 = taggedTemplateLiteral(['\n\tflex: 1;\n\tpadding-left: 5px;\n\tdisplay: block;\n'], ['\n\tflex: 1;\n\tpadding-left: 5px;\n\tdisplay: block;\n']),
+    _templateObject5$2 = taggedTemplateLiteral(['\n\twidth: auto;\n\tpadding: 5px 10px;\n\tcolor: ', ';\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tborder-radius: 5px;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\n\ttransition: color 0.2s ease-in 0s, background-color 0.2s ease-in 0s, border 0.2s ease-in 0s;\n\t:active,\n\t:hover {\n\t\tbackground-color: ', ';\n\t\tcolor: ', ';\n\t\tborder: 1px solid ', ';\n\t}\n'], ['\n\twidth: auto;\n\tpadding: 5px 10px;\n\tcolor: ', ';\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tborder-radius: 5px;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\n\ttransition: color 0.2s ease-in 0s, background-color 0.2s ease-in 0s, border 0.2s ease-in 0s;\n\t:active,\n\t:hover {\n\t\tbackground-color: ', ';\n\t\tcolor: ', ';\n\t\tborder: 1px solid ', ';\n\t}\n']),
+    _templateObject6$1 = taggedTemplateLiteral(['\n\tcolor: inherit;\n\tdisplay: block;\n\tfont-size: 18px;\n'], ['\n\tcolor: inherit;\n\tdisplay: block;\n\tfont-size: 18px;\n']),
+    _templateObject7$1 = taggedTemplateLiteral(['\n\twidth: auto;\n\tpadding: 5px 10px;\n\tmargin-left: 5;\n'], ['\n\twidth: auto;\n\tpadding: 5px 10px;\n\tmargin-left: 5;\n']),
+    _templateObject8$1 = taggedTemplateLiteral(['\n\tmargin-top: 30px;\n'], ['\n\tmargin-top: 30px;\n']);
 
-var WrapperRow = styled__default(TERow)(_templateObject$6, function (props) {
-	return '\n\t\t\tmax-width: 600px;\n\t\t';
+var WrapperRow = styled__default(TERow)(_templateObject$7);
+var FileRowWrapper = styled__default.div(_templateObject2$2);
+var FileWrapper = styled__default.div(_templateObject3$2, function (props) {
+	return props.theme.lightGray;
+}, function (props) {
+	return props.theme.white;
 });
-var FileRowWrapper = styled__default.div(_templateObject$6, function (props) {
-	return '\n\t\t';
+var FileName = styled__default.span(_templateObject4$2);
+var DownloadFileButton = styled__default.a(_templateObject5$2, function (props) {
+	return props.theme.darkGray;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.lightGray;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.primary;
 });
-var FileWrapper = styled__default.div(_templateObject$6, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tpadding: 5px;\n\t\t\tborder: 1px solid ' + theme.lightGray + ';\n\t\t\tbackgroundColor: ' + theme.white + ';\n\t\t';
-});
-var FileName = styled__default.span(_templateObject$6, function (props) {
-	return '\n\t\t\tflex: 1;\n\t\t\tpadding-left: 5px;\n\t\t\tdisplay: block;\n\t\t';
-});
-var DownloadFileButton = styled__default.a(_templateObject$6, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\twidth: auto;\n\t\t\tpadding: 5px 10px;\n\t\t\tcolor: ' + theme.darkGray + ';\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\tborder: 1px solid ' + theme.lightGray + ';\n\t\t\tborder-radius: 5px;\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\n\t\t\ttransition: color 0.2s ease-in 0s, background-color 0.2s ease-in 0s, border 0.2s ease-in 0s;\n\t\t\t:active {\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tborder: 1px solid ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tborder: 1px solid ' + theme.primary + ';\n\t\t\t}\n\t\t';
-});
-var DownloadImageButtonIcon = styled__default(FaFileDownload)(_templateObject$6, function (props) {
-	return '\n\t\t\tcolor: inherit;\n\t\t\tdisplay: block;\n\t\t\tfont-size: 18px;\n\t\t';
-});
-var ClearFileButton = styled__default(TEButton)(_templateObject$6, function (props) {
-	return '\n\t\t\twidth: auto;\n\t\t\tpadding: 5px 10px;\n\t\t\tmargin-left: 5,\n\t\t';
-});
-var ClearFileButtonIcon = styled__default(FaRegWindowClose)(_templateObject$6, function (props) {
-	return '\n\t\t\tcolor: inherit;\n\t\t\tdisplay: block;\n\t\t\tfont-size: 18px;\n\t\t';
-});
-var Input$2 = styled__default(TEFileInput)(_templateObject$6, function (props) {
-	return '\n\t\t\tmargin-top: 30px;\n\t\t';
-});
-
-//
+var DownloadImageButtonIcon = styled__default(FaFileDownload)(_templateObject6$1);
+var ClearFileButton = styled__default(TEButton)(_templateObject7$1);
+var ClearFileButtonIcon = styled__default(FaRegWindowClose)(_templateObject6$1);
+var Input$2 = styled__default(TEFileInput)(_templateObject8$1);
 
 var TEFileManagerRow = function TEFileManagerRow(props) {
 	var _useState = React.useState('inputKey'),
@@ -13844,10 +13878,6 @@ TEFileManagerRow.defaultProps = {
 	multiple: false //Not implemented for multiple so defaulting for safety
 };
 
-//
-
-//import {} from './styledComponents'
-
 var TEFileRow = function TEFileRow(props) {
 	var size = props.size,
 	    last = props.last,
@@ -13884,13 +13914,9 @@ TEFileRow.propTypes = {
 	labelForKey: PropTypes.string
 };
 
-var _templateObject$7 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$8 = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\tmargin: 0px auto;\n\tbox-sizing: border-box;\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\tmargin: 0px auto;\n\tbox-sizing: border-box;\n']);
 
-var Form = styled__default.form(_templateObject$7, function (props) {
-	return '\n\t        position: relative;\n\t        width: 100%;\n\t        margin: 0px auto;\n            box-sizing: border-box;\n\t    ';
-});
-
-//
+var Form = styled__default.form(_templateObject$8);
 
 var TEForm = function TEForm(props) {
   return React__default.createElement(Form, props);
@@ -13900,20 +13926,17 @@ var dist = createCommonjsModule(function (module, exports) {
 !function(e,t){module.exports=t(PropTypes,React__default,reactDom__default);}(commonjsGlobal,function(e,t,o){function n(e,t){return new Promise(function(o,n){var i,a=new Image;a.onload=function(){return o(a)},a.onerror=n,!1==(null!==(i=e)&&!!i.match(/^\s*data:([a-z]+\/[a-z]+(;[a-z-]+=[a-z-]+)?)?(;base64)?,[a-z0-9!$&',()*+;=\-._~:@/?%\s]*\s*$/i))&&t&&(a.crossOrigin=t),a.src=e;})}e=e&&e.hasOwnProperty("default")?e.default:e,t=t&&t.hasOwnProperty("default")?t.default:t,o=o&&o.hasOwnProperty("default")?o.default:o;var i=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},a=function(){function e(e,t){for(var o=0;o<t.length;o++){var n=t[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n);}}return function(t,o,n){return o&&e(t.prototype,o),n&&e(t,n),t}}(),r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var n in o)Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n]);}return e},s=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return !t||"object"!=typeof t&&"function"!=typeof t?e:t},h=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var o=[],n=!0,i=!1,a=void 0;try{for(var r,s=e[Symbol.iterator]();!(n=(r=s.next()).done)&&(o.push(r.value),!t||o.length!==t);n=!0);}catch(e){i=!0,a=e;}finally{try{!n&&s.return&&s.return();}finally{if(i)throw a}}return o}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),u=function(e){var t=!1;return {promise:new Promise(function(o,n){e.then(function(e){return t?n({isCanceled:!0}):o(e)},function(e){return n(t?{isCanceled:!0}:e)});}),cancel:function(){t=!0;}}},c=!("undefined"==typeof window||"undefined"==typeof navigator||!("ontouchstart"in window||navigator.msMaxTouchPoints>0)),d="undefined"!=typeof File,l={touch:{react:{down:"onTouchStart",mouseDown:"onMouseDown",drag:"onTouchMove",move:"onTouchMove",mouseMove:"onMouseMove",up:"onTouchEnd",mouseUp:"onMouseUp"},native:{down:"touchstart",mouseDown:"mousedown",drag:"touchmove",move:"touchmove",mouseMove:"mousemove",up:"touchend",mouseUp:"mouseup"}},desktop:{react:{down:"onMouseDown",drag:"onDragOver",move:"onMouseMove",up:"onMouseUp"},native:{down:"mousedown",drag:"dragStart",move:"mousemove",up:"mouseup"}}},p=c?l.touch:l.desktop,g="undefined"!=typeof window&&window.devicePixelRatio?window.devicePixelRatio:1,m={x:.5,y:.5},v=function(e){function l(){var e,t,o;i(this,l);for(var n=arguments.length,a=Array(n),h=0;h<n;h++)a[h]=arguments[h];return t=o=s(this,(e=l.__proto__||Object.getPrototypeOf(l)).call.apply(e,[this].concat(a))),o.state={drag:!1,my:null,mx:null,image:m},o.handleImageReady=function(e){var t=o.getInitialSize(e.width,e.height);t.resource=e,t.x=.5,t.y=.5,o.setState({drag:!1,image:t},o.props.onImageReady),o.props.onLoadSuccess(t);},o.clearImage=function(){var e=o.canvas;e.getContext("2d").clearRect(0,0,e.width,e.height),o.setState({image:m});},o.handleMouseDown=function(e){(e=e||window.event).preventDefault(),o.setState({drag:!0,mx:null,my:null});},o.handleMouseUp=function(){o.state.drag&&(o.setState({drag:!1}),o.props.onMouseUp());},o.handleMouseMove=function(e){if(e=e||window.event,!1!==o.state.drag){e.preventDefault();var t=e.targetTouches?e.targetTouches[0].pageX:e.clientX,n=e.targetTouches?e.targetTouches[0].pageY:e.clientY,i={mx:t,my:n},a=o.props.rotate;if(a=(a%=360)<0?a+360:a,o.state.mx&&o.state.my){var s=o.state.mx-t,h=o.state.my-n,u=o.state.image.width*o.props.scale,c=o.state.image.height*o.props.scale,d=o.getCroppingRect(),l=d.x,p=d.y;l*=u,p*=c;var g=function(e){return e*(Math.PI/180)},m=Math.cos(g(a)),v=Math.sin(g(a)),f=p+-s*v+h*m,y={x:(l+s*m+h*v)/u+1/o.props.scale*o.getXScale()/2,y:f/c+1/o.props.scale*o.getYScale()/2};o.props.onPositionChange(y),i.image=r({},o.state.image,y);}o.setState(i),o.props.onMouseMove(e);}},o.setCanvas=function(e){o.canvas=e;},s(o,t)}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t);}(l,t.Component),a(l,[{key:"componentDidMount",value:function(){this.props.disableHiDPIScaling&&(g=1);var e=o.findDOMNode(this.canvas).getContext("2d");if(this.props.image&&this.loadImage(this.props.image),this.paint(e),document){var t=!!function(){var e=!1;try{var t=Object.defineProperty({},"passive",{get:function(){e=!0;}});window.addEventListener("test",t,t),window.removeEventListener("test",t,t);}catch(t){e=!1;}return e}()&&{passive:!1},n=p.native;document.addEventListener(n.move,this.handleMouseMove,t),document.addEventListener(n.up,this.handleMouseUp,t),c&&(document.addEventListener(n.mouseMove,this.handleMouseMove,t),document.addEventListener(n.mouseUp,this.handleMouseUp,t));}}},{key:"componentWillReceiveProps",value:function(e){e.image&&this.props.image!==e.image||this.props.width!==e.width||this.props.height!==e.height?this.loadImage(e.image):e.image||this.clearImage();}},{key:"componentDidUpdate",value:function(e,t){var n=o.findDOMNode(this.canvas),i=n.getContext("2d");i.clearRect(0,0,n.width,n.height),this.paint(i),this.paintImage(i,this.state.image,this.props.border),e.image===this.props.image&&e.width===this.props.width&&e.height===this.props.height&&e.position===this.props.position&&e.scale===this.props.scale&&e.rotate===this.props.rotate&&t.my===this.state.my&&t.mx===this.state.mx&&t.image.x===this.state.image.x&&t.image.y===this.state.image.y||this.props.onImageChange();}},{key:"componentWillUnmount",value:function(){if(document){var e=p.native;document.removeEventListener(e.move,this.handleMouseMove,!1),document.removeEventListener(e.up,this.handleMouseUp,!1),c&&(document.removeEventListener(e.mouseMove,this.handleMouseMove,!1),document.removeEventListener(e.mouseUp,this.handleMouseUp,!1));}}},{key:"isVertical",value:function(){return this.props.rotate%180!=0}},{key:"getBorders",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.props.border;return Array.isArray(e)?e:[e,e]}},{key:"getDimensions",value:function(){var e=this.props,t=e.width,o=e.height,n=e.rotate,i=e.border,a={},r=this.getBorders(i),s=h(r,2),u=s[0],c=s[1],d=t,l=o;return this.isVertical()?(a.width=l,a.height=d):(a.width=d,a.height=l),a.width+=2*u,a.height+=2*c,{canvas:a,rotate:n,width:t,height:o,border:i}}},{key:"getImage",value:function(){var e=this.getCroppingRect(),t=this.state.image;e.x*=t.resource.width,e.y*=t.resource.height,e.width*=t.resource.width,e.height*=t.resource.height;var o=document.createElement("canvas");this.isVertical()?(o.width=e.height,o.height=e.width):(o.width=e.width,o.height=e.height);var n=o.getContext("2d");return n.translate(o.width/2,o.height/2),n.rotate(this.props.rotate*Math.PI/180),n.translate(-o.width/2,-o.height/2),this.isVertical()&&n.translate((o.width-o.height)/2,(o.height-o.width)/2),n.drawImage(t.resource,-e.x,-e.y),o}},{key:"getImageScaledToCanvas",value:function(){var e=this.getDimensions(),t=e.width,o=e.height,n=document.createElement("canvas");return this.isVertical()?(n.width=o,n.height=t):(n.width=t,n.height=o),this.paintImage(n.getContext("2d"),this.state.image,0,1),n}},{key:"getXScale",value:function(){var e=this.props.width/this.props.height,t=this.state.image.width/this.state.image.height;return Math.min(1,e/t)}},{key:"getYScale",value:function(){var e=this.props.height/this.props.width,t=this.state.image.height/this.state.image.width;return Math.min(1,e/t)}},{key:"getCroppingRect",value:function(){var e=this.props.position||{x:this.state.image.x,y:this.state.image.y},t=1/this.props.scale*this.getXScale(),o=1/this.props.scale*this.getYScale(),n={x:e.x-t/2,y:e.y-o/2,width:t,height:o},i=0,a=1-n.width,s=0,h=1-n.height;return (this.props.disableBoundaryChecks||t>1||o>1)&&(i=-n.width,a=1,s=-n.height,h=1),r({},n,{x:Math.max(i,Math.min(n.x,a)),y:Math.max(s,Math.min(n.y,h))})}},{key:"loadImage",value:function(e){var t;d&&e instanceof File?this.loadingImage=u((t=e,new Promise(function(e,o){var i=new FileReader;i.onload=function(t){try{var i=n(t.target.result);e(i);}catch(t){o(t);}},i.readAsDataURL(t);}))).promise.then(this.handleImageReady).catch(this.props.onLoadFailure):"string"==typeof e&&(this.loadingImage=u(n(e,this.props.crossOrigin)).promise.then(this.handleImageReady).catch(this.props.onLoadFailure));}},{key:"getInitialSize",value:function(e,t){var o=void 0,n=void 0,i=this.getDimensions();return i.height/i.width>t/e?n=e*((o=this.getDimensions().height)/t):o=t*((n=this.getDimensions().width)/e),{height:o,width:n}}},{key:"paintImage",value:function(e,t,o){var n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:g;if(t.resource){var i=this.calculatePosition(t,o);e.save(),e.translate(e.canvas.width/2,e.canvas.height/2),e.rotate(this.props.rotate*Math.PI/180),e.translate(-e.canvas.width/2,-e.canvas.height/2),this.isVertical()&&e.translate((e.canvas.width-e.canvas.height)/2,(e.canvas.height-e.canvas.width)/2),e.scale(n,n),e.globalCompositeOperation="destination-over",e.drawImage(t.resource,i.x,i.y,i.width,i.height),e.restore();}}},{key:"calculatePosition",value:function(e,t){e=e||this.state.image;var o=this.getBorders(t),n=h(o,2),i=n[0],a=n[1],r=this.getCroppingRect(),s=e.width*this.props.scale,u=e.height*this.props.scale,c=-r.x*s,d=-r.y*u;return this.isVertical()?(c+=a,d+=i):(c+=i,d+=a),{x:c,y:d,height:u,width:s}}},{key:"paint",value:function(e){e.save(),e.scale(g,g),e.translate(0,0),e.fillStyle="rgba("+this.props.color.slice(0,4).join(",")+")";var t=this.props.borderRadius,o=this.getDimensions(),n=this.getBorders(o.border),i=h(n,2),a=i[0],r=i[1],s=o.canvas.height,u=o.canvas.width;t=Math.max(t,0),t=Math.min(t,u/2-a,s/2-r),e.beginPath(),function(e,t,o,n,i,a){if(0===a)e.rect(t,o,n,i);else{var r=n-a,s=i-a;e.translate(t,o),e.arc(a,a,a,Math.PI,1.5*Math.PI),e.lineTo(r,0),e.arc(r,a,a,1.5*Math.PI,2*Math.PI),e.lineTo(n,s),e.arc(r,s,a,2*Math.PI,.5*Math.PI),e.lineTo(a,i),e.arc(a,s,a,.5*Math.PI,Math.PI),e.translate(-t,-o);}}(e,a,r,u-2*a,s-2*r,t),e.rect(u,0,-u,s),e.fill("evenodd"),e.restore();}},{key:"render",value:function(){var e=this.props,o=(e.scale,e.rotate,e.image,e.border,e.borderRadius,e.width,e.height,e.position,e.color,e.style),n=(e.crossOrigin,e.onLoadFailure,e.onLoadSuccess,e.onImageReady,e.onImageChange,e.onMouseUp,e.onMouseMove,e.onPositionChange,e.disableBoundaryChecks,e.disableHiDPIScaling,function(e,t){var o={};for(var n in e)t.indexOf(n)>=0||Object.prototype.hasOwnProperty.call(e,n)&&(o[n]=e[n]);return o}(e,["scale","rotate","image","border","borderRadius","width","height","position","color","style","crossOrigin","onLoadFailure","onLoadSuccess","onImageReady","onImageChange","onMouseUp","onMouseMove","onPositionChange","disableBoundaryChecks","disableHiDPIScaling"])),i=this.getDimensions(),a={width:i.canvas.width,height:i.canvas.height,cursor:this.state.drag?"grabbing":"grab",touchAction:"none"},s={width:i.canvas.width*g,height:i.canvas.height*g,style:r({},a,o)};return s[p.react.down]=this.handleMouseDown,c&&(s[p.react.mouseDown]=this.handleMouseDown),t.createElement("canvas",r({ref:this.setCanvas},s,n))}}]),l}();return v.propTypes={scale:e.number,rotate:e.number,image:e.oneOfType([e.string].concat(function(e){if(Array.isArray(e)){for(var t=0,o=Array(e.length);t<e.length;t++)o[t]=e[t];return o}return Array.from(e)}(d?[e.instanceOf(File)]:[]))),border:e.oneOfType([e.number,e.arrayOf(e.number)]),borderRadius:e.number,width:e.number,height:e.number,position:e.shape({x:e.number,y:e.number}),color:e.arrayOf(e.number),crossOrigin:e.oneOf(["","anonymous","use-credentials"]),onLoadFailure:e.func,onLoadSuccess:e.func,onImageReady:e.func,onImageChange:e.func,onMouseUp:e.func,onMouseMove:e.func,onPositionChange:e.func,disableBoundaryChecks:e.bool,disableHiDPIScaling:e.bool},v.defaultProps={scale:1,rotate:0,border:25,borderRadius:0,width:200,height:200,color:[0,0,0,.5],onLoadFailure:function(){},onLoadSuccess:function(){},onImageReady:function(){},onImageChange:function(){},onMouseUp:function(){},onMouseMove:function(){},onPositionChange:function(){},disableBoundaryChecks:!1,disableHiDPIScaling:!1},v});
 });
 
-var _templateObject$8 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$9 = taggedTemplateLiteral(['\n\tposition: fixed;\n\twidth: 100%;\n\theight: 100%;\n\tleft: 0;\n\tright: 0;\n\ttop: 0;\n\tbottom: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 1000;\n\toverflow-y: auto;\n\ttransition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out;\n\topacity: ', ';\n\tvisibility: ', ';\n'], ['\n\tposition: fixed;\n\twidth: 100%;\n\theight: 100%;\n\tleft: 0;\n\tright: 0;\n\ttop: 0;\n\tbottom: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 1000;\n\toverflow-y: auto;\n\ttransition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out;\n\topacity: ', ';\n\tvisibility: ', ';\n']),
+    _templateObject2$3 = taggedTemplateLiteral(['\n\tposition: relative;\n\tbackground-color: ', ';\n\tborder-radius: 20px;\n\tmargin: 50px auto;\n\tmax-width: 650px;\n'], ['\n\tposition: relative;\n\tbackground-color: ', ';\n\tborder-radius: 20px;\n\tmargin: 50px auto;\n\tmax-width: 650px;\n']);
 
-var Background = styled__default.div(_templateObject$8, function (props) {
-	var visible = props.visible;
-
-	return '\n\t\t\tposition: fixed;\n\t\t\twidth: 100%;\n\t\t\theight: 100%;\n\t\t\tleft: 0;\n\t\t\tright: 0;\n\t\t\ttop: 0;\n\t\t\tbottom: 0;\n\t\t\tbackground-color: rgba(0,0,0,0.5);\n\t\t\tz-index: 1000;\n\t\t\toverflow-y: auto;\n\t\t\ttransition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out;\n\t\t\topacity: ' + (visible ? 1 : 0) + ';\n\t\t\tvisibility: ' + (visible ? 'visible' : 'hidden') + ';\n\t\t';
+var Background = styled__default.div(_templateObject$9, function (props) {
+	return props.visible ? 1 : 0;
+}, function (props) {
+	return props.visible ? 'visible' : 'hidden';
 });
-var Content = styled__default.div(_templateObject$8, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tposition: relative;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\tborder-radius: 20px;\n\t\t\tmargin: 50px auto;\n\t\t\tmax-width: 650px;\t\t';
+var Content = styled__default.div(_templateObject2$3, function (props) {
+	return props.theme.white;
 });
-
-//
 
 var TEPopup = function TEPopup(props) {
 	var visible = props.visible,
@@ -13940,29 +13963,41 @@ TEPopup.defaultProps = {
 	visible: false
 };
 
-var _templateObject$9 = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$a = taggedTemplateLiteral(['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 650px;\n\t\tmargin: 100px auto;\n\t}\n'], ['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 650px;\n\t\tmargin: 100px auto;\n\t}\n']),
+    _templateObject2$4 = taggedTemplateLiteral(['\n\tpadding: 30px;\n'], ['\n\tpadding: 30px;\n']),
+    _templateObject3$3 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n'], ['\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n']),
+    _templateObject4$3 = taggedTemplateLiteral(['\n\tborder-top: 1px solid ', ';\n\tborder-right: 1px solid ', ';\n\tborder-bottom: none;\n\tborder-left: none;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 20px;\n\tborder-bottom-right-radius: 0px;\n\tpadding-top: 15px;\n\tpadding-bottom: 15px;\n\tfont-size: 18px;\n\n\t:active,\n\t:hover {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: 1px solid ', ';\n\t\tborder-bottom: none;\n\t\tborder-left: none;\n\t}\n'], ['\n\tborder-top: 1px solid ', ';\n\tborder-right: 1px solid ', ';\n\tborder-bottom: none;\n\tborder-left: none;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 20px;\n\tborder-bottom-right-radius: 0px;\n\tpadding-top: 15px;\n\tpadding-bottom: 15px;\n\tfont-size: 18px;\n\n\t:active,\n\t:hover {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: 1px solid ', ';\n\t\tborder-bottom: none;\n\t\tborder-left: none;\n\t}\n']),
+    _templateObject5$3 = taggedTemplateLiteral(['\n\tborder-top: 1px solid ', ';\n\tborder-right: none;\n\tborder-bottom: none;\n\tborder-left: 1px solid ', ';\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 0px;\n\tborder-bottom-right-radius: 20px;\n\tpadding-top: 15px;\n\tpadding-bottom: 15px;\n\tfont-size: 18px;\n\n\t:active,\n\t:hover {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: none;\n\t\tborder-bottom: none;\n\t\tborder-left: 1px solid ', ';\n\t}\n'], ['\n\tborder-top: 1px solid ', ';\n\tborder-right: none;\n\tborder-bottom: none;\n\tborder-left: 1px solid ', ';\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 0px;\n\tborder-bottom-right-radius: 20px;\n\tpadding-top: 15px;\n\tpadding-bottom: 15px;\n\tfont-size: 18px;\n\n\t:active,\n\t:hover {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: none;\n\t\tborder-bottom: none;\n\t\tborder-left: 1px solid ', ';\n\t}\n']);
 
-var Popup = styled__default(TEPopup)(_templateObject$9, function (props) {
-	return '\n\t\t\t& > div{\n\t\t\t\twidth: 90%;\n\t\t\t\tmax-width: 650px;\n\t\t\t\tmargin: 100px auto;\n\t\t\t}\n\t\t';
+var Popup = styled__default(TEPopup)(_templateObject$a);
+var FormContent = styled__default.div(_templateObject2$4);
+var ButtonContainer = styled__default.div(_templateObject3$3);
+var LeftButton = styled__default(TEButton)(_templateObject4$3, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var FormContent = styled__default.div(_templateObject$9, function (props) {
-	return '\n\t\t\tpadding: 30px;\n\t\t';
+var RightButton = styled__default(TEButton)(_templateObject5$3, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var ButtonContainer = styled__default.div(_templateObject$9, function (props) {
-	return '\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t';
-});
-var LeftButton = styled__default(TEButton)(_templateObject$9, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tborder-top: 1px solid ' + theme.primary + ';\n\t\t\tborder-right: 1px solid ' + theme.primary + ';\n\t\t\tborder-bottom: none;\n\t\t\tborder-left: none;\n\t\t\tborder-top-left-radius: 0px;\n\t\t\tborder-top-right-radius: 0px;\n\t\t\tborder-bottom-left-radius: 20px;\n\t\t\tborder-bottom-right-radius: 0px;\n\t\t\tpadding-top: 15px;\n\t\t\tpadding-bottom: 15px;\n\t\t\tfont-size: 18px;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tborder-top: 1px solid ' + theme.primary + ';\n\t\t\t\tborder-right: 1px solid ' + theme.primary + ';\n\t\t\t\tborder-bottom: none;\n\t\t\t\tborder-left: none;\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tborder-top: 1px solid ' + theme.primary + ';\n\t\t\t\tborder-right: 1px solid ' + theme.primary + ';\n\t\t\t\tborder-bottom: none;\n\t\t\t\tborder-left: none;\n\t\t\t}\n\t\t';
-});
-var RightButton = styled__default(TEButton)(_templateObject$9, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tborder-top: 1px solid ' + theme.primary + ';\n\t\t\tborder-right: none;\n\t\t\tborder-bottom: none;\n\t\t\tborder-left: 1px solid ' + theme.primary + ';\n\t\t\tborder-top-left-radius: 0px;\n\t\t\tborder-top-right-radius: 0px;\n\t\t\tborder-bottom-left-radius: 0px;\n\t\t\tborder-bottom-right-radius: 20px;\n\t\t\tpadding-top: 15px;\n\t\t\tpadding-bottom: 15px;\n\t\t\tfont-size: 18px;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tborder-top: 1px solid ' + theme.primary + ';\n\t\t\t\tborder-right: none;\n\t\t\t\tborder-bottom: none;\n\t\t\t\tborder-left: 1px solid ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.white + ';\n\t\t\t\tbackground-color: ' + theme.primary + ';\n\t\t\t\tborder-top: 1px solid ' + theme.primary + ';\n\t\t\t\tborder-right: none;\n\t\t\t\tborder-bottom: none;\n\t\t\t\tborder-left: 1px solid ' + theme.primary + ';\n\t\t\t}\n\t\t';
-});
-
-//
 
 var TEPopupForm = function TEPopupForm(props) {
 	var handleSubmit = function handleSubmit(e) {
@@ -14026,26 +14061,18 @@ TEPopupForm.defaultProps = {
 	onSubmitTitle: 'Submit'
 };
 
-var _templateObject$a = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$b = taggedTemplateLiteral(['\n\tpadding-left: 30px;\n\tpadding-right: 30px;\n\tpadding-bottom: 15px;\n'], ['\n\tpadding-left: 30px;\n\tpadding-right: 30px;\n\tpadding-bottom: 15px;\n']),
+    _templateObject2$5 = taggedTemplateLiteral(['\n\ttext-align: center;\n'], ['\n\ttext-align: center;\n']),
+    _templateObject3$4 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n'], ['\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n']),
+    _templateObject4$4 = taggedTemplateLiteral(['\n\twidth: auto;\n\tmargin-left: 10px;\n\tmargin-right: 10px;\n'], ['\n\twidth: auto;\n\tmargin-left: 10px;\n\tmargin-right: 10px;\n']),
+    _templateObject5$4 = taggedTemplateLiteral(['\n\tdisplay: block;\n'], ['\n\tdisplay: block;\n']);
 
-var Container$1 = styled__default.div(_templateObject$a, function (props) {
-	return '\n\t\t\tpadding-left: 30px;\n\t\t\tpadding-right: 30px;\n\t\t\tpadding-bottom: 15px;\n\t\t';
-});
-var Row$1 = styled__default(TERow)(_templateObject$a, function (props) {
-	return '\n\t\t\ttext-align: center;\n\t\t';
-});
-var RotateButtonWrapper = styled__default.div(_templateObject$a, function (props) {
-	return '\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\t\t';
-});
-var RotateButton = styled__default(TEButton)(_templateObject$a, function (props) {
-	return '\n\t\t\twidth: auto;\n\t\t\tmargin-left: 10px;\n\t\t\tmargin-right: 10px;\n\t\t';
-});
-var UndoRotationIcon = styled__default(FaUndo)(_templateObject$a, function (props) {
-	return '\n\t\t\tdisplay: block;\n\t\t';
-});
-var RedoRotationIcon = styled__default(FaRedo)(_templateObject$a, function (props) {
-	return '\n\t\t\tdisplay: block;\n\t\t';
-});
+var Container$1 = styled__default.div(_templateObject$b);
+var Row$1 = styled__default(TERow)(_templateObject2$5);
+var RotateButtonWrapper = styled__default.div(_templateObject3$4);
+var RotateButton = styled__default(TEButton)(_templateObject4$4);
+var UndoRotationIcon = styled__default(FaUndo)(_templateObject5$4);
+var RedoRotationIcon = styled__default(FaRedo)(_templateObject5$4);
 
 //
 
@@ -14163,46 +14190,39 @@ TEImageUpload.defaultProps = {
 	onSubmitTitle: 'Submit'
 };
 
-var _templateObject$b = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$c = taggedTemplateLiteral(['\n\toverflow-x: auto;\n\twidth: 100%;\n\tpadding: 5px;\n\tdisplay: flex;\n\talign-items: center;\n'], ['\n\toverflow-x: auto;\n\twidth: 100%;\n\tpadding: 5px;\n\tdisplay: flex;\n\talign-items: center;\n']),
+    _templateObject2$6 = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 150px;\n\theight: 150px;\n\tmargin-left: 0px;\n\tmargin-right: 15px;\n\tborder: 1px solid ', ';\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tborder-radius: 5px;\n\tflex-shrink: 0;\n'], ['\n\tposition: relative;\n\twidth: 150px;\n\theight: 150px;\n\tmargin-left: 0px;\n\tmargin-right: 15px;\n\tborder: 1px solid ', ';\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tborder-radius: 5px;\n\tflex-shrink: 0;\n']),
+    _templateObject3$5 = taggedTemplateLiteral(['\n\tdisplay: block;\n\twidth: 100%;\n\tobject-fit: contain;\n\tborder-radius: 5px;\n'], ['\n\tdisplay: block;\n\twidth: 100%;\n\tobject-fit: contain;\n\tborder-radius: 5px;\n']),
+    _templateObject4$5 = taggedTemplateLiteral(['\n\tposition: absolute;\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\ttop: 3px;\n\tright: 3px;\n\twidth: auto;\n\tpadding: 5px;\n\ttext-align: center;\n'], ['\n\tposition: absolute;\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\ttop: 3px;\n\tright: 3px;\n\twidth: auto;\n\tpadding: 5px;\n\ttext-align: center;\n']),
+    _templateObject5$5 = taggedTemplateLiteral(['\n\tcolor: inherit;\n\tdisplay: block;\n\tfont-size: 14px;\n'], ['\n\tcolor: inherit;\n\tdisplay: block;\n\tfont-size: 14px;\n']),
+    _templateObject6$2 = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\twidth: 150px;\n\theight: 150px;\n\tflex-shrink: 0;\n\tpadding: 30px;\n\tmargin-left: 0px;\n\tmargin-right: 15px;\n\tbackground-color: ', ';\n\tcursor: pointer;\n\tborder: 1px solid\n\t\t', ';\n\tbox-shadow: none;\n\tborder-radius: 5px;\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\n\t:hover,\n\t:active {\n\t\tborder: 1px solid\n\t\t\t', ';\n\t\tbox-shadow: ', ';\n\t}\n'], ['\n\tposition: relative;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\twidth: 150px;\n\theight: 150px;\n\tflex-shrink: 0;\n\tpadding: 30px;\n\tmargin-left: 0px;\n\tmargin-right: 15px;\n\tbackground-color: ', ';\n\tcursor: pointer;\n\tborder: 1px solid\n\t\t', ';\n\tbox-shadow: none;\n\tborder-radius: 5px;\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\n\t:hover,\n\t:active {\n\t\tborder: 1px solid\n\t\t\t', ';\n\t\tbox-shadow: ', ';\n\t}\n']),
+    _templateObject7$2 = taggedTemplateLiteral(['\n\tfont-size: 60px;\n\tcolor: ', ';\n'], ['\n\tfont-size: 60px;\n\tcolor: ', ';\n']),
+    _templateObject8$2 = taggedTemplateLiteral(['\n\tdisplay: none;\n'], ['\n\tdisplay: none;\n']),
+    _templateObject9$1 = taggedTemplateLiteral(['\n\tdisplay: block;\n\tpadding-top: 5px;\n\tpadding-bottom: 5px;\n\tfont-size: 14px;\n\tcolor: ', ';\n'], ['\n\tdisplay: block;\n\tpadding-top: 5px;\n\tpadding-bottom: 5px;\n\tfont-size: 14px;\n\tcolor: ', ';\n']);
 
-var ImageRowWrapper = styled__default.div(_templateObject$b, function (props) {
-	return '\n\t\t\toverflow-x: auto;\n\t\t\twidth: 100%;\n\t\t\tpadding: 5px;\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t';
+var ImageRowWrapper = styled__default.div(_templateObject$c);
+var ImageWrapper = styled__default.div(_templateObject2$6, function (props) {
+	return props.theme.lightGray;
 });
-var ImageWrapper = styled__default.div(_templateObject$b, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tposition: relative;\n\t\t\twidth: 150px;\n\t\t\theight: 150px;\n\t\t\tmargin-left: 0px;\n\t\t\tmargin-right: 15px;\n\t\t\tborder: 1px solid ' + theme.lightGray + ';\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tborder-radius: 5px;\n\t\t\tflex-shrink: 0;\n\t\t';
+var Image$1 = styled__default.img(_templateObject3$5);
+var ClearImageButton = styled__default(TEButton)(_templateObject4$5);
+var ClearImageButtonIcon = styled__default(FaRegWindowClose)(_templateObject5$5);
+var Label$3 = styled__default.label(_templateObject6$2, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.lightGray;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.primary;
+}, function (props) {
+	return props.disabled ? 'none' : '0 0 0 1px ' + props.theme.primary + ' inset;';
 });
-var Image$1 = styled__default.img(_templateObject$b, function (props) {
-	return '\n\t\t\tdisplay: block;\n\t\t\twidth: 100%;\n\t\t\tobject-fit: contain;\n\t\t\tborder-radius: 5px;\n\t\t';
+var UploadIcon = styled__default(FaUpload)(_templateObject7$2, function (props) {
+	return props.theme.lightGray;
 });
-var ClearImageButton = styled__default(TEButton)(_templateObject$b, function (props) {
-	return '\n\t\t\tposition: absolute;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\t\t\ttop: 3px;\n\t\t\tright: 3px;\n\t\t\twidth: auto;\n\t\t\tpadding: 5px;\n\t\t\ttext-align: center;\n\t\t';
+var Input$3 = styled__default.input(_templateObject8$2);
+var ErrorMessage$1 = styled__default.span(_templateObject9$1, function (props) {
+	return props.theme.errorRed;
 });
-var ClearImageButtonIcon = styled__default(FaRegWindowClose)(_templateObject$b, function (props) {
-	return '\n\t\t\tcolor: inherit;\n\t\t\tdisplay: block;\n\t\t\tfont-size: 14px;\n\t\t';
-});
-var Label$3 = styled__default.label(_templateObject$b, function (props) {
-	var theme = props.theme,
-	    disabled = props.disabled;
-
-	return '\n\t\t\tposition: relative;\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\twidth: 150px;\n\t\t\theight: 150px;\n\t\t\tflex-shrink: 0;\n\t\t\tpadding: 30px;\n\t\t\tmargin-left: 0px;\n\t\t\tmargin-right: 15px;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\tcursour: pointer;\n\t\t\tborder: 1px solid ' + (disabled ? theme.lighterGray : theme.lightGray) + ';\n\t\t\tbox-shadow: none;\n\t\t\tborder-radius: 5px;\n\t\t\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\n\t\t\t:hover {\n\t\t\t\tborder: 1px solid ' + (disabled ? theme.lighterGray : theme.primary) + ';\n\t\t\t\tboxShadow: ' + (disabled ? 'none' : '0 0 0 1px ' + theme.primary + ' inset;') + '\n\t\t\t}\n\t\t\t:active {\n\t\t\t\tborder: 1px solid ' + (disabled ? theme.lighterGray : theme.primary) + ';\n\t\t\t\tboxShadow: ' + (disabled ? 'none' : '0 0 0 1px ' + theme.primary + ' inset;') + '\n\t\t\t}\n\t\t';
-});
-var UploadIcon = styled__default(FaUpload)(_templateObject$b, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tfont-size: 60px;\n\t\t\tcolor: ' + theme.lightGray + ';\n\t\t';
-});
-var Input$3 = styled__default.input(_templateObject$b, function (props) {
-	return '\n\t\t\tdisplay: none;\n\t\t';
-});
-var ErrorMessage$1 = styled__default.span(_templateObject$b, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tdisplay: block;\n\t\t\tpadding-top: 5px;\n\t\t\tpadding-bottom: 5px;\n\t\t\tfont-size: 14px;\n\t\t\tcolor: ' + theme.errorRed + ';\n\t\t';
-});
-
-//
 
 var TEImageRow = function TEImageRow(props) {
 	var _useState = React.useState(false),
@@ -14401,17 +14421,21 @@ TEImageRow.defaultProps = {
 	maxNumber: 0
 };
 
-var _templateObject$c = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$d = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tpadding: 10px;\n\tbox-sizing: border-box;\n\tcursor: ', ';\n\tborder-radius: 5px;\n\tbackground-color: ', ';\n\tcolor: ', ';\n\n\tborder: 1px solid\n\t\t', ';\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t}\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tpadding: 10px;\n\tbox-sizing: border-box;\n\tcursor: ', ';\n\tborder-radius: 5px;\n\tbackground-color: ', ';\n\tcolor: ', ';\n\n\tborder: 1px solid\n\t\t', ';\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t}\n']);
 
-var Input$4 = styled__default.input(_templateObject$c, function (props) {
-    var disabled = props.disabled,
-        theme = props.theme;
-
-
-    return '\n            position: relative;\n            display: block;\n            width: 100%;\n            font-size: 14px;\n            padding: 10px;\n            box-sizing: border-box;\n            cursor: ' + (disabled ? 'not-allowed' : 'text') + ';\n            border-radius: 5px;\n            background-color: ' + theme.white + ';\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n\n            border: 1px solid ' + (disabled ? theme.lighterGray : theme.lightGray) + ';\n            transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n            :hover {\n                border: 1px solid ' + theme.primary + ';\n                box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n            }\n            :active {\n                border: 1px solid ' + theme.primary + ';\n                box-shadow: 0 0 0 1px ' + theme.primary + ' inset;\n            }\n        ';
+var Input$4 = styled__default.input(_templateObject$d, function (props) {
+	return props.disabled ? 'not-allowed' : 'text';
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.disabled ? props.theme.gray : props.theme.darkerGray;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.lightGray;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-
-//
 
 var TEInput = function TEInput(props) {
 	return React__default.createElement(Input$4, props);
@@ -14430,17 +14454,21 @@ TEInput.defaultProps = {
 	disabled: false
 };
 
-var _templateObject$d = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$e = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tbox-sizing: border-box;\n\tpadding: 10px;\n\tbackground-color: ', ';\n\tmin-height: 140px;\n\tborder-radius: 5px;\n\tline-height: 1.5;\n\tcursor: ', ';\n\n\tcolor: ', ';\n\tborder: 1px solid\n\t\t', ';\n\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid\n\t\t\t', ';\n\t\tbox-shadow: 0 0 0 1px\n\t\t\t', ' inset;\n\t}\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tbox-sizing: border-box;\n\tpadding: 10px;\n\tbackground-color: ', ';\n\tmin-height: 140px;\n\tborder-radius: 5px;\n\tline-height: 1.5;\n\tcursor: ', ';\n\n\tcolor: ', ';\n\tborder: 1px solid\n\t\t', ';\n\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid\n\t\t\t', ';\n\t\tbox-shadow: 0 0 0 1px\n\t\t\t', ' inset;\n\t}\n']);
 
-var Textarea = styled__default.textarea(_templateObject$d, function (props) {
-    var disabled = props.disabled,
-        theme = props.theme;
-
-
-    return '\n            position: relative;\n            display: block;\n            width: 100%;\n            font-size: 14px;\n            box-sizing: border-box;\n            padding: 10px;\n            background-color: ' + theme.white + ';\n            min-height: 140px;\n            border-radius: 5px;\n            line-height: 1.5;\n            cursor: ' + (disabled ? 'not-allowed' : 'text') + ';\n\n            color: ' + (disabled ? theme.gray : theme.darkerGray) + ';\n            border: 1px solid ' + (disabled ? theme.lighterGray : theme.lightGray) + ';\n\n            transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n            :hover {\n                border: 1px solid ' + (disabled ? theme.lighterGray : theme.primary) + ';\n                box-shadow: 0 0 0 1px ' + (disabled ? theme.lighterGray : theme.primary) + ' inset;\n           }\n            :active {\n                border: 1px solid ' + (disabled ? theme.lighterGray : theme.primary) + ';\n                box-shadow: 0 0 0 1px ' + (disabled ? theme.lighterGray : theme.primary) + ' inset;\n            }\n        ';
+var Textarea = styled__default.textarea(_templateObject$e, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.disabled ? 'not-allowed' : 'text';
+}, function (props) {
+	return props.disabled ? props.theme.gray : props.theme.darkerGray;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.lightGray;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.primary;
+}, function (props) {
+	return props.disabled ? props.theme.lighterGray : props.theme.primary;
 });
-
-//
 
 var TETextarea = function TETextarea(props) {
 	return React__default.createElement(Textarea, props);
@@ -14458,8 +14486,6 @@ TETextarea.defaultProps = {
 	type: 'text',
 	disabled: false
 };
-
-//
 
 var TEInputRow = function TEInputRow(props) {
 	var size = props.size,
@@ -14523,117 +14549,113 @@ TEInputRow.propTypes = {
 	labelForKey: PropTypes.string
 };
 
-var _templateObject$e = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$f = taggedTemplateLiteral([''], ['']),
+    _templateObject2$7 = taggedTemplateLiteral(['\n\twidth: 100%;\n\tdisplay: flex;\n\tposition: relative;\n\tmargin-bottom: 30px;\n\n\t@media (max-width: 500px) {\n\t\tmargin-bottom: 15;\n\t}\n'], ['\n\twidth: 100%;\n\tdisplay: flex;\n\tposition: relative;\n\tmargin-bottom: 30px;\n\n\t@media (max-width: 500px) {\n\t\tmargin-bottom: 15;\n\t}\n']),
+    _templateObject3$6 = taggedTemplateLiteral(['\n\tposition: absolute;\n\ttop: 14px;\n\tbackground-color: ', ';\n\theight: 2px;\n\twidth: ', '%;\n\tleft: ', '%;\n'], ['\n\tposition: absolute;\n\ttop: 14px;\n\tbackground-color: ', ';\n\theight: 2px;\n\twidth: ', '%;\n\tleft: ', '%;\n']),
+    _templateObject4$6 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\twidth: ', '%;\n'], ['\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\twidth: ', '%;\n']),
+    _templateObject5$6 = taggedTemplateLiteral(['\n\ttext-align: center;\n\twidth: 30px;\n\theight: 30px;\n\tmargin-bottom: 10px;\n\tline-height: 30px;\n\tborder: 1px solid ', ';\n\tz-index: 1;\n\tbackground-color: ', ';\n\tcolor: ', ';\n\ttransition: color 0.2s ease-in, background-color 0.2s ease-in;\n'], ['\n\ttext-align: center;\n\twidth: 30px;\n\theight: 30px;\n\tmargin-bottom: 10px;\n\tline-height: 30px;\n\tborder: 1px solid ', ';\n\tz-index: 1;\n\tbackground-color: ', ';\n\tcolor: ', ';\n\ttransition: color 0.2s ease-in, background-color 0.2s ease-in;\n']),
+    _templateObject6$3 = taggedTemplateLiteral(['\n\ttext-align: center;\n\tfont-size: 18px;\n\tdisplay: block;\n\n\t@media (max-width: 500px) {\n\t\tfont-size: 16px;\n\t}\n\t@media (max-width: 350px) {\n\t\tfont-size: 14px;\n\t}\n'], ['\n\ttext-align: center;\n\tfont-size: 18px;\n\tdisplay: block;\n\n\t@media (max-width: 500px) {\n\t\tfont-size: 16px;\n\t}\n\t@media (max-width: 350px) {\n\t\tfont-size: 14px;\n\t}\n']),
+    _templateObject7$3 = taggedTemplateLiteral(['\n\tmargin-bottom: 30px;\n'], ['\n\tmargin-bottom: 30px;\n']),
+    _templateObject8$3 = taggedTemplateLiteral(['\n\tdisplay: flex;\n'], ['\n\tdisplay: flex;\n']);
 
-var Container$2 = styled__default.div(_templateObject$e, function (props) {
-	return '\n        ';
+var Container$2 = styled__default.div(_templateObject$f);
+var StepContainer = styled__default.div(_templateObject2$7);
+var StepBar = styled__default.div(_templateObject3$6, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return 100 - 100 / props.stepCount;
+}, function (props) {
+	return 100 / props.stepCount / 2;
 });
-var StepContainer = styled__default.div(_templateObject$e, function (props) {
-	return '\n            width: 100%;\n            display: flex;\n            position: relative;\n            margin-bottom: 30px;\n\n            @media (max-width: 500px) {\n                margin-bottom: 15;\n            }\n        ';
+var StepWrapper = styled__default.div(_templateObject4$6, function (props) {
+	return 100 / props.stepCount;
 });
-var StepBar = styled__default.div(_templateObject$e, function (props) {
-	var stepCount = props.stepCount,
-	    theme = props.theme;
+var StepNumber = styled__default.div(_templateObject5$6, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.active ? props.theme.primary : props.theme.white;
+}, function (props) {
+	return props.active ? props.theme.white : props.theme.primary;
+});
+var StepTitle = styled__default.span(_templateObject6$3);
 
-	return '\n            position: absolute;\n            top: 14px;\n            background-color: ' + theme.primary + ';\n            height: 2px;\n            width: ' + (100 - 100 / stepCount) + '%;\n            left: ' + 100 / stepCount / 2 + '%;\n        ';
-});
-var StepWrapper = styled__default.div(_templateObject$e, function (props) {
-	var stepCount = props.stepCount;
-
-	return '\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            width: ' + 100 / stepCount + '%\n        ';
-});
-var StepNumber = styled__default.div(_templateObject$e, function (props) {
-	var active = props.active,
-	    theme = props.theme;
-
-	return '\n            text-align: center;\n            width: 30px;\n            height: 30px;\n            margin-bottom: 10px;\n            line-height: 30px;\n            border: 1px solid ' + theme.primary + ';\n            z-index: 1;\n            background-color: ' + (active ? theme.primary : theme.white) + ';\n            color: ' + (active ? theme.white : theme.primary) + ';\n            transition: color 0.2s ease-in, background-color 0.2s ease-in;\n        ';
-});
-var StepTitle = styled__default.span(_templateObject$e, function (props) {
-	return '\n            text-align: center;\n            font-size: 18px;\n            display: block;\n\n            @media (max-width: 500px) {\n                font-size: 16px;\n            }\n            @media (max-width: 350px) {\n                font-size: 14px;\n            }\n        ';
-});
-
-var Form$1 = styled__default(TEForm)(_templateObject$e, function (props) {
-	return '\n            margin-bottom: 30px;\n        ';
-});
-var ButtonContainer$1 = styled__default.div(_templateObject$e, function (props) {
-	return '\n            display: flex;\n        ';
-});
+var Form$1 = styled__default(TEForm)(_templateObject7$3);
+var ButtonContainer$1 = styled__default.div(_templateObject8$3);
 
 //TODO: Return to this and figure out way to handle popups and panel use cases without being weird to use in general
-var StepButton = styled__default(TEButton)(_templateObject$e, function (props) {
-	// const { position, rounded, singleButton, theme } = props
-	// let styles = `
-	//     padding: 10px 20px;
-	//     color: ${theme.primary};
-	//     background-color: ${theme.white};
-	//     border-top: 1px solid ${theme.primary};
-	//     border-bottom: none;
-	//     transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;
-	// `
+/*
+		// const { position, rounded, singleButton, theme } = props
+		// let styles = `
+		//     padding: 10px 20px;
+		//     color: ${theme.primary};
+		//     background-color: ${theme.white};
+		//     border-top: 1px solid ${theme.primary};
+		//     border-bottom: none;
+		//     transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;
+		// `
 
-	// switch (position) {
-	//     case 'left':
-	//         styles += `
-	//                 border-left: none;
-	//                 border-right: 1px solid ${theme.primary};
+		// switch (position) {
+		//     case 'left':
+		//         styles += `
+		//                 border-left: none;
+		//                 border-right: 1px solid ${theme.primary};
 
-	//                 border-bottom-left-radius: ${rounded ? '5px' : '0px'};
-	//                 border-top-right-radius: 0px;
-	//                 border-top-left-radius: 0px;
-	//                 border-bottom-right-radius: 0px;
+		//                 border-bottom-left-radius: ${rounded ? '5px' : '0px'};
+		//                 border-top-right-radius: 0px;
+		//                 border-top-left-radius: 0px;
+		//                 border-bottom-right-radius: 0px;
 
-	//                 :hover {
-	//                     color: ${theme.white};
-	//                     background-color: ${theme.primary};
-	//                     border-top: 1px solid ${theme.primary};
-	//                     border-left: none;
-	//                     border-right: 1px solid ${theme.primary};
-	//                     border-bottom: none;
-	//                 }
-	//                 :active {
-	//                     color: ${theme.white};
-	//                     background-color: ${theme.primary};
-	//                     border-top: 1px solid ${theme.primary};
-	//                     border-left: none;
-	//                     border-right: 1px solid ${theme.primary};
-	//                     border-bottom: none;
-	//                 }
-	//             `
-	//         break
-	//     case 'right':
-	//         styles += `
-	//                 border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
-	//                 border-right: none;
+		//                 :hover {
+		//                     color: ${theme.white};
+		//                     background-color: ${theme.primary};
+		//                     border-top: 1px solid ${theme.primary};
+		//                     border-left: none;
+		//                     border-right: 1px solid ${theme.primary};
+		//                     border-bottom: none;
+		//                 }
+		//                 :active {
+		//                     color: ${theme.white};
+		//                     background-color: ${theme.primary};
+		//                     border-top: 1px solid ${theme.primary};
+		//                     border-left: none;
+		//                     border-right: 1px solid ${theme.primary};
+		//                     border-bottom: none;
+		//                 }
+		//             `
+		//         break
+		//     case 'right':
+		//         styles += `
+		//                 border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
+		//                 border-right: none;
 
-	//                 border-bottom-right-radius: ${rounded ? '5px' : '0px'};
-	//                 border-bottom-left-radius: ${singleButton && rounded ? '5px' : '0px'};
-	//                 border-top-right-radius: 0px;
-	//                 border-top-left-radius: 0px;
+		//                 border-bottom-right-radius: ${rounded ? '5px' : '0px'};
+		//                 border-bottom-left-radius: ${singleButton && rounded ? '5px' : '0px'};
+		//                 border-top-right-radius: 0px;
+		//                 border-top-left-radius: 0px;
 
-	//                 :hover {
-	//                     color: ${theme.white};
-	//                     background-color: ${theme.primary};
-	//                     border-top: 1px solid ${theme.primary};
-	//                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
-	//                     border-right: none;
-	//                     border-bottom: none;
-	//                 }
-	//                 :active {
-	//                     color: ${theme.white};
-	//                     background-color: ${theme.primary};
-	//                     border-top: 1px solid ${theme.primary};
-	//                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
-	//                     border-right: none;
-	//                     border-bottom: none;
-	//                 }
-	//             `
-	//         break
-	//     default:
-	//         break
-	// }
-
-	return '';
-});
+		//                 :hover {
+		//                     color: ${theme.white};
+		//                     background-color: ${theme.primary};
+		//                     border-top: 1px solid ${theme.primary};
+		//                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
+		//                     border-right: none;
+		//                     border-bottom: none;
+		//                 }
+		//                 :active {
+		//                     color: ${theme.white};
+		//                     background-color: ${theme.primary};
+		//                     border-top: 1px solid ${theme.primary};
+		//                     border-left: ${singleButton ? 'none' : `1px solid ${theme.primary}`};
+		//                     border-right: none;
+		//                     border-bottom: none;
+		//                 }
+		//             `
+		//         break
+		//     default:
+		//         break
+		// }
+	*/
+var StepButton = styled__default(TEButton)(_templateObject$f);
 
 //
 
@@ -14792,42 +14814,27 @@ TEMultiStepForm.propTypes = {
 	roundedButtons: PropTypes.bool
 };
 
-var _templateObject$f = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$g = taggedTemplateLiteral(['\n\tcursor: pointer;\n\tbox-sizing: border-box;\n'], ['\n\tcursor: pointer;\n\tbox-sizing: border-box;\n']);
 
-var Input$5 = styled__default.input(_templateObject$f, function (props) {
-	return '\n\t\t\tcursor: pointer;\n            box-sizing: border-box;\n\t\t';
-});
-
-//
+var Input$5 = styled__default.input(_templateObject$g);
 
 var TERadioButtonInput = function TERadioButtonInput(props) {
   return React__default.createElement(Input$5, _extends({}, props, { type: 'radio' }));
 };
 
-var _templateObject$g = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$h = taggedTemplateLiteral(['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n'], ['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n']),
+    _templateObject2$8 = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n'], ['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n']),
+    _templateObject3$7 = taggedTemplateLiteral(['\n\tmargin-bottom: 5px;\n\tdisplay: flex;\n\talign-items: center;\n'], ['\n\tmargin-bottom: 5px;\n\tdisplay: flex;\n\talign-items: center;\n']),
+    _templateObject4$7 = taggedTemplateLiteral(['\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tcursor: pointer;\n'], ['\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tcursor: pointer;\n']),
+    _templateObject5$7 = taggedTemplateLiteral(['\n\twidth: auto;\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tpadding-left: 10px;\n\tmargin-bottom: 0px;\n\tcursor: pointer;\n\tfont-size: 14px;\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 12px;\n\t}\n'], ['\n\twidth: auto;\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tpadding-left: 10px;\n\tmargin-bottom: 0px;\n\tcursor: pointer;\n\tfont-size: 14px;\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 12px;\n\t}\n']);
 
-var Container$3 = styled__default(TERow)(_templateObject$g, function (props) {
-  return '\n            margin-bottom: 10px;\n            display: inline-block;\n            vertical-align: top;\n        ';
-});
-var InputWrapper$2 = styled__default.div(_templateObject$g, function (props) {
-  return '\n            display: flex;\n            flex-wrap: wrap;\n        ';
-});
+var Container$3 = styled__default(TERow)(_templateObject$h);
+var InputWrapper$2 = styled__default.div(_templateObject2$8);
 
-var RowWrapper = styled__default(TERow)(_templateObject$g, function (props) {
-  return '\n            margin-bottom: 5px;\n            display: flex;\n            align-items: center;\n        ';
-});
+var RowWrapper = styled__default(TERow)(_templateObject3$7);
 
-var RadioButton = styled__default(TERadioButtonInput)(_templateObject$g, function (props) {
-  return '\n            display: inline-block;\n            vertical-align: middle;\n            cursor: pointer;\n        ';
-});
-var Label$4 = styled__default(TELabel)(_templateObject$g, function (props) {
-  var theme = props.theme;
-
-
-  return '\n            width: auto;\n            display: inline-block;\n            vertical-align: middle;\n            padding-left: 10px;\n            margin-bottom: 0px;\n            cursor: pointer;\n            font-size: 14px;\n\n            @media (max-width: 550px) {\n                font-size: 12px;\n            }\n        ';
-});
-
-//
+var RadioButton = styled__default(TERadioButtonInput)(_templateObject4$7);
+var Label$4 = styled__default(TELabel)(_templateObject5$7);
 
 var manipulateRowData$1 = function manipulateRowData(_ref) {
 	var rowData = _ref.rowData,
@@ -19235,10 +19242,7 @@ var lib_1 = lib$1.PowerSelectMultiple;
 var lib_2 = lib$1.TypeAhead;
 var lib_3 = lib$1.PowerSelect;
 
-//
 // import 'react-power-select/dist/react-power-select.css'
-
-// import { } from './styledComponents'
 
 //NOTE:
 //
@@ -19270,10 +19274,7 @@ TESearchSelectInput.defaultProps = {
 	searchEnabled: true
 };
 
-//
-
-// import { } from './styledComponents'
-
+// import 'react-power-select/dist/react-power-select.css'
 //NOTE:
 //
 // - At this moment there is no way to style the dropdown component with styled components.
@@ -19319,60 +19320,59 @@ TESearchSelectRow.defaultProps = {
 	searchEnabled: true
 };
 
-var _templateObject$h = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$i = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']),
+    _templateObject2$9 = taggedTemplateLiteral(['\n\twidth: ', ';\n\talign-self: ', ';\n\ttext-align: left;\n\tdisplay: block;\n\tmargin-bottom: ', ';\n\tpadding-right: ', ';\n\tfont-size: 18px;\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n'], ['\n\twidth: ', ';\n\talign-self: ', ';\n\ttext-align: left;\n\tdisplay: block;\n\tmargin-bottom: ', ';\n\tpadding-right: ', ';\n\tfont-size: 18px;\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n']),
+    _templateObject3$8 = taggedTemplateLiteral(['\n\tdisplay: inline-block;\n\twidth: auto;\n'], ['\n\tdisplay: inline-block;\n\twidth: auto;\n']),
+    _templateObject4$8 = taggedTemplateLiteral(['\n\tdisplay: none;\n'], ['\n\tdisplay: none;\n']),
+    _templateObject5$8 = taggedTemplateLiteral(['\n\tdisplay: inline-block;\n\twidth: auto;\n\tborder: 1px solid ', ';\n\tpadding: 8px 15px;\n\tmargin: 0px;\n\tbackground-color: ', ';\n\tfont-size: 14px;\n\tcolor: ', ';\n\tcursor: ', ';\n\tpointer-events: ', ';\n\n\ttransition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid\n\t\t\t', ';\n\t}\n\t', '\n'], ['\n\tdisplay: inline-block;\n\twidth: auto;\n\tborder: 1px solid ', ';\n\tpadding: 8px 15px;\n\tmargin: 0px;\n\tbackground-color: ', ';\n\tfont-size: 14px;\n\tcolor: ', ';\n\tcursor: ', ';\n\tpointer-events: ', ';\n\n\ttransition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid\n\t\t\t', ';\n\t}\n\t', '\n']);
 
-var Row$2 = styled__default(TERow)(_templateObject$h, function (props) {
-  var inline = props.inline;
-
-
-  if (inline) {
-    return '\n                display: flex;\n                justify-content: space-between;\n            ';
-  } else {
-    return '';
-  }
+var Row$2 = styled__default(TERow)(_templateObject$i, function (props) {
+	return props.inline ? 'display: flex; justify-content: space-between;' : '';
 });
-var Label$5 = styled__default(TELabel)(_templateObject$h, function (props) {
-  var inline = props.inline;
-
-
-  return '\n            width: ' + (inline ? 'auto' : '100%') + ';\n            align-self: ' + (inline ? 'center' : 'auto') + ';\n            text-align: left;\n            display: block;\n            margin-bottom: ' + (inline ? '0px' : '5px') + ';\n            padding-right: ' + (inline ? '10px' : '0px') + ';\n            font-size: 18px;\n\n            @media (max-width: 550px) {\n                font-size: 16px;\n            }\n        ';
+var Label$5 = styled__default(TELabel)(_templateObject2$9, function (props) {
+	return props.inline ? 'auto' : '100%';
+}, function (props) {
+	return props.inline ? 'center' : 'auto';
+}, function (props) {
+	return props.inline ? '0px' : '5px';
+}, function (props) {
+	return props.inline ? '10px' : '0px';
 });
-var SegmentedContainer = styled__default.div(_templateObject$h, function (props) {
-  var inline = props.inline;
-
-
-  if (inline) {
-    return '\n                display: inline-block;\n                width: auto;\n                white-space: nowrap;\n                align-self: center;\n            ';
-  } else {
-    return '';
-  }
+var SegmentedContainer = styled__default.div(_templateObject$i, function (props) {
+	return props.inline ? '\n                display: inline-block;\n                width: auto;\n                white-space: nowrap;\n                align-self: center;\n            ' : '';
 });
-var LabelWrapper = styled__default.div(_templateObject$h, function (props) {
-  return '\n            display: inline-block;\n            width: auto;\n        ';
+var LabelWrapper = styled__default.div(_templateObject3$8);
+var Input$6 = styled__default(TERadioButtonInput)(_templateObject4$8);
+var InputLabel = styled__default(TELabel)(_templateObject5$8, function (props) {
+	return props.checked ? props.theme.primary : props.theme.lightGray;
+}, function (props) {
+	return props.checked ? props.theme.primary : props.theme.white;
+}, function (props) {
+	return props.checked ? props.theme.white : props.theme.darkGray;
+}, function (props) {
+	return props.disabled ? 'not-allowed' : 'pointer';
+}, function (props) {
+	return props.disabled ? 'none' : 'auto';
+}, function (props) {
+	return props.disabled && !props.checked ? props.theme.gray : props.theme.white;
+}, function (props) {
+	return props.disabled && !props.checked ? props.theme.white : props.theme.primary;
+}, function (props) {
+	return props.disabled && !props.checked ? props.theme.lightGray : props.theme.primary;
+}, function (props) {
+	var first = props.first,
+	    last = props.last;
+
+
+	if (last) {
+		return '\n                border-top-right-radius: 5px;\n                border-bottom-right-radius: 5px;\n            ';
+	}
+	if (first) {
+		return '\n                border-top-left-radius: 5px;\n                border-bottom-left-radius: 5px;\n            ';
+	}
+
+	return '';
 });
-var Input$6 = styled__default(TERadioButtonInput)(_templateObject$h, function (props) {
-  return '\n            display: none;\n        ';
-});
-var InputLabel = styled__default(TELabel)(_templateObject$h, function (props) {
-  var first = props.first,
-      last = props.last,
-      checked = props.checked,
-      disabled = props.disabled,
-      theme = props.theme;
-
-  var styles = '\n            display: inline-block;\n            width: auto;\n            border: 1px solid ' + (checked ? theme.primary : theme.lightGray) + ';\n            padding: 8px 15px;\n            margin: 0px;\n            background-color: ' + (checked ? theme.primary : theme.white) + ';\n            font-size: 14px;\n            color: ' + (checked ? theme.white : theme.darkGray) + '\n            cursor: ' + (disabled ? 'not-allowed' : 'pointer') + ';\n            pointer-events: ' + (disabled ? 'none' : 'auto') + ';\n\n            transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;\n\n            :hover {\n                color: ' + (disabled && !checked ? theme.gray : theme.white) + ';\n                background-color: ' + (disabled && !checked ? theme.white : theme.primary) + ';\n                border: 1px solid ' + (disabled && !checked ? theme.lightGray : theme.primary) + ';\n            }\n            :active {\n                color: ' + (disabled && !checked ? theme.gray : theme.white) + ';\n                background-color: ' + (disabled && !checked ? theme.white : theme.primary) + ';\n                border: 1px solid ' + (disabled && !checked ? theme.lightGray : theme.primary) + ';\n            }\n        ';
-
-  if (first) {
-    styles += '\n                border-top-left-radius: 5px;\n                border-bottom-left-radius: 5px;\n            ';
-  }
-  if (last) {
-    styles += '\n                border-top-right-radius: 5px;\n                border-bottom-right-radius: 5px;\n            ';
-  }
-
-  return styles;
-});
-
-//
 
 var manipulateRowData$2 = function manipulateRowData(_ref) {
 	var rowData = _ref.rowData,
@@ -19473,36 +19473,29 @@ TESegmentedGroup.propTypes = {
 	onChange: PropTypes.func
 };
 
-var _templateObject$i = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-flow: row wrap;\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\tpadding: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t}\n'], ['\n\tdisplay: flex;\n\tflex-flow: row wrap;\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\tpadding: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t}\n']);
+var _templateObject$j = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-flow: row wrap;\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\tpadding: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t}\n'], ['\n\tdisplay: flex;\n\tflex-flow: row wrap;\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\tpadding: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t}\n']);
 
-var Container$4 = styled__default.div(_templateObject$i);
-
-//
+var Container$4 = styled__default.div(_templateObject$j);
 
 var TEPannelWrapper = function TEPannelWrapper(props) {
   return React__default.createElement(Container$4, props);
 };
 
-var _templateObject$j = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$k = taggedTemplateLiteral(['\n\twidth: 100%;\n\tbackground-color: ', ';\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding-bottom: 10px;\n\tmargin-bottom: 20px;\n\tborder-bottom: 1px solid ', ';\n'], ['\n\twidth: 100%;\n\tbackground-color: ', ';\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding-bottom: 10px;\n\tmargin-bottom: 20px;\n\tborder-bottom: 1px solid ', ';\n']),
+    _templateObject2$a = taggedTemplateLiteral(['\n\ttext-align: left;\n\tfont-size: 30px;\n\tmargin-top: 0px;\n\tmargin-bottom: 0px;\n\tcolor: ', ';\n\tline-height: 1;\n\n\t@media (max-width: 1000px) {\n\t\tfont-size: 28px;\n\t}\n\t@media (max-width: 800px) {\n\t\tfont-size: 24px;\n\t}\n\t@media (max-width: 650px) {\n\t\tfont-size: 20px;\n\t}\n'], ['\n\ttext-align: left;\n\tfont-size: 30px;\n\tmargin-top: 0px;\n\tmargin-bottom: 0px;\n\tcolor: ', ';\n\tline-height: 1;\n\n\t@media (max-width: 1000px) {\n\t\tfont-size: 28px;\n\t}\n\t@media (max-width: 800px) {\n\t\tfont-size: 24px;\n\t}\n\t@media (max-width: 650px) {\n\t\tfont-size: 20px;\n\t}\n']),
+    _templateObject3$9 = taggedTemplateLiteral(['\n\twidth: auto;\n'], ['\n\twidth: auto;\n']),
+    _templateObject4$9 = taggedTemplateLiteral(['\n\tfont-size: 18px;\n\tmargin-bottom: 0px;\n\tmargin-top: 0px;\n'], ['\n\tfont-size: 18px;\n\tmargin-bottom: 0px;\n\tmargin-top: 0px;\n']);
 
-var Container$5 = styled__default.div(_templateObject$j, function (props) {
-  var theme = props.theme;
-
-  return '\n            width: 100%;\n            backgroundColor: ' + theme.white + ';\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding-bottom: 10px;\n            margin-bottom: 20px;\n            border-bottom: 1px solid ' + theme.lightGray + ';\n        ';
+var Container$5 = styled__default.div(_templateObject$k, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.lightGray;
 });
-var Title = styled__default.h1(_templateObject$j, function (props) {
-  var theme = props.theme;
-
-  return '\n            text-align: left;\n            font-size: 30px;\n            margin-top: 0px;\n            margin-bottom: 0px;\n            color: ' + theme.primary + ';\n            line-height: 1;\n\n            @media (max-width: 1000px) {\n                font-size: 28px;\n            }\n            @media (max-width: 800px) {\n                font-size: 24px;\n            }\n            @media (max-width: 650px) {\n                font-size: 20px;\n            }\n        ';
+var Title = styled__default.h1(_templateObject2$a, function (props) {
+	return props.theme.primary;
 });
-var ComponentWrapper = styled__default.div(_templateObject$j, function (props) {
-  return '\n            width: auto;\n        ';
-});
-var Subtitle = styled__default.p(_templateObject$j, function (props) {
-  return '\n            font-size: 18px;\n            margin-bottom: 0px;\n            margin-top: 0px;\n        ';
-});
-
-//
+var ComponentWrapper = styled__default.div(_templateObject3$9);
+var Subtitle = styled__default.p(_templateObject4$9);
 
 var TEPanelTitle = function TEPanelTitle(props) {
 	var className = props.className,
@@ -19545,48 +19538,35 @@ TEPanelTitle.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$k = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$l = taggedTemplateLiteral(['\n\tposition: relative;\n\tbackground-color: ', ';\n\tborder-radius: 5px;\n\tbox-shadow: ', ';\n\n\tpadding: 30px;\n\tmargin-bottom: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t\tmargin-bottom: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t\tmargin-bottom: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t\tmargin-bottom: 15px;\n\t\tborder-radius: 3px;\n\t}\n\t', '\n'], ['\n\tposition: relative;\n\tbackground-color: ', ';\n\tborder-radius: 5px;\n\tbox-shadow: ', ';\n\n\tpadding: 30px;\n\tmargin-bottom: 30px;\n\n\t@media (max-width: 800px) {\n\t\tpadding: 25px;\n\t\tmargin-bottom: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding: 20px;\n\t\tmargin-bottom: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding: 15px;\n\t\tmargin-bottom: 15px;\n\t\tborder-radius: 3px;\n\t}\n\t', '\n']);
 
-var Container$6 = styled__default.div(_templateObject$k, function (props) {
-    var theme = props.theme,
-        size = props.size;
+var Container$6 = styled__default.div(_templateObject$l, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.shadowCenter;
+}, function (props) {
+	var size = props.size;
 
 
-    var styles = '\n            position: relative;\n            background-color: ' + theme.white + ';\n            border-radius: 5px;\n            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 6px 0px, rgba(0, 0, 0, 0.05) 0px 0px 2px 0px;\n\n            padding: 30px;\n            margin-bottom: 30px;\n\n            @media (max-width: 800px) {\n                padding: 25px;\n                margin-bottom: 25px;\n            }\n            @media (max-width: 650px) {\n                padding: 20px;\n                margin-bottom: 20px;\n            }\n            @media (max-width: 450px) {\n                padding: 15px;\n                margin-bottom: 15px;\n                border-radius: 3px;\n            }\n        ';
-
-    switch (size) {
-        case 'full':
-            styles += 'width: 100%;';
-            break;
-        case 'three-quarter':
-            styles += '\n                    width: calc(75% - 20px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
-            break;
-        case 'two-third':
-            styles += '\n                    width: calc(66.666% - 20px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
-            break;
-        case 'half':
-            styles += '\n                    width: calc(50% - 15px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
-            break;
-        case 'third':
-            styles += '\n                    width: calc(33.333% - 10px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
-            break;
-        case 'quarter':
-            styles += '\n                    width: calc(25% - 10px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
-            break;
-
-        case 'condensed':
-            styles += '\n                    width: auto;\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
-            break;
-
-        default:
-            styles += 'width: 100%;';
-            break;
-    }
-
-    return styles;
+	switch (size) {
+		case 'full':
+			return 'width: 100%;';
+		case 'three-quarter':
+			return '\n                    width: calc(75% - 20px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+		case 'two-third':
+			return '\n                    width: calc(66.666% - 20px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+		case 'half':
+			return '\n                    width: calc(50% - 15px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+		case 'third':
+			return '\n                    width: calc(33.333% - 10px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+		case 'quarter':
+			return '\n                    width: calc(25% - 10px);\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+		case 'condensed':
+			return '\n                    width: auto;\n                    @media (max-width: 700px) {\n                        width: 100%;\n                    }\n                ';
+		default:
+			return 'width: 100%;';
+	}
 });
-
-//
 
 var TEPanel = function TEPanel(props) {
 	var size = props.size,
@@ -19619,25 +19599,17 @@ TEPanel.defaultProps = {
 	size: 'full'
 };
 
-var _templateObject$l = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$m = taggedTemplateLiteral(['\n\tjustify-content: center;\n'], ['\n\tjustify-content: center;\n']),
+    _templateObject2$b = taggedTemplateLiteral(['\n\tmax-width: 600px;\n\tmargin: 30px auto;\n'], ['\n\tmax-width: 600px;\n\tmargin: 30px auto;\n']),
+    _templateObject3$a = taggedTemplateLiteral(['\n\tmargin-top: 0px;\n\tmargin-bottom: 20px;\n\ttext-align: center;\n\tfont-size: 26px;\n'], ['\n\tmargin-top: 0px;\n\tmargin-bottom: 20px;\n\ttext-align: center;\n\tfont-size: 26px;\n']),
+    _templateObject4$a = taggedTemplateLiteral(['\n\tmargin-top: 0px;\n\tmargin-bottom: 20px;\n\ttext-align: center;\n\tfont-size: 16px;\n'], ['\n\tmargin-top: 0px;\n\tmargin-bottom: 20px;\n\ttext-align: center;\n\tfont-size: 16px;\n']),
+    _templateObject5$9 = taggedTemplateLiteral(['\n\tmargin: 10px auto;\n\twidth: auto;\n'], ['\n\tmargin: 10px auto;\n\twidth: auto;\n']);
 
-var PanelWrapper = styled__default(TEPannelWrapper)(_templateObject$l, function (props) {
-	return '\n\t\t\tjustify-content: center;\n\t\t';
-});
-var Panel = styled__default(TEPanel)(_templateObject$l, function (props) {
-	return '\n\t\t\tmax-width: 600px;\n\t\t\tmargin: 30px auto;\n\t\t';
-});
-var Title$1 = styled__default.h1(_templateObject$l, function (props) {
-	return '\n\t\t\tmargin-top: 0px;\n\t\t\tmargin-bottom: 20px;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 26px;\n\t\t';
-});
-var Message = styled__default.p(_templateObject$l, function (props) {
-	return '\n\t\t\tmargin-top: 0px;\n\t\t\tmargin-bottom: 20px;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 16px;\n\t\t';
-});
-var Button$1 = styled__default(TEButton)(_templateObject$l, function (props) {
-	return '\n\t\t\tmargin: 10px auto;\n\t\t\twidth: auto;\n\t\t';
-});
-
-//
+var PanelWrapper = styled__default(TEPannelWrapper)(_templateObject$m);
+var Panel = styled__default(TEPanel)(_templateObject2$b);
+var Title$1 = styled__default.h1(_templateObject3$a);
+var Message = styled__default.p(_templateObject4$a);
+var Button$2 = styled__default(TEButton)(_templateObject5$9);
 
 var TEErrorLoadingAlert = function TEErrorLoadingAlert(props) {
 	var className = props.className,
@@ -19663,7 +19635,7 @@ var TEErrorLoadingAlert = function TEErrorLoadingAlert(props) {
 				message
 			),
 			buttonTitle && React__default.createElement(
-				Button$1,
+				Button$2,
 				{ onClick: onClick, className: 'TEErrorLoadingAlertButton' },
 				buttonTitle
 			)
@@ -19678,29 +19650,23 @@ TEErrorLoadingAlert.propTypes = {
 	buttonTitle: PropTypes.string
 };
 
-var _templateObject$m = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$n = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\tbackground-color: ', ';\n\tpadding-left: 30px;\n\tbox-shadow: ', ';\n\n\t@media (max-width: 800px) {\n\t\tpadding-left: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding-left: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding-left: 15px;\n\t}\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\tbackground-color: ', ';\n\tpadding-left: 30px;\n\tbox-shadow: ', ';\n\n\t@media (max-width: 800px) {\n\t\tpadding-left: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding-left: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding-left: 15px;\n\t}\n']),
+    _templateObject2$c = taggedTemplateLiteral(['\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\theight: 80px;\n\tpadding-right: 30px;\n\n\t@media (max-width: 800px) {\n\t\theight: 70px;\n\t\tpadding-right: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\theight: 65px;\n\t\tpadding-right: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\theight: 60px;\n\t\tpadding-right: 15px;\n\t}\n'], ['\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\theight: 80px;\n\tpadding-right: 30px;\n\n\t@media (max-width: 800px) {\n\t\theight: 70px;\n\t\tpadding-right: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\theight: 65px;\n\t\tpadding-right: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\theight: 60px;\n\t\tpadding-right: 15px;\n\t}\n']),
+    _templateObject3$b = taggedTemplateLiteral(['\n\tfont-size: 36px;\n\tmargin-top: 0px;\n\tmargin-bottom: 0px;\n\tcolor: ', ';\n\n\t@media (max-width: 1000px) {\n\t\tfont-size: 32px;\n\t}\n\t@media (max-width: 800px) {\n\t\tfont-size: 28px;\n\t}\n\t@media (max-width: 650px) {\n\t\tfont-size: 24px;\n\t}\n\t@media (max-width: 450px) {\n\t\tfont-size: 20px;\n\t}\n'], ['\n\tfont-size: 36px;\n\tmargin-top: 0px;\n\tmargin-bottom: 0px;\n\tcolor: ', ';\n\n\t@media (max-width: 1000px) {\n\t\tfont-size: 32px;\n\t}\n\t@media (max-width: 800px) {\n\t\tfont-size: 28px;\n\t}\n\t@media (max-width: 650px) {\n\t\tfont-size: 24px;\n\t}\n\t@media (max-width: 450px) {\n\t\tfont-size: 20px;\n\t}\n']),
+    _templateObject4$b = taggedTemplateLiteral(['\n\twidth: auto;\n'], ['\n\twidth: auto;\n']),
+    _templateObject5$a = taggedTemplateLiteral(['\n\tfont-size: 22px;\n\tmargin-bottom: 0px;\n\tmargin-top: 0px;\n'], ['\n\tfont-size: 22px;\n\tmargin-bottom: 0px;\n\tmargin-top: 0px;\n']);
 
-var Container$7 = styled__default.div(_templateObject$m, function (props) {
-    var theme = props.theme;
-
-    return '\n            position: relative;\n            width: 100%;\n            background-color: ' + theme.white + ';\n            padding-left: 30px;\n            box-shadow: ' + theme.shadowBottom + ';\n\n            @media (max-width: 800px) {\n                padding-left: 25px;\n            }\n            @media (max-width: 650px) {\n                padding-left: 20px;\n            }\n            @media (max-width: 450px) {\n                padding-left: 15px;\n            }\n        ';
+var Container$7 = styled__default.div(_templateObject$n, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.shadowBottom;
 });
-var Content$1 = styled__default.div(_templateObject$m, function (props) {
-    return '\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            height: 80px;\n            padding-right: 30px;\n\n            @media (max-width: 800px) {\n                height: 70px;\n                padding-right: 25px;\n            }\n            @media (max-width: 650px) {\n                height: 65px;\n                padding-right: 20px;\n            }\n            @media (max-width: 450px) {\n                height: 60px;\n                padding-right: 15px;\n            }\n        ';
+var Content$1 = styled__default.div(_templateObject2$c);
+var Title$2 = styled__default.h1(_templateObject3$b, function (props) {
+	return props.theme.primary;
 });
-var Title$2 = styled__default.h1(_templateObject$m, function (props) {
-    var theme = props.theme;
-
-    return '\n            font-size: 36px;\n            margin-top: 0px;\n            margin-bottom: 0px;\n            color: ' + theme.primary + ';\n\n            @media (max-width: 1000px) {\n                font-size: 32px;\n            }\n            @media (max-width: 800px) {\n                font-size: 28px;\n            }\n            @media (max-width: 650px) {\n                font-size: 24px;\n            }\n            @media (max-width: 450px) {\n                font-size: 20px;\n            }\n        ';
-});
-var ComponentWrapper$1 = styled__default.div(_templateObject$m, function (props) {
-    return '\n            width: auto;\n        ';
-});
-var Subtitle$1 = styled__default.h2(_templateObject$m, function (props) {
-    return '\n            font-size: 22px;\n            margin-bottom: 0px;\n            margin-top: 0px;\n        ';
-});
-
-//
+var ComponentWrapper$1 = styled__default.div(_templateObject4$b);
+var Subtitle$1 = styled__default.h2(_templateObject5$a);
 
 var TETitleBar = function TETitleBar(props) {
 	var className = props.className,
@@ -19747,9 +19713,9 @@ TETitleBar.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$n = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: calc(100% - ', 'px);\n\tmin-height: 100vh;\n\tmargin-left: ', 'px;\n\tbackground-color: ', ';\n'], ['\n\tposition: relative;\n\twidth: calc(100% - ', 'px);\n\tmin-height: 100vh;\n\tmargin-left: ', 'px;\n\tbackground-color: ', ';\n']);
+var _templateObject$o = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: calc(100% - ', 'px);\n\tmin-height: 100vh;\n\tmargin-left: ', 'px;\n\tbackground-color: ', ';\n'], ['\n\tposition: relative;\n\twidth: calc(100% - ', 'px);\n\tmin-height: 100vh;\n\tmargin-left: ', 'px;\n\tbackground-color: ', ';\n']);
 
-var BodyContainer = styled__default.div(_templateObject$n, function (props) {
+var BodyContainer = styled__default.div(_templateObject$o, function (props) {
 	return props.sidebarWidth;
 }, function (props) {
 	return props.sidebarWidth;
@@ -19769,7 +19735,9 @@ TEBodyContainer.defaultProps = {
 	sidebarWidth: 200
 };
 
-var _templateObject$o = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$p = taggedTemplateLiteral(['\n\ttext-align: center;\n'], ['\n\ttext-align: center;\n']),
+    _templateObject2$d = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: inline-block;\n\t', '\n'], ['\n\tposition: relative;\n\tdisplay: inline-block;\n\t', '\n']),
+    _templateObject3$c = taggedTemplateLiteral(['\n\tposition: absolute;\n\tborder-radius: 50%;\n\toverflow: hidden;\n\tborder-top: 3px solid transparent;\n\tborder-right: 1px solid transparent;\n\tborder-bottom: 1px solid transparent;\n\tborder-left: 1px solid transparent;\n\n\t', '\n'], ['\n\tposition: absolute;\n\tborder-radius: 50%;\n\toverflow: hidden;\n\tborder-top: 3px solid transparent;\n\tborder-right: 1px solid transparent;\n\tborder-bottom: 1px solid transparent;\n\tborder-left: 1px solid transparent;\n\n\t', '\n']);
 
 var colorBetweenColors = function colorBetweenColors(color1, color2, percBetween) {
 	var hex = function hex(x) {
@@ -19819,55 +19787,36 @@ var calculateRingStyles = function calculateRingStyles(_ref) {
 	return '\n        left: ' + spacing * 100 + '%;\n        top: ' + spacing * 100 + '%;\n        width: ' + (1 - spacing * 2) * 100 + '%;\n        height: ' + (1 - spacing * 2) * 100 + '%;\n        border-top-color: ' + colorBetweenColors(innerColor, outerColor, colorSteps * ringNumber) + ';\n        animation: TESpinnerLoading ' + thisTime + 's linear infinite;\n    ';
 };
 
-var Container$8 = styled__default.div(_templateObject$o, function (props) {
-	return '\n\t\t\ttext-align: center;\n\t\t';
-});
-var SpinnerWrapper = styled__default.div(_templateObject$o, function (props) {
+var Container$8 = styled__default.div(_templateObject$p);
+var SpinnerWrapper = styled__default.div(_templateObject2$d, function (props) {
 	var size = props.size;
 
 
-	var width = 80;
-	var height = 80;
 	switch (size) {
 		case 'small':
-			width = 40;
-			height = 40;
-			break;
+			return '\n\t\t\t\t\twidth: 40px;\n\t\t\t\t\theight: 40px;\n\t\t\t\t';
 		case 'medium':
-			width = 60;
-			height = 60;
-			break;
+			return '\n\t\t\t\t\twidth: 60px;\n\t\t\t\t\theight: 60px;\n\t\t\t\t';
 		case 'large':
-			width = 80;
-			height = 80;
-			break;
+			return '\n\t\t\t\t\twidth: 80px;\n\t\t\t\t\theight: 80px;\n\t\t\t\t';
 		default:
-			break;
+			return '\n\t\t\t\t\twidth: 80px;\n\t\t\t\t\theight: 80px;\n\t\t\t\t';
 	}
-
-	return '\n\t\t    position: relative;\n\t\t    width: ' + width + 'px;\n\t\t    height: ' + height + 'px;\n\t\t    display: inline-block;\n\t\t';
 });
-var Ring = styled__default.div(_templateObject$o, function (props) {
+var Ring = styled__default.div(_templateObject3$c, function (props) {
 	var theme = props.theme,
 	    ringNumber = props.ringNumber,
 	    totalRings = props.totalRings,
 	    innerColor = props.innerColor,
 	    outerColor = props.outerColor;
 
-
-	var styles = '\n\t\t    position: absolute;\n\t\t    border-radius: 50%;\n\t\t    overflow: hidden;\n\t\t    border-top: 3px solid transparent;\n\t\t    border-right: 1px solid transparent;\n\t\t    border-bottom: 1px solid transparent;\n\t\t    border-left: 1px solid transparent;\n\t\t';
-
-	styles += calculateRingStyles({
+	return calculateRingStyles({
 		ringNumber: ringNumber,
 		totalRings: totalRings,
 		innerColor: innerColor || theme.white,
 		outerColor: outerColor || theme.primary
 	});
-
-	return styles;
 });
-
-//
 
 var TESpinner = function TESpinner(props) {
 	var renderRings = function renderRings() {
@@ -19973,21 +19922,19 @@ TEPrivateRoute.defaultProps = {
 	accessDeniedPath: '/403'
 };
 
-var _templateObject$p = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$q = taggedTemplateLiteral(['\n\tlist-style: none;\n'], ['\n\tlist-style: none;\n']),
+    _templateObject2$e = taggedTemplateLiteral(['\n\tdisplay: block;\n\tcolor: ', ';\n\tpadding: 15px 20px;\n\tcursor: pointer;\n\tborder-left: 5px solid transparent;\n\ttransition: color 0.2s ease-in, border 0.2s ease-in;\n\ttext-decoration: none;\n\n\t:active,\n\t:hover,\n\t&.active {\n\t\tcolor: ', ';\n\t\tborder-color: ', ';\n\t}\n'], ['\n\tdisplay: block;\n\tcolor: ', ';\n\tpadding: 15px 20px;\n\tcursor: pointer;\n\tborder-left: 5px solid transparent;\n\ttransition: color 0.2s ease-in, border 0.2s ease-in;\n\ttext-decoration: none;\n\n\t:active,\n\t:hover,\n\t&.active {\n\t\tcolor: ', ';\n\t\tborder-color: ', ';\n\t}\n']),
+    _templateObject3$d = taggedTemplateLiteral(['\n\tfont-size: 18px;\n'], ['\n\tfont-size: 18px;\n']);
 
-var Li = styled__default.li(_templateObject$p, function (props) {
-	return '\n            list-style: none;\n        ';
+var Li = styled__default.li(_templateObject$q);
+var Link = styled__default(reactRouterDom.NavLink)(_templateObject2$e, function (props) {
+	return props.theme.darkerGray;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var Link = styled__default(reactRouterDom.NavLink)(_templateObject$p, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tdisplay: block;\n\t\t\tcolor: ' + theme.darkGray + ';\n\t\t\tpadding: 15px 20px;\n\t\t\tcursor: pointer;\n\t\t\tborder-left: 5px solid transparent;\n\t\t\ttransition: color 0.2s ease-in, border 0.2s ease-in;\n\t\t\ttext-decoration: none;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t&.active{\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n        ';
-});
-var Title$3 = styled__default.span(_templateObject$p, function (props) {
-	return '\n        \tfont-size: 18px;\n        ';
-});
-
-//
+var Title$3 = styled__default.span(_templateObject3$d);
 
 var TESideNavLink = function TESideNavLink(props) {
 	var location = props.location,
@@ -20029,23 +19976,19 @@ TESideNavLink.defaultProps = {
 
 var TESideNavLink$1 = reactRouter.withRouter(TESideNavLink);
 
-var _templateObject$q = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$r = taggedTemplateLiteral(['\n\tposition: fixed;\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tmax-height: 100vh;\n\theight: 100%;\n\twidth: ', 'px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tz-index: 20;\n\tbackground-color: ', ';\n\toverflow-y: auto;\n\t/*Investigate if this should be repleaced by one of the theme shadows*/\n\tbox-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px, rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;\n'], ['\n\tposition: fixed;\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tmax-height: 100vh;\n\theight: 100%;\n\twidth: ', 'px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tz-index: 20;\n\tbackground-color: ', ';\n\toverflow-y: auto;\n\t/*Investigate if this should be repleaced by one of the theme shadows*/\n\tbox-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px, rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;\n']),
+    _templateObject2$f = taggedTemplateLiteral(['\n\tobject-fit: contain;\n\twidth: 100%;\n\tpadding: 30px 60px;\n'], ['\n\tobject-fit: contain;\n\twidth: 100%;\n\tpadding: 30px 60px;\n']),
+    _templateObject3$e = taggedTemplateLiteral(['\n\theight: 100%;\n'], ['\n\theight: 100%;\n']),
+    _templateObject4$c = taggedTemplateLiteral(['\n\tmargin: 0px;\n\tpadding: 0px;\n'], ['\n\tmargin: 0px;\n\tpadding: 0px;\n']);
 
-var Container$9 = styled__default.div(_templateObject$q, function (props) {
-	var theme = props.theme,
-	    sidebarWidth = props.sidebarWidth;
-
-	return '\n\t\t\tposition: fixed;\n\t\t\ttop: 0px;\n\t\t\tbottom: 0px;\n\t\t\tleft: 0px;\n\t\t\tmax-height: 100vh;\n\t\t\theight: 100%;\n\t\t\twidth: ' + sidebarWidth + 'px;\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\tz-index: 20;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\toverflow-y: auto;\n\t\t\tbox-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px, rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;\n\t\t';
+var Container$9 = styled__default.div(_templateObject$r, function (props) {
+	return props.sidebarWidth;
+}, function (props) {
+	return props.theme.white;
 });
-var Logo = styled__default.img(_templateObject$q, function (props) {
-	return '\n\t\t\tobject-fit: contain;\n\t\t\twidth: 100%;\n\t\t\tpadding: 30px 60px;\n\t\t';
-});
-var NavContainer = styled__default.div(_templateObject$q, function (props) {
-	return '\n\t\t\theight: 100%;\n\t\t';
-});
-var MainUl = styled__default.ul(_templateObject$q, function (props) {
-	return '\n\t\t\tmargin: 0px;\n\t\t\tpadding: 0px;\n\t\t';
-});
+var Logo = styled__default.img(_templateObject2$f);
+var NavContainer = styled__default.div(_templateObject3$e);
+var MainUl = styled__default.ul(_templateObject4$c);
 
 var TESideNavbar = function TESideNavbar(props) {
 	var sidebarWidth = props.sidebarWidth,
@@ -20105,31 +20048,29 @@ TESideNavbar.defaultProps = {
 	sidebarWidth: 200
 };
 
-var _templateObject$r = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$s = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\tbackground-color: ', ';\n\tpadding-left: 30px;\n\tbox-shadow: ', ';\n\tz-index: 5;\n\n\t@media (max-width: 800px) {\n\t\tpadding-left: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding-left: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding-left: 15px;\n\t}\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\tbackground-color: ', ';\n\tpadding-left: 30px;\n\tbox-shadow: ', ';\n\tz-index: 5;\n\n\t@media (max-width: 800px) {\n\t\tpadding-left: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\tpadding-left: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\tpadding-left: 15px;\n\t}\n']),
+    _templateObject2$g = taggedTemplateLiteral(['\n\tdisplay: flex;\n\talign-items: flex-end;\n\tjustify-content: space-between;\n\theight: 70px;\n\tborder-top: 1px solid ', ';\n\tpadding-right: 30px;\n\n\t@media (max-width: 800px) {\n\t\theight: 65px;\n\t\tpadding-right: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\theight: 60px;\n\t\tpadding-right: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\theight: 55px;\n\t\tpadding-right: 15px;\n\t}\n'], ['\n\tdisplay: flex;\n\talign-items: flex-end;\n\tjustify-content: space-between;\n\theight: 70px;\n\tborder-top: 1px solid ', ';\n\tpadding-right: 30px;\n\n\t@media (max-width: 800px) {\n\t\theight: 65px;\n\t\tpadding-right: 25px;\n\t}\n\t@media (max-width: 650px) {\n\t\theight: 60px;\n\t\tpadding-right: 20px;\n\t}\n\t@media (max-width: 450px) {\n\t\theight: 55px;\n\t\tpadding-right: 15px;\n\t}\n']),
+    _templateObject3$f = taggedTemplateLiteral(['\n\tmargin: 0px;\n\tpadding: 0px;\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: flex-end;\n\toverflow-x: auto;\n'], ['\n\tmargin: 0px;\n\tpadding: 0px;\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: flex-end;\n\toverflow-x: auto;\n']),
+    _templateObject4$d = taggedTemplateLiteral(['\n\tlist-style: none;\n\twidth: 100px;\n\tflex-shrink: 0;\n'], ['\n\tlist-style: none;\n\twidth: 100px;\n\tflex-shrink: 0;\n']),
+    _templateObject5$b = taggedTemplateLiteral(['\n\tdisplay: block;\n\ttext-align: center;\n\twidth: 100%;\n\tline-height: 40px;\n\tborder-bottom: 4px solid transparent;\n\tfont-size: 16px;\n\twhite-space: nowrap;\n\ttext-decoration: none;\n\tcolor: ', ';\n\n\ttransition: border 0.2s ease-in, color 0.2s ease-in;\n\n\t:active,\n\t:hover,\n\t&.active {\n\t\tcolor: ', ';\n\t\tborder-color: ', ';\n\t}\n'], ['\n\tdisplay: block;\n\ttext-align: center;\n\twidth: 100%;\n\tline-height: 40px;\n\tborder-bottom: 4px solid transparent;\n\tfont-size: 16px;\n\twhite-space: nowrap;\n\ttext-decoration: none;\n\tcolor: ', ';\n\n\ttransition: border 0.2s ease-in, color 0.2s ease-in;\n\n\t:active,\n\t:hover,\n\t&.active {\n\t\tcolor: ', ';\n\t\tborder-color: ', ';\n\t}\n']);
 
-var Container$a = styled__default.div(_templateObject$r, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tposition: relative;\n\t\t\twidth: 100%;\n\t\t\tbackground-color: ' + theme.white + ';\n\t\t\tpadding-left: 30px;\n\t\t\tbox-shadow: ' + theme.shadowBottom + ';\n\t\t\tz-index: 5;\n\n\t\t\t@media (max-width: 800px) {\n\t\t\t\tpadding-left: 25px;\n\t\t\t}\n\t\t\t@media (max-width: 650px) {\n\t\t\t\tpadding-left: 20px;\n\t\t\t}\n\t\t\t@media (max-width: 450px) {\n\t\t\t\tpadding-left: 15px;\n\t\t\t}\n\t\t';
+var Container$a = styled__default.div(_templateObject$s, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.shadowBottom;
 });
-var Content$2 = styled__default.div(_templateObject$r, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tdisplay: flex;\n\t\t\talign-items: flex-end;\n\t\t\tjustify-content: space-between;\n\t\t\theight: 70px;\n\t\t\tborder-top: 1px solid ' + theme.lightGray + ';\n\t\t\tpadding-right: 30px;\n\n\t\t\t@media (max-width: 800px) {\n\t\t\t\theight: 65px;\n\t\t\t\tpadding-right: 25px;\n\t\t\t}\n\t\t\t@media (max-width: 650px) {\n\t\t\t\theight: 60px;\n\t\t\t\tpadding-right: 20px;\n\t\t\t}\n\t\t\t@media (max-width: 450px) {\n\t\t\t\theight: 55px;\n\t\t\t\tpadding-right: 15px;\n\t\t\t}\n\t\t';
+var Content$2 = styled__default.div(_templateObject2$g, function (props) {
+	return props.theme.lightGray;
 });
-var Ul = styled__default.ul(_templateObject$r, function (props) {
-	return '\n\t\t\tmargin: 0px;\n\t\t\tpadding: 0px;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: flex-start;\n\t\t\talign-items: flex-end;\n\t\t\toverflow-x: auto;\n\t\t';
+var Ul = styled__default.ul(_templateObject3$f);
+var Li$1 = styled__default.li(_templateObject4$d);
+var Link$1 = styled__default(reactRouterDom.NavLink)(_templateObject5$b, function (props) {
+	return props.theme.darkerGray;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var Li$1 = styled__default.li(_templateObject$r, function (props) {
-	return '\n\t\t\tlist-style: none;\n\t\t\twidth: 100px;\n\t\t\tflex-shrink: 0;\n\t\t';
-});
-var Link$1 = styled__default(reactRouterDom.NavLink)(_templateObject$r, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tdisplay: block;\n\t\t\ttext-align: center;\n\t\t\twidth: 100%;\n\t\t\tline-height: 40px;\n\t\t\tborder-bottom: 4px solid transparent;\n\t\t\tfont-size: 16px;\n\t\t\twhite-space: nowrap;\n\t\t\ttext-decoration: none;\n\t\t\tcolor: ' + theme.darkerGray + ';\n\n\t\t\ttransition: border 0.2s ease-in, color 0.2s ease-in;\n\n\t\t\t:active {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t:hover {\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t\t&.active{\n\t\t\t\tcolor: ' + theme.primary + ';\n\t\t\t\tborder-color: ' + theme.primary + ';\n\t\t\t}\n\t\t';
-});
-
-//
 
 var TESubNavbar = function TESubNavbar(props) {
 	var links = props.links,
@@ -20164,28 +20105,27 @@ TESubNavbar.propTypes = {
 	rightComponent: PropTypes.node
 };
 
-var _templateObject$s = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$t = taggedTemplateLiteral(['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 600px;\n\t\tmargin: 100px auto;\n\t}\n'], ['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 600px;\n\t\tmargin: 100px auto;\n\t}\n']),
+    _templateObject2$h = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 24px;\n\tmargin-bottom: 20px;\n\tcolor: ', ';\n\tpadding: 30px 30px 0px 30px;\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 24px;\n\tmargin-bottom: 20px;\n\tcolor: ', ';\n\tpadding: 30px 30px 0px 30px;\n']),
+    _templateObject3$g = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 18px;\n\tline-height: 1.25;\n\tmargin-bottom: 30px;\n\tpadding: 0px 40px;\n\tcolor: ', ';\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 18px;\n\tline-height: 1.25;\n\tmargin-bottom: 30px;\n\tpadding: 0px 40px;\n\tcolor: ', ';\n']),
+    _templateObject4$e = taggedTemplateLiteral(['\n\tborder-top: 1px solid ', ';\n\tborder-right: none;\n\tborder-bottom: none;\n\tborder-left: none;\n\tline-height: 2;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 20px;\n\tborder-bottom-right-radius: 20px;\n\ttransition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;\n\n\t:active,\n\t:hover {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: none;\n\t\tborder-bottom: none;\n\t\tborder-left: none;\n\t}\n'], ['\n\tborder-top: 1px solid ', ';\n\tborder-right: none;\n\tborder-bottom: none;\n\tborder-left: none;\n\tline-height: 2;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 20px;\n\tborder-bottom-right-radius: 20px;\n\ttransition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;\n\n\t:active,\n\t:hover {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: none;\n\t\tborder-bottom: none;\n\t\tborder-left: none;\n\t}\n']);
 
-var Popup$1 = styled__default(TEPopup)(_templateObject$s, function (props) {
-  return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
+var Popup$1 = styled__default(TEPopup)(_templateObject$t);
+var Title$4 = styled__default.h4(_templateObject2$h, function (props) {
+	return props.theme.darkerGray;
 });
-var Title$4 = styled__default.h4(_templateObject$s, function (props) {
-  var theme = props.theme;
-
-  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
+var Message$1 = styled__default.p(_templateObject3$g, function (props) {
+	return props.theme.darkerGray;
 });
-var Message$1 = styled__default.p(_templateObject$s, function (props) {
-  var theme = props.theme;
-
-  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
+var Button$3 = styled__default(TEButton)(_templateObject4$e, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var Button$2 = styled__default(TEButton)(_templateObject$s, function (props) {
-  var theme = props.theme;
-
-  return '\n        border-top: 1px solid ' + theme.primary + ';\n        border-right: none;\n        border-bottom: none;\n        border-left: none;\n        line-height: 2;\n        border-top-left-radius: 0px;\n        border-top-right-radius: 0px;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n        transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;\n\n        :active {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        :hover {\n            color: ' + theme.white + ';\n            background-color: ' + theme.primary + ';\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: none;\n        }\n        ';
-});
-
-//
 
 var TEAlert = function TEAlert(props) {
 	var title = props.title,
@@ -20212,7 +20152,7 @@ var TEAlert = function TEAlert(props) {
 		),
 		children,
 		React__default.createElement(
-			Button$2,
+			Button$3,
 			{ onClick: onClick, className: 'TEAlertButton' },
 			buttonTitle
 		)
@@ -20230,36 +20170,47 @@ TEAlert.defaultProps = {
 	buttonTitle: 'Okay'
 };
 
-var _templateObject$t = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$u = taggedTemplateLiteral(['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 600px;\n\t\tmargin: 100px auto;\n\t}\n'], ['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 600px;\n\t\tmargin: 100px auto;\n\t}\n']),
+    _templateObject2$i = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 24px;\n\tmargin-bottom: 20px;\n\tcolor: ', ';\n\tpadding: 30px 30px 0px 30px;\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 24px;\n\tmargin-bottom: 20px;\n\tcolor: ', ';\n\tpadding: 30px 30px 0px 30px;\n']),
+    _templateObject3$h = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 18px;\n\tline-height: 1.25;\n\tmargin-bottom: 30px;\n\tpadding: 0px 40px;\n\tcolor: ', ';\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 18px;\n\tline-height: 1.25;\n\tmargin-bottom: 30px;\n\tpadding: 0px 40px;\n\tcolor: ', ';\n']),
+    _templateObject4$f = taggedTemplateLiteral(['\n\toverflow: hidden;\n\tdisplay: flex;\n'], ['\n\toverflow: hidden;\n\tdisplay: flex;\n']),
+    _templateObject5$c = taggedTemplateLiteral(['\n\twidth: 50%;\n\tfont-size: 18px;\n\tline-height: 2;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 20px;\n\tborder-bottom-right-radius: 0px;\n\tborder-top: 1px solid ', ';\n\tborder-right: 1px solid ', ';\n\tborder-bottom: none;\n\tborder-left: none;\n\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: 1px solid ', ';\n\t\tborder-bottom: none;\n\t\tborder-left: none;\n\t}\n'], ['\n\twidth: 50%;\n\tfont-size: 18px;\n\tline-height: 2;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 20px;\n\tborder-bottom-right-radius: 0px;\n\tborder-top: 1px solid ', ';\n\tborder-right: 1px solid ', ';\n\tborder-bottom: none;\n\tborder-left: none;\n\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: 1px solid ', ';\n\t\tborder-bottom: none;\n\t\tborder-left: none;\n\t}\n']),
+    _templateObject6$4 = taggedTemplateLiteral(['\n\twidth: 50%;\n\tfont-size: 18px;\n\tline-height: 2;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 0px;\n\tborder-bottom-right-radius: 20px;\n\tborder-top: 1px solid ', ';\n\tborder-right: none;\n\tborder-bottom: none;\n\tborder-left: 1px solid ', ';\n\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: none;\n\t\tborder-bottom: none;\n\t\tborder-left: 1px solid ', ';\n\t}\n'], ['\n\twidth: 50%;\n\tfont-size: 18px;\n\tline-height: 2;\n\tborder-top-left-radius: 0px;\n\tborder-top-right-radius: 0px;\n\tborder-bottom-left-radius: 0px;\n\tborder-bottom-right-radius: 20px;\n\tborder-top: 1px solid ', ';\n\tborder-right: none;\n\tborder-bottom: none;\n\tborder-left: 1px solid ', ';\n\n\t:hover,\n\t:active {\n\t\tcolor: ', ';\n\t\tbackground-color: ', ';\n\t\tborder-top: 1px solid ', ';\n\t\tborder-right: none;\n\t\tborder-bottom: none;\n\t\tborder-left: 1px solid ', ';\n\t}\n']);
 
-var Popup$2 = styled__default(TEPopup)(_templateObject$t, function (props) {
-  return '\n            & > div{\n                width: 90%;\n                max-width: 600px;\n                margin: 100px auto;\n            }\n        ';
+var Popup$2 = styled__default(TEPopup)(_templateObject$u);
+var Title$5 = styled__default.h4(_templateObject2$i, function (props) {
+	return props.theme.darkerGray;
 });
-var Title$5 = styled__default.h4(_templateObject$t, function (props) {
-  var theme = props.theme;
-
-  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 24px;\n            margin-bottom: 20px;\n            color: ' + theme.darkerGray + ';\n            padding: 30px 30px 0px 30px;\n        ';
+var Message$2 = styled__default.p(_templateObject3$h, function (props) {
+	return props.theme.darkerGray;
 });
-var Message$2 = styled__default.p(_templateObject$t, function (props) {
-  var theme = props.theme;
-
-  return '\n            position: relative;\n            width: 100%;\n            text-align: center;\n            font-size: 18px;\n            line-height: 1.25;\n            margin-bottom: 30px;\n            padding: 0px 40px;\n            color: ' + theme.darkerGray + ';\n        ';
+var ButtonContainer$2 = styled__default.div(_templateObject4$f);
+var LeftButton$1 = styled__default(TEButton)(_templateObject5$c, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var ButtonContainer$2 = styled__default.div(_templateObject$t, function (props) {
-  return '\n            overflow: hidden;\n            display: flex;\n        ';
+var RightButton$1 = styled__default(TEButton)(_templateObject6$4, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.white;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
+}, function (props) {
+	return props.theme.primary;
 });
-var LeftButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
-  var theme = props.theme;
-
-  return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 20px;\n            border-bottom-right-radius: 0px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: 1px solid ' + theme.primary + ';\n            border-bottom: none;\n            border-left: none;\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: 1px solid ' + theme.primary + ';\n                border-bottom: none;\n                border-left: none;\n           }\n        ';
-});
-var RightButton$1 = styled__default(TEButton)(_templateObject$t, function (props) {
-  var theme = props.theme;
-
-  return '\n            width: 50%;\n            font-size: 18px;\n            line-height: 2;\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n            border-bottom-left-radius: 0px;\n            border-bottom-right-radius: 20px;\n            border-top: 1px solid ' + theme.primary + ';\n            border-right: none;\n            border-bottom: none;\n            border-left: 1px solid ' + theme.primary + ';\n\n            :hover {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n            }\n            :active {\n                color: ' + theme.white + ';\n                background-color: ' + theme.primary + ';\n                border-top: 1px solid ' + theme.primary + ';\n                border-right: none;\n                border-bottom: none;\n                border-left: 1px solid ' + theme.primary + ';\n           }\n        ';
-});
-
-//
 
 var TEConfirm = function TEConfirm(props) {
 	var title = props.title,
@@ -20321,21 +20272,15 @@ TEConfirm.defaultProps = {
 	rightButtonTitle: 'Confirm'
 };
 
-var _templateObject$u = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$v = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\t.TEPopupContent {\n\t\tbackground-color: rgba(0, 0, 0, 0.5);\n\t\tpadding: 60px;\n\t\ttext-align: center;\n\t}\n'], ['\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\t.TEPopupContent {\n\t\tbackground-color: rgba(0, 0, 0, 0.5);\n\t\tpadding: 60px;\n\t\ttext-align: center;\n\t}\n']),
+    _templateObject2$j = taggedTemplateLiteral(['\n\tmargin-bottom: 30px;\n'], ['\n\tmargin-bottom: 30px;\n']),
+    _templateObject3$i = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 24px;\n\tmargin: 0px;\n\tcolor: ', ';\n'], ['\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfont-size: 24px;\n\tmargin: 0px;\n\tcolor: ', ';\n']);
 
-var Popup$3 = styled__default(TEPopup)(_templateObject$u, function (props) {
-	return '\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\n            & > div{\n\t\t\t\tbackground-color: rgba(0,0,0,0.5);\n\t\t\t\tpadding: 60px;\n\t\t\t\ttext-align: center;\n            }\n        ';
+var Popup$3 = styled__default(TEPopup)(_templateObject$v);
+var Spinner = styled__default(TESpinner)(_templateObject2$j);
+var Message$3 = styled__default.p(_templateObject3$i, function (props) {
+	return props.theme.white;
 });
-var Spinner = styled__default(TESpinner)(_templateObject$u, function (props) {
-	return '\n            margin-bottom: 30px;\n        ';
-});
-var Message$3 = styled__default.p(_templateObject$u, function (props) {
-	var theme = props.theme;
-
-	return '\n\t\t\tposition: relative;\n\t\t\twidth: 100%;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 24px;\n\t\t\tmargin: 0px;\n\t\t\tcolor: ' + theme.white + ';\n\t\t';
-});
-
-//
 
 var TENetworkActivity = function TENetworkActivity(props) {
 	var visible = props.visible,
@@ -20359,13 +20304,9 @@ TENetworkActivity.propTypes = {
 	message: PropTypes.string
 };
 
-var _templateObject$v = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']);
+var _templateObject$w = taggedTemplateLiteral(['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 900px;\n\t\tmargin: 100px auto;\n\t\tpadding: 30px;\n\t}\n'], ['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 900px;\n\t\tmargin: 100px auto;\n\t\tpadding: 30px;\n\t}\n']);
 
-var Popup$4 = styled__default(TEPopup)(_templateObject$v, function (props) {
-	return '\n\t\t\t& > div{\n\t\t\t\twidth: 90%;\n\t\t\t\tmax-width: 900px;\n\t\t\t\tmargin: 100px auto;\n\t\t\t\tpadding: 30px;\n\t\t\t}\n\t\t';
-});
-
-//
+var Popup$4 = styled__default(TEPopup)(_templateObject$w);
 
 var TEPopupMultiStepForm = function TEPopupMultiStepForm(props) {
 	var handleSubmit = function handleSubmit(e) {
@@ -20400,8 +20341,6 @@ TEPopupMultiStepForm.propTypes = {
 TEPopupMultiStepForm.defaultProps = {
 	visible: false
 };
-
-//
 
 var ScrollToTop = function ScrollToTop(props) {
 	var location = props.location,
@@ -21748,7 +21687,7 @@ TEHelmet.propTypes = {
 	description: PropTypes.string
 };
 
-var _templateObject$w = taggedTemplateLiteral(['\n\t\t\t& * {\n\t\t\t\tbox-sizing: border-box;\n\t\t\t}\n\n\t\t\t@keyframes TESpinnerLoading {\n\t\t\t\t\tto {\n\t\t\t\t\t\t\t-webkit-transform: rotate(1turn);\n\t\t\t\t\t\t\ttransform: rotate(1turn)\n\t\t\t\t\t}\n\t\t\t}\n\t\t\t\n\n\t\t\t/*\n\t\t\t*\n\t\t\t* React Power Select\n\t\t\t*\n\t\t\t*/\n\t\t\t.PowerSelect {\n\t\t\t\tposition: relative;\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\tfont-size: 16px;\n\t\t\t\tcursor: pointer;\n\t\t\t\tbackground-color: ', ';\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t\tborder-radius: 5px;\n\t\t\t\tbox-sizing: border-box;\n\t\t\t\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t\t\t}\n\t\t\t.PowewrSelect * {\n\t\t\t\tbox-sizing: border-box;\n\t\t\t}\n\t\t\t.PowerSelect.white-border {\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t}\n\t\t\t.PowerSelect:focus {\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect--focused {\n\t\t\t}\n\t\t\t.PowerSelect--disabled {\n\t\t\t\tbackground-color: ', ';\n\t\t\t\tcursor: not-allowed;\n\t\t\t}\n\t\t\t.PowerSelect--disabled .PowerSelect__Trigger {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\t\t\t.PowerSelect--disabled .PowerSelect__TriggerInput {\n\t\t\t\tbackground-color: ', ';\n\t\t\t}\n\t\t\t.PowerSelect--open {\n\t\t\t\tborder-bottom-right-radius: 0;\n\t\t\t\tborder-bottom-left-radius: 0;\n\t\t\t\tborder-bottom: 0;\n\t\t\t}\n\t\t\t.PowerSelect--open .PowerSelect__TriggerStatus:before {\n\t\t\t\ttransform: rotate(-180deg);\n\t\t\t}\n\t\t\t.PowerSelect__Trigger {\n\t\t\t\tposition: relative;\n\t\t\t\theight: 39px;\n\t\t\t\toverflow: hidden;\n\t\t\t\twhite-space: nowrap;\n\t\t\t\ttext-overflow: ellipsis;\n\t\t\t}\n\t\t\t.PowerSelect__Menu {\n\t\t\t\tbackground-color: ', ';\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Menu.white-border__Menu {\n\t\t\t\tborder: none;\n\t\t\t\tborder-top: 1px solid #a0a0a0;\n\t\t\t}\n\t\t\t.PowerSelect__Menu:focus {\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect__Options {\n\t\t\t\tposition: relative;\n\t\t\t\tmax-height: 238px;\n\t\t\t\toverflow: auto;\n\t\t\t}\n\t\t\t.PowerSelect__OptGroup {\n\t\t\t\tpadding-left: 8px;\n\t\t\t}\n\t\t\t.PowerSelect__OptGroup__Label {\n\t\t\t\tfont-weight: 700;\n\t\t\t\tfont-size: 0.9em;\n\t\t\t\tcolor: ', ';\n\t\t\t\tpadding: 8px 0 4px;\n\t\t\t}\n\t\t\t.PowerSelect__Option {\n\t\t\t\tcursor: pointer;\n\t\t\t\tpadding: 8px 12px;\n\t\t\t}\n\t\t\t.PowerSelect__Option:not(.PowerSelect__Option--disabled):hover {\n\t\t\t\tbackground-color: rgba(55, 50, 117 0.5);\n\t\t\t}\n\t\t\t.PowerSelect__Option--disabled {\n\t\t\t\tcolor: ', ';\n\t\t\t\tcursor: not-allowed;\n\t\t\t}\n\t\t\t.PowerSelect__Option--highlighted {\n\t\t\t\tbackground-color: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__BeforeOptions {\n\t\t\t\tpadding: 8px 12px;\n\t\t\t}\n\t\t\t.PowerSelect__Placeholder {\n\t\t\t\tcolor: ', ';\n\t\t\t\tfont-size: 14px;\n\t\t\t}\n\t\t\t.PowerSelect__SearchInputContainer {\n\t\t\t\tpadding: 8px;\n\t\t\t}\n\t\t\t.PowerSelect__SearchInput {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 34px;\n\t\t\t\tpadding: 4px 8px;\n\t\t\t\tline-height: 1.4;\n\t\t\t\tfont-size: inherit;\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t\tborder-radius: 2px;\n\t\t\t\tcursor: pointer;\n\t\t\t\tbox-sizing: border-box;\n\t\t\t}\n\t\t\t.PowerSelect__SearchInput:focus {\n\t\t\t\tborder-color: ', ';\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerInput {\n\t\t\t\tdisplay: inline-block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 34px;\n\t\t\t\tborder: none;\n\t\t\t\tcursor: pointer;\n\t\t\t\tpadding: 4px 22px 4px 8px;\n\t\t\t\tfont-size: inherit;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerInput:focus {\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__LHS,\n\t\t\t.PowerSelect__Trigger__RHS {\n\t\t\t\tdisplay: table-cell;\n\t\t\t\tvertical-align: middle;\n\t\t\t\twhite-space: nowrap;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__LHS {\n\t\t\t\tpadding-left: 8px;\n\t\t\t\tpadding-right: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__RHS {\n\t\t\t\tpadding-right: 4px;\n\t\t\t\tpadding-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerLabel {\n\t\t\t\tpadding: 6px 22px 6px 8px;\n\t\t\t\tcolor: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__LHS + .PowerSelect__TriggerLabel {\n\t\t\t\tpadding-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerStatus {\n\t\t\t\tpadding-top: 2px;\n\t\t\t\tpadding-right: 8px;\n\t\t\t\tpadding-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerStatus:before {\n\t\t\t\tcontent: \'\';\n\t\t\t\tdisplay: block;\n\t\t\t\tborder-top: 4px solid ', ';\n\t\t\t\tborder-left: 4px solid transparent;\n\t\t\t\tborder-right: 4px solid transparent;\n\t\t\t}\n\t\t\t.PowerSelect__Clear {\n\t\t\t\tpadding: 4px;\n\t\t\t\tcolor: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Clear:hover {\n\t\t\t\tcolor: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Clear:before {\n\t\t\t\tcontent: "\\D7";\n\t\t\t}\n\t\t\t.PowerSelect__Trigger--empty .PowerSelect__Clear {\n\t\t\t\tvisibility: hidden;\n\t\t\t}\n\t\t\t.PowerSelect__Clear,\n\t\t\t.PowerSelect__TriggerInputContainer,\n\t\t\t.PowerSelect__TriggerLabel,\n\t\t\t.PowerSelect__TriggerStatus,\n\t\t\t.PowerSelectMultiple__OptionsContainer {\n\t\t\t\tdisplay: table-cell;\n\t\t\t\twidth: 100%;\n\t\t\t\tvertical-align: middle;\n\t\t\t\theight: 39px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__OptionsContainer {\n\t\t\t\tpadding-top: 2px;\n\t\t\t\tpadding-bottom: 2px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOptions {\n\t\t\t\tlist-style: none;\n\t\t\t\tpadding-left: 0;\n\t\t\t\tdisplay: block;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOptions:after {\n\t\t\t\tcontent: \'\';\n\t\t\t\tdisplay: table;\n\t\t\t\tclear: both;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOptions > li {\n\t\t\t\tdisplay: block;\n\t\t\t\tfloat: left;\n\t\t\t\tmargin-top: 2px;\n\t\t\t\tmargin-bottom: 2px;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger--empty .PowerSelectMultiple_TriggerInputContainer {\n\t\t\t\tfloat: none;\n\t\t\t\tmargin-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption {\n\t\t\t\tline-height: 29px;\n\t\t\t\tmargin-left: 4px;\n\t\t\t\tbackground-color: #ebeeff;\n\t\t\t\tborder: 1px solid #c6cfff;\n\t\t\t\tcolor: ', ';\n\t\t\t\tborder-radius: 3px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption__Close,\n\t\t\t.PowerSelectMultiple__SelectedOption__Label {\n\t\t\t\tpadding: 0 6px;\n\t\t\t\tdisplay: block;\n\t\t\t\tfloat: left;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption__Close {\n\t\t\t\tborder-left: 1px solid #c6cfff;\n\t\t\t\tcursor: pointer;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption__Close:hover {\n\t\t\t\tbackground-color: #dce1ff;\n\t\t\t}\n\t\t\t.PowerSelectMultiple .PowerSelect__Trigger {\n\t\t\t\twhite-space: normal;\n\t\t\t\theight: auto;\n\t\t\t}\n\t\t\t.PowerSelectMultiple .PowerSelect__TriggerInput {\n\t\t\t\tdisplay: inline-block;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0;\n\t\t\t\theight: 26px;\n\t\t\t\tmargin-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple .PowerSelect__Trigger--empty .PowerSelect__TriggerInput {\n\t\t\t\twidth: 100%;\n\t\t\t}\n\n\t\t\t.tether-element {\n\t\t\t\tz-index: 1000;\n\t\t\t}\n\n\t\t\t/*\n\t\t\t*\n\t\t\t* React DatePicker Base\n\t\t\t*\n\t\t\t*/\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow {\n\t\t\t  margin-left: -8px;\n\t\t\t  position: absolute;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  box-sizing: content-box;\n\t\t\t  position: absolute;\n\t\t\t  border: 8px solid transparent;\n\t\t\t  height: 0;\n\t\t\t  width: 1px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  content: "";\n\t\t\t  z-index: -1;\n\t\t\t  border-width: 8px;\n\t\t\t  left: -8px;\n\t\t\t  border-bottom-color: #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {\n\t\t\t  top: 0;\n\t\t\t  margin-top: -8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\t\t  border-top: none;\n\t\t\t  border-bottom-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\t\t  top: -1px;\n\t\t\t  border-bottom-color: #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow {\n\t\t\t  bottom: 0;\n\t\t\t  margin-bottom: -8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  border-bottom: none;\n\t\t\t  border-top-color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  bottom: -1px;\n\t\t\t  border-top-color: #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker-wrapper {\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker {\n\t\t\t  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;\n\t\t\t  font-size: 0.8rem;\n\t\t\t  background-color: #fff;\n\t\t\t  color: #000;\n\t\t\t  border: 1px solid #aeaeae;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  display: inline-block;\n\t\t\t  position: relative;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__triangle {\n\t\t\t  left: 35px;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__time-container {\n\t\t\t  border-left: 0;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__time {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__time-box {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__triangle {\n\t\t\t  position: absolute;\n\t\t\t  left: 50px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper {\n\t\t\t  z-index: 1;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] {\n\t\t\t  margin-top: 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] {\n\t\t\t  margin-bottom: 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="right"] {\n\t\t\t  margin-left: 8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="right"] .react-datepicker__triangle {\n\t\t\t  left: auto;\n\t\t\t  right: 42px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="left"] {\n\t\t\t  margin-right: 8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="left"] .react-datepicker__triangle {\n\t\t\t  left: 42px;\n\t\t\t  right: auto;\n\t\t\t}\n\n\t\t\t.react-datepicker__header {\n\t\t\t  text-align: center;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t  border-bottom: 1px solid #aeaeae;\n\t\t\t  border-top-left-radius: 0.3rem;\n\t\t\t  border-top-right-radius: 0.3rem;\n\t\t\t  padding-top: 8px;\n\t\t\t  position: relative;\n\t\t\t}\n\n\t\t\t.react-datepicker__header--time {\n\t\t\t  padding-bottom: 8px;\n\t\t\t  padding-left: 5px;\n\t\t\t  padding-right: 5px;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown-container--select,\n\t\t\t.react-datepicker__month-dropdown-container--select,\n\t\t\t.react-datepicker__month-year-dropdown-container--select,\n\t\t\t.react-datepicker__year-dropdown-container--scroll,\n\t\t\t.react-datepicker__month-dropdown-container--scroll,\n\t\t\t.react-datepicker__month-year-dropdown-container--scroll {\n\t\t\t  display: inline-block;\n\t\t\t  margin: 0 2px;\n\t\t\t}\n\n\t\t\t.react-datepicker__current-month,\n\t\t\t.react-datepicker-time__header {\n\t\t\t  margin-top: 0;\n\t\t\t  color: #000;\n\t\t\t  font-weight: bold;\n\t\t\t  font-size: 0.944rem;\n\t\t\t}\n\n\t\t\t.react-datepicker-time__header {\n\t\t\t  text-overflow: ellipsis;\n\t\t\t  white-space: nowrap;\n\t\t\t  overflow: hidden;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation {\n\t\t\t  background: none;\n\t\t\t  line-height: 1.7rem;\n\t\t\t  text-align: center;\n\t\t\t  cursor: pointer;\n\t\t\t  position: absolute;\n\t\t\t  top: 10px;\n\t\t\t  width: 0;\n\t\t\t  padding: 0;\n\t\t\t  border: 0.45rem solid transparent;\n\t\t\t  z-index: 1;\n\t\t\t  height: 10px;\n\t\t\t  width: 10px;\n\t\t\t  text-indent: -999em;\n\t\t\t  overflow: hidden;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--previous {\n\t\t\t  left: 10px;\n\t\t\t  border-right-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--previous:hover {\n\t\t\t  border-right-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--previous--disabled, .react-datepicker__navigation--previous--disabled:hover {\n\t\t\t  border-right-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next {\n\t\t\t  right: 10px;\n\t\t\t  border-left-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\t\t  right: 80px;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next:hover {\n\t\t\t  border-left-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next--disabled, .react-datepicker__navigation--next--disabled:hover {\n\t\t\t  border-left-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years {\n\t\t\t  position: relative;\n\t\t\t  top: 0;\n\t\t\t  display: block;\n\t\t\t  margin-left: auto;\n\t\t\t  margin-right: auto;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-previous {\n\t\t\t  top: 4px;\n\t\t\t  border-top-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-previous:hover {\n\t\t\t  border-top-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-upcoming {\n\t\t\t  top: -4px;\n\t\t\t  border-bottom-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-upcoming:hover {\n\t\t\t  border-bottom-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__month-container {\n\t\t\t  float: left;\n\t\t\t}\n\n\t\t\t.react-datepicker__month {\n\t\t\t  margin: 0.4rem;\n\t\t\t  text-align: center;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container {\n\t\t\t  clear: both;\n\t\t\t  width: 100%;\n\t\t\t  float: left;\n\t\t\t  margin: 5px 0 10px 15px;\n\t\t\t  text-align: left;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__caption {\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container {\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input {\n\t\t\t  display: inline-block;\n\t\t\t  margin-left: 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input {\n\t\t\t  width: 85px;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-inner-spin-button,\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-outer-spin-button {\n\t\t\t  -webkit-appearance: none;\n\t\t\t  margin: 0;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"] {\n\t\t\t  -moz-appearance: textfield;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__delimiter {\n\t\t\t  margin-left: 5px;\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container {\n\t\t\t  float: right;\n\t\t\t  border-left: 1px solid #aeaeae;\n\t\t\t  width: 70px;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container--with-today-button {\n\t\t\t  display: inline;\n\t\t\t  border: 1px solid #aeaeae;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  position: absolute;\n\t\t\t  right: -72px;\n\t\t\t  top: 0;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time {\n\t\t\t  position: relative;\n\t\t\t  background: white;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\t\t  width: 70px;\n\t\t\t  overflow-x: hidden;\n\t\t\t  margin: 0 auto;\n\t\t\t  text-align: center;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {\n\t\t\t  list-style: none;\n\t\t\t  margin: 0;\n\t\t\t  height: calc(195px + (1.7rem / 2));\n\t\t\t  overflow-y: scroll;\n\t\t\t  padding-right: 0px;\n\t\t\t  padding-left: 0px;\n\t\t\t  width: 100%;\n\t\t\t  box-sizing: content-box;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {\n\t\t\t  height: 30px;\n\t\t\t  padding: 5px 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {\n\t\t\t  cursor: pointer;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {\n\t\t\t  background-color: #216ba5;\n\t\t\t  color: white;\n\t\t\t  font-weight: bold;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover {\n\t\t\t  background-color: #216ba5;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {\n\t\t\t  color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled:hover {\n\t\t\t  cursor: default;\n\t\t\t  background-color: transparent;\n\t\t\t}\n\n\t\t\t.react-datepicker__week-number {\n\t\t\t  color: #ccc;\n\t\t\t  display: inline-block;\n\t\t\t  width: 1.7rem;\n\t\t\t  line-height: 1.7rem;\n\t\t\t  text-align: center;\n\t\t\t  margin: 0.166rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__week-number.react-datepicker__week-number--clickable {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__week-number.react-datepicker__week-number--clickable:hover {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker__day-names,\n\t\t\t.react-datepicker__week {\n\t\t\t  white-space: nowrap;\n\t\t\t}\n\n\t\t\t.react-datepicker__day-name,\n\t\t\t.react-datepicker__day,\n\t\t\t.react-datepicker__time-name {\n\t\t\t  color: #000;\n\t\t\t  display: inline-block;\n\t\t\t  width: 1.7rem;\n\t\t\t  line-height: 1.7rem;\n\t\t\t  text-align: center;\n\t\t\t  margin: 0.166rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__day {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__day:hover {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--today {\n\t\t\t  font-weight: bold;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #3dcc4a;\n\t\t\t  color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted:hover {\n\t\t\t  background-color: #32be3f;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted-custom-1 {\n\t\t\t  color: magenta;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted-custom-2 {\n\t\t\t  color: green;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #216ba5;\n\t\t\t  color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--selected:hover, .react-datepicker__day--in-selecting-range:hover, .react-datepicker__day--in-range:hover {\n\t\t\t  background-color: #1d5d90;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--keyboard-selected {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #2a87d0;\n\t\t\t  color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--keyboard-selected:hover {\n\t\t\t  background-color: #1d5d90;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range) {\n\t\t\t  background-color: rgba(33, 107, 165, 0.5);\n\t\t\t}\n\n\t\t\t.react-datepicker__month--selecting-range .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range) {\n\t\t\t  background-color: #f0f0f0;\n\t\t\t  color: #000;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--disabled {\n\t\t\t  cursor: default;\n\t\t\t  color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--disabled:hover {\n\t\t\t  background-color: transparent;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-container {\n\t\t\t  position: relative;\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view,\n\t\t\t.react-datepicker__month-read-view,\n\t\t\t.react-datepicker__month-year-read-view {\n\t\t\t  border: 1px solid transparent;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view:hover,\n\t\t\t.react-datepicker__month-read-view:hover,\n\t\t\t.react-datepicker__month-year-read-view:hover {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__year-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view:hover .react-datepicker__month-read-view--down-arrow {\n\t\t\t  border-top-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow {\n\t\t\t  border-top-color: #ccc;\n\t\t\t  float: right;\n\t\t\t  margin-left: 20px;\n\t\t\t  top: 8px;\n\t\t\t  position: relative;\n\t\t\t  border-width: 0.45rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown,\n\t\t\t.react-datepicker__month-dropdown,\n\t\t\t.react-datepicker__month-year-dropdown {\n\t\t\t  background-color: #f0f0f0;\n\t\t\t  position: absolute;\n\t\t\t  width: 50%;\n\t\t\t  left: 25%;\n\t\t\t  top: 30px;\n\t\t\t  z-index: 1;\n\t\t\t  text-align: center;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  border: 1px solid #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown:hover,\n\t\t\t.react-datepicker__month-dropdown:hover,\n\t\t\t.react-datepicker__month-year-dropdown:hover {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown--scrollable,\n\t\t\t.react-datepicker__month-dropdown--scrollable,\n\t\t\t.react-datepicker__month-year-dropdown--scrollable {\n\t\t\t  height: 150px;\n\t\t\t  overflow-y: scroll;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option,\n\t\t\t.react-datepicker__month-option,\n\t\t\t.react-datepicker__month-year-option {\n\t\t\t  line-height: 20px;\n\t\t\t  width: 100%;\n\t\t\t  display: block;\n\t\t\t  margin-left: auto;\n\t\t\t  margin-right: auto;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:first-of-type,\n\t\t\t.react-datepicker__month-option:first-of-type,\n\t\t\t.react-datepicker__month-year-option:first-of-type {\n\t\t\t  border-top-left-radius: 0.3rem;\n\t\t\t  border-top-right-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:last-of-type,\n\t\t\t.react-datepicker__month-option:last-of-type,\n\t\t\t.react-datepicker__month-year-option:last-of-type {\n\t\t\t  -webkit-user-select: none;\n\t\t\t  -moz-user-select: none;\n\t\t\t  -ms-user-select: none;\n\t\t\t  user-select: none;\n\t\t\t  border-bottom-left-radius: 0.3rem;\n\t\t\t  border-bottom-right-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:hover,\n\t\t\t.react-datepicker__month-option:hover,\n\t\t\t.react-datepicker__month-year-option:hover {\n\t\t\t  background-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-upcoming,\n\t\t\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,\n\t\t\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming {\n\t\t\t  border-bottom-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-previous,\n\t\t\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,\n\t\t\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous {\n\t\t\t  border-top-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option--selected,\n\t\t\t.react-datepicker__month-option--selected,\n\t\t\t.react-datepicker__month-year-option--selected {\n\t\t\t  position: absolute;\n\t\t\t  left: 15px;\n\t\t\t}\n\n\t\t\t.react-datepicker__close-icon {\n\t\t\t  background-color: transparent;\n\t\t\t  border: 0;\n\t\t\t  cursor: pointer;\n\t\t\t  outline: 0;\n\t\t\t  padding: 0;\n\t\t\t  vertical-align: middle;\n\t\t\t  position: absolute;\n\t\t\t  height: 16px;\n\t\t\t  width: 16px;\n\t\t\t  top: 25%;\n\t\t\t  right: 7px;\n\t\t\t}\n\n\t\t\t.react-datepicker__close-icon::after {\n\t\t\t  background-color: #216ba5;\n\t\t\t  border-radius: 50%;\n\t\t\t  bottom: 0;\n\t\t\t  box-sizing: border-box;\n\t\t\t  color: #fff;\n\t\t\t  content: "\0d7";\n\t\t\t  cursor: pointer;\n\t\t\t  font-size: 12px;\n\t\t\t  height: 16px;\n\t\t\t  width: 16px;\n\t\t\t  line-height: 1;\n\t\t\t  margin: -8px auto 0;\n\t\t\t  padding: 2px;\n\t\t\t  position: absolute;\n\t\t\t  right: 0px;\n\t\t\t  text-align: center;\n\t\t\t}\n\n\t\t\t.react-datepicker__today-button {\n\t\t\t  background: #f0f0f0;\n\t\t\t  border-top: 1px solid #aeaeae;\n\t\t\t  cursor: pointer;\n\t\t\t  text-align: center;\n\t\t\t  font-weight: bold;\n\t\t\t  padding: 5px 0;\n\t\t\t  clear: left;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal {\n\t\t\t  position: fixed;\n\t\t\t  width: 100vw;\n\t\t\t  height: 100vh;\n\t\t\t  background-color: rgba(0, 0, 0, 0.8);\n\t\t\t  left: 0;\n\t\t\t  top: 0;\n\t\t\t  justify-content: center;\n\t\t\t  align-items: center;\n\t\t\t  display: flex;\n\t\t\t  z-index: 2147483647;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__day-name,\n\t\t\t.react-datepicker__portal .react-datepicker__day,\n\t\t\t.react-datepicker__portal .react-datepicker__time-name {\n\t\t\t  width: 3rem;\n\t\t\t  line-height: 3rem;\n\t\t\t}\n\n\t\t\t@media (max-width: 400px), (max-height: 550px) {\n\t\t\t  .react-datepicker__portal .react-datepicker__day-name,\n\t\t\t  .react-datepicker__portal .react-datepicker__day,\n\t\t\t  .react-datepicker__portal .react-datepicker__time-name {\n\t\t\t    width: 2rem;\n\t\t\t    line-height: 2rem;\n\t\t\t  }\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__current-month,\n\t\t\t.react-datepicker__portal .react-datepicker-time__header {\n\t\t\t  font-size: 1.44rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation {\n\t\t\t  border: 0.81rem solid transparent;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--previous {\n\t\t\t  border-right-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--previous:hover {\n\t\t\t  border-right-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--previous--disabled, .react-datepicker__portal .react-datepicker__navigation--previous--disabled:hover {\n\t\t\t  border-right-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--next {\n\t\t\t  border-left-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--next:hover {\n\t\t\t  border-left-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--next--disabled, .react-datepicker__portal .react-datepicker__navigation--next--disabled:hover {\n\t\t\t  border-left-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\n\t\t\t/*\n\t\t\t*\n\t\t\t* React DatePicker Custom Overrides\n\t\t\t*\n\t\t\t*/\n\t\t\t.react-datepicker-wrapper,\n\t\t\t.react-datepicker__input-container {\n\t\t\t    display: block;\n\t\t\t    width: 100%;\n\t\t\t}\n\t\t\t.react-datepicker__input-container input {\n\t\t\t    position: relative;\n\t\t\t    display: block;\n\t\t\t    width: 100%;\n\t\t\t    padding: 10px;\n\t\t\t    font-size: 14px;\n\t\t\t    background-color: rgb(255, 255, 255);\n\t\t\t    color: rgb(94, 94, 94);\n\t\t\t    border: 1px solid rgb(229, 229, 229);\n\t\t\t    border-radius: 5px;\n\t\t\t    transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t\t\t}\n\t\t\t.react-datepicker__input-container input:hover {\n\t\t\t    border: 1px solid ', ';\n\t\t\t    box-shadow: 0 0 0 1px ', ' inset;\n\t\t\t}\n\t\t\t.react-datepicker__day--keyboard-selected {\n\t\t\t    background-color: ', ';\n\t\t\t}\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list {\n\t\t\t    padding: 0px;\n\t\t\t}\n\t\t\t.react-datepicker__time-container,\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\t\t    width: 95px;\n\t\t\t}\n\t\t\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\t\t    right: 105px;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--selected,\n\t\t\t.react-datepicker__day--in-selecting-range,\n\t\t\t.react-datepicker__day--in-range,\n\t\t\t.react-datepicker__day--selected:hover,\n\t\t\t.react-datepicker__day--in-selecting-range:hover,\n\t\t\t.react-datepicker__day--in-range:hover,\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list\n\t\t\t    li.react-datepicker__time-list-item--selected,\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list\n\t\t\t    li.react-datepicker__time-list-item--selected:hover {\n\t\t\t    background-color: ', ';\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list\n\t\t\t    li.react-datepicker__time-list-item {\n\t\t\t    line-height: 30px;\n\t\t\t    padding: 0;\n\t\t\t}\n\t\t\t', '\n'], ['\n\t\t\t& * {\n\t\t\t\tbox-sizing: border-box;\n\t\t\t}\n\n\t\t\t@keyframes TESpinnerLoading {\n\t\t\t\t\tto {\n\t\t\t\t\t\t\t-webkit-transform: rotate(1turn);\n\t\t\t\t\t\t\ttransform: rotate(1turn)\n\t\t\t\t\t}\n\t\t\t}\n\t\t\t\n\n\t\t\t/*\n\t\t\t*\n\t\t\t* React Power Select\n\t\t\t*\n\t\t\t*/\n\t\t\t.PowerSelect {\n\t\t\t\tposition: relative;\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\tfont-size: 16px;\n\t\t\t\tcursor: pointer;\n\t\t\t\tbackground-color: ', ';\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t\tborder-radius: 5px;\n\t\t\t\tbox-sizing: border-box;\n\t\t\t\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t\t\t}\n\t\t\t.PowewrSelect * {\n\t\t\t\tbox-sizing: border-box;\n\t\t\t}\n\t\t\t.PowerSelect.white-border {\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t}\n\t\t\t.PowerSelect:focus {\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect--focused {\n\t\t\t}\n\t\t\t.PowerSelect--disabled {\n\t\t\t\tbackground-color: ', ';\n\t\t\t\tcursor: not-allowed;\n\t\t\t}\n\t\t\t.PowerSelect--disabled .PowerSelect__Trigger {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\t\t\t.PowerSelect--disabled .PowerSelect__TriggerInput {\n\t\t\t\tbackground-color: ', ';\n\t\t\t}\n\t\t\t.PowerSelect--open {\n\t\t\t\tborder-bottom-right-radius: 0;\n\t\t\t\tborder-bottom-left-radius: 0;\n\t\t\t\tborder-bottom: 0;\n\t\t\t}\n\t\t\t.PowerSelect--open .PowerSelect__TriggerStatus:before {\n\t\t\t\ttransform: rotate(-180deg);\n\t\t\t}\n\t\t\t.PowerSelect__Trigger {\n\t\t\t\tposition: relative;\n\t\t\t\theight: 39px;\n\t\t\t\toverflow: hidden;\n\t\t\t\twhite-space: nowrap;\n\t\t\t\ttext-overflow: ellipsis;\n\t\t\t}\n\t\t\t.PowerSelect__Menu {\n\t\t\t\tbackground-color: ', ';\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Menu.white-border__Menu {\n\t\t\t\tborder: none;\n\t\t\t\tborder-top: 1px solid #a0a0a0;\n\t\t\t}\n\t\t\t.PowerSelect__Menu:focus {\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect__Options {\n\t\t\t\tposition: relative;\n\t\t\t\tmax-height: 238px;\n\t\t\t\toverflow: auto;\n\t\t\t}\n\t\t\t.PowerSelect__OptGroup {\n\t\t\t\tpadding-left: 8px;\n\t\t\t}\n\t\t\t.PowerSelect__OptGroup__Label {\n\t\t\t\tfont-weight: 700;\n\t\t\t\tfont-size: 0.9em;\n\t\t\t\tcolor: ', ';\n\t\t\t\tpadding: 8px 0 4px;\n\t\t\t}\n\t\t\t.PowerSelect__Option {\n\t\t\t\tcursor: pointer;\n\t\t\t\tpadding: 8px 12px;\n\t\t\t}\n\t\t\t.PowerSelect__Option:not(.PowerSelect__Option--disabled):hover {\n\t\t\t\tbackground-color: rgba(55, 50, 117 0.5);\n\t\t\t}\n\t\t\t.PowerSelect__Option--disabled {\n\t\t\t\tcolor: ', ';\n\t\t\t\tcursor: not-allowed;\n\t\t\t}\n\t\t\t.PowerSelect__Option--highlighted {\n\t\t\t\tbackground-color: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__BeforeOptions {\n\t\t\t\tpadding: 8px 12px;\n\t\t\t}\n\t\t\t.PowerSelect__Placeholder {\n\t\t\t\tcolor: ', ';\n\t\t\t\tfont-size: 14px;\n\t\t\t}\n\t\t\t.PowerSelect__SearchInputContainer {\n\t\t\t\tpadding: 8px;\n\t\t\t}\n\t\t\t.PowerSelect__SearchInput {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 34px;\n\t\t\t\tpadding: 4px 8px;\n\t\t\t\tline-height: 1.4;\n\t\t\t\tfont-size: inherit;\n\t\t\t\tborder: 1px solid ', ';\n\t\t\t\tborder-radius: 2px;\n\t\t\t\tcursor: pointer;\n\t\t\t\tbox-sizing: border-box;\n\t\t\t}\n\t\t\t.PowerSelect__SearchInput:focus {\n\t\t\t\tborder-color: ', ';\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerInput {\n\t\t\t\tdisplay: inline-block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 34px;\n\t\t\t\tborder: none;\n\t\t\t\tcursor: pointer;\n\t\t\t\tpadding: 4px 22px 4px 8px;\n\t\t\t\tfont-size: inherit;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerInput:focus {\n\t\t\t\toutline: none;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__LHS,\n\t\t\t.PowerSelect__Trigger__RHS {\n\t\t\t\tdisplay: table-cell;\n\t\t\t\tvertical-align: middle;\n\t\t\t\twhite-space: nowrap;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__LHS {\n\t\t\t\tpadding-left: 8px;\n\t\t\t\tpadding-right: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__RHS {\n\t\t\t\tpadding-right: 4px;\n\t\t\t\tpadding-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerLabel {\n\t\t\t\tpadding: 6px 22px 6px 8px;\n\t\t\t\tcolor: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Trigger__LHS + .PowerSelect__TriggerLabel {\n\t\t\t\tpadding-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerStatus {\n\t\t\t\tpadding-top: 2px;\n\t\t\t\tpadding-right: 8px;\n\t\t\t\tpadding-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelect__TriggerStatus:before {\n\t\t\t\tcontent: \'\';\n\t\t\t\tdisplay: block;\n\t\t\t\tborder-top: 4px solid ', ';\n\t\t\t\tborder-left: 4px solid transparent;\n\t\t\t\tborder-right: 4px solid transparent;\n\t\t\t}\n\t\t\t.PowerSelect__Clear {\n\t\t\t\tpadding: 4px;\n\t\t\t\tcolor: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Clear:hover {\n\t\t\t\tcolor: ', ';\n\t\t\t}\n\t\t\t.PowerSelect__Clear:before {\n\t\t\t\tcontent: "\\\\D7";\n\t\t\t}\n\t\t\t.PowerSelect__Trigger--empty .PowerSelect__Clear {\n\t\t\t\tvisibility: hidden;\n\t\t\t}\n\t\t\t.PowerSelect__Clear,\n\t\t\t.PowerSelect__TriggerInputContainer,\n\t\t\t.PowerSelect__TriggerLabel,\n\t\t\t.PowerSelect__TriggerStatus,\n\t\t\t.PowerSelectMultiple__OptionsContainer {\n\t\t\t\tdisplay: table-cell;\n\t\t\t\twidth: 100%;\n\t\t\t\tvertical-align: middle;\n\t\t\t\theight: 39px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__OptionsContainer {\n\t\t\t\tpadding-top: 2px;\n\t\t\t\tpadding-bottom: 2px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOptions {\n\t\t\t\tlist-style: none;\n\t\t\t\tpadding-left: 0;\n\t\t\t\tdisplay: block;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOptions:after {\n\t\t\t\tcontent: \'\';\n\t\t\t\tdisplay: table;\n\t\t\t\tclear: both;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOptions > li {\n\t\t\t\tdisplay: block;\n\t\t\t\tfloat: left;\n\t\t\t\tmargin-top: 2px;\n\t\t\t\tmargin-bottom: 2px;\n\t\t\t}\n\t\t\t.PowerSelect__Trigger--empty .PowerSelectMultiple_TriggerInputContainer {\n\t\t\t\tfloat: none;\n\t\t\t\tmargin-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption {\n\t\t\t\tline-height: 29px;\n\t\t\t\tmargin-left: 4px;\n\t\t\t\tbackground-color: #ebeeff;\n\t\t\t\tborder: 1px solid #c6cfff;\n\t\t\t\tcolor: ', ';\n\t\t\t\tborder-radius: 3px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption__Close,\n\t\t\t.PowerSelectMultiple__SelectedOption__Label {\n\t\t\t\tpadding: 0 6px;\n\t\t\t\tdisplay: block;\n\t\t\t\tfloat: left;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption__Close {\n\t\t\t\tborder-left: 1px solid #c6cfff;\n\t\t\t\tcursor: pointer;\n\t\t\t}\n\t\t\t.PowerSelectMultiple__SelectedOption__Close:hover {\n\t\t\t\tbackground-color: #dce1ff;\n\t\t\t}\n\t\t\t.PowerSelectMultiple .PowerSelect__Trigger {\n\t\t\t\twhite-space: normal;\n\t\t\t\theight: auto;\n\t\t\t}\n\t\t\t.PowerSelectMultiple .PowerSelect__TriggerInput {\n\t\t\t\tdisplay: inline-block;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0;\n\t\t\t\theight: 26px;\n\t\t\t\tmargin-left: 4px;\n\t\t\t}\n\t\t\t.PowerSelectMultiple .PowerSelect__Trigger--empty .PowerSelect__TriggerInput {\n\t\t\t\twidth: 100%;\n\t\t\t}\n\n\t\t\t.tether-element {\n\t\t\t\tz-index: 1000;\n\t\t\t}\n\n\t\t\t/*\n\t\t\t*\n\t\t\t* React DatePicker Base\n\t\t\t*\n\t\t\t*/\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow {\n\t\t\t  margin-left: -8px;\n\t\t\t  position: absolute;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  box-sizing: content-box;\n\t\t\t  position: absolute;\n\t\t\t  border: 8px solid transparent;\n\t\t\t  height: 0;\n\t\t\t  width: 1px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  content: "";\n\t\t\t  z-index: -1;\n\t\t\t  border-width: 8px;\n\t\t\t  left: -8px;\n\t\t\t  border-bottom-color: #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {\n\t\t\t  top: 0;\n\t\t\t  margin-top: -8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\t\t  border-top: none;\n\t\t\t  border-bottom-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\t\t  top: -1px;\n\t\t\t  border-bottom-color: #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow {\n\t\t\t  bottom: 0;\n\t\t\t  margin-bottom: -8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  border-bottom: none;\n\t\t\t  border-top-color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-read-view--down-arrow::before,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\t\t  bottom: -1px;\n\t\t\t  border-top-color: #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker-wrapper {\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker {\n\t\t\t  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;\n\t\t\t  font-size: 0.8rem;\n\t\t\t  background-color: #fff;\n\t\t\t  color: #000;\n\t\t\t  border: 1px solid #aeaeae;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  display: inline-block;\n\t\t\t  position: relative;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__triangle {\n\t\t\t  left: 35px;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__time-container {\n\t\t\t  border-left: 0;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__time {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker--time-only .react-datepicker__time-box {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__triangle {\n\t\t\t  position: absolute;\n\t\t\t  left: 50px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper {\n\t\t\t  z-index: 1;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="bottom"] {\n\t\t\t  margin-top: 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="top"] {\n\t\t\t  margin-bottom: 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="right"] {\n\t\t\t  margin-left: 8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="right"] .react-datepicker__triangle {\n\t\t\t  left: auto;\n\t\t\t  right: 42px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="left"] {\n\t\t\t  margin-right: 8px;\n\t\t\t}\n\n\t\t\t.react-datepicker-popper[data-placement^="left"] .react-datepicker__triangle {\n\t\t\t  left: 42px;\n\t\t\t  right: auto;\n\t\t\t}\n\n\t\t\t.react-datepicker__header {\n\t\t\t  text-align: center;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t  border-bottom: 1px solid #aeaeae;\n\t\t\t  border-top-left-radius: 0.3rem;\n\t\t\t  border-top-right-radius: 0.3rem;\n\t\t\t  padding-top: 8px;\n\t\t\t  position: relative;\n\t\t\t}\n\n\t\t\t.react-datepicker__header--time {\n\t\t\t  padding-bottom: 8px;\n\t\t\t  padding-left: 5px;\n\t\t\t  padding-right: 5px;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown-container--select,\n\t\t\t.react-datepicker__month-dropdown-container--select,\n\t\t\t.react-datepicker__month-year-dropdown-container--select,\n\t\t\t.react-datepicker__year-dropdown-container--scroll,\n\t\t\t.react-datepicker__month-dropdown-container--scroll,\n\t\t\t.react-datepicker__month-year-dropdown-container--scroll {\n\t\t\t  display: inline-block;\n\t\t\t  margin: 0 2px;\n\t\t\t}\n\n\t\t\t.react-datepicker__current-month,\n\t\t\t.react-datepicker-time__header {\n\t\t\t  margin-top: 0;\n\t\t\t  color: #000;\n\t\t\t  font-weight: bold;\n\t\t\t  font-size: 0.944rem;\n\t\t\t}\n\n\t\t\t.react-datepicker-time__header {\n\t\t\t  text-overflow: ellipsis;\n\t\t\t  white-space: nowrap;\n\t\t\t  overflow: hidden;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation {\n\t\t\t  background: none;\n\t\t\t  line-height: 1.7rem;\n\t\t\t  text-align: center;\n\t\t\t  cursor: pointer;\n\t\t\t  position: absolute;\n\t\t\t  top: 10px;\n\t\t\t  width: 0;\n\t\t\t  padding: 0;\n\t\t\t  border: 0.45rem solid transparent;\n\t\t\t  z-index: 1;\n\t\t\t  height: 10px;\n\t\t\t  width: 10px;\n\t\t\t  text-indent: -999em;\n\t\t\t  overflow: hidden;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--previous {\n\t\t\t  left: 10px;\n\t\t\t  border-right-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--previous:hover {\n\t\t\t  border-right-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--previous--disabled, .react-datepicker__navigation--previous--disabled:hover {\n\t\t\t  border-right-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next {\n\t\t\t  right: 10px;\n\t\t\t  border-left-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\t\t  right: 80px;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next:hover {\n\t\t\t  border-left-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--next--disabled, .react-datepicker__navigation--next--disabled:hover {\n\t\t\t  border-left-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years {\n\t\t\t  position: relative;\n\t\t\t  top: 0;\n\t\t\t  display: block;\n\t\t\t  margin-left: auto;\n\t\t\t  margin-right: auto;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-previous {\n\t\t\t  top: 4px;\n\t\t\t  border-top-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-previous:hover {\n\t\t\t  border-top-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-upcoming {\n\t\t\t  top: -4px;\n\t\t\t  border-bottom-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__navigation--years-upcoming:hover {\n\t\t\t  border-bottom-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__month-container {\n\t\t\t  float: left;\n\t\t\t}\n\n\t\t\t.react-datepicker__month {\n\t\t\t  margin: 0.4rem;\n\t\t\t  text-align: center;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container {\n\t\t\t  clear: both;\n\t\t\t  width: 100%;\n\t\t\t  float: left;\n\t\t\t  margin: 5px 0 10px 15px;\n\t\t\t  text-align: left;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__caption {\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container {\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input {\n\t\t\t  display: inline-block;\n\t\t\t  margin-left: 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input {\n\t\t\t  width: 85px;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-inner-spin-button,\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-outer-spin-button {\n\t\t\t  -webkit-appearance: none;\n\t\t\t  margin: 0;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"] {\n\t\t\t  -moz-appearance: textfield;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__delimiter {\n\t\t\t  margin-left: 5px;\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container {\n\t\t\t  float: right;\n\t\t\t  border-left: 1px solid #aeaeae;\n\t\t\t  width: 70px;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container--with-today-button {\n\t\t\t  display: inline;\n\t\t\t  border: 1px solid #aeaeae;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  position: absolute;\n\t\t\t  right: -72px;\n\t\t\t  top: 0;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time {\n\t\t\t  position: relative;\n\t\t\t  background: white;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\t\t  width: 70px;\n\t\t\t  overflow-x: hidden;\n\t\t\t  margin: 0 auto;\n\t\t\t  text-align: center;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {\n\t\t\t  list-style: none;\n\t\t\t  margin: 0;\n\t\t\t  height: calc(195px + (1.7rem / 2));\n\t\t\t  overflow-y: scroll;\n\t\t\t  padding-right: 0px;\n\t\t\t  padding-left: 0px;\n\t\t\t  width: 100%;\n\t\t\t  box-sizing: content-box;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {\n\t\t\t  height: 30px;\n\t\t\t  padding: 5px 10px;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {\n\t\t\t  cursor: pointer;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {\n\t\t\t  background-color: #216ba5;\n\t\t\t  color: white;\n\t\t\t  font-weight: bold;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover {\n\t\t\t  background-color: #216ba5;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {\n\t\t\t  color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled:hover {\n\t\t\t  cursor: default;\n\t\t\t  background-color: transparent;\n\t\t\t}\n\n\t\t\t.react-datepicker__week-number {\n\t\t\t  color: #ccc;\n\t\t\t  display: inline-block;\n\t\t\t  width: 1.7rem;\n\t\t\t  line-height: 1.7rem;\n\t\t\t  text-align: center;\n\t\t\t  margin: 0.166rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__week-number.react-datepicker__week-number--clickable {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__week-number.react-datepicker__week-number--clickable:hover {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker__day-names,\n\t\t\t.react-datepicker__week {\n\t\t\t  white-space: nowrap;\n\t\t\t}\n\n\t\t\t.react-datepicker__day-name,\n\t\t\t.react-datepicker__day,\n\t\t\t.react-datepicker__time-name {\n\t\t\t  color: #000;\n\t\t\t  display: inline-block;\n\t\t\t  width: 1.7rem;\n\t\t\t  line-height: 1.7rem;\n\t\t\t  text-align: center;\n\t\t\t  margin: 0.166rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__day {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__day:hover {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #f0f0f0;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--today {\n\t\t\t  font-weight: bold;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #3dcc4a;\n\t\t\t  color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted:hover {\n\t\t\t  background-color: #32be3f;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted-custom-1 {\n\t\t\t  color: magenta;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--highlighted-custom-2 {\n\t\t\t  color: green;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #216ba5;\n\t\t\t  color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--selected:hover, .react-datepicker__day--in-selecting-range:hover, .react-datepicker__day--in-range:hover {\n\t\t\t  background-color: #1d5d90;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--keyboard-selected {\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  background-color: #2a87d0;\n\t\t\t  color: #fff;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--keyboard-selected:hover {\n\t\t\t  background-color: #1d5d90;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range) {\n\t\t\t  background-color: rgba(33, 107, 165, 0.5);\n\t\t\t}\n\n\t\t\t.react-datepicker__month--selecting-range .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range) {\n\t\t\t  background-color: #f0f0f0;\n\t\t\t  color: #000;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--disabled {\n\t\t\t  cursor: default;\n\t\t\t  color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--disabled:hover {\n\t\t\t  background-color: transparent;\n\t\t\t}\n\n\t\t\t.react-datepicker__input-container {\n\t\t\t  position: relative;\n\t\t\t  display: inline-block;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view,\n\t\t\t.react-datepicker__month-read-view,\n\t\t\t.react-datepicker__month-year-read-view {\n\t\t\t  border: 1px solid transparent;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view:hover,\n\t\t\t.react-datepicker__month-read-view:hover,\n\t\t\t.react-datepicker__month-year-read-view:hover {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__year-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view:hover .react-datepicker__month-read-view--down-arrow {\n\t\t\t  border-top-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-read-view--down-arrow,\n\t\t\t.react-datepicker__month-read-view--down-arrow,\n\t\t\t.react-datepicker__month-year-read-view--down-arrow {\n\t\t\t  border-top-color: #ccc;\n\t\t\t  float: right;\n\t\t\t  margin-left: 20px;\n\t\t\t  top: 8px;\n\t\t\t  position: relative;\n\t\t\t  border-width: 0.45rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown,\n\t\t\t.react-datepicker__month-dropdown,\n\t\t\t.react-datepicker__month-year-dropdown {\n\t\t\t  background-color: #f0f0f0;\n\t\t\t  position: absolute;\n\t\t\t  width: 50%;\n\t\t\t  left: 25%;\n\t\t\t  top: 30px;\n\t\t\t  z-index: 1;\n\t\t\t  text-align: center;\n\t\t\t  border-radius: 0.3rem;\n\t\t\t  border: 1px solid #aeaeae;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown:hover,\n\t\t\t.react-datepicker__month-dropdown:hover,\n\t\t\t.react-datepicker__month-year-dropdown:hover {\n\t\t\t  cursor: pointer;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-dropdown--scrollable,\n\t\t\t.react-datepicker__month-dropdown--scrollable,\n\t\t\t.react-datepicker__month-year-dropdown--scrollable {\n\t\t\t  height: 150px;\n\t\t\t  overflow-y: scroll;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option,\n\t\t\t.react-datepicker__month-option,\n\t\t\t.react-datepicker__month-year-option {\n\t\t\t  line-height: 20px;\n\t\t\t  width: 100%;\n\t\t\t  display: block;\n\t\t\t  margin-left: auto;\n\t\t\t  margin-right: auto;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:first-of-type,\n\t\t\t.react-datepicker__month-option:first-of-type,\n\t\t\t.react-datepicker__month-year-option:first-of-type {\n\t\t\t  border-top-left-radius: 0.3rem;\n\t\t\t  border-top-right-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:last-of-type,\n\t\t\t.react-datepicker__month-option:last-of-type,\n\t\t\t.react-datepicker__month-year-option:last-of-type {\n\t\t\t  -webkit-user-select: none;\n\t\t\t  -moz-user-select: none;\n\t\t\t  -ms-user-select: none;\n\t\t\t  user-select: none;\n\t\t\t  border-bottom-left-radius: 0.3rem;\n\t\t\t  border-bottom-right-radius: 0.3rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:hover,\n\t\t\t.react-datepicker__month-option:hover,\n\t\t\t.react-datepicker__month-year-option:hover {\n\t\t\t  background-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-upcoming,\n\t\t\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,\n\t\t\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming {\n\t\t\t  border-bottom-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-previous,\n\t\t\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,\n\t\t\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous {\n\t\t\t  border-top-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__year-option--selected,\n\t\t\t.react-datepicker__month-option--selected,\n\t\t\t.react-datepicker__month-year-option--selected {\n\t\t\t  position: absolute;\n\t\t\t  left: 15px;\n\t\t\t}\n\n\t\t\t.react-datepicker__close-icon {\n\t\t\t  background-color: transparent;\n\t\t\t  border: 0;\n\t\t\t  cursor: pointer;\n\t\t\t  outline: 0;\n\t\t\t  padding: 0;\n\t\t\t  vertical-align: middle;\n\t\t\t  position: absolute;\n\t\t\t  height: 16px;\n\t\t\t  width: 16px;\n\t\t\t  top: 25%;\n\t\t\t  right: 7px;\n\t\t\t}\n\n\t\t\t.react-datepicker__close-icon::after {\n\t\t\t  background-color: #216ba5;\n\t\t\t  border-radius: 50%;\n\t\t\t  bottom: 0;\n\t\t\t  box-sizing: border-box;\n\t\t\t  color: #fff;\n\t\t\t  content: "\\00d7";\n\t\t\t  cursor: pointer;\n\t\t\t  font-size: 12px;\n\t\t\t  height: 16px;\n\t\t\t  width: 16px;\n\t\t\t  line-height: 1;\n\t\t\t  margin: -8px auto 0;\n\t\t\t  padding: 2px;\n\t\t\t  position: absolute;\n\t\t\t  right: 0px;\n\t\t\t  text-align: center;\n\t\t\t}\n\n\t\t\t.react-datepicker__today-button {\n\t\t\t  background: #f0f0f0;\n\t\t\t  border-top: 1px solid #aeaeae;\n\t\t\t  cursor: pointer;\n\t\t\t  text-align: center;\n\t\t\t  font-weight: bold;\n\t\t\t  padding: 5px 0;\n\t\t\t  clear: left;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal {\n\t\t\t  position: fixed;\n\t\t\t  width: 100vw;\n\t\t\t  height: 100vh;\n\t\t\t  background-color: rgba(0, 0, 0, 0.8);\n\t\t\t  left: 0;\n\t\t\t  top: 0;\n\t\t\t  justify-content: center;\n\t\t\t  align-items: center;\n\t\t\t  display: flex;\n\t\t\t  z-index: 2147483647;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__day-name,\n\t\t\t.react-datepicker__portal .react-datepicker__day,\n\t\t\t.react-datepicker__portal .react-datepicker__time-name {\n\t\t\t  width: 3rem;\n\t\t\t  line-height: 3rem;\n\t\t\t}\n\n\t\t\t@media (max-width: 400px), (max-height: 550px) {\n\t\t\t  .react-datepicker__portal .react-datepicker__day-name,\n\t\t\t  .react-datepicker__portal .react-datepicker__day,\n\t\t\t  .react-datepicker__portal .react-datepicker__time-name {\n\t\t\t    width: 2rem;\n\t\t\t    line-height: 2rem;\n\t\t\t  }\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__current-month,\n\t\t\t.react-datepicker__portal .react-datepicker-time__header {\n\t\t\t  font-size: 1.44rem;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation {\n\t\t\t  border: 0.81rem solid transparent;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--previous {\n\t\t\t  border-right-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--previous:hover {\n\t\t\t  border-right-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--previous--disabled, .react-datepicker__portal .react-datepicker__navigation--previous--disabled:hover {\n\t\t\t  border-right-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--next {\n\t\t\t  border-left-color: #ccc;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--next:hover {\n\t\t\t  border-left-color: #b3b3b3;\n\t\t\t}\n\n\t\t\t.react-datepicker__portal .react-datepicker__navigation--next--disabled, .react-datepicker__portal .react-datepicker__navigation--next--disabled:hover {\n\t\t\t  border-left-color: #e6e6e6;\n\t\t\t  cursor: default;\n\t\t\t}\n\n\n\t\t\t/*\n\t\t\t*\n\t\t\t* React DatePicker Custom Overrides\n\t\t\t*\n\t\t\t*/\n\t\t\t.react-datepicker-wrapper,\n\t\t\t.react-datepicker__input-container {\n\t\t\t    display: block;\n\t\t\t    width: 100%;\n\t\t\t}\n\t\t\t.react-datepicker__input-container input {\n\t\t\t    position: relative;\n\t\t\t    display: block;\n\t\t\t    width: 100%;\n\t\t\t    padding: 10px;\n\t\t\t    font-size: 14px;\n\t\t\t    background-color: rgb(255, 255, 255);\n\t\t\t    color: rgb(94, 94, 94);\n\t\t\t    border: 1px solid rgb(229, 229, 229);\n\t\t\t    border-radius: 5px;\n\t\t\t    transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t\t\t}\n\t\t\t.react-datepicker__input-container input:hover {\n\t\t\t    border: 1px solid ', ';\n\t\t\t    box-shadow: 0 0 0 1px ', ' inset;\n\t\t\t}\n\t\t\t.react-datepicker__day--keyboard-selected {\n\t\t\t    background-color: ', ';\n\t\t\t}\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list {\n\t\t\t    padding: 0px;\n\t\t\t}\n\t\t\t.react-datepicker__time-container,\n\t\t\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\t\t    width: 95px;\n\t\t\t}\n\t\t\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\t\t    right: 105px;\n\t\t\t}\n\n\t\t\t.react-datepicker__day--selected,\n\t\t\t.react-datepicker__day--in-selecting-range,\n\t\t\t.react-datepicker__day--in-range,\n\t\t\t.react-datepicker__day--selected:hover,\n\t\t\t.react-datepicker__day--in-selecting-range:hover,\n\t\t\t.react-datepicker__day--in-range:hover,\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list\n\t\t\t    li.react-datepicker__time-list-item--selected,\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list\n\t\t\t    li.react-datepicker__time-list-item--selected:hover {\n\t\t\t    background-color: ', ';\n\t\t\t}\n\n\t\t\t.react-datepicker__time-container\n\t\t\t    .react-datepicker__time\n\t\t\t    .react-datepicker__time-box\n\t\t\t    ul.react-datepicker__time-list\n\t\t\t    li.react-datepicker__time-list-item {\n\t\t\t    line-height: 30px;\n\t\t\t    padding: 0;\n\t\t\t}\n\t\t\t', '\n']);
+var _templateObject$x = taggedTemplateLiteral(['\n\t& * {\n\t\tbox-sizing: border-box;\n\t}\n\n\t@keyframes TESpinnerLoading {\n\t\t\tto {\n\t\t\t\t\t-webkit-transform: rotate(1turn);\n\t\t\t\t\ttransform: rotate(1turn)\n\t\t\t}\n\t}\n\n\t/*\n\t*\n\t* React Power Select\n\t*\n\t*/\n\t.PowerSelect {\n\t\tposition: relative;\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t\tfont-size: 16px;\n\t\tcursor: pointer;\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid ', ';\n\t\tborder-radius: 5px;\n\t\tbox-sizing: border-box;\n\t\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t}\n\t.PowewrSelect * {\n\t\tbox-sizing: border-box;\n\t}\n\t.PowerSelect.white-border {\n\t\tborder: 1px solid ', ';\n\t}\n\t.PowerSelect:focus {\n\t\toutline: none;\n\t}\n\t.PowerSelect--focused {\n\t}\n\t.PowerSelect--disabled {\n\t\tbackground-color: ', ';\n\t\tcursor: not-allowed;\n\t}\n\t.PowerSelect--disabled .PowerSelect__Trigger {\n\t\tpointer-events: none;\n\t}\n\t.PowerSelect--disabled .PowerSelect__TriggerInput {\n\t\tbackground-color: ', ';\n\t}\n\t.PowerSelect--open {\n\t\tborder-bottom-right-radius: 0;\n\t\tborder-bottom-left-radius: 0;\n\t\tborder-bottom: 0;\n\t}\n\t.PowerSelect--open .PowerSelect__TriggerStatus:before {\n\t\ttransform: rotate(-180deg);\n\t}\n\t.PowerSelect__Trigger {\n\t\tposition: relative;\n\t\theight: 39px;\n\t\toverflow: hidden;\n\t\twhite-space: nowrap;\n\t\ttext-overflow: ellipsis;\n\t}\n\t.PowerSelect__Menu {\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid ', ';\n\t}\n\t.PowerSelect__Menu.white-border__Menu {\n\t\tborder: none;\n\t\tborder-top: 1px solid #a0a0a0;\n\t}\n\t.PowerSelect__Menu:focus {\n\t\toutline: none;\n\t}\n\t.PowerSelect__Options {\n\t\tposition: relative;\n\t\tmax-height: 238px;\n\t\toverflow: auto;\n\t}\n\t.PowerSelect__OptGroup {\n\t\tpadding-left: 8px;\n\t}\n\t.PowerSelect__OptGroup__Label {\n\t\tfont-weight: 700;\n\t\tfont-size: 0.9em;\n\t\tcolor: ', ';\n\t\tpadding: 8px 0 4px;\n\t}\n\t.PowerSelect__Option {\n\t\tcursor: pointer;\n\t\tpadding: 8px 12px;\n\t}\n\t.PowerSelect__Option:not(.PowerSelect__Option--disabled):hover {\n\t\tbackground-color: rgba(55, 50, 117 0.5);\n\t}\n\t.PowerSelect__Option--disabled {\n\t\tcolor: ', ';\n\t\tcursor: not-allowed;\n\t}\n\t.PowerSelect__Option--highlighted {\n\t\tbackground-color: ', ';\n\t}\n\t.PowerSelect__BeforeOptions {\n\t\tpadding: 8px 12px;\n\t}\n\t.PowerSelect__Placeholder {\n\t\tcolor: ', ';\n\t\tfont-size: 14px;\n\t}\n\t.PowerSelect__SearchInputContainer {\n\t\tpadding: 8px;\n\t}\n\t.PowerSelect__SearchInput {\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t\theight: 34px;\n\t\tpadding: 4px 8px;\n\t\tline-height: 1.4;\n\t\tfont-size: inherit;\n\t\tborder: 1px solid ', ';\n\t\tborder-radius: 2px;\n\t\tcursor: pointer;\n\t\tbox-sizing: border-box;\n\t}\n\t.PowerSelect__SearchInput:focus {\n\t\tborder-color: ', ';\n\t\toutline: none;\n\t}\n\t.PowerSelect__TriggerInput {\n\t\tdisplay: inline-block;\n\t\twidth: 100%;\n\t\theight: 34px;\n\t\tborder: none;\n\t\tcursor: pointer;\n\t\tpadding: 4px 22px 4px 8px;\n\t\tfont-size: inherit;\n\t}\n\t.PowerSelect__TriggerInput:focus {\n\t\toutline: none;\n\t}\n\t.PowerSelect__Trigger__LHS,\n\t.PowerSelect__Trigger__RHS {\n\t\tdisplay: table-cell;\n\t\tvertical-align: middle;\n\t\twhite-space: nowrap;\n\t}\n\t.PowerSelect__Trigger__LHS {\n\t\tpadding-left: 8px;\n\t\tpadding-right: 4px;\n\t}\n\t.PowerSelect__Trigger__RHS {\n\t\tpadding-right: 4px;\n\t\tpadding-left: 4px;\n\t}\n\t.PowerSelect__TriggerLabel {\n\t\tpadding: 6px 22px 6px 8px;\n\t\tcolor: ', ';\n\t}\n\t.PowerSelect__Trigger__LHS + .PowerSelect__TriggerLabel {\n\t\tpadding-left: 4px;\n\t}\n\t.PowerSelect__TriggerStatus {\n\t\tpadding-top: 2px;\n\t\tpadding-right: 8px;\n\t\tpadding-left: 4px;\n\t}\n\t.PowerSelect__TriggerStatus:before {\n\t\tcontent: \'\';\n\t\tdisplay: block;\n\t\tborder-top: 4px solid ', ';\n\t\tborder-left: 4px solid transparent;\n\t\tborder-right: 4px solid transparent;\n\t}\n\t.PowerSelect__Clear {\n\t\tpadding: 4px;\n\t\tcolor: ', ';\n\t}\n\t.PowerSelect__Clear:hover {\n\t\tcolor: ', ';\n\t}\n\t.PowerSelect__Clear:before {\n\t\tcontent: "\\D7";\n\t}\n\t.PowerSelect__Trigger--empty .PowerSelect__Clear {\n\t\tvisibility: hidden;\n\t}\n\t.PowerSelect__Clear,\n\t.PowerSelect__TriggerInputContainer,\n\t.PowerSelect__TriggerLabel,\n\t.PowerSelect__TriggerStatus,\n\t.PowerSelectMultiple__OptionsContainer {\n\t\tdisplay: table-cell;\n\t\twidth: 100%;\n\t\tvertical-align: middle;\n\t\theight: 39px;\n\t}\n\t.PowerSelectMultiple__OptionsContainer {\n\t\tpadding-top: 2px;\n\t\tpadding-bottom: 2px;\n\t}\n\t.PowerSelectMultiple__SelectedOptions {\n\t\tlist-style: none;\n\t\tpadding-left: 0;\n\t\tdisplay: block;\n\t\tmargin: 0;\n\t}\n\t.PowerSelectMultiple__SelectedOptions:after {\n\t\tcontent: \'\';\n\t\tdisplay: table;\n\t\tclear: both;\n\t}\n\t.PowerSelectMultiple__SelectedOptions > li {\n\t\tdisplay: block;\n\t\tfloat: left;\n\t\tmargin-top: 2px;\n\t\tmargin-bottom: 2px;\n\t}\n\t.PowerSelect__Trigger--empty .PowerSelectMultiple_TriggerInputContainer {\n\t\tfloat: none;\n\t\tmargin-left: 4px;\n\t}\n\t.PowerSelectMultiple__SelectedOption {\n\t\tline-height: 29px;\n\t\tmargin-left: 4px;\n\t\tbackground-color: #ebeeff;\n\t\tborder: 1px solid #c6cfff;\n\t\tcolor: ', ';\n\t\tborder-radius: 3px;\n\t}\n\t.PowerSelectMultiple__SelectedOption__Close,\n\t.PowerSelectMultiple__SelectedOption__Label {\n\t\tpadding: 0 6px;\n\t\tdisplay: block;\n\t\tfloat: left;\n\t}\n\t.PowerSelectMultiple__SelectedOption__Close {\n\t\tborder-left: 1px solid #c6cfff;\n\t\tcursor: pointer;\n\t}\n\t.PowerSelectMultiple__SelectedOption__Close:hover {\n\t\tbackground-color: #dce1ff;\n\t}\n\t.PowerSelectMultiple .PowerSelect__Trigger {\n\t\twhite-space: normal;\n\t\theight: auto;\n\t}\n\t.PowerSelectMultiple .PowerSelect__TriggerInput {\n\t\tdisplay: inline-block;\n\t\twidth: auto;\n\t\tpadding: 0;\n\t\theight: 26px;\n\t\tmargin-left: 4px;\n\t}\n\t.PowerSelectMultiple .PowerSelect__Trigger--empty .PowerSelect__TriggerInput {\n\t\twidth: 100%;\n\t}\n\n\t.tether-element {\n\t\tz-index: 1000;\n\t}\n\n\t/*\n\t*\n\t* React DatePicker Base\n\t*\n\t*/\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow {\n\t\tmargin-left: -8px;\n\t\tposition: absolute;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tbox-sizing: content-box;\n\t\tposition: absolute;\n\t\tborder: 8px solid transparent;\n\t\theight: 0;\n\t\twidth: 1px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tcontent: "";\n\t\tz-index: -1;\n\t\tborder-width: 8px;\n\t\tleft: -8px;\n\t\tborder-bottom-color: #aeaeae;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {\n\t\ttop: 0;\n\t\tmargin-top: -8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\tborder-top: none;\n\t\tborder-bottom-color: #f0f0f0;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\ttop: -1px;\n\t\tborder-bottom-color: #aeaeae;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow {\n\t\tbottom: 0;\n\t\tmargin-bottom: -8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tborder-bottom: none;\n\t\tborder-top-color: #fff;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tbottom: -1px;\n\t\tborder-top-color: #aeaeae;\n\t}\n\n\t.react-datepicker-wrapper {\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker {\n\t\tfont-family: "Helvetica Neue", Helvetica, Arial, sans-serif;\n\t\tfont-size: 0.8rem;\n\t\tbackground-color: #fff;\n\t\tcolor: #000;\n\t\tborder: 1px solid #aeaeae;\n\t\tborder-radius: 0.3rem;\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__triangle {\n\t\tleft: 35px;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__time-container {\n\t\tborder-left: 0;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__time {\n\t\tborder-radius: 0.3rem;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__time-box {\n\t\tborder-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__triangle {\n\t\tposition: absolute;\n\t\tleft: 50px;\n\t}\n\n\t.react-datepicker-popper {\n\t\tz-index: 1;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] {\n\t\tmargin-top: 10px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] {\n\t\tmargin-bottom: 10px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="right"] {\n\t\tmargin-left: 8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="right"] .react-datepicker__triangle {\n\t\tleft: auto;\n\t\tright: 42px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="left"] {\n\t\tmargin-right: 8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="left"] .react-datepicker__triangle {\n\t\tleft: 42px;\n\t\tright: auto;\n\t}\n\n\t.react-datepicker__header {\n\t\ttext-align: center;\n\t\tbackground-color: #f0f0f0;\n\t\tborder-bottom: 1px solid #aeaeae;\n\t\tborder-top-left-radius: 0.3rem;\n\t\tborder-top-right-radius: 0.3rem;\n\t\tpadding-top: 8px;\n\t\tposition: relative;\n\t}\n\n\t.react-datepicker__header--time {\n\t\tpadding-bottom: 8px;\n\t\tpadding-left: 5px;\n\t\tpadding-right: 5px;\n\t}\n\n\t.react-datepicker__year-dropdown-container--select,\n\t.react-datepicker__month-dropdown-container--select,\n\t.react-datepicker__month-year-dropdown-container--select,\n\t.react-datepicker__year-dropdown-container--scroll,\n\t.react-datepicker__month-dropdown-container--scroll,\n\t.react-datepicker__month-year-dropdown-container--scroll {\n\t\tdisplay: inline-block;\n\t\tmargin: 0 2px;\n\t}\n\n\t.react-datepicker__current-month,\n\t.react-datepicker-time__header {\n\t\tmargin-top: 0;\n\t\tcolor: #000;\n\t\tfont-weight: bold;\n\t\tfont-size: 0.944rem;\n\t}\n\n\t.react-datepicker-time__header {\n\t\ttext-overflow: ellipsis;\n\t\twhite-space: nowrap;\n\t\toverflow: hidden;\n\t}\n\n\t.react-datepicker__navigation {\n\t\tbackground: none;\n\t\tline-height: 1.7rem;\n\t\ttext-align: center;\n\t\tcursor: pointer;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 0;\n\t\tpadding: 0;\n\t\tborder: 0.45rem solid transparent;\n\t\tz-index: 1;\n\t\theight: 10px;\n\t\twidth: 10px;\n\t\ttext-indent: -999em;\n\t\toverflow: hidden;\n\t}\n\n\t.react-datepicker__navigation--previous {\n\t\tleft: 10px;\n\t\tborder-right-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--previous:hover {\n\t\tborder-right-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__navigation--previous--disabled, .react-datepicker__navigation--previous--disabled:hover {\n\t\tborder-right-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\t.react-datepicker__navigation--next {\n\t\tright: 10px;\n\t\tborder-left-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\tright: 80px;\n\t}\n\n\t.react-datepicker__navigation--next:hover {\n\t\tborder-left-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__navigation--next--disabled, .react-datepicker__navigation--next--disabled:hover {\n\t\tborder-left-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\t.react-datepicker__navigation--years {\n\t\tposition: relative;\n\t\ttop: 0;\n\t\tdisplay: block;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t}\n\n\t.react-datepicker__navigation--years-previous {\n\t\ttop: 4px;\n\t\tborder-top-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--years-previous:hover {\n\t\tborder-top-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__navigation--years-upcoming {\n\t\ttop: -4px;\n\t\tborder-bottom-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--years-upcoming:hover {\n\t\tborder-bottom-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__month-container {\n\t\tfloat: left;\n\t}\n\n\t.react-datepicker__month {\n\t\tmargin: 0.4rem;\n\t\ttext-align: center;\n\t}\n\n\t.react-datepicker__input-time-container {\n\t\tclear: both;\n\t\twidth: 100%;\n\t\tfloat: left;\n\t\tmargin: 5px 0 10px 15px;\n\t\ttext-align: left;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__caption {\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container {\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input {\n\t\tdisplay: inline-block;\n\t\tmargin-left: 10px;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input {\n\t\twidth: 85px;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-inner-spin-button,\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-outer-spin-button {\n\t\t-webkit-appearance: none;\n\t\tmargin: 0;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"] {\n\t\t-moz-appearance: textfield;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__delimiter {\n\t\tmargin-left: 5px;\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__time-container {\n\t\tfloat: right;\n\t\tborder-left: 1px solid #aeaeae;\n\t\twidth: 70px;\n\t}\n\n\t.react-datepicker__time-container--with-today-button {\n\t\tdisplay: inline;\n\t\tborder: 1px solid #aeaeae;\n\t\tborder-radius: 0.3rem;\n\t\tposition: absolute;\n\t\tright: -72px;\n\t\ttop: 0;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time {\n\t\tposition: relative;\n\t\tbackground: white;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\twidth: 70px;\n\t\toverflow-x: hidden;\n\t\tmargin: 0 auto;\n\t\ttext-align: center;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {\n\t\tlist-style: none;\n\t\tmargin: 0;\n\t\theight: calc(195px + (1.7rem / 2));\n\t\toverflow-y: scroll;\n\t\tpadding-right: 0px;\n\t\tpadding-left: 0px;\n\t\twidth: 100%;\n\t\tbox-sizing: content-box;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {\n\t\theight: 30px;\n\t\tpadding: 5px 10px;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {\n\t\tcursor: pointer;\n\t\tbackground-color: #f0f0f0;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {\n\t\tbackground-color: #216ba5;\n\t\tcolor: white;\n\t\tfont-weight: bold;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover {\n\t\tbackground-color: #216ba5;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {\n\t\tcolor: #ccc;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled:hover {\n\t\tcursor: default;\n\t\tbackground-color: transparent;\n\t}\n\n\t.react-datepicker__week-number {\n\t\tcolor: #ccc;\n\t\tdisplay: inline-block;\n\t\twidth: 1.7rem;\n\t\tline-height: 1.7rem;\n\t\ttext-align: center;\n\t\tmargin: 0.166rem;\n\t}\n\n\t.react-datepicker__week-number.react-datepicker__week-number--clickable {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__week-number.react-datepicker__week-number--clickable:hover {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #f0f0f0;\n\t}\n\n\t.react-datepicker__day-names,\n\t.react-datepicker__week {\n\t\twhite-space: nowrap;\n\t}\n\n\t.react-datepicker__day-name,\n\t.react-datepicker__day,\n\t.react-datepicker__time-name {\n\t\tcolor: #000;\n\t\tdisplay: inline-block;\n\t\twidth: 1.7rem;\n\t\tline-height: 1.7rem;\n\t\ttext-align: center;\n\t\tmargin: 0.166rem;\n\t}\n\n\t.react-datepicker__day {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__day:hover {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #f0f0f0;\n\t}\n\n\t.react-datepicker__day--today {\n\t\tfont-weight: bold;\n\t}\n\n\t.react-datepicker__day--highlighted {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #3dcc4a;\n\t\tcolor: #fff;\n\t}\n\n\t.react-datepicker__day--highlighted:hover {\n\t\tbackground-color: #32be3f;\n\t}\n\n\t.react-datepicker__day--highlighted-custom-1 {\n\t\tcolor: magenta;\n\t}\n\n\t.react-datepicker__day--highlighted-custom-2 {\n\t\tcolor: green;\n\t}\n\n\t.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #216ba5;\n\t\tcolor: #fff;\n\t}\n\n\t.react-datepicker__day--selected:hover, .react-datepicker__day--in-selecting-range:hover, .react-datepicker__day--in-range:hover {\n\t\tbackground-color: #1d5d90;\n\t}\n\n\t.react-datepicker__day--keyboard-selected {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #2a87d0;\n\t\tcolor: #fff;\n\t}\n\n\t.react-datepicker__day--keyboard-selected:hover {\n\t\tbackground-color: #1d5d90;\n\t}\n\n\t.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range) {\n\t\tbackground-color: rgba(33, 107, 165, 0.5);\n\t}\n\n\t.react-datepicker__month--selecting-range .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range) {\n\t\tbackground-color: #f0f0f0;\n\t\tcolor: #000;\n\t}\n\n\t.react-datepicker__day--disabled {\n\t\tcursor: default;\n\t\tcolor: #ccc;\n\t}\n\n\t.react-datepicker__day--disabled:hover {\n\t\tbackground-color: transparent;\n\t}\n\n\t.react-datepicker__input-container {\n\t\tposition: relative;\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__year-read-view,\n\t.react-datepicker__month-read-view,\n\t.react-datepicker__month-year-read-view {\n\t\tborder: 1px solid transparent;\n\t\tborder-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__year-read-view:hover,\n\t.react-datepicker__month-read-view:hover,\n\t.react-datepicker__month-year-read-view:hover {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__year-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view:hover .react-datepicker__month-read-view--down-arrow {\n\t\tborder-top-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow {\n\t\tborder-top-color: #ccc;\n\t\tfloat: right;\n\t\tmargin-left: 20px;\n\t\ttop: 8px;\n\t\tposition: relative;\n\t\tborder-width: 0.45rem;\n\t}\n\n\t.react-datepicker__year-dropdown,\n\t.react-datepicker__month-dropdown,\n\t.react-datepicker__month-year-dropdown {\n\t\tbackground-color: #f0f0f0;\n\t\tposition: absolute;\n\t\twidth: 50%;\n\t\tleft: 25%;\n\t\ttop: 30px;\n\t\tz-index: 1;\n\t\ttext-align: center;\n\t\tborder-radius: 0.3rem;\n\t\tborder: 1px solid #aeaeae;\n\t}\n\n\t.react-datepicker__year-dropdown:hover,\n\t.react-datepicker__month-dropdown:hover,\n\t.react-datepicker__month-year-dropdown:hover {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__year-dropdown--scrollable,\n\t.react-datepicker__month-dropdown--scrollable,\n\t.react-datepicker__month-year-dropdown--scrollable {\n\t\theight: 150px;\n\t\toverflow-y: scroll;\n\t}\n\n\t.react-datepicker__year-option,\n\t.react-datepicker__month-option,\n\t.react-datepicker__month-year-option {\n\t\tline-height: 20px;\n\t\twidth: 100%;\n\t\tdisplay: block;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t}\n\n\t.react-datepicker__year-option:first-of-type,\n\t.react-datepicker__month-option:first-of-type,\n\t.react-datepicker__month-year-option:first-of-type {\n\t\tborder-top-left-radius: 0.3rem;\n\t\tborder-top-right-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__year-option:last-of-type,\n\t.react-datepicker__month-option:last-of-type,\n\t.react-datepicker__month-year-option:last-of-type {\n\t\t-webkit-user-select: none;\n\t\t-moz-user-select: none;\n\t\t-ms-user-select: none;\n\t\tuser-select: none;\n\t\tborder-bottom-left-radius: 0.3rem;\n\t\tborder-bottom-right-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__year-option:hover,\n\t.react-datepicker__month-option:hover,\n\t.react-datepicker__month-year-option:hover {\n\t\tbackground-color: #ccc;\n\t}\n\n\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-upcoming,\n\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,\n\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming {\n\t\tborder-bottom-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-previous,\n\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,\n\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous {\n\t\tborder-top-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__year-option--selected,\n\t.react-datepicker__month-option--selected,\n\t.react-datepicker__month-year-option--selected {\n\t\tposition: absolute;\n\t\tleft: 15px;\n\t}\n\n\t.react-datepicker__close-icon {\n\t\tbackground-color: transparent;\n\t\tborder: 0;\n\t\tcursor: pointer;\n\t\toutline: 0;\n\t\tpadding: 0;\n\t\tvertical-align: middle;\n\t\tposition: absolute;\n\t\theight: 16px;\n\t\twidth: 16px;\n\t\ttop: 25%;\n\t\tright: 7px;\n\t}\n\n\t.react-datepicker__close-icon::after {\n\t\tbackground-color: #216ba5;\n\t\tborder-radius: 50%;\n\t\tbottom: 0;\n\t\tbox-sizing: border-box;\n\t\tcolor: #fff;\n\t\tcontent: "\0d7";\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\theight: 16px;\n\t\twidth: 16px;\n\t\tline-height: 1;\n\t\tmargin: -8px auto 0;\n\t\tpadding: 2px;\n\t\tposition: absolute;\n\t\tright: 0px;\n\t\ttext-align: center;\n\t}\n\n\t.react-datepicker__today-button {\n\t\tbackground: #f0f0f0;\n\t\tborder-top: 1px solid #aeaeae;\n\t\tcursor: pointer;\n\t\ttext-align: center;\n\t\tfont-weight: bold;\n\t\tpadding: 5px 0;\n\t\tclear: left;\n\t}\n\n\t.react-datepicker__portal {\n\t\tposition: fixed;\n\t\twidth: 100vw;\n\t\theight: 100vh;\n\t\tbackground-color: rgba(0, 0, 0, 0.8);\n\t\tleft: 0;\n\t\ttop: 0;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tdisplay: flex;\n\t\tz-index: 2147483647;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__day-name,\n\t.react-datepicker__portal .react-datepicker__day,\n\t.react-datepicker__portal .react-datepicker__time-name {\n\t\twidth: 3rem;\n\t\tline-height: 3rem;\n\t}\n\n\t@media (max-width: 400px), (max-height: 550px) {\n\t\t.react-datepicker__portal .react-datepicker__day-name,\n\t\t.react-datepicker__portal .react-datepicker__day,\n\t\t.react-datepicker__portal .react-datepicker__time-name {\n\t\twidth: 2rem;\n\t\tline-height: 2rem;\n\t\t}\n\t}\n\n\t.react-datepicker__portal .react-datepicker__current-month,\n\t.react-datepicker__portal .react-datepicker-time__header {\n\t\tfont-size: 1.44rem;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation {\n\t\tborder: 0.81rem solid transparent;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--previous {\n\t\tborder-right-color: #ccc;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--previous:hover {\n\t\tborder-right-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--previous--disabled, .react-datepicker__portal .react-datepicker__navigation--previous--disabled:hover {\n\t\tborder-right-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--next {\n\t\tborder-left-color: #ccc;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--next:hover {\n\t\tborder-left-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--next--disabled, .react-datepicker__portal .react-datepicker__navigation--next--disabled:hover {\n\t\tborder-left-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\n\t/*\n\t*\n\t* React DatePicker Custom Overrides\n\t*\n\t*/\n\t.react-datepicker-wrapper,\n\t.react-datepicker__input-container {\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t}\n\t.react-datepicker__input-container input {\n\t\tposition: relative;\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t\tpadding: 10px;\n\t\tfont-size: 14px;\n\t\tbackground-color: rgb(255, 255, 255);\n\t\tcolor: rgb(94, 94, 94);\n\t\tborder: 1px solid rgb(229, 229, 229);\n\t\tborder-radius: 5px;\n\t\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t}\n\t.react-datepicker__input-container input:hover {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t}\n\t.react-datepicker__day--keyboard-selected {\n\t\tbackground-color: ', ';\n\t}\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list {\n\t\tpadding: 0px;\n\t}\n\t.react-datepicker__time-container,\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\twidth: 95px;\n\t}\n\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\tright: 105px;\n\t}\n\n\t.react-datepicker__day--selected,\n\t.react-datepicker__day--in-selecting-range,\n\t.react-datepicker__day--in-range,\n\t.react-datepicker__day--selected:hover,\n\t.react-datepicker__day--in-selecting-range:hover,\n\t.react-datepicker__day--in-range:hover,\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list\n\t\tli.react-datepicker__time-list-item--selected,\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list\n\t\tli.react-datepicker__time-list-item--selected:hover {\n\t\tbackground-color: ', ';\n\t}\n\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list\n\t\tli.react-datepicker__time-list-item {\n\t\tline-height: 30px;\n\t\tpadding: 0;\n\t}\n\t', '\n'], ['\n\t& * {\n\t\tbox-sizing: border-box;\n\t}\n\n\t@keyframes TESpinnerLoading {\n\t\t\tto {\n\t\t\t\t\t-webkit-transform: rotate(1turn);\n\t\t\t\t\ttransform: rotate(1turn)\n\t\t\t}\n\t}\n\n\t/*\n\t*\n\t* React Power Select\n\t*\n\t*/\n\t.PowerSelect {\n\t\tposition: relative;\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t\tfont-size: 16px;\n\t\tcursor: pointer;\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid ', ';\n\t\tborder-radius: 5px;\n\t\tbox-sizing: border-box;\n\t\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t}\n\t.PowewrSelect * {\n\t\tbox-sizing: border-box;\n\t}\n\t.PowerSelect.white-border {\n\t\tborder: 1px solid ', ';\n\t}\n\t.PowerSelect:focus {\n\t\toutline: none;\n\t}\n\t.PowerSelect--focused {\n\t}\n\t.PowerSelect--disabled {\n\t\tbackground-color: ', ';\n\t\tcursor: not-allowed;\n\t}\n\t.PowerSelect--disabled .PowerSelect__Trigger {\n\t\tpointer-events: none;\n\t}\n\t.PowerSelect--disabled .PowerSelect__TriggerInput {\n\t\tbackground-color: ', ';\n\t}\n\t.PowerSelect--open {\n\t\tborder-bottom-right-radius: 0;\n\t\tborder-bottom-left-radius: 0;\n\t\tborder-bottom: 0;\n\t}\n\t.PowerSelect--open .PowerSelect__TriggerStatus:before {\n\t\ttransform: rotate(-180deg);\n\t}\n\t.PowerSelect__Trigger {\n\t\tposition: relative;\n\t\theight: 39px;\n\t\toverflow: hidden;\n\t\twhite-space: nowrap;\n\t\ttext-overflow: ellipsis;\n\t}\n\t.PowerSelect__Menu {\n\t\tbackground-color: ', ';\n\t\tborder: 1px solid ', ';\n\t}\n\t.PowerSelect__Menu.white-border__Menu {\n\t\tborder: none;\n\t\tborder-top: 1px solid #a0a0a0;\n\t}\n\t.PowerSelect__Menu:focus {\n\t\toutline: none;\n\t}\n\t.PowerSelect__Options {\n\t\tposition: relative;\n\t\tmax-height: 238px;\n\t\toverflow: auto;\n\t}\n\t.PowerSelect__OptGroup {\n\t\tpadding-left: 8px;\n\t}\n\t.PowerSelect__OptGroup__Label {\n\t\tfont-weight: 700;\n\t\tfont-size: 0.9em;\n\t\tcolor: ', ';\n\t\tpadding: 8px 0 4px;\n\t}\n\t.PowerSelect__Option {\n\t\tcursor: pointer;\n\t\tpadding: 8px 12px;\n\t}\n\t.PowerSelect__Option:not(.PowerSelect__Option--disabled):hover {\n\t\tbackground-color: rgba(55, 50, 117 0.5);\n\t}\n\t.PowerSelect__Option--disabled {\n\t\tcolor: ', ';\n\t\tcursor: not-allowed;\n\t}\n\t.PowerSelect__Option--highlighted {\n\t\tbackground-color: ', ';\n\t}\n\t.PowerSelect__BeforeOptions {\n\t\tpadding: 8px 12px;\n\t}\n\t.PowerSelect__Placeholder {\n\t\tcolor: ', ';\n\t\tfont-size: 14px;\n\t}\n\t.PowerSelect__SearchInputContainer {\n\t\tpadding: 8px;\n\t}\n\t.PowerSelect__SearchInput {\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t\theight: 34px;\n\t\tpadding: 4px 8px;\n\t\tline-height: 1.4;\n\t\tfont-size: inherit;\n\t\tborder: 1px solid ', ';\n\t\tborder-radius: 2px;\n\t\tcursor: pointer;\n\t\tbox-sizing: border-box;\n\t}\n\t.PowerSelect__SearchInput:focus {\n\t\tborder-color: ', ';\n\t\toutline: none;\n\t}\n\t.PowerSelect__TriggerInput {\n\t\tdisplay: inline-block;\n\t\twidth: 100%;\n\t\theight: 34px;\n\t\tborder: none;\n\t\tcursor: pointer;\n\t\tpadding: 4px 22px 4px 8px;\n\t\tfont-size: inherit;\n\t}\n\t.PowerSelect__TriggerInput:focus {\n\t\toutline: none;\n\t}\n\t.PowerSelect__Trigger__LHS,\n\t.PowerSelect__Trigger__RHS {\n\t\tdisplay: table-cell;\n\t\tvertical-align: middle;\n\t\twhite-space: nowrap;\n\t}\n\t.PowerSelect__Trigger__LHS {\n\t\tpadding-left: 8px;\n\t\tpadding-right: 4px;\n\t}\n\t.PowerSelect__Trigger__RHS {\n\t\tpadding-right: 4px;\n\t\tpadding-left: 4px;\n\t}\n\t.PowerSelect__TriggerLabel {\n\t\tpadding: 6px 22px 6px 8px;\n\t\tcolor: ', ';\n\t}\n\t.PowerSelect__Trigger__LHS + .PowerSelect__TriggerLabel {\n\t\tpadding-left: 4px;\n\t}\n\t.PowerSelect__TriggerStatus {\n\t\tpadding-top: 2px;\n\t\tpadding-right: 8px;\n\t\tpadding-left: 4px;\n\t}\n\t.PowerSelect__TriggerStatus:before {\n\t\tcontent: \'\';\n\t\tdisplay: block;\n\t\tborder-top: 4px solid ', ';\n\t\tborder-left: 4px solid transparent;\n\t\tborder-right: 4px solid transparent;\n\t}\n\t.PowerSelect__Clear {\n\t\tpadding: 4px;\n\t\tcolor: ', ';\n\t}\n\t.PowerSelect__Clear:hover {\n\t\tcolor: ', ';\n\t}\n\t.PowerSelect__Clear:before {\n\t\tcontent: "\\\\D7";\n\t}\n\t.PowerSelect__Trigger--empty .PowerSelect__Clear {\n\t\tvisibility: hidden;\n\t}\n\t.PowerSelect__Clear,\n\t.PowerSelect__TriggerInputContainer,\n\t.PowerSelect__TriggerLabel,\n\t.PowerSelect__TriggerStatus,\n\t.PowerSelectMultiple__OptionsContainer {\n\t\tdisplay: table-cell;\n\t\twidth: 100%;\n\t\tvertical-align: middle;\n\t\theight: 39px;\n\t}\n\t.PowerSelectMultiple__OptionsContainer {\n\t\tpadding-top: 2px;\n\t\tpadding-bottom: 2px;\n\t}\n\t.PowerSelectMultiple__SelectedOptions {\n\t\tlist-style: none;\n\t\tpadding-left: 0;\n\t\tdisplay: block;\n\t\tmargin: 0;\n\t}\n\t.PowerSelectMultiple__SelectedOptions:after {\n\t\tcontent: \'\';\n\t\tdisplay: table;\n\t\tclear: both;\n\t}\n\t.PowerSelectMultiple__SelectedOptions > li {\n\t\tdisplay: block;\n\t\tfloat: left;\n\t\tmargin-top: 2px;\n\t\tmargin-bottom: 2px;\n\t}\n\t.PowerSelect__Trigger--empty .PowerSelectMultiple_TriggerInputContainer {\n\t\tfloat: none;\n\t\tmargin-left: 4px;\n\t}\n\t.PowerSelectMultiple__SelectedOption {\n\t\tline-height: 29px;\n\t\tmargin-left: 4px;\n\t\tbackground-color: #ebeeff;\n\t\tborder: 1px solid #c6cfff;\n\t\tcolor: ', ';\n\t\tborder-radius: 3px;\n\t}\n\t.PowerSelectMultiple__SelectedOption__Close,\n\t.PowerSelectMultiple__SelectedOption__Label {\n\t\tpadding: 0 6px;\n\t\tdisplay: block;\n\t\tfloat: left;\n\t}\n\t.PowerSelectMultiple__SelectedOption__Close {\n\t\tborder-left: 1px solid #c6cfff;\n\t\tcursor: pointer;\n\t}\n\t.PowerSelectMultiple__SelectedOption__Close:hover {\n\t\tbackground-color: #dce1ff;\n\t}\n\t.PowerSelectMultiple .PowerSelect__Trigger {\n\t\twhite-space: normal;\n\t\theight: auto;\n\t}\n\t.PowerSelectMultiple .PowerSelect__TriggerInput {\n\t\tdisplay: inline-block;\n\t\twidth: auto;\n\t\tpadding: 0;\n\t\theight: 26px;\n\t\tmargin-left: 4px;\n\t}\n\t.PowerSelectMultiple .PowerSelect__Trigger--empty .PowerSelect__TriggerInput {\n\t\twidth: 100%;\n\t}\n\n\t.tether-element {\n\t\tz-index: 1000;\n\t}\n\n\t/*\n\t*\n\t* React DatePicker Base\n\t*\n\t*/\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow {\n\t\tmargin-left: -8px;\n\t\tposition: absolute;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tbox-sizing: content-box;\n\t\tposition: absolute;\n\t\tborder: 8px solid transparent;\n\t\theight: 0;\n\t\twidth: 1px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tcontent: "";\n\t\tz-index: -1;\n\t\tborder-width: 8px;\n\t\tleft: -8px;\n\t\tborder-bottom-color: #aeaeae;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {\n\t\ttop: 0;\n\t\tmargin-top: -8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\tborder-top: none;\n\t\tborder-bottom-color: #f0f0f0;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {\n\t\ttop: -1px;\n\t\tborder-bottom-color: #aeaeae;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow {\n\t\tbottom: 0;\n\t\tmargin-bottom: -8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tborder-bottom: none;\n\t\tborder-top-color: #fff;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before, .react-datepicker__year-read-view--down-arrow::before,\n\t.react-datepicker__month-read-view--down-arrow::before,\n\t.react-datepicker__month-year-read-view--down-arrow::before {\n\t\tbottom: -1px;\n\t\tborder-top-color: #aeaeae;\n\t}\n\n\t.react-datepicker-wrapper {\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker {\n\t\tfont-family: "Helvetica Neue", Helvetica, Arial, sans-serif;\n\t\tfont-size: 0.8rem;\n\t\tbackground-color: #fff;\n\t\tcolor: #000;\n\t\tborder: 1px solid #aeaeae;\n\t\tborder-radius: 0.3rem;\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__triangle {\n\t\tleft: 35px;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__time-container {\n\t\tborder-left: 0;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__time {\n\t\tborder-radius: 0.3rem;\n\t}\n\n\t.react-datepicker--time-only .react-datepicker__time-box {\n\t\tborder-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__triangle {\n\t\tposition: absolute;\n\t\tleft: 50px;\n\t}\n\n\t.react-datepicker-popper {\n\t\tz-index: 1;\n\t}\n\n\t.react-datepicker-popper[data-placement^="bottom"] {\n\t\tmargin-top: 10px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="top"] {\n\t\tmargin-bottom: 10px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="right"] {\n\t\tmargin-left: 8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="right"] .react-datepicker__triangle {\n\t\tleft: auto;\n\t\tright: 42px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="left"] {\n\t\tmargin-right: 8px;\n\t}\n\n\t.react-datepicker-popper[data-placement^="left"] .react-datepicker__triangle {\n\t\tleft: 42px;\n\t\tright: auto;\n\t}\n\n\t.react-datepicker__header {\n\t\ttext-align: center;\n\t\tbackground-color: #f0f0f0;\n\t\tborder-bottom: 1px solid #aeaeae;\n\t\tborder-top-left-radius: 0.3rem;\n\t\tborder-top-right-radius: 0.3rem;\n\t\tpadding-top: 8px;\n\t\tposition: relative;\n\t}\n\n\t.react-datepicker__header--time {\n\t\tpadding-bottom: 8px;\n\t\tpadding-left: 5px;\n\t\tpadding-right: 5px;\n\t}\n\n\t.react-datepicker__year-dropdown-container--select,\n\t.react-datepicker__month-dropdown-container--select,\n\t.react-datepicker__month-year-dropdown-container--select,\n\t.react-datepicker__year-dropdown-container--scroll,\n\t.react-datepicker__month-dropdown-container--scroll,\n\t.react-datepicker__month-year-dropdown-container--scroll {\n\t\tdisplay: inline-block;\n\t\tmargin: 0 2px;\n\t}\n\n\t.react-datepicker__current-month,\n\t.react-datepicker-time__header {\n\t\tmargin-top: 0;\n\t\tcolor: #000;\n\t\tfont-weight: bold;\n\t\tfont-size: 0.944rem;\n\t}\n\n\t.react-datepicker-time__header {\n\t\ttext-overflow: ellipsis;\n\t\twhite-space: nowrap;\n\t\toverflow: hidden;\n\t}\n\n\t.react-datepicker__navigation {\n\t\tbackground: none;\n\t\tline-height: 1.7rem;\n\t\ttext-align: center;\n\t\tcursor: pointer;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 0;\n\t\tpadding: 0;\n\t\tborder: 0.45rem solid transparent;\n\t\tz-index: 1;\n\t\theight: 10px;\n\t\twidth: 10px;\n\t\ttext-indent: -999em;\n\t\toverflow: hidden;\n\t}\n\n\t.react-datepicker__navigation--previous {\n\t\tleft: 10px;\n\t\tborder-right-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--previous:hover {\n\t\tborder-right-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__navigation--previous--disabled, .react-datepicker__navigation--previous--disabled:hover {\n\t\tborder-right-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\t.react-datepicker__navigation--next {\n\t\tright: 10px;\n\t\tborder-left-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\tright: 80px;\n\t}\n\n\t.react-datepicker__navigation--next:hover {\n\t\tborder-left-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__navigation--next--disabled, .react-datepicker__navigation--next--disabled:hover {\n\t\tborder-left-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\t.react-datepicker__navigation--years {\n\t\tposition: relative;\n\t\ttop: 0;\n\t\tdisplay: block;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t}\n\n\t.react-datepicker__navigation--years-previous {\n\t\ttop: 4px;\n\t\tborder-top-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--years-previous:hover {\n\t\tborder-top-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__navigation--years-upcoming {\n\t\ttop: -4px;\n\t\tborder-bottom-color: #ccc;\n\t}\n\n\t.react-datepicker__navigation--years-upcoming:hover {\n\t\tborder-bottom-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__month-container {\n\t\tfloat: left;\n\t}\n\n\t.react-datepicker__month {\n\t\tmargin: 0.4rem;\n\t\ttext-align: center;\n\t}\n\n\t.react-datepicker__input-time-container {\n\t\tclear: both;\n\t\twidth: 100%;\n\t\tfloat: left;\n\t\tmargin: 5px 0 10px 15px;\n\t\ttext-align: left;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__caption {\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container {\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input {\n\t\tdisplay: inline-block;\n\t\tmargin-left: 10px;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input {\n\t\twidth: 85px;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-inner-spin-button,\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"]::-webkit-outer-spin-button {\n\t\t-webkit-appearance: none;\n\t\tmargin: 0;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type="time"] {\n\t\t-moz-appearance: textfield;\n\t}\n\n\t.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__delimiter {\n\t\tmargin-left: 5px;\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__time-container {\n\t\tfloat: right;\n\t\tborder-left: 1px solid #aeaeae;\n\t\twidth: 70px;\n\t}\n\n\t.react-datepicker__time-container--with-today-button {\n\t\tdisplay: inline;\n\t\tborder: 1px solid #aeaeae;\n\t\tborder-radius: 0.3rem;\n\t\tposition: absolute;\n\t\tright: -72px;\n\t\ttop: 0;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time {\n\t\tposition: relative;\n\t\tbackground: white;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\twidth: 70px;\n\t\toverflow-x: hidden;\n\t\tmargin: 0 auto;\n\t\ttext-align: center;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {\n\t\tlist-style: none;\n\t\tmargin: 0;\n\t\theight: calc(195px + (1.7rem / 2));\n\t\toverflow-y: scroll;\n\t\tpadding-right: 0px;\n\t\tpadding-left: 0px;\n\t\twidth: 100%;\n\t\tbox-sizing: content-box;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {\n\t\theight: 30px;\n\t\tpadding: 5px 10px;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {\n\t\tcursor: pointer;\n\t\tbackground-color: #f0f0f0;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {\n\t\tbackground-color: #216ba5;\n\t\tcolor: white;\n\t\tfont-weight: bold;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover {\n\t\tbackground-color: #216ba5;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {\n\t\tcolor: #ccc;\n\t}\n\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled:hover {\n\t\tcursor: default;\n\t\tbackground-color: transparent;\n\t}\n\n\t.react-datepicker__week-number {\n\t\tcolor: #ccc;\n\t\tdisplay: inline-block;\n\t\twidth: 1.7rem;\n\t\tline-height: 1.7rem;\n\t\ttext-align: center;\n\t\tmargin: 0.166rem;\n\t}\n\n\t.react-datepicker__week-number.react-datepicker__week-number--clickable {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__week-number.react-datepicker__week-number--clickable:hover {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #f0f0f0;\n\t}\n\n\t.react-datepicker__day-names,\n\t.react-datepicker__week {\n\t\twhite-space: nowrap;\n\t}\n\n\t.react-datepicker__day-name,\n\t.react-datepicker__day,\n\t.react-datepicker__time-name {\n\t\tcolor: #000;\n\t\tdisplay: inline-block;\n\t\twidth: 1.7rem;\n\t\tline-height: 1.7rem;\n\t\ttext-align: center;\n\t\tmargin: 0.166rem;\n\t}\n\n\t.react-datepicker__day {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__day:hover {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #f0f0f0;\n\t}\n\n\t.react-datepicker__day--today {\n\t\tfont-weight: bold;\n\t}\n\n\t.react-datepicker__day--highlighted {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #3dcc4a;\n\t\tcolor: #fff;\n\t}\n\n\t.react-datepicker__day--highlighted:hover {\n\t\tbackground-color: #32be3f;\n\t}\n\n\t.react-datepicker__day--highlighted-custom-1 {\n\t\tcolor: magenta;\n\t}\n\n\t.react-datepicker__day--highlighted-custom-2 {\n\t\tcolor: green;\n\t}\n\n\t.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #216ba5;\n\t\tcolor: #fff;\n\t}\n\n\t.react-datepicker__day--selected:hover, .react-datepicker__day--in-selecting-range:hover, .react-datepicker__day--in-range:hover {\n\t\tbackground-color: #1d5d90;\n\t}\n\n\t.react-datepicker__day--keyboard-selected {\n\t\tborder-radius: 0.3rem;\n\t\tbackground-color: #2a87d0;\n\t\tcolor: #fff;\n\t}\n\n\t.react-datepicker__day--keyboard-selected:hover {\n\t\tbackground-color: #1d5d90;\n\t}\n\n\t.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range) {\n\t\tbackground-color: rgba(33, 107, 165, 0.5);\n\t}\n\n\t.react-datepicker__month--selecting-range .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range) {\n\t\tbackground-color: #f0f0f0;\n\t\tcolor: #000;\n\t}\n\n\t.react-datepicker__day--disabled {\n\t\tcursor: default;\n\t\tcolor: #ccc;\n\t}\n\n\t.react-datepicker__day--disabled:hover {\n\t\tbackground-color: transparent;\n\t}\n\n\t.react-datepicker__input-container {\n\t\tposition: relative;\n\t\tdisplay: inline-block;\n\t}\n\n\t.react-datepicker__year-read-view,\n\t.react-datepicker__month-read-view,\n\t.react-datepicker__month-year-read-view {\n\t\tborder: 1px solid transparent;\n\t\tborder-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__year-read-view:hover,\n\t.react-datepicker__month-read-view:hover,\n\t.react-datepicker__month-year-read-view:hover {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__year-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view:hover .react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view:hover .react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view:hover .react-datepicker__month-read-view--down-arrow {\n\t\tborder-top-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__year-read-view--down-arrow,\n\t.react-datepicker__month-read-view--down-arrow,\n\t.react-datepicker__month-year-read-view--down-arrow {\n\t\tborder-top-color: #ccc;\n\t\tfloat: right;\n\t\tmargin-left: 20px;\n\t\ttop: 8px;\n\t\tposition: relative;\n\t\tborder-width: 0.45rem;\n\t}\n\n\t.react-datepicker__year-dropdown,\n\t.react-datepicker__month-dropdown,\n\t.react-datepicker__month-year-dropdown {\n\t\tbackground-color: #f0f0f0;\n\t\tposition: absolute;\n\t\twidth: 50%;\n\t\tleft: 25%;\n\t\ttop: 30px;\n\t\tz-index: 1;\n\t\ttext-align: center;\n\t\tborder-radius: 0.3rem;\n\t\tborder: 1px solid #aeaeae;\n\t}\n\n\t.react-datepicker__year-dropdown:hover,\n\t.react-datepicker__month-dropdown:hover,\n\t.react-datepicker__month-year-dropdown:hover {\n\t\tcursor: pointer;\n\t}\n\n\t.react-datepicker__year-dropdown--scrollable,\n\t.react-datepicker__month-dropdown--scrollable,\n\t.react-datepicker__month-year-dropdown--scrollable {\n\t\theight: 150px;\n\t\toverflow-y: scroll;\n\t}\n\n\t.react-datepicker__year-option,\n\t.react-datepicker__month-option,\n\t.react-datepicker__month-year-option {\n\t\tline-height: 20px;\n\t\twidth: 100%;\n\t\tdisplay: block;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t}\n\n\t.react-datepicker__year-option:first-of-type,\n\t.react-datepicker__month-option:first-of-type,\n\t.react-datepicker__month-year-option:first-of-type {\n\t\tborder-top-left-radius: 0.3rem;\n\t\tborder-top-right-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__year-option:last-of-type,\n\t.react-datepicker__month-option:last-of-type,\n\t.react-datepicker__month-year-option:last-of-type {\n\t\t-webkit-user-select: none;\n\t\t-moz-user-select: none;\n\t\t-ms-user-select: none;\n\t\tuser-select: none;\n\t\tborder-bottom-left-radius: 0.3rem;\n\t\tborder-bottom-right-radius: 0.3rem;\n\t}\n\n\t.react-datepicker__year-option:hover,\n\t.react-datepicker__month-option:hover,\n\t.react-datepicker__month-year-option:hover {\n\t\tbackground-color: #ccc;\n\t}\n\n\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-upcoming,\n\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,\n\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming {\n\t\tborder-bottom-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__year-option:hover .react-datepicker__navigation--years-previous,\n\t.react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,\n\t.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous {\n\t\tborder-top-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__year-option--selected,\n\t.react-datepicker__month-option--selected,\n\t.react-datepicker__month-year-option--selected {\n\t\tposition: absolute;\n\t\tleft: 15px;\n\t}\n\n\t.react-datepicker__close-icon {\n\t\tbackground-color: transparent;\n\t\tborder: 0;\n\t\tcursor: pointer;\n\t\toutline: 0;\n\t\tpadding: 0;\n\t\tvertical-align: middle;\n\t\tposition: absolute;\n\t\theight: 16px;\n\t\twidth: 16px;\n\t\ttop: 25%;\n\t\tright: 7px;\n\t}\n\n\t.react-datepicker__close-icon::after {\n\t\tbackground-color: #216ba5;\n\t\tborder-radius: 50%;\n\t\tbottom: 0;\n\t\tbox-sizing: border-box;\n\t\tcolor: #fff;\n\t\tcontent: "\\00d7";\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\theight: 16px;\n\t\twidth: 16px;\n\t\tline-height: 1;\n\t\tmargin: -8px auto 0;\n\t\tpadding: 2px;\n\t\tposition: absolute;\n\t\tright: 0px;\n\t\ttext-align: center;\n\t}\n\n\t.react-datepicker__today-button {\n\t\tbackground: #f0f0f0;\n\t\tborder-top: 1px solid #aeaeae;\n\t\tcursor: pointer;\n\t\ttext-align: center;\n\t\tfont-weight: bold;\n\t\tpadding: 5px 0;\n\t\tclear: left;\n\t}\n\n\t.react-datepicker__portal {\n\t\tposition: fixed;\n\t\twidth: 100vw;\n\t\theight: 100vh;\n\t\tbackground-color: rgba(0, 0, 0, 0.8);\n\t\tleft: 0;\n\t\ttop: 0;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tdisplay: flex;\n\t\tz-index: 2147483647;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__day-name,\n\t.react-datepicker__portal .react-datepicker__day,\n\t.react-datepicker__portal .react-datepicker__time-name {\n\t\twidth: 3rem;\n\t\tline-height: 3rem;\n\t}\n\n\t@media (max-width: 400px), (max-height: 550px) {\n\t\t.react-datepicker__portal .react-datepicker__day-name,\n\t\t.react-datepicker__portal .react-datepicker__day,\n\t\t.react-datepicker__portal .react-datepicker__time-name {\n\t\twidth: 2rem;\n\t\tline-height: 2rem;\n\t\t}\n\t}\n\n\t.react-datepicker__portal .react-datepicker__current-month,\n\t.react-datepicker__portal .react-datepicker-time__header {\n\t\tfont-size: 1.44rem;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation {\n\t\tborder: 0.81rem solid transparent;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--previous {\n\t\tborder-right-color: #ccc;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--previous:hover {\n\t\tborder-right-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--previous--disabled, .react-datepicker__portal .react-datepicker__navigation--previous--disabled:hover {\n\t\tborder-right-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--next {\n\t\tborder-left-color: #ccc;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--next:hover {\n\t\tborder-left-color: #b3b3b3;\n\t}\n\n\t.react-datepicker__portal .react-datepicker__navigation--next--disabled, .react-datepicker__portal .react-datepicker__navigation--next--disabled:hover {\n\t\tborder-left-color: #e6e6e6;\n\t\tcursor: default;\n\t}\n\n\n\t/*\n\t*\n\t* React DatePicker Custom Overrides\n\t*\n\t*/\n\t.react-datepicker-wrapper,\n\t.react-datepicker__input-container {\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t}\n\t.react-datepicker__input-container input {\n\t\tposition: relative;\n\t\tdisplay: block;\n\t\twidth: 100%;\n\t\tpadding: 10px;\n\t\tfont-size: 14px;\n\t\tbackground-color: rgb(255, 255, 255);\n\t\tcolor: rgb(94, 94, 94);\n\t\tborder: 1px solid rgb(229, 229, 229);\n\t\tborder-radius: 5px;\n\t\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t}\n\t.react-datepicker__input-container input:hover {\n\t\tborder: 1px solid ', ';\n\t\tbox-shadow: 0 0 0 1px ', ' inset;\n\t}\n\t.react-datepicker__day--keyboard-selected {\n\t\tbackground-color: ', ';\n\t}\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list {\n\t\tpadding: 0px;\n\t}\n\t.react-datepicker__time-container,\n\t.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {\n\t\twidth: 95px;\n\t}\n\t.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n\t\tright: 105px;\n\t}\n\n\t.react-datepicker__day--selected,\n\t.react-datepicker__day--in-selecting-range,\n\t.react-datepicker__day--in-range,\n\t.react-datepicker__day--selected:hover,\n\t.react-datepicker__day--in-selecting-range:hover,\n\t.react-datepicker__day--in-range:hover,\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list\n\t\tli.react-datepicker__time-list-item--selected,\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list\n\t\tli.react-datepicker__time-list-item--selected:hover {\n\t\tbackground-color: ', ';\n\t}\n\n\t.react-datepicker__time-container\n\t\t.react-datepicker__time\n\t\t.react-datepicker__time-box\n\t\tul.react-datepicker__time-list\n\t\tli.react-datepicker__time-list-item {\n\t\tline-height: 30px;\n\t\tpadding: 0;\n\t}\n\t', '\n']);
 
 // import 'react-datepicker/dist/react-datepicker.css'
 
@@ -21783,7 +21722,7 @@ var initialTheme = {
 	//DatePicker
 	// - At this moment there is no other way to style the wrapper components on this input.
 	//
-};var GlobalStyles = styled.createGlobalStyle(_templateObject$w, function (props) {
+};var GlobalStyles = styled.createGlobalStyle(_templateObject$x, function (props) {
 	return props.theme.white;
 }, function (props) {
 	return props.theme.lightGray;

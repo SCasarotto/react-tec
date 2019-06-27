@@ -1,15 +1,9 @@
-//
-//TE Version 0.3.0
-//
-
 import React from 'react'
 import PropTypes from 'prop-types'
 
 import TERow from './../TERow'
 import TELabel from './../TELabel'
 import TEFileInput from './../TEFileInput'
-
-//import {} from './styledComponents'
 
 const TEFileRow = (props) => {
 	const {

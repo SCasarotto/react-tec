@@ -53,78 +53,54 @@ const calculateRingStyles = ({ totalRings, ringNumber, innerColor, outerColor })
 }
 
 export const Container = styled.div`
-	${(props) => {
-		return `
-			text-align: center;
-		`
-	}}
+	text-align: center;
 `
 export const SpinnerWrapper = styled.div`
+	position: relative;
+	display: inline-block;
 	${(props) => {
 		const { size } = props
 
-		let width = 80
-		let height = 80
 		switch (size) {
 			case 'small':
-				width = 40
-				height = 40
-				break
+				return `
+					width: 40px;
+					height: 40px;
+				`
 			case 'medium':
-				width = 60
-				height = 60
-				break
+				return `
+					width: 60px;
+					height: 60px;
+				`
 			case 'large':
-				width = 80
-				height = 80
-				break
+				return `
+					width: 80px;
+					height: 80px;
+				`
 			default:
-				break
+				return `
+					width: 80px;
+					height: 80px;
+				`
 		}
-
-		return `
-		    position: relative;
-		    width: ${width}px;
-		    height: ${height}px;
-		    display: inline-block;
-		`
 	}}
 `
 export const Ring = styled.div`
+	position: absolute;
+	border-radius: 50%;
+	overflow: hidden;
+	border-top: 3px solid transparent;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	border-left: 1px solid transparent;
+
 	${(props) => {
 		const { theme, ringNumber, totalRings, innerColor, outerColor } = props
-
-		let styles = `
-		    position: absolute;
-		    border-radius: 50%;
-		    overflow: hidden;
-		    border-top: 3px solid transparent;
-		    border-right: 1px solid transparent;
-		    border-bottom: 1px solid transparent;
-		    border-left: 1px solid transparent;
-		`
-
-		styles += calculateRingStyles({
+		return calculateRingStyles({
 			ringNumber,
 			totalRings,
 			innerColor: innerColor || theme.white,
 			outerColor: outerColor || theme.primary,
 		})
-
-		return styles
 	}}
 `
-
-//import { colors } from './../../config/styles';
-
-export default {
-	ring: {
-		position: 'absolute',
-		borderRadius: '50%',
-		overflow: 'hidden',
-		borderTop: '3px solid transparent',
-		borderRight: '1px solid transparent',
-		borderBottom: '1px solid transparent',
-		borderLeft: '1px solid transparent',
-	},
-}

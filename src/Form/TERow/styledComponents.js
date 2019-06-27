@@ -1,43 +1,33 @@
 import styled from 'styled-components'
 
 export const Row = styled.div`
-	${(props) => {
-		const { size, last } = props
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 10px;
+	text-align: left;
+	box-sizing: border-box;
+	padding-left: ${(props) => (props.size !== 'full' && props.last ? '5px' : '0px')};
+	padding-right: ${(props) => (props.size !== 'full' && !props.last ? '5px' : '0px')};
 
-		let width = '100%'
+	${(props) => {
+		const { size } = props
+
 		switch (size) {
 			case 'full':
-				width = '100%'
-				break
+				return 'width: 100%;'
 			case 'two-third':
-				width = '66.66%'
-				break
+				return 'width: 66.66%;'
 			case 'half':
-				width = '50%'
-				break
+				return 'width: 50%;'
 			case 'third':
-				width = '33.33%'
-				break
+				return 'width: 33.33%;'
 			case 'forth':
-				width = '25%'
-				break
+				return 'width: 25%;'
 			case 'condensed':
-				width = 'auto'
-				break
+				return 'width: auto;'
 			default:
-				break
+				return 'width: 100%;'
 		}
-
-		return `
-            position: relative;
-            display: inline-block;
-            vertical-align: top;
-            margin-bottom: 10px;
-            text-align: left;
-            box-sizing: border-box;
-            width: ${width};
-            padding-left: ${size !== 'full' && last ? '5px' : '0px'};
-            padding-right: ${size !== 'full' && !last ? '5px' : '0px'};
-        `
 	}}
 `

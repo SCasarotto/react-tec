@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <!-- and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). -->
 
+## 0.1.13 - 06-27-2019
+
+### Added
+
+-   `TEDatetimeInput` now has a `withTEPortal` which produces an button with the date in it that on click shows the `DatePicker` `withPortal` `inline`
+-   Full styled-component code reviewed. Cleaned formatting and fixed a few css bugs.
+-   Standardized navigation link colors to address #18
+
 ## 0.1.12 - 06-26-2019
 
 ### Changes

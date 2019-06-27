@@ -5,133 +5,90 @@ import { FaFileUpload, FaRegWindowClose } from 'react-icons/fa'
 import TEButton from './../TEButton'
 
 export const Wrapper = styled.div`
-	${(props) => {
-		return `
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        `
-	}}
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 `
 export const InputWrapper = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: ${(props) => props.theme.white};
+	border-radius: 5px;
+	padding-right: 5px;
+
 	${(props) => {
 		const { theme, disabled, active } = props
-		let styles = `
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            background-color: ${theme.white};
-            border-radius: 5px;
-            padding-right: 5px;
-
-            transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
-        `
-
-		if (disabled) {
-			styles += `
-                border: 1px solid ${theme.lighterGray};
-                box-shadow: none;
-            `
-		} else if (active) {
-			styles += `
+		if (active) {
+			return `
                 border: 1px solid ${theme.primary};
                 box-shadow: 0 0 0 1px ${theme.primary} inset;
             `
-		} else {
-			styles += `
-                border: 1px solid ${theme.lightGray};
+		} else if (disabled) {
+			return `
+                border: 1px solid ${theme.lighterGray};
                 box-shadow: none;
-
-                :hover {
-                    border: 1px solid ${theme.primary};
-                    box-shadow: 0 0 0 1px ${theme.primary} inset;
-                }
-                :active {
-                    border: 1px solid ${theme.primary};
-                    box-shadow: 0 0 0 1px ${theme.primary} inset;
-                }
             `
 		}
-
-		return styles
+		return `
+			border: 1px solid ${theme.lightGray};
+			box-shadow: none;
+		`
 	}}
+
+	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
+	:hover,
+	:active {
+		border: 1px solid ${(props) => props.theme.primary};
+		box-shadow: 0 0 0 1px ${(props) => props.theme.primary} inset;
+	}
 `
 export const Label = styled.label`
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkGray)};
+	padding: 10px;
+
 	${(props) => {
-		const { theme, disabled, active } = props
-		let cursor = 'pointer'
+		const { disabled, active } = props
 		if (disabled) {
-			cursor = 'not-allowed'
+			return 'cursor: not-allowed'
 		} else if (active) {
-			cursor = 'copy'
+			return 'cursor: copy'
 		}
-
-		return `
-            display: block;
-            width: 100%;
-            font-size: 14px;
-            color: ${disabled ? theme.gray : theme.darkGray};
-            padding: 10px;
-            cursor: ${cursor};
-        `
+		return 'cursor: pointer'
 	}}
 `
 
-export const LabelCopy = styled.span`
-	${(props) => {
-		return `
-
-        `
-	}}
-`
+export const LabelCopy = styled.span``
 
 export const LabelIcon = styled(FaFileUpload)`
-	${(props) => {
-		return `
-            margin-right: 10px;
-            vertical-align: middle;
-            font-size: 18px;
-        `
-	}}
+	margin-right: 10px;
+	vertical-align: middle;
+	font-size: 18px;
 `
 
 export const Input = styled.input`
-	${(props) => {
-		return `
-            display: none;
-        `
-	}}
+	display: none;
 `
 
 export const ClearButton = styled(TEButton)`
-	${(props) => {
-		return `
-            width: auto;
-            padding: 5px 10px;
-            text-align: center;
-        `
-	}}
+	width: auto;
+	padding: 5px 10px;
+	text-align: center;
 `
 
 export const ButtonIcon = styled(FaRegWindowClose)`
-	${(props) => {
-		return `
-            color: inherit;
-            display: block;
-        `
-	}}
+	color: inherit;
+	display: block;
 `
 
 export const ErrorMessage = styled.span`
-	${(props) => {
-		const { theme } = props
-		return `
-            display: block;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            font-size: 14px;
-            color: ${theme.errorRed};
-        `
-	}}
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	color: ${(props) => props.theme.errorRed};
 `

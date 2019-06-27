@@ -5,72 +5,43 @@ import TELabel from './../TELabel'
 import TECheckboxInput from './../TECheckboxInput'
 
 export const Container = styled(TERow)`
-	${(props) => {
-		return `
-            margin-bottom: 10px;
-            display: inline-block;
-            vertical-align: top;
-        `
-	}}
+	margin-bottom: 10px;
+	display: inline-block;
+	vertical-align: top;
 `
 export const InputWrapper = styled.div`
-	${(props) => {
-		const { scrolling, theme } = props
-		return `
-            display: flex;
-            flex-wrap: wrap;
-            ${
-				scrolling
-					? `
-                    height: 300px;
-                    overflow-y: scroll;
-                    background-color: ${theme.white};
-                    padding: 10px;
-                    border: 1px solid ${theme.lightGray};
-                    border-radius: 5;
-                `
-					: ''
-			}
-        `
-	}}
+	display: flex;
+	flex-wrap: wrap;
+	height: ${(props) => (props.scrolling ? '300px' : 'auto')};
+	overflow-y: ${(props) => (props.scrolling ? 'scroll' : 'visible')};
+	background-color: ${(props) => (props.scrolling ? props.theme.white : 'transparent')};
+	padding: ${(props) => (props.scrolling ? '0px' : '10px')};
+	border: ${(props) => (props.scrolling ? `1px solid ${props.theme.lightGray}` : 'none')};
+	padding: ${(props) => (props.scrolling ? '5px' : '0px')};
 `
 
 export const RowWrarpper = styled(TERow)`
-	${(props) => {
-		return `
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        `
-	}}
+	margin-bottom: 5px;
+	display: flex;
+	align-items: center;
 `
 
 export const Checkbox = styled(TECheckboxInput)`
-	${(props) => {
-		return `
-            display: inline-block;
-            vertical-align: middle;
-            cursor: pointer;
-        `
-	}}
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
 `
 export const Label = styled(TELabel)`
-	${(props) => {
-		const { theme, disabled } = props
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	font-size: 14px;
+	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
 
-		return `
-            width: auto;
-            display: inline-block;
-            vertical-align: middle;
-            padding-left: 10px;
-            margin-bottom: 0px;
-            cursor: pointer;
-            fontSize: 14px;
-            color: ${disabled ? theme.gray : theme.darkerGray};
-
-            @media (max-width: 550px) {
-                fontSize: 12px;
-            };
-        `
-	}}
+	@media (max-width: 550px) {
+		fontsize: 12px;
+	}
 `
