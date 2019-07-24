@@ -12,7 +12,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "^1.1.4",
     "react-tec": "link:..",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

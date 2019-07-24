@@ -40,7 +40,7 @@ const TEFileManagerRow = (props) => {
 		title,
 
 		//Input
-		fileSrc,
+		fileSrcArray,
 		maxNumber,
 		accept,
 		pattern,
@@ -52,13 +52,6 @@ const TEFileManagerRow = (props) => {
 		required,
 		labelForKey,
 	} = props
-
-	const fileSrcArray = []
-	if (fileSrc) {
-		for (const uid in fileSrc) {
-			fileSrcArray.push({ ...fileSrc[uid], uid })
-		}
-	}
 
 	let labelText = title
 	if (maxNumber > 1 && fileSrcArray) {
@@ -77,25 +70,27 @@ const TEFileManagerRow = (props) => {
 			</TELabel>
 			<FileRowWrapper className='TEFileManagerRowWrapper'>
 				{fileSrcArray &&
-					fileSrcArray.map((imgSrcData) => {
+					fileSrcArray.map((imgSrcData, index) => {
 						const { src, uid, filename, fileEnding, path } = imgSrcData
 						return (
 							<FileWrapper key={uid} className='TEFileManagerFileRow'>
 								<FileName className='TEFileManagerFileName'>
 									{filename}.{fileEnding}
 								</FileName>
-								<DownloadFileButton
-									href={src}
-									target='_blank'
-									rel='noopener noreferrer'
-									key={uid}
-									download={filename}
-									className='TEFileManagerDownloadButton'
-								>
-									<DownloadImageButtonIcon className='TEFileManagerDownloadIcon' />
-								</DownloadFileButton>
+								{src && (
+									<DownloadFileButton
+										href={src}
+										target='_blank'
+										rel='noopener noreferrer'
+										key={uid}
+										download={filename}
+										className='TEFileManagerDownloadButton'
+									>
+										<DownloadImageButtonIcon className='TEFileManagerDownloadIcon' />
+									</DownloadFileButton>
+								)}
 								<ClearFileButton
-									onClick={() => onRemove({ uid, path })}
+									onClick={() => onRemove({ uid, path, index })}
 									className='TEFileManagerClearButton'
 								>
 									<ClearFileButtonIcon className='TEFileManagerClearIcon' />

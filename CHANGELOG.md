@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <!-- and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). -->
 
+## 0.1.15 - 07-24-2019
+
+### Changes
+
+-   Updated react-datepicker from `2.7.0` to `2.8.0`
+-   Updated react-power-select from `1.0.0-beta.15` to `1.0.0-beta.16`
+-   Updated TEFileManagerRow - Removed `fileSrc` in favor of `fileSrcArray`. The internal objects don't change just accepting an array instead of an object.
+-   Updated TEFileManagerRow - When `src` is not present, do not display the download button.
+-   Updated `styled-components` in docs from `4.2.0` to `4.3.2`.
+
 ## 0.1.14 - 06-27-2019
 
 ### Added
