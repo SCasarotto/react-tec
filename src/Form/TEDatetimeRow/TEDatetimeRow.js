@@ -6,19 +6,10 @@ import TELabel from './../TELabel'
 import TEDatetimeInput from './../TEDatetimeInput'
 
 const TEDatetimeRow = (props) => {
-	const {
-		size,
-		last,
-		className,
-
-		title,
-		labelForKey,
-
-		...rest
-	} = props
+	const { size, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
-		<TERow size={size} last={last} className={className}>
+		<TERow size={size} last={last} className={`TEDatetimeRow ${className}`}>
 			<TELabel
 				htmlFor={labelForKey}
 				required={rest.required}

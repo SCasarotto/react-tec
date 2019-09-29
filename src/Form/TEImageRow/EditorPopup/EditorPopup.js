@@ -3,7 +3,6 @@
 //
 
 import React, { useState, useRef } from 'react'
-//import PropTypes from 'prop-types'
 import AvatarEditor from 'react-avatar-editor'
 
 import TEPopupForm from './../../../Popup/TEPopupForm'
@@ -23,15 +22,7 @@ const TEImageUpload = (props) => {
 	const [rotation, setRotation] = useState(0)
 	const editor = useRef(null)
 
-	const {
-		className,
-		visible,
-		file,
-
-		onCancel,
-		onSubmit,
-		onSubmitTitle,
-	} = props
+	const { className = '', visible, file, onCancel, onSubmit, onSubmitTitle } = props
 
 	return (
 		<TEPopupForm
@@ -40,7 +31,7 @@ const TEImageUpload = (props) => {
 			onClose={onCancel}
 			onCancelTitle='Cancel'
 			onSubmitTitle={onSubmitTitle}
-			className={className}
+			className={`TEEditorPopup ${className}`}
 		>
 			<Container className='TEImageRowPopupContainer'>
 				<Row className='TEImageRowPopupRow'>

@@ -13,11 +13,11 @@ const TEConfirm = (props) => {
 		rightButtonTitle,
 		children,
 		visible,
-		className,
+		className = '',
 	} = props
 
 	return (
-		<Popup visible={visible} className={className}>
+		<Popup visible={visible} className={`TEConfirm ${className}`}>
 			<Title className='TEConfirmTitle'>{title}</Title>
 			<Message className='TEConfirmMessage'>{message}</Message>
 			{children}

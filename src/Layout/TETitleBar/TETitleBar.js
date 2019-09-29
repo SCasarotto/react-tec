@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import { Container, Content, Title, ComponentWrapper, Subtitle } from './styledComponents'
 
 const TETitleBar = (props) => {
-	const { className, title, leftComponent, subtitle, rightComponent } = props
+	const { className = '', title, leftComponent, subtitle, rightComponent } = props
 
 	return (
-		<Container className={className}>
+		<Container className={`TETitleBar ${className}`}>
 			<Content className='TETitlebarContent'>
 				{title && <Title className='TETitlebarTitle'>{title}</Title>}
 				{leftComponent && (

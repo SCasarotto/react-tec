@@ -30,11 +30,11 @@ const TERadioButtonGroup = (props) => {
 		disabled,
 		required,
 		rowSize,
-		className,
+		className = '',
 	} = props
 
 	return (
-		<Container size={size} last={last} className={className}>
+		<Container size={size} last={last} className={`TERadioButtonGroup ${className}`}>
 			<TELabel disabled={disabled} required={required} className='TERadioButtonGroupTitle'>
 				{title}
 			</TELabel>

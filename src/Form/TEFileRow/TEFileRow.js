@@ -6,23 +6,10 @@ import TELabel from './../TELabel'
 import TEFileInput from './../TEFileInput'
 
 const TEFileRow = (props) => {
-	const {
-		//Row
-		size,
-		last,
-		className,
-
-		//Label
-		title,
-
-		//Both
-		labelForKey,
-
-		...rest
-	} = props
+	const { size, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
-		<TERow size={size} last={last} className={className}>
+		<TERow size={size} last={last} className={`TEFileRow ${className}`}>
 			<TELabel
 				htmlFor={labelForKey}
 				required={rest.required}

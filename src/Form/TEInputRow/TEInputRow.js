@@ -8,29 +8,21 @@ import TETextarea from './../TETextarea'
 
 const TEInputRow = (props) => {
 	const {
-		//Row
 		size,
 		last,
-		className,
-
-		//Label
+		className = '',
 		title,
-
-		//Input
 		type,
 		onChange,
 		disabled,
 		value,
-
-		//Both
 		required,
 		labelForKey,
-
 		...rest
 	} = props
 
 	return (
-		<TERow size={size} last={last} className={className}>
+		<TERow size={size} last={last} className={`TEInputRow ${className}`}>
 			<TELabel
 				htmlFor={labelForKey}
 				required={required}

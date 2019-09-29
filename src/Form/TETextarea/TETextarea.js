@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { Textarea } from './styledComponents'
 
 const TETextarea = (props) => {
-	return <Textarea {...props} />
+	const { className = '', ...rest } = props
+	return <Textarea className={`TETextarea ${className}`} {...rest} />
 }
 
 TETextarea.propTypes = {
@@ -13,11 +14,6 @@ TETextarea.propTypes = {
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func.isRequired,
 	disabled: PropTypes.bool,
-}
-
-TETextarea.defaultProps = {
-	type: 'text',
-	disabled: false,
 }
 
 export default TETextarea

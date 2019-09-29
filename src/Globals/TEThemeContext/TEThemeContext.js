@@ -35,6 +35,7 @@ const initialTheme = {
 //DatePicker
 // - At this moment there is no other way to style the wrapper components on this input.
 //
+//TODO: Check if this receives props of any kind. otherwise combine baseTheme and user input theme here and then use itin this object
 const GlobalStyles = createGlobalStyle`
 	& * {
 		box-sizing: border-box;

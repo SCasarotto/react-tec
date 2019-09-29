@@ -36,7 +36,7 @@ const TECheckboxGroup = (props) => {
 	const {
 		size,
 		last,
-		className,
+		className = '',
 		title,
 		required,
 		rowSize,
@@ -47,7 +47,7 @@ const TECheckboxGroup = (props) => {
 	} = props
 
 	return (
-		<Container size={size} last={last} className={className}>
+		<Container size={size} last={last} className={`TECheckboxGroup ${className}`}>
 			<TELabel disabled={disabled} required={required} className='TECheckboxGroupTitle'>
 				{title}
 			</TELabel>

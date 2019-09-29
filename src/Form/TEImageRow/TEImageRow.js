@@ -80,21 +80,14 @@ const TEImageRow = (props) => {
 	}
 
 	const {
-		//Row
-		className,
+		className = '',
 		size,
 		last,
-
-		//Label
 		title,
-
-		//Input
 		imgSrc,
 		maxNumber,
 		accept,
 		disabled,
-
-		//Both
 		required,
 		labelForKey,
 	} = props
@@ -112,7 +105,7 @@ const TEImageRow = (props) => {
 	}
 
 	return (
-		<TERow size={size} last={last} className={className}>
+		<TERow size={size} last={last} className={`TEImageRow ${className}`}>
 			<TELabel
 				htmlFor={labelForKey}
 				required={required}

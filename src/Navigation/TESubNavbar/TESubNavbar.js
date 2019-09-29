@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import { Container, Content, Ul, Li, Link } from './styledComponents'
 
 const TESubNavbar = (props) => {
-	const { links, rightComponent, className } = props
+	const { links, rightComponent, className = '' } = props
 
 	return (
-		<Container className={className}>
+		<Container className={`TESubNavbar ${className}`}>
 			<Content className='TESubNavbarContent'>
 				<Ul className='TESubNavbarUl'>
 					{links &&

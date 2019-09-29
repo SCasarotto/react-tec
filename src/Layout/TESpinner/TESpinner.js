@@ -38,10 +38,10 @@ const TESpinner = (props) => {
 		return rings
 	}
 
-	const { size, className } = props
+	const { size = 'medium', className = '' } = props
 
 	return (
-		<Container className={className}>
+		<Container className={`TESpinner ${className}`}>
 			<SpinnerWrapper size={size} className='TESpinnerContainer'>
 				{renderRings()}
 			</SpinnerWrapper>
@@ -53,10 +53,6 @@ TESpinner.propTypes = {
 	size: PropTypes.string,
 	innerColor: PropTypes.string,
 	outerColor: PropTypes.string,
-}
-
-TESpinner.defaultProps = {
-	size: 'medium',
 }
 
 export default TESpinner

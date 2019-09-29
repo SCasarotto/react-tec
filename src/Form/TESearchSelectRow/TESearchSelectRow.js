@@ -12,10 +12,15 @@ import TESearchSelectInput from './../TESearchSelectInput'
 //
 
 const TESearchSelectRow = (props) => {
-	const { size, last, className, title, labelForKey, ...rest } = props
+	const { size, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
-		<TERow size={size} last={last} className={className} required={rest.required}>
+		<TERow
+			size={size}
+			last={last}
+			className={`TESearchSelectRow ${className}`}
+			required={rest.required}
+		>
 			<TELabel
 				htmlFor={labelForKey}
 				required={rest.required}
@@ -30,17 +35,11 @@ const TESearchSelectRow = (props) => {
 }
 
 TESearchSelectRow.propTypes = {
-	//Row
 	size: PropTypes.string,
 	last: PropTypes.bool,
 	title: PropTypes.string,
 	type: PropTypes.string,
 	labelForKey: PropTypes.string,
-}
-
-TESearchSelectRow.defaultProps = {
-	type: 'single',
-	searchEnabled: true,
 }
 
 export default TESearchSelectRow

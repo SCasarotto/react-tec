@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { Input } from './styledComponents'
 
 const TEInput = (props) => {
-	return <Input {...props} />
+	const { type = 'text', disabled = false, className = '', ...rest } = props
+	return <Input type={type} disabled={disabled} className={`TEInput ${className}`} {...rest} />
 }
 
 TEInput.propTypes = {
@@ -13,11 +14,6 @@ TEInput.propTypes = {
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func.isRequired,
 	disabled: PropTypes.bool,
-}
-
-TEInput.defaultProps = {
-	type: 'text',
-	disabled: false,
 }
 
 export default TEInput

@@ -7,18 +7,16 @@ import { Container } from './styledComponents'
 
 const TEPanel = (props) => {
 	const {
-		size,
-		className,
-
+		size = 'full',
+		className = '',
 		title,
 		leftComponent,
 		subtitle,
 		rightComponent,
-
 		children,
 	} = props
 	return (
-		<Container className={className} size={size}>
+		<Container className={`TEPanel ${className}`} size={size}>
 			{(title || leftComponent || subtitle || rightComponent) && (
 				<TEPanelTitle
 					title={title}
@@ -35,10 +33,6 @@ const TEPanel = (props) => {
 
 TEPanel.propTypes = {
 	size: PropTypes.string,
-}
-
-TEPanel.defaultProps = {
-	size: 'full',
 }
 
 export default TEPanel

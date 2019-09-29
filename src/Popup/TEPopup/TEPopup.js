@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import { Background, Content } from './styledComponents'
 
 const TEPopup = (props) => {
-	const { visible, className, children } = props
+	const { visible, className = '', children } = props
 
 	return (
-		<Background className={className} visible={visible}>
+		<Background className={`TEPopup ${className}`} visible={visible}>
 			<Content className='TEPopupContent'>{children}</Content>
 		</Background>
 	)

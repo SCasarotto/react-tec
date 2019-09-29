@@ -31,24 +31,16 @@ const TEFileManagerRow = (props) => {
 	}
 
 	const {
-		//Row
 		size,
 		last,
-		className,
-
-		//Label
+		className = '',
 		title,
-
-		//Input
 		fileSrcArray,
 		maxNumber,
 		accept,
 		pattern,
 		disabled,
-
 		onRemove,
-
-		//Both
 		required,
 		labelForKey,
 	} = props
@@ -59,7 +51,7 @@ const TEFileManagerRow = (props) => {
 	}
 
 	return (
-		<WrapperRow size={size} last={last} className={className}>
+		<WrapperRow size={size} last={last} className={`TEFileManagerRow ${className}`}>
 			<TELabel
 				htmlFor={labelForKey}
 				required={required}

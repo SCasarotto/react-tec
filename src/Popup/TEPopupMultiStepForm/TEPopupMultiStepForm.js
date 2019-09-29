@@ -11,10 +11,10 @@ const TEPopupMultiStepForm = (props) => {
 		const { onSubmit } = props
 		onSubmit()
 	}
-	const { visible, onClose, className, ...rest } = props
+	const { visible, onClose, className = '', ...rest } = props
 
 	return (
-		<Popup visible={visible} className={className}>
+		<Popup visible={visible} className={`TEPopupMultiStepForm ${className}`}>
 			<TEMultiStepForm
 				onSubmit={handleSubmit}
 				handleCancelOnClick={onClose}

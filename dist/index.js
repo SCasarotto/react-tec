@@ -121,11 +121,12 @@ var Button = styled__default.button(_templateObject, function (props) {
 });
 
 var TEButton = function TEButton(props) {
-	return React__default.createElement(Button, props);
-};
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    _props$type = props.type,
+	    rest = objectWithoutProperties(props, ['className', 'type']);
 
-TEButton.defaultProps = {
-	type: 'button'
+	return React__default.createElement(Button, _extends({ className: 'TEButton ' + className }, rest));
 };
 
 var _templateObject$1 = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: auto;\n\tbox-sizing: border-box;\n\tmargin-bottom: 3px;\n\tfont-size: 18px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n\t', '\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: auto;\n\tbox-sizing: border-box;\n\tmargin-bottom: 3px;\n\tfont-size: 18px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n\t', '\n']);
@@ -149,11 +150,13 @@ var Label = styled__default.label(_templateObject$1, function (props) {
 var TELabel = function TELabel(props) {
 	var children = props.children,
 	    required = props.required,
-	    rest = objectWithoutProperties(props, ['children', 'required']);
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['children', 'required', 'className']);
 
 	return React__default.createElement(
 		Label,
-		rest,
+		_extends({ className: 'TELabel ' + className }, rest),
 		children,
 		required ? ' *' : ''
 	);
@@ -194,7 +197,15 @@ var Row = styled__default.div(_templateObject$2, function (props) {
 });
 
 var TERow = function TERow(props) {
-	return React__default.createElement(Row, props);
+	var _props$size = props.size,
+	    size = _props$size === undefined ? 'full' : _props$size,
+	    _props$last = props.last,
+	    last = _props$last === undefined ? false : _props$last,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['size', 'last', 'className']);
+
+	return React__default.createElement(Row, _extends({ className: 'TERow ' + className, size: size, last: last }, rest));
 };
 
 TERow.propTypes = {
@@ -202,17 +213,16 @@ TERow.propTypes = {
 	last: PropTypes.bool
 };
 
-TERow.defaultProps = {
-	size: 'full',
-	last: false
-};
-
 var _templateObject$3 = taggedTemplateLiteral(['\n\tcursor: pointer;\n\tbox-sizing: border-box;\n'], ['\n\tcursor: pointer;\n\tbox-sizing: border-box;\n']);
 
 var Input = styled__default.input(_templateObject$3);
 
 var TECheckboxInput = function TECheckboxInput(props) {
-	return React__default.createElement(Input, _extends({}, props, { type: 'checkbox' }));
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['className']);
+
+	return React__default.createElement(Input, _extends({ className: 'TECheckboxInput ' + className }, rest, { type: 'checkbox' }));
 };
 
 var _templateObject$4 = taggedTemplateLiteral(['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n'], ['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n']),
@@ -286,7 +296,8 @@ var TECheckboxGroup = function TECheckboxGroup(props) {
 
 	var size = props.size,
 	    last = props.last,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    required = props.required,
 	    rowSize = props.rowSize,
@@ -298,7 +309,7 @@ var TECheckboxGroup = function TECheckboxGroup(props) {
 
 	return React__default.createElement(
 		Container,
-		{ size: size, last: last, className: className },
+		{ size: size, last: last, className: 'TECheckboxGroup ' + className },
 		React__default.createElement(
 			TELabel,
 			{ disabled: disabled, required: required, className: 'TECheckboxGroupTitle' },
@@ -10635,7 +10646,9 @@ var determineValue = function determineValue(value) {
 var TEDatetimeInput = function TEDatetimeInput(props) {
 	var value = props.value,
 	    placeholder = props.placeholder,
-	    rest = objectWithoutProperties(props, ['value', 'placeholder']);
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['value', 'placeholder', 'className']);
 	// const [showPortal, setShowPortal] = useState(false)
 
 	// if (withTEPortal) {
@@ -10662,7 +10675,11 @@ var TEDatetimeInput = function TEDatetimeInput(props) {
 	// 	)
 	// }
 
-	return React__default.createElement(wt, _extends({ selected: determineValue(value), placeholderText: placeholder }, rest));
+	return React__default.createElement(wt, _extends({
+		selected: determineValue(value),
+		placeholderText: placeholder,
+		className: 'TEDatetimeInput ' + className
+	}, rest));
 };
 
 TEDatetimeInput.propTypes = {
@@ -10679,7 +10696,8 @@ TEDatetimeInput.defaultProps = {
 var TEDatetimeRow = function TEDatetimeRow(props) {
 	var size = props.size,
 	    last = props.last,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    labelForKey = props.labelForKey,
 	    rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
@@ -10687,7 +10705,7 @@ var TEDatetimeRow = function TEDatetimeRow(props) {
 
 	return React__default.createElement(
 		TERow,
-		{ size: size, last: last, className: className },
+		{ size: size, last: last, className: 'TEDatetimeRow ' + className },
 		React__default.createElement(
 			TELabel,
 			{
@@ -10873,8 +10891,6 @@ var ErrorMessage = styled__default.span(_templateObject9, function (props) {
 	return props.theme.errorRed;
 });
 
-//
-
 var TEFileInput = function TEFileInput(props) {
 	var _useState = React.useState(false),
 	    _useState2 = slicedToArray(_useState, 2),
@@ -10952,7 +10968,8 @@ var TEFileInput = function TEFileInput(props) {
 	};
 
 	var disabled = props.disabled,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    _props$placeholder = props.placeholder,
 	    placeholder = _props$placeholder === undefined ? 'Choose a file...' : _props$placeholder,
 	    rest = objectWithoutProperties(props, ['disabled', 'className', 'placeholder']);
@@ -10967,7 +10984,7 @@ var TEFileInput = function TEFileInput(props) {
 
 	return React__default.createElement(
 		Wrapper,
-		{ className: className },
+		{ className: 'TEFileInput ' + className },
 		React__default.createElement(
 			InputWrapper$1,
 			{
@@ -11075,7 +11092,8 @@ var TEFileManagerRow = function TEFileManagerRow(props) {
 
 	var size = props.size,
 	    last = props.last,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    fileSrcArray = props.fileSrcArray,
 	    maxNumber = props.maxNumber,
@@ -11094,7 +11112,7 @@ var TEFileManagerRow = function TEFileManagerRow(props) {
 
 	return React__default.createElement(
 		WrapperRow,
-		{ size: size, last: last, className: className },
+		{ size: size, last: last, className: 'TEFileManagerRow ' + className },
 		React__default.createElement(
 			TELabel,
 			{
@@ -11192,7 +11210,8 @@ TEFileManagerRow.defaultProps = {
 var TEFileRow = function TEFileRow(props) {
 	var size = props.size,
 	    last = props.last,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    labelForKey = props.labelForKey,
 	    rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
@@ -11200,7 +11219,7 @@ var TEFileRow = function TEFileRow(props) {
 
 	return React__default.createElement(
 		TERow,
-		{ size: size, last: last, className: className },
+		{ size: size, last: last, className: 'TEFileRow ' + className },
 		React__default.createElement(
 			TELabel,
 			{
@@ -11230,7 +11249,11 @@ var _templateObject$7 = taggedTemplateLiteral(['\n\tposition: relative;\n\twidth
 var Form = styled__default.form(_templateObject$7);
 
 var TEForm = function TEForm(props) {
-  return React__default.createElement(Form, props);
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['className']);
+
+	return React__default.createElement(Form, _extends({ className: 'TEForm ' + className }, rest));
 };
 
 var dist = createCommonjsModule(function (module, exports) {
@@ -11251,13 +11274,14 @@ var Content = styled__default.div(_templateObject2$3, function (props) {
 
 var TEPopup = function TEPopup(props) {
 	var visible = props.visible,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    children = props.children;
 
 
 	return React__default.createElement(
 		Background,
-		{ className: className, visible: visible },
+		{ className: 'TEPopup ' + className, visible: visible },
 		React__default.createElement(
 			Content,
 			{ className: 'TEPopupContent' },
@@ -11322,13 +11346,14 @@ var TEPopupForm = function TEPopupForm(props) {
 	    onClose = props.onClose,
 	    onCancelTitle = props.onCancelTitle,
 	    onSubmitTitle = props.onSubmitTitle,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    children = props.children;
 
 
 	return React__default.createElement(
 		Popup,
-		{ visible: visible, className: className },
+		{ visible: visible, className: 'TEPopupForm ' + className },
 		React__default.createElement(
 			TEForm,
 			{ onSubmit: handleSubmit, className: 'TEPopupFormForm' },
@@ -11400,7 +11425,8 @@ var TEImageUpload = function TEImageUpload(props) {
 
 	var editor = React.useRef(null);
 
-	var className = props.className,
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    visible = props.visible,
 	    file = props.file,
 	    onCancel = props.onCancel,
@@ -11418,7 +11444,7 @@ var TEImageUpload = function TEImageUpload(props) {
 			onClose: onCancel,
 			onCancelTitle: 'Cancel',
 			onSubmitTitle: onSubmitTitle,
-			className: className
+			className: 'TEEditorPopup ' + className
 		},
 		React__default.createElement(
 			Container$1,
@@ -11612,7 +11638,8 @@ var TEImageRow = function TEImageRow(props) {
 		setEditorVisible(true);
 	};
 
-	var className = props.className,
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    size = props.size,
 	    last = props.last,
 	    title = props.title,
@@ -11638,7 +11665,7 @@ var TEImageRow = function TEImageRow(props) {
 
 	return React__default.createElement(
 		TERow,
-		{ size: size, last: last, className: className },
+		{ size: size, last: last, className: 'TEImageRow ' + className },
 		React__default.createElement(
 			TELabel,
 			{
@@ -11749,7 +11776,15 @@ var Input$4 = styled__default.input(_templateObject$c, function (props) {
 });
 
 var TEInput = function TEInput(props) {
-	return React__default.createElement(Input$4, props);
+	var _props$type = props.type,
+	    type = _props$type === undefined ? 'text' : _props$type,
+	    _props$disabled = props.disabled,
+	    disabled = _props$disabled === undefined ? false : _props$disabled,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['type', 'disabled', 'className']);
+
+	return React__default.createElement(Input$4, _extends({ type: type, disabled: disabled, className: 'TEInput ' + className }, rest));
 };
 
 TEInput.propTypes = {
@@ -11758,11 +11793,6 @@ TEInput.propTypes = {
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func.isRequired,
 	disabled: PropTypes.bool
-};
-
-TEInput.defaultProps = {
-	type: 'text',
-	disabled: false
 };
 
 var _templateObject$d = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tbox-sizing: border-box;\n\tpadding: 10px;\n\tbackground-color: ', ';\n\tmin-height: 140px;\n\tborder-radius: 5px;\n\tline-height: 1.5;\n\tcursor: ', ';\n\n\tcolor: ', ';\n\tborder: 1px solid\n\t\t', ';\n\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid\n\t\t\t', ';\n\t\tbox-shadow: 0 0 0 1px\n\t\t\t', ' inset;\n\t}\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n\tfont-size: 14px;\n\tbox-sizing: border-box;\n\tpadding: 10px;\n\tbackground-color: ', ';\n\tmin-height: 140px;\n\tborder-radius: 5px;\n\tline-height: 1.5;\n\tcursor: ', ';\n\n\tcolor: ', ';\n\tborder: 1px solid\n\t\t', ';\n\n\ttransition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;\n\t:hover,\n\t:active {\n\t\tborder: 1px solid\n\t\t\t', ';\n\t\tbox-shadow: 0 0 0 1px\n\t\t\t', ' inset;\n\t}\n']);
@@ -11782,7 +11812,11 @@ var Textarea = styled__default.textarea(_templateObject$d, function (props) {
 });
 
 var TETextarea = function TETextarea(props) {
-	return React__default.createElement(Textarea, props);
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['className']);
+
+	return React__default.createElement(Textarea, _extends({ className: 'TETextarea ' + className }, rest));
 };
 
 TETextarea.propTypes = {
@@ -11793,15 +11827,11 @@ TETextarea.propTypes = {
 	disabled: PropTypes.bool
 };
 
-TETextarea.defaultProps = {
-	type: 'text',
-	disabled: false
-};
-
 var TEInputRow = function TEInputRow(props) {
 	var size = props.size,
 	    last = props.last,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    type = props.type,
 	    onChange = props.onChange,
@@ -11814,7 +11844,7 @@ var TEInputRow = function TEInputRow(props) {
 
 	return React__default.createElement(
 		TERow,
-		{ size: size, last: last, className: className },
+		{ size: size, last: last, className: 'TEInputRow ' + className },
 		React__default.createElement(
 			TELabel,
 			{
@@ -12037,7 +12067,8 @@ var TEMultiStepForm = function TEMultiStepForm(props) {
 		}
 	};
 
-	var className = props.className,
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    handleCancelOnClick = props.handleCancelOnClick,
 	    stepData = props.stepData,
 	    roundedButtons = props.roundedButtons;
@@ -12048,7 +12079,7 @@ var TEMultiStepForm = function TEMultiStepForm(props) {
 
 	return React__default.createElement(
 		Container$2,
-		{ className: className },
+		{ className: 'TEMultiStepForm ' + className },
 		React__default.createElement(
 			StepContainer,
 			{ className: 'TEMultiStepFormStepContainer' },
@@ -12130,7 +12161,11 @@ var _templateObject$f = taggedTemplateLiteral(['\n\tcursor: pointer;\n\tbox-sizi
 var Input$5 = styled__default.input(_templateObject$f);
 
 var TERadioButtonInput = function TERadioButtonInput(props) {
-  return React__default.createElement(Input$5, _extends({}, props, { type: 'radio' }));
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['className']);
+
+	return React__default.createElement(Input$5, _extends({ className: 'TERadioButtonInput ' + className }, rest, { type: 'radio' }));
 };
 
 var _templateObject$g = taggedTemplateLiteral(['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n'], ['\n\tmargin-bottom: 10px;\n\tdisplay: inline-block;\n\tvertical-align: top;\n']),
@@ -12180,12 +12215,13 @@ var TERadioButtonGroup = function TERadioButtonGroup(props) {
 	    disabled = props.disabled,
 	    required = props.required,
 	    rowSize = props.rowSize,
-	    className = props.className;
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className;
 
 
 	return React__default.createElement(
 		Container$3,
-		{ size: size, last: last, className: className },
+		{ size: size, last: last, className: 'TERadioButtonGroup ' + className },
 		React__default.createElement(
 			TELabel,
 			{ disabled: disabled, required: required, className: 'TERadioButtonGroupTitle' },
@@ -16565,28 +16601,33 @@ var lib_3 = lib$1.PowerSelect;
 //
 
 var TESearchSelectInput = function TESearchSelectInput(props) {
-	var type = props.type,
+	var _props$type = props.type,
+	    type = _props$type === undefined ? 'single' : _props$type,
+	    _props$searchEnabled = props.searchEnabled,
 	    value = props.value,
-	    rest = objectWithoutProperties(props, ['type', 'value']);
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['type', 'searchEnabled', 'value', 'className']);
 
 
 	if (type === 'single') {
-		return React__default.createElement(lib_3, _extends({ selected: value }, rest));
+		return React__default.createElement(lib_3, _extends({
+			selected: value,
+			className: 'TESearchSelectInput ' + className
+		}, rest));
 	}
 	if (type === 'multi') {
-		return React__default.createElement(lib_1, _extends({ selected: value }, rest));
+		return React__default.createElement(lib_1, _extends({
+			selected: value,
+			className: 'TESearchSelectInput ' + className
+		}, rest));
 	}
 
-	return React__default.createElement(lib_3, _extends({ selected: value }, rest));
+	return React__default.createElement(lib_3, _extends({ selected: value, className: 'TESearchSelectInput ' + className }, rest));
 };
 
 TESearchSelectInput.propTypes = {
 	type: PropTypes.string
-};
-
-TESearchSelectInput.defaultProps = {
-	type: 'single',
-	searchEnabled: true
 };
 
 // import 'react-power-select/dist/react-power-select.css'
@@ -16598,7 +16639,8 @@ TESearchSelectInput.defaultProps = {
 var TESearchSelectRow = function TESearchSelectRow(props) {
 	var size = props.size,
 	    last = props.last,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    labelForKey = props.labelForKey,
 	    rest = objectWithoutProperties(props, ['size', 'last', 'className', 'title', 'labelForKey']);
@@ -16606,7 +16648,12 @@ var TESearchSelectRow = function TESearchSelectRow(props) {
 
 	return React__default.createElement(
 		TERow,
-		{ size: size, last: last, className: className, required: rest.required },
+		{
+			size: size,
+			last: last,
+			className: 'TESearchSelectRow ' + className,
+			required: rest.required
+		},
 		React__default.createElement(
 			TELabel,
 			{
@@ -16622,17 +16669,11 @@ var TESearchSelectRow = function TESearchSelectRow(props) {
 };
 
 TESearchSelectRow.propTypes = {
-	//Row
 	size: PropTypes.string,
 	last: PropTypes.bool,
 	title: PropTypes.string,
 	type: PropTypes.string,
 	labelForKey: PropTypes.string
-};
-
-TESearchSelectRow.defaultProps = {
-	type: 'single',
-	searchEnabled: true
 };
 
 var _templateObject$h = taggedTemplateLiteral(['\n\t', '\n'], ['\n\t', '\n']),
@@ -16722,12 +16763,13 @@ var TESegmentedGroup = function TESegmentedGroup(props) {
 	    disabled = props.disabled,
 	    size = props.size,
 	    last = props.last,
-	    className = props.className;
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className;
 
 
 	return React__default.createElement(
 		Row$2,
-		{ size: size, last: last, inline: inline, className: className },
+		{ size: size, last: last, inline: inline, className: 'TESegmentedGroup ' + className },
 		React__default.createElement(
 			Label$5,
 			{
@@ -16793,7 +16835,11 @@ var _templateObject$i = taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-flow:
 var Container$4 = styled__default.div(_templateObject$i);
 
 var TEPannelWrapper = function TEPannelWrapper(props) {
-  return React__default.createElement(Container$4, props);
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['className']);
+
+	return React__default.createElement(Container$4, _extends({ className: 'TEPanelWrapper ' + className }, rest));
 };
 
 var _templateObject$j = taggedTemplateLiteral(['\n\twidth: 100%;\n\tbackground-color: ', ';\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding-bottom: 10px;\n\tmargin-bottom: 20px;\n\tborder-bottom: 1px solid ', ';\n'], ['\n\twidth: 100%;\n\tbackground-color: ', ';\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding-bottom: 10px;\n\tmargin-bottom: 20px;\n\tborder-bottom: 1px solid ', ';\n']),
@@ -16813,7 +16859,8 @@ var ComponentWrapper = styled__default.div(_templateObject3$9);
 var Subtitle = styled__default.p(_templateObject4$9);
 
 var TEPanelTitle = function TEPanelTitle(props) {
-	var className = props.className,
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    leftComponent = props.leftComponent,
 	    subtitle = props.subtitle,
@@ -16822,7 +16869,7 @@ var TEPanelTitle = function TEPanelTitle(props) {
 
 	return React__default.createElement(
 		Container$5,
-		{ className: className },
+		{ className: 'TEPanelTitle ' + className },
 		title && React__default.createElement(
 			Title,
 			{ className: 'TEPanelTitleTitle' },
@@ -16884,8 +16931,10 @@ var Container$6 = styled__default.div(_templateObject$k, function (props) {
 });
 
 var TEPanel = function TEPanel(props) {
-	var size = props.size,
-	    className = props.className,
+	var _props$size = props.size,
+	    size = _props$size === undefined ? 'full' : _props$size,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    leftComponent = props.leftComponent,
 	    subtitle = props.subtitle,
@@ -16894,7 +16943,7 @@ var TEPanel = function TEPanel(props) {
 
 	return React__default.createElement(
 		Container$6,
-		{ className: className, size: size },
+		{ className: 'TEPanel ' + className, size: size },
 		(title || leftComponent || subtitle || rightComponent) && React__default.createElement(TEPanelTitle, {
 			title: title,
 			leftComponent: leftComponent,
@@ -16910,10 +16959,6 @@ TEPanel.propTypes = {
 	size: PropTypes.string
 };
 
-TEPanel.defaultProps = {
-	size: 'full'
-};
-
 var _templateObject$l = taggedTemplateLiteral(['\n\tjustify-content: center;\n'], ['\n\tjustify-content: center;\n']),
     _templateObject2$b = taggedTemplateLiteral(['\n\tmax-width: 600px;\n\tmargin: 30px auto;\n'], ['\n\tmax-width: 600px;\n\tmargin: 30px auto;\n']),
     _templateObject3$a = taggedTemplateLiteral(['\n\tmargin-top: 0px;\n\tmargin-bottom: 20px;\n\ttext-align: center;\n\tfont-size: 26px;\n'], ['\n\tmargin-top: 0px;\n\tmargin-bottom: 20px;\n\ttext-align: center;\n\tfont-size: 26px;\n']),
@@ -16927,7 +16972,8 @@ var Message = styled__default.p(_templateObject4$a);
 var Button$1 = styled__default(TEButton)(_templateObject5$9);
 
 var TEErrorLoadingAlert = function TEErrorLoadingAlert(props) {
-	var className = props.className,
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    message = props.message,
 	    onClick = props.onClick,
@@ -16935,7 +16981,7 @@ var TEErrorLoadingAlert = function TEErrorLoadingAlert(props) {
 
 	return React__default.createElement(
 		PanelWrapper,
-		{ className: className },
+		{ className: 'TEErrorLoadingAlert ' + className },
 		React__default.createElement(
 			Panel,
 			null,
@@ -16984,7 +17030,8 @@ var ComponentWrapper$1 = styled__default.div(_templateObject4$b);
 var Subtitle$1 = styled__default.h2(_templateObject5$a);
 
 var TETitleBar = function TETitleBar(props) {
-	var className = props.className,
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    title = props.title,
 	    leftComponent = props.leftComponent,
 	    subtitle = props.subtitle,
@@ -16993,7 +17040,7 @@ var TETitleBar = function TETitleBar(props) {
 
 	return React__default.createElement(
 		Container$7,
-		{ className: className },
+		{ className: 'TETitleBar ' + className },
 		React__default.createElement(
 			Content$1,
 			{ className: 'TETitlebarContent' },
@@ -17039,14 +17086,17 @@ var BodyContainer = styled__default.div(_templateObject$n, function (props) {
 });
 
 var TEBodyContainer = function TEBodyContainer(props) {
-	return React__default.createElement(BodyContainer, props);
+	var _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
+	    rest = objectWithoutProperties(props, ['className']);
+
+	return React__default.createElement(BodyContainer, _extends({ className: 'TEBodyContainer ' + className }, rest));
 };
 
 TEBodyContainer.propTypes = {
 	sidebarWidth: PropTypes.number
-};
-
-TEBodyContainer.defaultProps = {
+	//TODO: Not if love with this. It might be a good idea to find a better way while also introducing some default responsiveness
+};TEBodyContainer.defaultProps = {
 	sidebarWidth: 200
 };
 
@@ -17169,13 +17219,15 @@ var TESpinner = function TESpinner(props) {
 		return rings;
 	};
 
-	var size = props.size,
-	    className = props.className;
+	var _props$size = props.size,
+	    size = _props$size === undefined ? 'medium' : _props$size,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className;
 
 
 	return React__default.createElement(
 		Container$8,
-		{ className: className },
+		{ className: 'TESpinner ' + className },
 		React__default.createElement(
 			SpinnerWrapper,
 			{ size: size, className: 'TESpinnerContainer' },
@@ -17188,10 +17240,6 @@ TESpinner.propTypes = {
 	size: PropTypes.string,
 	innerColor: PropTypes.string,
 	outerColor: PropTypes.string
-};
-
-TESpinner.defaultProps = {
-	size: 'medium'
 };
 
 var TEPrivateRoute = function TEPrivateRoute(props) {
@@ -17258,12 +17306,13 @@ var TESideNavLink = function TESideNavLink(props) {
 	    children = props.children,
 	    activePath = props.activePath,
 	    exact = props.exact,
-	    className = props.className;
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className;
 
 
 	return React__default.createElement(
 		Li,
-		{ className: className },
+		{ className: 'TESideNavLink ' + className },
 		React__default.createElement(
 			Link,
 			{
@@ -17310,11 +17359,12 @@ var TESideNavbar = function TESideNavbar(props) {
 	    logo = props.logo,
 	    Header = props.Header,
 	    links = props.links,
-	    className = props.className;
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className;
 
 	return React__default.createElement(
 		Container$9,
-		{ sidebarWidth: sidebarWidth, className: className },
+		{ sidebarWidth: sidebarWidth, className: 'TESideNavbar ' + className },
 		Header,
 		logo && !Header && React__default.createElement(
 			reactRouterDom.Link,
@@ -17390,12 +17440,13 @@ var Link$1 = styled__default(reactRouterDom.NavLink)(_templateObject5$b, functio
 var TESubNavbar = function TESubNavbar(props) {
 	var links = props.links,
 	    rightComponent = props.rightComponent,
-	    className = props.className;
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className;
 
 
 	return React__default.createElement(
 		Container$a,
-		{ className: className },
+		{ className: 'TESubNavbar ' + className },
 		React__default.createElement(
 			Content$2,
 			{ className: 'TESubNavbarContent' },
@@ -17446,15 +17497,17 @@ var TEAlert = function TEAlert(props) {
 	var title = props.title,
 	    message = props.message,
 	    onClick = props.onClick,
-	    buttonTitle = props.buttonTitle,
+	    _props$buttonTitle = props.buttonTitle,
+	    buttonTitle = _props$buttonTitle === undefined ? 'Okay' : _props$buttonTitle,
 	    visible = props.visible,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    children = props.children;
 
 
 	return React__default.createElement(
 		Popup$1,
-		{ visible: visible, className: className },
+		{ visible: visible, className: 'TEAlert ' + className },
 		React__default.createElement(
 			Title$4,
 			{ className: 'TEAlertTitle' },
@@ -17479,10 +17532,6 @@ TEAlert.propTypes = {
 	message: PropTypes.string,
 	onClick: PropTypes.func.isRequired,
 	buttonTitle: PropTypes.string
-};
-
-TEAlert.defaultProps = {
-	buttonTitle: 'Okay'
 };
 
 var _templateObject$t = taggedTemplateLiteral(['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 600px;\n\t\tmargin: 100px auto;\n\t}\n'], ['\n\t.TEPopupContent {\n\t\twidth: 90%;\n\t\tmax-width: 600px;\n\t\tmargin: 100px auto;\n\t}\n']),
@@ -17536,12 +17585,13 @@ var TEConfirm = function TEConfirm(props) {
 	    rightButtonTitle = props.rightButtonTitle,
 	    children = props.children,
 	    visible = props.visible,
-	    className = props.className;
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className;
 
 
 	return React__default.createElement(
 		Popup$2,
-		{ visible: visible, className: className },
+		{ visible: visible, className: 'TEConfirm ' + className },
 		React__default.createElement(
 			Title$5,
 			{ className: 'TEConfirmTitle' },
@@ -17599,13 +17649,14 @@ var Message$3 = styled__default.p(_templateObject3$i, function (props) {
 
 var TENetworkActivity = function TENetworkActivity(props) {
 	var visible = props.visible,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    message = props.message;
 
 
 	return React__default.createElement(
 		Popup$3,
-		{ visible: visible, className: className },
+		{ visible: visible, className: 'TENetworkActivity ' + className },
 		React__default.createElement(Spinner, { size: 'large', className: 'TENetworkActivitySpinner' }),
 		message && React__default.createElement(
 			Message$3,
@@ -17632,13 +17683,14 @@ var TEPopupMultiStepForm = function TEPopupMultiStepForm(props) {
 	};
 	var visible = props.visible,
 	    onClose = props.onClose,
-	    className = props.className,
+	    _props$className = props.className,
+	    className = _props$className === undefined ? '' : _props$className,
 	    rest = objectWithoutProperties(props, ['visible', 'onClose', 'className']);
 
 
 	return React__default.createElement(
 		Popup$4,
-		{ visible: visible, className: className },
+		{ visible: visible, className: 'TEPopupMultiStepForm ' + className },
 		React__default.createElement(TEMultiStepForm, _extends({
 			onSubmit: handleSubmit,
 			handleCancelOnClick: onClose,
@@ -19037,6 +19089,7 @@ var initialTheme = {
 	//DatePicker
 	// - At this moment there is no other way to style the wrapper components on this input.
 	//
+	//TODO: Check if this receives props of any kind. otherwise combine baseTheme and user input theme here and then use itin this object
 };var GlobalStyles = styled.createGlobalStyle(_templateObject$w, function (props) {
 	return props.theme.white;
 }, function (props) {

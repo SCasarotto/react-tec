@@ -7,9 +7,9 @@ import TESideNavLink from './../TESideNavLink'
 import { Container, Logo, NavContainer, MainUl } from './styledComponents'
 
 const TESideNavbar = (props) => {
-	const { sidebarWidth, logo, Header, links, className } = props
+	const { sidebarWidth, logo, Header, links, className = '' } = props
 	return (
-		<Container sidebarWidth={sidebarWidth} className={className}>
+		<Container sidebarWidth={sidebarWidth} className={`TESideNavbar ${className}`}>
 			{Header}
 			{logo && !Header && (
 				<Link to='/' className='TESideNavbarLogoLink'>

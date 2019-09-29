@@ -1,7 +1,3 @@
-//
-// Version 0.3.0
-//
-
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
@@ -70,7 +66,7 @@ const TEFileInput = (props) => {
 		})
 	}
 
-	const { disabled, className, placeholder = 'Choose a file...', ...rest } = props
+	const { disabled, className = '', placeholder = 'Choose a file...', ...rest } = props
 
 	let labelCopy = placeholder
 	if (fileArray && fileArray.length === 1) {
@@ -80,7 +76,7 @@ const TEFileInput = (props) => {
 	}
 
 	return (
-		<Wrapper className={className}>
+		<Wrapper className={`TEFileInput ${className}`}>
 			<InputWrapper
 				onDragEnter={onDragEnter}
 				onDragLeave={onDragLeave}

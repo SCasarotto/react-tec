@@ -16,7 +16,7 @@ const determineValue = (value) => {
 	return value
 }
 const TEDatetimeInput = (props) => {
-	const { value, placeholder, /*withTEPortal,*/ ...rest } = props
+	const { value, placeholder, className = '', /*withTEPortal,*/ ...rest } = props
 	// const [showPortal, setShowPortal] = useState(false)
 
 	// if (withTEPortal) {
@@ -43,7 +43,14 @@ const TEDatetimeInput = (props) => {
 	// 	)
 	// }
 
-	return <DatePicker selected={determineValue(value)} placeholderText={placeholder} {...rest} />
+	return (
+		<DatePicker
+			selected={determineValue(value)}
+			placeholderText={placeholder}
+			className={`TEDatetimeInput ${className}`}
+			{...rest}
+		/>
+	)
 }
 
 TEDatetimeInput.propTypes = {

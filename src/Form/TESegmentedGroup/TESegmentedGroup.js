@@ -28,11 +28,11 @@ const TESegmentedGroup = (props) => {
 		disabled,
 		size,
 		last,
-		className,
+		className = '',
 	} = props
 
 	return (
-		<Row size={size} last={last} inline={inline} className={className}>
+		<Row size={size} last={last} inline={inline} className={`TESegmentedGroup ${className}`}>
 			<Label
 				inline={inline}
 				required={required}
