@@ -8,11 +8,11 @@
     "prop-types": "^15.6.2",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
+    "react-router": "^5.1.1",
+    "react-router-dom": "^5.1.1",
     "react-scripts": "^1.1.4",
     "react-tec": "link:..",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
