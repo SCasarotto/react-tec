@@ -103,6 +103,7 @@ const TEFileManagerRow = (props) => {
 						accept={accept}
 						pattern={pattern}
 						className='TEFileManagerInput'
+						hideClearButton
 					/>
 				)}
 			</FileRowWrapper>

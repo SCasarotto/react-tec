@@ -44,6 +44,11 @@ const TEFileInputSection = () => {
 						note:
 							'String used for the text that is displayed before a file is selected. Default: "Choose a file..."',
 					},
+					{
+						prop: 'hideClearButton',
+						type: 'boolean',
+						note: 'Used to hide the clear button.',
+					},
 				]}
 			/>
 			<iframe

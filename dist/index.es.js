@@ -1,5 +1,5 @@
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import React__default, { Component, createElement, useState, useEffect, createContext, useReducer, useContext, useRef, Fragment } from 'react';
+import React__default, { Component, createElement, useState, useEffect, Fragment, createContext, useReducer, useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import reactDom, { findDOMNode } from 'react-dom';
 import { Route, Redirect, NavLink, Link, withRouter as withRouter$1, BrowserRouter } from 'react-router-dom';
@@ -10964,7 +10964,9 @@ var TEFileInput = function TEFileInput(props) {
 	    className = _props$className === undefined ? '' : _props$className,
 	    _props$placeholder = props.placeholder,
 	    placeholder = _props$placeholder === undefined ? 'Choose a file...' : _props$placeholder,
-	    rest = objectWithoutProperties(props, ['disabled', 'className', 'placeholder']);
+	    _props$hideClearButto = props.hideClearButton,
+	    hideClearButton = _props$hideClearButto === undefined ? false : _props$hideClearButto,
+	    rest = objectWithoutProperties(props, ['disabled', 'className', 'placeholder', 'hideClearButton']);
 
 
 	var labelCopy = placeholder;
@@ -11005,7 +11007,7 @@ var TEFileInput = function TEFileInput(props) {
 					className: 'TEFileInputInput'
 				}))
 			),
-			React__default.createElement(
+			!hideClearButton && React__default.createElement(
 				ClearButton,
 				{
 					onClick: handleClearInput,
@@ -11168,7 +11170,8 @@ var TEFileManagerRow = function TEFileManagerRow(props) {
 				// multiple={maxNumber === 0 || maxNumber > 1} //For simplicity making it a single file
 				, accept: accept,
 				pattern: pattern,
-				className: 'TEFileManagerInput'
+				className: 'TEFileManagerInput',
+				hideClearButton: true
 			})
 		)
 	);
@@ -11784,7 +11787,7 @@ var TEInput = function TEInput(props) {
 
 TEInput.propTypes = {
 	style: PropTypes.object,
-	type: PropTypes.string.isRequired,
+	type: PropTypes.string,
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func.isRequired,
 	disabled: PropTypes.bool

@@ -66,7 +66,13 @@ const TEFileInput = (props) => {
 		})
 	}
 
-	const { disabled, className = '', placeholder = 'Choose a file...', ...rest } = props
+	const {
+		disabled,
+		className = '',
+		placeholder = 'Choose a file...',
+		hideClearButton = false,
+		...rest
+	} = props
 
 	let labelCopy = placeholder
 	if (fileArray && fileArray.length === 1) {
@@ -100,13 +106,15 @@ const TEFileInput = (props) => {
 						className='TEFileInputInput'
 					/>
 				</Label>
-				<ClearButton
-					onClick={handleClearInput}
-					disabled={disabled}
-					className='TEFileInputClearButton'
-				>
-					<ButtonIcon className='TEFileInputClearIcon' />
-				</ClearButton>
+				{!hideClearButton && (
+					<ClearButton
+						onClick={handleClearInput}
+						disabled={disabled}
+						className='TEFileInputClearButton'
+					>
+						<ButtonIcon className='TEFileInputClearIcon' />
+					</ClearButton>
+				)}
 			</InputWrapper>
 			{errorData && errorData.error && (
 				<ErrorMessage className='TEFileInputErrorMessage'>{errorData.message}</ErrorMessage>
