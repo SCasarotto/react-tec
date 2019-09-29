@@ -22,7 +22,15 @@ const TEImageUpload = (props) => {
 	const [rotation, setRotation] = useState(0)
 	const editor = useRef(null)
 
-	const { className = '', visible, file, onCancel, onSubmit, onSubmitTitle } = props
+	const {
+		className = '',
+		visible,
+		file,
+		onCancel,
+		onSubmit,
+		onSubmitTitle,
+		avatarEditorData,
+	} = props
 
 	return (
 		<TEPopupForm
@@ -45,6 +53,7 @@ const TEImageUpload = (props) => {
 						color={[255, 255, 255, 0.6]} // RGBA
 						scale={editorScale}
 						rotate={rotation}
+						{...avatarEditorData}
 					/>
 				</Row>
 				<Row className='TEImageRowPopupRow'>

@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <!-- and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). -->
 
+## 0.1.21 - 09-29-2019
+
+### Changes
+
+-   Added `avatarEditorData` to TEImageRow to allow adjusting React Avatar Editor (Resolving #11)
+-   Fixed disabled styles on `TEDatetimeInput` (Resolving #17)
+
 ## 0.1.20 - 09-29-2019
 
 ### Changes

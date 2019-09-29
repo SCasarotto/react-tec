@@ -90,6 +90,7 @@ const TEImageRow = (props) => {
 		disabled,
 		required,
 		labelForKey,
+		avatarEditorData,
 	} = props
 
 	const imgSrcArray = []
@@ -158,6 +159,7 @@ const TEImageRow = (props) => {
 				onCancel={handleCancelEditor}
 				onSubmit={handleEditorSubmit}
 				className='TEImageRowPopup'
+				avatarEditorData={avatarEditorData}
 			/>
 		</TERow>
 	)

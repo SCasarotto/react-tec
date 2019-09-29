@@ -15,7 +15,15 @@ const TEImageRowSection = () => {
 			<p>
 				A component to manage uploading, downloading, and deleting images. This component
 				contains a <Code>TERow</Code>, <Code>TELabel</Code>, <Code>TEFileInput</Code> and
-				some additional components.
+				some additional components. The editor popup is based on{' '}
+				<a
+					href='https://github.com/mosch/react-avatar-editor#readme'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					React Avatar Editor
+				</a>
+				.
 			</p>
 			<p>Note: This component is a bit complex and may shift in API over time.</p>
 			<PropsTable
@@ -103,6 +111,11 @@ const TEImageRowSection = () => {
 						type: 'function',
 						note:
 							'Function used when the remove button is pressed on a given row. This function is passed both the images "uid" as well as the "path" props. *Required',
+					},
+					{
+						prop: 'avatarEditorData',
+						type: 'object',
+						note: 'This is an object spread over the AvatarEditor component.',
 					},
 				]}
 			/>
