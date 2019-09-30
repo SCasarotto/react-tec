@@ -1023,7 +1023,7 @@ const GlobalStyles = createGlobalStyle`
 		box-shadow: 0 0 0 1px ${(props) => props.theme.primary} inset;
 	}
 	.react-datepicker__input-container input:disabled {
-		cursor: 'not-allowed';
+		cursor: not-allowed;
 		color: ${(props) => props.theme.darkerGray};
 		border: 1px solid ${(props) => props.theme.lighterGray};
 	}
