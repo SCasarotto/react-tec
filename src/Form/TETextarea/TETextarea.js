@@ -10,7 +10,7 @@ const TETextarea = (props) => {
 
 TETextarea.propTypes = {
 	style: PropTypes.object,
-	type: PropTypes.string.isRequired,
+	type: PropTypes.string,
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func.isRequired,
 	disabled: PropTypes.bool,

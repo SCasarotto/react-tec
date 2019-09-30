@@ -1,5 +1,5 @@
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import React__default, { Component, createElement, useState, useEffect, createContext, useReducer, useContext, useRef, Fragment } from 'react';
+import React__default, { Component, createElement, useState, useEffect, Fragment, createContext, useReducer, useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import reactDom, { findDOMNode } from 'react-dom';
 import { Route, Redirect, NavLink, Link, withRouter as withRouter$1, BrowserRouter } from 'react-router-dom';
@@ -11825,7 +11825,7 @@ var TETextarea = function TETextarea(props) {
 
 TETextarea.propTypes = {
 	style: PropTypes.object,
-	type: PropTypes.string.isRequired,
+	type: PropTypes.string,
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func.isRequired,
 	disabled: PropTypes.bool
