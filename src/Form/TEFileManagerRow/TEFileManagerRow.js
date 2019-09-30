@@ -65,8 +65,12 @@ const TEFileManagerRow = (props) => {
 					fileSrcArray.map((imgSrcData, index) => {
 						const { src, uid, filename, fileEnding, path } = imgSrcData
 						return (
-							<FileWrapper key={uid} className='TEFileManagerFileRow'>
-								<FileName className='TEFileManagerFileName'>
+							<FileWrapper
+								key={uid}
+								className='TEFileManagerFileRow'
+								disabled={disabled}
+							>
+								<FileName className='TEFileManagerFileName' disabled={disabled}>
 									{filename}.{fileEnding}
 								</FileName>
 								{src && (
@@ -81,12 +85,14 @@ const TEFileManagerRow = (props) => {
 										<DownloadImageButtonIcon className='TEFileManagerDownloadIcon' />
 									</DownloadFileButton>
 								)}
-								<ClearFileButton
-									onClick={() => onRemove({ uid, path, index })}
-									className='TEFileManagerClearButton'
-								>
-									<ClearFileButtonIcon className='TEFileManagerClearIcon' />
-								</ClearFileButton>
+								{!disabled && (
+									<ClearFileButton
+										onClick={() => onRemove({ uid, path, index })}
+										className='TEFileManagerClearButton'
+									>
+										<ClearFileButtonIcon className='TEFileManagerClearIcon' />
+									</ClearFileButton>
+								)}
 							</FileWrapper>
 						)
 					})}

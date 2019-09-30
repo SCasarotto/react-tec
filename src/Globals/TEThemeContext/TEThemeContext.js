@@ -76,7 +76,6 @@ const GlobalStyles = createGlobalStyle`
 	.PowerSelect--focused {
 	}
 	.PowerSelect--disabled {
-		background-color: ${(props) => props.theme.lighterGray};
 		cursor: not-allowed;
 	}
 	.PowerSelect--disabled .PowerSelect__Trigger {

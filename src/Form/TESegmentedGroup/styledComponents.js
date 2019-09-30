@@ -12,7 +12,7 @@ export const Label = styled(TELabel)`
 	align-self: ${(props) => (props.inline ? 'center' : 'auto')};
 	text-align: left;
 	display: block;
-	margin-bottom: ${(props) => (props.inline ? '0px' : '5px')};
+	margin-bottom: ${(props) => (props.inline ? '0px' : '3px')};
 	padding-right: ${(props) => (props.inline ? '10px' : '0px')};
 	font-size: 18px;
 

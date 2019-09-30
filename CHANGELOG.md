@@ -12,7 +12,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   Added `avatarEditorData` to `TEImageRow` to allow adjusting React Avatar Editor (Resolving #11)
 -   Fixed disabled styles on `TEDatetimeInput` (Resolving #17)
--   Added `hideClearButton` to `TEFileInput` and hiding it in `TEFileManager` (Resolving #19)
+-   Added `hideClearButton` to `TEFileInput` and hiding it in `TEFileManager` (Resolving #17)
+-   Fixed margin-bottom in `TESegementedGroup` (Resolving #20)
+-   Fixed Disabled Styling on some inputs (Resolving #23)
 
 ## 0.1.20 - 09-29-2019
 

@@ -14,13 +14,15 @@ export const FileWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	padding: 5px;
-	border: 1px solid ${(props) => props.theme.lightGray};
+	border: 1px solid
+		${(props) => (props.disabled ? props.theme.lighterGray : props.theme.lightGray)};
 	background-color: ${(props) => props.theme.white};
 `
 export const FileName = styled.span`
 	flex: 1;
 	padding-left: 5px;
 	display: block;
+	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
 `
 export const DownloadFileButton = styled.a`
 	width: auto;
