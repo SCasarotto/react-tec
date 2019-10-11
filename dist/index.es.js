@@ -115,9 +115,10 @@ var TEButton = function TEButton(props) {
 	var _props$className = props.className,
 	    className = _props$className === undefined ? '' : _props$className,
 	    _props$type = props.type,
+	    type = _props$type === undefined ? 'button' : _props$type,
 	    rest = objectWithoutProperties(props, ['className', 'type']);
 
-	return React__default.createElement(Button, _extends({ className: 'TEButton ' + className }, rest));
+	return React__default.createElement(Button, _extends({ className: 'TEButton ' + className, type: type }, rest));
 };
 
 var _templateObject$1 = taggedTemplateLiteral(['\n\tposition: relative;\n\tdisplay: block;\n\twidth: auto;\n\tbox-sizing: border-box;\n\tmargin-bottom: 3px;\n\tfont-size: 18px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n\t', '\n'], ['\n\tposition: relative;\n\tdisplay: block;\n\twidth: auto;\n\tbox-sizing: border-box;\n\tmargin-bottom: 3px;\n\tfont-size: 18px;\n\tcolor: ', ';\n\n\t@media (max-width: 550px) {\n\t\tfont-size: 16px;\n\t}\n\t', '\n']);
