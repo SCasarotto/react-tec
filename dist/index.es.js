@@ -1,7 +1,7 @@
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import React__default, { Component, createElement, useState, useEffect, Fragment, createContext, useReducer, useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
-import reactDom, { findDOMNode } from 'react-dom';
+import ReactDOM, { findDOMNode } from 'react-dom';
 import { Route, Redirect, NavLink, Link, withRouter as withRouter$1, BrowserRouter } from 'react-router-dom';
 import { matchPath, withRouter } from 'react-router';
 
@@ -11258,8 +11258,2003 @@ var TEForm = function TEForm(props) {
 	return React__default.createElement(Form, _extends({ className: 'TEForm ' + className }, rest));
 };
 
-var dist = createCommonjsModule(function (module, exports) {
-!function(e,t){module.exports=t(PropTypes,React__default,reactDom);}(commonjsGlobal,function(e,t,o){function n(e,t){return new Promise(function(o,n){var i,a=new Image;a.onload=function(){return o(a)},a.onerror=n,!1==(null!==(i=e)&&!!i.match(/^\s*data:([a-z]+\/[a-z]+(;[a-z-]+=[a-z-]+)?)?(;base64)?,[a-z0-9!$&',()*+;=\-._~:@/?%\s]*\s*$/i))&&t&&(a.crossOrigin=t),a.src=e;})}e=e&&e.hasOwnProperty("default")?e.default:e,t=t&&t.hasOwnProperty("default")?t.default:t,o=o&&o.hasOwnProperty("default")?o.default:o;var i=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},a=function(){function e(e,t){for(var o=0;o<t.length;o++){var n=t[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n);}}return function(t,o,n){return o&&e(t.prototype,o),n&&e(t,n),t}}(),r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var n in o)Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n]);}return e},s=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return !t||"object"!=typeof t&&"function"!=typeof t?e:t},h=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var o=[],n=!0,i=!1,a=void 0;try{for(var r,s=e[Symbol.iterator]();!(n=(r=s.next()).done)&&(o.push(r.value),!t||o.length!==t);n=!0);}catch(e){i=!0,a=e;}finally{try{!n&&s.return&&s.return();}finally{if(i)throw a}}return o}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),u=function(e){var t=!1;return {promise:new Promise(function(o,n){e.then(function(e){return t?n({isCanceled:!0}):o(e)},function(e){return n(t?{isCanceled:!0}:e)});}),cancel:function(){t=!0;}}},c=!("undefined"==typeof window||"undefined"==typeof navigator||!("ontouchstart"in window||navigator.msMaxTouchPoints>0)),d="undefined"!=typeof File,l={touch:{react:{down:"onTouchStart",mouseDown:"onMouseDown",drag:"onTouchMove",move:"onTouchMove",mouseMove:"onMouseMove",up:"onTouchEnd",mouseUp:"onMouseUp"},native:{down:"touchstart",mouseDown:"mousedown",drag:"touchmove",move:"touchmove",mouseMove:"mousemove",up:"touchend",mouseUp:"mouseup"}},desktop:{react:{down:"onMouseDown",drag:"onDragOver",move:"onMouseMove",up:"onMouseUp"},native:{down:"mousedown",drag:"dragStart",move:"mousemove",up:"mouseup"}}},p=c?l.touch:l.desktop,g="undefined"!=typeof window&&window.devicePixelRatio?window.devicePixelRatio:1,m={x:.5,y:.5},v=function(e){function l(){var e,t,o;i(this,l);for(var n=arguments.length,a=Array(n),h=0;h<n;h++)a[h]=arguments[h];return t=o=s(this,(e=l.__proto__||Object.getPrototypeOf(l)).call.apply(e,[this].concat(a))),o.state={drag:!1,my:null,mx:null,image:m},o.handleImageReady=function(e){var t=o.getInitialSize(e.width,e.height);t.resource=e,t.x=.5,t.y=.5,o.setState({drag:!1,image:t},o.props.onImageReady),o.props.onLoadSuccess(t);},o.clearImage=function(){var e=o.canvas;e.getContext("2d").clearRect(0,0,e.width,e.height),o.setState({image:m});},o.handleMouseDown=function(e){(e=e||window.event).preventDefault(),o.setState({drag:!0,mx:null,my:null});},o.handleMouseUp=function(){o.state.drag&&(o.setState({drag:!1}),o.props.onMouseUp());},o.handleMouseMove=function(e){if(e=e||window.event,!1!==o.state.drag){e.preventDefault();var t=e.targetTouches?e.targetTouches[0].pageX:e.clientX,n=e.targetTouches?e.targetTouches[0].pageY:e.clientY,i={mx:t,my:n},a=o.props.rotate;if(a=(a%=360)<0?a+360:a,o.state.mx&&o.state.my){var s=o.state.mx-t,h=o.state.my-n,u=o.state.image.width*o.props.scale,c=o.state.image.height*o.props.scale,d=o.getCroppingRect(),l=d.x,p=d.y;l*=u,p*=c;var g=function(e){return e*(Math.PI/180)},m=Math.cos(g(a)),v=Math.sin(g(a)),f=p+-s*v+h*m,y={x:(l+s*m+h*v)/u+1/o.props.scale*o.getXScale()/2,y:f/c+1/o.props.scale*o.getYScale()/2};o.props.onPositionChange(y),i.image=r({},o.state.image,y);}o.setState(i),o.props.onMouseMove(e);}},o.setCanvas=function(e){o.canvas=e;},s(o,t)}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t);}(l,t.Component),a(l,[{key:"componentDidMount",value:function(){this.props.disableHiDPIScaling&&(g=1);var e=o.findDOMNode(this.canvas).getContext("2d");if(this.props.image&&this.loadImage(this.props.image),this.paint(e),document){var t=!!function(){var e=!1;try{var t=Object.defineProperty({},"passive",{get:function(){e=!0;}});window.addEventListener("test",t,t),window.removeEventListener("test",t,t);}catch(t){e=!1;}return e}()&&{passive:!1},n=p.native;document.addEventListener(n.move,this.handleMouseMove,t),document.addEventListener(n.up,this.handleMouseUp,t),c&&(document.addEventListener(n.mouseMove,this.handleMouseMove,t),document.addEventListener(n.mouseUp,this.handleMouseUp,t));}}},{key:"componentWillReceiveProps",value:function(e){e.image&&this.props.image!==e.image||this.props.width!==e.width||this.props.height!==e.height?this.loadImage(e.image):e.image||this.clearImage();}},{key:"componentDidUpdate",value:function(e,t){var n=o.findDOMNode(this.canvas),i=n.getContext("2d");i.clearRect(0,0,n.width,n.height),this.paint(i),this.paintImage(i,this.state.image,this.props.border),e.image===this.props.image&&e.width===this.props.width&&e.height===this.props.height&&e.position===this.props.position&&e.scale===this.props.scale&&e.rotate===this.props.rotate&&t.my===this.state.my&&t.mx===this.state.mx&&t.image.x===this.state.image.x&&t.image.y===this.state.image.y||this.props.onImageChange();}},{key:"componentWillUnmount",value:function(){if(document){var e=p.native;document.removeEventListener(e.move,this.handleMouseMove,!1),document.removeEventListener(e.up,this.handleMouseUp,!1),c&&(document.removeEventListener(e.mouseMove,this.handleMouseMove,!1),document.removeEventListener(e.mouseUp,this.handleMouseUp,!1));}}},{key:"isVertical",value:function(){return this.props.rotate%180!=0}},{key:"getBorders",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.props.border;return Array.isArray(e)?e:[e,e]}},{key:"getDimensions",value:function(){var e=this.props,t=e.width,o=e.height,n=e.rotate,i=e.border,a={},r=this.getBorders(i),s=h(r,2),u=s[0],c=s[1],d=t,l=o;return this.isVertical()?(a.width=l,a.height=d):(a.width=d,a.height=l),a.width+=2*u,a.height+=2*c,{canvas:a,rotate:n,width:t,height:o,border:i}}},{key:"getImage",value:function(){var e=this.getCroppingRect(),t=this.state.image;e.x*=t.resource.width,e.y*=t.resource.height,e.width*=t.resource.width,e.height*=t.resource.height;var o=document.createElement("canvas");this.isVertical()?(o.width=e.height,o.height=e.width):(o.width=e.width,o.height=e.height);var n=o.getContext("2d");return n.translate(o.width/2,o.height/2),n.rotate(this.props.rotate*Math.PI/180),n.translate(-o.width/2,-o.height/2),this.isVertical()&&n.translate((o.width-o.height)/2,(o.height-o.width)/2),n.drawImage(t.resource,-e.x,-e.y),o}},{key:"getImageScaledToCanvas",value:function(){var e=this.getDimensions(),t=e.width,o=e.height,n=document.createElement("canvas");return this.isVertical()?(n.width=o,n.height=t):(n.width=t,n.height=o),this.paintImage(n.getContext("2d"),this.state.image,0,1),n}},{key:"getXScale",value:function(){var e=this.props.width/this.props.height,t=this.state.image.width/this.state.image.height;return Math.min(1,e/t)}},{key:"getYScale",value:function(){var e=this.props.height/this.props.width,t=this.state.image.height/this.state.image.width;return Math.min(1,e/t)}},{key:"getCroppingRect",value:function(){var e=this.props.position||{x:this.state.image.x,y:this.state.image.y},t=1/this.props.scale*this.getXScale(),o=1/this.props.scale*this.getYScale(),n={x:e.x-t/2,y:e.y-o/2,width:t,height:o},i=0,a=1-n.width,s=0,h=1-n.height;return (this.props.disableBoundaryChecks||t>1||o>1)&&(i=-n.width,a=1,s=-n.height,h=1),r({},n,{x:Math.max(i,Math.min(n.x,a)),y:Math.max(s,Math.min(n.y,h))})}},{key:"loadImage",value:function(e){var t;d&&e instanceof File?this.loadingImage=u((t=e,new Promise(function(e,o){var i=new FileReader;i.onload=function(t){try{var i=n(t.target.result);e(i);}catch(t){o(t);}},i.readAsDataURL(t);}))).promise.then(this.handleImageReady).catch(this.props.onLoadFailure):"string"==typeof e&&(this.loadingImage=u(n(e,this.props.crossOrigin)).promise.then(this.handleImageReady).catch(this.props.onLoadFailure));}},{key:"getInitialSize",value:function(e,t){var o=void 0,n=void 0,i=this.getDimensions();return i.height/i.width>t/e?n=e*((o=this.getDimensions().height)/t):o=t*((n=this.getDimensions().width)/e),{height:o,width:n}}},{key:"paintImage",value:function(e,t,o){var n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:g;if(t.resource){var i=this.calculatePosition(t,o);e.save(),e.translate(e.canvas.width/2,e.canvas.height/2),e.rotate(this.props.rotate*Math.PI/180),e.translate(-e.canvas.width/2,-e.canvas.height/2),this.isVertical()&&e.translate((e.canvas.width-e.canvas.height)/2,(e.canvas.height-e.canvas.width)/2),e.scale(n,n),e.globalCompositeOperation="destination-over",e.drawImage(t.resource,i.x,i.y,i.width,i.height),e.restore();}}},{key:"calculatePosition",value:function(e,t){e=e||this.state.image;var o=this.getBorders(t),n=h(o,2),i=n[0],a=n[1],r=this.getCroppingRect(),s=e.width*this.props.scale,u=e.height*this.props.scale,c=-r.x*s,d=-r.y*u;return this.isVertical()?(c+=a,d+=i):(c+=i,d+=a),{x:c,y:d,height:u,width:s}}},{key:"paint",value:function(e){e.save(),e.scale(g,g),e.translate(0,0),e.fillStyle="rgba("+this.props.color.slice(0,4).join(",")+")";var t=this.props.borderRadius,o=this.getDimensions(),n=this.getBorders(o.border),i=h(n,2),a=i[0],r=i[1],s=o.canvas.height,u=o.canvas.width;t=Math.max(t,0),t=Math.min(t,u/2-a,s/2-r),e.beginPath(),function(e,t,o,n,i,a){if(0===a)e.rect(t,o,n,i);else{var r=n-a,s=i-a;e.translate(t,o),e.arc(a,a,a,Math.PI,1.5*Math.PI),e.lineTo(r,0),e.arc(r,a,a,1.5*Math.PI,2*Math.PI),e.lineTo(n,s),e.arc(r,s,a,2*Math.PI,.5*Math.PI),e.lineTo(a,i),e.arc(a,s,a,.5*Math.PI,Math.PI),e.translate(-t,-o);}}(e,a,r,u-2*a,s-2*r,t),e.rect(u,0,-u,s),e.fill("evenodd"),e.restore();}},{key:"render",value:function(){var e=this.props,o=(e.scale,e.rotate,e.image,e.border,e.borderRadius,e.width,e.height,e.position,e.color,e.style),n=(e.crossOrigin,e.onLoadFailure,e.onLoadSuccess,e.onImageReady,e.onImageChange,e.onMouseUp,e.onMouseMove,e.onPositionChange,e.disableBoundaryChecks,e.disableHiDPIScaling,function(e,t){var o={};for(var n in e)t.indexOf(n)>=0||Object.prototype.hasOwnProperty.call(e,n)&&(o[n]=e[n]);return o}(e,["scale","rotate","image","border","borderRadius","width","height","position","color","style","crossOrigin","onLoadFailure","onLoadSuccess","onImageReady","onImageChange","onMouseUp","onMouseMove","onPositionChange","disableBoundaryChecks","disableHiDPIScaling"])),i=this.getDimensions(),a={width:i.canvas.width,height:i.canvas.height,cursor:this.state.drag?"grabbing":"grab",touchAction:"none"},s={width:i.canvas.width*g,height:i.canvas.height*g,style:r({},a,o)};return s[p.react.down]=this.handleMouseDown,c&&(s[p.react.mouseDown]=this.handleMouseDown),t.createElement("canvas",r({ref:this.setCanvas},s,n))}}]),l}();return v.propTypes={scale:e.number,rotate:e.number,image:e.oneOfType([e.string].concat(function(e){if(Array.isArray(e)){for(var t=0,o=Array(e.length);t<e.length;t++)o[t]=e[t];return o}return Array.from(e)}(d?[e.instanceOf(File)]:[]))),border:e.oneOfType([e.number,e.arrayOf(e.number)]),borderRadius:e.number,width:e.number,height:e.number,position:e.shape({x:e.number,y:e.number}),color:e.arrayOf(e.number),crossOrigin:e.oneOf(["","anonymous","use-credentials"]),onLoadFailure:e.func,onLoadSuccess:e.func,onImageReady:e.func,onImageChange:e.func,onMouseUp:e.func,onMouseMove:e.func,onPositionChange:e.func,disableBoundaryChecks:e.bool,disableHiDPIScaling:e.bool},v.defaultProps={scale:1,rotate:0,border:25,borderRadius:0,width:200,height:200,color:[0,0,0,.5],onLoadFailure:function(){},onLoadSuccess:function(){},onImageReady:function(){},onImageChange:function(){},onMouseUp:function(){},onMouseMove:function(){},onPositionChange:function(){},disableBoundaryChecks:!1,disableHiDPIScaling:!1},v});
+// @credits https://gist.github.com/rogozhnikoff/a43cfed27c41e4e68cdc
+function findInArray(array
+/*: Array<any> | TouchList*/
+, callback
+/*: Function*/
+)
+/*: any*/
+{
+  for (let i = 0, length = array.length; i < length; i++) {
+    if (callback.apply(callback, [array[i], i, array])) return array[i];
+  }
+}
+function isFunction$1(func
+/*: any*/
+)
+/*: boolean*/
+{
+  return typeof func === 'function' || Object.prototype.toString.call(func) === '[object Function]';
+}
+function isNum(num
+/*: any*/
+)
+/*: boolean*/
+{
+  return typeof num === 'number' && !isNaN(num);
+}
+function int(a
+/*: string*/
+)
+/*: number*/
+{
+  return parseInt(a, 10);
+}
+function dontSetMe(props
+/*: Object*/
+, propName
+/*: string*/
+, componentName
+/*: string*/
+) {
+  if (props[propName]) {
+    return new Error(`Invalid prop ${propName} passed to ${componentName} - do not set this, set it on the child.`);
+  }
+}
+
+const prefixes = ['Moz', 'Webkit', 'O', 'ms'];
+function getPrefix(prop
+/*: string*/
+= 'transform')
+/*: string*/
+{
+  // Checking specifically for 'window.document' is for pseudo-browser server-side
+  // environments that define 'window' as the global context.
+  // E.g. React-rails (see https://github.com/reactjs/react-rails/pull/84)
+  if (typeof window === 'undefined' || typeof window.document === 'undefined') return '';
+  const style = window.document.documentElement.style;
+  if (prop in style) return '';
+
+  for (let i = 0; i < prefixes.length; i++) {
+    if (browserPrefixToKey(prop, prefixes[i]) in style) return prefixes[i];
+  }
+
+  return '';
+}
+function browserPrefixToKey(prop
+/*: string*/
+, prefix
+/*: string*/
+)
+/*: string*/
+{
+  return prefix ? `${prefix}${kebabToTitleCase(prop)}` : prop;
+}
+
+function kebabToTitleCase(str
+/*: string*/
+)
+/*: string*/
+{
+  let out = '';
+  let shouldCapitalize = true;
+
+  for (let i = 0; i < str.length; i++) {
+    if (shouldCapitalize) {
+      out += str[i].toUpperCase();
+      shouldCapitalize = false;
+    } else if (str[i] === '-') {
+      shouldCapitalize = true;
+    } else {
+      out += str[i];
+    }
+  }
+
+  return out;
+} // Default export is the prefix itself, like 'Moz', 'Webkit', etc
+// Note that you may have to re-test for certain things; for instance, Chrome 50
+// can handle unprefixed `transform`, but not unprefixed `user-select`
+
+
+var browserPrefix = getPrefix();
+
+/*:: import type {ControlPosition, PositionOffsetControlPosition, MouseTouchEvent} from './types';*/
+
+let matchesSelectorFunc = '';
+function matchesSelector(el
+/*: Node*/
+, selector
+/*: string*/
+)
+/*: boolean*/
+{
+  if (!matchesSelectorFunc) {
+    matchesSelectorFunc = findInArray(['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector', 'oMatchesSelector'], function (method) {
+      // $FlowIgnore: Doesn't think elements are indexable
+      return isFunction$1(el[method]);
+    });
+  } // Might not be found entirely (not an Element?) - in that case, bail
+  // $FlowIgnore: Doesn't think elements are indexable
+
+
+  if (!isFunction$1(el[matchesSelectorFunc])) return false; // $FlowIgnore: Doesn't think elements are indexable
+
+  return el[matchesSelectorFunc](selector);
+} // Works up the tree to the draggable itself attempting to match selector.
+
+function matchesSelectorAndParentsTo(el
+/*: Node*/
+, selector
+/*: string*/
+, baseNode
+/*: Node*/
+)
+/*: boolean*/
+{
+  let node = el;
+
+  do {
+    if (matchesSelector(node, selector)) return true;
+    if (node === baseNode) return false;
+    node = node.parentNode;
+  } while (node);
+
+  return false;
+}
+function addEvent(el
+/*: ?Node*/
+, event
+/*: string*/
+, handler
+/*: Function*/
+)
+/*: void*/
+{
+  if (!el) {
+    return;
+  }
+
+  if (el.attachEvent) {
+    el.attachEvent('on' + event, handler);
+  } else if (el.addEventListener) {
+    el.addEventListener(event, handler, true);
+  } else {
+    // $FlowIgnore: Doesn't think elements are indexable
+    el['on' + event] = handler;
+  }
+}
+function removeEvent(el
+/*: ?Node*/
+, event
+/*: string*/
+, handler
+/*: Function*/
+)
+/*: void*/
+{
+  if (!el) {
+    return;
+  }
+
+  if (el.detachEvent) {
+    el.detachEvent('on' + event, handler);
+  } else if (el.removeEventListener) {
+    el.removeEventListener(event, handler, true);
+  } else {
+    // $FlowIgnore: Doesn't think elements are indexable
+    el['on' + event] = null;
+  }
+}
+function outerHeight(node
+/*: HTMLElement*/
+)
+/*: number*/
+{
+  // This is deliberately excluding margin for our calculations, since we are using
+  // offsetTop which is including margin. See getBoundPosition
+  let height = node.clientHeight;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  height += int(computedStyle.borderTopWidth);
+  height += int(computedStyle.borderBottomWidth);
+  return height;
+}
+function outerWidth(node
+/*: HTMLElement*/
+)
+/*: number*/
+{
+  // This is deliberately excluding margin for our calculations, since we are using
+  // offsetLeft which is including margin. See getBoundPosition
+  let width = node.clientWidth;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  width += int(computedStyle.borderLeftWidth);
+  width += int(computedStyle.borderRightWidth);
+  return width;
+}
+function innerHeight$1(node
+/*: HTMLElement*/
+)
+/*: number*/
+{
+  let height = node.clientHeight;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  height -= int(computedStyle.paddingTop);
+  height -= int(computedStyle.paddingBottom);
+  return height;
+}
+function innerWidth$1(node
+/*: HTMLElement*/
+)
+/*: number*/
+{
+  let width = node.clientWidth;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  width -= int(computedStyle.paddingLeft);
+  width -= int(computedStyle.paddingRight);
+  return width;
+} // Get from offsetParent
+
+function offsetXYFromParent(evt
+/*: {clientX: number, clientY: number}*/
+, offsetParent
+/*: HTMLElement*/
+)
+/*: ControlPosition*/
+{
+  const isBody = offsetParent === offsetParent.ownerDocument.body;
+  const offsetParentRect = isBody ? {
+    left: 0,
+    top: 0
+  } : offsetParent.getBoundingClientRect();
+  const x = evt.clientX + offsetParent.scrollLeft - offsetParentRect.left;
+  const y = evt.clientY + offsetParent.scrollTop - offsetParentRect.top;
+  return {
+    x,
+    y
+  };
+}
+function createCSSTransform(controlPos
+/*: ControlPosition*/
+, positionOffset
+/*: PositionOffsetControlPosition*/
+)
+/*: Object*/
+{
+  const translation = getTranslation(controlPos, positionOffset, 'px');
+  return {
+    [browserPrefixToKey('transform', browserPrefix)]: translation
+  };
+}
+function createSVGTransform(controlPos
+/*: ControlPosition*/
+, positionOffset
+/*: PositionOffsetControlPosition*/
+)
+/*: string*/
+{
+  const translation = getTranslation(controlPos, positionOffset, '');
+  return translation;
+}
+function getTranslation({
+  x,
+  y
+}
+/*: ControlPosition*/
+, positionOffset
+/*: PositionOffsetControlPosition*/
+, unitSuffix
+/*: string*/
+)
+/*: string*/
+{
+  let translation = `translate(${x}${unitSuffix},${y}${unitSuffix})`;
+
+  if (positionOffset) {
+    const defaultX = `${typeof positionOffset.x === 'string' ? positionOffset.x : positionOffset.x + unitSuffix}`;
+    const defaultY = `${typeof positionOffset.y === 'string' ? positionOffset.y : positionOffset.y + unitSuffix}`;
+    translation = `translate(${defaultX}, ${defaultY})` + translation;
+  }
+
+  return translation;
+}
+function getTouch(e
+/*: MouseTouchEvent*/
+, identifier
+/*: number*/
+)
+/*: ?{clientX: number, clientY: number}*/
+{
+  return e.targetTouches && findInArray(e.targetTouches, t => identifier === t.identifier) || e.changedTouches && findInArray(e.changedTouches, t => identifier === t.identifier);
+}
+function getTouchIdentifier(e
+/*: MouseTouchEvent*/
+)
+/*: ?number*/
+{
+  if (e.targetTouches && e.targetTouches[0]) return e.targetTouches[0].identifier;
+  if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0].identifier;
+} // User-select Hacks:
+//
+// Useful for preventing blue highlights all over everything when dragging.
+// Note we're passing `document` b/c we could be iframed
+
+function addUserSelectStyles(doc
+/*: ?Document*/
+) {
+  if (!doc) return;
+  let styleEl = doc.getElementById('react-draggable-style-el');
+
+  if (!styleEl) {
+    styleEl = doc.createElement('style');
+    styleEl.type = 'text/css';
+    styleEl.id = 'react-draggable-style-el';
+    styleEl.innerHTML = '.react-draggable-transparent-selection *::-moz-selection {all: inherit;}\n';
+    styleEl.innerHTML += '.react-draggable-transparent-selection *::selection {all: inherit;}\n';
+    doc.getElementsByTagName('head')[0].appendChild(styleEl);
+  }
+
+  if (doc.body) addClassName(doc.body, 'react-draggable-transparent-selection');
+}
+function removeUserSelectStyles(doc
+/*: ?Document*/
+) {
+  try {
+    if (doc && doc.body) removeClassName(doc.body, 'react-draggable-transparent-selection'); // $FlowIgnore: IE
+
+    if (doc.selection) {
+      // $FlowIgnore: IE
+      doc.selection.empty();
+    } else {
+      window.getSelection().removeAllRanges(); // remove selection caused by scroll
+    }
+  } catch (e) {// probably IE
+  }
+}
+function styleHacks(childStyle
+/*: Object*/
+= {})
+/*: Object*/
+{
+  // Workaround IE pointer events; see #51
+  // https://github.com/mzabriskie/react-draggable/issues/51#issuecomment-103488278
+  return {
+    touchAction: 'none',
+    ...childStyle
+  };
+}
+function addClassName(el
+/*: HTMLElement*/
+, className
+/*: string*/
+) {
+  if (el.classList) {
+    el.classList.add(className);
+  } else {
+    if (!el.className.match(new RegExp(`(?:^|\\s)${className}(?!\\S)`))) {
+      el.className += ` ${className}`;
+    }
+  }
+}
+function removeClassName(el
+/*: HTMLElement*/
+, className
+/*: string*/
+) {
+  if (el.classList) {
+    el.classList.remove(className);
+  } else {
+    el.className = el.className.replace(new RegExp(`(?:^|\\s)${className}(?!\\S)`, 'g'), '');
+  }
+}
+
+/*:: import type Draggable from '../Draggable';*/
+
+/*:: import type {Bounds, ControlPosition, DraggableData, MouseTouchEvent} from './types';*/
+
+/*:: import type DraggableCore from '../DraggableCore';*/
+
+function getBoundPosition(draggable
+/*: Draggable*/
+, x
+/*: number*/
+, y
+/*: number*/
+)
+/*: [number, number]*/
+{
+  // If no bounds, short-circuit and move on
+  if (!draggable.props.bounds) return [x, y]; // Clone new bounds
+
+  let {
+    bounds
+  } = draggable.props;
+  bounds = typeof bounds === 'string' ? bounds : cloneBounds(bounds);
+  const node = findDOMNode$1(draggable);
+
+  if (typeof bounds === 'string') {
+    const {
+      ownerDocument
+    } = node;
+    const ownerWindow = ownerDocument.defaultView;
+    let boundNode;
+
+    if (bounds === 'parent') {
+      boundNode = node.parentNode;
+    } else {
+      boundNode = ownerDocument.querySelector(bounds);
+    }
+
+    if (!(boundNode instanceof ownerWindow.HTMLElement)) {
+      throw new Error('Bounds selector "' + bounds + '" could not find an element.');
+    }
+
+    const nodeStyle = ownerWindow.getComputedStyle(node);
+    const boundNodeStyle = ownerWindow.getComputedStyle(boundNode); // Compute bounds. This is a pain with padding and offsets but this gets it exactly right.
+
+    bounds = {
+      left: -node.offsetLeft + int(boundNodeStyle.paddingLeft) + int(nodeStyle.marginLeft),
+      top: -node.offsetTop + int(boundNodeStyle.paddingTop) + int(nodeStyle.marginTop),
+      right: innerWidth$1(boundNode) - outerWidth(node) - node.offsetLeft + int(boundNodeStyle.paddingRight) - int(nodeStyle.marginRight),
+      bottom: innerHeight$1(boundNode) - outerHeight(node) - node.offsetTop + int(boundNodeStyle.paddingBottom) - int(nodeStyle.marginBottom)
+    };
+  } // Keep x and y below right and bottom limits...
+
+
+  if (isNum(bounds.right)) x = Math.min(x, bounds.right);
+  if (isNum(bounds.bottom)) y = Math.min(y, bounds.bottom); // But above left and top limits.
+
+  if (isNum(bounds.left)) x = Math.max(x, bounds.left);
+  if (isNum(bounds.top)) y = Math.max(y, bounds.top);
+  return [x, y];
+}
+function snapToGrid(grid
+/*: [number, number]*/
+, pendingX
+/*: number*/
+, pendingY
+/*: number*/
+)
+/*: [number, number]*/
+{
+  const x = Math.round(pendingX / grid[0]) * grid[0];
+  const y = Math.round(pendingY / grid[1]) * grid[1];
+  return [x, y];
+}
+function canDragX(draggable
+/*: Draggable*/
+)
+/*: boolean*/
+{
+  return draggable.props.axis === 'both' || draggable.props.axis === 'x';
+}
+function canDragY(draggable
+/*: Draggable*/
+)
+/*: boolean*/
+{
+  return draggable.props.axis === 'both' || draggable.props.axis === 'y';
+} // Get {x, y} positions from event.
+
+function getControlPosition(e
+/*: MouseTouchEvent*/
+, touchIdentifier
+/*: ?number*/
+, draggableCore
+/*: DraggableCore*/
+)
+/*: ?ControlPosition*/
+{
+  const touchObj = typeof touchIdentifier === 'number' ? getTouch(e, touchIdentifier) : null;
+  if (typeof touchIdentifier === 'number' && !touchObj) return null; // not the right touch
+
+  const node = findDOMNode$1(draggableCore); // User can provide an offsetParent if desired.
+
+  const offsetParent = draggableCore.props.offsetParent || node.offsetParent || node.ownerDocument.body;
+  return offsetXYFromParent(touchObj || e, offsetParent);
+} // Create an data object exposed by <DraggableCore>'s events
+
+function createCoreData(draggable
+/*: DraggableCore*/
+, x
+/*: number*/
+, y
+/*: number*/
+)
+/*: DraggableData*/
+{
+  const state = draggable.state;
+  const isStart = !isNum(state.lastX);
+  const node = findDOMNode$1(draggable);
+
+  if (isStart) {
+    // If this is our first move, use the x and y as last coords.
+    return {
+      node,
+      deltaX: 0,
+      deltaY: 0,
+      lastX: x,
+      lastY: y,
+      x,
+      y
+    };
+  } else {
+    // Otherwise calculate proper values.
+    return {
+      node,
+      deltaX: x - state.lastX,
+      deltaY: y - state.lastY,
+      lastX: state.lastX,
+      lastY: state.lastY,
+      x,
+      y
+    };
+  }
+} // Create an data exposed by <Draggable>'s events
+
+function createDraggableData(draggable
+/*: Draggable*/
+, coreData
+/*: DraggableData*/
+)
+/*: DraggableData*/
+{
+  const scale = draggable.props.scale;
+  return {
+    node: coreData.node,
+    x: draggable.state.x + coreData.deltaX / scale,
+    y: draggable.state.y + coreData.deltaY / scale,
+    deltaX: coreData.deltaX / scale,
+    deltaY: coreData.deltaY / scale,
+    lastX: draggable.state.x,
+    lastY: draggable.state.y
+  };
+} // A lot faster than stringify/parse
+
+function cloneBounds(bounds
+/*: Bounds*/
+)
+/*: Bounds*/
+{
+  return {
+    left: bounds.left,
+    top: bounds.top,
+    right: bounds.right,
+    bottom: bounds.bottom
+  };
+}
+
+function findDOMNode$1(draggable
+/*: Draggable | DraggableCore*/
+)
+/*: HTMLElement*/
+{
+  const node = ReactDOM.findDOMNode(draggable);
+
+  if (!node) {
+    throw new Error('<DraggableCore>: Unmounted during event!');
+  } // $FlowIgnore we can't assert on HTMLElement due to tests... FIXME
+
+
+  return node;
+}
+
+/*eslint no-console:0*/
+function log(...args) {
+  if (process.env.DRAGGABLE_DEBUG) console.log(...args);
+}
+
+function _defineProperty$1(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/*:: import type {EventHandler, MouseTouchEvent} from './utils/types';*/
+
+/*:: import type {Element as ReactElement} from 'react';*/
+
+// Simple abstraction for dragging events names.
+const eventsFor = {
+  touch: {
+    start: 'touchstart',
+    move: 'touchmove',
+    stop: 'touchend'
+  },
+  mouse: {
+    start: 'mousedown',
+    move: 'mousemove',
+    stop: 'mouseup'
+  }
+}; // Default to mouse events.
+
+let dragEventFor = eventsFor.mouse;
+/*:: type DraggableCoreState = {
+  dragging: boolean,
+  lastX: number,
+  lastY: number,
+  touchIdentifier: ?number
+};*/
+
+/*:: export type DraggableBounds = {
+  left: number,
+  right: number,
+  top: number,
+  bottom: number,
+};*/
+
+/*:: export type DraggableData = {
+  node: HTMLElement,
+  x: number, y: number,
+  deltaX: number, deltaY: number,
+  lastX: number, lastY: number,
+};*/
+
+/*:: export type DraggableEventHandler = (e: MouseEvent, data: DraggableData) => void;*/
+
+/*:: export type ControlPosition = {x: number, y: number};*/
+
+/*:: export type PositionOffsetControlPosition = {x: number|string, y: number|string};*/
+
+/*:: export type DraggableCoreProps = {
+  allowAnyClick: boolean,
+  cancel: string,
+  children: ReactElement<any>,
+  disabled: boolean,
+  enableUserSelectHack: boolean,
+  offsetParent: HTMLElement,
+  grid: [number, number],
+  handle: string,
+  onStart: DraggableEventHandler,
+  onDrag: DraggableEventHandler,
+  onStop: DraggableEventHandler,
+  onMouseDown: (e: MouseEvent) => void,
+};*/
+
+//
+// Define <DraggableCore>.
+//
+// <DraggableCore> is for advanced usage of <Draggable>. It maintains minimal internal state so it can
+// work well with libraries that require more control over the element.
+//
+class DraggableCore extends React__default.Component {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty$1(this, "state", {
+      dragging: false,
+      // Used while dragging to determine deltas.
+      lastX: NaN,
+      lastY: NaN,
+      touchIdentifier: null
+    });
+
+    _defineProperty$1(this, "handleDragStart", e => {
+      // Make it possible to attach event handlers on top of this one.
+      this.props.onMouseDown(e); // Only accept left-clicks.
+
+      if (!this.props.allowAnyClick && typeof e.button === 'number' && e.button !== 0) return false; // Get nodes. Be sure to grab relative document (could be iframed)
+
+      const thisNode = ReactDOM.findDOMNode(this);
+
+      if (!thisNode || !thisNode.ownerDocument || !thisNode.ownerDocument.body) {
+        throw new Error('<DraggableCore> not mounted on DragStart!');
+      }
+
+      const {
+        ownerDocument
+      } = thisNode; // Short circuit if handle or cancel prop was provided and selector doesn't match.
+
+      if (this.props.disabled || !(e.target instanceof ownerDocument.defaultView.Node) || this.props.handle && !matchesSelectorAndParentsTo(e.target, this.props.handle, thisNode) || this.props.cancel && matchesSelectorAndParentsTo(e.target, this.props.cancel, thisNode)) {
+        return;
+      } // Set touch identifier in component state if this is a touch event. This allows us to
+      // distinguish between individual touches on multitouch screens by identifying which
+      // touchpoint was set to this element.
+
+
+      const touchIdentifier = getTouchIdentifier(e);
+      this.setState({
+        touchIdentifier
+      }); // Get the current drag point from the event. This is used as the offset.
+
+      const position = getControlPosition(e, touchIdentifier, this);
+      if (position == null) return; // not possible but satisfies flow
+
+      const {
+        x,
+        y
+      } = position; // Create an event object with all the data parents need to make a decision here.
+
+      const coreEvent = createCoreData(this, x, y);
+      log('DraggableCore: handleDragStart: %j', coreEvent); // Call event handler. If it returns explicit false, cancel.
+
+      log('calling', this.props.onStart);
+      const shouldUpdate = this.props.onStart(e, coreEvent);
+      if (shouldUpdate === false) return; // Add a style to the body to disable user-select. This prevents text from
+      // being selected all over the page.
+
+      if (this.props.enableUserSelectHack) addUserSelectStyles(ownerDocument); // Initiate dragging. Set the current x and y as offsets
+      // so we know how much we've moved during the drag. This allows us
+      // to drag elements around even if they have been moved, without issue.
+
+      this.setState({
+        dragging: true,
+        lastX: x,
+        lastY: y
+      }); // Add events to the document directly so we catch when the user's mouse/touch moves outside of
+      // this element. We use different events depending on whether or not we have detected that this
+      // is a touch-capable device.
+
+      addEvent(ownerDocument, dragEventFor.move, this.handleDrag);
+      addEvent(ownerDocument, dragEventFor.stop, this.handleDragStop);
+    });
+
+    _defineProperty$1(this, "handleDrag", e => {
+      // Prevent scrolling on mobile devices, like ipad/iphone.
+      if (e.type === 'touchmove') e.preventDefault(); // Get the current drag point from the event. This is used as the offset.
+
+      const position = getControlPosition(e, this.state.touchIdentifier, this);
+      if (position == null) return;
+      let {
+        x,
+        y
+      } = position; // Snap to grid if prop has been provided
+
+      if (Array.isArray(this.props.grid)) {
+        let deltaX = x - this.state.lastX,
+            deltaY = y - this.state.lastY;
+        [deltaX, deltaY] = snapToGrid(this.props.grid, deltaX, deltaY);
+        if (!deltaX && !deltaY) return; // skip useless drag
+
+        x = this.state.lastX + deltaX, y = this.state.lastY + deltaY;
+      }
+
+      const coreEvent = createCoreData(this, x, y);
+      log('DraggableCore: handleDrag: %j', coreEvent); // Call event handler. If it returns explicit false, trigger end.
+
+      const shouldUpdate = this.props.onDrag(e, coreEvent);
+
+      if (shouldUpdate === false) {
+        try {
+          // $FlowIgnore
+          this.handleDragStop(new MouseEvent('mouseup'));
+        } catch (err) {
+          // Old browsers
+          const event = ((document.createEvent('MouseEvents')
+          /*: any*/
+          )
+          /*: MouseTouchEvent*/
+          ); // I see why this insanity was deprecated
+          // $FlowIgnore
+
+          event.initMouseEvent('mouseup', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+          this.handleDragStop(event);
+        }
+
+        return;
+      }
+
+      this.setState({
+        lastX: x,
+        lastY: y
+      });
+    });
+
+    _defineProperty$1(this, "handleDragStop", e => {
+      if (!this.state.dragging) return;
+      const position = getControlPosition(e, this.state.touchIdentifier, this);
+      if (position == null) return;
+      const {
+        x,
+        y
+      } = position;
+      const coreEvent = createCoreData(this, x, y);
+      const thisNode = ReactDOM.findDOMNode(this);
+
+      if (thisNode) {
+        // Remove user-select hack
+        if (this.props.enableUserSelectHack) removeUserSelectStyles(thisNode.ownerDocument);
+      }
+
+      log('DraggableCore: handleDragStop: %j', coreEvent); // Reset the el.
+
+      this.setState({
+        dragging: false,
+        lastX: NaN,
+        lastY: NaN
+      }); // Call event handler
+
+      this.props.onStop(e, coreEvent);
+
+      if (thisNode) {
+        // Remove event handlers
+        log('DraggableCore: Removing handlers');
+        removeEvent(thisNode.ownerDocument, dragEventFor.move, this.handleDrag);
+        removeEvent(thisNode.ownerDocument, dragEventFor.stop, this.handleDragStop);
+      }
+    });
+
+    _defineProperty$1(this, "onMouseDown", e => {
+      dragEventFor = eventsFor.mouse; // on touchscreen laptops we could switch back to mouse
+
+      return this.handleDragStart(e);
+    });
+
+    _defineProperty$1(this, "onMouseUp", e => {
+      dragEventFor = eventsFor.mouse;
+      return this.handleDragStop(e);
+    });
+
+    _defineProperty$1(this, "onTouchStart", e => {
+      // We're on a touch device now, so change the event handlers
+      dragEventFor = eventsFor.touch;
+      return this.handleDragStart(e);
+    });
+
+    _defineProperty$1(this, "onTouchEnd", e => {
+      // We're on a touch device now, so change the event handlers
+      dragEventFor = eventsFor.touch;
+      return this.handleDragStop(e);
+    });
+  }
+
+  componentWillUnmount() {
+    // Remove any leftover event handlers. Remove both touch and mouse handlers in case
+    // some browser quirk caused a touch event to fire during a mouse move, or vice versa.
+    const thisNode = ReactDOM.findDOMNode(this);
+
+    if (thisNode) {
+      const {
+        ownerDocument
+      } = thisNode;
+      removeEvent(ownerDocument, eventsFor.mouse.move, this.handleDrag);
+      removeEvent(ownerDocument, eventsFor.touch.move, this.handleDrag);
+      removeEvent(ownerDocument, eventsFor.mouse.stop, this.handleDragStop);
+      removeEvent(ownerDocument, eventsFor.touch.stop, this.handleDragStop);
+      if (this.props.enableUserSelectHack) removeUserSelectStyles(ownerDocument);
+    }
+  }
+
+  render() {
+    // Reuse the child provided
+    // This makes it flexible to use whatever element is wanted (div, ul, etc)
+    return React__default.cloneElement(React__default.Children.only(this.props.children), {
+      style: styleHacks(this.props.children.props.style),
+      // Note: mouseMove handler is attached to document so it will still function
+      // when the user drags quickly and leaves the bounds of the element.
+      onMouseDown: this.onMouseDown,
+      onTouchStart: this.onTouchStart,
+      onMouseUp: this.onMouseUp,
+      onTouchEnd: this.onTouchEnd
+    });
+  }
+
+}
+
+_defineProperty$1(DraggableCore, "displayName", 'DraggableCore');
+
+_defineProperty$1(DraggableCore, "propTypes", {
+  /**
+   * `allowAnyClick` allows dragging using any mouse button.
+   * By default, we only accept the left button.
+   *
+   * Defaults to `false`.
+   */
+  allowAnyClick: PropTypes.bool,
+
+  /**
+   * `disabled`, if true, stops the <Draggable> from dragging. All handlers,
+   * with the exception of `onMouseDown`, will not fire.
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * By default, we add 'user-select:none' attributes to the document body
+   * to prevent ugly text selection during drag. If this is causing problems
+   * for your app, set this to `false`.
+   */
+  enableUserSelectHack: PropTypes.bool,
+
+  /**
+   * `offsetParent`, if set, uses the passed DOM node to compute drag offsets
+   * instead of using the parent node.
+   */
+  offsetParent: function (props
+  /*: DraggableCoreProps*/
+  , propName
+  /*: $Keys<DraggableCoreProps>*/
+  ) {
+    if (props[propName] && props[propName].nodeType !== 1) {
+      throw new Error('Draggable\'s offsetParent must be a DOM Node.');
+    }
+  },
+
+  /**
+   * `grid` specifies the x and y that dragging should snap to.
+   */
+  grid: PropTypes.arrayOf(PropTypes.number),
+
+  /**
+   * `handle` specifies a selector to be used as the handle that initiates drag.
+   *
+   * Example:
+   *
+   * ```jsx
+   *   let App = React.createClass({
+   *       render: function () {
+   *         return (
+   *            <Draggable handle=".handle">
+   *              <div>
+   *                  <div className="handle">Click me to drag</div>
+   *                  <div>This is some other content</div>
+   *              </div>
+   *           </Draggable>
+   *         );
+   *       }
+   *   });
+   * ```
+   */
+  handle: PropTypes.string,
+
+  /**
+   * `cancel` specifies a selector to be used to prevent drag initialization.
+   *
+   * Example:
+   *
+   * ```jsx
+   *   let App = React.createClass({
+   *       render: function () {
+   *           return(
+   *               <Draggable cancel=".cancel">
+   *                   <div>
+   *                     <div className="cancel">You can't drag from here</div>
+   *                     <div>Dragging here works fine</div>
+   *                   </div>
+   *               </Draggable>
+   *           );
+   *       }
+   *   });
+   * ```
+   */
+  cancel: PropTypes.string,
+
+  /**
+   * Called when dragging starts.
+   * If this function returns the boolean false, dragging will be canceled.
+   */
+  onStart: PropTypes.func,
+
+  /**
+   * Called while dragging.
+   * If this function returns the boolean false, dragging will be canceled.
+   */
+  onDrag: PropTypes.func,
+
+  /**
+   * Called when dragging stops.
+   * If this function returns the boolean false, the drag will remain active.
+   */
+  onStop: PropTypes.func,
+
+  /**
+   * A workaround option which can be passed if onMouseDown needs to be accessed,
+   * since it'll always be blocked (as there is internal use of onMouseDown)
+   */
+  onMouseDown: PropTypes.func,
+
+  /**
+   * These properties should be defined on the child, not here.
+   */
+  className: dontSetMe,
+  style: dontSetMe,
+  transform: dontSetMe
+});
+
+_defineProperty$1(DraggableCore, "defaultProps", {
+  allowAnyClick: false,
+  // by default only accept left click
+  cancel: null,
+  disabled: false,
+  enableUserSelectHack: true,
+  offsetParent: null,
+  handle: null,
+  grid: null,
+  transform: null,
+  onStart: function () {},
+  onDrag: function () {},
+  onStop: function () {},
+  onMouseDown: function () {}
+});
+
+function _extends$2() { _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$2.apply(this, arguments); }
+
+function _defineProperty$2(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/*:: import type {DraggableEventHandler} from './utils/types';*/
+
+/*:: import type {Element as ReactElement} from 'react';*/
+
+/*:: type DraggableState = {
+  dragging: boolean,
+  dragged: boolean,
+  x: number, y: number,
+  slackX: number, slackY: number,
+  isElementSVG: boolean,
+  prevPropsPosition: ?ControlPosition,
+};*/
+
+/*:: export type DraggableProps = {
+  ...$Exact<DraggableCoreProps>,
+  axis: 'both' | 'x' | 'y' | 'none',
+  bounds: DraggableBounds | string | false,
+  defaultClassName: string,
+  defaultClassNameDragging: string,
+  defaultClassNameDragged: string,
+  defaultPosition: ControlPosition,
+  positionOffset: PositionOffsetControlPosition,
+  position: ControlPosition,
+  scale: number
+};*/
+
+//
+// Define <Draggable>
+//
+class Draggable extends React__default.Component {
+  // React 16.3+
+  // Arity (props, state)
+  static getDerivedStateFromProps({
+    position
+  }
+  /*: DraggableProps*/
+  , {
+    prevPropsPosition
+  }
+  /*: DraggableState*/
+  ) {
+    // Set x/y if a new position is provided in props that is different than the previous.
+    if (position && (!prevPropsPosition || position.x !== prevPropsPosition.x || position.y !== prevPropsPosition.y)) {
+      log('Draggable: getDerivedStateFromProps %j', {
+        position,
+        prevPropsPosition
+      });
+      return {
+        x: position.x,
+        y: position.y,
+        prevPropsPosition: { ...position
+        }
+      };
+    }
+
+    return null;
+  }
+
+  constructor(props
+  /*: DraggableProps*/
+  ) {
+    super(props);
+
+    _defineProperty$2(this, "onDragStart", (e, coreData) => {
+      log('Draggable: onDragStart: %j', coreData); // Short-circuit if user's callback killed it.
+
+      const shouldStart = this.props.onStart(e, createDraggableData(this, coreData)); // Kills start event on core as well, so move handlers are never bound.
+
+      if (shouldStart === false) return false;
+      this.setState({
+        dragging: true,
+        dragged: true
+      });
+    });
+
+    _defineProperty$2(this, "onDrag", (e, coreData) => {
+      if (!this.state.dragging) return false;
+      log('Draggable: onDrag: %j', coreData);
+      const uiData = createDraggableData(this, coreData);
+      const newState
+      /*: $Shape<DraggableState>*/
+      = {
+        x: uiData.x,
+        y: uiData.y
+      }; // Keep within bounds.
+
+      if (this.props.bounds) {
+        // Save original x and y.
+        const {
+          x,
+          y
+        } = newState; // Add slack to the values used to calculate bound position. This will ensure that if
+        // we start removing slack, the element won't react to it right away until it's been
+        // completely removed.
+
+        newState.x += this.state.slackX;
+        newState.y += this.state.slackY; // Get bound position. This will ceil/floor the x and y within the boundaries.
+
+        const [newStateX, newStateY] = getBoundPosition(this, newState.x, newState.y);
+        newState.x = newStateX;
+        newState.y = newStateY; // Recalculate slack by noting how much was shaved by the boundPosition handler.
+
+        newState.slackX = this.state.slackX + (x - newState.x);
+        newState.slackY = this.state.slackY + (y - newState.y); // Update the event we fire to reflect what really happened after bounds took effect.
+
+        uiData.x = newState.x;
+        uiData.y = newState.y;
+        uiData.deltaX = newState.x - this.state.x;
+        uiData.deltaY = newState.y - this.state.y;
+      } // Short-circuit if user's callback killed it.
+
+
+      const shouldUpdate = this.props.onDrag(e, uiData);
+      if (shouldUpdate === false) return false;
+      this.setState(newState);
+    });
+
+    _defineProperty$2(this, "onDragStop", (e, coreData) => {
+      if (!this.state.dragging) return false; // Short-circuit if user's callback killed it.
+
+      const shouldStop = this.props.onStop(e, createDraggableData(this, coreData));
+      if (shouldStop === false) return false;
+      log('Draggable: onDragStop: %j', coreData);
+      const newState
+      /*: $Shape<DraggableState>*/
+      = {
+        dragging: false,
+        slackX: 0,
+        slackY: 0
+      }; // If this is a controlled component, the result of this operation will be to
+      // revert back to the old position. We expect a handler on `onDragStop`, at the least.
+
+      const controlled = Boolean(this.props.position);
+
+      if (controlled) {
+        const {
+          x,
+          y
+        } = this.props.position;
+        newState.x = x;
+        newState.y = y;
+      }
+
+      this.setState(newState);
+    });
+
+    this.state = {
+      // Whether or not we are currently dragging.
+      dragging: false,
+      // Whether or not we have been dragged before.
+      dragged: false,
+      // Current transform x and y.
+      x: props.position ? props.position.x : props.defaultPosition.x,
+      y: props.position ? props.position.y : props.defaultPosition.y,
+      prevPropsPosition: { ...props.position
+      },
+      // Used for compensating for out-of-bounds drags
+      slackX: 0,
+      slackY: 0,
+      // Can only determine if SVG after mounting
+      isElementSVG: false
+    };
+
+    if (props.position && !(props.onDrag || props.onStop)) {
+      // eslint-disable-next-line no-console
+      console.warn('A `position` was applied to this <Draggable>, without drag handlers. This will make this ' + 'component effectively undraggable. Please attach `onDrag` or `onStop` handlers so you can adjust the ' + '`position` of this element.');
+    }
+  }
+
+  componentDidMount() {
+    // Check to see if the element passed is an instanceof SVGElement
+    if (typeof window.SVGElement !== 'undefined' && ReactDOM.findDOMNode(this) instanceof window.SVGElement) {
+      this.setState({
+        isElementSVG: true
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    this.setState({
+      dragging: false
+    }); // prevents invariant if unmounted while dragging
+  }
+
+  render()
+  /*: ReactElement<any>*/
+  {
+    const {
+      axis,
+      bounds,
+      children,
+      defaultPosition,
+      defaultClassName,
+      defaultClassNameDragging,
+      defaultClassNameDragged,
+      position,
+      positionOffset,
+      scale,
+      ...draggableCoreProps
+    } = this.props;
+    let style = {};
+    let svgTransform = null; // If this is controlled, we don't want to move it - unless it's dragging.
+
+    const controlled = Boolean(position);
+    const draggable = !controlled || this.state.dragging;
+    const validPosition = position || defaultPosition;
+    const transformOpts = {
+      // Set left if horizontal drag is enabled
+      x: canDragX(this) && draggable ? this.state.x : validPosition.x,
+      // Set top if vertical drag is enabled
+      y: canDragY(this) && draggable ? this.state.y : validPosition.y
+    }; // If this element was SVG, we use the `transform` attribute.
+
+    if (this.state.isElementSVG) {
+      svgTransform = createSVGTransform(transformOpts, positionOffset);
+    } else {
+      // Add a CSS transform to move the element around. This allows us to move the element around
+      // without worrying about whether or not it is relatively or absolutely positioned.
+      // If the item you are dragging already has a transform set, wrap it in a <span> so <Draggable>
+      // has a clean slate.
+      style = createCSSTransform(transformOpts, positionOffset);
+    } // Mark with class while dragging
+
+
+    const className = classnames(children.props.className || '', defaultClassName, {
+      [defaultClassNameDragging]: this.state.dragging,
+      [defaultClassNameDragged]: this.state.dragged
+    }); // Reuse the child provided
+    // This makes it flexible to use whatever element is wanted (div, ul, etc)
+
+    return React__default.createElement(DraggableCore, _extends$2({}, draggableCoreProps, {
+      onStart: this.onDragStart,
+      onDrag: this.onDrag,
+      onStop: this.onDragStop
+    }), React__default.cloneElement(React__default.Children.only(children), {
+      className: className,
+      style: { ...children.props.style,
+        ...style
+      },
+      transform: svgTransform
+    }));
+  }
+
+}
+
+_defineProperty$2(Draggable, "displayName", 'Draggable');
+
+_defineProperty$2(Draggable, "propTypes", { // Accepts all props <DraggableCore> accepts.
+  ...DraggableCore.propTypes,
+
+  /**
+   * `axis` determines which axis the draggable can move.
+   *
+   *  Note that all callbacks will still return data as normal. This only
+   *  controls flushing to the DOM.
+   *
+   * 'both' allows movement horizontally and vertically.
+   * 'x' limits movement to horizontal axis.
+   * 'y' limits movement to vertical axis.
+   * 'none' limits all movement.
+   *
+   * Defaults to 'both'.
+   */
+  axis: PropTypes.oneOf(['both', 'x', 'y', 'none']),
+
+  /**
+   * `bounds` determines the range of movement available to the element.
+   * Available values are:
+   *
+   * 'parent' restricts movement within the Draggable's parent node.
+   *
+   * Alternatively, pass an object with the following properties, all of which are optional:
+   *
+   * {left: LEFT_BOUND, right: RIGHT_BOUND, bottom: BOTTOM_BOUND, top: TOP_BOUND}
+   *
+   * All values are in px.
+   *
+   * Example:
+   *
+   * ```jsx
+   *   let App = React.createClass({
+   *       render: function () {
+   *         return (
+   *            <Draggable bounds={{right: 300, bottom: 300}}>
+   *              <div>Content</div>
+   *           </Draggable>
+   *         );
+   *       }
+   *   });
+   * ```
+   */
+  bounds: PropTypes.oneOfType([PropTypes.shape({
+    left: PropTypes.number,
+    right: PropTypes.number,
+    top: PropTypes.number,
+    bottom: PropTypes.number
+  }), PropTypes.string, PropTypes.oneOf([false])]),
+  defaultClassName: PropTypes.string,
+  defaultClassNameDragging: PropTypes.string,
+  defaultClassNameDragged: PropTypes.string,
+
+  /**
+   * `defaultPosition` specifies the x and y that the dragged item should start at
+   *
+   * Example:
+   *
+   * ```jsx
+   *      let App = React.createClass({
+   *          render: function () {
+   *              return (
+   *                  <Draggable defaultPosition={{x: 25, y: 25}}>
+   *                      <div>I start with transformX: 25px and transformY: 25px;</div>
+   *                  </Draggable>
+   *              );
+   *          }
+   *      });
+   * ```
+   */
+  defaultPosition: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number
+  }),
+  positionOffset: PropTypes.shape({
+    x: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    y: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  }),
+
+  /**
+   * `position`, if present, defines the current position of the element.
+   *
+   *  This is similar to how form elements in React work - if no `position` is supplied, the component
+   *  is uncontrolled.
+   *
+   * Example:
+   *
+   * ```jsx
+   *      let App = React.createClass({
+   *          render: function () {
+   *              return (
+   *                  <Draggable position={{x: 25, y: 25}}>
+   *                      <div>I start with transformX: 25px and transformY: 25px;</div>
+   *                  </Draggable>
+   *              );
+   *          }
+   *      });
+   * ```
+   */
+  position: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number
+  }),
+
+  /**
+   * These properties should be defined on the child, not here.
+   */
+  className: dontSetMe,
+  style: dontSetMe,
+  transform: dontSetMe
+});
+
+_defineProperty$2(Draggable, "defaultProps", { ...DraggableCore.defaultProps,
+  axis: 'both',
+  bounds: false,
+  defaultClassName: 'react-draggable',
+  defaultClassNameDragging: 'react-draggable-dragging',
+  defaultClassNameDragged: 'react-draggable-dragged',
+  defaultPosition: {
+    x: 0,
+    y: 0
+  },
+  position: null,
+  scale: 1
+});
+
+var reactAvatarEditor_cjs_production_min = createCommonjsModule(function (module, exports) {
+var t=React__default,e=Draggable;function i(){return (i=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var i=arguments[e];for(var a in i)Object.prototype.hasOwnProperty.call(i,a)&&(t[a]=i[a]);}return t}).apply(this,arguments)}function a(t,e){return void 0===e&&(e=""),new Promise((function(i,a){var r,h=new Image;h.onload=function(){return i(h)},h.onerror=a,0==(null!==(r=t)&&!!r.match(/^\s*data:([a-z]+\/[a-z]+(;[a-z-]+=[a-z-]+)?)?(;base64)?,[a-z0-9!$&',()*+;=\-._~:@/?%\s]*\s*$/i))&&e&&(h.crossOrigin=e),h.src=t;}))}var r=function(t){return t*(Math.PI/180)},h="undefined"!=typeof File,s="undefined"!=typeof window&&window.devicePixelRatio?window.devicePixelRatio:1,n={x:.5,y:.5,width:0,height:0},o=function(o){var g,c;function d(e){var a;return (a=o.call(this,e)||this).pixelRatio=s,a.clearImage=function(){var t=a.getCanvas();a.getContext().clearRect(0,0,t.width,t.height),a.setState({image:n});},a.handleDrag=function(t,e){var h=e.deltaX,s=e.deltaY,n=a.props,o=n.rotate,g=n.scale,c=n.onPositionChange,d=a.state.image,p=o%360<0?o+360:o%360,l=d.width*g,u=d.height*g,m=a.getCroppingRect(),v=m.x,w=m.y,f=Math.cos(r(p)),y=Math.sin(r(p)),x=w*u+h*y+-s*f,I={x:(v*l+-h*f+s*y)/l+1/g*a.getXScale()/2,y:x/u+1/g*a.getYScale()/2};c&&c(I),a.setState({image:i({},a.state.image,{},I)});},a.handleStartDrag=function(){return a.setState({dragging:!0})},a.handleStopDrag=function(){return a.setState({dragging:!1})},a.state={dragging:!1,image:n},a.canvas=t.createRef(),a.pixelRatio=e.disableHiDPIScaling?1:s,a}c=o,(g=d).prototype=Object.create(c.prototype),g.prototype.constructor=g,g.__proto__=c;var p=d.prototype;return p.componentDidMount=function(){this.loadImage();var t=this.getContext();this.paint(t);},p.componentDidUpdate=function(t,e){this.props.image&&this.props.image!==t.image||this.props.width!==t.width||this.props.height!==t.height?this.loadImage():this.props.image||this.clearImage();var i=this.getCanvas(),a=this.getContext();a.clearRect(0,0,i.width,i.height),this.paint(a),this.paintImage(a,this.state.image,this.props.border),t.image===this.props.image&&t.width===this.props.width&&t.height===this.props.height&&t.position===this.props.position&&t.scale===this.props.scale&&t.rotate===this.props.rotate&&e.image.x===this.state.image.x&&e.image.y===this.state.image.y||this.props.onImageChange&&this.props.onImageChange();},p.getCanvas=function(){if(!this.canvas.current)throw new Error("No canvas found, please report this to: https://github.com/mosch/react-avatar-editor/issues");return this.canvas.current},p.getContext=function(){var t=this.getCanvas().getContext("2d");if(!t)throw new Error(" No context found, please report this to: https://github.com/mosch/react-avatar-editor/issues");return t},p.isVertical=function(){return this.props.rotate%180!=0},p.getBorders=function(t){return Array.isArray(t)?t:[t,t]},p.getDimensions=function(){var t=this.props,e=t.width,i=t.height,a=t.rotate,r=t.border,h=this.getBorders(r),s=h[0],n=h[1];return {canvas:this.isVertical()?{width:i+2*s,height:e+2*n}:{width:e+2*s,height:i+2*n},rotate:a,width:e,height:i,border:r}},p.getImage=function(){var t=this.getCroppingRect(),e=this.state.image,a=document.createElement("canvas");if(e.resource){var r=i({},t,{x:t.x*e.resource.width,y:t.y*e.resource.height,width:t.width*e.resource.width,height:t.height*e.resource.height});this.isVertical()?(a.width=r.height,a.height=r.width):(a.width=r.width,a.height=r.height);var h=a.getContext("2d");h&&(h.translate(a.width/2,a.height/2),h.rotate(this.props.rotate*Math.PI/180),h.translate(-a.width/2,-a.height/2),this.isVertical()&&h.translate((a.width-a.height)/2,(a.height-a.width)/2),h.drawImage(e.resource,-t.x,-t.y));}return a},p.getImageScaledToCanvas=function(){var t=this.getDimensions(),e=t.width,i=t.height,a=document.createElement("canvas");this.isVertical()?(a.width=i,a.height=e):(a.width=e,a.height=i);var r=a.getContext("2d");return r&&this.paintImage(r,this.state.image,0,1),a},p.getXScale=function(){return Math.min(1,this.props.width/this.props.height/(this.state.image.width/this.state.image.height))},p.getYScale=function(){return Math.min(1,this.props.height/this.props.width/(this.state.image.height/this.state.image.width))},p.getCroppingRect=function(){var t=this.props.position||{x:this.state.image.x,y:this.state.image.y},e=1/this.props.scale*this.getXScale(),a=1/this.props.scale*this.getYScale(),r={x:t.x-e/2,y:t.y-a/2,width:e,height:a},h=0,s=1-r.width,n=0,o=1-r.height;return (this.props.disableBoundaryChecks||e>1||a>1)&&(h=-r.width,s=1,n=-r.height,o=1),i({},r,{x:Math.max(h,Math.min(r.x,s)),y:Math.max(n,Math.min(r.y,o))})},p.loadImage=function(){var t,e=this,r=this.props,s=r.image,n=r.onLoadFailure,o=r.onImageReady,g=r.onLoadSuccess,c=r.crossOrigin,d=function(t){var a=i({},e.getInitialSize(t.width,t.height),{resource:t,x:.5,y:.5});e.setState({image:a},o),g&&g(a);};h&&s instanceof File?(t=s,new Promise((function(e,i){var r=new FileReader;r.onload=function(t){try{if(t.target){var r=a(t.target.result);e(r);}else i("No target");}catch(t){i(t);}},r.readAsDataURL(t);}))).then(d).catch(n):"string"==typeof s&&a(s,c).then(d).catch(n);},p.getInitialSize=function(t,e){var i=this.getDimensions();return i.height/i.width>e/t?{height:i.height,width:t*(i.height/e)}:{width:i.width,height:e*(i.width/t)}},p.paintImage=function(t,e,i,a){if(void 0===a&&(a=s),e.resource){var r=this.calculatePosition(e,i),h=this.getCroppingRect(),n=h.x,o=h.y;t.fillStyle="red",t.fillRect(n,o,3,3),t.save(),t.translate(t.canvas.width/2,t.canvas.height/2),t.rotate(this.props.rotate*Math.PI/180),t.translate(-t.canvas.width/2,-t.canvas.height/2),this.isVertical()&&t.translate((t.canvas.width-t.canvas.height)/2,(t.canvas.height-t.canvas.width)/2),t.scale(a,a),t.globalCompositeOperation="destination-over",t.drawImage(e.resource,r.x,r.y,r.width,r.height),t.restore();}},p.calculatePosition=function(t,e){var i=this.getBorders(e),a=i[0],r=i[1],h=this.getCroppingRect(),s=t.width*this.props.scale,n=t.height*this.props.scale,o=-h.x*s,g=-h.y*n;return this.isVertical()?(o+=r,g+=a):(o+=a,g+=r),{x:o,y:g,height:n,width:s}},p.paint=function(t){t.save(),t.scale(this.pixelRatio,this.pixelRatio),t.translate(0,0),t.fillStyle="rgba("+this.props.color.slice(0,4).join(",")+")";var e=this.props.borderRadius,i=this.getDimensions(),a=this.getBorders(i.border),r=a[0],h=a[1],s=i.canvas.height,n=i.canvas.width;e=Math.max(e,0),e=Math.min(e,n/2-r,s/2-h),t.beginPath(),function(t,e,i,a,r,h){if(0===h)t.rect(e,i,a,r);else{var s=a-h,n=r-h;t.translate(e,i),t.arc(h,h,h,Math.PI,1.5*Math.PI),t.lineTo(s,0),t.arc(s,h,h,1.5*Math.PI,2*Math.PI),t.lineTo(a,n),t.arc(s,n,h,2*Math.PI,.5*Math.PI),t.lineTo(h,r),t.arc(h,n,h,.5*Math.PI,Math.PI),t.translate(-e,-i);}}(t,r,h,n-2*r,s-2*h,e),t.rect(n,0,-n,s),t.fill("evenodd"),t.restore();},p.render=function(){var a=this.props,r=a.style,h=function(t,e){if(null==t)return {};var i,a,r={},h=Object.keys(t);for(a=0;a<h.length;a++)e.indexOf(i=h[a])>=0||(r[i]=t[i]);return r}(a,["scale","rotate","image","border","borderRadius","width","height","position","color","style","crossOrigin","onLoadFailure","onLoadSuccess","onImageReady","onImageChange","onMouseUp","onMouseMove","onPositionChange","disableBoundaryChecks","disableHiDPIScaling"]),s=this.getDimensions(),n={width:s.canvas.width*this.pixelRatio,height:s.canvas.height*this.pixelRatio,style:i({},{width:s.canvas.width,height:s.canvas.height,cursor:this.state.dragging?"grabbing":"grab",touchAction:"none"},{},r)};return t.createElement(e.DraggableCore,{onStart:this.handleStartDrag,onStop:this.handleStopDrag,onDrag:this.handleDrag},t.createElement("canvas",Object.assign({ref:this.canvas},n,h)))},d}(t.Component);o.defaultProps={scale:1,rotate:0,border:25,borderRadius:0,width:200,height:200,color:[0,0,0,.5],disableBoundaryChecks:!1,disableHiDPIScaling:!1},exports.default=o;
+
+});
+
+function _extends$3() {
+  _extends$3 = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends$3.apply(this, arguments);
+}
+
+function _inheritsLoose$2(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+function _objectWithoutPropertiesLoose$1(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function isDataURL(url) {
+  if (url === null) {
+    return false;
+  }
+
+  var regex = /^\s*data:([a-z]+\/[a-z]+(;[a-z-]+=[a-z-]+)?)?(;base64)?,[a-z0-9!$&',()*+;=\-._~:@/?%\s]*\s*$/i;
+  return !!url.match(regex);
+}
+
+function loadImageURL(imageURL, crossOrigin) {
+  if (crossOrigin === void 0) {
+    crossOrigin = '';
+  }
+
+  return new Promise(function (resolve, reject) {
+    var image = new Image();
+
+    image.onload = function () {
+      return resolve(image);
+    };
+
+    image.onerror = reject;
+
+    if (isDataURL(imageURL) === false && crossOrigin) {
+      image.crossOrigin = crossOrigin;
+    }
+
+    image.src = imageURL;
+  });
+}
+
+/* eslint-env browser, node */
+function loadImageFile(imageFile) {
+  return new Promise(function (resolve, reject) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      try {
+        if (!e.target) {
+          reject('No target');
+        } else {
+          var image = loadImageURL(e.target.result);
+          resolve(image);
+        }
+      } catch (e) {
+        reject(e);
+      }
+    };
+
+    reader.readAsDataURL(imageFile);
+  });
+}
+
+// helpers to calculate vectors
+var toRadians = function toRadians(degree) {
+  return degree * (Math.PI / 180);
+};
+
+var isFileAPISupported = typeof File !== 'undefined';
+var defaultPixelRatio = typeof window !== 'undefined' && window.devicePixelRatio ? window.devicePixelRatio : 1; // Draws a rounded rectangle on a 2D context.
+
+var drawRoundedRect = function drawRoundedRect(context, x, y, width, height, borderRadius) {
+  if (borderRadius === 0) {
+    context.rect(x, y, width, height);
+  } else {
+    var widthMinusRad = width - borderRadius;
+    var heightMinusRad = height - borderRadius;
+    context.translate(x, y);
+    context.arc(borderRadius, borderRadius, borderRadius, Math.PI, Math.PI * 1.5);
+    context.lineTo(widthMinusRad, 0);
+    context.arc(widthMinusRad, borderRadius, borderRadius, Math.PI * 1.5, Math.PI * 2);
+    context.lineTo(width, heightMinusRad);
+    context.arc(widthMinusRad, heightMinusRad, borderRadius, Math.PI * 2, Math.PI * 0.5);
+    context.lineTo(borderRadius, height);
+    context.arc(borderRadius, heightMinusRad, borderRadius, Math.PI * 0.5, Math.PI);
+    context.translate(-x, -y);
+  }
+};
+
+var defaultEmptyImage = {
+  x: 0.5,
+  y: 0.5,
+  width: 0,
+  height: 0
+};
+var defaultProps = {
+  scale: 1,
+  rotate: 0,
+  border: 25,
+  borderRadius: 0,
+  width: 200,
+  height: 200,
+  color: [0, 0, 0, 0.5],
+  disableBoundaryChecks: false,
+  disableHiDPIScaling: false
+};
+
+var AvatarEditor =
+/*#__PURE__*/
+function (_React$Component) {
+  _inheritsLoose$2(AvatarEditor, _React$Component);
+
+  function AvatarEditor(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this;
+    _this.pixelRatio = defaultPixelRatio;
+
+    _this.clearImage = function () {
+      var canvas = _this.getCanvas();
+
+      var context = _this.getContext();
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      _this.setState({
+        image: defaultEmptyImage
+      });
+    };
+
+    _this.handleDrag = function (_, data) {
+      var deltaX = data.deltaX,
+          deltaY = data.deltaY;
+      var _this$props = _this.props,
+          rotate = _this$props.rotate,
+          scale = _this$props.scale,
+          onPositionChange = _this$props.onPositionChange;
+      var image = _this.state.image;
+      var nextRotate = rotate % 360 < 0 ? rotate + 360 : rotate % 360;
+      var width = image.width * scale;
+      var height = image.height * scale;
+
+      var _this$getCroppingRect = _this.getCroppingRect(),
+          lastX = _this$getCroppingRect.x,
+          lastY = _this$getCroppingRect.y;
+
+      var cos = Math.cos(toRadians(nextRotate));
+      var sin = Math.sin(toRadians(nextRotate));
+      var x = lastX * width + -deltaX * cos + deltaY * sin;
+      var y = lastY * height + deltaX * sin + -deltaY * cos;
+
+      var relativeWidth = 1 / scale * _this.getXScale();
+
+      var relativeHeight = 1 / scale * _this.getYScale();
+
+      var position = {
+        x: x / width + relativeWidth / 2,
+        y: y / height + relativeHeight / 2
+      };
+      onPositionChange && onPositionChange(position);
+
+      _this.setState({
+        image: _extends$3({}, _this.state.image, {}, position)
+      });
+    };
+
+    _this.handleStartDrag = function () {
+      return _this.setState({
+        dragging: true
+      });
+    };
+
+    _this.handleStopDrag = function () {
+      return _this.setState({
+        dragging: false
+      });
+    };
+
+    _this.state = {
+      dragging: false,
+      image: defaultEmptyImage
+    };
+    _this.canvas = React__default.createRef();
+    _this.pixelRatio = props.disableHiDPIScaling ? 1 : defaultPixelRatio;
+    return _this;
+  }
+
+  var _proto = AvatarEditor.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.loadImage();
+    var context = this.getContext();
+    this.paint(context);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
+    if (this.props.image && this.props.image !== prevProps.image || this.props.width !== prevProps.width || this.props.height !== prevProps.height) {
+      this.loadImage();
+    } else if (!this.props.image) {
+      this.clearImage();
+    }
+
+    var canvas = this.getCanvas();
+    var context = this.getContext();
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    this.paint(context);
+    this.paintImage(context, this.state.image, this.props.border);
+
+    if (prevProps.image !== this.props.image || prevProps.width !== this.props.width || prevProps.height !== this.props.height || prevProps.position !== this.props.position || prevProps.scale !== this.props.scale || prevProps.rotate !== this.props.rotate || prevState.image.x !== this.state.image.x || prevState.image.y !== this.state.image.y) {
+      this.props.onImageChange && this.props.onImageChange();
+    }
+  };
+
+  _proto.getCanvas = function getCanvas() {
+    if (!this.canvas.current) {
+      throw new Error('No canvas found, please report this to: https://github.com/mosch/react-avatar-editor/issues');
+    }
+
+    return this.canvas.current;
+  };
+
+  _proto.getContext = function getContext() {
+    var context = this.getCanvas().getContext('2d');
+
+    if (!context) {
+      throw new Error(' No context found, please report this to: https://github.com/mosch/react-avatar-editor/issues');
+    }
+
+    return context;
+  };
+
+  _proto.isVertical = function isVertical() {
+    return this.props.rotate % 180 !== 0;
+  };
+
+  _proto.getBorders = function getBorders(border) {
+    return Array.isArray(border) ? border : [border, border];
+  };
+
+  _proto.getDimensions = function getDimensions() {
+    var _this$props2 = this.props,
+        width = _this$props2.width,
+        height = _this$props2.height,
+        rotate = _this$props2.rotate,
+        border = _this$props2.border;
+
+    var _this$getBorders = this.getBorders(border),
+        borderX = _this$getBorders[0],
+        borderY = _this$getBorders[1];
+
+    var canvas = this.isVertical() ? {
+      width: height + borderX * 2,
+      height: width + borderY * 2
+    } : {
+      width: width + borderX * 2,
+      height: height + borderY * 2
+    };
+    return {
+      canvas: canvas,
+      rotate: rotate,
+      width: width,
+      height: height,
+      border: border
+    };
+  };
+
+  _proto.getImage = function getImage() {
+    // get relative coordinates (0 to 1)
+    var cropRect = this.getCroppingRect();
+    var image = this.state.image; // create a canvas with the correct dimensions
+
+    var canvas = document.createElement('canvas');
+
+    if (image.resource) {
+      // get actual pixel coordinates
+      var actualCropRect = _extends$3({}, cropRect, {
+        x: cropRect.x * image.resource.width,
+        y: cropRect.y * image.resource.height,
+        width: cropRect.width * image.resource.width,
+        height: cropRect.height * image.resource.height
+      });
+
+      if (this.isVertical()) {
+        canvas.width = actualCropRect.height;
+        canvas.height = actualCropRect.width;
+      } else {
+        canvas.width = actualCropRect.width;
+        canvas.height = actualCropRect.height;
+      } // draw the full-size image at the correct position,
+      // the image gets truncated to the size of the canvas.
+
+
+      var context = canvas.getContext('2d');
+
+      if (context) {
+        context.translate(canvas.width / 2, canvas.height / 2);
+        context.rotate(this.props.rotate * Math.PI / 180);
+        context.translate(-(canvas.width / 2), -(canvas.height / 2));
+
+        if (this.isVertical()) {
+          context.translate((canvas.width - canvas.height) / 2, (canvas.height - canvas.width) / 2);
+        }
+
+        context.drawImage(image.resource, -cropRect.x, -cropRect.y);
+      }
+    }
+
+    return canvas;
+  }
+  /**
+   * Get the image scaled to original canvas size.
+   * This was default in 4.x and is now kept as a legacy method.
+   */
+  ;
+
+  _proto.getImageScaledToCanvas = function getImageScaledToCanvas() {
+    var _this$getDimensions = this.getDimensions(),
+        width = _this$getDimensions.width,
+        height = _this$getDimensions.height;
+
+    var canvas = document.createElement('canvas');
+
+    if (this.isVertical()) {
+      canvas.width = height;
+      canvas.height = width;
+    } else {
+      canvas.width = width;
+      canvas.height = height;
+    }
+
+    var context = canvas.getContext('2d');
+
+    if (context) {
+      // don't paint a border here, as it is the resulting image
+      this.paintImage(context, this.state.image, 0, 1);
+    }
+
+    return canvas;
+  };
+
+  _proto.getXScale = function getXScale() {
+    var canvasAspect = this.props.width / this.props.height;
+    var imageAspect = this.state.image.width / this.state.image.height;
+    return Math.min(1, canvasAspect / imageAspect);
+  };
+
+  _proto.getYScale = function getYScale() {
+    var canvasAspect = this.props.height / this.props.width;
+    var imageAspect = this.state.image.height / this.state.image.width;
+    return Math.min(1, canvasAspect / imageAspect);
+  };
+
+  _proto.getCroppingRect = function getCroppingRect() {
+    var position = this.props.position || {
+      x: this.state.image.x,
+      y: this.state.image.y
+    };
+    var width = 1 / this.props.scale * this.getXScale();
+    var height = 1 / this.props.scale * this.getYScale();
+    var croppingRect = {
+      x: position.x - width / 2,
+      y: position.y - height / 2,
+      width: width,
+      height: height
+    };
+    var xMin = 0;
+    var xMax = 1 - croppingRect.width;
+    var yMin = 0;
+    var yMax = 1 - croppingRect.height; // If the cropping rect is larger than the image, then we need to change
+    // our maxima & minima for x & y to allow the image to appear anywhere up
+    // to the very edge of the cropping rect.
+
+    var isLargerThanImage = this.props.disableBoundaryChecks || width > 1 || height > 1;
+
+    if (isLargerThanImage) {
+      xMin = -croppingRect.width;
+      xMax = 1;
+      yMin = -croppingRect.height;
+      yMax = 1;
+    }
+
+    return _extends$3({}, croppingRect, {
+      x: Math.max(xMin, Math.min(croppingRect.x, xMax)),
+      y: Math.max(yMin, Math.min(croppingRect.y, yMax))
+    });
+  };
+
+  _proto.loadImage = function loadImage() {
+    var _this2 = this;
+
+    var _this$props3 = this.props,
+        image = _this$props3.image,
+        onLoadFailure = _this$props3.onLoadFailure,
+        onImageReady = _this$props3.onImageReady,
+        onLoadSuccess = _this$props3.onLoadSuccess,
+        crossOrigin = _this$props3.crossOrigin;
+
+    var handleImageReady = function handleImageReady(image) {
+      var imageState = _extends$3({}, _this2.getInitialSize(image.width, image.height), {
+        resource: image,
+        x: 0.5,
+        y: 0.5
+      });
+
+      _this2.setState({
+        image: imageState
+      }, onImageReady);
+
+      onLoadSuccess && onLoadSuccess(imageState);
+    };
+
+    if (isFileAPISupported && image instanceof File) {
+      loadImageFile(image).then(handleImageReady)["catch"](onLoadFailure);
+    } else if (typeof image === 'string') {
+      loadImageURL(image, crossOrigin).then(handleImageReady)["catch"](onLoadFailure);
+    }
+  };
+
+  _proto.getInitialSize = function getInitialSize(width, height) {
+    var dimensions = this.getDimensions();
+    var canvasRatio = dimensions.height / dimensions.width;
+    var imageRatio = height / width;
+
+    if (canvasRatio > imageRatio) {
+      return {
+        height: dimensions.height,
+        width: width * (dimensions.height / height)
+      };
+    } else {
+      return {
+        width: dimensions.width,
+        height: height * (dimensions.width / width)
+      };
+    }
+  };
+
+  _proto.paintImage = function paintImage(context, image, border, scaleFactor) {
+    if (scaleFactor === void 0) {
+      scaleFactor = defaultPixelRatio;
+    }
+
+    if (image.resource) {
+      var position = this.calculatePosition(image, border);
+
+      var _this$getCroppingRect2 = this.getCroppingRect(),
+          x = _this$getCroppingRect2.x,
+          y = _this$getCroppingRect2.y;
+
+      context.fillStyle = 'red';
+      context.fillRect(x, y, 3, 3);
+      context.save();
+      context.translate(context.canvas.width / 2, context.canvas.height / 2);
+      context.rotate(this.props.rotate * Math.PI / 180);
+      context.translate(-(context.canvas.width / 2), -(context.canvas.height / 2));
+
+      if (this.isVertical()) {
+        context.translate((context.canvas.width - context.canvas.height) / 2, (context.canvas.height - context.canvas.width) / 2);
+      }
+
+      context.scale(scaleFactor, scaleFactor);
+      context.globalCompositeOperation = 'destination-over';
+      context.drawImage(image.resource, position.x, position.y, position.width, position.height);
+      context.restore();
+    }
+  };
+
+  _proto.calculatePosition = function calculatePosition(image, border) {
+    var _this$getBorders2 = this.getBorders(border),
+        borderX = _this$getBorders2[0],
+        borderY = _this$getBorders2[1];
+
+    var croppingRect = this.getCroppingRect();
+    var width = image.width * this.props.scale;
+    var height = image.height * this.props.scale;
+    var x = -croppingRect.x * width;
+    var y = -croppingRect.y * height;
+
+    if (this.isVertical()) {
+      x += borderY;
+      y += borderX;
+    } else {
+      x += borderX;
+      y += borderY;
+    }
+
+    return {
+      x: x,
+      y: y,
+      height: height,
+      width: width
+    };
+  };
+
+  _proto.paint = function paint(context) {
+    context.save();
+    context.scale(this.pixelRatio, this.pixelRatio);
+    context.translate(0, 0);
+    context.fillStyle = 'rgba(' + this.props.color.slice(0, 4).join(',') + ')';
+    var borderRadius = this.props.borderRadius;
+    var dimensions = this.getDimensions();
+
+    var _this$getBorders3 = this.getBorders(dimensions.border),
+        borderSizeX = _this$getBorders3[0],
+        borderSizeY = _this$getBorders3[1];
+
+    var height = dimensions.canvas.height;
+    var width = dimensions.canvas.width; // clamp border radius between zero (perfect rectangle) and half the size without borders (perfect circle or "pill")
+
+    borderRadius = Math.max(borderRadius, 0);
+    borderRadius = Math.min(borderRadius, width / 2 - borderSizeX, height / 2 - borderSizeY);
+    context.beginPath(); // inner rect, possibly rounded
+
+    drawRoundedRect(context, borderSizeX, borderSizeY, width - borderSizeX * 2, height - borderSizeY * 2, borderRadius);
+    context.rect(width, 0, -width, height); // outer rect, drawn "counterclockwise"
+
+    context.fill('evenodd');
+    context.restore();
+  };
+
+  _proto.render = function render() {
+    var _this$props4 = this.props,
+        scale = _this$props4.scale,
+        rotate = _this$props4.rotate,
+        image = _this$props4.image,
+        border = _this$props4.border,
+        borderRadius = _this$props4.borderRadius,
+        width = _this$props4.width,
+        height = _this$props4.height,
+        position = _this$props4.position,
+        color = _this$props4.color,
+        style = _this$props4.style,
+        crossOrigin = _this$props4.crossOrigin,
+        onLoadFailure = _this$props4.onLoadFailure,
+        onLoadSuccess = _this$props4.onLoadSuccess,
+        onImageReady = _this$props4.onImageReady,
+        onImageChange = _this$props4.onImageChange,
+        onMouseUp = _this$props4.onMouseUp,
+        onMouseMove = _this$props4.onMouseMove,
+        onPositionChange = _this$props4.onPositionChange,
+        disableBoundaryChecks = _this$props4.disableBoundaryChecks,
+        disableHiDPIScaling = _this$props4.disableHiDPIScaling,
+        rest = _objectWithoutPropertiesLoose$1(_this$props4, ["scale", "rotate", "image", "border", "borderRadius", "width", "height", "position", "color", "style", "crossOrigin", "onLoadFailure", "onLoadSuccess", "onImageReady", "onImageChange", "onMouseUp", "onMouseMove", "onPositionChange", "disableBoundaryChecks", "disableHiDPIScaling"]);
+
+    var dimensions = this.getDimensions();
+    var defaultStyle = {
+      width: dimensions.canvas.width,
+      height: dimensions.canvas.height,
+      cursor: this.state.dragging ? 'grabbing' : 'grab',
+      touchAction: 'none'
+    };
+    var attributes = {
+      width: dimensions.canvas.width * this.pixelRatio,
+      height: dimensions.canvas.height * this.pixelRatio,
+      style: _extends$3({}, defaultStyle, {}, style)
+    };
+    return React__default.createElement(Draggable.DraggableCore, {
+      onStart: this.handleStartDrag,
+      onStop: this.handleStopDrag,
+      onDrag: this.handleDrag
+    }, React__default.createElement("canvas", Object.assign({
+      ref: this.canvas
+    }, attributes, rest)));
+  };
+
+  return AvatarEditor;
+}(React__default.Component);
+
+AvatarEditor.defaultProps = defaultProps;
+
+var default_1 = AvatarEditor;
+
+
+var reactAvatarEditor_cjs_development = {
+	default: default_1
+};
+
+var dist = createCommonjsModule(function (module) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = reactAvatarEditor_cjs_production_min;
+} else {
+  module.exports = reactAvatarEditor_cjs_development;
+}
 });
 
 var _templateObject$8 = taggedTemplateLiteral(['\n\tposition: fixed;\n\twidth: 100%;\n\theight: 100%;\n\tleft: 0;\n\tright: 0;\n\ttop: 0;\n\tbottom: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 1000;\n\toverflow-y: auto;\n\ttransition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out;\n\topacity: ', ';\n\tvisibility: ', ';\n'], ['\n\tposition: fixed;\n\twidth: 100%;\n\theight: 100%;\n\tleft: 0;\n\tright: 0;\n\ttop: 0;\n\tbottom: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 1000;\n\toverflow-y: auto;\n\ttransition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out;\n\topacity: ', ';\n\tvisibility: ', ';\n']),
@@ -14101,7 +16096,7 @@ var _propTypes2 = _interopRequireDefault(PropTypes);
 
 
 
-var _reactDom2 = _interopRequireDefault(reactDom);
+var _reactDom2 = _interopRequireDefault(ReactDOM);
 
 
 
@@ -14427,14 +16422,15 @@ var Dropdown = function (_Component) {
     value: function render() {
       var _props = this.props,
           className = _props.className,
+          horizontalPosition = _props.horizontalPosition,
           children = _props.children;
 
       return _react2.default.createElement(
         _reactTether2.default,
         {
           className: (0, _classnames2.default)('PowerSelect__Tether', className && className + '__Tether'),
-          attachment: 'top left',
-          targetAttachment: 'bottom left',
+          attachment: 'top ' + horizontalPosition,
+          targetAttachment: 'bottom ' + horizontalPosition,
           constraints: [{
             to: 'window',
             attachment: 'together'
@@ -15383,6 +17379,7 @@ var Select = function (_Component) {
           optionComponent = _props.optionComponent,
           placeholder = _props.placeholder,
           disabled = _props.disabled,
+          horizontalPosition = _props.horizontalPosition,
           selectedOptionComponent = _props.selectedOptionComponent,
           selectedOptionLabelPath = _props.selectedOptionLabelPath,
           triggerLHSComponent = _props.triggerLHSComponent,
@@ -15401,7 +17398,7 @@ var Select = function (_Component) {
 
       return _react2.default.createElement(
         _Dropdown2.default,
-        { className: className },
+        { className: className, horizontalPosition: horizontalPosition },
         _react2.default.createElement(
           'div',
           {
@@ -15482,7 +17479,6 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.selectOption = function (option) {
-    _this3.setHighlightedOption(option);
     _this3.props.onChange({
       select: _this3.getPublicApi(),
       option: option
@@ -15671,6 +17667,7 @@ Select.defaultProps = {
   selectedOptionComponent: null,
   beforeOptionsComponent: null,
   afterOptionsComponent: null,
+  horizontalPosition: 'left',
   matcher: utils.matcher,
   onFocus: noop,
   onBlur: noop,
