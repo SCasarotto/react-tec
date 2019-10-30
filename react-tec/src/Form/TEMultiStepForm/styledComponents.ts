@@ -14,7 +14,7 @@ export const StepContainer = styled.div`
 		margin-bottom: 15;
 	}
 `
-export const StepBar = styled.div`
+export const StepBar = styled.div<{ stepCount: number }>`
 	position: absolute;
 	top: 14px;
 	background-color: ${(props) => props.theme.primary};
@@ -22,13 +22,13 @@ export const StepBar = styled.div`
 	width: ${(props) => 100 - 100 / props.stepCount}%;
 	left: ${(props) => 100 / props.stepCount / 2}%;
 `
-export const StepWrapper = styled.div`
+export const StepWrapper = styled.div<{ stepCount: number }>`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: ${(props) => 100 / props.stepCount}%;
 `
-export const StepNumber = styled.div`
+export const StepNumber = styled.div<{ active: boolean }>`
 	text-align: center;
 	width: 30px;
 	height: 30px;

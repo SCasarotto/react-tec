@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import TELabel from '../TELabel'
+import TELabel, { TELabelCustomProps } from '../TELabel'
 
 import {
 	Container,
@@ -10,8 +9,22 @@ import {
 	RadioButton,
 	Label,
 } from './styledComponents'
+import { TERowCustomProps } from 'Form/TERow'
+import { TERadioButtonInputProps } from 'Form/TERadioButtonInput'
 
-const manipulateRowData = ({ rowData, labelForKey = '' }) => {
+interface TERadioButtonData {
+	label: string
+	value?: string
+	key?: string
+}
+interface ManipulateRowData {
+	rowData: string | TERadioButtonData
+	labelForKey: string
+}
+const manipulateRowData = ({
+	rowData,
+	labelForKey = '',
+}: ManipulateRowData) => {
 	//Allowing For Greater Shorthand
 	if (typeof rowData === 'string') {
 		const label = rowData
@@ -19,18 +32,32 @@ const manipulateRowData = ({ rowData, labelForKey = '' }) => {
 		const key = labelForKey + rowData
 		return { label, value, key }
 	} else if (typeof rowData === 'object') {
-		let {
-			label,
-			value: value = label,
-			key: key = labelForKey + label,
-		} = rowData
+		let { label, value, key } = rowData
+
+		if (!value) {
+			value = label
+		}
+		if (!key) {
+			key = labelForKey + label
+		}
+
 		return { label, value, key }
 	}
 	return rowData
 }
-const TERadioButtonGroup = (props) => {
+interface TERadioButtonGroupProps
+	extends TERowCustomProps,
+		TELabelCustomProps,
+		TERadioButtonInputProps {
+	labelForKey: string
+	inputRowSize?: string
+	checkedValue: string
+	buttonArray: (string | TERadioButtonData)[]
+	scrolling?: boolean
+}
+const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (props) => {
 	const {
-		size,
+		rowSize,
 		last,
 		title,
 		onChange,
@@ -39,13 +66,13 @@ const TERadioButtonGroup = (props) => {
 		labelForKey,
 		disabled,
 		required,
-		rowSize,
+		inputRowSize,
 		className = '',
 	} = props
 
 	return (
 		<Container
-			size={size}
+			rowSize={rowSize}
 			last={last}
 			className={`TERadioButtonGroup ${className}`}>
 			<TELabel
@@ -65,7 +92,7 @@ const TERadioButtonGroup = (props) => {
 						return (
 							<RowWrapper
 								key={key}
-								size={rowSize}
+								rowSize={inputRowSize}
 								className="TERadioButtonGroupRowWrapper">
 								<RadioButton
 									value={value}
@@ -87,12 +114,6 @@ const TERadioButtonGroup = (props) => {
 			</InputWrapper>
 		</Container>
 	)
-}
-
-TERadioButtonGroup.propTypes = {
-	title: PropTypes.string,
-	onChange: PropTypes.func,
-	labelForKey: PropTypes.string,
 }
 
 export default TERadioButtonGroup

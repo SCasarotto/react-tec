@@ -969,6 +969,13 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
+"@types/react-avatar-editor@^10.3.5":
+  version "10.3.5"
+  resolved "https://registry.yarnpkg.com/@types/react-avatar-editor/-/react-avatar-editor-10.3.5.tgz#0747bf98ca67006a8dae0af2eb95acfc4ca7f212"
+  integrity sha512-MGbqKswSgTjBQ+AexNnqAIe7y+12J+zSBPO9vCHTGMnz+tIWYo444fJ6YqXsfdhutSxSlWX2wgR+xUgpviE78w==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-datepicker@^2.9.3":
   version "2.9.3"
   resolved "https://registry.yarnpkg.com/@types/react-datepicker/-/react-datepicker-2.9.3.tgz#af8e7a40e159ce95fe33edbcf707fdbf594e53d2"
@@ -1701,7 +1708,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.6:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -4712,7 +4719,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -4759,6 +4766,13 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-avatar-editor@^12.0.0-beta.0:
+  version "12.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-avatar-editor/-/react-avatar-editor-12.0.0-beta.0.tgz#e19d8ab1c5bcd480de090ff97cd95dcdaa52d964"
+  integrity sha512-7vrkqjmXDCZuBRpRsrldeN0/BAW1/rx/k+5WE1AhvQMMGXYGwy1GY3YF97okzgBYwZV3OocGyx8oauOcTz2xAw==
+  dependencies:
+    react-draggable "^4.1.0"
+
 react-datepicker@^2.9.6:
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-2.9.6.tgz#26190c9f71692149d0d163398aa19e08626444b1"
@@ -4779,6 +4793,14 @@ react-dom@^16.11.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.17.0"
+
+react-draggable@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-4.1.0.tgz#e1c5b774001e32f0bff397254e1e9d5448ac92a4"
+  integrity sha512-Or/qe70cfymshqoC8Lsp0ukTzijJObehb7Vfl7tb5JRxoV+b6PDkOGoqYaWBzZ59k9dH/bwraLGsnlW78/3vrA==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
 
 react-icons@*, react-icons@^3.8.0:
   version "3.8.0"
