@@ -4,11 +4,11 @@ import TERow from '../TERow'
 import TELabel from '../TELabel'
 import TERadioButtonInput from '../TERadioButtonInput'
 
-export const Row = styled(TERow)`
+export const Row = styled(TERow)<{ inline?: boolean }>`
 	${(props) =>
 		props.inline ? 'display: flex; justify-content: space-between;' : ''}
 `
-export const Label = styled(TELabel)`
+export const Label = styled(TELabel)<{ inline?: boolean }>`
 	width: ${(props) => (props.inline ? 'auto' : '100%')};
 	align-self: ${(props) => (props.inline ? 'center' : 'auto')};
 	text-align: left;
@@ -21,7 +21,7 @@ export const Label = styled(TELabel)`
 		font-size: 16px;
 	}
 `
-export const SegmentedContainer = styled.div`
+export const SegmentedContainer = styled.div<{ inline?: boolean }>`
 	${(props) =>
 		props.inline
 			? `
@@ -39,7 +39,11 @@ export const LabelWrapper = styled.div`
 export const Input = styled(TERadioButtonInput)`
 	display: none;
 `
-export const InputLabel = styled(TELabel)`
+export const InputLabel = styled(TELabel)<{
+	checked: boolean
+	first?: boolean
+	last?: boolean
+}>`
 	display: inline-block;
 	width: auto;
 	border: 1px solid

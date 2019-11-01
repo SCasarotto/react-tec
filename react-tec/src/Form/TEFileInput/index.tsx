@@ -1,5 +1,4 @@
 import React, { useState, ChangeEvent } from 'react'
-import PropTypes from 'prop-types'
 
 import {
 	Wrapper,
@@ -149,13 +148,6 @@ const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 			)}
 		</Wrapper>
 	)
-}
-
-TEFileInput.propTypes = {
-	onChange: PropTypes.func.isRequired,
-	accept: PropTypes.string, //OS Hint of file type for dialog - NOT safety check of type
-	// pattern: PropTypes.RegExp, //This is the actual strict catch. Regex // Don't know regex proptype
-	disabled: PropTypes.bool,
 }
 
 export default TEFileInput

@@ -20,13 +20,13 @@ import {
 	StepButton,
 } from './styledComponents'
 
-interface TEMultiStepFormStepData {
+export interface TEMultiStepFormStepData {
 	title: string
 	component: React.ReactNode
 	onPrevious?(): Promise<any>
 	onNext?(): Promise<any>
 }
-interface TEMultiStepFormProps extends React.FC {
+export interface TEMultiStepFormProps {
 	className?: string
 	handleCancelOnClick?(): void
 	stepData: TEMultiStepFormStepData[]

@@ -13,16 +13,21 @@ export const Textarea = styled.textarea`
 	line-height: 1.5;
 	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'text')};
 
-	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
+	color: ${(props) =>
+		props.disabled ? props.theme.gray : props.theme.darkerGray};
 	border: 1px solid
-		${(props) => (props.disabled ? props.theme.lighterGray : props.theme.lightGray)};
+		${(props) =>
+			props.disabled ? props.theme.lighterGray : props.theme.lightGray};
 
 	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
 	:hover,
 	:active {
 		border: 1px solid
-			${(props) => (props.disabled ? props.theme.lighterGray : props.theme.primary)};
+			${(props) =>
+				props.disabled ? props.theme.lighterGray : props.theme.primary};
 		box-shadow: 0 0 0 1px
-			${(props) => (props.disabled ? props.theme.lighterGray : props.theme.primary)} inset;
+			${(props) =>
+				props.disabled ? props.theme.lighterGray : props.theme.primary}
+			inset;
 	}
 `

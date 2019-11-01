@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div<{ sidebarWidth: number }>`
 	position: fixed;
 	top: 0px;
 	bottom: 0px;
@@ -13,8 +13,9 @@ export const Container = styled.div`
 	z-index: 20;
 	background-color: ${(props) => props.theme.white};
 	overflow-y: auto;
-	/*Investigate if this should be repleaced by one of the theme shadows*/
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px, rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;
+	/*TODO: Investigate if this should be repleaced by one of the theme shadows*/
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px,
+		rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;
 `
 export const Logo = styled.img`
 	object-fit: contain;

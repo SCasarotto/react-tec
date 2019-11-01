@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div<{ size?: string }>`
 	position: relative;
 	background-color: ${(props) => props.theme.white};
 	border-radius: 5px;

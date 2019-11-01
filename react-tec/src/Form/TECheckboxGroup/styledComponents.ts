@@ -12,14 +12,14 @@ export const Container = styled(TERow)`
 export const InputWrapper = styled.div<{ scrolling?: boolean }>`
 	display: flex;
 	flex-wrap: wrap;
-	height: ${props => (props.scrolling ? '300px' : 'auto')};
-	overflow-y: ${props => (props.scrolling ? 'scroll' : 'visible')};
-	background-color: ${props =>
+	height: ${(props) => (props.scrolling ? '300px' : 'auto')};
+	overflow-y: ${(props) => (props.scrolling ? 'scroll' : 'visible')};
+	background-color: ${(props) =>
 		props.scrolling ? props.theme.white : 'transparent'};
-	padding: ${props => (props.scrolling ? '0px' : '10px')};
-	border: ${props =>
+	padding: ${(props) => (props.scrolling ? '0px' : '10px')};
+	border: ${(props) =>
 		props.scrolling ? `1px solid ${props.theme.lightGray}` : 'none'};
-	padding: ${props => (props.scrolling ? '5px' : '0px')};
+	padding: ${(props) => (props.scrolling ? '5px' : '0px')};
 `
 
 export const RowWrarpper = styled(TERow)`
@@ -41,7 +41,7 @@ export const Label = styled(TELabel)<{ disabled?: boolean }>`
 	margin-bottom: 0px;
 	cursor: pointer;
 	font-size: 14px;
-	color: ${props =>
+	color: ${(props) =>
 		props.disabled ? props.theme.gray : props.theme.darkerGray};
 
 	@media (max-width: 550px) {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Background = styled.div`
+export const Background = styled.div<{ visible: boolean }>`
 	position: fixed;
 	width: 100%;
 	height: 100%;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 import TERow from '../TERow'
 import TELabel from '../TELabel'
@@ -178,24 +177,6 @@ const TEImageRow: React.FC<any> = (props) => {
 			/>
 		</TERow>
 	)
-}
-
-TEImageRow.propTypes = {
-	//Row
-	size: PropTypes.string,
-	last: PropTypes.bool,
-
-	//Input
-	onUpload: PropTypes.func.isRequired,
-	onRemove: PropTypes.func.isRequired,
-	accept: PropTypes.string,
-	// accept: PropTypes.Regexp, //Don't know protype for regex
-	maxNumber: PropTypes.number,
-	onChangeKey: PropTypes.string,
-	disabled: PropTypes.bool,
-
-	//Both
-	labelForKey: PropTypes.string,
 }
 
 TEImageRow.defaultProps = {

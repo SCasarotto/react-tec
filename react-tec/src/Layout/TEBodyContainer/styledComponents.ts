@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BodyContainer = styled.div`
+export const BodyContainer = styled.div<{ sidebarWidth?: number }>`
 	position: relative;
 	width: calc(100% - ${(props) => props.sidebarWidth}px);
 	min-height: 100vh;

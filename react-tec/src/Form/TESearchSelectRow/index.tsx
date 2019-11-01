@@ -1,0 +1,42 @@
+import React from 'react'
+
+import TERow, { TERowCustomProps } from '../TERow'
+import TELabel, { TELabelCustomProps } from '../TELabel'
+import TESearchSelectInput from '../TESearchSelectInput'
+
+// import 'react-power-select/dist/react-power-select.css'
+//NOTE:
+//
+// - At this moment there is no way to style the dropdown component with styled components.
+//
+export interface TESearchSelectRowProps
+	extends TERowCustomProps,
+		TELabelCustomProps {
+	labelForKey: string
+	[key: string]: any
+}
+const TESearchSelectRow: React.FC<TESearchSelectRowProps> = (props) => {
+	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
+
+	return (
+		<TERow
+			rowSize={rowSize}
+			last={last}
+			className={`TESearchSelectRow ${className}`}>
+			<TELabel
+				htmlFor={labelForKey}
+				required={rest.required}
+				disabled={rest.disabled}
+				className="TESearchSelectRowTitle">
+				{title}
+			</TELabel>
+			<TESearchSelectInput
+				id={labelForKey}
+				className="TESearchSelectRowInput"
+				{...rest}
+			/>
+		</TERow>
+	)
+}
+
+export default TESearchSelectRow
