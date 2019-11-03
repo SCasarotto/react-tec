@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import TERow from '../TERow'
-import TELabel from '../TELabel'
-import TERadioButtonInput from '../TERadioButtonInput'
+import { TERow } from '../TERow'
+import { TELabel } from '../TELabel'
+import { TERadioButtonInput } from '../TERadioButtonInput'
 
 export const Container = styled(TERow)`
 	margin-bottom: 10px;

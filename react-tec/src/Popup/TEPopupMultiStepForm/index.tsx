@@ -1,6 +1,7 @@
 import React from 'react'
 
-import TEMultiStepForm, {
+import {
+	TEMultiStepForm,
 	TEMultiStepFormProps,
 } from '../../Form/TEMultiStepForm'
 

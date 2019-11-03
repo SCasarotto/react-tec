@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import TEButton from '../TEButton'
+import { TEButton } from '../TEButton'
 
 export const Button = styled(TEButton)`
 	position: relative;

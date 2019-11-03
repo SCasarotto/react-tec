@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import TERow from '../TERow'
-import TELabel from '../TELabel'
-import EditorPopup from './EditorPopup'
+import { TERow } from '../TERow'
+import { TELabel } from '../TELabel'
+import { EditorPopup } from './EditorPopup'
 
 import {
 	ImageRowWrapper,
@@ -184,5 +184,3 @@ TEImageRow.defaultProps = {
 	pattern: /image-*/,
 	maxNumber: 0,
 }
-
-export default TEImageRow

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import TEPopup from '../TEPopup'
+import { TEPopup } from '../TEPopup'
 
 export const Popup = styled(TEPopup)`
 	.TEPopupContent {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TEForm from '../../Form/TEForm'
+import { TEForm } from '../../Form/TEForm'
 
 import {
 	Popup,

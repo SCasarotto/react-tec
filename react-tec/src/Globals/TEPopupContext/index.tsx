@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from 'react'
-import TEAlert from '../../Popup/TEAlert'
-import TEConfirm from '../../Popup/TEConfirm'
-import TENetworkActivity from '../../Popup/TENetworkActivity'
+import { TEAlert } from '../../Popup/TEAlert'
+import { TEConfirm } from '../../Popup/TEConfirm'
+import { TENetworkActivity } from '../../Popup/TENetworkActivity'
 
 const initialState = {
 	alertVisible: false,

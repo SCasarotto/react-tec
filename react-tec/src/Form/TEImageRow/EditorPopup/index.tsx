@@ -5,8 +5,8 @@
 import React, { useState, useRef } from 'react'
 import AvatarEditor from 'react-avatar-editor'
 
-import TEPopupForm from '../../../Popup/TEPopupForm'
-import TELabel from '../../TELabel'
+import { TEPopupForm } from '../../../Popup/TEPopupForm'
+import { TELabel } from '../../TELabel'
 
 import {
 	Container,
@@ -17,7 +17,7 @@ import {
 	RedoRotationIcon,
 } from './styledComponents'
 
-const TEImageUpload = (props) => {
+export const TEImageUpload = (props) => {
 	const [editorScale, setEditorScale] = useState(1.1)
 	const [rotation, setRotation] = useState(0)
 	const editor = useRef(null)
@@ -98,5 +98,3 @@ const TEImageUpload = (props) => {
 TEImageUpload.defaultProps = {
 	onSubmitTitle: 'Submit',
 }
-
-export default TEImageUpload

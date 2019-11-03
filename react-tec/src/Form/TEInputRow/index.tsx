@@ -11,7 +11,7 @@ export interface TEInputRowProps
 	labelForKey: string
 }
 
-const TEInputRow: React.FC<TEInputRowProps> = (props) => {
+export const TEInputRow: React.FC<TEInputRowProps> = (props) => {
 	const {
 		rowSize,
 		last,
@@ -50,5 +50,3 @@ const TEInputRow: React.FC<TEInputRowProps> = (props) => {
 		</TERow>
 	)
 }
-
-export default TEInputRow

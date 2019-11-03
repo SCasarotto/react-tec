@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { FaUpload, FaRegWindowClose } from 'react-icons/fa'
 
-import TEButton from '../TEButton'
+import { TEButton } from '../TEButton'
 
 export const ImageRowWrapper = styled.div`
 	overflow-x: auto;

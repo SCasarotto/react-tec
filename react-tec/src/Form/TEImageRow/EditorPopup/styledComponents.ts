@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { FaUndo, FaRedo } from 'react-icons/fa'
 
-import TERow from '../../TERow'
-import TEButton from '../../TEButton'
+import { TERow } from '../../TERow'
+import { TEButton } from '../../TEButton'
 
 export const Container = styled.div`
 	padding-left: 30px;

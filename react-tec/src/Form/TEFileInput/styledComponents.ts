@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { FaFileUpload, FaRegWindowClose } from 'react-icons/fa'
 
-import TEButton from '../TEButton'
+import { TEButton } from '../TEButton'
 
 export const Wrapper = styled.div`
 	display: flex;

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import TEForm from '../TEForm'
-import TEButton from '../TEButton'
+import { TEForm } from '../TEForm'
+import { TEButton } from '../TEButton'
 
 export const Container = styled.div``
 export const StepContainer = styled.div`

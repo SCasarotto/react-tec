@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 import { FaFileDownload, FaRegWindowClose } from 'react-icons/fa'
 
-import TERow from '../TERow'
-import TEFileInput from '../TEFileInput'
-import TEButton from '../TEButton'
+import { TERow } from '../TERow'
+import { TEFileInput } from '../TEFileInput'
+import { TEButton } from '../TEButton'
 
 export const WrapperRow = styled(TERow)`
 	max-width: 600px;

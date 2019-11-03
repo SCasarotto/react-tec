@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import TEPanelWrapper from '../TEPanelWrapper'
-import TEPanel from '../TEPanel'
-import TEButton from '../../Form/TEButton'
+import { TEPanelWrapper } from '../TEPanelWrapper'
+import { TEPanel } from '../TEPanel'
+import { TEButton } from '../../Form/TEButton'
 
 export const PanelWrapper = styled(TEPanelWrapper)`
 	justify-content: center;
