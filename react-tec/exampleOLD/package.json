@@ -1,0 +1,27 @@
+{
+  "name": "react-tec-example",
+  "homepage": "https://www.react-tec.com/",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "link:../node_modules/react",
+    "react-dom": "link:../node_modules/react-dom",
+    "react-helmet": "^5.2.1",
+    "react-router": "^5.1.1",
+    "react-router-dom": "^5.1.1",
+    "react-scripts": "^1.1.4",
+    "react-tec": "link:..",
+    "styled-components": "^4.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-and-deploy": "yarn run build && yarn run s3-deploy && yarn run set-cache-control && echo '🚀 Deployed!!!'",
+    "s3-deploy": "s3cmd sync build/* s3://www.react-tec.com --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --cf-invalidate-default-index",
+    "set-cache-control": "s3cmd modify --add-header 'Cache-Control: no-cache, must-revalidate' s3://www.react-tec.com/index.html"
+  }
+}
