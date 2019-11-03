@@ -21,7 +21,10 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"build-and-deploy": "yarn run build && yarn run s3-deploy && yarn run set-cache-control && echo '🚀 Deployed!!!'",
+		"s3-deploy": "s3cmd sync build/* s3://www.react-tec.com --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --cf-invalidate-default-index",
+		"set-cache-control": "s3cmd modify --add-header 'Cache-Control: no-cache, must-revalidate' s3://www.react-tec.com/index.html"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
