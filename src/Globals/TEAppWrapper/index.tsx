@@ -1,17 +1,12 @@
 import React from 'react'
-import {
-	BrowserRouter,
-	RouteComponentProps,
-	useLocation,
-} from 'react-router-dom'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 
 import { useScrollTop } from '../../Utility/useScrollTop'
 import { TEThemeProvider, TEThemeProviderProps } from '../TEThemeContext'
 import { TEPopupProvider, TEPopupProviderProps } from '../TEPopupContext'
 interface TEAppWrapperProps
 	extends TEThemeProviderProps,
-		TEPopupProviderProps,
-		RouteComponentProps {}
+		TEPopupProviderProps {}
 
 const TEAppWrapperContent: React.FC<TEAppWrapperProps> = (props) => {
 	const { theme, globalStyles, children } = props
