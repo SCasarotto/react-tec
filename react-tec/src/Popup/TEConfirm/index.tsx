@@ -18,7 +18,7 @@ export interface TEConfirmProps extends TEPopupProps {
 	rightOnClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 	rightButtonTitle?: string
 }
-const TEConfirm: React.FC<TEConfirmProps> = (props) => {
+export const TEConfirm: React.FC<TEConfirmProps> = (props) => {
 	const {
 		title,
 		message,
@@ -56,5 +56,3 @@ TEConfirm.defaultProps = {
 	leftButtonTitle: 'Cancel',
 	rightButtonTitle: 'Confirm',
 }
-
-export default TEConfirm

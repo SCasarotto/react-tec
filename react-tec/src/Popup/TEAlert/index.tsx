@@ -9,7 +9,7 @@ export interface TEAlertProps extends TEPopupProps {
 	onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 	buttonTitle?: string
 }
-const TEAlert: React.FC<TEAlertProps> = (props) => {
+export const TEAlert: React.FC<TEAlertProps> = (props) => {
 	const {
 		title,
 		message,
@@ -31,5 +31,3 @@ const TEAlert: React.FC<TEAlertProps> = (props) => {
 		</Popup>
 	)
 }
-
-export default TEAlert

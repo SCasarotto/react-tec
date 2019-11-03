@@ -15,7 +15,7 @@ export interface TEPrivateRouteProps extends RouteProps {
 	authPath?: string
 	accessDeniedPath?: string
 }
-const TEPrivateRoute: React.FC<TEPrivateRouteProps> = (props) => {
+export const TEPrivateRoute: React.FC<TEPrivateRouteProps> = (props) => {
 	const { authChecks, component: Component, ...rest } = props
 
 	return (
@@ -47,5 +47,3 @@ const TEPrivateRoute: React.FC<TEPrivateRouteProps> = (props) => {
 		/>
 	)
 }
-
-export default TEPrivateRoute

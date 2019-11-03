@@ -16,7 +16,7 @@ export interface TELabelProps
 	ref?: any
 }
 
-const TELabel: React.FC<TELabelProps> = (props) => {
+export const TELabel: React.FC<TELabelProps> = (props) => {
 	const { children, required, className = '', ...rest } = props
 	return (
 		<Label className={`TELabel ${className}`} {...rest}>
@@ -25,5 +25,3 @@ const TELabel: React.FC<TELabelProps> = (props) => {
 		</Label>
 	)
 }
-
-export default TELabel

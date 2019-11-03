@@ -8,7 +8,7 @@ export interface TESubNavbarProps {
 	rightComponent?: React.ReactNode
 	className?: string
 }
-const TESubNavbar: React.FC<TESubNavbarProps> = (props) => {
+export const TESubNavbar: React.FC<TESubNavbarProps> = (props) => {
 	const { links, rightComponent, className = '' } = props
 
 	return (
@@ -32,5 +32,3 @@ const TESubNavbar: React.FC<TESubNavbarProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TESubNavbar

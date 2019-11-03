@@ -10,9 +10,7 @@ export interface TEButtonProps
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any
 }
-const TEButton: React.FC<TEButtonProps> = (props) => {
+export const TEButton: React.FC<TEButtonProps> = (props) => {
 	const { className = '', type = 'button', ...rest } = props
 	return <Button className={`TEButton ${className}`} type={type} {...rest} />
 }
-
-export default TEButton

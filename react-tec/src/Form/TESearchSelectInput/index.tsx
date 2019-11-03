@@ -8,7 +8,7 @@ import { PowerSelect, PowerSelectMultiple } from 'react-power-select'
 //
 
 //TODO: Return to this.
-const TESearchSelectInput: React.FC<any> = (props) => {
+export const TESearchSelectInput: React.FC<any> = (props) => {
 	const {
 		type = 'single',
 		searchEnabled = true,
@@ -46,5 +46,3 @@ const TESearchSelectInput: React.FC<any> = (props) => {
 		/>
 	)
 }
-
-export default TESearchSelectInput

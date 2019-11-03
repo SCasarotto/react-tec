@@ -11,7 +11,7 @@ export interface TEBodyContainerProps
 	ref?: any
 	sidebarWidth?: number
 }
-const TEBodyContainer: React.FC<TEBodyContainerProps> = (props) => {
+export const TEBodyContainer: React.FC<TEBodyContainerProps> = (props) => {
 	const { className = '', ...rest } = props
 	return (
 		<BodyContainer className={`TEBodyContainer ${className}`} {...rest} />
@@ -22,5 +22,3 @@ const TEBodyContainer: React.FC<TEBodyContainerProps> = (props) => {
 TEBodyContainer.defaultProps = {
 	sidebarWidth: 200,
 }
-
-export default TEBodyContainer

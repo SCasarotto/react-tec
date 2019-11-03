@@ -11,7 +11,7 @@ export interface TEInputProps
 	ref?: any
 }
 
-const TEInput: React.FC<TEInputProps> = (props) => {
+export const TEInput: React.FC<TEInputProps> = (props) => {
 	const { type = 'text', disabled = false, className = '', ...rest } = props
 	return (
 		<Input
@@ -22,5 +22,3 @@ const TEInput: React.FC<TEInputProps> = (props) => {
 		/>
 	)
 }
-
-export default TEInput

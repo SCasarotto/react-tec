@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TERow, { TERowCustomProps } from '../TERow'
-import TELabel, { TELabelCustomProps } from '../TELabel'
-import TEFileInput, { TEFileInputProps } from '../TEFileInput'
+import { TERow, TERowCustomProps } from '../TERow'
+import { TELabel, TELabelCustomProps } from '../TELabel'
+import { TEFileInput, TEFileInputProps } from '../TEFileInput'
 
 export interface TEFileRowProps
 	extends TERowCustomProps,
@@ -10,7 +10,7 @@ export interface TEFileRowProps
 		TEFileInputProps {
 	labelForKey: string
 }
-const TEFileRow: React.FC<TEFileRowProps> = (props) => {
+export const TEFileRow: React.FC<TEFileRowProps> = (props) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
@@ -33,5 +33,3 @@ const TEFileRow: React.FC<TEFileRowProps> = (props) => {
 		</TERow>
 	)
 }
-
-export default TEFileRow

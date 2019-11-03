@@ -10,7 +10,9 @@ export interface TERadioButtonInputProps
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any
 }
-const TERadioButtonInput: React.FC<TERadioButtonInputProps> = (props) => {
+export const TERadioButtonInput: React.FC<TERadioButtonInputProps> = (
+	props,
+) => {
 	const { className = '', ...rest } = props
 	return (
 		<Input
@@ -20,5 +22,3 @@ const TERadioButtonInput: React.FC<TERadioButtonInputProps> = (props) => {
 		/>
 	)
 }
-
-export default TERadioButtonInput

@@ -28,7 +28,7 @@ export interface TEFileInputProps
 	filePattern?: RegExp
 	resetKey?: string
 }
-const TEFileInput: React.FC<TEFileInputProps> = (props) => {
+export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 	const [active, setActive] = useState(false)
 	const [fileArray, setFileArray] = useState<FileList>(new FileList())
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
@@ -149,5 +149,3 @@ const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 		</Wrapper>
 	)
 }
-
-export default TEFileInput

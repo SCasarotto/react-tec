@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TERow, { TERowCustomProps } from '../TERow'
-import TELabel, { TELabelCustomProps } from '../TELabel'
-import TEInput, { TEInputProps } from '../TEInput'
+import { TERow, TERowCustomProps } from '../TERow'
+import { TELabel, TELabelCustomProps } from '../TELabel'
+import { TEInput, TEInputProps } from '../TEInput'
 
 export interface TEInputRowProps
 	extends TERowCustomProps,

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TERow, { TERowCustomProps } from '../TERow'
-import TELabel, { TELabelCustomProps } from '../TELabel'
-import TETextarea, { TETextareaProps } from '../TETextarea'
+import { TERow, TERowCustomProps } from '../TERow'
+import { TELabel, TELabelCustomProps } from '../TELabel'
+import { TETextarea, TETextareaProps } from '../TETextarea'
 
 export interface TETextareaRowProps
 	extends TERowCustomProps,
@@ -11,7 +11,7 @@ export interface TETextareaRowProps
 	labelForKey: string
 }
 
-const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
+export const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
 	const {
 		rowSize,
 		last,
@@ -48,5 +48,3 @@ const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
 		</TERow>
 	)
 }
-
-export default TETextareaRow

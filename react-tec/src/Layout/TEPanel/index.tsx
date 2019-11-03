@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TEPanelTitle, { TEPanelTitleProps } from '../TEPanelTitle'
+import { TEPanelTitle, TEPanelTitleProps } from '../TEPanelTitle'
 
 import { Container } from './styledComponents'
 
@@ -10,7 +10,7 @@ export interface TEPanelProps extends TEPanelTitleProps {
 	ref?: any
 	size?: string
 }
-const TEPanel: React.FC<TEPanelProps> = (props) => {
+export const TEPanel: React.FC<TEPanelProps> = (props) => {
 	const {
 		size = 'full',
 		className = '',
@@ -35,5 +35,3 @@ const TEPanel: React.FC<TEPanelProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TEPanel

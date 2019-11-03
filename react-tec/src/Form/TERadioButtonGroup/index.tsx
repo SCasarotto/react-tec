@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TELabel, { TELabelCustomProps } from '../TELabel'
+import { TELabel, TELabelCustomProps } from '../TELabel'
 
 import {
 	Container,
@@ -21,6 +21,7 @@ interface ManipulateRowData {
 	rowData: string | TERadioButtonData
 	labelForKey: string
 }
+//TODO: Abstract this function and test it
 const manipulateRowData = ({
 	rowData,
 	labelForKey = '',
@@ -55,7 +56,9 @@ interface TERadioButtonGroupProps
 	buttonArray: (string | TERadioButtonData)[]
 	scrolling?: boolean
 }
-const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (props) => {
+export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
+	props,
+) => {
 	const {
 		rowSize,
 		last,
@@ -115,5 +118,3 @@ const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TERadioButtonGroup

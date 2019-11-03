@@ -19,7 +19,7 @@ export interface TEPopupFormProps extends TEPopupProps {
 	onSubmitTitle?: string
 	children?: React.ReactNode
 }
-const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
+export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		const { onSubmit } = props
@@ -68,5 +68,3 @@ TEPopupForm.defaultProps = {
 	onCloseTitle: 'Cancel',
 	onSubmitTitle: 'Submit',
 }
-
-export default TEPopupForm

@@ -11,7 +11,7 @@ export interface TEDatetimeInputProps
 	placeholder?: string
 	value?: Date | null
 }
-const TEDatetimeInput: React.FC<TEDatetimeInputProps> = (props) => {
+export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = (props) => {
 	const {
 		selected,
 		value,
@@ -60,5 +60,3 @@ TEDatetimeInput.defaultProps = {
 	autoComplete: 'off',
 	// dateFormat: 'MM/DD/YYYY',
 }
-
-export default TEDatetimeInput

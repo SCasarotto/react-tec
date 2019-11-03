@@ -10,9 +10,7 @@ export interface TEFormProps
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any
 }
-const TEForm: React.FC<TEFormProps> = (props) => {
+export const TEForm: React.FC<TEFormProps> = (props) => {
 	const { className = '', ...rest } = props
 	return <Form className={`TEForm ${className}`} {...rest} />
 }
-
-export default TEForm

@@ -15,7 +15,7 @@ export interface TETitleBarProps {
 	subtitle?: string
 	rightComponent?: React.ReactNode
 }
-const TETitleBar: React.FC<TETitleBarProps> = (props) => {
+export const TETitleBar: React.FC<TETitleBarProps> = (props) => {
 	const {
 		className = '',
 		title,
@@ -47,5 +47,3 @@ const TETitleBar: React.FC<TETitleBarProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TETitleBar

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TERow, { TERowCustomProps } from '../TERow'
-import TELabel, { TELabelCustomProps } from '../TELabel'
-import TESearchSelectInput from '../TESearchSelectInput'
+import { TERow, TERowCustomProps } from '../TERow'
+import { TELabel, TELabelCustomProps } from '../TELabel'
+import { TESearchSelectInput } from '../TESearchSelectInput'
 
 // import 'react-power-select/dist/react-power-select.css'
 //NOTE:
@@ -15,7 +15,7 @@ export interface TESearchSelectRowProps
 	labelForKey: string
 	[key: string]: any
 }
-const TESearchSelectRow: React.FC<TESearchSelectRowProps> = (props) => {
+export const TESearchSelectRow: React.FC<TESearchSelectRowProps> = (props) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
@@ -38,5 +38,3 @@ const TESearchSelectRow: React.FC<TESearchSelectRowProps> = (props) => {
 		</TERow>
 	)
 }
-
-export default TESearchSelectRow

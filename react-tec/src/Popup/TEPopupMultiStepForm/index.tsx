@@ -13,7 +13,9 @@ export interface TEPopupMultiStepFormProps
 	onClose(): void
 	onSubmit(): Promise<any>
 }
-const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (props) => {
+export const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (
+	props,
+) => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		const { onSubmit } = props
@@ -38,5 +40,3 @@ const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (props) => {
 TEPopupMultiStepForm.defaultProps = {
 	visible: false,
 }
-
-export default TEPopupMultiStepForm

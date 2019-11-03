@@ -7,7 +7,7 @@ export interface TESpinnerProps {
 	outerColor?: string
 	className?: string
 }
-const TESpinner: React.FC<TESpinnerProps> = (props) => {
+export const TESpinner: React.FC<TESpinnerProps> = (props) => {
 	const renderRings = () => {
 		const { size, innerColor, outerColor } = props
 		let totalRings = 6
@@ -52,5 +52,3 @@ const TESpinner: React.FC<TESpinnerProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TESpinner

@@ -34,7 +34,7 @@ export interface TEMultiStepFormProps {
 	onSubmit(): Promise<any>
 	onStepChange?(step: number): void
 }
-const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
+export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 	const [currentStep, setCurrentStep] = useState(0)
 
 	const updateAndEmitStep = (step: number) => {
@@ -165,5 +165,3 @@ const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TEMultiStepForm

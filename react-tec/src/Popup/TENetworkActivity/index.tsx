@@ -6,7 +6,7 @@ import { TEPopupProps } from 'Popup/TEPopup'
 export interface TENetworkActivityProps extends TEPopupProps {
 	message?: string
 }
-const TENetworkActivity: React.FC<TENetworkActivityProps> = (props) => {
+export const TENetworkActivity: React.FC<TENetworkActivityProps> = (props) => {
 	const { visible, className = '', message } = props
 
 	return (
@@ -20,5 +20,3 @@ const TENetworkActivity: React.FC<TENetworkActivityProps> = (props) => {
 		</Popup>
 	)
 }
-
-export default TENetworkActivity

@@ -10,9 +10,7 @@ export interface TEPanelWrapperProps
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any
 }
-const TEPanelWrapper: React.FC<TEPanelWrapperProps> = (props) => {
+export const TEPanelWrapper: React.FC<TEPanelWrapperProps> = (props) => {
 	const { className = '', ...rest } = props
 	return <Container className={`TEPanelWrapper ${className}`} {...rest} />
 }
-
-export default TEPanelWrapper

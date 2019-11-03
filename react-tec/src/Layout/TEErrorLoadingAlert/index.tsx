@@ -9,7 +9,9 @@ export interface TEErrorLoadingAlertProps {
 	buttonTitle?: string
 	onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }
-const TEErrorLoadingAlert: React.FC<TEErrorLoadingAlertProps> = (props) => {
+export const TEErrorLoadingAlert: React.FC<TEErrorLoadingAlertProps> = (
+	props,
+) => {
 	const { className = '', title, message, onClick, buttonTitle } = props
 	return (
 		<PanelWrapper className={`TEErrorLoadingAlert ${className}`}>
@@ -33,5 +35,3 @@ const TEErrorLoadingAlert: React.FC<TEErrorLoadingAlertProps> = (props) => {
 		</PanelWrapper>
 	)
 }
-
-export default TEErrorLoadingAlert

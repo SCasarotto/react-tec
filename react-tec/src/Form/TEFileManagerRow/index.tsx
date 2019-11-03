@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import TELabel, { TELabelCustomProps } from '../TELabel'
+import { TELabel, TELabelCustomProps } from '../TELabel'
 
 import {
 	WrapperRow,
@@ -41,7 +41,7 @@ interface TEFileManagerRowProps
 	onRemove(data: TEFileManagerRowOnRemoveData): Promise<any>
 	onUpload(files: FileList): Promise<any>
 }
-const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
+export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 	const [inputKey, setInputKey] = useState<string | number>('inputKey')
 
 	const onFileChange = (fileList: FileList) => {
@@ -158,5 +158,3 @@ TEFileManagerRow.defaultProps = {
 	maxNumber: 0,
 	// multiple: false, //Not implemented for multiple so defaulting for safety
 }
-
-export default TEFileManagerRow

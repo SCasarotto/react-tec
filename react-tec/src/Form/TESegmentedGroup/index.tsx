@@ -59,7 +59,7 @@ export interface TESegmentedGroupProps
 	inline?: boolean
 	labelForKey: string
 }
-const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
+export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 	const {
 		title,
 		onChange,
@@ -126,5 +126,3 @@ const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 		</Row>
 	)
 }
-
-export default TESegmentedGroup

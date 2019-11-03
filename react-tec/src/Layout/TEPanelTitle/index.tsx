@@ -14,7 +14,7 @@ export interface TEPanelTitleProps {
 	subtitle?: string
 	rightComponent?: React.ReactNode
 }
-const TEPanelTitle: React.FC<TEPanelTitleProps> = (props) => {
+export const TEPanelTitle: React.FC<TEPanelTitleProps> = (props) => {
 	const {
 		className = '',
 		title,
@@ -42,5 +42,3 @@ const TEPanelTitle: React.FC<TEPanelTitleProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TEPanelTitle

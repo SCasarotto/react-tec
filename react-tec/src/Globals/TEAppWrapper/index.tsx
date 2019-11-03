@@ -5,7 +5,7 @@ import {
 	useLocation,
 } from 'react-router-dom'
 
-import useScrollTop from '../../Utility/useScrollTop'
+import { useScrollTop } from '../../Utility/useScrollTop'
 import { TEThemeProvider, TEThemeProviderProps } from '../TEThemeContext'
 import { TEPopupProvider, TEPopupProviderProps } from '../TEPopupContext'
 interface TEAppWrapperProps
@@ -25,12 +25,10 @@ const TEAppWrapperContent: React.FC<TEAppWrapperProps> = (props) => {
 	)
 }
 
-const TEAppWrapper: React.FC<TEAppWrapperProps> = (props) => {
+export const TEAppWrapper: React.FC<TEAppWrapperProps> = (props) => {
 	return (
 		<BrowserRouter>
 			<TEAppWrapperContent {...props} />
 		</BrowserRouter>
 	)
 }
-
-export default TEAppWrapper

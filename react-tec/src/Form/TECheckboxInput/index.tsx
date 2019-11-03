@@ -10,7 +10,7 @@ export interface TECheckboxInputProps
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any
 }
-const TECheckboxInput: React.FC<TECheckboxInputProps> = (props) => {
+export const TECheckboxInput: React.FC<TECheckboxInputProps> = (props) => {
 	const { className = '', ...rest } = props
 	return (
 		<Input
@@ -20,5 +20,3 @@ const TECheckboxInput: React.FC<TECheckboxInputProps> = (props) => {
 		/>
 	)
 }
-
-export default TECheckboxInput

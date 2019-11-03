@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react'
 
 import { TERowCustomProps } from '../TERow'
-import TELabel, { TELabelCustomProps } from '../TELabel'
+import { TELabel, TELabelCustomProps } from '../TELabel'
 import { TECheckboxInputProps } from '../TECheckboxInput'
 
 import {
@@ -57,7 +57,7 @@ interface TECheckboxGroupProps
 	buttonArray: (string | TECheckboxGroupButtonData)[]
 	scrolling?: boolean
 }
-const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
+export const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { checkedValues, onChange } = props
 		const { value } = event.target
@@ -140,5 +140,3 @@ const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 TECheckboxGroup.defaultProps = {
 	scrolling: false,
 }
-
-export default TECheckboxGroup

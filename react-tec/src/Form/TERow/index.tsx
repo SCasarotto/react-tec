@@ -15,7 +15,7 @@ export interface TERowProps
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any
 }
-const TERow: React.FC<TERowProps> = (props) => {
+export const TERow: React.FC<TERowProps> = (props) => {
 	const { rowSize = 'full', last = false, className = '', ...rest } = props
 	return (
 		<Row
@@ -26,5 +26,3 @@ const TERow: React.FC<TERowProps> = (props) => {
 		/>
 	)
 }
-
-export default TERow

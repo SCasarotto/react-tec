@@ -7,7 +7,7 @@ export interface TEPopupProps {
 	className?: string
 	children?: React.ReactNode
 }
-const TEPopup: React.FC<TEPopupProps> = (props) => {
+export const TEPopup: React.FC<TEPopupProps> = (props) => {
 	const { visible, className = '', children } = props
 
 	return (
@@ -20,5 +20,3 @@ const TEPopup: React.FC<TEPopupProps> = (props) => {
 TEPopup.defaultProps = {
 	visible: false,
 }
-
-export default TEPopup

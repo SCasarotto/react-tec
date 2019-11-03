@@ -1,10 +1,9 @@
 import React from 'react'
-import { matchPath, withRouter } from 'react-router'
-import { RouteComponentProps } from 'react-router-dom'
+import { matchPath, useLocation } from 'react-router'
 
 import { Li, Link, Title } from './styledComponents'
 
-export interface TESideNavLinkProps extends RouteComponentProps {
+export interface TESideNavLinkProps {
 	title: string
 	to: string
 	children?: React.ReactNode
@@ -12,15 +11,16 @@ export interface TESideNavLinkProps extends RouteComponentProps {
 	exact?: boolean
 	className?: string
 }
-const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
+export const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
+	const location = useLocation()
 	const {
-		location,
 		title,
 		to,
 		children,
 		activePath,
 		exact,
 		className = '',
+		...rest
 	} = props
 
 	return (
@@ -35,7 +35,8 @@ const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
 				activeClassName="active"
 				to={to}
 				exact={exact}
-				className="TESideNavLinkLink">
+				className="TESideNavLinkLink"
+				{...rest}>
 				{title && <Title className="TESideNavLinkTitle">{title}</Title>}
 				{children}
 			</Link>
@@ -46,5 +47,3 @@ const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
 TESideNavLink.defaultProps = {
 	exact: false,
 }
-
-export default withRouter(TESideNavLink)

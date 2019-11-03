@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import TESideNavLink, { TESideNavLinkProps } from '../TESideNavLink'
+import { TESideNavLink, TESideNavLinkProps } from '../TESideNavLink'
 
 import { Container, Logo, NavContainer, MainUl } from './styledComponents'
 
@@ -12,7 +12,7 @@ export interface TESideNavbarProps {
 	links?: TESideNavLinkProps[]
 	className?: string
 }
-const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
+export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 	const { sidebarWidth = 200, logo, Header, links, className = '' } = props
 	return (
 		<Container
@@ -52,5 +52,3 @@ const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 		</Container>
 	)
 }
-
-export default TESideNavbar

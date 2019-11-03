@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TERow, { TERowCustomProps } from '../TERow'
-import TELabel, { TELabelCustomProps } from '../TELabel'
-import TEDatetimeInput, { TEDatetimeInputProps } from '../TEDatetimeInput'
+import { TERow, TERowCustomProps } from '../TERow'
+import { TELabel, TELabelCustomProps } from '../TELabel'
+import { TEDatetimeInput, TEDatetimeInputProps } from '../TEDatetimeInput'
 
 export interface TEDatetimeRowProps
 	extends TERowCustomProps,
@@ -10,7 +10,7 @@ export interface TEDatetimeRowProps
 		TEDatetimeInputProps {
 	labelForKey: string
 }
-const TEDatetimeRow: React.FC<TEDatetimeRowProps> = (props) => {
+export const TEDatetimeRow: React.FC<TEDatetimeRowProps> = (props) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
@@ -33,5 +33,3 @@ const TEDatetimeRow: React.FC<TEDatetimeRowProps> = (props) => {
 		</TERow>
 	)
 }
-
-export default TEDatetimeRow
