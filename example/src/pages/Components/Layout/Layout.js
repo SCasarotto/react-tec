@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
+import { Helmet } from 'react-helmet'
+import { TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
@@ -17,57 +18,76 @@ const Layout = (props) => {
 
 	return (
 		<Fragment>
-			<TEHelmet
-				title='React TEC | Components - Layout'
-				description='React TEC is a component library used by 38th Street Studios LLC'
+			<Helmet
+				title="React TEC | Components - Layout"
+				description="React TEC is a component library used by 38th Street Studios LLC"
 			/>
 			<TEPanelWrapper wrapperHeight={80}>
-				<TEPanel title='Layout Component'>
+				<TEPanel title="Layout Component">
 					<ul>
 						<li>
-							<Link to='/components/layout/TEBodyContainer'>TEBodyContainer</Link>
+							<Link to="/components/layout/TEBodyContainer">
+								TEBodyContainer
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/layout/TEErrorLoadingAlert'>
+							<Link to="/components/layout/TEErrorLoadingAlert">
 								TEErrorLoadingAlert
 							</Link>
 						</li>
 						<li>
-							<Link to='/components/layout/TEPanel'>TEPanel</Link>
+							<Link to="/components/layout/TEPanel">TEPanel</Link>
 						</li>
 						<li>
-							<Link to='/components/layout/TEPanelTitle'>TEPanelTitle</Link>
+							<Link to="/components/layout/TEPanelTitle">
+								TEPanelTitle
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/layout/TEPanelWrapper'>TEPanelWrapper</Link>
+							<Link to="/components/layout/TEPanelWrapper">
+								TEPanelWrapper
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/layout/TESpinner'>TESpinner</Link>
+							<Link to="/components/layout/TESpinner">
+								TESpinner
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/layout/TETitleBar'>TETitleBar</Link>
+							<Link to="/components/layout/TETitleBar">
+								TETitleBar
+							</Link>
 						</li>
 					</ul>
 					<Switch>
 						<Route
-							path='/components/layout/TEBodyContainer'
+							path="/components/layout/TEBodyContainer"
 							component={TEBodyContainerSection}
 						/>
 						<Route
-							path='/components/layout/TEErrorLoadingAlert'
+							path="/components/layout/TEErrorLoadingAlert"
 							component={TEErrorLoadingAlertSection}
 						/>
-						<Route path='/components/layout/TEPanel' component={TEPanelSection} />
 						<Route
-							path='/components/layout/TEPanelTitle'
+							path="/components/layout/TEPanel"
+							component={TEPanelSection}
+						/>
+						<Route
+							path="/components/layout/TEPanelTitle"
 							component={TEPanelTitleSection}
 						/>
 						<Route
-							path='/components/layout/TEPanelWrapper'
+							path="/components/layout/TEPanelWrapper"
 							component={TEPanelWrapperSection}
 						/>
-						<Route path='/components/layout/TESpinner' component={TESpinnerSection} />
-						<Route path='/components/layout/TETitleBar' component={TETitleBarSection} />
+						<Route
+							path="/components/layout/TESpinner"
+							component={TESpinnerSection}
+						/>
+						<Route
+							path="/components/layout/TETitleBar"
+							component={TETitleBarSection}
+						/>
 					</Switch>
 				</TEPanel>
 			</TEPanelWrapper>

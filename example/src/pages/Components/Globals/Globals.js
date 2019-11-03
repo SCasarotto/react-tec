@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
+import { Helmet } from 'react-helmet'
+import { TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
@@ -13,34 +14,40 @@ const Globals = (props) => {
 
 	return (
 		<Fragment>
-			<TEHelmet
-				title='React TEC | Components - Globals'
-				description='React TEC is a component library used by 38th Street Studios LLC'
+			<Helmet
+				title="React TEC | Components - Globals"
+				description="React TEC is a component library used by 38th Street Studios LLC"
 			/>
 			<TEPanelWrapper wrapperHeight={80}>
-				<TEPanel title='Global Components'>
+				<TEPanel title="Global Components">
 					<ul>
 						<li>
-							<Link to='/components/globals/TEAppWrapper'>TEAppWrapper</Link>
+							<Link to="/components/globals/TEAppWrapper">
+								TEAppWrapper
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/globals/TEPopupContext'>TEPopupContext</Link>
+							<Link to="/components/globals/TEPopupContext">
+								TEPopupContext
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/globals/TEThemeProvider'>TEThemeProvider</Link>
+							<Link to="/components/globals/TEThemeProvider">
+								TEThemeProvider
+							</Link>
 						</li>
 					</ul>
 					<Switch>
 						<Route
-							path='/components/globals/TEAppWrapper'
+							path="/components/globals/TEAppWrapper"
 							component={TEAppWrapperSection}
 						/>
 						<Route
-							path='/components/globals/TEPopupContext'
+							path="/components/globals/TEPopupContext"
 							component={TEPopupContextSection}
 						/>
 						<Route
-							path='/components/globals/TEThemeProvider'
+							path="/components/globals/TEThemeProvider"
 							component={TEThemeProviderSection}
 						/>
 					</Switch>

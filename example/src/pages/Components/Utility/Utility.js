@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
+import { Helmet } from 'react-helmet'
+import { TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
-import TEHelmetSection from './TEHelmetSection'
 import TEScrollToTopSection from './TEScrollToTopSection'
 
 const Utility = (props) => {
@@ -12,24 +12,25 @@ const Utility = (props) => {
 
 	return (
 		<Fragment>
-			<TEHelmet
-				title='React TEC | Components - Utility'
-				description='React TEC is a component library used by 38th Street Studios LLC'
+			<Helmet
+				title="React TEC | Components - Utility"
+				description="React TEC is a component library used by 38th Street Studios LLC"
 			/>
 			<TEPanelWrapper wrapperHeight={80}>
-				<TEPanel title='Utility Component'>
+				<TEPanel title="Utility Component">
 					<ul>
 						<li>
-							<Link to='/components/utility/TEHelmet'>TEHelmet</Link>
+							<Link to="/components/utility/Helmet">Helmet</Link>
 						</li>
 						<li>
-							<Link to='/components/utility/TEScrollToTop'>TEScrollToTop</Link>
+							<Link to="/components/utility/TEScrollToTop">
+								TEScrollToTop
+							</Link>
 						</li>
 					</ul>
 					<Switch>
-						<Route path='/components/utility/TEHelmet' component={TEHelmetSection} />
 						<Route
-							path='/components/utility/TEScrollToTop'
+							path="/components/utility/TEScrollToTop"
 							component={TEScrollToTopSection}
 						/>
 					</Switch>

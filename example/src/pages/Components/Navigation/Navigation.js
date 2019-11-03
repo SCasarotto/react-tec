@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import { TEHelmet, TEPanel, TEPanelWrapper } from 'react-tec'
+import { Helmet } from 'react-helmet'
+import { TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from './../../../context/TitleBarContext'
 
@@ -14,41 +15,49 @@ const Navigation = (props) => {
 
 	return (
 		<Fragment>
-			<TEHelmet
-				title='React TEC | Components - Navigation'
-				description='React TEC is a component library used by 38th Street Studios LLC'
+			<Helmet
+				title="React TEC | Components - Navigation"
+				description="React TEC is a component library used by 38th Street Studios LLC"
 			/>
 			<TEPanelWrapper wrapperHeight={80}>
-				<TEPanel title='Navigation Components'>
+				<TEPanel title="Navigation Components">
 					<ul>
 						<li>
-							<Link to='/components/navigation/TEPrivateRoute'>TEPrivateRoute</Link>
+							<Link to="/components/navigation/TEPrivateRoute">
+								TEPrivateRoute
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/navigation/TESideNavbar'>TESideNavbar</Link>
+							<Link to="/components/navigation/TESideNavbar">
+								TESideNavbar
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/navigation/TESideNavLink'>TESideNavLink</Link>
+							<Link to="/components/navigation/TESideNavLink">
+								TESideNavLink
+							</Link>
 						</li>
 						<li>
-							<Link to='/components/navigation/TESubNavbar'>TESubNavbar</Link>
+							<Link to="/components/navigation/TESubNavbar">
+								TESubNavbar
+							</Link>
 						</li>
 					</ul>
 					<Switch>
 						<Route
-							path='/components/navigation/TEPrivateRoute'
+							path="/components/navigation/TEPrivateRoute"
 							component={TEPrivateRouteSection}
 						/>
 						<Route
-							path='/components/navigation/TESideNavbar'
+							path="/components/navigation/TESideNavbar"
 							component={TESideNavbarSection}
 						/>
 						<Route
-							path='/components/navigation/TESideNavLink'
+							path="/components/navigation/TESideNavLink"
 							component={TESideNavLinkSection}
 						/>
 						<Route
-							path='/components/navigation/TESubNavbar'
+							path="/components/navigation/TESubNavbar"
 							component={TESubNavbarSection}
 						/>
 					</Switch>

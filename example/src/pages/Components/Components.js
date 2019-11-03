@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
-import { TEHelmet, TESubNavbar, TEPanelWrapper, TEPanel } from 'react-tec'
+import { Helmet } from 'react-helmet'
+import { TESubNavbar, TEPanelWrapper, TEPanel } from 'react-tec'
 
 import { useBarTitle } from './../../context/TitleBarContext'
 
@@ -18,34 +19,37 @@ const Base = () => {
 			<TEPanel>
 				<h1>React TEC Components</h1>
 				<p>
-					The components documentation is broken down into different components types to
-					make it a bit easier to traverse.
+					The components documentation is broken down into different
+					components types to make it a bit easier to traverse.
 				</p>
 				<ul>
 					<li>
-						<Link to="/components/globals">Globals</Link> - App wrappers of some global
-						contexts (navigation, popups, overlays, etc.)
+						<Link to="/components/globals">Globals</Link> - App
+						wrappers of some global contexts (navigation, popups,
+						overlays, etc.)
 					</li>
 					<li>
-						<Link to="/components/layout">Layout</Link> - Page layout components (page
-						wrapper, side bar, title bar, etc.)
+						<Link to="/components/layout">Layout</Link> - Page
+						layout components (page wrapper, side bar, title bar,
+						etc.)
 					</li>
 					<li>
-						<Link to="/components/navigation">Navigation</Link> - Navigational
-						components (links, navbar, sidenav, etc.)
+						<Link to="/components/navigation">Navigation</Link> -
+						Navigational components (links, navbar, sidenav, etc.)
 					</li>
 					<li>
-						<Link to="/components/form">Form</Link> - Form inputs of all shapes and
-						sizes (Largest of all component types)
+						<Link to="/components/form">Form</Link> - Form inputs of
+						all shapes and sizes (Largest of all component types)
 					</li>
 					<li>
-						<Link to="/components/popup">Popup</Link> - Simple popup (modal) components
-						(network activity, alert, confirm, etc.)
+						<Link to="/components/popup">Popup</Link> - Simple popup
+						(modal) components (network activity, alert, confirm,
+						etc.)
 					</li>
 					<li>
-						<Link to="/components/utility">Utility</Link> - Misc components used for
-						some functionality but having no visual impact (Will likely be replaced by
-						hooks)
+						<Link to="/components/utility">Utility</Link> - Misc
+						components used for some functionality but having no
+						visual impact (Will likely be replaced by hooks)
 					</li>
 				</ul>
 			</TEPanel>
@@ -56,7 +60,7 @@ const Base = () => {
 const Components = (props) => {
 	return (
 		<Fragment>
-			<TEHelmet
+			<Helmet
 				title="React TEC | Components"
 				description="React TEC is a component library used by 38th Street Studios LLC"
 			/>
