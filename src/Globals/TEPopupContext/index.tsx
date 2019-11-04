@@ -125,20 +125,20 @@ export interface useTEPopupsFunctions {
 	showNetworkActivity: showNetworkActivity
 	hideNetworkActivity: hideNetworkActivity
 }
-type showAlert = (d: showAlertData) => void
+export type showAlert = (d: showAlertData) => void
 
 //hideAlert ✅
-type hideAlert = () => void
-type showConfirm = (d: showConfirmData) => void
+export type hideAlert = () => void
+export type showConfirm = (d: showConfirmData) => void
 
 //hideConfirm ✅
-type hideConfirm = () => void
+export type hideConfirm = () => void
 
 //showNetworkActivity ✅
-type showNetworkActivity = (message: string) => void
+export type showNetworkActivity = (message: string) => void
 
 //hideNetworkActivity ✅
-type hideNetworkActivity = () => void
+export type hideNetworkActivity = () => void
 export const useTEPopups = (): useTEPopupsFunctions => {
 	const { dispatch } = useContext(TEPopupContext)
 
