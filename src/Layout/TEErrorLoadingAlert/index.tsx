@@ -4,8 +4,8 @@ import { PanelWrapper, Panel, Title, Message, Button } from './styledComponents'
 
 export interface TEErrorLoadingAlertProps {
 	className?: string
-	title?: string
-	message?: string
+	title?: React.ReactNode
+	message?: React.ReactNode
 	buttonTitle?: string
 	onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }

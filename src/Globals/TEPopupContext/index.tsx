@@ -116,29 +116,14 @@ export interface showConfirmData {
 	rightOnClick(): void
 	rightTitle: string
 }
-export type showNetworkActivityMessage = string
 export interface useTEPopupsFunctions {
-	showAlert: showAlert
-	hideAlert: hideAlert
-	showConfirm: showConfirm
-	hideConfirm: hideConfirm
-	showNetworkActivity: showNetworkActivity
-	hideNetworkActivity: hideNetworkActivity
+	showAlert(d: showAlertData): any
+	hideAlert(): any
+	showConfirm(d: showConfirmData): any
+	hideConfirm(): any
+	showNetworkActivity(message: string): any
+	hideNetworkActivity(): any
 }
-export type showAlert = (d: showAlertData) => void
-
-//hideAlert ✅
-export type hideAlert = () => void
-export type showConfirm = (d: showConfirmData) => void
-
-//hideConfirm ✅
-export type hideConfirm = () => void
-
-//showNetworkActivity ✅
-export type showNetworkActivity = (message: string) => void
-
-//hideNetworkActivity ✅
-export type hideNetworkActivity = () => void
 export const useTEPopups = (): useTEPopupsFunctions => {
 	const { dispatch } = useContext(TEPopupContext)
 
@@ -183,7 +168,7 @@ export const useTEPopups = (): useTEPopupsFunctions => {
 		})
 	const hideConfirm = () => dispatch({ type: 'hide_confirm' })
 
-	const showNetworkActivity = (message: showNetworkActivityMessage) =>
+	const showNetworkActivity = (message: string) =>
 		dispatch({
 			type: 'show_network_activity',
 			payload: message,
