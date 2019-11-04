@@ -45,7 +45,7 @@ export const ClearImageButtonIcon = styled(FaRegWindowClose)`
 	display: block;
 	font-size: 14px;
 `
-export const Label = styled.label`
+export const Label = styled.label<{ disabled?: boolean }>`
 	position: relative;
 	display: flex;
 	align-items: center;

@@ -11,40 +11,12 @@ import {
 } from './styledComponents'
 import { TERowCustomProps } from 'Form/TERow'
 import { TERadioButtonInputProps } from 'Form/TERadioButtonInput'
+import { manipulateRowData } from './../../helpers'
 
 interface TERadioButtonData {
 	label: string
 	value?: string
 	key?: string
-}
-interface ManipulateRowData {
-	rowData: string | TERadioButtonData
-	labelForKey: string
-}
-//TODO: Abstract this function and test it
-const manipulateRowData = ({
-	rowData,
-	labelForKey = '',
-}: ManipulateRowData) => {
-	//Allowing For Greater Shorthand
-	if (typeof rowData === 'string') {
-		const label = rowData
-		const value = rowData
-		const key = labelForKey + rowData
-		return { label, value, key }
-	} else if (typeof rowData === 'object') {
-		let { label, value, key } = rowData
-
-		if (!value) {
-			value = label
-		}
-		if (!key) {
-			key = labelForKey + label
-		}
-
-		return { label, value, key }
-	}
-	return rowData
 }
 interface TERadioButtonGroupProps
 	extends TERowCustomProps,

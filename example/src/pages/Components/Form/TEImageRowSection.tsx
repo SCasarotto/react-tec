@@ -65,25 +65,25 @@ export const TEImageRowSection = () => {
 							'Passed to the required HTML disabled as well as used to adjust styles.',
 					},
 					{
-						prop: 'imgSrc',
+						prop: 'imgSrcArray',
 						type: 'object',
 						note:
-							'Object of data about all the images to be managed. The at the first level of the object, it should container a number of key that act as UIDs of the data ({ uid1: {DATA}, uid2: {DATA}, ...}). This object is mapped to an array inside the component. Note: This was built to work well directly with Firebase real-time database and thus might shift over time to be more generalized. See the following props for what this object should contain.',
+							'Arrat of data about all the images to be managed. Note: This was built to work well directly with Firebase real-time database and thus might shift over time to be more generalized. See the following props for what this object should contain.',
 					},
 					{
 						prop: 'imgSrc.uid',
 						type: 'string',
 						note:
-							'A unique key used for iterating over as well as is passed into the onRemove prop. Note: This is mapped into the data during the mapping step. You do not need to pass this in each object.',
+							'A unique key used for iterating over as well as is passed into the onRemove prop.',
 					},
 					{
-						prop: 'imgSrc.uid.src',
+						prop: 'imgSrc.src',
 						type: 'string',
 						note:
 							'This should be the URL of where the image is located. This is used for downloading.',
 					},
 					{
-						prop: 'imgSrc.uid.path',
+						prop: 'imgSrc.path',
 						type: 'string',
 						note:
 							'This is passed to the onRemove function and can be used to provide information about where the image is stored.',

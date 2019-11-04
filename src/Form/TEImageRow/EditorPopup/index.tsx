@@ -17,7 +17,8 @@ import {
 	RedoRotationIcon,
 } from './styledComponents'
 
-export const TEImageUpload = (props) => {
+//TODO: Improve this
+export const EditorPopup: React.FC<any> = (props) => {
 	const [editorScale, setEditorScale] = useState(1.1)
 	const [rotation, setRotation] = useState(0)
 	const editor = useRef(null)
@@ -37,7 +38,7 @@ export const TEImageUpload = (props) => {
 			visible={visible}
 			onSubmit={() => onSubmit(editor.current)}
 			onClose={onCancel}
-			onCancelTitle="Cancel"
+			onCloseTitle="Cancel"
 			onSubmitTitle={onSubmitTitle}
 			className={`TEEditorPopup ${className}`}>
 			<Container className="TEImageRowPopupContainer">
@@ -95,6 +96,6 @@ export const TEImageUpload = (props) => {
 	)
 }
 
-TEImageUpload.defaultProps = {
+EditorPopup.defaultProps = {
 	onSubmitTitle: 'Submit',
 }

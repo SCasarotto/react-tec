@@ -11,44 +11,12 @@ import {
 import { TERowCustomProps } from 'Form/TERow'
 import { TELabelCustomProps } from 'Form/TELabel'
 import { TERadioButtonInputProps } from 'Form/TERadioButtonInput'
+import { manipulateRowData } from './../../helpers'
 
-interface TERadioButtonData {
+interface TESegmentedGroupButtonData {
 	label: string
 	value?: string
 	key?: string
-}
-interface ManipulateRowData {
-	rowData: string | TERadioButtonData
-	labelForKey: string
-}
-const manipulateRowData = ({
-	rowData,
-	labelForKey = '',
-}: ManipulateRowData) => {
-	//Allowing For Greater Shorthand
-	if (typeof rowData === 'string') {
-		const label = rowData
-		const value = rowData
-		const key = labelForKey + rowData
-		return { label, value, key }
-	} else if (typeof rowData === 'object') {
-		let { label, value, key } = rowData
-
-		if (!value) {
-			value = label
-		}
-		if (!key) {
-			key = labelForKey + label
-		}
-
-		return { label, value, key }
-	}
-	return rowData
-}
-interface TESegmentedGroupButtonData {
-	label: string
-	value: string
-	key: string
 }
 export interface TESegmentedGroupProps
 	extends TERowCustomProps,

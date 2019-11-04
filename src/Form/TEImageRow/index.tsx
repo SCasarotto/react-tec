@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, ChangeEvent } from 'react'
 
-import { TERow } from '../TERow'
-import { TELabel } from '../TELabel'
+import { TERow, TERowCustomProps } from '../TERow'
+import { TELabel, TELabelCustomProps } from '../TELabel'
+import { TEFileInputProps } from 'Form/TEFileInput'
 import { EditorPopup } from './EditorPopup'
 
 import {
@@ -16,14 +17,40 @@ import {
 	ErrorMessage,
 } from './styledComponents'
 
-//TODO: Return to better type thisÍ
-const TEImageRow: React.FC<any> = (props) => {
+interface TEImageRowSrcObject {
+	uid: string
+	src: string
+	// filename: string
+	// fileEnding: string
+	path: string
+}
+interface TEImageRowOnRemoveData {
+	uid: string
+	path: string
+	index: number
+}
+export interface TEImageRowProps
+	extends TERowCustomProps,
+		TELabelCustomProps,
+		TEFileInputProps {
+	labelForKey: string
+	imgSrcArray: TEImageRowSrcObject[]
+	maxNumber: number
+	filePattern?: RegExp
+	// multiple?: false
+	avatarEditorData: any
+	onRemove(data: TEImageRowOnRemoveData): Promise<any>
+	onUpload({ file, editor }: { file?: File; editor: any }): Promise<any>
+}
+const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 	const [editorVisible, setEditorVisible] = useState(false)
-	const [file, setFile] = useState(undefined)
+	const [file, setFile] = useState<File | undefined>(undefined)
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
-	const [inputKey, setInputKey] = useState(props.resetKey || 'inputKey')
+	const [inputKey, setInputKey] = useState<string | number>(
+		props.resetKey || 'inputKey',
+	)
 
-	const handleClearImage = (data) => {
+	const handleClearImage = (data: TEImageRowOnRemoveData) => {
 		props.onRemove(data)
 	}
 	const handleCancelEditor = () => {
@@ -31,30 +58,27 @@ const TEImageRow: React.FC<any> = (props) => {
 		setFile(undefined)
 		setInputKey(new Date().getTime())
 	}
-	const handleEditorSubmit = (editor) => {
-		//TODO: Test if loading this from above will cause errors
-		// const { file } = this.state
-		const { onUpload } = props
+	const handleEditorSubmit = async (editor: any) => {
+		try {
+			const { onUpload } = props
 
-		const data = { file, editor }
-		onUpload(data)
-			.then(() => {
-				setEditorVisible(false)
-				setErrorData({ error: false, message: '' })
-				setFile(undefined)
-				setInputKey(new Date().getTime())
-			})
-			.catch((error) => {
-				console.log(error)
-				setEditorVisible(false)
-				setErrorData({ error: false, message: '' })
-				setFile(undefined)
-				setInputKey(new Date().getTime())
-			})
+			const data = { file, editor }
+			await onUpload(data)
+			setEditorVisible(false)
+			setErrorData({ error: false, message: '' })
+			setFile(undefined)
+			setInputKey(new Date().getTime())
+		} catch (e) {
+			console.log(e)
+			setEditorVisible(false)
+			setErrorData({ error: false, message: '' })
+			setFile(undefined)
+			setInputKey(new Date().getTime())
+		}
 	}
 
-	const onFileChange = (e) => {
-		const { pattern } = props
+	const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const { filePattern } = props
 		const { files } = e.target
 
 		if (!files) {
@@ -65,8 +89,8 @@ const TEImageRow: React.FC<any> = (props) => {
 		const file = files[0]
 
 		//Validate Files
-		if (pattern && pattern instanceof RegExp) {
-			if (!file.type.match(pattern)) {
+		if (filePattern && filePattern instanceof RegExp) {
+			if (!file.type.match(filePattern)) {
 				console.warn('The selected file is not an image.')
 				setErrorData({
 					error: true,
@@ -84,10 +108,10 @@ const TEImageRow: React.FC<any> = (props) => {
 
 	const {
 		className = '',
-		size,
+		rowSize,
 		last,
 		title,
-		imgSrc,
+		imgSrcArray,
 		maxNumber,
 		accept,
 		disabled,
@@ -96,20 +120,16 @@ const TEImageRow: React.FC<any> = (props) => {
 		avatarEditorData,
 	} = props
 
-	const imgSrcArray = []
-	if (imgSrc) {
-		for (const uid in imgSrc) {
-			imgSrcArray.push({ ...imgSrc[uid], uid })
-		}
-	}
-
 	let labelText = title
 	if (maxNumber > 1 && imgSrcArray) {
 		labelText = `${title} (${imgSrcArray.length}/${maxNumber})`
 	}
 
 	return (
-		<TERow size={size} last={last} className={`TEImageRow ${className}`}>
+		<TERow
+			rowSize={rowSize}
+			last={last}
+			className={`TEImageRow ${className}`}>
 			<TELabel
 				htmlFor={labelForKey}
 				required={required}
@@ -119,7 +139,7 @@ const TEImageRow: React.FC<any> = (props) => {
 			</TELabel>
 			<ImageRowWrapper className="TEImageRowWrapper">
 				{imgSrcArray &&
-					imgSrcArray.map((imgSrcData) => {
+					imgSrcArray.map((imgSrcData, index) => {
 						const { src, uid, path } = imgSrcData
 						return (
 							<ImageWrapper
@@ -137,7 +157,7 @@ const TEImageRow: React.FC<any> = (props) => {
 								</a>
 								<ClearImageButton
 									onClick={() =>
-										handleClearImage({ uid, path })
+										handleClearImage({ uid, path, index })
 									}
 									className="TEImageRowClearButton">
 									<ClearImageButtonIcon className="TEImageRowClearIcon" />
@@ -181,6 +201,6 @@ const TEImageRow: React.FC<any> = (props) => {
 
 TEImageRow.defaultProps = {
 	accept: 'image/*',
-	pattern: /image-*/,
+	filePattern: /image-*/,
 	maxNumber: 0,
 }

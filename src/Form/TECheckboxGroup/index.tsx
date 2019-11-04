@@ -3,6 +3,7 @@ import React, { ChangeEvent } from 'react'
 import { TERowCustomProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
 import { TECheckboxInputProps } from '../TECheckboxInput'
+import { manipulateRowData } from './../../helpers'
 
 import {
 	Container,
@@ -16,34 +17,6 @@ interface TECheckboxGroupButtonData {
 	label: string
 	value?: string
 	key?: string
-}
-interface ManipulateRowData {
-	rowData: string | TECheckboxGroupButtonData
-	labelForKey: string
-}
-const manipulateRowData = ({
-	rowData,
-	labelForKey = '',
-}: ManipulateRowData) => {
-	//Allowing For Greater Shorthand
-	if (typeof rowData === 'string') {
-		const label = rowData
-		const value = rowData
-		const key = labelForKey + rowData
-		return { label, value, key }
-	} else if (typeof rowData === 'object') {
-		let { label, value, key } = rowData
-
-		if (!value) {
-			value = label
-		}
-		if (!key) {
-			key = labelForKey + label
-		}
-
-		return { label, value, key }
-	}
-	return rowData
 }
 
 interface TECheckboxGroupProps
