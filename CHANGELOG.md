@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## 0.2.0 - 11-3-2019
 
+This update is a complete rewrite of react-tec. Moving from [Create React Library](https://github.com/transitive-bullshit/create-react-library#readme) to [tsdx](https://github.com/jaredpalmer/tsdx). This means the lirbary is written in typescript and thus keeps the type definitions up to date. In this transition some things were refines and others bugs were fixed. This shift will result in a more maintainable library using up to date libraries. Please see the mentionable changes below.
+
 ### BREAKING CHANGES
 
 -   `TERow` prop `size` has been changed to `rowSize`. Thus all "Row"s (Ex. `TEInputRow`) and "Groups" (Ex. `TECheckboxGroup`) now use `rowSize` instead of `row`.
