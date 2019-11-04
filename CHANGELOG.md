@@ -18,6 +18,7 @@ This update is a complete rewrite of react-tec. Moving from [Create React Librar
 -   `TEPrivateRoute` no longer accepts `isAuthenticated`, `hasPermissions`, `authPath`, `accessDeniedPath` instead it accepts an array `authChecks` containing `check` function and `path` string. This allow for full generalization of as many layers of checks required.
 -   `TEHelmet` is no longer apart of this package. This was entirely a passthrough component and was unnessisary. Use react-helmet from now on.
 -   Replaced `TEScrollToTop` with a utility hook `useScrollTop`.
+-   `TEImageRow` `imgSrc` prop is not `imgSrcArray` just like `TEFileManagerRow`
 
 ### Added
 
