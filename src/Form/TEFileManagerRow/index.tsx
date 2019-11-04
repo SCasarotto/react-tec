@@ -35,7 +35,7 @@ interface TEFileManagerRowProps
 		TEInputProps {
 	labelForKey: string
 	fileSrcArray: TEFileManagerRowSrcObject[]
-	maxNumber: number
+	maxNumber?: number
 	filePattern?: RegExp
 	// multiple?: false
 	onRemove(data: TEFileManagerRowOnRemoveData): Promise<any>
@@ -62,7 +62,7 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 		className = '',
 		title,
 		fileSrcArray,
-		maxNumber,
+		maxNumber = 0,
 		accept,
 		filePattern,
 		disabled,
@@ -155,6 +155,5 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 TEFileManagerRow.defaultProps = {
 	accept: '.',
 	filePattern: /./,
-	maxNumber: 0,
 	// multiple: false, //Not implemented for multiple so defaulting for safety
 }

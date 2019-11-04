@@ -35,14 +35,14 @@ export interface TEImageRowProps
 		TEFileInputProps {
 	labelForKey: string
 	imgSrcArray: TEImageRowSrcObject[]
-	maxNumber: number
+	maxNumber?: number
 	filePattern?: RegExp
 	// multiple?: false
-	avatarEditorData: any
+	avatarEditorData?: any
 	onRemove(data: TEImageRowOnRemoveData): Promise<any>
 	onUpload({ file, editor }: { file?: File; editor: any }): Promise<any>
 }
-const TEImageRow: React.FC<TEImageRowProps> = (props) => {
+export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 	const [editorVisible, setEditorVisible] = useState(false)
 	const [file, setFile] = useState<File | undefined>(undefined)
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
@@ -112,7 +112,7 @@ const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 		last,
 		title,
 		imgSrcArray,
-		maxNumber,
+		maxNumber = 0,
 		accept,
 		disabled,
 		required,
@@ -202,5 +202,4 @@ const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 TEImageRow.defaultProps = {
 	accept: 'image/*',
 	filePattern: /image-*/,
-	maxNumber: 0,
 }
