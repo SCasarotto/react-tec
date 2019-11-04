@@ -5,7 +5,7 @@ import { TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from '../../../context/TitleBarContext'
 
-import { TEScrollToTopSection } from './TEScrollToTopSection'
+import { useScrollTopSection } from './useScrollTopSection'
 
 export const Utility = () => {
 	useBarTitle('Components - Utility')
@@ -23,15 +23,15 @@ export const Utility = () => {
 				<TEPanel title="Utility Component">
 					<ul>
 						<li>
-							<Link to="/components/utility/TEScrollToTop">
-								TEScrollToTop
+							<Link to="/components/utility/useScrollTop">
+								useScrollTop
 							</Link>
 						</li>
 					</ul>
 					<Switch>
 						<Route
-							path="/components/utility/TEScrollToTop"
-							component={TEScrollToTopSection}
+							path="/components/utility/useScrollTop"
+							component={useScrollTopSection}
 						/>
 					</Switch>
 				</TEPanel>

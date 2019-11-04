@@ -14,19 +14,12 @@ export const TEInputRowSection = () => {
 			/>
 			<p>
 				A component containing a <Code>TERow</Code>, a{' '}
-				<Code>TELabel</Code> and either a <Code>TEInput</Code> or a{' '}
-				<Code>TETextarea</Code>. In addition to the props below,
-				reference all props for <Code>TEInput</Code> or{' '}
-				<Code>TETextarea</Code>.
+				<Code>TELabel</Code> and either a <Code>TEInput</Code>. In
+				addition to the props below, reference all props for{' '}
+				<Code>TEInput</Code>.
 			</p>
 			<PropsTable
 				propArray={[
-					{
-						prop: 'type',
-						type: 'string',
-						note:
-							'Normally passed directly to the TEInput except for when it is "textarea". In that case a TETextarea is used.',
-					},
 					{
 						prop: 'title',
 						type: 'string',
@@ -39,7 +32,7 @@ export const TEInputRowSection = () => {
 							'String used to pair the TELabel to the TEDatetimeInput',
 					},
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note: 'Passed to the wrapping TERow',
 					},

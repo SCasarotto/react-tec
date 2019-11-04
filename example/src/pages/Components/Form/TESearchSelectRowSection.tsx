@@ -31,7 +31,7 @@ export const TESearchSelectRowSection = () => {
 							'String used to pair the TELabel to the TESearchSelectInput',
 					},
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note: 'Passed to the wrapping TERow',
 					},

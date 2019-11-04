@@ -5,17 +5,18 @@ import { Code } from '../../../components/Code'
 import { ComponentSection } from '../../../components/ComponentSection'
 import { PropsTable } from '../../../components/PropsTable'
 
-export const TEDatetimeRowSection = () => {
+export const TETextareaRowSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TEDatetimeRow"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEDatetimeRow/TEDatetimeRow.js"
+				title="TETextareaRow"
+				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEInputRow/TEInputRow.js"
 			/>
 			<p>
-				A form row with title and <Code>TEDatetimeInput</Code>. In
-				additiona to the props below, reference all props for{' '}
-				<Code>TEDatetimeInput</Code>.
+				A component containing a <Code>TERow</Code>, a{' '}
+				<Code>TELabel</Code> and either a <Code>TETextarea</Code>. In
+				addition to the props below, reference all props for{' '}
+				<Code>TETextarea</Code>.
 			</p>
 			<PropsTable
 				propArray={[
@@ -55,8 +56,8 @@ export const TEDatetimeRowSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/smhx9?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TEDatetimeRow"
+				src="https://codesandbox.io/embed/reacttec-teinputrow-iiojb?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
+				title="TETextareaRow"
 				style={{
 					width: '100%',
 					height: 500,

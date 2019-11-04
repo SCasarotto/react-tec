@@ -4,7 +4,7 @@ import { ComponentTitle } from '../../../components/ComponentTitle'
 import { Code } from '../../../components/Code'
 import { ComponentSection } from '../../../components/ComponentSection'
 
-export const TEScrollToTopSection = () => {
+export const useScrollTopSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle

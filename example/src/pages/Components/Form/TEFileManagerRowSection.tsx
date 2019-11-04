@@ -36,7 +36,7 @@ export const TEFileManagerRowSection = () => {
 							'String used to pair the TELabel to the TEFileInput',
 					},
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note: 'Passed to the wrapping TERow',
 					},

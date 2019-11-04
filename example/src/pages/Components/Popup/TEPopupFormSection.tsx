@@ -45,6 +45,11 @@ export const TEPopupFormSection = () => {
 						type: 'string',
 						note: 'Sets the right button title. Default: "Submit"',
 					},
+					{
+						prop: 'formName',
+						type: 'string',
+						note: 'A string to link the submit button to the from.',
+					},
 				]}
 			/>
 			<iframe

@@ -19,7 +19,7 @@ export const TESpinnerSection = () => {
 			<PropsTable
 				propArray={[
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note:
 							'Defines the size and number of rings of the spinner. Options: ["small", "medium", "large"] Default: "medium"',

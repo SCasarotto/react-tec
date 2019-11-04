@@ -20,7 +20,7 @@ export const TERowSection = () => {
 			<PropsTable
 				propArray={[
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note:
 							'Defines the width of the row. Options: ["full", "half", "two-third", "third". "forth", "condensed"]',

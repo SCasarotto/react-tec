@@ -25,6 +25,7 @@ import { TERowSection } from './TERowSection'
 import { TESearchSelectInputSection } from './TESearchSelectInputSection'
 import { TESearchSelectRowSection } from './TESearchSelectRowSection'
 import { TESegmentedGroupSection } from './TESegmentedGroupSection'
+import { TETextareaRowSection } from './TETextareaRowSection'
 import { TETextareaSection } from './TETextareaSection'
 
 export const Form = () => {
@@ -133,6 +134,11 @@ export const Form = () => {
 							</Link>
 						</li>
 						<li>
+							<Link to="/components/form/TETextareaRow">
+								TETextareaRow
+							</Link>
+						</li>
+						<li>
 							<Link to="/components/form/TETextarea">
 								TETextarea
 							</Link>
@@ -218,6 +224,10 @@ export const Form = () => {
 						<Route
 							path="/components/form/TESegmentedGroup"
 							component={TESegmentedGroupSection}
+						/>
+						<Route
+							path="/components/form/TETextareaRow"
+							component={TETextareaRowSection}
 						/>
 						<Route
 							path="/components/form/TETextarea"

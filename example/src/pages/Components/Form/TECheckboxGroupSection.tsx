@@ -64,7 +64,7 @@ export const TECheckboxGroupSection = () => {
 							'Unique string used to pair the label and checkbox.',
 					},
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note: 'Passed to the wrapping TERow',
 					},
@@ -86,7 +86,7 @@ export const TECheckboxGroupSection = () => {
 							'Passed to the required HTML disabled as well as used to adjust styles.',
 					},
 					{
-						prop: 'rowSize',
+						prop: 'inputRowSize',
 						type: 'string',
 						note:
 							'Passed to each TERow that is wrapping each checkbox and label.',

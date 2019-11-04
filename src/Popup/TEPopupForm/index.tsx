@@ -34,6 +34,7 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 		onSubmitTitle,
 		className = '',
 		children,
+		...rest
 	} = props
 
 	return (
@@ -41,7 +42,8 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 			<TEForm
 				onSubmit={handleSubmit}
 				className="TEPopupFormForm"
-				name={formName}>
+				id={formName}
+				{...rest}>
 				<FormContent className="TEPopupFormContent">
 					{children}
 				</FormContent>

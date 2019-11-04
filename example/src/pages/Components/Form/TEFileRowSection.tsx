@@ -31,7 +31,7 @@ export const TEFileRowSection = () => {
 							'String used to pair the TELabel to the TEDatetimeInput',
 					},
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note: 'Passed to the wrapping TERow',
 					},

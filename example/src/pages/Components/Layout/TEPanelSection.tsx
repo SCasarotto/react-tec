@@ -21,7 +21,7 @@ export const TEPanelSection = () => {
 			<PropsTable
 				propArray={[
 					{
-						prop: 'size',
+						prop: 'rowSize',
 						type: 'string',
 						note:
 							'Used to place multiple panels in a row. Options: ["full", "three-quarter", two-third", "half", "third", "quarter", "condensed"]',

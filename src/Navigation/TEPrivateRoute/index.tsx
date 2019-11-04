@@ -12,8 +12,6 @@ interface TEPrivateRouteAuthCheck {
 }
 export interface TEPrivateRouteProps extends RouteProps {
 	authChecks?: TEPrivateRouteAuthCheck[]
-	authPath?: string
-	accessDeniedPath?: string
 }
 export const TEPrivateRoute: React.FC<TEPrivateRouteProps> = (props) => {
 	const { authChecks, component: Component, ...rest } = props

@@ -29,28 +29,22 @@ export const TEPrivateRouteSection = () => {
 			<PropsTable
 				propArray={[
 					{
-						prop: 'isAuthenticated',
+						prop: 'authChecks',
+						type: 'array',
+						note:
+							'An array of objects to do parmission checking with. See props below',
+					},
+					{
+						prop: 'check',
 						type: 'function',
 						note:
-							'A function that returns a bool describing whether the user is authenticated. If false, the user will be redirected to the "authPath". The path the user was redirected from will be included in the state under "fromPath".',
+							'This is a function that is passed the react-router props from the route component as an arguement and must return a boolean. If false the users will be redirected to the corresponding path.',
 					},
 					{
-						prop: 'hasPermissions',
-						type: 'function',
-						note:
-							'A function that returns a bool describing whether the user has appropriate permissions. This is used when a user is signed in but they try to navigate to a page they do not have appropriate permissions for. If false, the user will be redirected to the "accessDeniedPath".  The path the user was redirected from will be included in the state under "fromPath".',
-					},
-					{
-						prop: 'authPath',
+						prop: 'path',
 						type: 'string',
 						note:
-							'path to redirect the user to when "isAuthenticated" returns false. Default: "/signin"',
-					},
-					{
-						prop: 'accessDeniedPath',
-						type: 'string',
-						note:
-							'path to redirect the user to when "hasPermissions" returns false. Default: "/403"',
+							'The path the user is redirected to if the check function returns false',
 					},
 				]}
 			/>

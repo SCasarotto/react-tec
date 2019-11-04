@@ -28,6 +28,7 @@ export interface TEMultiStepFormStepData {
 }
 export interface TEMultiStepFormProps {
 	className?: string
+	formName?: string
 	handleCancelOnClick?(): void
 	stepData: TEMultiStepFormStepData[]
 	roundedButtons: boolean
@@ -105,6 +106,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 
 	const {
 		className = '',
+		formName,
 		handleCancelOnClick,
 		stepData,
 		// roundedButtons,
@@ -140,7 +142,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 					)
 				})}
 			</StepContainer>
-			<Form className="TEMultiStepFormForm">
+			<Form className="TEMultiStepFormForm" id={formName}>
 				{stepData[currentStep] && stepData[currentStep].component}
 			</Form>
 			<ButtonContainer className="TEMultiStepFormButtonContainer">
@@ -158,7 +160,8 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 					// position="right"
 					// rounded={roundedButtons}
 					// singleButton={!handleCancelOnClick && currentStep === 0}
-					className="TEMultiStepFormStepButton TEMultiStepFormStepButtonright">
+					className="TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
+					form={formName}>
 					{currentStep + 1 === stepData.length ? 'submit' : 'next'}
 				</StepButton>
 			</ButtonContainer>
