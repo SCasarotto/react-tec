@@ -2832,6 +2832,13 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hook@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/hook/-/hook-0.0.5.tgz#bca87347a964efada87a96557372be24d46fa59a"
+  integrity sha1-vKhzR6lk762oepZVc3K+JNRvpZo=
+  dependencies:
+    mochiscript ">=0.4.3"
+
 hosted-git-info@^2.1.4:
   version "2.8.5"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.5.tgz#759cfcf2c4d156ade59b0b2dfabddc42a6b9c70c"
@@ -4027,6 +4034,13 @@ mkdirp@0.x, mkdirp@^0.5.0, mkdirp@^0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mochiscript@>=0.4.3:
+  version "0.6.16"
+  resolved "https://registry.yarnpkg.com/mochiscript/-/mochiscript-0.6.16.tgz#2585d67bd4578ad2544053ecbb2791654bedbc34"
+  integrity sha1-JYXWe9RXitJUQFPsuyeRZUvtvDQ=
+  dependencies:
+    watch "0.5.1"
 
 mri@^1.1.0:
   version "1.1.4"
@@ -6103,6 +6117,11 @@ warning@^4.0.2, warning@^4.0.3:
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
+
+watch@0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/watch/-/watch-0.5.1.tgz#50ea3a056358c98073e0bca59956de4afd20b213"
+  integrity sha1-UOo6BWNYyYBz4LylmVbeSv0gshM=
 
 wcwidth@^1.0.1:
   version "1.0.1"
