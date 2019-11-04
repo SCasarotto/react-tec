@@ -4,17 +4,10 @@ import { ComponentTitle } from '../../../components/ComponentTitle'
 import { Code } from '../../../components/Code'
 import { ComponentSection } from '../../../components/ComponentSection'
 import { PropsTable } from '../../../components/PropsTable'
-import { TEImageRow } from 'react-tec'
 
 export const TEImageRowSection = () => {
 	return (
 		<ComponentSection>
-			<TEImageRow
-				labelForKey="sdf"
-				imgSrcArray={[]}
-				onRemove={() => Promise.resolve()}
-				onUpload={() => Promise.resolve()}
-			/>
 			<ComponentTitle
 				title="TEImageRow"
 				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEImageRow/TEImageRow.js"

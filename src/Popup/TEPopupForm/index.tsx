@@ -17,7 +17,7 @@ export interface TEPopupFormProps extends TEPopupProps {
 	onCloseTitle?: string
 	onSubmit(): void
 	onSubmitTitle?: string
-	children?: React.ReactNode
+	visible: boolean //I don't understand why I need this here since it is in TEPopupProps.....
 }
 export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

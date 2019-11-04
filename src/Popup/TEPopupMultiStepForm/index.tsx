@@ -13,6 +13,7 @@ export interface TEPopupMultiStepFormProps
 		TEMultiStepFormProps {
 	onClose(): void
 	onSubmit(): Promise<any>
+	visible: boolean //I don't understand why I need this here since it is in TEPopupProps.....
 }
 export const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (
 	props,
