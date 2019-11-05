@@ -66,7 +66,7 @@ export const TESegmentedGroupSection = () => {
 							'Unique string used to pair the TELabel and TERadioInput.',
 					},
 					{
-						prop: 'rowSize',
+						prop: 'size',
 						type: 'string',
 						note: 'Passed to the wrapping TERow',
 					},
