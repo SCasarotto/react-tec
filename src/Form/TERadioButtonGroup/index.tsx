@@ -9,8 +9,8 @@ import {
 	RadioButton,
 	Label,
 } from './styledComponents'
-import { TERowCustomProps } from 'Form/TERow'
-import { TERadioButtonInputProps } from 'Form/TERadioButtonInput'
+import { TERowCustomProps } from '../TERow'
+import { TERadioButtonInputProps } from '../TERadioButtonInput'
 import { manipulateRowData } from './../../helpers'
 
 interface TERadioButtonData {

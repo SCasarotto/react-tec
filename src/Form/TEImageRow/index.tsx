@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from 'react'
 
 import { TERow, TERowCustomProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
-import { TEFileInputProps } from 'Form/TEFileInput'
+import { TEFileInputProps } from '../TEFileInput'
 import { EditorPopup } from './EditorPopup'
 
 import {

@@ -27,6 +27,12 @@ export const TEMultiStepFormSection = () => {
 							'The function that is executed when the next button is pressed while on the last step. *Required *This function must return a resolved or rejected promise.',
 					},
 					{
+						prop: 'handleCancelOnClick',
+						type: 'function',
+						note:
+							'If provided will display a cancel button at the first step.',
+					},
+					{
 						prop: 'stepData',
 						type: 'object',
 						note: 'Data used to construct and fill each step',

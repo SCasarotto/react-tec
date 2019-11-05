@@ -8,9 +8,9 @@ import {
 	Input,
 	InputLabel,
 } from './styledComponents'
-import { TERowCustomProps } from 'Form/TERow'
-import { TELabelCustomProps } from 'Form/TELabel'
-import { TERadioButtonInputProps } from 'Form/TERadioButtonInput'
+import { TERowCustomProps } from '../TERow'
+import { TELabelCustomProps } from '../TELabel'
+import { TERadioButtonInputProps } from '../TERadioButtonInput'
 import { manipulateRowData } from './../../helpers'
 
 interface TESegmentedGroupButtonData {
