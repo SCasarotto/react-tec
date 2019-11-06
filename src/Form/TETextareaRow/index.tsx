@@ -29,14 +29,18 @@ export const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
 		<TERow
 			rowSize={rowSize}
 			last={last}
-			className={`TEInputRow ${className}`}>
-			<TELabel
-				htmlFor={labelForKey}
-				required={required}
-				disabled={disabled}
-				className="TEInputRowTitle">
-				{title}
-			</TELabel>
+			className={`TEInputRow ${className}`}
+		>
+			{title && (
+				<TELabel
+					htmlFor={labelForKey}
+					required={required}
+					disabled={disabled}
+					className="TEInputRowTitle"
+				>
+					{title}
+				</TELabel>
+			)}
 			<TETextarea
 				value={value}
 				onChange={onChange}

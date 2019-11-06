@@ -40,7 +40,8 @@ export const EditorPopup: React.FC<any> = (props) => {
 			onClose={onCancel}
 			onCloseTitle="Cancel"
 			onSubmitTitle={onSubmitTitle}
-			className={`TEEditorPopup ${className}`}>
+			className={`TEEditorPopup ${className}`}
+		>
 			<Container className="TEImageRowPopupContainer">
 				<Row className="TEImageRowPopupRow">
 					<AvatarEditor
@@ -59,7 +60,8 @@ export const EditorPopup: React.FC<any> = (props) => {
 				<Row className="TEImageRowPopupRow">
 					<TELabel
 						htmlFor="scale"
-						className="TEImageRowPopupZoomTitle">
+						className="TEImageRowPopupZoomTitle"
+					>
 						Zoom
 					</TELabel>
 					<input
@@ -81,12 +83,14 @@ export const EditorPopup: React.FC<any> = (props) => {
 					<RotateButtonWrapper className="TEImageRowPopupRotateButtonWrapper">
 						<RotateButton
 							className="TEImageRowPopupRotateButton"
-							onClick={() => setRotation(rotation + 90)}>
+							onClick={() => setRotation(rotation + 90)}
+						>
 							<UndoRotationIcon className="TEImageRowPopupRotateIcon" />
 						</RotateButton>
 						<RotateButton
 							className="TEImageRowPopupRotateButton"
-							onClick={() => setRotation(rotation - 90)}>
+							onClick={() => setRotation(rotation - 90)}
+						>
 							<RedoRotationIcon className="TEImageRowPopupRotateIcon" />
 						</RotateButton>
 					</RotateButtonWrapper>

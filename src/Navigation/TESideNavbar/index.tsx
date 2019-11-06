@@ -17,7 +17,8 @@ export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 	return (
 		<Container
 			sidebarWidth={sidebarWidth}
-			className={`TESideNavbar ${className}`}>
+			className={`TESideNavbar ${className}`}
+		>
 			{Header}
 			{logo && !Header && (
 				<Link to="/" className="TESideNavbarLogoLink">
@@ -42,7 +43,8 @@ export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 									activePath={activePath || to}
 									title={title}
 									exact={exact}
-									className="TESideNavbarNavLink">
+									className="TESideNavbarNavLink"
+								>
 									{children}
 								</TESideNavLink>
 							)

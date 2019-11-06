@@ -49,13 +49,17 @@ export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
 		<Container
 			rowSize={rowSize}
 			last={last}
-			className={`TERadioButtonGroup ${className}`}>
-			<TELabel
-				disabled={disabled}
-				required={required}
-				className="TERadioButtonGroupTitle">
-				{title}
-			</TELabel>
+			className={`TERadioButtonGroup ${className}`}
+		>
+			{title && (
+				<TELabel
+					disabled={disabled}
+					required={required}
+					className="TERadioButtonGroupTitle"
+				>
+					{title}
+				</TELabel>
+			)}
 			<InputWrapper className="TERadioButtonGroupInputWrapper">
 				{buttonArray &&
 					buttonArray.map((rowData) => {
@@ -68,7 +72,8 @@ export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
 							<RowWrapper
 								key={key}
 								rowSize={inputRowSize}
-								className="TERadioButtonGroupRowWrapper">
+								className="TERadioButtonGroupRowWrapper"
+							>
 								<RadioButton
 									value={value}
 									onChange={onChange}
@@ -80,7 +85,8 @@ export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
 								<Label
 									htmlFor={key}
 									disabled={disabled}
-									className="TERadioButtonGroupLabel">
+									className="TERadioButtonGroupLabel"
+								>
 									{label}
 								</Label>
 							</RowWrapper>

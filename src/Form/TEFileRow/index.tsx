@@ -17,14 +17,18 @@ export const TEFileRow: React.FC<TEFileRowProps> = (props) => {
 		<TERow
 			rowSize={rowSize}
 			last={last}
-			className={`TEFileRow ${className}`}>
-			<TELabel
-				htmlFor={labelForKey}
-				required={rest.required}
-				disabled={rest.disabled}
-				className="TEFileRowTitle">
-				{title}
-			</TELabel>
+			className={`TEFileRow ${className}`}
+		>
+			{title && (
+				<TELabel
+					htmlFor={labelForKey}
+					required={rest.required}
+					disabled={rest.disabled}
+					className="TEFileRowTitle"
+				>
+					{title}
+				</TELabel>
+			)}
 			<TEFileInput
 				id={labelForKey}
 				className="TEFileRowInput"

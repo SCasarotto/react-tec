@@ -6,7 +6,8 @@ const colorBetweenColors = (
 	percBetween: number,
 ) => {
 	var hex = function(x: string) {
-		x = x.toString()
+		// @ts-ignore
+		x = x.toString(16)
 		return x.length === 1 ? '0' + x : x
 	}
 	const color1RGB = hexToRgb(color1)

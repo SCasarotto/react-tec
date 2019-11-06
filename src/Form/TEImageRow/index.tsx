@@ -121,7 +121,7 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 	} = props
 
 	let labelText = title
-	if (maxNumber > 1 && imgSrcArray) {
+	if (labelText && maxNumber > 1 && imgSrcArray) {
 		labelText = `${title} (${imgSrcArray.length}/${maxNumber})`
 	}
 
@@ -129,14 +129,18 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 		<TERow
 			rowSize={rowSize}
 			last={last}
-			className={`TEImageRow ${className}`}>
-			<TELabel
-				htmlFor={labelForKey}
-				required={required}
-				disabled={disabled}
-				className="TEImageRowTitle">
-				{labelText}
-			</TELabel>
+			className={`TEImageRow ${className}`}
+		>
+			{labelText && (
+				<TELabel
+					htmlFor={labelForKey}
+					required={required}
+					disabled={disabled}
+					className="TEImageRowTitle"
+				>
+					{labelText}
+				</TELabel>
+			)}
 			<ImageRowWrapper className="TEImageRowWrapper">
 				{imgSrcArray &&
 					imgSrcArray.map((imgSrcData, index) => {
@@ -144,11 +148,13 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 						return (
 							<ImageWrapper
 								key={uid}
-								className="TEImageRowImageWrapper">
+								className="TEImageRowImageWrapper"
+							>
 								<a
 									href={src}
 									target="_blank"
-									rel="noopener noreferrer">
+									rel="noopener noreferrer"
+								>
 									<Image
 										src={src}
 										alt={uid}
@@ -159,7 +165,8 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 									onClick={() =>
 										handleClearImage({ uid, path, index })
 									}
-									className="TEImageRowClearButton">
+									className="TEImageRowClearButton"
+								>
 									<ClearImageButtonIcon className="TEImageRowClearIcon" />
 								</ClearImageButton>
 							</ImageWrapper>

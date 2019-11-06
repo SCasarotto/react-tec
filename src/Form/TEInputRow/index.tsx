@@ -30,14 +30,18 @@ export const TEInputRow: React.FC<TEInputRowProps> = (props) => {
 		<TERow
 			rowSize={rowSize}
 			last={last}
-			className={`TEInputRow ${className}`}>
-			<TELabel
-				htmlFor={labelForKey}
-				required={required}
-				disabled={disabled}
-				className="TEInputRowTitle">
-				{title}
-			</TELabel>
+			className={`TEInputRow ${className}`}
+		>
+			{title && (
+				<TELabel
+					htmlFor={labelForKey}
+					required={required}
+					disabled={disabled}
+					className="TEInputRowTitle"
+				>
+					{title}
+				</TELabel>
+			)}
 			<TEInput
 				type={type}
 				value={value}

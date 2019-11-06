@@ -36,7 +36,8 @@ export const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
 				to={to}
 				exact={exact}
 				className="TESideNavLinkLink"
-				{...rest}>
+				{...rest}
+			>
 				{title && <Title className="TESideNavLinkTitle">{title}</Title>}
 				{children}
 			</Link>

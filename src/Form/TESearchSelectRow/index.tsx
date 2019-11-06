@@ -22,14 +22,18 @@ export const TESearchSelectRow: React.FC<TESearchSelectRowProps> = (props) => {
 		<TERow
 			rowSize={rowSize}
 			last={last}
-			className={`TESearchSelectRow ${className}`}>
-			<TELabel
-				htmlFor={labelForKey}
-				required={rest.required}
-				disabled={rest.disabled}
-				className="TESearchSelectRowTitle">
-				{title}
-			</TELabel>
+			className={`TESearchSelectRow ${className}`}
+		>
+			{title && (
+				<TELabel
+					htmlFor={labelForKey}
+					required={rest.required}
+					disabled={rest.disabled}
+					className="TESearchSelectRowTitle"
+				>
+					{title}
+				</TELabel>
+			)}
 			<TESearchSelectInput
 				id={labelForKey}
 				className="TESearchSelectRowInput"

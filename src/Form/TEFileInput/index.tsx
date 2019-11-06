@@ -112,11 +112,13 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 				onDrop={onDrop}
 				active={active}
 				disabled={disabled}
-				className="TEFileInputInputWrapper">
+				className="TEFileInputInputWrapper"
+			>
 				<Label
 					active={active}
 					disabled={disabled}
-					className="TEFileInputLabel">
+					className="TEFileInputLabel"
+				>
 					<LabelCopy className="TEFileInputCopy">
 						<LabelIcon className="TEFileInputIcon" />
 						{labelCopy}
@@ -136,7 +138,8 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 					<ClearButton
 						onClick={handleClearInput}
 						disabled={disabled}
-						className="TEFileInputClearButton">
+						className="TEFileInputClearButton"
+					>
 						<ButtonIcon className="TEFileInputClearIcon" />
 					</ClearButton>
 				)}

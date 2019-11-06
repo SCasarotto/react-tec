@@ -39,12 +39,14 @@ export const TEConfirm: React.FC<TEConfirmProps> = (props) => {
 			<ButtonContainer className="TEConfirmButtonoContainer">
 				<LeftButton
 					onClick={leftOnClick}
-					className="TEConfirmButton TEConfirmLeftButton">
+					className="TEConfirmButton TEConfirmLeftButton"
+				>
 					{leftButtonTitle}
 				</LeftButton>
 				<RightButton
 					onClick={rightOnClick}
-					className="TEConfirmButton TEConfirmRightButton">
+					className="TEConfirmButton TEConfirmRightButton"
+				>
 					{rightButtonTitle}
 				</RightButton>
 			</ButtonContainer>

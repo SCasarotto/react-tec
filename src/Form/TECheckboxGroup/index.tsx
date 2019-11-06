@@ -65,13 +65,17 @@ export const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 		<Container
 			rowSize={rowSize}
 			last={last}
-			className={`TECheckboxGroup ${className}`}>
-			<TELabel
-				disabled={disabled}
-				required={required}
-				className="TECheckboxGroupTitle">
-				{title}
-			</TELabel>
+			className={`TECheckboxGroup ${className}`}
+		>
+			{title && (
+				<TELabel
+					disabled={disabled}
+					required={required}
+					className="TECheckboxGroupTitle"
+				>
+					{title}
+				</TELabel>
+			)}
 			<InputWrapper className="TECheckboxGroupInputWrapper">
 				{buttonArray &&
 					buttonArray.map((rowData) => {
@@ -84,7 +88,8 @@ export const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 							<RowWrarpper
 								key={key}
 								rowSize={inputRowSize}
-								className="TECheckboxGroupRowWrapper">
+								className="TECheckboxGroupRowWrapper"
+							>
 								<Checkbox
 									value={value}
 									onChange={handleInputChange}
@@ -99,7 +104,8 @@ export const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 								<Label
 									htmlFor={key}
 									disabled={disabled}
-									className="TECheckboxGroupLabel">
+									className="TECheckboxGroupLabel"
+								>
 									{label}
 								</Label>
 							</RowWrarpper>

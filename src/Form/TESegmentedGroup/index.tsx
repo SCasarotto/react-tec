@@ -47,17 +47,22 @@ export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 			rowSize={rowSize}
 			last={last}
 			inline={inline}
-			className={`TESegmentedGroup ${className}`}>
-			<Label
-				inline={inline}
-				required={required}
-				disabled={disabled}
-				className="TESegmentedGroupTitle">
-				{title}
-			</Label>
+			className={`TESegmentedGroup ${className}`}
+		>
+			{title && (
+				<Label
+					inline={inline}
+					required={required}
+					disabled={disabled}
+					className="TESegmentedGroupTitle"
+				>
+					{title}
+				</Label>
+			)}
 			<SegmentedContainer
 				inline={inline}
-				className="TESegmentedGroupSegmentedContainer">
+				className="TESegmentedGroupSegmentedContainer"
+			>
 				{buttonArray &&
 					buttonArray.map((rowData, index) => {
 						const { label, value, key } = manipulateRowData({
@@ -68,7 +73,8 @@ export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 						return (
 							<LabelWrapper
 								key={key}
-								className="TESegmentedGroupSegmentedLabelWrapper">
+								className="TESegmentedGroupSegmentedLabelWrapper"
+							>
 								<Input
 									value={value}
 									onChange={onChange}
@@ -84,7 +90,8 @@ export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 									last={index + 1 === buttonArray.length}
 									checked={checkedValue === value}
 									disabled={disabled}
-									className="TESegmentedGroupSegmentedLabel">
+									className="TESegmentedGroupSegmentedLabel"
+								>
 									{label}
 								</InputLabel>
 							</LabelWrapper>

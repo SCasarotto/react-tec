@@ -72,7 +72,7 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 	} = props
 
 	let labelText = title
-	if (maxNumber > 1 && fileSrcArray) {
+	if (labelText && maxNumber > 1 && fileSrcArray) {
 		labelText = `${title} (${fileSrcArray.length}/${maxNumber})`
 	}
 
@@ -80,14 +80,18 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 		<WrapperRow
 			rowSize={rowSize}
 			last={last}
-			className={`TEFileManagerRow ${className}`}>
-			<TELabel
-				htmlFor={labelForKey}
-				required={required}
-				disabled={disabled}
-				className="TEFileManagerRowTitle">
-				{labelText}
-			</TELabel>
+			className={`TEFileManagerRow ${className}`}
+		>
+			{labelText && (
+				<TELabel
+					htmlFor={labelForKey}
+					required={required}
+					disabled={disabled}
+					className="TEFileManagerRowTitle"
+				>
+					{labelText}
+				</TELabel>
+			)}
 			<FileRowWrapper className="TEFileManagerRowWrapper">
 				{fileSrcArray &&
 					fileSrcArray.map((imgSrcData, index) => {
@@ -102,10 +106,12 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 							<FileWrapper
 								key={uid}
 								className="TEFileManagerFileRow"
-								disabled={disabled}>
+								disabled={disabled}
+							>
 								<FileName
 									className="TEFileManagerFileName"
-									disabled={disabled}>
+									disabled={disabled}
+								>
 									{filename}.{fileEnding}
 								</FileName>
 								{src && (
@@ -115,7 +121,8 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 										rel="noopener noreferrer"
 										key={uid}
 										download={filename}
-										className="TEFileManagerDownloadButton">
+										className="TEFileManagerDownloadButton"
+									>
 										<DownloadImageButtonIcon className="TEFileManagerDownloadIcon" />
 									</DownloadFileButton>
 								)}
@@ -124,7 +131,8 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 										onClick={() =>
 											onRemove({ uid, path, index })
 										}
-										className="TEFileManagerClearButton">
+										className="TEFileManagerClearButton"
+									>
 										<ClearFileButtonIcon className="TEFileManagerClearIcon" />
 									</ClearFileButton>
 								)}

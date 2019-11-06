@@ -1125,7 +1125,8 @@ export const TEThemeProvider: React.FC<TEThemeProviderProps> = (props) => {
 	const { theme, globalStyles } = props
 	return (
 		<ThemeProvider
-			theme={{ ...initialTheme, ...theme, globalStyles: globalStyles }}>
+			theme={{ ...initialTheme, ...theme, globalStyles: globalStyles }}
+		>
 			<Fragment>
 				<GlobalStyles />
 				{props.children}

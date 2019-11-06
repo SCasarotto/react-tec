@@ -18,19 +18,14 @@ export interface TEPopupMultiStepFormProps
 export const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (
 	props,
 ) => {
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault()
-		const { onSubmit } = props
-		onSubmit()
-	}
 	const { visible, onClose, className = '', ...rest } = props
 
 	return (
 		<Popup
 			visible={visible}
-			className={`TEPopupMultiStepForm ${className}`}>
+			className={`TEPopupMultiStepForm ${className}`}
+		>
 			<TEMultiStepForm
-				onSubmit={handleSubmit}
 				handleCancelOnClick={onClose}
 				className="TEPopupMultiStepFormMultiStepForm"
 				{...rest}

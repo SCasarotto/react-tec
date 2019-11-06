@@ -1,6 +1,6 @@
 {
 	"name": "react-tec",
-	"version": "0.2.0-beta.15",
+	"version": "0.2.0-beta.16",
 	"license": "MIT",
 	"author": "Stuart Casarotto",
 	"main": "dist/index.js",
@@ -18,8 +18,8 @@
 	"peerDependencies": {
 		"react": ">=16",
 		"react-router": "^4.3.1",
-		"react-router-dom": "^4.3.1",
-		"styled-components": "^4.4.1"
+		"react-router-dom": "^5.1.2",
+		"styled-components": ">= 5"
 	},
 	"husky": {
 		"hooks": {
@@ -28,13 +28,13 @@
 	},
 	"prettier": {
 		"bracketSpacing": true,
-		"jsxBracketSameLine": true,
 		"singleQuote": true,
 		"arrowParens": "always",
 		"trailingComma": "all",
 		"semi": false,
 		"useTabs": true,
-		"tabWidth": 4
+		"tabWidth": 4,
+		"jsxBracketSameLine": false
 	},
 	"devDependencies": {
 		"@types/jest": "^24.0.20",

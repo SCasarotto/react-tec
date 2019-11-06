@@ -27,7 +27,8 @@ export const TEErrorLoadingAlert: React.FC<TEErrorLoadingAlertProps> = (
 				{buttonTitle && (
 					<Button
 						onClick={onClick}
-						className="TEErrorLoadingAlertButton">
+						className="TEErrorLoadingAlertButton"
+					>
 						{buttonTitle}
 					</Button>
 				)}
