@@ -66,11 +66,6 @@ export const TEMultiStepFormSection = () => {
 						note:
 							'Function used to keep track of what the current step number is. This is important when you want to adjust ui external to the form.',
 					},
-					{
-						prop: 'formName',
-						type: 'string',
-						note: 'A string to link the submit button to the from.',
-					},
 				]}
 			/>
 			<iframe
