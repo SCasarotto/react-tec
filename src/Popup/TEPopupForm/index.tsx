@@ -12,7 +12,6 @@ import {
 import { TEPopupProps } from 'Popup/TEPopup'
 
 export interface TEPopupFormProps extends TEPopupProps, TEFormProps {
-	formName?: string
 	onClose(): void
 	onCloseTitle?: string
 	onSubmitTitle?: string
@@ -20,7 +19,6 @@ export interface TEPopupFormProps extends TEPopupProps, TEFormProps {
 }
 export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 	const {
-		formName,
 		visible,
 		onClose,
 		onCloseTitle,
@@ -32,7 +30,7 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 
 	return (
 		<Popup visible={visible} className={`TEPopupForm ${className}`}>
-			<TEForm className="TEPopupFormForm" id={formName} {...rest}>
+			<TEForm className="TEPopupFormForm" {...rest}>
 				<FormContent className="TEPopupFormContent">
 					{children}
 				</FormContent>
@@ -44,7 +42,6 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 						{onCloseTitle}
 					</LeftButton>
 					<RightButton
-						form={formName}
 						type="submit"
 						className="TEPopupFormButton TEPopupFormRightButton"
 					>

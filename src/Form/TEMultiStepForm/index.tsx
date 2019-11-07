@@ -28,7 +28,6 @@ export interface TEMultiStepFormStepData {
 }
 export interface TEMultiStepFormProps {
 	className?: string
-	formName?: string
 	handleCancelOnClick?(): void
 	stepData: TEMultiStepFormStepData[]
 	roundedButtons: boolean
@@ -106,7 +105,6 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 
 	const {
 		className = '',
-		formName,
 		handleCancelOnClick,
 		stepData,
 		// roundedButtons,
@@ -144,36 +142,37 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 					)
 				})}
 			</StepContainer>
-			<Form className="TEMultiStepFormForm" id={formName}>
+			<Form className="TEMultiStepFormForm">
 				{stepData[currentStep] && stepData[currentStep].component}
-			</Form>
-			<ButtonContainer className="TEMultiStepFormButtonContainer">
-				{(handleCancelOnClick || currentStep > 0) && (
+				<ButtonContainer className="TEMultiStepFormButtonContainer">
+					{(handleCancelOnClick || currentStep > 0) && (
+						<StepButton
+							onClick={handlePreviousPressed}
+							// position="left"
+							// rounded={roundedButtons}
+							className="TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft"
+						>
+							{currentStep === 0 ? 'cancel' : 'previous'}
+						</StepButton>
+					)}
 					<StepButton
-						onClick={handlePreviousPressed}
-						// position="left"
+						onClick={handleNextPressed}
+						// position="right"
 						// rounded={roundedButtons}
-						className="TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft"
+						// singleButton={!handleCancelOnClick && currentStep === 0}
+						className="TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
+						type={
+							currentStep + 1 === stepData.length
+								? 'submit'
+								: 'button'
+						}
 					>
-						{currentStep === 0 ? 'cancel' : 'previous'}
-					</StepButton>
-				)}
-				<StepButton
-					onClick={handleNextPressed}
-					// position="right"
-					// rounded={roundedButtons}
-					// singleButton={!handleCancelOnClick && currentStep === 0}
-					className="TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
-					form={formName}
-					type={
-						currentStep + 1 === stepData.length
+						{currentStep + 1 === stepData.length
 							? 'submit'
-							: 'button'
-					}
-				>
-					{currentStep + 1 === stepData.length ? 'submit' : 'next'}
-				</StepButton>
-			</ButtonContainer>
+							: 'next'}
+					</StepButton>
+				</ButtonContainer>
+			</Form>
 		</Container>
 	)
 }
