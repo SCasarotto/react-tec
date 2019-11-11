@@ -928,14 +928,13 @@ const GlobalStyles = createGlobalStyle<{
 	}
 
 	.react-datepicker__close-icon::after {
-		background-color: #216ba5;
 		border-radius: 50%;
 		bottom: 0;
 		box-sizing: border-box;
-		color: #fff;
-		content: "\00d7";
+		color: ${(props) => props.theme.gray};
+		content: "\x00d7";
 		cursor: pointer;
-		font-size: 12px;
+		font-size: 16px;
 		height: 16px;
 		width: 16px;
 		line-height: 1;
@@ -944,6 +943,9 @@ const GlobalStyles = createGlobalStyle<{
 		position: absolute;
 		right: 0px;
 		text-align: center;
+	}
+	.react-datepicker__close-icon::after:hover {
+		color: ${(props) => props.theme.darkerGray};
 	}
 
 	.react-datepicker__today-button {
