@@ -23,9 +23,9 @@ export const TEConfirm: React.FC<TEConfirmProps> = (props) => {
 		title,
 		message,
 		leftOnClick,
-		leftButtonTitle,
+		leftButtonTitle = 'Cancel',
 		rightOnClick,
-		rightButtonTitle,
+		rightButtonTitle = 'Confirm',
 		children,
 		visible,
 		className = '',
@@ -33,8 +33,10 @@ export const TEConfirm: React.FC<TEConfirmProps> = (props) => {
 
 	return (
 		<Popup visible={visible} className={`TEConfirm ${className}`}>
-			<Title className="TEConfirmTitle">{title}</Title>
-			<Message className="TEConfirmMessage">{message}</Message>
+			{title && <Title className="TEConfirmTitle">{title}</Title>}
+			{message && (
+				<Message className="TEConfirmMessage">{message}</Message>
+			)}
 			{children}
 			<ButtonContainer className="TEConfirmButtonoContainer">
 				<LeftButton
@@ -52,9 +54,4 @@ export const TEConfirm: React.FC<TEConfirmProps> = (props) => {
 			</ButtonContainer>
 		</Popup>
 	)
-}
-
-TEConfirm.defaultProps = {
-	leftButtonTitle: 'Cancel',
-	rightButtonTitle: 'Confirm',
 }

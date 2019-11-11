@@ -22,8 +22,8 @@ export const TEAlert: React.FC<TEAlertProps> = (props) => {
 
 	return (
 		<Popup visible={visible} className={`TEAlert ${className}`}>
-			<Title className="TEAlertTitle">{title}</Title>
-			<Message className="TEAlertMessage">{message}</Message>
+			{title && <Title className="TEAlertTitle">{title}</Title>}
+			{message && <Message className="TEAlertMessage">{message}</Message>}
 			{children}
 			<Button onClick={onClick} className="TEAlertButton">
 				{buttonTitle}

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
-import { TEPanel, TEPanelWrapper, TEImageRow } from 'react-tec'
+import { TEPanel, TEPanelWrapper } from 'react-tec'
 
 import { useBarTitle } from '../../context/TitleBarContext'
 import { LinkWrapper, Icon } from './styledComponents'

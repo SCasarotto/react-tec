@@ -103,18 +103,18 @@ export const TEPopupProvider: React.FC<TEPopupProviderProps> = (props) => {
 }
 
 export interface showAlertData {
-	title: string
-	message: string
+	title?: string
+	message?: string
 	onClick?(): void
 	buttonTitle?: string
 }
 export interface showConfirmData {
-	title: string
-	message: string
+	title?: string
+	message?: string
 	leftOnClick?(): void
-	leftTitle: string
-	rightOnClick(): void
-	rightTitle: string
+	leftTitle?: string
+	rightOnClick?(): void
+	rightTitle?: string
 }
 export interface useTEPopupsFunctions {
 	showAlert(d: showAlertData): any
