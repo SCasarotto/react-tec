@@ -27,6 +27,7 @@ export const TEPopupSection = () => {
 			/>
 			<iframe
 				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEPopupExample&module=%2Fsrc%2FPopup%2FTEPopupExample.tsx"
+				title="TEPopup"
 				style={{
 					width: '100%',
 					height: 500,
