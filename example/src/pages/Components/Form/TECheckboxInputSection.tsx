@@ -24,13 +24,14 @@ export const TECheckboxInputSection = () => {
 				.
 			</p>
 			<iframe
-				src="https://codesandbox.io/embed/318sr?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TECheckboxInput"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTECheckboxInputExample&module=%2Fsrc%2FForm%2FTECheckboxInputExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TECheckboxInput"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

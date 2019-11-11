@@ -58,13 +58,14 @@ export const TEConfirmSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/lt7wu?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEConfirmExample&module=%2Fsrc%2FPopup%2FTEConfirmExample.tsx"
 				title="TEConfirm"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

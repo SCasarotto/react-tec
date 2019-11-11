@@ -44,13 +44,14 @@ export const TEErrorLoadingAlertSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/8gfqc?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TEErrorLoadingAlert"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEErrorLoadingAlertExample&module=%2Fsrc%2FLayout%2FTEErrorLoadingAlertExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TEErrorLoadingAlert"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

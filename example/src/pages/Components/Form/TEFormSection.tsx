@@ -24,13 +24,14 @@ export const TEFormSection = () => {
 				.
 			</p>
 			<iframe
-				src="https://codesandbox.io/embed/4ph7c?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TEForm"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEFormExample&module=%2Fsrc%2FForm%2FTEFormExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TEForm"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

@@ -45,13 +45,14 @@ export const TELabelSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/lw2y6?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TELabel"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTELabelExample&module=%2Fsrc%2FForm%2FTELabelExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TELabel"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

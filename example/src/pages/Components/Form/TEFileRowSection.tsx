@@ -55,13 +55,14 @@ export const TEFileRowSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/7gvw4?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TEFileRow"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEFileRowExample&module=%2Fsrc%2FForm%2FTEFileRowExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TEFileRow"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

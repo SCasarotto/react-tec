@@ -49,13 +49,14 @@ export const TEPrivateRouteSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/ytc7i?fontsize=12&module=%2Fsrc%2FExample.js"
-				title="TEPrivateRoute"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEPrivateRouteExample&module=%2Fsrc%2FNavigation%2FTEPrivateRouteExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TEPrivateRoute"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

@@ -100,13 +100,14 @@ export const TECheckboxGroupSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/e1nzt?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TECheckboxGroup"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTECheckboxGroupExample&module=%2Fsrc%2FForm%2FTECheckboxGroupExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TECheckboxGroup"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

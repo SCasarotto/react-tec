@@ -31,13 +31,14 @@ export const TEPopupContextSection = () => {
 				use <Code>useContext</Code> as follows:
 			</p>
 			<iframe
-				src="https://codesandbox.io/embed/fzd72?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TEPopupContext & TEPopupProvider"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEPopupContextExample&module=%2Fsrc%2FGlobals%2FTEPopupContextExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TEPopupContext and TEPopupProvider"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 			<p>
@@ -47,13 +48,14 @@ export const TEPopupContextSection = () => {
 				<Code>useTEPopups</Code> hook.
 			</p>
 			<iframe
-				src="https://codesandbox.io/embed/fol5p?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="useTEPopups"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FuseTEPopupsExample&module=%2Fsrc%2FGlobals%2FuseTEPopupsExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="useTEPopups"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

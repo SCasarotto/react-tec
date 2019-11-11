@@ -69,13 +69,14 @@ export const TEMultiStepFormSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/b9d58?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TEMultiStepForm"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEMultiStepFormExample&module=%2Fsrc%2FForm%2FTEMultiStepFormExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TEMultiStepForm"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>

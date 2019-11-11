@@ -56,13 +56,14 @@ export const TEInputRowSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/kykno?fontsize=12&hidenavigation=1&module=%2Fsrc%2FExample.js"
-				title="TEInputRow"
+				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEInputRowExample&module=%2Fsrc%2FForm%2FTEInputRowExample.tsx"
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
+				title="TEInputRow"
+				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
 				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 			/>
 		</ComponentSection>
