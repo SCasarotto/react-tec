@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { colorBetweenColors } from 'helpers'
+import { colorBetweenColors } from './../../helpers'
 
 interface calculateRingStyles {
 	totalRings: number
