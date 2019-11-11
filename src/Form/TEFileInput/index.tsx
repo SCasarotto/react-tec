@@ -30,7 +30,7 @@ export interface TEFileInputProps
 }
 export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 	const [active, setActive] = useState(false)
-	const [fileArray, setFileArray] = useState<FileList>(new FileList())
+	const [fileArray, setFileArray] = useState<FileList | undefined>()
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
 	const [inputKey, setInputKey] = useState<string | number>(
 		props.resetKey || 'inputKey',
@@ -81,7 +81,7 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 	}
 	const handleClearInput = () => {
 		setInputKey(new Date().getTime()) //This will reset the input
-		setFileArray(new FileList())
+		setFileArray(undefined)
 		setErrorData({
 			error: false,
 			message: '',

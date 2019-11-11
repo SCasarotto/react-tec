@@ -21,25 +21,19 @@ export const InputWrapper = styled.div<{
 	border-radius: 5px;
 	padding-right: 5px;
 
-	${(props) => {
-		const { theme, disabled, active } = props
-		if (active) {
-			return `
-                border: 1px solid ${theme.primary};
-                box-shadow: 0 0 0 1px ${theme.primary} inset;
-            `
-		} else if (disabled) {
-			return `
-                border: 1px solid ${theme.lighterGray};
-                box-shadow: none;
-            `
-		}
-		return `
-			border: 1px solid ${theme.lightGray};
-			box-shadow: none;
-		`
-	}}
-
+	border: 1px solid
+		${(props) => {
+			const { theme, disabled, active } = props
+			if (active) {
+				return theme.primary
+			} else if (disabled) {
+				return theme.lighterGray
+			} else {
+				return theme.lightGray
+			}
+		}};
+	box-shadow: ${(props) =>
+		props.active ? `0 0 0 1px ${props.theme.primary} inset` : 'none'};
 	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
 	:hover,
 	:active {
@@ -57,16 +51,15 @@ export const Label = styled.label<{
 	color: ${(props) =>
 		props.disabled ? props.theme.gray : props.theme.darkGray};
 	padding: 10px;
-
-	${(props) => {
+	cursor: ${(props) => {
 		const { disabled, active } = props
 		if (disabled) {
-			return 'cursor: not-allowed'
+			return 'not-allowed'
 		} else if (active) {
-			return 'cursor: copy'
+			return 'copy'
 		}
-		return 'cursor: pointer'
-	}}
+		return 'pointer'
+	}};
 `
 
 export const LabelCopy = styled.span``

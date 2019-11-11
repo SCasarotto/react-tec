@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
-import { TEPanel, TEPanelWrapper } from 'react-tec'
+import { TEPanel, TEPanelWrapper, TEFileInput } from 'react-tec'
 
 import { useBarTitle } from '../../context/TitleBarContext'
 import { LinkWrapper, Icon } from './styledComponents'
@@ -97,6 +97,7 @@ export const Home = () => {
 							visual impact (Will likely be replaced by hooks)
 						</li>
 					</ul>
+					<TEFileInput />
 				</TEPanel>
 			</TEPanelWrapper>
 		</Fragment>
