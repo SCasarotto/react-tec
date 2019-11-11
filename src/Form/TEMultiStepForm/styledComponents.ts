@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import { TEForm } from '../TEForm'
 import { TEButton } from '../TEButton'
 
 export const Container = styled.div``
@@ -55,9 +54,6 @@ export const StepTitle = styled.span`
 	}
 `
 
-export const Form = styled(TEForm)`
-	margin-bottom: 30px;
-`
 export const ButtonContainer = styled.div`
 	display: flex;
 `

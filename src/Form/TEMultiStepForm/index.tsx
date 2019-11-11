@@ -8,6 +8,8 @@
 
 import React, { useState } from 'react'
 
+import { TEForm } from '../TEForm'
+
 import {
 	Container,
 	StepContainer,
@@ -15,7 +17,6 @@ import {
 	StepWrapper,
 	StepNumber,
 	StepTitle,
-	Form,
 	ButtonContainer,
 	StepButton,
 } from './styledComponents'
@@ -142,7 +143,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 					)
 				})}
 			</StepContainer>
-			<Form className="TEMultiStepFormForm">
+			<TEForm className="TEMultiStepFormForm">
 				{stepData[currentStep] && stepData[currentStep].component}
 				<ButtonContainer className="TEMultiStepFormButtonContainer">
 					{(handleCancelOnClick || currentStep > 0) && (
@@ -167,7 +168,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 							: 'next'}
 					</StepButton>
 				</ButtonContainer>
-			</Form>
+			</TEForm>
 		</Container>
 	)
 }
