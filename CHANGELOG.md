@@ -20,10 +20,6 @@ This update is a complete rewrite of react-tec. Moving from [Create React Librar
 -   Replaced `TEScrollToTop` with a utility hook `useScrollTop`.
 -   `TEImageRow` `imgSrc` prop is not `imgSrcArray` just like `TEFileManagerRow`
 
-### Added
-
--   Added `formName` to `TEMultistepForm`, `TEPopupForm` and `TEPopupMultistepForm`.
-
 ## 0.1.24 - 10-11-2019
 
 ### Bug Fixes
