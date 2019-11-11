@@ -2,7 +2,7 @@
 //Version 0.3.0
 //
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, FormEvent } from 'react'
 import AvatarEditor from 'react-avatar-editor'
 
 import { TEPopupForm } from '../../../Popup/TEPopupForm'
@@ -36,7 +36,9 @@ export const EditorPopup: React.FC<any> = (props) => {
 	return (
 		<TEPopupForm
 			visible={visible}
-			onSubmit={() => onSubmit(editor.current)}
+			onSubmit={(e: FormEvent<HTMLFormElement>) => {
+				onSubmit(e, editor.current)
+			}}
 			onClose={onCancel}
 			onCloseTitle="Cancel"
 			onSubmitTitle={onSubmitTitle}

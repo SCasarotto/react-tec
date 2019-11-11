@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react'
+import React, { useState, ChangeEvent, FormEvent } from 'react'
 
 import { TERow, TERowCustomProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
@@ -58,7 +58,12 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 		setFile(undefined)
 		setInputKey(new Date().getTime())
 	}
-	const handleEditorSubmit = async (editor: any) => {
+	const handleEditorSubmit = async (
+		e: FormEvent<HTMLFormElement>,
+		editor: any,
+	) => {
+		//This could be passed out. Not sure it needs to.
+		e.preventDefault()
 		try {
 			const { onUpload } = props
 
