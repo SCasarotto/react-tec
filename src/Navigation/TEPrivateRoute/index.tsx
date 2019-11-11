@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 interface TEPrivateRouteAuthCheck {
-	check(props: RouteComponentProps): boolean
+	check(props: RouteComponentProps<any>): boolean
 	path: string
 }
 export interface TEPrivateRouteProps extends RouteProps {

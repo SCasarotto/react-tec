@@ -51,10 +51,7 @@ let reducer = (state: any, action: any) => {
 	}
 }
 
-export interface TEPopupProviderProps {
-	children: React.ReactNode
-}
-export const TEPopupProvider: React.FC<TEPopupProviderProps> = (props) => {
+export const TEPopupProvider: React.FC = (props) => {
 	const [state, dispatch] = useReducer(reducer, initialState)
 	const {
 		alertTitle,
@@ -128,7 +125,6 @@ export const useTEPopups = (): useTEPopupsFunctions => {
 	const { dispatch } = useContext(TEPopupContext)
 
 	//TEAlert
-
 	const showAlert = ({
 		title,
 		message,
