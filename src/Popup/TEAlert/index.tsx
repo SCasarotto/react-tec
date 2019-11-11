@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Popup, Title, Message, Button } from './styledComponents'
-import { TEPopupProps } from 'Popup/TEPopup'
+import { TEPopupProps } from './../TEPopup'
 
 export interface TEAlertProps extends TEPopupProps {
 	title?: string

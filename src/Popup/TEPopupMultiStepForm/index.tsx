@@ -6,14 +6,13 @@ import {
 } from '../../Form/TEMultiStepForm'
 
 import { Popup } from './styledComponents'
-import { TEPopupProps } from 'Popup/TEPopup'
+import { TEPopupProps } from './../TEPopup'
 
 export interface TEPopupMultiStepFormProps
 	extends TEPopupProps,
 		TEMultiStepFormProps {
 	onClose(): void
 	onSubmit(): Promise<any>
-	visible: boolean //I don't understand why I need this here since it is in TEPopupProps.....
 }
 export const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (
 	props,

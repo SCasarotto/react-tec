@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Popup, Spinner, Message } from './styledComponents'
-import { TEPopupProps } from 'Popup/TEPopup'
+import { TEPopupProps } from './../TEPopup'
 
 export interface TENetworkActivityProps extends TEPopupProps {
 	message?: string

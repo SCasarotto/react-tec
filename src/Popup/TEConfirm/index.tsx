@@ -8,7 +8,7 @@ import {
 	LeftButton,
 	RightButton,
 } from './styledComponents'
-import { TEPopupProps } from 'Popup/TEPopup'
+import { TEPopupProps } from './../TEPopup'
 
 export interface TEConfirmProps extends TEPopupProps {
 	title?: string

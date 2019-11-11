@@ -9,13 +9,12 @@ import {
 	LeftButton,
 	RightButton,
 } from './styledComponents'
-import { TEPopupProps } from 'Popup/TEPopup'
+import { TEPopupProps } from './../TEPopup'
 
 export interface TEPopupFormProps extends TEPopupProps, TEFormProps {
 	onClose(): void
 	onCloseTitle?: string
 	onSubmitTitle?: string
-	visible: boolean //I don't understand why I need this here since it is in TEPopupProps.....
 }
 export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 	const {
