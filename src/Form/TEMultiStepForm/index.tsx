@@ -30,7 +30,7 @@ export interface TEMultiStepFormProps {
 	className?: string
 	handleCancelOnClick?(): void
 	stepData: TEMultiStepFormStepData[]
-	roundedButtons: boolean
+	// roundedButtons?: boolean
 	onSubmit(): Promise<any>
 	onStepChange?(step: number): void
 }
@@ -161,11 +161,6 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 						// rounded={roundedButtons}
 						// singleButton={!handleCancelOnClick && currentStep === 0}
 						className="TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
-						type={
-							currentStep + 1 === stepData.length
-								? 'submit'
-								: 'button'
-						}
 					>
 						{currentStep + 1 === stepData.length
 							? 'submit'
