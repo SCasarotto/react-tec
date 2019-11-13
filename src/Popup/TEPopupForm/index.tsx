@@ -15,6 +15,7 @@ export interface TEPopupFormProps extends TEPopupProps, TEFormProps {
 	onClose(): void
 	onCloseTitle?: string
 	onSubmitTitle?: string
+	submitButtonId?: string
 }
 export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 	const {
@@ -23,6 +24,7 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 		onCloseTitle,
 		onSubmitTitle,
 		className = '',
+		submitButtonId,
 		children,
 		...rest
 	} = props
@@ -43,6 +45,7 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 					<RightButton
 						type="submit"
 						className="TEPopupFormButton TEPopupFormRightButton"
+						id={submitButtonId}
 					>
 						{onSubmitTitle}
 					</RightButton>

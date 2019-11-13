@@ -34,6 +34,7 @@ export interface TEMultiStepFormProps {
 	// roundedButtons?: boolean
 	onSubmit(): Promise<any>
 	onStepChange?(step: number): void
+	submitButtonId?: string
 }
 export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 	const [currentStep, setCurrentStep] = useState(0)
@@ -109,6 +110,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 		handleCancelOnClick,
 		stepData,
 		// roundedButtons,
+		submitButtonId,
 	} = props
 	if (!stepData || (stepData && stepData.length === 0)) {
 		return null
@@ -162,6 +164,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 						// rounded={roundedButtons}
 						// singleButton={!handleCancelOnClick && currentStep === 0}
 						className="TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
+						id={submitButtonId}
 					>
 						{currentStep + 1 === stepData.length
 							? 'submit'
