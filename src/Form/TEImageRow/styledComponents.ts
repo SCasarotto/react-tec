@@ -59,8 +59,7 @@ export const Label = styled.label<{ disabled?: boolean }>`
 	background-color: ${(props) => props.theme.white};
 	cursor: pointer;
 	border: 1px solid
-		${(props) =>
-			props.disabled ? props.theme.lighterGray : props.theme.lightGray};
+		${(props) => (props.disabled ? props.theme.lighterGray : props.theme.lightGray)};
 	box-shadow: none;
 	border-radius: 5px;
 	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
@@ -68,12 +67,9 @@ export const Label = styled.label<{ disabled?: boolean }>`
 	:hover,
 	:active {
 		border: 1px solid
-			${(props) =>
-				props.disabled ? props.theme.lighterGray : props.theme.primary};
+			${(props) => (props.disabled ? props.theme.lighterGray : props.theme.primary)};
 		box-shadow: ${(props) =>
-			props.disabled
-				? 'none'
-				: `0 0 0 1px ${props.theme.primary} inset;`};
+			props.disabled ? 'none' : `0 0 0 1px ${props.theme.primary} inset;`};
 	}
 `
 export const UploadIcon = styled(FaUpload)`

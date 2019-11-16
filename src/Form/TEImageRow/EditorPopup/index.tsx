@@ -40,12 +40,12 @@ export const EditorPopup: React.FC<any> = (props) => {
 				onSubmit(e, editor.current)
 			}}
 			onClose={onCancel}
-			onCloseTitle="Cancel"
+			onCloseTitle='Cancel'
 			onSubmitTitle={onSubmitTitle}
 			className={`TEEditorPopup ${className}`}
 		>
-			<Container className="TEImageRowPopupContainer">
-				<Row className="TEImageRowPopupRow">
+			<Container className='TEImageRowPopupContainer'>
+				<Row className='TEImageRowPopupRow'>
 					<AvatarEditor
 						ref={editor}
 						image={file}
@@ -59,41 +59,36 @@ export const EditorPopup: React.FC<any> = (props) => {
 						{...avatarEditorData}
 					/>
 				</Row>
-				<Row className="TEImageRowPopupRow">
-					<TELabel
-						htmlFor="scale"
-						className="TEImageRowPopupZoomTitle"
-					>
+				<Row className='TEImageRowPopupRow'>
+					<TELabel htmlFor='scale' className='TEImageRowPopupZoomTitle'>
 						Zoom
 					</TELabel>
 					<input
-						name="scale"
-						id="scale"
-						type="range"
+						name='scale'
+						id='scale'
+						type='range'
 						onChange={(e) => setEditorScale(Number(e.target.value))}
-						min="0.5"
-						max="2.5"
-						step="0.01"
+						min='0.5'
+						max='2.5'
+						step='0.01'
 						value={editorScale}
-						className="TEImageRowPopupZoomSlider"
+						className='TEImageRowPopupZoomSlider'
 					/>
 				</Row>
-				<Row className="TEImageRowPopupRow">
-					<TELabel className="TEImageRowPopupRotateLabel">
-						Rotate
-					</TELabel>
-					<RotateButtonWrapper className="TEImageRowPopupRotateButtonWrapper">
+				<Row className='TEImageRowPopupRow'>
+					<TELabel className='TEImageRowPopupRotateLabel'>Rotate</TELabel>
+					<RotateButtonWrapper className='TEImageRowPopupRotateButtonWrapper'>
 						<RotateButton
-							className="TEImageRowPopupRotateButton"
+							className='TEImageRowPopupRotateButton'
 							onClick={() => setRotation(rotation + 90)}
 						>
-							<UndoRotationIcon className="TEImageRowPopupRotateIcon" />
+							<UndoRotationIcon className='TEImageRowPopupRotateIcon' />
 						</RotateButton>
 						<RotateButton
-							className="TEImageRowPopupRotateButton"
+							className='TEImageRowPopupRotateButton'
 							onClick={() => setRotation(rotation - 90)}
 						>
-							<RedoRotationIcon className="TEImageRowPopupRotateIcon" />
+							<RedoRotationIcon className='TEImageRowPopupRotateIcon' />
 						</RotateButton>
 					</RotateButtonWrapper>
 				</Row>

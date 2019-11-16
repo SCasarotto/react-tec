@@ -9,9 +9,7 @@ import { TESearchSelectInput } from '../TESearchSelectInput'
 //
 // - At this moment there is no way to style the dropdown component with styled components.
 //
-export interface TESearchSelectRowProps
-	extends TERowCustomProps,
-		TELabelCustomProps {
+export interface TESearchSelectRowProps extends TERowCustomProps, TELabelCustomProps {
 	labelForKey: string
 	[key: string]: any
 }
@@ -19,26 +17,18 @@ export const TESearchSelectRow: React.FC<TESearchSelectRowProps> = (props) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
-		<TERow
-			rowSize={rowSize}
-			last={last}
-			className={`TESearchSelectRow ${className}`}
-		>
+		<TERow rowSize={rowSize} last={last} className={`TESearchSelectRow ${className}`}>
 			{title && (
 				<TELabel
 					htmlFor={labelForKey}
 					required={rest.required}
 					disabled={rest.disabled}
-					className="TESearchSelectRowTitle"
+					className='TESearchSelectRowTitle'
 				>
 					{title}
 				</TELabel>
 			)}
-			<TESearchSelectInput
-				id={labelForKey}
-				className="TESearchSelectRowInput"
-				{...rest}
-			/>
+			<TESearchSelectInput id={labelForKey} className='TESearchSelectRowInput' {...rest} />
 		</TERow>
 	)
 }

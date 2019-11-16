@@ -11,7 +11,7 @@ export const TEPopup: React.FC<TEPopupProps> = (props) => {
 
 	return (
 		<Background className={`TEPopup ${className}`} visible={visible}>
-			<Content className="TEPopupContent">{children}</Content>
+			<Content className='TEPopupContent'>{children}</Content>
 		</Background>
 	)
 }

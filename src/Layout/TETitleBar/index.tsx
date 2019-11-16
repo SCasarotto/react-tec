@@ -1,12 +1,6 @@
 import React from 'react'
 
-import {
-	Container,
-	Content,
-	Title,
-	ComponentWrapper,
-	Subtitle,
-} from './styledComponents'
+import { Container, Content, Title, ComponentWrapper, Subtitle } from './styledComponents'
 
 export interface TETitleBarProps {
 	className?: string
@@ -16,30 +10,20 @@ export interface TETitleBarProps {
 	rightComponent?: React.ReactNode
 }
 export const TETitleBar: React.FC<TETitleBarProps> = (props) => {
-	const {
-		className = '',
-		title,
-		leftComponent,
-		subtitle,
-		rightComponent,
-	} = props
+	const { className = '', title, leftComponent, subtitle, rightComponent } = props
 
 	return (
 		<Container className={`TETitleBar ${className}`}>
-			<Content className="TETitlebarContent">
-				{title && <Title className="TETitlebarTitle">{title}</Title>}
+			<Content className='TETitlebarContent'>
+				{title && <Title className='TETitlebarTitle'>{title}</Title>}
 				{leftComponent && (
-					<ComponentWrapper className="TETitlebarLeftComponent">
+					<ComponentWrapper className='TETitlebarLeftComponent'>
 						{leftComponent}
 					</ComponentWrapper>
 				)}
-				{subtitle && (
-					<Subtitle className="TETitlebarSubtitle">
-						{subtitle}
-					</Subtitle>
-				)}
+				{subtitle && <Subtitle className='TETitlebarSubtitle'>{subtitle}</Subtitle>}
 				{rightComponent && (
-					<ComponentWrapper className="TETitlebarRightComponent">
+					<ComponentWrapper className='TETitlebarRightComponent'>
 						{rightComponent}
 					</ComponentWrapper>
 				)}

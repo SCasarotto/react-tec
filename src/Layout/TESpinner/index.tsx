@@ -46,7 +46,7 @@ export const TESpinner: React.FC<TESpinnerProps> = (props) => {
 
 	return (
 		<Container className={`TESpinner ${className}`}>
-			<SpinnerWrapper size={size} className="TESpinnerContainer">
+			<SpinnerWrapper size={size} className='TESpinnerContainer'>
 				{renderRings()}
 			</SpinnerWrapper>
 		</Container>

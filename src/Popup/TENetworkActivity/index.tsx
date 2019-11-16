@@ -11,12 +11,8 @@ export const TENetworkActivity: React.FC<TENetworkActivityProps> = (props) => {
 
 	return (
 		<Popup visible={visible} className={`TENetworkActivity ${className}`}>
-			<Spinner size="large" className="TENetworkActivitySpinner" />
-			{message && (
-				<Message className="TENetworkActivityMessage">
-					{message}
-				</Message>
-			)}
+			<Spinner size='large' className='TENetworkActivitySpinner' />
+			{message && <Message className='TENetworkActivityMessage'>{message}</Message>}
 		</Popup>
 	)
 }

@@ -2,29 +2,23 @@ import styled from 'styled-components'
 
 import { FaFileDownload, FaRegWindowClose } from 'react-icons/fa'
 
-import { TERow } from '../TERow'
 import { TEFileInput } from '../TEFileInput'
 import { TEButton } from '../TEButton'
 
-export const WrapperRow = styled(TERow)`
-	max-width: 600px;
-`
 export const FileRowWrapper = styled.div``
 export const FileWrapper = styled.div<{ disabled?: boolean }>`
 	display: flex;
 	align-items: center;
 	padding: 5px;
 	border: 1px solid
-		${(props) =>
-			props.disabled ? props.theme.lighterGray : props.theme.lightGray};
+		${(props) => (props.disabled ? props.theme.lighterGray : props.theme.lightGray)};
 	background-color: ${(props) => props.theme.white};
 `
 export const FileName = styled.span<{ disabled?: boolean }>`
 	flex: 1;
 	padding-left: 5px;
 	display: block;
-	color: ${(props) =>
-		props.disabled ? props.theme.gray : props.theme.darkerGray};
+	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
 `
 export const DownloadFileButton = styled.a`
 	width: auto;
@@ -37,8 +31,7 @@ export const DownloadFileButton = styled.a`
 	align-items: center;
 	justify-content: center;
 
-	transition: color 0.2s ease-in 0s, background-color 0.2s ease-in 0s,
-		border 0.2s ease-in 0s;
+	transition: color 0.2s ease-in 0s, background-color 0.2s ease-in 0s, border 0.2s ease-in 0s;
 	:active,
 	:hover {
 		background-color: ${(props) => props.theme.primary};

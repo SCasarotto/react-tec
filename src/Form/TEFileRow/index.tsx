@@ -4,36 +4,25 @@ import { TERow, TERowCustomProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
 import { TEFileInput, TEFileInputProps } from '../TEFileInput'
 
-export interface TEFileRowProps
-	extends TERowCustomProps,
-		TELabelCustomProps,
-		TEFileInputProps {
+export interface TEFileRowProps extends TERowCustomProps, TELabelCustomProps, TEFileInputProps {
 	labelForKey: string
 }
 export const TEFileRow: React.FC<TEFileRowProps> = (props) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
-		<TERow
-			rowSize={rowSize}
-			last={last}
-			className={`TEFileRow ${className}`}
-		>
+		<TERow rowSize={rowSize} last={last} className={`TEFileRow ${className}`}>
 			{title && (
 				<TELabel
 					htmlFor={labelForKey}
 					required={rest.required}
 					disabled={rest.disabled}
-					className="TEFileRowTitle"
+					className='TEFileRowTitle'
 				>
 					{title}
 				</TELabel>
 			)}
-			<TEFileInput
-				id={labelForKey}
-				className="TEFileRowInput"
-				{...rest}
-			/>
+			<TEFileInput id={labelForKey} className='TEFileRowInput' {...rest} />
 		</TERow>
 	)
 }

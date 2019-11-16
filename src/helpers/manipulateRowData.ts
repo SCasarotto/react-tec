@@ -7,10 +7,7 @@ interface ManipulateRowData {
 	rowData: string | ButtonData
 	labelForKey: string
 }
-export const manipulateRowData = ({
-	rowData,
-	labelForKey = '',
-}: ManipulateRowData) => {
+export const manipulateRowData = ({ rowData, labelForKey = '' }: ManipulateRowData) => {
 	//Allowing For Greater Shorthand
 	if (typeof rowData === 'string') {
 		const label = rowData

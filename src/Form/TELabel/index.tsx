@@ -7,10 +7,7 @@ export interface TELabelCustomProps {
 	disabled?: boolean
 }
 export interface TELabelProps
-	extends React.DetailedHTMLProps<
-			React.LabelHTMLAttributes<HTMLLabelElement>,
-			HTMLLabelElement
-		>,
+	extends React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>,
 		TELabelCustomProps {
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any

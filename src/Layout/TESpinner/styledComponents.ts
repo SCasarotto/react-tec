@@ -29,11 +29,7 @@ const calculateRingStyles = ({
         top: ${spacing * 100}%;
         width: ${(1 - spacing * 2) * 100}%;
         height: ${(1 - spacing * 2) * 100}%;
-        border-top-color: ${colorBetweenColors(
-			innerColor,
-			outerColor,
-			colorSteps * ringNumber,
-		)};
+        border-top-color: ${colorBetweenColors(innerColor, outerColor, colorSteps * ringNumber)};
         animation: TESpinnerLoading ${thisTime}s linear infinite;
     `
 }

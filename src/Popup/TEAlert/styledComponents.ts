@@ -39,8 +39,7 @@ export const Button = styled(TEButton)`
 	border-top-right-radius: 0px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	transition: border 0.2s ease-in, color 0.2s ease-in,
-		background-color 0.2s ease-in;
+	transition: border 0.2s ease-in, color 0.2s ease-in, background-color 0.2s ease-in;
 
 	:active,
 	:hover {

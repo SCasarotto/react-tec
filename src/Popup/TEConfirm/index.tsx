@@ -1,13 +1,6 @@
 import React from 'react'
 
-import {
-	Popup,
-	Title,
-	Message,
-	ButtonContainer,
-	LeftButton,
-	RightButton,
-} from './styledComponents'
+import { Popup, Title, Message, ButtonContainer, LeftButton, RightButton } from './styledComponents'
 import { TEPopupProps } from './../TEPopup'
 
 export interface TEConfirmProps extends TEPopupProps {
@@ -33,21 +26,16 @@ export const TEConfirm: React.FC<TEConfirmProps> = (props) => {
 
 	return (
 		<Popup visible={visible} className={`TEConfirm ${className}`}>
-			{title && <Title className="TEConfirmTitle">{title}</Title>}
-			{message && (
-				<Message className="TEConfirmMessage">{message}</Message>
-			)}
+			{title && <Title className='TEConfirmTitle'>{title}</Title>}
+			{message && <Message className='TEConfirmMessage'>{message}</Message>}
 			{children}
-			<ButtonContainer className="TEConfirmButtonoContainer">
-				<LeftButton
-					onClick={leftOnClick}
-					className="TEConfirmButton TEConfirmLeftButton"
-				>
+			<ButtonContainer className='TEConfirmButtonoContainer'>
+				<LeftButton onClick={leftOnClick} className='TEConfirmButton TEConfirmLeftButton'>
 					{leftButtonTitle}
 				</LeftButton>
 				<RightButton
 					onClick={rightOnClick}
-					className="TEConfirmButton TEConfirmRightButton"
+					className='TEConfirmButton TEConfirmRightButton'
 				>
 					{rightButtonTitle}
 				</RightButton>

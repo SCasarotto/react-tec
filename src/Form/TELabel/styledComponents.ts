@@ -7,8 +7,7 @@ export const Label = styled.label<{ disabled?: boolean }>`
 	box-sizing: border-box;
 	margin-bottom: 3px;
 	font-size: 18px;
-	color: ${(props) =>
-		props.disabled ? props.theme.gray : props.theme.darkerGray};
+	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
 
 	@media (max-width: 550px) {
 		font-size: 16px;

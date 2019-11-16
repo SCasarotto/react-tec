@@ -1,32 +1,22 @@
 import React from 'react'
 
-import {
-	TEMultiStepForm,
-	TEMultiStepFormProps,
-} from '../../Form/TEMultiStepForm'
+import { TEMultiStepForm, TEMultiStepFormProps } from '../../Form/TEMultiStepForm'
 
 import { Popup } from './styledComponents'
 import { TEPopupProps } from './../TEPopup'
 
-export interface TEPopupMultiStepFormProps
-	extends TEPopupProps,
-		TEMultiStepFormProps {
+export interface TEPopupMultiStepFormProps extends TEPopupProps, TEMultiStepFormProps {
 	onClose(): void
 	onSubmit(): Promise<any>
 }
-export const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (
-	props,
-) => {
+export const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = (props) => {
 	const { visible, onClose, className = '', ...rest } = props
 
 	return (
-		<Popup
-			visible={visible}
-			className={`TEPopupMultiStepForm ${className}`}
-		>
+		<Popup visible={visible} className={`TEPopupMultiStepForm ${className}`}>
 			<TEMultiStepForm
 				handleCancelOnClick={onClose}
-				className="TEPopupMultiStepFormMultiStepForm"
+				className='TEPopupMultiStepFormMultiStepForm'
 				{...rest}
 			/>
 		</Popup>

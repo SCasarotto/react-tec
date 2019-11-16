@@ -19,14 +19,10 @@ const initialTheme = {
 	primary: '#007CC3',
 	secondary: '#4ADEC2',
 
-	shadowBottom:
-		'rgba(0, 0, 0, 0.1) 0px 15px 15px -15px, rgba(0, 0, 0, 0.05) 0px 5px 5px -5px',
-	shadowTop:
-		'rgba(0, 0, 0, 0.1) 0px -15px 15px -15px, rgba(0, 0, 0, 0.05) 0px -5px 5px -5px',
-	shadowRight:
-		'rgba(0, 0, 0, 0.1) 15px 0px 15px -15px, rgba(0, 0, 0, 0.05) 5px 0px 5px -5px',
-	shadowCenter:
-		'rgba(0, 0, 0, 0.1) 0px 0px 6px 0px, rgba(0, 0, 0, 0.05) 0px 0px 2px 0px',
+	shadowBottom: 'rgba(0, 0, 0, 0.1) 0px 15px 15px -15px, rgba(0, 0, 0, 0.05) 0px 5px 5px -5px',
+	shadowTop: 'rgba(0, 0, 0, 0.1) 0px -15px 15px -15px, rgba(0, 0, 0, 0.05) 0px -5px 5px -5px',
+	shadowRight: 'rgba(0, 0, 0, 0.1) 15px 0px 15px -15px, rgba(0, 0, 0, 0.05) 5px 0px 5px -5px',
+	shadowCenter: 'rgba(0, 0, 0, 0.1) 0px 0px 6px 0px, rgba(0, 0, 0, 0.05) 0px 0px 2px 0px',
 }
 
 //
@@ -1126,9 +1122,7 @@ export interface TEThemeProviderProps {
 export const TEThemeProvider: React.FC<TEThemeProviderProps> = (props) => {
 	const { theme, globalStyles } = props
 	return (
-		<ThemeProvider
-			theme={{ ...initialTheme, ...theme, globalStyles: globalStyles }}
-		>
+		<ThemeProvider theme={{ ...initialTheme, ...theme, globalStyles: globalStyles }}>
 			<Fragment>
 				<GlobalStyles />
 				{props.children}

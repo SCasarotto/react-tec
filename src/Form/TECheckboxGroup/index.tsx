@@ -5,13 +5,7 @@ import { TELabel, TELabelCustomProps } from '../TELabel'
 import { TECheckboxInputProps } from '../TECheckboxInput'
 import { manipulateRowData } from './../../helpers'
 
-import {
-	Container,
-	InputWrapper,
-	RowWrarpper,
-	Checkbox,
-	Label,
-} from './styledComponents'
+import { Container, InputWrapper, RowWrarpper, Checkbox, Label } from './styledComponents'
 
 interface TECheckboxGroupButtonData {
 	label: string
@@ -62,21 +56,13 @@ export const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 	} = props
 
 	return (
-		<Container
-			rowSize={rowSize}
-			last={last}
-			className={`TECheckboxGroup ${className}`}
-		>
+		<Container rowSize={rowSize} last={last} className={`TECheckboxGroup ${className}`}>
 			{title && (
-				<TELabel
-					disabled={disabled}
-					required={required}
-					className="TECheckboxGroupTitle"
-				>
+				<TELabel disabled={disabled} required={required} className='TECheckboxGroupTitle'>
 					{title}
 				</TELabel>
 			)}
-			<InputWrapper className="TECheckboxGroupInputWrapper">
+			<InputWrapper className='TECheckboxGroupInputWrapper'>
 				{buttonArray &&
 					buttonArray.map((rowData) => {
 						const { label, value, key } = manipulateRowData({
@@ -88,23 +74,20 @@ export const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 							<RowWrarpper
 								key={key}
 								rowSize={inputRowSize}
-								className="TECheckboxGroupRowWrapper"
+								className='TECheckboxGroupRowWrapper'
 							>
 								<Checkbox
 									value={value}
 									onChange={handleInputChange}
 									id={key}
-									checked={
-										checkedValues &&
-										checkedValues.includes(value)
-									}
+									checked={checkedValues && checkedValues.includes(value)}
 									disabled={disabled}
-									className="TECheckboxGroupCheckbox"
+									className='TECheckboxGroupCheckbox'
 								/>
 								<Label
 									htmlFor={key}
 									disabled={disabled}
-									className="TECheckboxGroupLabel"
+									className='TECheckboxGroupLabel'
 								>
 									{label}
 								</Label>

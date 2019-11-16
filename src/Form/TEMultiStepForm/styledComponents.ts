@@ -35,10 +35,8 @@ export const StepNumber = styled.div<{ active: boolean }>`
 	line-height: 30px;
 	border: 1px solid ${(props) => props.theme.primary};
 	z-index: 1;
-	background-color: ${(props) =>
-		props.active ? props.theme.primary : props.theme.white};
-	color: ${(props) =>
-		props.active ? props.theme.white : props.theme.primary};
+	background-color: ${(props) => (props.active ? props.theme.primary : props.theme.white)};
+	color: ${(props) => (props.active ? props.theme.white : props.theme.primary)};
 	transition: color 0.2s ease-in, background-color 0.2s ease-in;
 `
 export const StepTitle = styled.span`

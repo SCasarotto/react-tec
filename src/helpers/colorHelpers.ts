@@ -19,26 +19,16 @@ export const hexToRgb = (hex: string) => {
 		  }
 		: null
 }
-export const colorBetweenColors = (
-	color1: string,
-	color2: string,
-	percBetween: number,
-) => {
+export const colorBetweenColors = (color1: string, color2: string, percBetween: number) => {
 	const color1RGB = hexToRgb(color1)
 	const color2RGB = hexToRgb(color2)
 
 	if (!color1RGB || !color2RGB) {
 		throw new Error('Invalid colors supplied')
 	}
-	const r = Math.ceil(
-		color1RGB.r * percBetween + color2RGB.r * (1 - percBetween),
-	)
-	const g = Math.ceil(
-		color1RGB.g * percBetween + color2RGB.g * (1 - percBetween),
-	)
-	const b = Math.ceil(
-		color1RGB.b * percBetween + color2RGB.b * (1 - percBetween),
-	)
+	const r = Math.ceil(color1RGB.r * percBetween + color2RGB.r * (1 - percBetween))
+	const g = Math.ceil(color1RGB.g * percBetween + color2RGB.g * (1 - percBetween))
+	const b = Math.ceil(color1RGB.b * percBetween + color2RGB.b * (1 - percBetween))
 
 	return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b)
 }

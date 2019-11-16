@@ -32,8 +32,7 @@ export const InputWrapper = styled.div<{
 				return theme.lightGray
 			}
 		}};
-	box-shadow: ${(props) =>
-		props.active ? `0 0 0 1px ${props.theme.primary} inset` : 'none'};
+	box-shadow: ${(props) => (props.active ? `0 0 0 1px ${props.theme.primary} inset` : 'none')};
 	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
 	:hover,
 	:active {
@@ -48,8 +47,7 @@ export const Label = styled.label<{
 	display: block;
 	width: 100%;
 	font-size: 14px;
-	color: ${(props) =>
-		props.disabled ? props.theme.gray : props.theme.darkGray};
+	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkGray)};
 	padding: 10px;
 	cursor: ${(props) => {
 		const { disabled, active } = props

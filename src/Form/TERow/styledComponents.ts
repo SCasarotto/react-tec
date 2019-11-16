@@ -10,8 +10,7 @@ export const Row = styled.div<{
 	margin-bottom: 10px;
 	text-align: left;
 	box-sizing: border-box;
-	padding-right: ${(props) =>
-		props.rowSize !== 'full' && !props.last ? '5px' : '0px'};
+	padding-right: ${(props) => (props.rowSize !== 'full' && !props.last ? '5px' : '0px')};
 
 	${(props) => {
 		const { rowSize } = props

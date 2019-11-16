@@ -4,10 +4,7 @@ import { TERow, TERowCustomProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
 import { TETextarea, TETextareaProps } from '../TETextarea'
 
-export interface TETextareaRowProps
-	extends TERowCustomProps,
-		TELabelCustomProps,
-		TETextareaProps {
+export interface TETextareaRowProps extends TERowCustomProps, TELabelCustomProps, TETextareaProps {
 	labelForKey: string
 }
 
@@ -26,17 +23,13 @@ export const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
 	} = props
 
 	return (
-		<TERow
-			rowSize={rowSize}
-			last={last}
-			className={`TEInputRow ${className}`}
-		>
+		<TERow rowSize={rowSize} last={last} className={`TEInputRow ${className}`}>
 			{title && (
 				<TELabel
 					htmlFor={labelForKey}
 					required={required}
 					disabled={disabled}
-					className="TEInputRowTitle"
+					className='TEInputRowTitle'
 				>
 					{title}
 				</TELabel>
@@ -46,7 +39,7 @@ export const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
 				onChange={onChange}
 				id={labelForKey}
 				disabled={disabled}
-				className="TEInputRowInput"
+				className='TEInputRowInput'
 				{...rest}
 			/>
 		</TERow>

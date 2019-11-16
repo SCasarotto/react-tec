@@ -14,10 +14,7 @@ import {
 
 export interface TEFileInputProps
 	extends Omit<
-		React.DetailedHTMLProps<
-			React.InputHTMLAttributes<HTMLInputElement>,
-			HTMLInputElement
-		>,
+		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
 		'onChange'
 	> {
 	//TODO: Fix this. styled-components is weird with refs
@@ -32,9 +29,7 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 	const [active, setActive] = useState(false)
 	const [fileArray, setFileArray] = useState<FileList | undefined>()
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
-	const [inputKey, setInputKey] = useState<string | number>(
-		props.resetKey || 'inputKey',
-	)
+	const [inputKey, setInputKey] = useState<string | number>(props.resetKey || 'inputKey')
 
 	const onFileChange = (files: FileList | null) => {
 		const { filePattern, onChange } = props
@@ -48,13 +43,10 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 		if (filePattern && filePattern instanceof RegExp) {
 			for (let i = 0; i < files.length; i++) {
 				if (!files[i].type.match(filePattern)) {
-					console.warn(
-						'One of the selected files is not of the correct type.',
-					)
+					console.warn('One of the selected files is not of the correct type.')
 					setErrorData({
 						error: true,
-						message:
-							'One of the selected files is not of the correct type.',
+						message: 'One of the selected files is not of the correct type.',
 					})
 					return
 				}
@@ -72,8 +64,7 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 	}
 	const onDragEnter = () => setActive(true)
 	const onDragLeave = () => setActive(false)
-	const onDragOver = (e: React.DragEvent<HTMLDivElement>) =>
-		e.preventDefault()
+	const onDragOver = (e: React.DragEvent<HTMLDivElement>) => e.preventDefault()
 	const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
 		e.preventDefault()
 		setActive(false)
@@ -112,42 +103,36 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 				onDrop={onDrop}
 				active={active}
 				disabled={disabled}
-				className="TEFileInputInputWrapper"
+				className='TEFileInputInputWrapper'
 			>
-				<Label
-					active={active}
-					disabled={disabled}
-					className="TEFileInputLabel"
-				>
-					<LabelCopy className="TEFileInputCopy">
-						<LabelIcon className="TEFileInputIcon" />
+				<Label active={active} disabled={disabled} className='TEFileInputLabel'>
+					<LabelCopy className='TEFileInputCopy'>
+						<LabelIcon className='TEFileInputIcon' />
 						{labelCopy}
 					</LabelCopy>
 					<Input
 						{...rest}
 						disabled={disabled}
-						type="file"
+						type='file'
 						key={inputKey}
 						onChange={(e: ChangeEvent<HTMLInputElement>) =>
 							onFileChange(e.target.files)
 						}
-						className="TEFileInputInput"
+						className='TEFileInputInput'
 					/>
 				</Label>
 				{!hideClearButton && (
 					<ClearButton
 						onClick={handleClearInput}
 						disabled={disabled}
-						className="TEFileInputClearButton"
+						className='TEFileInputClearButton'
 					>
-						<ButtonIcon className="TEFileInputClearIcon" />
+						<ButtonIcon className='TEFileInputClearIcon' />
 					</ClearButton>
 				)}
 			</InputWrapper>
 			{errorData && errorData.error && (
-				<ErrorMessage className="TEFileInputErrorMessage">
-					{errorData.message}
-				</ErrorMessage>
+				<ErrorMessage className='TEFileInputErrorMessage'>{errorData.message}</ErrorMessage>
 			)}
 		</Wrapper>
 	)
