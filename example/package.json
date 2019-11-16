@@ -9,10 +9,10 @@
 		"@types/react-dom": "16.9.3",
 		"react": "link:../node_modules/react",
 		"react-dom": "link:../node_modules/react-dom",
-		"react-scripts": "3.2.0",
 		"react-helmet": "^5.2.1",
 		"react-router": "^5.1.1",
 		"react-router-dom": "^5.1.1",
+		"react-scripts": "3.2.0",
 		"react-tec": "link:..",
 		"styled-components": "^4.4.0",
 		"typescript": "3.6.4"
