@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <!-- and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). -->
 
+## 0.2.0 - 11-3-2019
+
+This update is a complete rewrite of react-tec. Moving from [Create React Library](https://github.com/transitive-bullshit/create-react-library#readme) to [tsdx](https://github.com/jaredpalmer/tsdx). This means the lirbary is written in typescript and thus keeps the type definitions up to date. In this transition some things were refined and others bugs were fixed (conflicts with base html props). This shift will result in a more maintainable library using up to date libraries. Please see the mentionable changes below.
+
+### BREAKING CHANGES
+
+-   `TERow` prop `size` has been changed to `rowSize`. Thus all "Row"s (Ex. `TEInputRow`) and "Groups" (Ex. `TECheckboxGroup`) now use `rowSize` instead of `row`.
+-   "Groups" (Ex. `TECheckboxGroup`) prop `rowSize` that previously determined how many checkboxs would be in a row is now `inputRowSize`.
+-   `TEInputRow` no longer can accept `type='textarea'`. There is now a `TETextareaRow`.
+-   `TEPrivateRoute` no longer accepts `isAuthenticated`, `hasPermissions`, `authPath`, `accessDeniedPath` instead it accepts an array `authChecks` containing `check` function and `path` string. This allow for full generalization of as many layers of checks required.
+-   `TEHelmet` is no longer apart of this package. This was entirely a passthrough component and was unnessisary. Use react-helmet from now on.
+-   Replaced `TEScrollToTop` with a utility hook `useScrollTop`.
+-   `TEImageRow` `imgSrc` prop is not `imgSrcArray` just like `TEFileManagerRow`
+
+### Additions
+
+-   Full Typescript support
+-   Entirely Upgraded dependencies and libraries used to generate the module
+
 ## 0.1.24 - 10-11-2019
 
 ### Bug Fixes
