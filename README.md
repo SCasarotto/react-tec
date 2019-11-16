@@ -35,6 +35,10 @@ const Main = () => (
 ReactDOM.render(<Main />, document.getElementById('root'))
 ```
 
+## Acknowledgements
+
+Thank you to [TSDX](https://github.com/jaredpalmer/tsdx) for such an amazing starting point!
+
 ## License
 
 MIT © [SCasarotto](https://github.com/SCasarotto)
