@@ -20,6 +20,11 @@ This update is a complete rewrite of react-tec. Moving from [Create React Librar
 -   Replaced `TEScrollToTop` with a utility hook `useScrollTop`.
 -   `TEImageRow` `imgSrc` prop is not `imgSrcArray` just like `TEFileManagerRow`
 
+### Additions
+
+-   Full Typescript support
+-   Entirely Upgraded dependencies and libraries used to generate the module
+
 ## 0.1.24 - 10-11-2019
 
 ### Bug Fixes
