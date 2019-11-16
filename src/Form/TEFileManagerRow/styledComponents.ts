@@ -55,5 +55,5 @@ export const ClearFileButtonIcon = styled(FaRegWindowClose)`
 	font-size: 18px;
 `
 export const Input = styled(TEFileInput)`
-	margin-top: 30px;
+	margin-top: 10px;
 `
