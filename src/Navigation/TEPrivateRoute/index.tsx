@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-	Route,
-	Redirect,
-	RouteProps,
-	RouteComponentProps,
-} from 'react-router-dom'
+import { Route, Redirect, RouteProps, RouteComponentProps } from 'react-router-dom'
 
 interface TEPrivateRouteAuthCheck {
 	check(props: RouteComponentProps<any>): boolean
@@ -36,11 +31,7 @@ export const TEPrivateRoute: React.FC<TEPrivateRouteProps> = (props) => {
 					}
 				}
 
-				return Component ? (
-					<Component {...props} />
-				) : (
-					<Route {...rest} />
-				)
+				return Component ? <Component {...props} /> : <Route {...rest} />
 			}}
 		/>
 	)

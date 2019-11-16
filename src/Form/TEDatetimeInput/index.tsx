@@ -5,8 +5,7 @@ import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 // import { Button } from './styledComponents'
 
 //Couldn't figure out what this value is really used for ...
-export interface TEDatetimeInputProps
-	extends Omit<ReactDatePickerProps, 'value'> {
+export interface TEDatetimeInputProps extends Omit<ReactDatePickerProps, 'value'> {
 	//These are used to standardize to other input props
 	placeholder?: string
 	value?: Date | null

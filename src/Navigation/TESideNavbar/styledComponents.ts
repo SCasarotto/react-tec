@@ -14,8 +14,7 @@ export const Container = styled.div<{ sidebarWidth: number }>`
 	background-color: ${(props) => props.theme.white};
 	overflow-y: auto;
 	/*TODO: Investigate if this should be repleaced by one of the theme shadows*/
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px,
-		rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px, rgba(0, 0, 0, 0.05) 1px 0px 5px 0px;
 `
 export const Logo = styled.img`
 	object-fit: contain;

@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { TELabel, TELabelCustomProps } from '../TELabel'
 
 import {
-	WrapperRow,
 	FileRowWrapper,
 	FileWrapper,
 	FileName,
@@ -15,6 +14,7 @@ import {
 } from './styledComponents'
 import { TERowCustomProps } from '../TERow'
 import { TEInputProps } from '../TEInput'
+import { TERow } from '../TERow'
 
 //TEFileManagerRow ✅
 interface TEFileManagerRowSrcObject {
@@ -29,10 +29,7 @@ interface TEFileManagerRowOnRemoveData {
 	path: string
 	index: number
 }
-interface TEFileManagerRowProps
-	extends TERowCustomProps,
-		TELabelCustomProps,
-		TEInputProps {
+interface TEFileManagerRowProps extends TERowCustomProps, TELabelCustomProps, TEInputProps {
 	labelForKey: string
 	fileSrcArray: TEFileManagerRowSrcObject[]
 	maxNumber?: number
@@ -77,63 +74,48 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 	}
 
 	return (
-		<WrapperRow
-			rowSize={rowSize}
-			last={last}
-			className={`TEFileManagerRow ${className}`}
-		>
+		<TERow rowSize={rowSize} last={last} className={`TEFileManagerRow ${className}`}>
 			{labelText && (
 				<TELabel
 					htmlFor={labelForKey}
 					required={required}
 					disabled={disabled}
-					className="TEFileManagerRowTitle"
+					className='TEFileManagerRowTitle'
 				>
 					{labelText}
 				</TELabel>
 			)}
-			<FileRowWrapper className="TEFileManagerRowWrapper">
+			<FileRowWrapper className='TEFileManagerRowWrapper'>
 				{fileSrcArray &&
 					fileSrcArray.map((imgSrcData, index) => {
-						const {
-							src,
-							uid,
-							filename,
-							fileEnding,
-							path,
-						} = imgSrcData
+						const { src, uid, filename, fileEnding, path } = imgSrcData
 						return (
 							<FileWrapper
 								key={uid}
-								className="TEFileManagerFileRow"
+								className='TEFileManagerFileRow'
 								disabled={disabled}
 							>
-								<FileName
-									className="TEFileManagerFileName"
-									disabled={disabled}
-								>
+								<FileName className='TEFileManagerFileName' disabled={disabled}>
 									{filename}.{fileEnding}
 								</FileName>
 								{src && (
 									<DownloadFileButton
 										href={src}
-										target="_blank"
-										rel="noopener noreferrer"
+										target='_blank'
+										rel='noopener noreferrer'
 										key={uid}
 										download={filename}
-										className="TEFileManagerDownloadButton"
+										className='TEFileManagerDownloadButton'
 									>
-										<DownloadImageButtonIcon className="TEFileManagerDownloadIcon" />
+										<DownloadImageButtonIcon className='TEFileManagerDownloadIcon' />
 									</DownloadFileButton>
 								)}
 								{!disabled && (
 									<ClearFileButton
-										onClick={() =>
-											onRemove({ uid, path, index })
-										}
-										className="TEFileManagerClearButton"
+										onClick={() => onRemove({ uid, path, index })}
+										className='TEFileManagerClearButton'
 									>
-										<ClearFileButtonIcon className="TEFileManagerClearIcon" />
+										<ClearFileButtonIcon className='TEFileManagerClearIcon' />
 									</ClearFileButton>
 								)}
 							</FileWrapper>
@@ -151,12 +133,12 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 						// multiple={maxNumber === 0 || maxNumber > 1} //For simplicity making it a single file
 						accept={accept}
 						filePattern={filePattern}
-						className="TEFileManagerInput"
+						className='TEFileManagerInput'
 						hideClearButton
 					/>
 				)}
 			</FileRowWrapper>
-		</WrapperRow>
+		</TERow>
 	)
 }
 

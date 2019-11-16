@@ -2,13 +2,7 @@ import React from 'react'
 
 import { TELabel, TELabelCustomProps } from '../TELabel'
 
-import {
-	Container,
-	InputWrapper,
-	RowWrapper,
-	RadioButton,
-	Label,
-} from './styledComponents'
+import { Container, InputWrapper, RowWrapper, RadioButton, Label } from './styledComponents'
 import { TERowCustomProps } from '../TERow'
 import { TERadioButtonInputProps } from '../TERadioButtonInput'
 import { manipulateRowData } from './../../helpers'
@@ -28,9 +22,7 @@ interface TERadioButtonGroupProps
 	buttonArray: (string | TERadioButtonData)[]
 	scrolling?: boolean
 }
-export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
-	props,
-) => {
+export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (props) => {
 	const {
 		rowSize,
 		last,
@@ -46,21 +38,17 @@ export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
 	} = props
 
 	return (
-		<Container
-			rowSize={rowSize}
-			last={last}
-			className={`TERadioButtonGroup ${className}`}
-		>
+		<Container rowSize={rowSize} last={last} className={`TERadioButtonGroup ${className}`}>
 			{title && (
 				<TELabel
 					disabled={disabled}
 					required={required}
-					className="TERadioButtonGroupTitle"
+					className='TERadioButtonGroupTitle'
 				>
 					{title}
 				</TELabel>
 			)}
-			<InputWrapper className="TERadioButtonGroupInputWrapper">
+			<InputWrapper className='TERadioButtonGroupInputWrapper'>
 				{buttonArray &&
 					buttonArray.map((rowData) => {
 						const { label, value, key } = manipulateRowData({
@@ -72,7 +60,7 @@ export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
 							<RowWrapper
 								key={key}
 								rowSize={inputRowSize}
-								className="TERadioButtonGroupRowWrapper"
+								className='TERadioButtonGroupRowWrapper'
 							>
 								<RadioButton
 									value={value}
@@ -80,12 +68,12 @@ export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (
 									id={key}
 									checked={checkedValue === value}
 									disabled={disabled}
-									className="TERadioButtonGroupRadioButton"
+									className='TERadioButtonGroupRadioButton'
 								/>
 								<Label
 									htmlFor={key}
 									disabled={disabled}
-									className="TERadioButtonGroupLabel"
+									className='TERadioButtonGroupLabel'
 								>
 									{label}
 								</Label>

@@ -13,15 +13,7 @@ export interface TESideNavLinkProps {
 }
 export const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
 	const location = useLocation()
-	const {
-		title,
-		to,
-		children,
-		activePath,
-		exact,
-		className = '',
-		...rest
-	} = props
+	const { title, to, children, activePath, exact, className = '', ...rest } = props
 
 	return (
 		<Li className={`TESideNavLink ${className}`}>
@@ -32,13 +24,13 @@ export const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
 						exact,
 					})
 				}
-				activeClassName="active"
+				activeClassName='active'
 				to={to}
 				exact={exact}
-				className="TESideNavLinkLink"
+				className='TESideNavLinkLink'
 				{...rest}
 			>
-				{title && <Title className="TESideNavLinkTitle">{title}</Title>}
+				{title && <Title className='TESideNavLinkTitle'>{title}</Title>}
 				{children}
 			</Link>
 		</Li>

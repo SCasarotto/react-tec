@@ -5,8 +5,7 @@ import { TELabel } from '../TELabel'
 import { TERadioButtonInput } from '../TERadioButtonInput'
 
 export const Row = styled(TERow)<{ inline?: boolean }>`
-	${(props) =>
-		props.inline ? 'display: flex; justify-content: space-between;' : ''}
+	${(props) => (props.inline ? 'display: flex; justify-content: space-between;' : '')}
 `
 export const Label = styled(TELabel)<{ inline?: boolean }>`
 	width: ${(props) => (props.inline ? 'auto' : '100%')};
@@ -46,37 +45,26 @@ export const InputLabel = styled(TELabel)<{
 }>`
 	display: inline-block;
 	width: auto;
-	border: 1px solid
-		${(props) =>
-			props.checked ? props.theme.primary : props.theme.lightGray};
+	border: 1px solid ${(props) => (props.checked ? props.theme.primary : props.theme.lightGray)};
 	padding: 8px 15px;
 	margin: 0px;
-	background-color: ${(props) =>
-		props.checked ? props.theme.primary : props.theme.white};
+	background-color: ${(props) => (props.checked ? props.theme.primary : props.theme.white)};
 	font-size: 14px;
-	color: ${(props) =>
-		props.checked ? props.theme.white : props.theme.darkGray};
+	color: ${(props) => (props.checked ? props.theme.white : props.theme.darkGray)};
 	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 	pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
 
-	transition: color 0.2s ease-in, background-color 0.2s ease-in,
-		border 0.2s ease-in;
+	transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;
 
 	:hover,
 	:active {
 		color: ${(props) =>
-			props.disabled && !props.checked
-				? props.theme.gray
-				: props.theme.white};
+			props.disabled && !props.checked ? props.theme.gray : props.theme.white};
 		background-color: ${(props) =>
-			props.disabled && !props.checked
-				? props.theme.white
-				: props.theme.primary};
+			props.disabled && !props.checked ? props.theme.white : props.theme.primary};
 		border: 1px solid
 			${(props) =>
-				props.disabled && !props.checked
-					? props.theme.lightGray
-					: props.theme.primary};
+				props.disabled && !props.checked ? props.theme.lightGray : props.theme.primary};
 	}
 	${(props) => {
 		const { first, last } = props

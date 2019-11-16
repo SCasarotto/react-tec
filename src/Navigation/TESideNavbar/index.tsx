@@ -15,27 +15,18 @@ export interface TESideNavbarProps {
 export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 	const { sidebarWidth = 200, logo, Header, links, className = '' } = props
 	return (
-		<Container
-			sidebarWidth={sidebarWidth}
-			className={`TESideNavbar ${className}`}
-		>
+		<Container sidebarWidth={sidebarWidth} className={`TESideNavbar ${className}`}>
 			{Header}
 			{logo && !Header && (
-				<Link to="/" className="TESideNavbarLogoLink">
-					<Logo src={logo} alt="logo" className="TESideNavbarLogo" />
+				<Link to='/' className='TESideNavbarLogoLink'>
+					<Logo src={logo} alt='logo' className='TESideNavbarLogo' />
 				</Link>
 			)}
-			<NavContainer className="TESideNavbarNavContainer">
-				<MainUl className="TESideNavbarMainUl">
+			<NavContainer className='TESideNavbarNavContainer'>
+				<MainUl className='TESideNavbarMainUl'>
 					{links &&
 						links.map((link, index) => {
-							const {
-								title,
-								activePath,
-								to,
-								children,
-								exact,
-							} = link
+							const { title, activePath, to, children, exact } = link
 							return (
 								<TESideNavLink
 									key={index}
@@ -43,7 +34,7 @@ export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 									activePath={activePath || to}
 									title={title}
 									exact={exact}
-									className="TESideNavbarNavLink"
+									className='TESideNavbarNavLink'
 								>
 									{children}
 								</TESideNavLink>

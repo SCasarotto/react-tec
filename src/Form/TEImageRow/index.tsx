@@ -29,10 +29,7 @@ interface TEImageRowOnRemoveData {
 	path: string
 	index: number
 }
-export interface TEImageRowProps
-	extends TERowCustomProps,
-		TELabelCustomProps,
-		TEFileInputProps {
+export interface TEImageRowProps extends TERowCustomProps, TELabelCustomProps, TEFileInputProps {
 	labelForKey: string
 	imgSrcArray: TEImageRowSrcObject[]
 	maxNumber?: number
@@ -46,9 +43,7 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 	const [editorVisible, setEditorVisible] = useState(false)
 	const [file, setFile] = useState<File | undefined>(undefined)
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
-	const [inputKey, setInputKey] = useState<string | number>(
-		props.resetKey || 'inputKey',
-	)
+	const [inputKey, setInputKey] = useState<string | number>(props.resetKey || 'inputKey')
 
 	const handleClearImage = (data: TEImageRowOnRemoveData) => {
 		props.onRemove(data)
@@ -58,10 +53,7 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 		setFile(undefined)
 		setInputKey(new Date().getTime())
 	}
-	const handleEditorSubmit = async (
-		e: FormEvent<HTMLFormElement>,
-		editor: any,
-	) => {
+	const handleEditorSubmit = async (e: FormEvent<HTMLFormElement>, editor: any) => {
 		//This could be passed out. Not sure it needs to.
 		e.preventDefault()
 		try {
@@ -131,48 +123,31 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 	}
 
 	return (
-		<TERow
-			rowSize={rowSize}
-			last={last}
-			className={`TEImageRow ${className}`}
-		>
+		<TERow rowSize={rowSize} last={last} className={`TEImageRow ${className}`}>
 			{labelText && (
 				<TELabel
 					htmlFor={labelForKey}
 					required={required}
 					disabled={disabled}
-					className="TEImageRowTitle"
+					className='TEImageRowTitle'
 				>
 					{labelText}
 				</TELabel>
 			)}
-			<ImageRowWrapper className="TEImageRowWrapper">
+			<ImageRowWrapper className='TEImageRowWrapper'>
 				{imgSrcArray &&
 					imgSrcArray.map((imgSrcData, index) => {
 						const { src, uid, path } = imgSrcData
 						return (
-							<ImageWrapper
-								key={uid}
-								className="TEImageRowImageWrapper"
-							>
-								<a
-									href={src}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<Image
-										src={src}
-										alt={uid}
-										className="TEImageRowImage"
-									/>
+							<ImageWrapper key={uid} className='TEImageRowImageWrapper'>
+								<a href={src} target='_blank' rel='noopener noreferrer'>
+									<Image src={src} alt={uid} className='TEImageRowImage' />
 								</a>
 								<ClearImageButton
-									onClick={() =>
-										handleClearImage({ uid, path, index })
-									}
-									className="TEImageRowClearButton"
+									onClick={() => handleClearImage({ uid, path, index })}
+									className='TEImageRowClearButton'
 								>
-									<ClearImageButtonIcon className="TEImageRowClearIcon" />
+									<ClearImageButtonIcon className='TEImageRowClearIcon' />
 								</ClearImageButton>
 							</ImageWrapper>
 						)
@@ -187,7 +162,7 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 							</div>
 							<Input
 								key={inputKey} //Used to reset input
-								type="file"
+								type='file'
 								accept={accept}
 								onChange={onFileChange}
 							/>
@@ -195,16 +170,14 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 					)}
 			</ImageRowWrapper>
 			{errorData && errorData.error && (
-				<ErrorMessage className="TEImageRowErrorMessage">
-					{errorData.message}
-				</ErrorMessage>
+				<ErrorMessage className='TEImageRowErrorMessage'>{errorData.message}</ErrorMessage>
 			)}
 			<EditorPopup
 				visible={editorVisible}
 				file={file}
 				onCancel={handleCancelEditor}
 				onSubmit={handleEditorSubmit}
-				className="TEImageRowPopup"
+				className='TEImageRowPopup'
 				avatarEditorData={avatarEditorData}
 			/>
 		</TERow>

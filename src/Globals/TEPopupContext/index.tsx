@@ -91,10 +91,7 @@ export const TEPopupProvider: React.FC = (props) => {
 				rightOnClick={confirmRightOnClick}
 				rightButtonTitle={confirmRightTitle}
 			/>
-			<TENetworkActivity
-				visible={networkActivityVisible}
-				message={networkMessage}
-			/>
+			<TENetworkActivity visible={networkActivityVisible} message={networkMessage} />
 		</TEPopupContext.Provider>
 	)
 }
@@ -125,12 +122,7 @@ export const useTEPopups = (): useTEPopupsFunctions => {
 	const { dispatch } = useContext(TEPopupContext)
 
 	//TEAlert
-	const showAlert = ({
-		title,
-		message,
-		onClick,
-		buttonTitle,
-	}: showAlertData) =>
+	const showAlert = ({ title, message, onClick, buttonTitle }: showAlertData) =>
 		dispatch({
 			type: 'show_alert',
 			payload: {
@@ -169,8 +161,7 @@ export const useTEPopups = (): useTEPopupsFunctions => {
 			type: 'show_network_activity',
 			payload: message,
 		})
-	const hideNetworkActivity = () =>
-		dispatch({ type: 'hide_network_activity' })
+	const hideNetworkActivity = () => dispatch({ type: 'hide_network_activity' })
 
 	return {
 		showAlert,

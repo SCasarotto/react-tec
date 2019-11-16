@@ -28,7 +28,7 @@ export const TEPanel: React.FC<TEPanelProps> = (props) => {
 					leftComponent={leftComponent}
 					subtitle={subtitle}
 					rightComponent={rightComponent}
-					className="TEPanelTitleBar"
+					className='TEPanelTitleBar'
 				/>
 			)}
 			{children}

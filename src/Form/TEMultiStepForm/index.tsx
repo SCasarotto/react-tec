@@ -60,10 +60,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 		}
 
 		try {
-			const onPrevious =
-				stepData &&
-				stepData[currentStep] &&
-				stepData[currentStep].onPrevious
+			const onPrevious = stepData && stepData[currentStep] && stepData[currentStep].onPrevious
 			if (onPrevious) {
 				await onPrevious()
 				moveBack()
@@ -90,10 +87,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 			}
 		}
 		try {
-			const onNext =
-				stepData &&
-				stepData[currentStep] &&
-				stepData[currentStep].onNext
+			const onNext = stepData && stepData[currentStep] && stepData[currentStep].onNext
 			if (onNext) {
 				await onNext()
 				moveForward()
@@ -118,11 +112,8 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 
 	return (
 		<Container className={`TEMultiStepForm ${className}`}>
-			<StepContainer className="TEMultiStepFormStepContainer">
-				<StepBar
-					stepCount={stepData.length}
-					className="TEMultiStepFormStepBar"
-				/>
+			<StepContainer className='TEMultiStepFormStepContainer'>
+				<StepBar stepCount={stepData.length} className='TEMultiStepFormStepBar' />
 				{stepData.map((step, index) => {
 					const { title } = step
 
@@ -130,30 +121,28 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 						<StepWrapper
 							key={index}
 							stepCount={stepData.length}
-							className="TEMultiStepFormStepWrapper"
+							className='TEMultiStepFormStepWrapper'
 						>
 							<StepNumber
 								active={currentStep === index}
-								className="TEMultiStepFormStepNumber"
+								className='TEMultiStepFormStepNumber'
 							>
 								{index + 1}
 							</StepNumber>
-							<StepTitle className="TEMultiStepFormStepTitle">
-								{title}
-							</StepTitle>
+							<StepTitle className='TEMultiStepFormStepTitle'>{title}</StepTitle>
 						</StepWrapper>
 					)
 				})}
 			</StepContainer>
-			<TEForm className="TEMultiStepFormForm">
+			<TEForm className='TEMultiStepFormForm'>
 				{stepData[currentStep] && stepData[currentStep].component}
-				<ButtonContainer className="TEMultiStepFormButtonContainer">
+				<ButtonContainer className='TEMultiStepFormButtonContainer'>
 					{(handleCancelOnClick || currentStep > 0) && (
 						<StepButton
 							onClick={handlePreviousPressed}
 							// position="left"
 							// rounded={roundedButtons}
-							className="TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft"
+							className='TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft'
 						>
 							{currentStep === 0 ? 'cancel' : 'previous'}
 						</StepButton>
@@ -163,12 +152,10 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 						// position="right"
 						// rounded={roundedButtons}
 						// singleButton={!handleCancelOnClick && currentStep === 0}
-						className="TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
+						className='TEMultiStepFormStepButton TEMultiStepFormStepButtonright'
 						id={submitButtonId}
 					>
-						{currentStep + 1 === stepData.length
-							? 'submit'
-							: 'next'}
+						{currentStep + 1 === stepData.length ? 'submit' : 'next'}
 					</StepButton>
 				</ButtonContainer>
 			</TEForm>

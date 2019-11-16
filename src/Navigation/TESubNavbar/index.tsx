@@ -13,16 +13,13 @@ export const TESubNavbar: React.FC<TESubNavbarProps> = (props) => {
 
 	return (
 		<Container className={`TESubNavbar ${className}`}>
-			<Content className="TESubNavbarContent">
-				<Ul className="TESubNavbarUl">
+			<Content className='TESubNavbarContent'>
+				<Ul className='TESubNavbarUl'>
 					{links &&
 						links.map((link, index) => {
 							return (
-								<Li key={index} className="TESubNavbarLi">
-									<Link
-										className="TESubNavbarLink"
-										{...link}
-									/>
+								<Li key={index} className='TESubNavbarLi'>
+									<Link className='TESubNavbarLink' {...link} />
 								</Li>
 							)
 						})}

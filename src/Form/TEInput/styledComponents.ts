@@ -10,12 +10,10 @@ export const Input = styled.input`
 	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'text')};
 	border-radius: 5px;
 	background-color: ${(props) => props.theme.white};
-	color: ${(props) =>
-		props.disabled ? props.theme.gray : props.theme.darkerGray};
+	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
 
 	border: 1px solid
-		${(props) =>
-			props.disabled ? props.theme.lighterGray : props.theme.lightGray};
+		${(props) => (props.disabled ? props.theme.lighterGray : props.theme.lightGray)};
 	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
 	:hover,
 	:active {

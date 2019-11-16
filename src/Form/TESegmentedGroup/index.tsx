@@ -1,13 +1,6 @@
 import React from 'react'
 
-import {
-	Row,
-	Label,
-	SegmentedContainer,
-	LabelWrapper,
-	Input,
-	InputLabel,
-} from './styledComponents'
+import { Row, Label, SegmentedContainer, LabelWrapper, Input, InputLabel } from './styledComponents'
 import { TERowCustomProps } from '../TERow'
 import { TELabelCustomProps } from '../TELabel'
 import { TERadioButtonInputProps } from '../TERadioButtonInput'
@@ -54,15 +47,12 @@ export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 					inline={inline}
 					required={required}
 					disabled={disabled}
-					className="TESegmentedGroupTitle"
+					className='TESegmentedGroupTitle'
 				>
 					{title}
 				</Label>
 			)}
-			<SegmentedContainer
-				inline={inline}
-				className="TESegmentedGroupSegmentedContainer"
-			>
+			<SegmentedContainer inline={inline} className='TESegmentedGroupSegmentedContainer'>
 				{buttonArray &&
 					buttonArray.map((rowData, index) => {
 						const { label, value, key } = manipulateRowData({
@@ -73,7 +63,7 @@ export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 						return (
 							<LabelWrapper
 								key={key}
-								className="TESegmentedGroupSegmentedLabelWrapper"
+								className='TESegmentedGroupSegmentedLabelWrapper'
 							>
 								<Input
 									value={value}
@@ -81,7 +71,7 @@ export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 									id={key}
 									checked={checkedValue === value}
 									disabled={disabled}
-									className="TESegmentedGroupSegmentedInput"
+									className='TESegmentedGroupSegmentedInput'
 								/>
 								<InputLabel
 									htmlFor={key}
@@ -90,7 +80,7 @@ export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 									last={index + 1 === buttonArray.length}
 									checked={checkedValue === value}
 									disabled={disabled}
-									className="TESegmentedGroupSegmentedLabel"
+									className='TESegmentedGroupSegmentedLabel'
 								>
 									{label}
 								</InputLabel>

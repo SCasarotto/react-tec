@@ -1,11 +1,6 @@
 import React from 'react'
 
-import {
-	Container,
-	Title,
-	ComponentWrapper,
-	Subtitle,
-} from './styledComponents'
+import { Container, Title, ComponentWrapper, Subtitle } from './styledComponents'
 
 export interface TEPanelTitleProps {
 	className?: string
@@ -15,27 +10,19 @@ export interface TEPanelTitleProps {
 	rightComponent?: React.ReactNode
 }
 export const TEPanelTitle: React.FC<TEPanelTitleProps> = (props) => {
-	const {
-		className = '',
-		title,
-		leftComponent,
-		subtitle,
-		rightComponent,
-	} = props
+	const { className = '', title, leftComponent, subtitle, rightComponent } = props
 
 	return (
 		<Container className={`TEPanelTitle ${className}`}>
-			{title && <Title className="TEPanelTitleTitle">{title}</Title>}
+			{title && <Title className='TEPanelTitleTitle'>{title}</Title>}
 			{leftComponent && (
-				<ComponentWrapper className="TEPanelTitleLeftComponentWrapper">
+				<ComponentWrapper className='TEPanelTitleLeftComponentWrapper'>
 					{leftComponent}
 				</ComponentWrapper>
 			)}
-			{subtitle && (
-				<Subtitle className="TEPanelTitleSubTitle">{subtitle}</Subtitle>
-			)}
+			{subtitle && <Subtitle className='TEPanelTitleSubTitle'>{subtitle}</Subtitle>}
 			{rightComponent && (
-				<ComponentWrapper className="TEPanelTitleRightComponentWrapper">
+				<ComponentWrapper className='TEPanelTitleRightComponentWrapper'>
 					{rightComponent}
 				</ComponentWrapper>
 			)}
