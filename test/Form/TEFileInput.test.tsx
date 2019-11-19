@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { TEButton } from './../../src'
+import { TEFileInput } from './../../src'
 
-describe('TEButton', () => {
+describe('TEFileInput', () => {
 	it('renders without crashing', () => {
 		const div = document.createElement('div')
-		ReactDOM.render(<TEButton>My Test Button</TEButton>, div)
+		ReactDOM.render(<TEFileInput />, div)
 		ReactDOM.unmountComponentAtNode(div)
 	})
 })
