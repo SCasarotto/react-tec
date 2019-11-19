@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { TEButton } from './../../src'
+import { TEMultiStepForm } from './../../src'
 
-describe('TEButton', () => {
+describe('TEMultiStepForm', () => {
 	it('renders without crashing', () => {
 		const div = document.createElement('div')
-		ReactDOM.render(<TEButton>My Test Button</TEButton>, div)
+		ReactDOM.render(<TEMultiStepForm stepData={[]} onSubmit={async () => {}} />, div)
 		ReactDOM.unmountComponentAtNode(div)
 	})
 })
