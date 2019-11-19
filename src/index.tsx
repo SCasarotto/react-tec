@@ -41,6 +41,8 @@ export * from './Popup/TEPopup'
 export * from './Popup/TEPopupForm'
 export * from './Popup/TEPopupMultiStepForm'
 
+export * from './helpers'
+
 // //Utility
 // import TEScrollToTop from './Utility/TEScrollToTop'
 // import TEHelmet from './Utility/TEHelmet'

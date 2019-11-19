@@ -1,6 +1,6 @@
 {
 	"name": "react-tec",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"license": "MIT",
 	"author": "Stuart Casarotto",
 	"main": "dist/index.js",
@@ -19,7 +19,7 @@
 		"react": ">=16",
 		"react-router": "^5.1.2",
 		"react-router-dom": "^5.1.2",
-		"styled-components": ">= 5"
+		"styled-components": "^4.4.1"
 	},
 	"husky": {
 		"hooks": {
@@ -49,9 +49,13 @@
 		"@types/react-router-dom": "^5.1.1",
 		"@types/styled-components": "^4.4.0",
 		"hook": "^0.0.5",
-		"husky": "^3.0.9",
+		"husky": "^3.1.0",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
+		"react-router": "^5.1.2",
+		"react-router-dom": "^5.1.2",
+		"rollup-plugin-peer-deps-external": "^2.2.0",
+		"styled-components": "^4.4.1",
 		"tsdx": "^0.11.0",
 		"tslib": "^1.10.0",
 		"typescript": "^3.6.4"

@@ -8434,9 +8434,16 @@ react-side-effect@^1.1.0:
   dependencies:
     shallowequal "^1.0.1"
 
-"react-tec@link:..":
-  version "0.0.0"
-  uid ""
+react-tec@^0.2.2-beta.1:
+  version "0.2.2-beta.1"
+  resolved "https://registry.yarnpkg.com/react-tec/-/react-tec-0.2.2-beta.1.tgz#1f9f07fe31765317ecbe58f0fb56226befb70deb"
+  integrity sha512-CPSVZXZMvzhy0yRnC5B0hG8KzGDCFucvcvrTBrB53TJqnRK86GnTKM8cN4SZpp8ZNgCGf3pucmtzpUsIcX240Q==
+  dependencies:
+    react-avatar-editor "11.0.7"
+    react-datepicker "^2.10.0"
+    react-helmet "^5.2.1"
+    react-icons "^3.8.0"
+    react-power-select "^1.0.0-beta.17"
 
 react-tether@^0.6.1:
   version "0.6.1"
