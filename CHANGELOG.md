@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.3 - 11-24-2019
+
+## Added
+
+-   `TESelect` and `TESelectRow`. These two components are based on [react-select](https://github.com/jedwatson/react-select). The plan is to eventually replace `TESearchSelect` and `TESearchSelectRow` with these as these libraries are more well maintained and have a more consistent API.
+
+## Changes
+
+-   Added mobile responsiveness to the docs site
+-   Updated `react-datepicker` from `v2.10.0` to `2.10.1`
+
+## Bug Fixes
+
+-   Fixed the broken links in the documentation
+
 ## 0.2.2 - 11-18-2019
 
 ## Added
