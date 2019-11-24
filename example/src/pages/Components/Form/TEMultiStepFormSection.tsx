@@ -9,13 +9,13 @@ export const TEMultiStepFormSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TEMultiStepForm"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEMultiStepForm/TEMultiStepForm.js"
+				title='TEMultiStepForm'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEMultiStepForm/index.tsx'
 			/>
 			<p>
-				Multiple step form container. <Code>TEMultiStepForm</Code>{' '}
-				provides a quick and easy way to break a form into multiple
-				parts and present the user with one part at a time.
+				Multiple step form container. <Code>TEMultiStepForm</Code> provides a quick and easy
+				way to break a form into multiple parts and present the user with one part at a
+				time.
 			</p>
 			<PropsTable
 				// roundedButtons: PropTypes.bool,
@@ -29,8 +29,7 @@ export const TEMultiStepFormSection = () => {
 					{
 						prop: 'handleCancelOnClick',
 						type: 'function',
-						note:
-							'If provided will display a cancel button at the first step.',
+						note: 'If provided will display a cancel button at the first step.',
 					},
 					{
 						prop: 'stepData',
@@ -69,15 +68,15 @@ export const TEMultiStepFormSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEMultiStepFormExample&module=%2Fsrc%2FForm%2FTEMultiStepFormExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEMultiStepFormExample&module=%2Fsrc%2FForm%2FTEMultiStepFormExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TEMultiStepForm"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TEMultiStepForm'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

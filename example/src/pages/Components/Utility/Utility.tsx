@@ -3,7 +3,7 @@ import { Link, Switch, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { TEPanel, TEPanelWrapper } from 'react-tec'
 
-import { useBarTitle } from '../../../context/TitleBarContext'
+import { useBarTitle } from '../../../context'
 
 import { useScrollTopSection } from './useScrollTopSection'
 
@@ -15,22 +15,20 @@ export const Utility = () => {
 			<Helmet>
 				<title>React TEC | Components - Utility</title>
 				<meta
-					name="description"
-					content="React TEC is a component library used by 38th Street Studios LLC"
+					name='description'
+					content='React TEC is a component library used by 38th Street Studios LLC'
 				/>
 			</Helmet>
 			<TEPanelWrapper>
-				<TEPanel title="Utility Component">
+				<TEPanel title='Utility Component'>
 					<ul>
 						<li>
-							<Link to="/components/utility/useScrollTop">
-								useScrollTop
-							</Link>
+							<Link to='/components/utility/useScrollTop'>useScrollTop</Link>
 						</li>
 					</ul>
 					<Switch>
 						<Route
-							path="/components/utility/useScrollTop"
+							path='/components/utility/useScrollTop'
 							component={useScrollTopSection}
 						/>
 					</Switch>

@@ -9,18 +9,17 @@ export const TEFileInputSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TEFileInput"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEFileInput/TEFileInput.js"
+				title='TEFileInput'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEFileInput/index.tsx'
 			/>
 			<p>
-				A stylized <Code>{`<input type="file"/>`}</Code> with the
-				ability to drag and drop and regex test file type. Outside of
-				the props below, additional props are passed directly to the
-				input so reference{' '}
+				A stylized <Code>{`<input type="file"/>`}</Code> with the ability to drag and drop
+				and regex test file type. Outside of the props below, additional props are passed
+				directly to the input so reference{' '}
 				<a
-					href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file"
-					target="_blank"
-					rel="noopener noreferrer">
+					href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file'
+					target='_blank'
+					rel='noopener noreferrer'>
 					HTML documentation for more information
 				</a>
 				.
@@ -30,8 +29,7 @@ export const TEFileInputSection = () => {
 					{
 						prop: 'onChange',
 						type: 'function',
-						note:
-							'Function that receives the file(s) after selection',
+						note: 'Function that receives the file(s) after selection',
 					},
 					{
 						prop: 'pattern',
@@ -53,15 +51,15 @@ export const TEFileInputSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEFileInputExample&module=%2Fsrc%2FForm%2FTEFileInputExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEFileInputExample&module=%2Fsrc%2FForm%2FTEFileInputExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TEFileInput"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TEFileInput'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

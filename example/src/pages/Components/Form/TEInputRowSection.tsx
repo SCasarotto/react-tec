@@ -9,13 +9,12 @@ export const TEInputRowSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TEInputRow"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEInputRow/TEInputRow.js"
+				title='TEInputRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEInputRow/index.tsx'
 			/>
 			<p>
-				A component containing a <Code>TERow</Code>, a{' '}
-				<Code>TELabel</Code> and either a <Code>TEInput</Code>. In
-				addition to the props below, reference all props for{' '}
+				A component containing a <Code>TERow</Code>, a <Code>TELabel</Code> and either a{' '}
+				<Code>TEInput</Code>. In addition to the props below, reference all props for{' '}
 				<Code>TEInput</Code>.
 			</p>
 			<PropsTable
@@ -28,8 +27,7 @@ export const TEInputRowSection = () => {
 					{
 						prop: 'labelForKey',
 						type: 'string',
-						note:
-							'String used to pair the TELabel to the TEDatetimeInput',
+						note: 'String used to pair the TELabel to the TEDatetimeInput',
 					},
 					{
 						prop: 'rowSize',
@@ -56,15 +54,15 @@ export const TEInputRowSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEInputRowExample&module=%2Fsrc%2FForm%2FTEInputRowExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEInputRowExample&module=%2Fsrc%2FForm%2FTEInputRowExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TEInputRow"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TEInputRow'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

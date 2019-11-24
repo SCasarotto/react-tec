@@ -9,13 +9,12 @@ export const TERadioButtonGroupSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TERadioButtonGroup"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TERadioButtonGroup/TERadioButtonGroup.js"
+				title='TERadioButtonGroup'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TERadioButtonGroup/index.tsx'
 			/>
 			<p>
-				A component containing a <Code>TERow</Code>, a{' '}
-				<Code>TELabel</Code>, and a group of <Code>TERadioInput</Code>{' '}
-				cooresponding <Code>TELabel</Code>.
+				A component containing a <Code>TERow</Code>, a <Code>TELabel</Code>, and a group of{' '}
+				<Code>TERadioInput</Code> cooresponding <Code>TELabel</Code>.
 			</p>
 			<PropsTable
 				propArray={[
@@ -39,8 +38,7 @@ export const TERadioButtonGroupSection = () => {
 					{
 						prop: 'checkedValue',
 						type: 'string',
-						note:
-							'An string used to determine if a radio button is checked *Required',
+						note: 'An string used to determine if a radio button is checked *Required',
 					},
 					{
 						prop: 'buttonArray',
@@ -51,8 +49,7 @@ export const TERadioButtonGroupSection = () => {
 					{
 						prop: 'buttonArray[i].label',
 						type: 'string',
-						note:
-							'String used for the label associated to the TERadioInput.',
+						note: 'String used for the label associated to the TERadioInput.',
 					},
 					{
 						prop: 'buttonArray[i].value',
@@ -62,8 +59,7 @@ export const TERadioButtonGroupSection = () => {
 					{
 						prop: 'buttonArray[i].key',
 						type: 'string',
-						note:
-							'Unique string used to pair the TELabel and TERadioInput.',
+						note: 'Unique string used to pair the TELabel and TERadioInput.',
 					},
 					{
 						prop: 'rowSize',
@@ -96,15 +92,15 @@ export const TERadioButtonGroupSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTERadioButtonGroupExample&module=%2Fsrc%2FForm%2FTERadioButtonGroupExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTERadioButtonGroupExample&module=%2Fsrc%2FForm%2FTERadioButtonGroupExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TERadioButtonGroup"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TERadioButtonGroup'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

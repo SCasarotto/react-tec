@@ -9,13 +9,12 @@ export const TESegmentedGroupSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TESegmentedGroup"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESegmentedGroup/TESegmentedGroup.js"
+				title='TESegmentedGroup'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESegmentedGroup/index.tsx'
 			/>
 			<p>
-				<Code>TESegmentedGroup</Code> is a stylized{' '}
-				<Code>TERadioButtonGroup</Code>. This component mimics the style
-				of iOS's Segmented Controls.
+				<Code>TESegmentedGroup</Code> is a stylized <Code>TERadioButtonGroup</Code>. This
+				component mimics the style of iOS's Segmented Controls.
 			</p>
 			<PropsTable
 				propArray={[
@@ -39,8 +38,7 @@ export const TESegmentedGroupSection = () => {
 					{
 						prop: 'checkedValue',
 						type: 'string',
-						note:
-							'An string used to determine if a radio button is checked *Required',
+						note: 'An string used to determine if a radio button is checked *Required',
 					},
 					{
 						prop: 'buttonArray',
@@ -51,8 +49,7 @@ export const TESegmentedGroupSection = () => {
 					{
 						prop: 'buttonArray[i].label',
 						type: 'string',
-						note:
-							'String used for the label associated to the TERadioInput.',
+						note: 'String used for the label associated to the TERadioInput.',
 					},
 					{
 						prop: 'buttonArray[i].value',
@@ -62,8 +59,7 @@ export const TESegmentedGroupSection = () => {
 					{
 						prop: 'buttonArray[i].key',
 						type: 'string',
-						note:
-							'Unique string used to pair the TELabel and TERadioInput.',
+						note: 'Unique string used to pair the TELabel and TERadioInput.',
 					},
 					{
 						prop: 'size',
@@ -90,21 +86,20 @@ export const TESegmentedGroupSection = () => {
 					{
 						prop: 'inline',
 						type: 'bool',
-						note:
-							'Places the options to the right of the TELabel instead of below.',
+						note: 'Places the options to the right of the TELabel instead of below.',
 					},
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTESegmentedGroupExample&module=%2Fsrc%2FForm%2FTESegmentedGroupExample.tsx"
-				title="TESegmentedGroup"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTESegmentedGroupExample&module=%2Fsrc%2FForm%2FTESegmentedGroupExample.tsx'
+				title='TESegmentedGroup'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

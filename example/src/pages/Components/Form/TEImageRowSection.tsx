@@ -9,26 +9,22 @@ export const TEImageRowSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TEImageRow"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEImageRow/TEImageRow.js"
+				title='TEImageRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEImageRow/index.tsx'
 			/>
 			<p>
-				A component to manage uploading, downloading, and deleting
-				images. This component contains a <Code>TERow</Code>,{' '}
-				<Code>TELabel</Code>, <Code>TEFileInput</Code> and some
-				additional components. The editor popup is based on{' '}
+				A component to manage uploading, downloading, and deleting images. This component
+				contains a <Code>TERow</Code>, <Code>TELabel</Code>, <Code>TEFileInput</Code> and
+				some additional components. The editor popup is based on{' '}
 				<a
-					href="https://github.com/mosch/react-avatar-editor#readme"
-					target="_blank"
-					rel="noopener noreferrer">
+					href='https://github.com/mosch/react-avatar-editor#readme'
+					target='_blank'
+					rel='noopener noreferrer'>
 					React Avatar Editor
 				</a>
 				.
 			</p>
-			<p>
-				Note: This component is a bit complex and may shift in API over
-				time.
-			</p>
+			<p>Note: This component is a bit complex and may shift in API over time.</p>
 			<PropsTable
 				propArray={[
 					{
@@ -39,8 +35,7 @@ export const TEImageRowSection = () => {
 					{
 						prop: 'labelForKey',
 						type: 'string',
-						note:
-							'String used to pair the TELabel to the TEDatetimeInput',
+						note: 'String used to pair the TELabel to the TEDatetimeInput',
 					},
 					{
 						prop: 'rowSize',
@@ -119,21 +114,20 @@ export const TEImageRowSection = () => {
 					{
 						prop: 'avatarEditorData',
 						type: 'object',
-						note:
-							'This is an object spread over the AvatarEditor component.',
+						note: 'This is an object spread over the AvatarEditor component.',
 					},
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEImageRowExample&module=%2Fsrc%2FForm%2FTEImageRowExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEImageRowExample&module=%2Fsrc%2FForm%2FTEImageRowExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TEImageRow"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TEImageRow'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

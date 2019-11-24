@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker'
 
 import { TEAppWrapper } from 'react-tec'
 
-import { TitleBarProvider } from './context/TitleBarContext'
+import { TitleBarProvider, SideBarActiveProvider } from './context'
 
 // import './style.css'
 
@@ -31,7 +31,9 @@ const globalStyles = `
 const Main = () => (
 	<TEAppWrapper globalStyles={globalStyles}>
 		<TitleBarProvider>
-			<App />
+			<SideBarActiveProvider>
+				<App />
+			</SideBarActiveProvider>
 		</TitleBarProvider>
 	</TEAppWrapper>
 )

@@ -43,12 +43,14 @@
 	},
 	"prettier": {
 		"bracketSpacing": true,
-		"jsxBracketSameLine": true,
 		"singleQuote": true,
 		"arrowParens": "always",
 		"trailingComma": "all",
 		"semi": false,
 		"useTabs": true,
-		"tabWidth": 4
+		"tabWidth": 4,
+		"jsxBracketSameLine": false,
+		"printWidth": 100,
+		"jsxSingleQuote": true
 	}
 }

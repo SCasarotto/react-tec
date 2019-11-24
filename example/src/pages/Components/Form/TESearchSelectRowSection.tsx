@@ -9,13 +9,12 @@ export const TESearchSelectRowSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TESearchSelectRow"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESearchSelectRow/TESearchSelectRow.js"
+				title='TESearchSelectRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESearchSelectRow/index.tsx'
 			/>
 			<p>
-				A form row with title and <Code>TESearchSelectInput</Code>. In
-				additiona to the props below, reference all props for{' '}
-				<Code>TESearchSelectInput</Code>.
+				A form row with title and <Code>TESearchSelectInput</Code>. In additiona to the
+				props below, reference all props for <Code>TESearchSelectInput</Code>.
 			</p>
 			<PropsTable
 				propArray={[
@@ -27,8 +26,7 @@ export const TESearchSelectRowSection = () => {
 					{
 						prop: 'labelForKey',
 						type: 'string',
-						note:
-							'String used to pair the TELabel to the TESearchSelectInput',
+						note: 'String used to pair the TELabel to the TESearchSelectInput',
 					},
 					{
 						prop: 'rowSize',
@@ -55,15 +53,15 @@ export const TESearchSelectRowSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTESearchSelectRowExample&module=%2Fsrc%2FForm%2FTESearchSelectRowExample.tsx"
-				title="TESearchSelectRow"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTESearchSelectRowExample&module=%2Fsrc%2FForm%2FTESearchSelectRowExample.tsx'
+				title='TESearchSelectRow'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

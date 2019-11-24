@@ -8,13 +8,10 @@ export const TECheckboxGroupSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TECheckboxGroup"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TECheckboxGroup/TECheckboxGroup.js"
+				title='TECheckboxGroup'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TECheckboxGroup/index.tsx'
 			/>
-			<p>
-				A form row with title and group of checkboxes and cooresponding
-				labels.
-			</p>
+			<p>A form row with title and group of checkboxes and cooresponding labels.</p>
 			<PropsTable
 				propArray={[
 					{
@@ -49,8 +46,7 @@ export const TECheckboxGroupSection = () => {
 					{
 						prop: 'buttonArray[i].label',
 						type: 'string',
-						note:
-							'String used for the label associated to the checkbox.',
+						note: 'String used for the label associated to the checkbox.',
 					},
 					{
 						prop: 'buttonArray[i].value',
@@ -60,8 +56,7 @@ export const TECheckboxGroupSection = () => {
 					{
 						prop: 'buttonArray[i].key',
 						type: 'string',
-						note:
-							'Unique string used to pair the label and checkbox.',
+						note: 'Unique string used to pair the label and checkbox.',
 					},
 					{
 						prop: 'rowSize',
@@ -88,8 +83,7 @@ export const TECheckboxGroupSection = () => {
 					{
 						prop: 'inputRowSize',
 						type: 'string',
-						note:
-							'Passed to each TERow that is wrapping each checkbox and label.',
+						note: 'Passed to each TERow that is wrapping each checkbox and label.',
 					},
 					{
 						prop: 'scrolling',
@@ -100,15 +94,15 @@ export const TECheckboxGroupSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTECheckboxGroupExample&module=%2Fsrc%2FForm%2FTECheckboxGroupExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTECheckboxGroupExample&module=%2Fsrc%2FForm%2FTECheckboxGroupExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TECheckboxGroup"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TECheckboxGroup'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)
