@@ -9,13 +9,12 @@ export const TEDatetimeRowSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TEDatetimeRow"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEDatetimeRow/TEDatetimeRow.js"
+				title='TEDatetimeRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEDatetimeRow/index.tsx'
 			/>
 			<p>
-				A form row with title and <Code>TEDatetimeInput</Code>. In
-				additiona to the props below, reference all props for{' '}
-				<Code>TEDatetimeInput</Code>.
+				A form row with title and <Code>TEDatetimeInput</Code>. In additiona to the props
+				below, reference all props for <Code>TEDatetimeInput</Code>.
 			</p>
 			<PropsTable
 				propArray={[
@@ -27,8 +26,7 @@ export const TEDatetimeRowSection = () => {
 					{
 						prop: 'labelForKey',
 						type: 'string',
-						note:
-							'String used to pair the TELabel to the TEDatetimeInput',
+						note: 'String used to pair the TELabel to the TEDatetimeInput',
 					},
 					{
 						prop: 'rowSize',
@@ -55,15 +53,15 @@ export const TEDatetimeRowSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEDatetimeRowExample&module=%2Fsrc%2FForm%2FTEDatetimeRowExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEDatetimeRowExample&module=%2Fsrc%2FForm%2FTEDatetimeRowExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TEDatetimeRow"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TEDatetimeRow'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

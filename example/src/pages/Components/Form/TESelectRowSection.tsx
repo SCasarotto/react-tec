@@ -5,16 +5,16 @@ import { Code } from '../../../components/Code'
 import { ComponentSection } from '../../../components/ComponentSection'
 import { PropsTable } from '../../../components/PropsTable'
 
-export const TEFileRowSection = () => {
+export const TESelectRowSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title='TEFileRow'
-				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEFileRow/index.tsx'
+				title='TESelectRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TESelectRow/index.tsx'
 			/>
 			<p>
-				A form row with title and <Code>TEFileRow</Code>. In additiona to the props below,
-				reference all props for <Code>TEFileRow</Code>.
+				A form row with title and <Code>TESelect</Code>. In additiona to the props below,
+				reference all props for <Code>TESelect</Code>.
 			</p>
 			<PropsTable
 				propArray={[
@@ -26,7 +26,7 @@ export const TEFileRowSection = () => {
 					{
 						prop: 'labelForKey',
 						type: 'string',
-						note: 'String used to pair the TELabel to the TEDatetimeInput',
+						note: 'String used to pair the TELabel to the TESearchSelectInput',
 					},
 					{
 						prop: 'rowSize',
@@ -53,13 +53,13 @@ export const TEFileRowSection = () => {
 				]}
 			/>
 			<iframe
-				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEFileRowExample&module=%2Fsrc%2FForm%2FTEFileRowExample.tsx'
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTESelectRowExample&module=%2Fsrc%2FForm%2FTESelectRowExample.tsx'
+				title='TESelectRow'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title='TEFileRow'
 				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
 				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>

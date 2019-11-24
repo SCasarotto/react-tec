@@ -8,31 +8,31 @@ export const TERadioButtonInputSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TERadioButtonInput"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TERadioButtonInput/TERadioButtonInput.js"
+				title='TERadioButtonInput'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TERadioButtonInput/index.tsx'
 			/>
 			<p>
-				A simple checkbox component. <Code>TERadioButtonInput</Code> is
-				simply a styled HTML <Code>{'<input type="radio">'}</Code>. All
-				props are passed right through to the checkbox. Reference{' '}
+				A simple checkbox component. <Code>TERadioButtonInput</Code> is simply a styled HTML{' '}
+				<Code>{'<input type="radio">'}</Code>. All props are passed right through to the
+				checkbox. Reference{' '}
 				<a
-					href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio"
-					target="_blank"
-					rel="noopener noreferrer">
+					href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio'
+					target='_blank'
+					rel='noopener noreferrer'>
 					HTML documentation for more information
 				</a>
 				.
 			</p>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTERadioButtonInputExample&module=%2Fsrc%2FForm%2FTERadioButtonInputExample.tsx"
-				title="TERadioButtonInput"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTERadioButtonInputExample&module=%2Fsrc%2FForm%2FTERadioButtonInputExample.tsx'
+				title='TERadioButtonInput'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

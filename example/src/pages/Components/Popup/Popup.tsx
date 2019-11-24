@@ -3,7 +3,7 @@ import { Link, Switch, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { TEPanel, TEPanelWrapper } from 'react-tec'
 
-import { useBarTitle } from '../../../context/TitleBarContext'
+import { useBarTitle } from '../../../context'
 
 import { TEAlertSection } from './TEAlertSection'
 import { TEConfirmSection } from './TEConfirmSection'
@@ -20,63 +20,48 @@ export const Popup = () => {
 			<Helmet>
 				<title>React TEC | Components - Popup</title>
 				<meta
-					name="description"
-					content="React TEC is a component library used by 38th Street Studios LLC"
+					name='description'
+					content='React TEC is a component library used by 38th Street Studios LLC'
 				/>
 			</Helmet>
 			<TEPanelWrapper>
-				<TEPanel title="Popup Components">
+				<TEPanel title='Popup Components'>
 					<ul>
 						<li>
-							<Link to="/components/popup/TEAlert">TEAlert</Link>
+							<Link to='/components/popup/TEAlert'>TEAlert</Link>
 						</li>
 						<li>
-							<Link to="/components/popup/TEConfirm">
-								TEConfirm
-							</Link>
+							<Link to='/components/popup/TEConfirm'>TEConfirm</Link>
 						</li>
 						<li>
-							<Link to="/components/popup/TENetworkActivity">
-								TENetworkActivity
-							</Link>
+							<Link to='/components/popup/TENetworkActivity'>TENetworkActivity</Link>
 						</li>
 						<li>
-							<Link to="/components/popup/TEPopup">TEPopup</Link>
+							<Link to='/components/popup/TEPopup'>TEPopup</Link>
 						</li>
 						<li>
-							<Link to="/components/popup/TEPopupForm">
-								TEPopupForm
-							</Link>
+							<Link to='/components/popup/TEPopupForm'>TEPopupForm</Link>
 						</li>
 						<li>
-							<Link to="/components/popup/TEPopupMultiStepForm">
+							<Link to='/components/popup/TEPopupMultiStepForm'>
 								TEPopupMultiStepForm
 							</Link>
 						</li>
 					</ul>
 					<Switch>
+						<Route path='/components/popup/TEAlert' component={TEAlertSection} />
+						<Route path='/components/popup/TEConfirm' component={TEConfirmSection} />
 						<Route
-							path="/components/popup/TEAlert"
-							component={TEAlertSection}
-						/>
-						<Route
-							path="/components/popup/TEConfirm"
-							component={TEConfirmSection}
-						/>
-						<Route
-							path="/components/popup/TENetworkActivity"
+							path='/components/popup/TENetworkActivity'
 							component={TENetworkActivitySection}
 						/>
+						<Route path='/components/popup/TEPopup' component={TEPopupSection} />
 						<Route
-							path="/components/popup/TEPopup"
-							component={TEPopupSection}
-						/>
-						<Route
-							path="/components/popup/TEPopupForm"
+							path='/components/popup/TEPopupForm'
 							component={TEPopupFormSection}
 						/>
 						<Route
-							path="/components/popup/TEPopupMultiStepForm"
+							path='/components/popup/TEPopupMultiStepForm'
 							component={TEPopupMultiStepFormSection}
 						/>
 					</Switch>

@@ -9,17 +9,16 @@ export const TELabelSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TELabel"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TELabel/TELabel.js"
+				title='TELabel'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TELabel/index.tsx'
 			/>
 			<p>
-				A simple styling of an html <Code>{'<label>'}</Code>. Besides
-				the props mentioned below, all props are passed right through to
-				the input. Reference the{' '}
+				A simple styling of an html <Code>{'<label>'}</Code>. Besides the props mentioned
+				below, all props are passed right through to the input. Reference the{' '}
 				<a
-					href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label"
-					target="_blank"
-					rel="noopener noreferrer">
+					href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label'
+					target='_blank'
+					rel='noopener noreferrer'>
 					HTML documentation for more information.
 				</a>
 				.
@@ -45,15 +44,15 @@ export const TELabelSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTELabelExample&module=%2Fsrc%2FForm%2FTELabelExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTELabelExample&module=%2Fsrc%2FForm%2FTELabelExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TELabel"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TELabel'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)

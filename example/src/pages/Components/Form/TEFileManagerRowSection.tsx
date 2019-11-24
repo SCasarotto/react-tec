@@ -9,19 +9,15 @@ export const TEFileManagerRowSection = () => {
 	return (
 		<ComponentSection>
 			<ComponentTitle
-				title="TEFileManagerRow"
-				link="https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEFileManagerRow/TEFileManagerRow.js"
+				title='TEFileManagerRow'
+				link='https://github.com/SCasarotto/react-tec/blob/master/src/Form/TEFileManagerRow/index.tsx'
 			/>
 			<p>
-				A component to manage uploading, downloading, and deleting
-				files. This component contains a <Code>TERow</Code>,{' '}
-				<Code>TELabel</Code>, <Code>TEFileInput</Code> and some
-				additional components.
+				A component to manage uploading, downloading, and deleting files. This component
+				contains a <Code>TERow</Code>, <Code>TELabel</Code>, <Code>TEFileInput</Code> and
+				some additional components.
 			</p>
-			<p>
-				Note: This component is a bit complex and may shift in API over
-				time.
-			</p>
+			<p>Note: This component is a bit complex and may shift in API over time.</p>
 			<PropsTable
 				propArray={[
 					{
@@ -32,8 +28,7 @@ export const TEFileManagerRowSection = () => {
 					{
 						prop: 'labelForKey',
 						type: 'string',
-						note:
-							'String used to pair the TELabel to the TEFileInput',
+						note: 'String used to pair the TELabel to the TEFileInput',
 					},
 					{
 						prop: 'rowSize',
@@ -84,8 +79,7 @@ export const TEFileManagerRowSection = () => {
 					{
 						prop: 'fileSrc.fileEnding',
 						type: 'string',
-						note:
-							'Used in displaying the full file name in each row.',
+						note: 'Used in displaying the full file name in each row.',
 					},
 					{
 						prop: 'fileSrc.path',
@@ -124,15 +118,15 @@ export const TEFileManagerRowSection = () => {
 				]}
 			/>
 			<iframe
-				src="https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEFileManagerRowExample&module=%2Fsrc%2FForm%2FTEFileManagerRowExample.tsx"
+				src='https://codesandbox.io/embed/react-tec-examples-di382?fontsize=14&initialpath=%2FTEFileManagerRowExample&module=%2Fsrc%2FForm%2FTEFileManagerRowExample.tsx'
 				style={{
 					width: '100%',
 					height: 500,
 					border: 'none',
 				}}
-				title="TEFileManagerRow"
-				allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-				sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+				title='TEFileManagerRow'
+				allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb'
+				sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
 			/>
 		</ComponentSection>
 	)
