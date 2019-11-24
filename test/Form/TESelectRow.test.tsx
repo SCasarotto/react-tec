@@ -1,11 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { TESelectRow } from '../../src'
+import { TESelectRow, TEThemeProvider } from '../../src'
 
 describe('TESelectRow', () => {
 	it('renders without crashing', () => {
 		const div = document.createElement('div')
-		ReactDOM.render(<TESelectRow labelForKey='testTESelectRow' />, div)
+		ReactDOM.render(
+			<TEThemeProvider>
+				<TESelectRow labelForKey='testTESelectRow' />
+			</TEThemeProvider>,
+			div,
+		)
 		ReactDOM.unmountComponentAtNode(div)
 	})
 })
