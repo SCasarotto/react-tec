@@ -80,8 +80,6 @@ const sections = [
 		component: TERadioButtonInputSection,
 	},
 	{ name: 'TERow', path: '/components/form/TERow', component: TERowSection },
-	{ name: 'TESelect', path: '/components/form/TESelect', component: TESelectSection },
-	{ name: 'TESelectRow', path: '/components/form/TESelectRow', component: TESelectRowSection },
 	{
 		name: 'TESearchSelectInput',
 		path: '/components/form/TESearchSelectInput',
@@ -96,6 +94,16 @@ const sections = [
 		name: 'TESegmentedGroup',
 		path: '/components/form/TESegmentedGroup',
 		component: TESegmentedGroupSection,
+	},
+	{
+		name: 'TESelect',
+		path: '/components/form/TESelect',
+		component: TESelectSection,
+	},
+	{
+		name: 'TESelectRow',
+		path: '/components/form/TESelectRow',
+		component: TESelectRowSection,
 	},
 	{
 		name: 'TETextareaRow',
