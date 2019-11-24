@@ -1,6 +1,6 @@
 {
 	"name": "react-tec",
-	"version": "0.2.2",
+	"version": "0.2.3-beta.0",
 	"license": "MIT",
 	"author": "Stuart Casarotto",
 	"main": "dist/index.js",
@@ -23,7 +23,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "tsdx lint"
+			"pre-commit": "yarn lint && yarn test"
 		}
 	},
 	"prettier": {
