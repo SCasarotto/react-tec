@@ -9,19 +9,7 @@ export interface TEInputRowProps extends TERowCustomProps, TELabelCustomProps, T
 }
 
 export const TEInputRow: React.FC<TEInputRowProps> = (props) => {
-	const {
-		rowSize,
-		last,
-		className = '',
-		title,
-		type,
-		onChange,
-		disabled,
-		value,
-		required,
-		labelForKey,
-		...rest
-	} = props
+	const { rowSize, last, className = '', title, disabled, required, labelForKey, ...rest } = props
 
 	return (
 		<TERow rowSize={rowSize} last={last} className={`TEInputRow ${className}`}>
@@ -35,15 +23,7 @@ export const TEInputRow: React.FC<TEInputRowProps> = (props) => {
 					{title}
 				</TELabel>
 			)}
-			<TEInput
-				type={type}
-				value={value}
-				onChange={onChange}
-				id={labelForKey}
-				disabled={disabled}
-				className='TEInputRowInput'
-				{...rest}
-			/>
+			<TEInput id={labelForKey} disabled={disabled} className='TEInputRowInput' {...rest} />
 		</TERow>
 	)
 }
