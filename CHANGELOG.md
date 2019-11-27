@@ -10,8 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Added
 
--   `TEPhoneNumberInput` and `TEPhoneNumberRow` have been added based on (react-phone-number-input)[https://github.com/catamphetamine/react-phone-number-input].
--   `TEMenuButton` has been added primarily relying on (react-popper)[https://github.com/popperjs/react-popper]
+-   `TEPhoneNumberInput` and `TEPhoneNumberRow` have been added based on [react-phone-number-input](https://github.com/catamphetamine/react-phone-number-input).
+-   `TEMenuButton` has been added primarily relying on [react-popper](https://github.com/popperjs/react-popper)
 
 ## Changes
 
