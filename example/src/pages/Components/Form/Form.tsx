@@ -182,8 +182,20 @@ export const Form = () => {
 						<Route path='/components/form/TEInput' component={TEInputSection} />
 						<Route path='/components/form/TELabel' component={TELabelSection} />
 						<Route
+							path='/components/form/TEMenuButton'
+							component={TEMenuButtonSection}
+						/>
+						<Route
 							path='/components/form/TEMultiStepForm'
 							component={TEMultiStepFormSection}
+						/>
+						<Route
+							path='/components/form/TEPhoneNumberInput'
+							component={TEPhoneNumberInputSection}
+						/>
+						<Route
+							path='/components/form/TEPhoneNumberRow'
+							component={TEPhoneNumberRowSection}
 						/>
 						<Route
 							path='/components/form/TERadioButtonGroup'
