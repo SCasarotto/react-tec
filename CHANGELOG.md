@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.4 - 11-27-2019
+
+## Added
+
+-   `TEPhoneNumberInput` and `TEPhoneNumberRow` have been added based on (react-phone-number-input)[https://github.com/catamphetamine/react-phone-number-input].
+-   `TEMenuButton` has been added primarily relying on (react-popper)[https://github.com/popperjs/react-popper]
+
+## Changes
+
+-   Many components now have the ability to pass down refs in addition the typing for them have been changed away from `any` to something meaningful.
+
 ## 0.2.3 - 11-24-2019
 
 ## Added
