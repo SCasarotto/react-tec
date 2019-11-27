@@ -8,7 +8,7 @@ import { PowerSelect, PowerSelectMultiple } from 'react-power-select'
 //
 
 //TODO: Return to this.
-export const TESearchSelectInput: React.FC<any> = (props) => {
+export const TESearchSelectInput: React.FC<any> = React.forwardRef((props, ref) => {
 	const { type = 'single', searchEnabled = true, value, className = '', ...rest } = props
 
 	if (type === 'single') {
@@ -17,6 +17,7 @@ export const TESearchSelectInput: React.FC<any> = (props) => {
 				selected={value}
 				className={`TESearchSelectInput ${className}`}
 				searchEnabled={searchEnabled}
+				ref={ref}
 				{...rest}
 			/>
 		)
@@ -27,10 +28,11 @@ export const TESearchSelectInput: React.FC<any> = (props) => {
 				selected={value}
 				className={`TESearchSelectInput ${className}`}
 				searchEnabled={searchEnabled}
+				ref={ref}
 				{...rest}
 			/>
 		)
 	}
 
 	return <PowerSelect selected={value} className={`TESearchSelectInput ${className}`} {...rest} />
-}
+})

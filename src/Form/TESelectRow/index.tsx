@@ -9,7 +9,7 @@ export interface TESelectRowProps extends TERowCustomProps, TELabelCustomProps, 
 	title?: string
 }
 
-export const TESelectRow: React.FC<TESelectRowProps> = (props) => {
+export const TESelectRow: React.FC<TESelectRowProps> = React.forwardRef((props, ref) => {
 	const {
 		rowSize,
 		last,
@@ -34,7 +34,7 @@ export const TESelectRow: React.FC<TESelectRowProps> = (props) => {
 					{title}
 				</TELabel>
 			)}
-			<TESelect disabled={disabled} {...rest} />
+			<TESelect disabled={disabled} ref={ref} {...rest} />
 		</TERow>
 	)
-}
+})

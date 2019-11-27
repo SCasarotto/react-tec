@@ -13,22 +13,29 @@ export interface TESearchSelectRowProps extends TERowCustomProps, TELabelCustomP
 	labelForKey: string
 	[key: string]: any
 }
-export const TESearchSelectRow: React.FC<TESearchSelectRowProps> = (props) => {
-	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
+export const TESearchSelectRow: React.FC<TESearchSelectRowProps> = React.forwardRef(
+	(props, ref) => {
+		const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
-	return (
-		<TERow rowSize={rowSize} last={last} className={`TESearchSelectRow ${className}`}>
-			{title && (
-				<TELabel
-					htmlFor={labelForKey}
-					required={rest.required}
-					disabled={rest.disabled}
-					className='TESearchSelectRowTitle'
-				>
-					{title}
-				</TELabel>
-			)}
-			<TESearchSelectInput id={labelForKey} className='TESearchSelectRowInput' {...rest} />
-		</TERow>
-	)
-}
+		return (
+			<TERow rowSize={rowSize} last={last} className={`TESearchSelectRow ${className}`}>
+				{title && (
+					<TELabel
+						htmlFor={labelForKey}
+						required={rest.required}
+						disabled={rest.disabled}
+						className='TESearchSelectRowTitle'
+					>
+						{title}
+					</TELabel>
+				)}
+				<TESearchSelectInput
+					id={labelForKey}
+					className='TESearchSelectRowInput'
+					ref={ref}
+					{...rest}
+				/>
+			</TERow>
+		)
+	},
+)

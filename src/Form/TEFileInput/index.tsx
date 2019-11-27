@@ -17,15 +17,18 @@ export interface TEFileInputProps
 		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
 		'onChange'
 	> {
-	//TODO: Fix this. styled-components is weird with refs
-	ref?: any
+	ref?:
+		| ((instance: HTMLInputElement | null) => void)
+		| React.RefObject<HTMLInputElement>
+		| null
+		| undefined
 	onChange?(files: FileList): void
 	placeholder?: string
 	hideClearButton?: boolean
 	filePattern?: RegExp
 	resetKey?: string
 }
-export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
+export const TEFileInput: React.FC<TEFileInputProps> = React.forwardRef((props, ref) => {
 	const [active, setActive] = useState(false)
 	const [fileArray, setFileArray] = useState<FileList | undefined>()
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
@@ -119,6 +122,7 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 							onFileChange(e.target.files)
 						}
 						className='TEFileInputInput'
+						ref={ref}
 					/>
 				</Label>
 				{!hideClearButton && (
@@ -136,4 +140,4 @@ export const TEFileInput: React.FC<TEFileInputProps> = (props) => {
 			)}
 		</Wrapper>
 	)
-}
+})

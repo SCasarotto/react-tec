@@ -9,8 +9,9 @@ export interface TEDatetimeInputProps extends Omit<ReactDatePickerProps, 'value'
 	//These are used to standardize to other input props
 	placeholder?: string
 	value?: Date | null
+	ref?: ((instance: DatePicker | null) => void) | React.RefObject<DatePicker> | null | undefined
 }
-export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = (props) => {
+export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = React.forwardRef((props, ref) => {
 	const {
 		selected,
 		value,
@@ -50,10 +51,11 @@ export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = (props) => {
 			selected={selected || value}
 			placeholderText={placeholderText || placeholder}
 			className={`TEDatetimeInput ${className}`}
+			ref={ref}
 			{...rest}
 		/>
 	)
-}
+})
 
 TEDatetimeInput.defaultProps = {
 	autoComplete: 'off',

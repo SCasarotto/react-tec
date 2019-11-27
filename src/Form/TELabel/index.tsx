@@ -9,16 +9,19 @@ export interface TELabelCustomProps {
 export interface TELabelProps
 	extends React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>,
 		TELabelCustomProps {
-	//TODO: Fix this. styled-components is weird with refs
-	ref?: any
+	ref?:
+		| ((instance: HTMLLabelElement | null) => void)
+		| React.RefObject<HTMLLabelElement>
+		| null
+		| undefined
 }
 
-export const TELabel: React.FC<TELabelProps> = (props) => {
+export const TELabel: React.FC<TELabelProps> = React.forwardRef((props, ref) => {
 	const { children, required, className = '', ...rest } = props
 	return (
-		<Label className={`TELabel ${className}`} {...rest}>
+		<Label className={`TELabel ${className}`} ref={ref} {...rest}>
 			{children}
 			{required ? ' *' : ''}
 		</Label>
 	)
-}
+})

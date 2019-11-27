@@ -8,9 +8,14 @@ export interface TEButtonProps
 		HTMLButtonElement
 	> {
 	//TODO: Fix this. styled-components is weird with refs
-	ref?: any
+	ref?:
+		| ((instance: HTMLButtonElement | null) => void)
+		| React.RefObject<HTMLButtonElement>
+		| null
+		| undefined
+	// ref?: any
 }
-export const TEButton: React.FC<TEButtonProps> = (props) => {
+export const TEButton: React.FC<TEButtonProps> = React.forwardRef((props, ref) => {
 	const { className = '', type = 'button', ...rest } = props
-	return <Button className={`TEButton ${className}`} type={type} {...rest} />
-}
+	return <Button className={`TEButton ${className}`} type={type} ref={ref} {...rest} />
+})

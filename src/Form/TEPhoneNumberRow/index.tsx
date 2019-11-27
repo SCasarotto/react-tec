@@ -2,44 +2,45 @@ import React from 'react'
 
 import { TERow, TERowCustomProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
-import { TETextarea, TETextareaProps } from '../TETextarea'
+import { TEPhoneNumberInput, TEPhoneNumberInputProps } from '../TEPhoneNumberInput'
 
-export interface TETextareaRowProps extends TERowCustomProps, TELabelCustomProps, TETextareaProps {
+export interface TEPhoneNumberRowProps
+	extends TERowCustomProps,
+		TELabelCustomProps,
+		TEPhoneNumberInputProps {
 	labelForKey: string
 }
 
-export const TETextareaRow: React.FC<TETextareaRowProps> = React.forwardRef((props, ref) => {
+export const TEPhoneNumberRow: React.FC<TEPhoneNumberRowProps> = React.forwardRef((props, ref) => {
 	const {
 		rowSize,
 		last,
 		className = '',
 		title,
-		onChange,
+		type,
 		disabled,
-		value,
 		required,
 		labelForKey,
 		...rest
 	} = props
 
 	return (
-		<TERow rowSize={rowSize} last={last} className={`TEInputRow ${className}`}>
+		<TERow rowSize={rowSize} last={last} className={`TEPhoneNumberRow ${className}`}>
 			{title && (
 				<TELabel
 					htmlFor={labelForKey}
 					required={required}
 					disabled={disabled}
-					className='TEInputRowTitle'
+					className='TEPhoneNumberRowTitle'
 				>
 					{title}
 				</TELabel>
 			)}
-			<TETextarea
-				value={value}
-				onChange={onChange}
+			<TEPhoneNumberInput
+				type={type}
 				id={labelForKey}
 				disabled={disabled}
-				className='TEInputRowInput'
+				className='TEPhoneNumberRowInput'
 				ref={ref}
 				{...rest}
 			/>

@@ -4,10 +4,13 @@ import { Form } from './styledComponents'
 
 export interface TEFormProps
 	extends React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {
-	//TODO: Fix this. styled-components is weird with refs
-	ref?: any
+	ref?:
+		| ((instance: HTMLFormElement | null) => void)
+		| React.RefObject<HTMLFormElement>
+		| null
+		| undefined
 }
-export const TEForm: React.FC<TEFormProps> = (props) => {
+export const TEForm: React.FC<TEFormProps> = React.forwardRef((props, ref) => {
 	const { className = '', ...rest } = props
-	return <Form className={`TEForm ${className}`} {...rest} />
-}
+	return <Form className={`TEForm ${className}`} ref={ref} {...rest} />
+})

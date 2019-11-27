@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, useLocation } from 'react-router-dom'
+import { Manager } from 'react-popper'
 
 import { useScrollTop } from '../../Utility/useScrollTop'
 import { TEThemeProvider, TEThemeProviderProps } from '../TEThemeContext'
@@ -13,7 +14,9 @@ const TEAppWrapperContent: React.FC<TEAppWrapperProps> = (props) => {
 
 	return (
 		<TEThemeProvider theme={theme} globalStyles={globalStyles}>
-			<TEPopupProvider>{children}</TEPopupProvider>
+			<TEPopupProvider>
+				<Manager>{children}</Manager>
+			</TEPopupProvider>
 		</TEThemeProvider>
 	)
 }
