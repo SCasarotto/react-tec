@@ -1,6 +1,6 @@
 {
 	"name": "react-tec",
-	"version": "0.2.4-beta.0",
+	"version": "0.2.4-beta.2",
 	"license": "MIT",
 	"author": "Stuart Casarotto",
 	"main": "dist/index.js",

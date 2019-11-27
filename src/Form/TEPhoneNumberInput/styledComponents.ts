@@ -42,7 +42,7 @@ export const PhoneNumberInput = styled(PhoneInput)`
 		height: 0.93em;
 
 		/* '1px' is still too much for a "retina" screen but there's no way in CSS to specify "hairline" border width. */
-		border: 1px solid rgba(0, 0, 0, 0.5);
+		border: 1px solid ${(props) => props.theme.lighterGray};
 
 		/* Makes sure 'width'x'height' is exactly '4x3' and 'border' width is not included in it */
 		box-sizing: content-box;
@@ -71,6 +71,7 @@ export const PhoneNumberInput = styled(PhoneInput)`
 	.react-phone-number-input__icon-image {
 		max-width: 100%;
 		max-height: 100%;
+		display: block;
 	}
 
 	/*Removes '<input type="number"/>' up/down arrows in Webkit browsers.*/
