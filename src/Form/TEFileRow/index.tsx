@@ -7,7 +7,7 @@ import { TEFileInput, TEFileInputProps } from '../TEFileInput'
 export interface TEFileRowProps extends TERowCustomProps, TELabelCustomProps, TEFileInputProps {
 	labelForKey: string
 }
-export const TEFileRow: React.FC<TEFileRowProps> = (props) => {
+export const TEFileRow: React.FC<TEFileRowProps> = React.forwardRef((props, ref) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
@@ -22,7 +22,7 @@ export const TEFileRow: React.FC<TEFileRowProps> = (props) => {
 					{title}
 				</TELabel>
 			)}
-			<TEFileInput id={labelForKey} className='TEFileRowInput' {...rest} />
+			<TEFileInput id={labelForKey} className='TEFileRowInput' ref={ref} {...rest} />
 		</TERow>
 	)
-}
+})

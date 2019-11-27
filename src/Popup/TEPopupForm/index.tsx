@@ -11,7 +11,7 @@ export interface TEPopupFormProps extends TEPopupProps, TEFormProps {
 	onSubmitTitle?: string
 	submitButtonId?: string
 }
-export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
+export const TEPopupForm: React.FC<TEPopupFormProps> = React.forwardRef((props, ref) => {
 	const {
 		visible,
 		onClose,
@@ -25,7 +25,7 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 
 	return (
 		<Popup visible={visible} className={`TEPopupForm ${className}`}>
-			<TEForm className='TEPopupFormForm' {...rest}>
+			<TEForm className='TEPopupFormForm' ref={ref} {...rest}>
 				<FormContent className='TEPopupFormContent'>{children}</FormContent>
 				<ButtonContainer className='TEPopupFormButtonContainer'>
 					<LeftButton
@@ -45,7 +45,7 @@ export const TEPopupForm: React.FC<TEPopupFormProps> = (props) => {
 			</TEForm>
 		</Popup>
 	)
-}
+})
 
 TEPopupForm.defaultProps = {
 	visible: false,

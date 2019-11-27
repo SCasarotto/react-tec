@@ -35,8 +35,13 @@ export interface TEMultiStepFormProps {
 	onSubmit(): Promise<any>
 	onStepChange?(step: number): void
 	submitButtonId?: string
+	ref?:
+		| ((instance: HTMLFormElement | null) => void)
+		| React.RefObject<HTMLFormElement>
+		| null
+		| undefined
 }
-export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
+export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = React.forwardRef((props, ref) => {
 	const [currentStep, setCurrentStep] = useState(0)
 
 	const updateAndEmitStep = (step: number) => {
@@ -134,7 +139,7 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 					)
 				})}
 			</StepContainer>
-			<TEForm className='TEMultiStepFormForm'>
+			<TEForm className='TEMultiStepFormForm' ref={ref}>
 				{stepData[currentStep] && stepData[currentStep].component}
 				<ButtonContainer className='TEMultiStepFormButtonContainer'>
 					{(handleCancelOnClick || currentStep > 0) && (
@@ -161,4 +166,4 @@ export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = (props) => {
 			</TEForm>
 		</Container>
 	)
-}
+})

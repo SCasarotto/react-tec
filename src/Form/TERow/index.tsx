@@ -9,10 +9,15 @@ export interface TERowCustomProps {
 export interface TERowProps
 	extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
 		TERowCustomProps {
-	//TODO: Fix this. styled-components is weird with refs
-	ref?: any
+	ref?:
+		| ((instance: HTMLDivElement | null) => void)
+		| React.RefObject<HTMLDivElement>
+		| null
+		| undefined
 }
-export const TERow: React.FC<TERowProps> = (props) => {
+export const TERow: React.FC<TERowProps> = React.forwardRef((props, ref) => {
 	const { rowSize = 'full', last = false, className = '', ...rest } = props
-	return <Row className={`TERow ${className}`} rowSize={rowSize} last={last} {...rest} />
-}
+	return (
+		<Row className={`TERow ${className}`} rowSize={rowSize} last={last} ref={ref} {...rest} />
+	)
+})

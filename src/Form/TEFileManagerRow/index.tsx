@@ -37,8 +37,13 @@ interface TEFileManagerRowProps extends TERowCustomProps, TELabelCustomProps, TE
 	// multiple?: false
 	onRemove(data: TEFileManagerRowOnRemoveData): Promise<any>
 	onUpload(files: FileList): Promise<any>
+	ref?:
+		| React.RefObject<HTMLInputElement>
+		| ((instance: HTMLInputElement | null) => void)
+		| null
+		| undefined
 }
-export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
+export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = React.forwardRef((props, ref) => {
 	const [inputKey, setInputKey] = useState<string | number>('inputKey')
 
 	const onFileChange = (fileList: FileList) => {
@@ -135,12 +140,13 @@ export const TEFileManagerRow: React.FC<TEFileManagerRowProps> = (props) => {
 						filePattern={filePattern}
 						className='TEFileManagerInput'
 						hideClearButton
+						ref={ref}
 					/>
 				)}
 			</FileRowWrapper>
 		</TERow>
 	)
-}
+})
 
 TEFileManagerRow.defaultProps = {
 	accept: '.',

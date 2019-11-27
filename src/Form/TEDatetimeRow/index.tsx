@@ -10,7 +10,7 @@ export interface TEDatetimeRowProps
 		TEDatetimeInputProps {
 	labelForKey: string
 }
-export const TEDatetimeRow: React.FC<TEDatetimeRowProps> = (props) => {
+export const TEDatetimeRow: React.FC<TEDatetimeRowProps> = React.forwardRef((props, ref) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (
@@ -25,7 +25,12 @@ export const TEDatetimeRow: React.FC<TEDatetimeRowProps> = (props) => {
 					{title}
 				</TELabel>
 			)}
-			<TEDatetimeInput id={labelForKey} {...rest} className='TEDatetimeRowDateInput' />
+			<TEDatetimeInput
+				id={labelForKey}
+				{...rest}
+				className='TEDatetimeRowDateInput'
+				ref={ref}
+			/>
 		</TERow>
 	)
-}
+})

@@ -9,7 +9,7 @@ export interface TESelectProps extends Props {
 	className?: string
 	disabled?: boolean
 }
-export const TESelect: React.FC<TESelectProps> = (props) => {
+export const TESelect: React.FC<TESelectProps> = React.forwardRef((props, ref) => {
 	const { className = '', disabled, classNamePrefix = 'TESelect', ...rest } = props
 	const TETheme = useContext(ThemeContext)
 
@@ -53,7 +53,8 @@ export const TESelect: React.FC<TESelectProps> = (props) => {
 				//   menuGutter: 8
 				// }
 			})}
+			ref={ref}
 			{...rest}
 		/>
 	)
-}
+})

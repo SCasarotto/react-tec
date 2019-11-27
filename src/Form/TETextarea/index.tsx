@@ -7,10 +7,13 @@ export interface TETextareaProps
 		React.TextareaHTMLAttributes<HTMLTextAreaElement>,
 		HTMLTextAreaElement
 	> {
-	//TODO: Fix this. styled-components is weird with refs
-	ref?: any
+	ref?:
+		| ((instance: HTMLTextAreaElement | null) => void)
+		| React.RefObject<HTMLTextAreaElement>
+		| null
+		| undefined
 }
-export const TETextarea: React.FC<TETextareaProps> = (props) => {
+export const TETextarea: React.FC<TETextareaProps> = React.forwardRef((props, ref) => {
 	const { className = '', ...rest } = props
-	return <Textarea className={`TETextarea ${className}`} {...rest} />
-}
+	return <Textarea className={`TETextarea ${className}`} ref={ref} {...rest} />
+})

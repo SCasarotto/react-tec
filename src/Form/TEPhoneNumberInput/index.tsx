@@ -10,7 +10,11 @@ export interface TEPhoneNumberInputProps {
 	value: string
 	className?: string
 }
-export const TEPhoneNumberInput: React.FC<TEPhoneNumberInputProps> = (props) => {
-	const { className = '', ...rest } = props
-	return <PhoneNumberInput className={`TEPhoneNumberInput ${className}`} {...rest} />
-}
+export const TEPhoneNumberInput: React.FC<TEPhoneNumberInputProps> = React.forwardRef(
+	(props, ref) => {
+		const { className = '', ...rest } = props
+		return (
+			<PhoneNumberInput className={`TEPhoneNumberInput ${className}`} ref={ref} {...rest} />
+		)
+	},
+)

@@ -11,7 +11,7 @@ export interface TEPhoneNumberRowProps
 	labelForKey: string
 }
 
-export const TEPhoneNumberRow: React.FC<TEPhoneNumberRowProps> = (props) => {
+export const TEPhoneNumberRow: React.FC<TEPhoneNumberRowProps> = React.forwardRef((props, ref) => {
 	const {
 		rowSize,
 		last,
@@ -41,8 +41,9 @@ export const TEPhoneNumberRow: React.FC<TEPhoneNumberRowProps> = (props) => {
 				id={labelForKey}
 				disabled={disabled}
 				className='TEPhoneNumberRowInput'
+				ref={ref}
 				{...rest}
 			/>
 		</TERow>
 	)
-}
+})

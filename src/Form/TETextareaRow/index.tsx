@@ -8,7 +8,7 @@ export interface TETextareaRowProps extends TERowCustomProps, TELabelCustomProps
 	labelForKey: string
 }
 
-export const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
+export const TETextareaRow: React.FC<TETextareaRowProps> = React.forwardRef((props, ref) => {
 	const {
 		rowSize,
 		last,
@@ -40,8 +40,9 @@ export const TETextareaRow: React.FC<TETextareaRowProps> = (props) => {
 				id={labelForKey}
 				disabled={disabled}
 				className='TEInputRowInput'
+				ref={ref}
 				{...rest}
 			/>
 		</TERow>
 	)
-}
+})
