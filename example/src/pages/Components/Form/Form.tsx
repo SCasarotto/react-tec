@@ -18,7 +18,10 @@ import { TEImageRowSection } from './TEImageRowSection'
 import { TEInputRowSection } from './TEInputRowSection'
 import { TEInputSection } from './TEInputSection'
 import { TELabelSection } from './TELabelSection'
+import { TEMenuButtonSection } from './TEMenuButtonSection'
 import { TEMultiStepFormSection } from './TEMultiStepFormSection'
+import { TEPhoneNumberInputSection } from './TEPhoneNumberInputSection'
+import { TEPhoneNumberRowSection } from './TEPhoneNumberRowSection'
 import { TERadioButtonGroupSection } from './TERadioButtonGroupSection'
 import { TERadioButtonInputSection } from './TERadioButtonInputSection'
 import { TERowSection } from './TERowSection'
@@ -65,9 +68,24 @@ const sections = [
 	{ name: 'TEInput', path: '/components/form/TEInput', component: TEInputSection },
 	{ name: 'TELabel', path: '/components/form/TELabel', component: TELabelSection },
 	{
+		name: 'TEMenuButton',
+		path: '/components/form/TEMenuButton',
+		component: TEMenuButtonSection,
+	},
+	{
 		name: 'TEMultiStepForm',
 		path: '/components/form/TEMultiStepForm',
 		component: TEMultiStepFormSection,
+	},
+	{
+		name: 'TEPhoneNumberInput',
+		path: '/components/form/TEPhoneNumberInput',
+		component: TEPhoneNumberInputSection,
+	},
+	{
+		name: 'TEPhoneNumberRow',
+		path: '/components/form/TEPhoneNumberRow',
+		component: TEPhoneNumberRowSection,
 	},
 	{
 		name: 'TERadioButtonGroup',
