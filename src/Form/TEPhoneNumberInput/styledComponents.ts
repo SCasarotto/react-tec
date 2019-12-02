@@ -129,8 +129,7 @@ export const PhoneNumberInput = styled(PhoneInput)`
 		border-style: solid;
 		border-left-color: transparent;
 		border-right-color: transparent;
-		color: #b8bdc4;
-		opacity: 0.7;
+		color: ${(props) => props.theme.gray};
 		transition: color 0.1s;
 	}
 
@@ -143,7 +142,7 @@ export const PhoneNumberInput = styled(PhoneInput)`
 	.react-phone-number-input__country-select:focus
 		+ .react-phone-number-input__country-select-arrow,
 	.react-phone-number-input__country.rrui__select--focus .rrui__select__arrow {
-		color: #03b2cb;
+		color: ${(props) => props.theme.primary};
 	}
 
 	/* Styling phone number input */
@@ -161,7 +160,7 @@ export const PhoneNumberInput = styled(PhoneInput)`
 	}
 
 	.react-phone-number-input__input:focus {
-		border-color: #03b2cb;
+		border-color: ${(props) => props.theme.primary};
 	}
 
 	.react-phone-number-input__input--disabled {
