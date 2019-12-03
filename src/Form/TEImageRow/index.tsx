@@ -52,6 +52,7 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 		setErrorData({ error: false, message: '' })
 		setFile(undefined)
 		setInputKey(new Date().getTime())
+		setEditorVisible(false)
 	}
 	const handleEditorSubmit = async (e: FormEvent<HTMLFormElement>, editor: any) => {
 		//This could be passed out. Not sure it needs to.
