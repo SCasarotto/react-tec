@@ -5,7 +5,7 @@
 	"dependencies": {
 		"@types/jest": "24.0.23",
 		"@types/node": "12.12.14",
-		"@types/react": "16.9.13",
+		"@types/react": "16.9.14",
 		"@types/react-dom": "16.9.4",
 		"react": "link:../node_modules/react",
 		"react-dom": "link:../node_modules/react-dom",
@@ -13,7 +13,7 @@
 		"react-router": "^5.1.1",
 		"react-router-dom": "^5.1.1",
 		"react-scripts": "3.2.0",
-		"react-tec": "^0.2.4",
+		"react-tec": "^0.2.5",
 		"styled-components": "^4.4.0",
 		"typescript": "3.6.4"
 	},

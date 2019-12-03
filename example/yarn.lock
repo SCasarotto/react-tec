@@ -1461,10 +1461,18 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@16.9.13":
+"@types/react@*":
   version "16.9.13"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.13.tgz#b3ea5dd443f4a680599e2abba8cc66f5e1ce0059"
   integrity sha512-LikzRslbiufJYHyzbHSW0GrAiff8QYLMBFeZmSxzCYGXKxi8m/1PHX+rsVOwhr7mJNq+VIu2Dhf7U6mjFERK6w==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@16.9.14":
+  version "16.9.14"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.14.tgz#7f1158ce450b4b5aa83b1c5e1324fa75f348bdd1"
+  integrity sha512-Q4tW4RGmR+u/CgzR8VqZcsUWjP4Pz/LcHfs9AzSG+aBnwq8As3Bid3vG1eGGsXg/xuR2k2tqNlI8pzyV8kxe0g==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -8787,10 +8795,10 @@ react-side-effect@^1.1.0:
   dependencies:
     shallowequal "^1.0.1"
 
-react-tec@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/react-tec/-/react-tec-0.2.4.tgz#19f58a9d156984bbf4d96ada3713f6222737aa1b"
-  integrity sha512-e+hAf1pLdkoS6UmJR38/BPKQTefZ2XDXIuVgU/lXq7yU0ZTRZ4Cbl3BRn9iXPat2B9RmkZuWbgm8ghgr537VJA==
+react-tec@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/react-tec/-/react-tec-0.2.5.tgz#8d643f5f07823d7c218de052fd41cc58df255cb0"
+  integrity sha512-TMt7QrGP0DiFdRz0Qc/9J2C9d1Uru6D/npHUoQaggzVPzSqJLrmcfXYu8tIMFmeLOlHCU45THRBWK7bz+PF5TA==
   dependencies:
     "@types/color" "^3.0.0"
     "@types/react-select" "^3.0.8"
