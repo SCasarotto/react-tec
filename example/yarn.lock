@@ -8804,9 +8804,9 @@ react-side-effect@^1.1.0:
     shallowequal "^1.0.1"
 
 react-tec@^0.2.5:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/react-tec/-/react-tec-0.2.6.tgz#ade65dbcc64f08b303d2c25f03dd1437712b3d6e"
-  integrity sha512-vZdHnsC4MdLeaceM+40YdwqwniG59TUdZKAhaewCM0HPR1A96GF2ptpIaqNmvzS/ju9ejY6TdDpOnvCUxYzBGg==
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/react-tec/-/react-tec-0.2.7.tgz#953beed96b30e824be13e36ae7fbdb46629ba9d5"
+  integrity sha512-MAIsdEzMb2hxYpsIR1seQBe2A5F3V7H0sLzolxEXs569l1abibPG9s1CyizuQ0nLSh2pBuzikPAgnD2pOXeX7A==
   dependencies:
     "@types/color" "^3.0.0"
     "@types/react-select" "^3.0.8"
