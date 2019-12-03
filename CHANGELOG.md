@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.5 - 11-27-2019
+
+## Bug Fixes
+
+-   Fixed styling of `TEPhoneNumberInput`. Addresses (#43)
+
 ## 0.2.4 - 11-27-2019
 
 ## Added
@@ -59,6 +65,7 @@ This update is a complete rewrite of react-tec. Moving from [Create React Librar
 -   `TEHelmet` is no longer apart of this package. This was entirely a passthrough component and was unnessisary. Use react-helmet from now on.
 -   Replaced `TEScrollToTop` with a utility hook `useScrollTop`.
 -   `TEImageRow` `imgSrc` prop is not `imgSrcArray` just like `TEFileManagerRow`
+-   All forms (`TEForm`, `TEPopupForm`, `TEMultiStepForm`, etc) all now provide the submit event to the `onSubmit` function. This mean you will now need to add `event.preventDefault()` to your `onSubmit` function.
 
 ### Additions
 
