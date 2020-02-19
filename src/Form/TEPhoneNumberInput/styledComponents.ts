@@ -3,10 +3,13 @@ import PhoneInput from 'react-phone-number-input'
 
 export const PhoneNumberInput = styled(PhoneInput)`
 	position: relative;
-	display: block;
+	/* From CSS Base File */
+	display: flex;
+	align-items: center;
+	/* From CSS Base File - END*/
+
 	width: 100%;
 	font-size: 14px;
-	padding: 10px;
 	box-sizing: border-box;
 	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'text')};
 	border-radius: 5px;
@@ -21,91 +24,67 @@ export const PhoneNumberInput = styled(PhoneInput)`
 		border: 1px solid ${(props) => props.theme.primary};
 		box-shadow: 0 0 0 1px ${(props) => props.theme.primary} inset;
 	}
-	.react-phone-number-input__row {
-		/* This is done to stretch the contents of this component */
-		display: flex;
-		align-items: center;
-	}
 
-	.react-phone-number-input__phone {
+	.PhoneInputInput {
 		/* The phone number input stretches to fill all empty space */
 		flex: 1;
-
-		/* The phone number input should shrink
-		to make room for the extension input */
+		/* The phone number input should shrink to make room for the extension input */
 		min-width: 0;
-	}
-
-	.react-phone-number-input__icon {
-		/* The flag icon size is 4x3 hence the exact 'width' and 'height' values */
-		width: 1.24em;
-		height: 0.93em;
-
-		/* '1px' is still too much for a "retina" screen but there's no way in CSS to specify "hairline" border width. */
-		border: 1px solid ${(props) => props.theme.lighterGray};
-
-		/* Makes sure 'width'x'height' is exactly '4x3' and 'border' width is not included in it */
-		box-sizing: content-box;
-	}
-
-	.react-phone-number-input__icon--international {
-		/* The international icon size is square */
-		/* and also has no border hence the '2 * 1px' 'width' and 'height' compensation */
-		width: calc(0.93em + 2px);
-		height: calc(0.93em + 2px);
-
-		/* The international icon size is square hence the exact 'padding' value */
-		/* for precise alignment with '4x3' sized country flags. */
-		padding-left: 0.155em;
-		padding-right: 0.155em;
-
+		outline: none;
+		border-radius: 0;
+		/* padding: 0; */
+		appearance: none;
 		border: none;
+		/* border-bottom: 1px solid #c5d2e0; */
+		/* transition: border 0.1s; */
+		font-size: inherit;
+
+		padding: 10px;
+		background-color: transparent;
 	}
 
-	.react-phone-number-input__error {
-		margin-left: calc(1.24em + 2px + 0.3em + 0.35em + 0.5em);
-		margin-top: calc(0.3rem);
-		color: #d30f00;
-	}
-
-	.react-phone-number-input__icon-image {
-		max-width: 100%;
-		max-height: 100%;
+	.PhoneInputCountryIcon {
+		width: calc(var(--PhoneInputCountryFlag-height) * var(--PhoneInputCountryFlag-aspectRatio));
+		height: var(--PhoneInputCountryFlag-height);
 		display: block;
 	}
 
-	/*Removes '<input type="number"/>' up/down arrows in Webkit browsers.*/
-	.react-phone-number-input__ext-input::-webkit-inner-spin-button,
-	.react-phone-number-input__ext-input::-webkit-outer-spin-button {
-		margin: 0 !important;
-		-webkit-appearance: none !important;
-		-moz-appearance: textfield !important;
+	.PhoneInputCountryIcon--square {
+		width: var(--PhoneInputCountryFlag-height);
 	}
 
-	.react-phone-number-input__ext-input {
-		width: 3em;
+	.PhoneInputCountryIcon--border {
+		background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
+
+		box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
+				var(--PhoneInputCountryFlag-borderColor),
+			inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
+				var(--PhoneInputCountryFlag-borderColor);
 	}
 
-	.react-phone-number-input__ext {
-		white-space: nowrap;
+	.PhoneInputCountryIconImg {
+		width: 100%;
+		height: 100%;
 	}
 
-	.react-phone-number-input__ext,
-	.react-phone-number-input__ext-input {
-		margin-left: 0.5em;
+	.PhoneInputInternationalIconPhone {
+		opacity: var(--PhoneInputInternationalIconPhone-opacity);
 	}
 
-	/* Styling native country '<select/>'. */
+	.PhoneInputInternationalIconGlobe {
+		opacity: var(--PhoneInputInternationalIconGlobe-opacity);
+	}
 
-	.react-phone-number-input__country--native {
+	.PhoneInputCountry {
 		position: relative;
 		align-self: stretch;
 		display: flex;
 		align-items: center;
-		margin-right: 0.5em;
+		margin-right: var(--PhoneInputCountrySelect-marginRight);
+		padding: 10px 0px 10px 10px;
 	}
 
-	.react-phone-number-input__country-select {
+	.PhoneInputCountrySelect {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -117,68 +96,172 @@ export const PhoneNumberInput = styled(PhoneInput)`
 		cursor: pointer;
 	}
 
-	.react-phone-number-input__country-select-arrow {
-		display: block;
-		content: '';
-		width: 0;
-		height: 0;
-		margin-bottom: 0.1em;
-		margin-top: 0.3em;
-		margin-left: 0.3em;
-		border-width: 0.35em 0.2em 0 0.2em;
-		border-style: solid;
-		border-left-color: transparent;
-		border-right-color: transparent;
-		color: ${(props) => props.theme.gray};
-		transition: color 0.1s;
-	}
-
-	/* Something from stackoverflow. */
-	.react-phone-number-input__country-select-divider {
-		font-size: 1px;
-		background: black;
-	}
-
-	.react-phone-number-input__country-select:focus
-		+ .react-phone-number-input__country-select-arrow,
-	.react-phone-number-input__country.rrui__select--focus .rrui__select__arrow {
-		color: ${(props) => props.theme.primary};
-	}
-
-	/* Styling phone number input */
-
-	.react-phone-number-input__input {
-		/* height: calc(0.3rem * 6); */
-		outline: none;
-		border-radius: 0;
-		padding: 0;
-		appearance: none;
-		border: none;
-		/* border-bottom: 1px solid #c5d2e0; */
-		/* transition: border 0.1s; */
-		font-size: inherit;
-	}
-
-	.react-phone-number-input__input:focus {
-		border-color: ${(props) => props.theme.primary};
-	}
-
-	.react-phone-number-input__input--disabled {
+	.PhoneInputCountrySelect[disabled] {
 		cursor: default;
 	}
 
-	.react-phone-number-input__input--invalid,
-	.react-phone-number-input__input--invalid:focus {
-		border-color: #eb2010;
+	.PhoneInputCountrySelectArrow {
+		display: block;
+		content: '';
+		width: var(--PhoneInputCountrySelectArrow-width);
+		height: var(--PhoneInputCountrySelectArrow-width);
+		margin-top: var(--PhoneInputCountrySelectArrow-marginTop);
+		margin-left: var(--PhoneInputCountrySelectArrow-marginLeft);
+		border-style: solid;
+		border-color: var(--PhoneInputCountrySelectArrow-color);
+		border-top-width: 0;
+		border-bottom-width: var(--PhoneInputCountrySelectArrow-borderWidth);
+		border-left-width: 0;
+		border-right-width: var(--PhoneInputCountrySelectArrow-borderWidth);
+		transform: var(--PhoneInputCountrySelectArrow-transform);
+		opacity: var(--PhoneInputCountrySelectArrow-opacity);
 	}
 
-	/* Overrides Chrome autofill yellow background color */
-	.react-phone-number-input__input:-webkit-autofill {
-		box-shadow: 0 0 0 1000px white inset;
+	.PhoneInputCountrySelect:focus + .PhoneInputCountryIcon + .PhoneInputCountrySelectArrow {
+		opacity: 1;
+		color: var(--PhoneInputCountrySelectArrow-color--focus);
 	}
 
-	/* A small fix for 'react-responsive-ui' */
-	.react-phone-number-input__country .rrui__select__button {
-		border-bottom: none;
+	.PhoneInputCountrySelect:focus + .PhoneInputCountryIcon--border {
+		box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
+				var(--PhoneInputCountryFlag-borderColor--focus),
+			inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
+				var(--PhoneInputCountryFlag-borderColor--focus);
+	}
+
+	.PhoneInputCountrySelect:focus + .PhoneInputCountryIcon .PhoneInputInternationalIconGlobe {
+		opacity: 1;
+		color: var(--PhoneInputCountrySelectArrow-color--focus);
 	}
 `
+
+// :root {
+// 	--PhoneInput-color--focus: #03b2cb;
+// 	--PhoneInputInternationalIconPhone-opacity: 0.8;
+// 	--PhoneInputInternationalIconGlobe-opacity: 0.65;
+// 	--PhoneInputCountrySelect-marginRight: 0.35em;
+// 	--PhoneInputCountrySelectArrow-width: 0.3em;
+// 	--PhoneInputCountrySelectArrow-marginLeft: var(--PhoneInputCountrySelect-marginRight);
+// 	--PhoneInputCountrySelectArrow-marginTop: calc(var(--PhoneInputCountrySelectArrow-height) / 2);
+// 	--PhoneInputCountrySelectArrow-borderWidth: 1px;
+// 	--PhoneInputCountrySelectArrow-opacity: 0.45;
+// 	--PhoneInputCountrySelectArrow-color: inherit;
+// 	--PhoneInputCountrySelectArrow-color--focus: var(--PhoneInput-color--focus);
+// 	--PhoneInputCountrySelectArrow-transform: rotate(45deg);
+// 	--PhoneInputCountryFlag-aspectRatio: 1.5;
+// 	--PhoneInputCountryFlag-height: 1em;
+// 	--PhoneInputCountryFlag-borderWidth: 1px;
+// 	--PhoneInputCountryFlag-borderColor: rgba(0,0,0,0.5);
+// 	--PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
+// 	--PhoneInputCountryFlag-backgroundColor--loading: rgba(0,0,0,0.1);
+// }
+
+// .PhoneInput {
+// 	/* This is done to stretch the contents of this component. */
+// 	display: flex;
+// 	align-items: center;
+// }
+
+// .PhoneInputInput {
+// 	/* The phone number input stretches to fill all empty space */
+// 	flex: 1;
+// 	/* The phone number input should shrink
+// 	   to make room for the extension input */
+// 	min-width: 0;
+// }
+
+// .PhoneInputCountryIcon {
+// 	width: calc(var(--PhoneInputCountryFlag-height) * var(--PhoneInputCountryFlag-aspectRatio));
+// 	height: var(--PhoneInputCountryFlag-height);
+// }
+
+// .PhoneInputCountryIcon--square {
+// 	width: var(--PhoneInputCountryFlag-height);
+// }
+
+// .PhoneInputCountryIcon--border {
+// 	/* Removed `background-color` because when an `<img/>` was still loading
+// 	   it would show a dark gray rectangle. */
+// 	/* For some reason the `<img/>` is not stretched to 100% width and height
+// 	   and sometime there can be seen white pixels of the background at top and bottom. */
+// 	background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
+// 	/* Border is added via `box-shadow` because `border` interferes with `width`/`height`. */
+// 	/* For some reason the `<img/>` is not stretched to 100% width and height
+// 	   and sometime there can be seen white pixels of the background at top and bottom,
+// 	   so an additional "inset" border is added. */
+// 	box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor),
+// 		inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor);
+// }
+
+// .PhoneInputCountryIconImg {
+// 	/* 3rd party <SVG/> flag icons won't stretch if they have `width` and `height`.
+// 	   Also, if an <SVG/> icon's aspect ratio was different, it wouldn't fit too. */
+// 	width: 100%;
+// 	height: 100%;
+// }
+
+// .PhoneInputInternationalIconPhone {
+// 	opacity: var(--PhoneInputInternationalIconPhone-opacity);
+// }
+
+// .PhoneInputInternationalIconGlobe {
+// 	opacity: var(--PhoneInputInternationalIconGlobe-opacity);
+// }
+
+// /* Styling native country `<select/>`. */
+
+// .PhoneInputCountry {
+// 	position: relative;
+// 	align-self: stretch;
+// 	display: flex;
+// 	align-items: center;
+// 	margin-right: var(--PhoneInputCountrySelect-marginRight);
+// }
+
+// .PhoneInputCountrySelect {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	height: 100%;
+// 	width: 100%;
+// 	z-index: 1;
+// 	border: 0;
+// 	opacity: 0;
+// 	cursor: pointer;
+// }
+
+// .PhoneInputCountrySelect[disabled] {
+// 	cursor: default;
+// }
+
+// .PhoneInputCountrySelectArrow {
+// 	display: block;
+// 	content: '';
+// 	width: var(--PhoneInputCountrySelectArrow-width);
+// 	height: var(--PhoneInputCountrySelectArrow-width);
+// 	margin-top: var(--PhoneInputCountrySelectArrow-marginTop);
+// 	margin-left: var(--PhoneInputCountrySelectArrow-marginLeft);
+// 	border-style: solid;
+// 	border-color: var(--PhoneInputCountrySelectArrow-color);
+// 	border-top-width: 0;
+// 	border-bottom-width: var(--PhoneInputCountrySelectArrow-borderWidth);
+// 	border-left-width: 0;
+// 	border-right-width: var(--PhoneInputCountrySelectArrow-borderWidth);
+// 	transform: var(--PhoneInputCountrySelectArrow-transform);
+// 	opacity: var(--PhoneInputCountrySelectArrow-opacity);
+// }
+
+// .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon + .PhoneInputCountrySelectArrow {
+// 	opacity: 1;
+// 	color: var(--PhoneInputCountrySelectArrow-color--focus);
+// }
+
+// .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon--border {
+// 	box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor--focus),
+// 		inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor--focus);
+// }
+
+// .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon .PhoneInputInternationalIconGlobe {
+// 	opacity: 1;
+// 	color: var(--PhoneInputCountrySelectArrow-color--focus);
+// }

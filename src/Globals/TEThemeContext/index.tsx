@@ -70,6 +70,32 @@ const GlobalStyles = createGlobalStyle<{
 
 	/*
 	*
+	* React Phone Number Input
+	*
+	*/
+	:root {
+		--PhoneInput-color--focus: ${(props) => props.theme.primary};;
+		--PhoneInputInternationalIconPhone-opacity: 0.8;
+		--PhoneInputInternationalIconGlobe-opacity: 0.65;
+		--PhoneInputCountrySelect-marginRight: 0.5em;
+		--PhoneInputCountrySelectArrow-width: 0.3em;
+		--PhoneInputCountrySelectArrow-marginLeft: var(--PhoneInputCountrySelect-marginRight);
+		--PhoneInputCountrySelectArrow-marginTop: calc(var(--PhoneInputCountrySelectArrow-height) / 2);
+		--PhoneInputCountrySelectArrow-borderWidth: 1px;
+		--PhoneInputCountrySelectArrow-opacity: 0.45;
+		--PhoneInputCountrySelectArrow-color: inherit;
+		--PhoneInputCountrySelectArrow-color--focus: var(--PhoneInput-color--focus);
+		--PhoneInputCountrySelectArrow-transform: rotate(45deg);
+		--PhoneInputCountryFlag-aspectRatio: 1.5;
+		--PhoneInputCountryFlag-height: 1em;
+		--PhoneInputCountryFlag-borderWidth: 1px;
+		--PhoneInputCountryFlag-borderColor: ${(props) => props.theme.lighterGray};;
+		--PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
+		--PhoneInputCountryFlag-backgroundColor--loading: rgba(0,0,0,0.1);
+	}
+
+	/*
+	*
 	* React Power Select
 	*
 	*/
