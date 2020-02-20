@@ -123,6 +123,9 @@ const GlobalStyles = createGlobalStyle<{
 	.PowerSelect--focused {
 	}
 	.PowerSelect--disabled {
+		color: ${(props) => props.theme.gray};
+		border: 1px solid ${(props) => props.theme.lighterGray};
+		box-shadow: none;
 		cursor: not-allowed;
 	}
 	.PowerSelect--disabled .PowerSelect__Trigger {
@@ -1075,6 +1078,7 @@ const GlobalStyles = createGlobalStyle<{
 		cursor: not-allowed;
 		color: ${(props) => props.theme.darkerGray};
 		border: 1px solid ${(props) => props.theme.lighterGray};
+		box-shadow: none;
 	}
 	.react-datepicker__day--keyboard-selected {
 		background-color: ${(props) => props.theme.primary};

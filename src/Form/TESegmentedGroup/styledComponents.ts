@@ -51,7 +51,6 @@ export const InputLabel = styled(TELabel)<{
 	background-color: ${(props) => (props.checked ? props.theme.primary : props.theme.white)};
 	font-size: 14px;
 	color: ${(props) => (props.checked ? props.theme.white : props.theme.darkGray)};
-	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 	pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
 
 	transition: color 0.2s ease-in, background-color 0.2s ease-in, border 0.2s ease-in;

@@ -97,7 +97,7 @@ export const PhoneNumberInput = styled(PhoneInput)`
 	}
 
 	.PhoneInputCountrySelect[disabled] {
-		cursor: default;
+		cursor: not-allowed;
 	}
 
 	.PhoneInputCountrySelectArrow {
