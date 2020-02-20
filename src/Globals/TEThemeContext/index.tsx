@@ -1072,6 +1072,7 @@ const GlobalStyles = createGlobalStyle<{
 		border: 1px solid rgb(229, 229, 229);
 		border-radius: 5px;
 		transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
+		margin: 0px; /* Reset Safari Margin*/
 	}
 	.react-datepicker__input-container input:hover {
 		border: 1px solid ${(props) => props.theme.primary};

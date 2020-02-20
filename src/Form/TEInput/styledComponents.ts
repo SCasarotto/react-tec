@@ -10,6 +10,7 @@ export const Input = styled.input`
 	border-radius: 5px;
 	background-color: ${(props) => props.theme.white};
 	color: ${(props) => props.theme.darkerGray};
+	margin: 0px; /* Resets Safari Margin */
 
 	border: 1px solid ${(props) => props.theme.lightGray};
 	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;

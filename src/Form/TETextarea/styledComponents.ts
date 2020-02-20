@@ -11,6 +11,7 @@ export const Textarea = styled.textarea`
 	min-height: 140px;
 	border-radius: 5px;
 	line-height: 1.5;
+	margin: 0px; /* Resets Safari Margin */
 
 	color: ${(props) => props.theme.darkerGray};
 	border: 1px solid ${(props) => props.theme.lightGray};

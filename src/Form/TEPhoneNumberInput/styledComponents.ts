@@ -38,6 +38,7 @@ export const PhoneNumberInput = styled(PhoneInput)`
 		/* border-bottom: 1px solid #c5d2e0; */
 		/* transition: border 0.1s; */
 		font-size: inherit;
+		margin: 0px; /* Resets Safari Margin */
 
 		padding: 10px;
 		background-color: transparent;

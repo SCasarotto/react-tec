@@ -10,6 +10,7 @@ export const Button = styled.button`
 	cursor: pointer;
 	border-radius: 5px;
 	box-sizing: border-box;
+	margin: 0px; /* Resets Safari Margin */
 
 	color: ${(props) => props.theme.darkerGray};
 	background-color: ${(props) => props.theme.white};
