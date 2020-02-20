@@ -1,15 +1,27 @@
 import styled from 'styled-components'
+import { FaRegCalendarAlt } from 'react-icons/fa'
+
 import { TEButton } from '../TEButton'
 
-export const Button = styled(TEButton)`
+export const WithPortalButtonWrapper = styled.div`
+	display: flex;
+
+	.react-datepicker__input-container input {
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+`
+export const WithPortalButton = styled(TEButton)`
 	position: relative;
 	display: block;
-	width: 100%;
-	font-size: 14px;
-	padding: 10px;
+	width: auto;
+	font-size: 16px;
+	padding: 10px 12px;
 	box-sizing: border-box;
 	cursor: pointer;
 	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
 	background-color: ${(props) => props.theme.white};
 	color: ${(props) => props.theme.darkerGray};
 	text-align: left;
@@ -28,4 +40,8 @@ export const Button = styled(TEButton)`
 		box-shadow: none;
 		cursor: not-allowed;
 	}
+`
+export const WithPortalIcon = styled(FaRegCalendarAlt)`
+	color: inherit;
+	display: block;
 `
