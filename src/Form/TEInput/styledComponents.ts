@@ -7,17 +7,22 @@ export const Input = styled.input`
 	font-size: 14px;
 	padding: 10px;
 	box-sizing: border-box;
-	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'text')};
 	border-radius: 5px;
 	background-color: ${(props) => props.theme.white};
-	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
+	color: ${(props) => props.theme.darkerGray};
 
-	border: 1px solid
-		${(props) => (props.disabled ? props.theme.lighterGray : props.theme.lightGray)};
+	border: 1px solid ${(props) => props.theme.lightGray};
 	transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
+
 	:hover,
 	:active {
 		border: 1px solid ${(props) => props.theme.primary};
 		box-shadow: 0 0 0 1px ${(props) => props.theme.primary} inset;
+	}
+	:disabled {
+		color: ${(props) => props.theme.gray};
+		border: 1px solid ${(props) => props.theme.lighterGray};
+		box-shadow: none;
+		cursor: not-allowed;
 	}
 `

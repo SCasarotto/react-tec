@@ -123,6 +123,9 @@ const GlobalStyles = createGlobalStyle<{
 	.PowerSelect--focused {
 	}
 	.PowerSelect--disabled {
+		color: ${(props) => props.theme.gray};
+		border: 1px solid ${(props) => props.theme.lighterGray};
+		box-shadow: none;
 		cursor: not-allowed;
 	}
 	.PowerSelect--disabled .PowerSelect__Trigger {
@@ -255,6 +258,9 @@ const GlobalStyles = createGlobalStyle<{
 		border-top: 4px solid ${(props) => props.theme.primary};
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
+	}
+	.PowerSelect--disabled .PowerSelect__TriggerStatus:before{
+		border-top: 4px solid ${(props) => props.theme.lightGray};
 	}
 	.PowerSelect__Clear {
 		padding: 4px;
@@ -1075,6 +1081,7 @@ const GlobalStyles = createGlobalStyle<{
 		cursor: not-allowed;
 		color: ${(props) => props.theme.darkerGray};
 		border: 1px solid ${(props) => props.theme.lighterGray};
+		box-shadow: none;
 	}
 	.react-datepicker__day--keyboard-selected {
 		background-color: ${(props) => props.theme.primary};

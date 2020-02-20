@@ -31,7 +31,7 @@ export const Label = styled(TELabel)`
 	vertical-align: middle;
 	padding-left: 10px;
 	margin-bottom: 0px;
-	cursor: pointer;
+	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 	font-size: 14px;
 
 	@media (max-width: 550px) {
