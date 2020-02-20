@@ -8,7 +8,7 @@ import { TEAppWrapper } from 'react-tec'
 
 import { TitleBarProvider, SideBarActiveProvider } from './context'
 
-// import './style.css'
+import './index.css'
 
 const globalStyles = `
 	html,
@@ -16,8 +16,6 @@ const globalStyles = `
 		margin: 0;
 		padding: 0;
 	}
-
-	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 
 	* {
 		font-family: 'Open Sans', sans-serif;
