@@ -1,15 +1,14 @@
-import React /*Fragment, useState*/ from 'react'
+import React from 'react'
 import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
-// import { format } from 'date-fns'
 
-// import { Button } from './styledComponents'
+import { WithPortalButtonWrapper, WithPortalButton, WithPortalIcon } from './styledComponents'
 
-//Couldn't figure out what this value is really used for ...
 export interface TEDatetimeInputProps extends Omit<ReactDatePickerProps, 'value'> {
 	//These are used to standardize to other input props
 	placeholder?: string
 	value?: Date | null
 	ref?: ((instance: DatePicker | null) => void) | React.RefObject<DatePicker> | null | undefined
+	withPortalButton?: boolean
 }
 export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = React.forwardRef((props, ref) => {
 	const {
@@ -18,42 +17,44 @@ export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = React.forwardRef(
 		placeholderText,
 		placeholder,
 		className = '',
-		/*withTEPortal,*/ ...rest
+		withPortalButton,
+		...rest
 	} = props
-	// const [showPortal, setShowPortal] = useState(false)
 
-	// if (withTEPortal) {
-	// 	const { dateFormat, onChange } = rest
-	// 	return (
-	// 		<Fragment>
-	// 			<Button onClick={() => setShowPortal(!showPortal)}>
-	// 				{format(determineValue(value), dateFormat)}
-	// 			</Button>
-	// 			{showPortal && (
-	// 				<DatePicker
-	// 					selected={determineValue(value)}
-	// 					placeholderText={placeholder}
-	// 					withPortal
-	// 					inline
-	// 					{...rest}
-	// 					onChange={(date) => {
-	// 						onChange(date)
-	// 						setShowPortal(false)
-	// 					}}
-	// 				/>
-	// 			)}
-	// 		</Fragment>
-	// 	)
-	// }
+	if (withPortalButton) {
+		return (
+			<WithPortalButtonWrapper>
+				<DatePicker
+					selected={selected || value}
+					placeholderText={placeholderText || placeholder}
+					className={`TEDatetimeInput ${className}`}
+					ref={ref}
+					{...rest}
+				/>
+				<DatePicker
+					selected={selected || value}
+					withPortal
+					customInput={
+						<WithPortalButton className='TEDatetimeInputWithPortalButton'>
+							<WithPortalIcon className='TEDatetimeInputWithPortalButtonIcon' />
+						</WithPortalButton>
+					}
+					{...rest}
+				/>
+			</WithPortalButtonWrapper>
+		)
+	}
 
 	return (
-		<DatePicker
-			selected={selected || value}
-			placeholderText={placeholderText || placeholder}
-			className={`TEDatetimeInput ${className}`}
-			ref={ref}
-			{...rest}
-		/>
+		<>
+			<DatePicker
+				selected={selected || value}
+				placeholderText={placeholderText || placeholder}
+				className={`TEDatetimeInput ${className}`}
+				ref={ref}
+				{...rest}
+			/>
+		</>
 	)
 })
 
