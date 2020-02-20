@@ -15,7 +15,7 @@ export const WithPortalButton = styled(TEButton)`
 	position: relative;
 	display: block;
 	width: auto;
-	font-size: 16px;
+	font-size: 17px;
 	padding: 10px 12px;
 	box-sizing: border-box;
 	cursor: pointer;
