@@ -30,13 +30,14 @@ export const Checkbox = styled(TECheckboxInput)`
 	vertical-align: middle;
 	cursor: pointer;
 `
-export const Label = styled(TELabel)`
+export const Label = styled(TELabel)<{ disabled?: boolean }>`
 	width: auto;
 	display: inline-block;
 	vertical-align: middle;
 	padding-left: 10px;
 	margin-bottom: 0px;
 	font-size: 14px;
+	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 	color: ${(props) => (props.disabled ? props.theme.gray : props.theme.darkerGray)};
 
 	@media (max-width: 550px) {
