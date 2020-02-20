@@ -20,25 +20,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Changes
 
 -   Updated devDependencies:
-    -- `@types/jest` from `^24.0.20` to `^25.1.3`
-    -- `@types/react` from `^16.9.11` to `^16.9.21`
-    -- `@types/react-datepicker` from `^2.9.4` to `^2.11.0`
-    -- `@types/react-dom"` from `^16.9.4` to `^16.9.5`
-    -- `@types/react-helmet` from `^5.0.14` to `^5.0.15`
-    -- `@types/styled-components` from `^4.4.0` to `^4.4.3`
-    -- `husky` from `^3.1.0` to `^4.2.3`
-    -- `rollup-plugin-peer-deps-external` from `^2.2.0` to `^2.2.2`
-    -- `styled-components` from `^4.4.0` to `^5.0.1`
-    -- `tsdx` from `^0.11.0` to `^0.12.3`
-    -- `typescript` from `^3.6.4` to `^3.7.5`
-    -- `@types/styled-components` from `^3.6.4` to `^4.4.3`
+    -   `@types/jest` from `^24.0.20` to `^25.1.3`
+    -   `@types/react` from `^16.9.11` to `^16.9.21`
+    -   `@types/react-datepicker` from `^2.9.4` to `^2.11.0`
+    -   `@types/react-dom"` from `^16.9.4` to `^16.9.5`
+    -   `@types/react-helmet` from `^5.0.14` to `^5.0.15`
+    -   `@types/styled-components` from `^4.4.0` to `^4.4.3`
+    -   `husky` from `^3.1.0` to `^4.2.3`
+    -   `rollup-plugin-peer-deps-external` from `^2.2.0` to `^2.2.2`
+    -   `styled-components` from `^4.4.0` to `^5.0.1`
+    -   `tsdx` from `^0.11.0` to `^0.12.3`
+    -   `typescript` from `^3.6.4` to `^3.7.5`
+    -   `@types/styled-components` from `^3.6.4` to `^4.4.3`
 -   Updated dependencies:
-    -- `@types/color` from `^3.0.0` to `^3.0.1`
-    -- `@types/react-select` from `^3.0.8` to `^3.0.10`
-    -- `react-datepicker` from `^2.10.0` to `^2.12.1`
-    -- `react-icons` from `^^3.8.0` to `^3.9.0`
-    -- `react-phone-number-input` from `^2.4.1` to `^3.0.18`
-    -- `react-popper` from `^1.3.6` to `^1.3.7`
+    -   `@types/color` from `^3.0.0` to `^3.0.1`
+    -   `@types/react-select` from `^3.0.8` to `^3.0.10`
+    -   `react-datepicker` from `^2.10.0` to `^2.12.1`
+    -   `react-icons` from `^^3.8.0` to `^3.9.0`
+    -   `react-phone-number-input` from `^2.4.1` to `^3.0.18`
+    -   `react-popper` from `^1.3.6` to `^1.3.7`
 
 ## Bug Fix
 
