@@ -6,6 +6,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.0 - 2-20-2020
+
+## Breaking
+
+-   Be aware that `react-phone-number-input` from `^2.4.1` to `^3.0.18` as a result you should be sure to update how you overwrite the styling on this component as well as [other concerns](https://github.com/catamphetamine/react-phone-number-input/blob/master/CHANGELOG.md#300--01012020).
+-   Be aware that `styled-components` from `^4.4.0` to `^5.0.1`. This update requires you update to v5 however the [changes](https://github.com/styled-components/styled-components/blob/master/CHANGELOG.md#v500---2020-01-13) had no noticeable impact on this library.
+
+## Added
+
+-   `TEDatetimeInput` now has a new prop. `withPortalButton`. The goal of this prop was to allow for both typing and the modal selection. I have found that the modal view works well on touch or smaller devices. This is something I may attempt to suggest into the core lib but for now it is just an abstraction. (#49)
+
+## Changes
+
+-   Updated devDependencies:
+    -- `@types/jest` from `^24.0.20` to `^25.1.3`
+    -- `@types/react` from `^16.9.11` to `^16.9.21`
+    -- `@types/react-datepicker` from `^2.9.4` to `^2.11.0`
+    -- `@types/react-dom"` from `^16.9.4` to `^16.9.5`
+    -- `@types/react-helmet` from `^5.0.14` to `^5.0.15`
+    -- `@types/styled-components` from `^4.4.0` to `^4.4.3`
+    -- `husky` from `^3.1.0` to `^4.2.3`
+    -- `rollup-plugin-peer-deps-external` from `^2.2.0` to `^2.2.2`
+    -- `styled-components` from `^4.4.0` to `^5.0.1`
+    -- `tsdx` from `^0.11.0` to `^0.12.3`
+    -- `typescript` from `^3.6.4` to `^3.7.5`
+    -- `@types/styled-components` from `^3.6.4` to `^4.4.3`
+-   Updated dependencies:
+    -- `@types/color` from `^3.0.0` to `^3.0.1`
+    -- `@types/react-select` from `^3.0.8` to `^3.0.10`
+    -- `react-datepicker` from `^2.10.0` to `^2.12.1`
+    -- `react-icons` from `^^3.8.0` to `^3.9.0`
+    -- `react-phone-number-input` from `^2.4.1` to `^3.0.18`
+    -- `react-popper` from `^1.3.6` to `^1.3.7`
+
+## Bug Fix
+
+-   A full review of component styling was reviewed when `disabled`. (#46)
+-   Quick review of component styling in Safari. Made more consistent.
+
 ## 0.2.7 - 12-3-2019
 
 ## Bug Fix
