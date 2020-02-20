@@ -259,6 +259,9 @@ const GlobalStyles = createGlobalStyle<{
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
 	}
+	.PowerSelect--disabled .PowerSelect__TriggerStatus:before{
+		border-top: 4px solid ${(props) => props.theme.gray};
+	}
 	.PowerSelect__Clear {
 		padding: 4px;
 		color: ${(props) => props.theme.gray};
