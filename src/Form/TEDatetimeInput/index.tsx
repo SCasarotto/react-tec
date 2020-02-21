@@ -34,13 +34,13 @@ export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = React.forwardRef(
 				<DatePicker
 					selected={selected || value}
 					withPortal
-					id={rest.id ? rest.id + 'withPortalButton' : rest.id}
 					customInput={
 						<WithPortalButton className='TEDatetimeInputWithPortalButton'>
 							<WithPortalIcon className='TEDatetimeInputWithPortalButtonIcon' />
 						</WithPortalButton>
 					}
 					{...rest}
+					id={rest.id ? rest.id + 'withPortalButton' : rest.id}
 				/>
 			</WithPortalButtonWrapper>
 		)
