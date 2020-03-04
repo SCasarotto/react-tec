@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.3 - 3-3-2020
+
+## Changes
+
+-   Updated devDependencies:
+    -   `@types/react` from `^16.9.20` to `^16.9.23`
+    -   `@types/styled-components` from `^4.4.3` to `^5.0.1`
+    -   `react` from `^16.12.0` to `^16.13.0`
+    -   `react-dom` from `^16.12.0` to `^16.13.0`
+    -   `testlib` from `^1.10.0` to `^1.11.1`
+    -   `typescript` from `^3.7.5` to `^3.8.3`
+-   Updated dependencies:
+    -   `react-datepicker` from `^2.12.1` to `^2.13.0`
+    -   `react-phone-number-input` from `^3.0.18` to `^3.0.20`
+
 ## 0.3.2 - 2-21-2020
 
 ## Bug Fix
