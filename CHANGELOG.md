@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.4 - 3-7-2020
+
+## Bug Fix
+
+-   Fixed a bug with `TESelectRow` where the `onChange` prop was not being passed to the `react-select` component.
+
+## Changes
+
+-   Updated devDependencies:
+    -   `@types/jest` from `^25.1.3` to `^25.1.4`
+-   Updated dependencies:
+    -   `react-datepicker` from `^2.13.0` to `^2.14.0`
+    -   `react-phone-number-input` from `^3.0.20` to `^3.0.21`
+
 ## 0.3.4 - 3-3-2020
 
 ## Changes

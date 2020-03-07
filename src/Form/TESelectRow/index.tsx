@@ -10,17 +10,7 @@ export interface TESelectRowProps extends TERowCustomProps, TELabelCustomProps, 
 }
 
 export const TESelectRow: React.FC<TESelectRowProps> = React.forwardRef((props, ref) => {
-	const {
-		rowSize,
-		last,
-		className = '',
-		title,
-		onChange,
-		disabled,
-		required,
-		labelForKey,
-		...rest
-	} = props
+	const { rowSize, last, className = '', title, disabled, required, labelForKey, ...rest } = props
 
 	return (
 		<TERow rowSize={rowSize} last={last} className={`TEInputRow ${className}`}>
