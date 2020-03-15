@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.3.4 - 3-7-2020
+## 0.3.6 - 3-15-2020
+
+## Changes
+
+-   Updated dependencies:
+    -   `@types/react-select` from `^3.0.10` to `^3.0.11`
+    -   `react-phone-number-input` from `^3.0.21` to `^3.0.22`
+
+## 0.3.5 - 3-7-2020
 
 ## Bug Fix
 
