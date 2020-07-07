@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 
-import { TERowCustomProps } from '../TERow'
+import { TERowCustomProps, TERowProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
 import { TECheckboxInputProps } from '../TECheckboxInput'
 import { manipulateRowData } from './../../helpers'
@@ -19,7 +19,7 @@ interface TECheckboxGroupProps
 		Omit<TECheckboxInputProps, 'onChange'> {
 	labelForKey: string
 	onChange(values: string[], event: ChangeEvent<HTMLInputElement>): void
-	inputRowSize?: string
+	inputRowSize?: TERowProps['rowSize']
 	checkedValues: string[]
 	buttonArray: (string | TECheckboxGroupButtonData)[]
 	scrolling?: boolean

@@ -1,24 +1,25 @@
-import React, { useContext } from 'react'
-import { Props } from 'react-select'
+import React, { useContext, PropsWithChildren } from 'react'
+import { Props, OptionTypeBase, Theme } from 'react-select'
 import Color from 'color'
+import Select from 'react-select'
 import { ThemeContext } from 'styled-components'
 
-import { SelectInput } from './styledComponents'
-
-export interface TESelectProps extends Props {
+interface ExtendedProps<T> extends Props<T> {
 	className?: string
 	disabled?: boolean
 }
-export const TESelect: React.FC<TESelectProps> = React.forwardRef((props, ref) => {
+export type TESelectProps<T> = PropsWithChildren<ExtendedProps<T>>
+// TODO: Handle forwardRef and review typing
+export const TESelect = <T extends OptionTypeBase>(props: PropsWithChildren<TESelectProps<T>>) => {
 	const { className = '', disabled, classNamePrefix = 'TESelect', ...rest } = props
 	const TETheme = useContext(ThemeContext)
 
 	return (
-		<SelectInput
+		<Select<T>
 			isDisabled={disabled}
 			className={`TESelect ${className}`}
 			classNamePrefix={classNamePrefix}
-			theme={(theme: { [key: string]: any }) => ({
+			theme={(theme: Theme) => ({
 				...theme,
 				borderRadius: 5,
 				colors: {
@@ -53,8 +54,7 @@ export const TESelect: React.FC<TESelectProps> = React.forwardRef((props, ref) =
 				//   menuGutter: 8
 				// }
 			})}
-			ref={ref}
 			{...rest}
 		/>
 	)
-})
+}

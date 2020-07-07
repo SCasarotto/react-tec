@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Container, SpinnerWrapper, Ring } from './styledComponents'
 export interface TESpinnerProps {
-	size?: string
+	size?: 'small' | 'medium' | 'large'
 	innerColor?: string
 	outerColor?: string
 	className?: string

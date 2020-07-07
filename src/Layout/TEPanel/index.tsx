@@ -8,7 +8,7 @@ import { Container } from './styledComponents'
 export interface TEPanelProps extends TEPanelTitleProps {
 	//TODO: Fix this. styled-components is weird with refs
 	ref?: any
-	size?: string
+	size?: 'full' | 'three-quarter' | 'two-third' | 'half' | 'third' | 'quarter' | 'condensed'
 }
 export const TEPanel: React.FC<TEPanelProps> = (props) => {
 	const {

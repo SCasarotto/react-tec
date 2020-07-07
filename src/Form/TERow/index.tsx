@@ -3,7 +3,7 @@ import React from 'react'
 import { Row } from './styledComponents'
 
 export interface TERowCustomProps {
-	rowSize?: string
+	rowSize?: 'full' | 'two-third' | 'half' | 'third' | 'forth' | 'condensed'
 	last?: boolean
 }
 export interface TERowProps

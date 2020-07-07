@@ -173,14 +173,16 @@ export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 			{errorData && errorData.error && (
 				<ErrorMessage className='TEImageRowErrorMessage'>{errorData.message}</ErrorMessage>
 			)}
-			<EditorPopup
-				visible={editorVisible}
-				file={file}
-				onCancel={handleCancelEditor}
-				onSubmit={handleEditorSubmit}
-				className='TEImageRowPopup'
-				avatarEditorData={avatarEditorData}
-			/>
+			{file && (
+				<EditorPopup
+					visible={editorVisible}
+					file={file}
+					onCancel={handleCancelEditor}
+					onSubmit={handleEditorSubmit}
+					className='TEImageRowPopup'
+					avatarEditorData={avatarEditorData}
+				/>
+			)}
 		</TERow>
 	)
 }

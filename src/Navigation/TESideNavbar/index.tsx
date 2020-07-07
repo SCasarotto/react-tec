@@ -8,12 +8,13 @@ import { Container, Logo, NavContainer, MainUl } from './styledComponents'
 export interface TESideNavbarProps {
 	sidebarWidth?: number
 	Header?: React.ReactNode
+	Footer?: React.ReactNode
 	logo?: string
 	links?: TESideNavLinkProps[]
 	className?: string
 }
 export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
-	const { sidebarWidth = 200, logo, Header, links, className = '' } = props
+	const { sidebarWidth = 200, logo, Header, links, className = '', Footer } = props
 	return (
 		<Container sidebarWidth={sidebarWidth} className={`TESideNavbar ${className}`}>
 			{Header}
@@ -42,6 +43,7 @@ export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 						})}
 				</MainUl>
 			</NavContainer>
+			{Footer}
 		</Container>
 	)
 }

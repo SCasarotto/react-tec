@@ -68,20 +68,20 @@ export const InputLabel = styled(TELabel)<{
 	}
 	${(props) => {
 		const { first, last } = props
-
+		let returnStyles = ''
 		if (last) {
-			return `
+			returnStyles += `
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px;
             `
 		}
 		if (first) {
-			return `
+			returnStyles += `
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
             `
 		}
 
-		return ''
+		return returnStyles
 	}}
 `

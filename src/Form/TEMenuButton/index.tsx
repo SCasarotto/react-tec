@@ -6,7 +6,8 @@ import { TEButton } from './../TEButton'
 export interface TEMenuButtonChildrenProps extends PopperChildrenProps {
 	hideMenu(): void
 }
-export interface TEMenuButtonProps extends Omit<PopperProps, 'children'> {
+//TODO: Improve Types
+export interface TEMenuButtonProps extends Omit<PopperProps<any>, 'children'> {
 	className?: string
 	title: ReactNode
 	children(props: TEMenuButtonChildrenProps): ReactNode

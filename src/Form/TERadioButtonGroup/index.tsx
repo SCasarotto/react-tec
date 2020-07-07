@@ -3,7 +3,7 @@ import React from 'react'
 import { TELabel, TELabelCustomProps } from '../TELabel'
 
 import { Container, InputWrapper, RowWrapper, RadioButton, Label } from './styledComponents'
-import { TERowCustomProps } from '../TERow'
+import { TERowCustomProps, TERowProps } from '../TERow'
 import { TERadioButtonInputProps } from '../TERadioButtonInput'
 import { manipulateRowData } from './../../helpers'
 
@@ -17,7 +17,7 @@ interface TERadioButtonGroupProps
 		TELabelCustomProps,
 		TERadioButtonInputProps {
 	labelForKey: string
-	inputRowSize?: string
+	inputRowSize?: TERowProps['rowSize']
 	checkedValue: string
 	buttonArray: (string | TERadioButtonData)[]
 	scrolling?: boolean

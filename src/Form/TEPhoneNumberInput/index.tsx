@@ -1,14 +1,10 @@
-import React from 'react'
-
+import React, { RefObject } from 'react'
+import PhoneInput, { PhoneInputProps } from 'react-phone-number-input'
 import { PhoneNumberInput } from './styledComponents'
 
-//AT this time there is no type definitions for react-phone-number-input: https://github.com/catamphetamine/react-phone-number-input
-// Some options: https://github.com/catamphetamine/react-phone-number-input/issues/195
-export interface TEPhoneNumberInputProps {
-	[key: string]: any
-	onChange(value: string): void
-	value: string
-	className?: string
+export interface TEPhoneNumberInputProps extends PhoneInputProps {
+	//TODO: Fix ref typing but it works for now
+	ref?: ((instance: PhoneInput | null) => void) | RefObject<PhoneInput> | null
 }
 export const TEPhoneNumberInput: React.FC<TEPhoneNumberInputProps> = React.forwardRef(
 	(props, ref) => {

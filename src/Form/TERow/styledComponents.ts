@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Row = styled.div<{
-	rowSize?: string
+	rowSize?: 'full' | 'two-third' | 'half' | 'third' | 'forth' | 'condensed'
 	last?: boolean
 }>`
 	position: relative;

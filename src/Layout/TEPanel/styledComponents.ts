@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const Container = styled.div<{ size?: string }>`
+export const Container = styled.div<{
+	size?: 'full' | 'three-quarter' | 'two-third' | 'half' | 'third' | 'quarter' | 'condensed'
+}>`
 	position: relative;
 	background-color: ${(props) => props.theme.white};
 	border-radius: 5px;

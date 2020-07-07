@@ -4,12 +4,15 @@ import { TERow, TERowCustomProps } from './../TERow'
 import { TELabel, TELabelCustomProps } from './../TELabel'
 import { TESelect, TESelectProps } from './../TESelect'
 
-export interface TESelectRowProps extends TERowCustomProps, TELabelCustomProps, TESelectProps {
+export interface TESelectRowProps<T>
+	extends TERowCustomProps,
+		TELabelCustomProps,
+		TESelectProps<T> {
 	labelForKey: string
 	title?: string
 }
 
-export const TESelectRow: React.FC<TESelectRowProps> = React.forwardRef((props, ref) => {
+export const TESelectRow = <T,>(props: TESelectRowProps<T>) => {
 	const { rowSize, last, className = '', title, disabled, required, labelForKey, ...rest } = props
 
 	return (
@@ -24,7 +27,7 @@ export const TESelectRow: React.FC<TESelectRowProps> = React.forwardRef((props, 
 					{title}
 				</TELabel>
 			)}
-			<TESelect disabled={disabled} ref={ref} {...rest} />
+			<TESelect<T> disabled={disabled} {...rest} />
 		</TERow>
 	)
-})
+}
