@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TECheckboxGroup matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gtssRu cWtTpP TERow sc-hKFyIo lllBvc TECheckboxGroup "
+  >
+    <div
+      class="sc-eCApGN cnFdup TECheckboxGroupInputWrapper"
+    >
+      <div
+        class="sc-gtssRu cWtTpP TERow sc-jSFkmK dWyQXW TECheckboxGroupRowWrapper"
+      >
+        <input
+          checked=""
+          class="sc-dlnjPT lmUFUT TECheckboxInput sc-gKAblj IsMNB TECheckboxGroupCheckbox"
+          id="testTECheckboxGroupsomeValue"
+          type="checkbox"
+          value="someValue"
+        />
+        <label
+          class="sc-bdnylx cRNJdj TELabel sc-iCoHVE kPTDby TECheckboxGroupLabel"
+          for="testTECheckboxGroupsomeValue"
+        >
+          someValue
+        </label>
+      </div>
+      <div
+        class="sc-gtssRu cWtTpP TERow sc-jSFkmK dWyQXW TECheckboxGroupRowWrapper"
+      >
+        <input
+          class="sc-dlnjPT lmUFUT TECheckboxInput sc-gKAblj IsMNB TECheckboxGroupCheckbox"
+          id="testTECheckboxGroupAnotherValue"
+          type="checkbox"
+          value="AnotherValue"
+        />
+        <label
+          class="sc-bdnylx cRNJdj TELabel sc-iCoHVE kPTDby TECheckboxGroupLabel"
+          for="testTECheckboxGroupAnotherValue"
+        >
+          AnotherValue
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
