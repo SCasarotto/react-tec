@@ -19,10 +19,6 @@ export const Popup = () => {
 		<Fragment>
 			<Helmet>
 				<title>React TEC | Components - Popup</title>
-				<meta
-					name='description'
-					content='React TEC is a component library used by 38th Street Studios LLC'
-				/>
 			</Helmet>
 			<TEPanelWrapper>
 				<TEPanel title='Popup Components'>

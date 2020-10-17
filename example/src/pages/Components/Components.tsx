@@ -59,10 +59,6 @@ export const Components = () => {
 		<Fragment>
 			<Helmet>
 				<title>React TEC | Components</title>
-				<meta
-					name='description'
-					content='React TEC is a component library used by 38th Street Studios LLC'
-				/>
 			</Helmet>
 			<TESubNavbar
 				links={[

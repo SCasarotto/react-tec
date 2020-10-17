@@ -20,10 +20,6 @@ export const Layout = () => {
 		<Fragment>
 			<Helmet>
 				<title>React TEC | Components - Layout</title>
-				<meta
-					name='description'
-					content='React TEC is a component library used by 38th Street Studios LLC'
-				/>
 			</Helmet>
 			<TEPanelWrapper>
 				<TEPanel title='Layout Component'>

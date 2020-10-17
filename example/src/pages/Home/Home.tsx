@@ -14,10 +14,6 @@ export const Home = () => {
 		<Fragment>
 			<Helmet>
 				<title>React TEC | Components - Welcome</title>
-				<meta
-					name='description'
-					content='React TEC is a component library used by 38th Street Studios LLC'
-				/>
 			</Helmet>
 			<TEPanelWrapper>
 				<TEPanel>
@@ -43,10 +39,8 @@ export const Home = () => {
 						</a>
 					</LinkWrapper>
 					<p>
-						React TEC is a React component library built and maintained by{' '}
-						<a href='https://www.38thstreetstudios.com/'>38th Street Studios</a>. These
-						docs will provide you with simple get started instructions and detailed
-						examples of every component in the library.
+						These docs will provide you with simple get started instructions and
+						detailed examples of every component in the library.
 					</p>
 					<h2>
 						<Link to='/get-started'>Get Started</Link>

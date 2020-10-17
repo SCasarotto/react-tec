@@ -1,7 +1,3 @@
-//
-//Version 0.3.0
-//
-
 import React, { useState, useRef, FormEvent } from 'react'
 import AvatarEditor, { AvatarEditorProps } from 'react-avatar-editor'
 
