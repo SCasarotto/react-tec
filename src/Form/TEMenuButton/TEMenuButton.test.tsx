@@ -1,14 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEMenuButton } from './TEMenuButton'
 import { TEAppWrapper } from './../../Globals/TEAppWrapper'
 import { mockOnScroll } from '../../helpers/testHelpers'
 
 describe('TEMenuButton', () => {
 	mockOnScroll()
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(
+	it('matches snapshot', () => {
+		const { asFragment } = render(
 			<TEAppWrapper>
 				<TEMenuButton title='My Menu Button'>
 					{({ hideMenu }) => (
@@ -41,8 +40,7 @@ describe('TEMenuButton', () => {
 					)}
 				</TEMenuButton>
 			</TEAppWrapper>,
-			div,
 		)
-		ReactDOM.unmountComponentAtNode(div)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEFileRow } from './TEFileRow'
 
 describe('TEFileRow', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEFileRow labelForKey='testTEFileRow' />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEFileRow labelForKey='testTEFileRow' />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

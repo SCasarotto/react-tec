@@ -1,17 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TESelectRow } from './TESelectRow'
 import { TEThemeProvider } from './../../Globals/TEThemeContext'
 
 describe('TESelectRow', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(
+	it('matches snapshot', () => {
+		const { asFragment } = render(
 			<TEThemeProvider>
 				<TESelectRow labelForKey='testTESelectRow' />
 			</TEThemeProvider>,
-			div,
 		)
-		ReactDOM.unmountComponentAtNode(div)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

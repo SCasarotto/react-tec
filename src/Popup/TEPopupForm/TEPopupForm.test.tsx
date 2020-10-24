@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { TEPopupForm } from '../..'
+import { render } from '@testing-library/react'
+import { TEPopupForm } from './TEPopupForm'
 
 describe('TEPopupForm', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEPopupForm visible onClose={() => {}} />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEPopupForm visible onClose={() => {}} />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

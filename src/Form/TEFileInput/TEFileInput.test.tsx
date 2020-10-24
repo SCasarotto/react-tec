@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEFileInput } from './TEFileInput'
 
 describe('TEFileInput', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEFileInput />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEFileInput />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

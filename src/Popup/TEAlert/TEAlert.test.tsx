@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { TEAlert } from '../..'
+import { render } from '@testing-library/react'
+import { TEAlert } from './TEAlert'
 
 describe('TEAlert', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEAlert visible />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEAlert visible />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

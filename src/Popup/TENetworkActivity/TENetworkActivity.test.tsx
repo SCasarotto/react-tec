@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { TENetworkActivity } from '../..'
+import { render } from '@testing-library/react'
+import { TENetworkActivity } from './TENetworkActivity'
 
 describe('TENetworkActivity', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TENetworkActivity visible />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TENetworkActivity visible />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

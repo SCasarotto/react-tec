@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEPanel } from './TEPanel'
 
 describe('TEPanel', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEPanel />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEPanel />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

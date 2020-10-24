@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TERadioButtonInput } from './TERadioButtonInput'
 
 describe('TERadioButtonInput', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TERadioButtonInput />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TERadioButtonInput />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

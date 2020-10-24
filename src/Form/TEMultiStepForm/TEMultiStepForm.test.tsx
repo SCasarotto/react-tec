@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEMultiStepForm } from './TEMultiStepForm'
 
 describe('TEMultiStepForm', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEMultiStepForm stepData={[]} onSubmit={async () => {}} />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEMultiStepForm stepData={[]} onSubmit={async () => {}} />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

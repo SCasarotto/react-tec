@@ -1,19 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEFileManagerRow } from './TEFileManagerRow'
 
 describe('TEFileManagerRow', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(
+	it('matches snapshot', () => {
+		const { asFragment } = render(
 			<TEFileManagerRow
 				labelForKey='testTEFileManagerRow'
 				fileSrcArray={[]}
 				onRemove={async () => {}}
 				onUpload={async () => {}}
 			/>,
-			div,
 		)
-		ReactDOM.unmountComponentAtNode(div)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

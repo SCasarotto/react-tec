@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TESideNavbar } from './TESideNavbar'
 
 describe('TESideNavbar', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TESideNavbar />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TESideNavbar />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

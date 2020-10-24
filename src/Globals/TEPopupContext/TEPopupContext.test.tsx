@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEPopupProvider } from './TEPopupContext'
 
-describe('TEPopupProvider', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEPopupProvider />, div)
-		ReactDOM.unmountComponentAtNode(div)
+describe('TEPopupContext', () => {
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEPopupProvider />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

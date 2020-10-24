@@ -1,13 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEAppWrapper } from './TEAppWrapper'
 import { mockOnScroll } from '../../helpers/testHelpers'
 
 describe('TEAppWrapper', () => {
 	mockOnScroll()
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEAppWrapper />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEAppWrapper />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

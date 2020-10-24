@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { TEConfirm } from '../..'
+import { render } from '@testing-library/react'
+import { TEConfirm } from './TEConfirm'
 
 describe('TEConfirm', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEConfirm visible />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEConfirm visible />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

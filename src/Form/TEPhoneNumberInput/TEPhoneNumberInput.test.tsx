@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEPhoneNumberInput } from './TEPhoneNumberInput'
 
 describe('TEPhoneNumberInput', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEPhoneNumberInput onChange={() => {}} value='' />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEPhoneNumberInput onChange={() => {}} value='' />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

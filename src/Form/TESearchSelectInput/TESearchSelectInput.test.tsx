@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TESearchSelectInput } from './TESearchSelectInput'
 
 describe('TESearchSelectInput', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TESearchSelectInput onChange={() => {}} />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TESearchSelectInput onChange={() => {}} />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

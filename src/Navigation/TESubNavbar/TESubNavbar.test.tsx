@@ -1,18 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { TESubNavbar, TEAppWrapper } from '../..'
+import { render } from '@testing-library/react'
+import { TESubNavbar } from './TESubNavbar'
+import { TEAppWrapper } from './../../Globals/TEAppWrapper'
 import { mockOnScroll } from '../../helpers/testHelpers'
 
 describe('TESubNavbar', () => {
 	mockOnScroll()
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(
+	it('matches snapshot', () => {
+		const { asFragment } = render(
 			<TEAppWrapper>
 				<TESubNavbar links={[]} />
 			</TEAppWrapper>,
-			div,
 		)
-		ReactDOM.unmountComponentAtNode(div)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

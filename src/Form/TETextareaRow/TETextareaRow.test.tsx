@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TETextareaRow } from './TETextareaRow'
 
 describe('TETextareaRow', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TETextareaRow labelForKey='testTETextareaRow' />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TETextareaRow labelForKey='testTETextareaRow' />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

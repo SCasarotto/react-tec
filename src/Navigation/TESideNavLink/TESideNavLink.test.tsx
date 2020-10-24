@@ -1,18 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { TESideNavLink, TEAppWrapper } from '../..'
+import { render } from '@testing-library/react'
+import { TESideNavLink } from './TESideNavLink'
+import { TEAppWrapper } from './../../Globals/TEAppWrapper'
 import { mockOnScroll } from '../../helpers/testHelpers'
 
 describe('TESideNavLink', () => {
 	mockOnScroll()
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(
+	it('matches snapshot', () => {
+		const { asFragment } = render(
 			<TEAppWrapper>
 				<TESideNavLink title='MyTitle' to='/SomeURL' />
 			</TEAppWrapper>,
-			div,
 		)
-		ReactDOM.unmountComponentAtNode(div)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

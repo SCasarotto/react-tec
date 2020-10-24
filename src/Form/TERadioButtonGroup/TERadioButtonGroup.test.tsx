@@ -1,19 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TERadioButtonGroup } from './TERadioButtonGroup'
 
 describe('TERadioButtonGroup', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(
+	it('matches snapshot', () => {
+		const { asFragment } = render(
 			<TERadioButtonGroup
 				labelForKey='testTERadioButtonGroup'
 				checkedValue='someValue'
 				buttonArray={['someValue', 'otherValue']}
 				onChange={() => {}}
 			/>,
-			div,
 		)
-		ReactDOM.unmountComponentAtNode(div)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

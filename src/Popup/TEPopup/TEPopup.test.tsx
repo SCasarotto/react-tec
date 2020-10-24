@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { TEPopup } from '../..'
+import { render } from '@testing-library/react'
+import { TEPopup } from './TEPopup'
 
 describe('TEPopup', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEPopup visible />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEPopup visible />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

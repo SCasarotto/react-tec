@@ -1,11 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react'
 import { TEBodyContainer } from './TEBodyContainer'
 
 describe('TEBodyContainer', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div')
-		ReactDOM.render(<TEBodyContainer />, div)
-		ReactDOM.unmountComponentAtNode(div)
+	it('matches snapshot', () => {
+		const { asFragment } = render(<TEBodyContainer />)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })

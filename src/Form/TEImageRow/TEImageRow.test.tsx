@@ -1,23 +1,17 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import { TEImageRow } from './TEImageRow'
+import React from 'react'
+import { render } from '@testing-library/react'
+import { TEImageRow } from './TEImageRow'
 
 describe('TEImageRow', () => {
-	// it('renders without crashing', () => {
-	// 	const div = document.createElement('div')
-	// 	ReactDOM.render(
-	// 		<TEImageRow
-	// 			labelForKey='testTEImageRow'
-	// 			imgSrcArray={[]}
-	// 			onRemove={async () => {}}
-	// 			onUpload={async () => {}}
-	// 		/>,
-	// 		div,
-	// 	)
-	// 	ReactDOM.unmountComponentAtNode(div)
-	// })
-
-	it('skipping test. Component breaks when testing', () => {
-		console.warn('skipping test. Component breaks when testing')
+	it('matches snapshot', () => {
+		const { asFragment } = render(
+			<TEImageRow
+				labelForKey='testTEImageRow'
+				imgSrcArray={[]}
+				onRemove={async () => {}}
+				onUpload={async () => {}}
+			/>,
+		)
+		expect(asFragment()).toMatchSnapshot()
 	})
 })
