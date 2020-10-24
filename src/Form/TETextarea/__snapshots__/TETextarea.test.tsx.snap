@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TETextarea matches snapshot 1`] = `
+<DocumentFragment>
+  <textarea
+    class="sc-bdnylx fuIkQR TETextarea "
+  />
+</DocumentFragment>
+`;

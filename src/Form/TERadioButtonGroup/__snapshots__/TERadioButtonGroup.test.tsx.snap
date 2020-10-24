@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TERadioButtonGroup matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gtssRu cWtTpP TERow sc-hKFyIo lllBvc TERadioButtonGroup "
+  >
+    <div
+      class="sc-eCApGN dpekhW TERadioButtonGroupInputWrapper"
+    >
+      <div
+        class="sc-gtssRu cWtTpP TERow sc-jSFkmK dWyQXW TERadioButtonGroupRowWrapper"
+      >
+        <input
+          checked=""
+          class="sc-dlnjPT lmUFUT TERadioButtonInput sc-gKAblj IsMNB TERadioButtonGroupRadioButton"
+          id="testTERadioButtonGroupsomeValue"
+          type="radio"
+          value="someValue"
+        />
+        <label
+          class="sc-bdnylx cRNJdj TELabel sc-iCoHVE ktbxmj TERadioButtonGroupLabel"
+          for="testTERadioButtonGroupsomeValue"
+        >
+          someValue
+        </label>
+      </div>
+      <div
+        class="sc-gtssRu cWtTpP TERow sc-jSFkmK dWyQXW TERadioButtonGroupRowWrapper"
+      >
+        <input
+          class="sc-dlnjPT lmUFUT TERadioButtonInput sc-gKAblj IsMNB TERadioButtonGroupRadioButton"
+          id="testTERadioButtonGroupotherValue"
+          type="radio"
+          value="otherValue"
+        />
+        <label
+          class="sc-bdnylx cRNJdj TELabel sc-iCoHVE ktbxmj TERadioButtonGroupLabel"
+          for="testTERadioButtonGroupotherValue"
+        >
+          otherValue
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

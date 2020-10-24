@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEPopup matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx kmiImc TEPopup "
+  >
+    <div
+      class="sc-gtssRu jqgoxm TEPopupContent"
+    />
+  </div>
+</DocumentFragment>
+`;

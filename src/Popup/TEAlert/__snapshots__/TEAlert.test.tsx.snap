@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEAlert matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx kmiImc TEPopup sc-hKFyIo eFASRH TEAlert "
+  >
+    <div
+      class="sc-gtssRu jqgoxm TEPopupContent"
+    >
+      <button
+        class="sc-dlnjPT MgKjE TEButton sc-gKAblj ilNIXJ TEAlertButton"
+        type="button"
+      >
+        Okay
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

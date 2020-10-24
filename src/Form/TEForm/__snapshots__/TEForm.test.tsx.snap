@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEForm matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-bdnylx gCsuFE TEForm "
+  />
+</DocumentFragment>
+`;

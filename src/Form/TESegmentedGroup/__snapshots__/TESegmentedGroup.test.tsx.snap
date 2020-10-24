@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TESegmentedGroup matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx bbvaGu TERow sc-hKFyIo bdXmOp TESegmentedGroup "
+  >
+    <div
+      class="sc-jSFkmK hjRJsp TESegmentedGroupSegmentedContainer"
+    >
+      <div
+        class="sc-gKAblj liMDoA TESegmentedGroupSegmentedLabelWrapper"
+      >
+        <input
+          checked=""
+          class="sc-dlnjPT lmUFUT TERadioButtonInput sc-iCoHVE idOFoX TESegmentedGroupSegmentedInput"
+          id="testTESegmentedGroupsomeValue"
+          type="radio"
+          value="someValue"
+        />
+        <label
+          class="sc-gtssRu TgFHa TELabel sc-fujyUd kfbQdp TESegmentedGroupSegmentedLabel"
+          for="testTESegmentedGroupsomeValue"
+        >
+          someValue
+        </label>
+      </div>
+      <div
+        class="sc-gKAblj liMDoA TESegmentedGroupSegmentedLabelWrapper"
+      >
+        <input
+          class="sc-dlnjPT lmUFUT TERadioButtonInput sc-iCoHVE idOFoX TESegmentedGroupSegmentedInput"
+          id="testTESegmentedGroupanotherValue"
+          type="radio"
+          value="anotherValue"
+        />
+        <label
+          class="sc-gtssRu TgFHa TELabel sc-fujyUd ipVJcZ TESegmentedGroupSegmentedLabel"
+          for="testTESegmentedGroupanotherValue"
+        >
+          anotherValue
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

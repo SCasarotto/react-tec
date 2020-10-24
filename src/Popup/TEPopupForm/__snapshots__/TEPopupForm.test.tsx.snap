@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEPopupForm matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gtssRu ZemqJ TEPopup sc-eCApGN jrzxTO TEPopupForm "
+  >
+    <div
+      class="sc-dlnjPT goRCKu TEPopupContent"
+    >
+      <form
+        class="sc-bdnylx gCsuFE TEForm TEPopupFormForm"
+      >
+        <div
+          class="sc-jSFkmK eXNlxJ TEPopupFormContent"
+        />
+        <div
+          class="sc-gKAblj hdBIBd TEPopupFormButtonContainer"
+        >
+          <button
+            class="sc-hKFyIo ktDqPm TEButton sc-iCoHVE evUvse TEPopupFormButton TEPopupFormLeftButton"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="sc-hKFyIo ktDqPm TEButton sc-fujyUd jOdStx TEPopupFormButton TEPopupFormRightButton"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

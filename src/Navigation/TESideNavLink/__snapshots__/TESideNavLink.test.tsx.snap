@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TESideNavLink matches snapshot 1`] = `
+<DocumentFragment>
+  <li
+    class="sc-bdnylx jOVwxu TESideNavLink "
+  >
+    <a
+      class="sc-gtssRu fKzDzg TESideNavLinkLink"
+      href="/SomeURL"
+    >
+      <span
+        class="sc-dlnjPT iLyLvX TESideNavLinkTitle"
+      >
+        MyTitle
+      </span>
+    </a>
+  </li>
+  <div
+    class="sc-hKFyIo dfSMMW TEPopup sc-gKAblj bsOgow TEAlert "
+  >
+    <div
+      class="sc-eCApGN fnoCH TEPopupContent"
+    >
+      <button
+        class="sc-jSFkmK iZcXEK TEButton sc-pNWxx gjLRwR TEAlertButton"
+        type="button"
+      >
+        Okay
+      </button>
+    </div>
+  </div>
+  <div
+    class="sc-hKFyIo dfSMMW TEPopup sc-jrsJCI YHRny TEConfirm "
+  >
+    <div
+      class="sc-eCApGN fnoCH TEPopupContent"
+    >
+      <div
+        class="sc-crzoUp lbwhup TEConfirmButtonoContainer"
+      >
+        <button
+          class="sc-jSFkmK iZcXEK TEButton sc-dIsAE gIEwOq TEConfirmButton TEConfirmLeftButton"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-jSFkmK iZcXEK TEButton sc-bqGHjH deQZlO TEConfirmButton TEConfirmRightButton"
+          type="button"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-hKFyIo dfSMMW TEPopup sc-fFSRdu eGuebw TENetworkActivity "
+  >
+    <div
+      class="sc-eCApGN fnoCH TEPopupContent"
+    >
+      <div
+        class="sc-ksluoS hlkcIu TESpinner sc-bkbjAj cggGyk TENetworkActivitySpinner"
+      >
+        <div
+          class="sc-hBMVcZ kOddsC TESpinnerContainer"
+        >
+          <div
+            class="sc-fnVYJo giXuWa TESpinnerRing TESpinnerRing1"
+          />
+          <div
+            class="sc-fnVYJo gPpyAp TESpinnerRing TESpinnerRing2"
+          />
+          <div
+            class="sc-fnVYJo ipFULs TESpinnerRing TESpinnerRing3"
+          />
+          <div
+            class="sc-fnVYJo dpTdCu TESpinnerRing TESpinnerRing4"
+          />
+          <div
+            class="sc-fnVYJo ggwrpK TESpinnerRing TESpinnerRing5"
+          />
+          <div
+            class="sc-fnVYJo cwqgSW TESpinnerRing TESpinnerRing6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

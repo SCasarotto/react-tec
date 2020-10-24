@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEPopupMultiStepForm matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-jrsJCI eHRuBa TEPopup sc-iqAbSa gJGAiq TEPopupMultiStepForm "
+  >
+    <div
+      class="sc-kEqYlL kePiMs TEPopupContent"
+    />
+  </div>
+</DocumentFragment>
+`;

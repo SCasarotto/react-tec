@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TETextareaRow matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx bbvaGu TERow TEInputRow "
+  >
+    <textarea
+      class="sc-dlnjPT hsCBaU TETextarea TEInputRowInput"
+      id="testTETextareaRow"
+    />
+  </div>
+</DocumentFragment>
+`;

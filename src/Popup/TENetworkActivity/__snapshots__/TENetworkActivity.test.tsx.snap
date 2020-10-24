@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TENetworkActivity matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx kmiImc TEPopup sc-jSFkmK cVtODK TENetworkActivity "
+  >
+    <div
+      class="sc-gtssRu jqgoxm TEPopupContent"
+    >
+      <div
+        class="sc-dlnjPT gPUGaj TESpinner sc-gKAblj bFgUDL TENetworkActivitySpinner"
+      >
+        <div
+          class="sc-hKFyIo vOGXY TESpinnerContainer"
+        >
+          <div
+            class="sc-eCApGN gWcQjK TESpinnerRing TESpinnerRing1"
+          />
+          <div
+            class="sc-eCApGN hqhMHm TESpinnerRing TESpinnerRing2"
+          />
+          <div
+            class="sc-eCApGN iALsOF TESpinnerRing TESpinnerRing3"
+          />
+          <div
+            class="sc-eCApGN cuOCod TESpinnerRing TESpinnerRing4"
+          />
+          <div
+            class="sc-eCApGN ghwANn TESpinnerRing TESpinnerRing5"
+          />
+          <div
+            class="sc-eCApGN beDfwu TESpinnerRing TESpinnerRing6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

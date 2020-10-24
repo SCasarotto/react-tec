@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TESpinner matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx fCFKfG TESpinner "
+  >
+    <div
+      class="sc-gtssRu faNEca TESpinnerContainer"
+    >
+      <div
+        class="sc-dlnjPT hVCJeU TESpinnerRing TESpinnerRing1"
+      />
+      <div
+        class="sc-dlnjPT flGiIU TESpinnerRing TESpinnerRing2"
+      />
+      <div
+        class="sc-dlnjPT enUvMH TESpinnerRing TESpinnerRing3"
+      />
+      <div
+        class="sc-dlnjPT XDtCn TESpinnerRing TESpinnerRing4"
+      />
+      <div
+        class="sc-dlnjPT dlqwYN TESpinnerRing TESpinnerRing5"
+      />
+      <div
+        class="sc-dlnjPT ibPDQs TESpinnerRing TESpinnerRing6"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

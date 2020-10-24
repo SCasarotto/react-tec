@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEErrorLoadingAlert matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx iPwRjN TEPanelWrapper sc-iCoHVE gqtFRC TEErrorLoadingAlert "
+  >
+    <div
+      class="sc-jSFkmK gQPmwm TEPanel sc-fujyUd hBDnBZ"
+    />
+  </div>
+</DocumentFragment>
+`;

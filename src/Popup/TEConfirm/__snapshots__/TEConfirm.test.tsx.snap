@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEConfirm matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx kmiImc TEPopup sc-hKFyIo eFASRH TEConfirm "
+  >
+    <div
+      class="sc-gtssRu jqgoxm TEPopupContent"
+    >
+      <div
+        class="sc-gKAblj eHPrsV TEConfirmButtonoContainer"
+      >
+        <button
+          class="sc-dlnjPT MgKjE TEButton sc-iCoHVE gleLGG TEConfirmButton TEConfirmLeftButton"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-dlnjPT MgKjE TEButton sc-fujyUd fBnByp TEConfirmButton TEConfirmRightButton"
+          type="button"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

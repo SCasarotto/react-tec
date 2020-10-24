@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEPrivateRoute matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx hMjbqN TEPopup sc-hKFyIo eFASRH TEAlert "
+  >
+    <div
+      class="sc-gtssRu bTzFdV TEPopupContent"
+    >
+      <button
+        class="sc-dlnjPT ciNZk TEButton sc-gKAblj eCNrJN TEAlertButton"
+        type="button"
+      >
+        Okay
+      </button>
+    </div>
+  </div>
+  <div
+    class="sc-bdnylx hMjbqN TEPopup sc-iCoHVE bPtAHf TEConfirm "
+  >
+    <div
+      class="sc-gtssRu bTzFdV TEPopupContent"
+    >
+      <div
+        class="sc-jrsJCI eaZarr TEConfirmButtonoContainer"
+      >
+        <button
+          class="sc-dlnjPT ciNZk TEButton sc-kEqYlL kGJRdG TEConfirmButton TEConfirmLeftButton"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-dlnjPT ciNZk TEButton sc-iqAbSa fiTZwB TEConfirmButton TEConfirmRightButton"
+          type="button"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-bdnylx hMjbqN TEPopup sc-ksluoS conrax TENetworkActivity "
+  >
+    <div
+      class="sc-gtssRu bTzFdV TEPopupContent"
+    >
+      <div
+        class="sc-crzoUp cspjma TESpinner sc-hBMVcZ dhWjui TENetworkActivitySpinner"
+      >
+        <div
+          class="sc-dIsAE ibfIYE TESpinnerContainer"
+        >
+          <div
+            class="sc-bqGHjH jxGHGS TESpinnerRing TESpinnerRing1"
+          />
+          <div
+            class="sc-bqGHjH jhQThV TESpinnerRing TESpinnerRing2"
+          />
+          <div
+            class="sc-bqGHjH gnowos TESpinnerRing TESpinnerRing3"
+          />
+          <div
+            class="sc-bqGHjH fJuDOy TESpinnerRing TESpinnerRing4"
+          />
+          <div
+            class="sc-bqGHjH kESRgu TESpinnerRing TESpinnerRing5"
+          />
+          <div
+            class="sc-bqGHjH bZa-DvO TESpinnerRing TESpinnerRing6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

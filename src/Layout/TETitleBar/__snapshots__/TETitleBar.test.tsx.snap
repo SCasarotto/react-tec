@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TETitleBar matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx ktpGjk TETitleBar "
+  >
+    <div
+      class="sc-gtssRu gYFDMu TETitlebarContent"
+    />
+  </div>
+</DocumentFragment>
+`;

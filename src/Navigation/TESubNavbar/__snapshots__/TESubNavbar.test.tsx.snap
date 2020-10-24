@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TESubNavbar matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnylx eTUGLM TESubNavbar "
+  >
+    <div
+      class="sc-gtssRu iemMzc TESubNavbarContent"
+    >
+      <ul
+        class="sc-dlnjPT kdZbrw TESubNavbarUl"
+      />
+    </div>
+  </div>
+  <div
+    class="sc-jSFkmK darzWW TEPopup sc-fujyUd cNtDHs TEAlert "
+  >
+    <div
+      class="sc-gKAblj jUBPxk TEPopupContent"
+    >
+      <button
+        class="sc-iCoHVE gcbpGq TEButton sc-kEqYlL dMPNFG TEAlertButton"
+        type="button"
+      >
+        Okay
+      </button>
+    </div>
+  </div>
+  <div
+    class="sc-jSFkmK darzWW TEPopup sc-iqAbSa jqeXdc TEConfirm "
+  >
+    <div
+      class="sc-gKAblj jUBPxk TEPopupContent"
+    >
+      <div
+        class="sc-bqGHjH dPyRbS TEConfirmButtonoContainer"
+      >
+        <button
+          class="sc-iCoHVE gcbpGq TEButton sc-ksluoS kabrbt TEConfirmButton TEConfirmLeftButton"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-iCoHVE gcbpGq TEButton sc-hBMVcZ kAtbPE TEConfirmButton TEConfirmRightButton"
+          type="button"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-jSFkmK darzWW TEPopup sc-iemXMA jTVPsx TENetworkActivity "
+  >
+    <div
+      class="sc-gKAblj jUBPxk TEPopupContent"
+    >
+      <div
+        class="sc-fnVYJo dWAyjp TESpinner sc-dIvqjp fFvZjm TENetworkActivitySpinner"
+      >
+        <div
+          class="sc-fFSRdu iZgvAu TESpinnerContainer"
+        >
+          <div
+            class="sc-bkbjAj cSXeDe TESpinnerRing TESpinnerRing1"
+          />
+          <div
+            class="sc-bkbjAj gCWQzl TESpinnerRing TESpinnerRing2"
+          />
+          <div
+            class="sc-bkbjAj gQgTOU TESpinnerRing TESpinnerRing3"
+          />
+          <div
+            class="sc-bkbjAj fOuPMu TESpinnerRing TESpinnerRing4"
+          />
+          <div
+            class="sc-bkbjAj cVixpS TESpinnerRing TESpinnerRing5"
+          />
+          <div
+            class="sc-bkbjAj czhIBm TESpinnerRing TESpinnerRing6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
