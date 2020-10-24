@@ -2,8 +2,45 @@
 
 exports[`TEPanelWrapper matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnylx iPwRjN TEPanelWrapper "
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+@media (max-width:800px) {
+  .c0 {
+    padding: 25px;
+  }
+}
+
+@media (max-width:650px) {
+  .c0 {
+    padding: 20px;
+  }
+}
+
+@media (max-width:450px) {
+  .c0 {
+    padding: 15px;
+  }
+}
+
+<div
+    class="c0 TEPanelWrapper "
   />
 </DocumentFragment>
 `;

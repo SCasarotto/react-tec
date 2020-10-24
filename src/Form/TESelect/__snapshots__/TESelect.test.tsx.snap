@@ -2,7 +2,11 @@
 
 exports[`TESelect matches snapshot 1`] = `
 <DocumentFragment>
-  <div
+  @media (max-width:400px),(max-height:550px) {
+
+}
+
+<div
     class="TESelect css-2b097c-container"
   >
     <div

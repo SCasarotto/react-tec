@@ -2,23 +2,128 @@
 
 exports[`TEFileRow matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnylx bbvaGu TERow TEFileRow "
+  .c0 {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  padding-right: 0px;
+  width: 100%;
+}
+
+.c6 {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 5px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  border: 1px solid;
+  -webkit-transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+}
+
+.c6:hover,
+.c6:active {
+  border: 1px solid;
+}
+
+.c6:disabled {
+  cursor: not-allowed;
+  border: 1px solid;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  padding-right: 5px;
+  border: 1px solid;
+  box-shadow: none;
+  -webkit-transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+  transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+}
+
+.c2:hover,
+.c2:active {
+  border: 1px solid;
+  box-shadow: 0 0 0 1px inset;
+}
+
+.c3 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.c4 {
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.c5 {
+  display: none;
+}
+
+.c7 {
+  width: auto;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.c8 {
+  color: inherit;
+  display: block;
+}
+
+<div
+    class="c0 TERow TEFileRow "
   >
     <div
-      class="sc-hKFyIo klktXx TEFileInput TEFileRowInput"
+      class="c1 TEFileInput TEFileRowInput"
     >
       <div
-        class="sc-eCApGN PPabl TEFileInputInputWrapper"
+        class="c2 TEFileInputInputWrapper"
       >
         <label
-          class="sc-jSFkmK bzqNBu TEFileInputLabel"
+          class="c3 TEFileInputLabel"
         >
           <span
-            class="sc-gKAblj TEFileInputCopy"
+            class="TEFileInputCopy"
           >
             <svg
-              class="sc-iCoHVE hAYYFQ TEFileInputIcon"
+              class="c4 TEFileInputIcon"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -34,17 +139,17 @@ exports[`TEFileRow matches snapshot 1`] = `
             Choose a file...
           </span>
           <input
-            class="sc-fujyUd euSNtQ TEFileInputInput"
+            class="c5 TEFileInputInput"
             id="testTEFileRow"
             type="file"
           />
         </label>
         <button
-          class="sc-dlnjPT MgKjE TEButton sc-pNWxx TzeUS TEFileInputClearButton"
+          class="c6 TEButton c7 TEFileInputClearButton"
           type="button"
         >
           <svg
-            class="sc-jrsJCI hjHRon TEFileInputClearIcon"
+            class="c8 TEFileInputClearIcon"
             fill="currentColor"
             height="1em"
             stroke="currentColor"

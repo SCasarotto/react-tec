@@ -2,26 +2,98 @@
 
 exports[`TEFileManagerRow matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-fFSRdu jwStjD TERow TEFileManagerRow "
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  padding-right: 5px;
+  border: 1px solid;
+  box-shadow: none;
+  -webkit-transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+  transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+}
+
+.c3:hover,
+.c3:active {
+  border: 1px solid;
+  box-shadow: 0 0 0 1px inset;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.c5 {
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.c6 {
+  display: none;
+}
+
+.c2 {
+  margin-top: 10px;
+}
+
+.c0 {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  padding-right: 0px;
+  width: 100%;
+}
+
+<div
+    class="c0 TERow TEFileManagerRow "
   >
     <div
-      class="sc-kEqYlL TEFileManagerRowWrapper"
+      class="TEFileManagerRowWrapper"
     >
       <div
-        class="sc-dlnjPT fUxpMb TEFileInput sc-fnVYJo jxQcae TEFileManagerInput"
+        class="c1 TEFileInput c2 TEFileManagerInput"
       >
         <div
-          class="sc-hKFyIo kbRLQd TEFileInputInputWrapper"
+          class="c3 TEFileInputInputWrapper"
         >
           <label
-            class="sc-eCApGN eJWjmS TEFileInputLabel"
+            class="c4 TEFileInputLabel"
           >
             <span
-              class="sc-jSFkmK TEFileInputCopy"
+              class="TEFileInputCopy"
             >
               <svg
-                class="sc-gKAblj cfigoj TEFileInputIcon"
+                class="c5 TEFileInputIcon"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -38,7 +110,7 @@ exports[`TEFileManagerRow matches snapshot 1`] = `
             </span>
             <input
               accept="."
-              class="sc-iCoHVE idOFoX TEFileInputInput"
+              class="c6 TEFileInputInput"
               id="testTEFileManagerRow"
               type="file"
             />

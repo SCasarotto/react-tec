@@ -2,29 +2,142 @@
 
 exports[`TESpinner matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnylx fCFKfG TESpinner "
+  .c0 {
+  text-align: center;
+}
+
+.c1 {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.c2 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  border-top-color: #000000;
+  -webkit-animation: TESpinnerLoading 1s linear infinite;
+  animation: TESpinnerLoading 1s linear infinite;
+}
+
+.c3 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 8.333333333333332%;
+  top: 8.333333333333332%;
+  width: 83.33333333333334%;
+  height: 83.33333333333334%;
+  border-top-color: #333333;
+  -webkit-animation: TESpinnerLoading 1.125s linear infinite;
+  animation: TESpinnerLoading 1.125s linear infinite;
+}
+
+.c4 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 16.666666666666664%;
+  top: 16.666666666666664%;
+  width: 66.66666666666667%;
+  height: 66.66666666666667%;
+  border-top-color: #666666;
+  -webkit-animation: TESpinnerLoading 1.2857142857142856s linear infinite;
+  animation: TESpinnerLoading 1.2857142857142856s linear infinite;
+}
+
+.c5 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+  border-top-color: #9a9a9a;
+  -webkit-animation: TESpinnerLoading 1.5s linear infinite;
+  animation: TESpinnerLoading 1.5s linear infinite;
+}
+
+.c6 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 33.33333333333333%;
+  top: 33.33333333333333%;
+  width: 33.333333333333336%;
+  height: 33.333333333333336%;
+  border-top-color: #cccccc;
+  -webkit-animation: TESpinnerLoading 1.7999999999999998s linear infinite;
+  animation: TESpinnerLoading 1.7999999999999998s linear infinite;
+}
+
+.c7 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 41.666666666666664%;
+  top: 41.666666666666664%;
+  width: 16.666666666666675%;
+  height: 16.666666666666675%;
+  border-top-color: #ffffff;
+  -webkit-animation: TESpinnerLoading 2.2499999999999996s linear infinite;
+  animation: TESpinnerLoading 2.2499999999999996s linear infinite;
+}
+
+<div
+    class="c0 TESpinner "
   >
     <div
-      class="sc-gtssRu faNEca TESpinnerContainer"
+      class="c1 TESpinnerContainer"
     >
       <div
-        class="sc-dlnjPT hVCJeU TESpinnerRing TESpinnerRing1"
+        class="c2 TESpinnerRing TESpinnerRing1"
       />
       <div
-        class="sc-dlnjPT flGiIU TESpinnerRing TESpinnerRing2"
+        class="c3 TESpinnerRing TESpinnerRing2"
       />
       <div
-        class="sc-dlnjPT enUvMH TESpinnerRing TESpinnerRing3"
+        class="c4 TESpinnerRing TESpinnerRing3"
       />
       <div
-        class="sc-dlnjPT XDtCn TESpinnerRing TESpinnerRing4"
+        class="c5 TESpinnerRing TESpinnerRing4"
       />
       <div
-        class="sc-dlnjPT dlqwYN TESpinnerRing TESpinnerRing5"
+        class="c6 TESpinnerRing TESpinnerRing5"
       />
       <div
-        class="sc-dlnjPT ibPDQs TESpinnerRing TESpinnerRing6"
+        class="c7 TESpinnerRing TESpinnerRing6"
       />
     </div>
   </div>

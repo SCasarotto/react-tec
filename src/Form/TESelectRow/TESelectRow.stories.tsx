@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
-import { TESelectRow, TESelectRowProps } from './TESelectRow'
+import { TESelectRow } from './TESelectRow'
 
 export default {
 	title: 'Form/TESelectRow',
@@ -9,7 +9,8 @@ export default {
 	argTypes: {},
 } as Meta
 
-const Template: Story<TESelectRowProps<T>> = (args) => <TESelectRow {...args} />
+// TODO: Determine if types can be done better
+const Template: Story = (args) => <TESelectRow {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}

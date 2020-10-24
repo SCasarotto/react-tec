@@ -2,8 +2,34 @@
 
 exports[`TEButton matches snapshot 1`] = `
 <DocumentFragment>
-  <button
-    class="sc-bdnylx ccWmoN TEButton "
+  .c0 {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 5px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  border: 1px solid;
+  -webkit-transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+}
+
+.c0:hover,
+.c0:active {
+  border: 1px solid;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  border: 1px solid;
+}
+
+<button
+    class="c0 TEButton "
     type="button"
   >
     My Test Button

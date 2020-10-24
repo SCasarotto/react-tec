@@ -2,8 +2,27 @@
 
 exports[`TEPanelTitle matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnylx bUBpex TEPanelTitle "
+  .c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+<div
+    class="c0 TEPanelTitle "
   />
 </DocumentFragment>
 `;

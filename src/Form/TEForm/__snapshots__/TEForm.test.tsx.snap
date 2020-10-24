@@ -2,8 +2,15 @@
 
 exports[`TEForm matches snapshot 1`] = `
 <DocumentFragment>
-  <form
-    class="sc-bdnylx gCsuFE TEForm "
+  .c0 {
+  position: relative;
+  width: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+
+<form
+    class="c0 TEForm "
   />
 </DocumentFragment>
 `;

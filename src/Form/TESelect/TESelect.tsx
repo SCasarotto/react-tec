@@ -1,16 +1,12 @@
-import React, { useContext, PropsWithChildren } from 'react'
-import { Props, OptionTypeBase, Theme } from 'react-select'
+import React, { useContext, ReactElement } from 'react'
+import Select, { Props as SelectProps, OptionTypeBase } from 'react-select'
 import Color from 'color'
-import Select from 'react-select'
 import { ThemeContext } from 'styled-components'
 
-interface ExtendedProps<T> extends Props<T> {
-	className?: string
-	disabled?: boolean
-}
-export type TESelectProps<T> = PropsWithChildren<ExtendedProps<T>>
-// TODO: Handle forwardRef and review typing
-export const TESelect = <T extends OptionTypeBase>(props: PropsWithChildren<TESelectProps<T>>) => {
+const UnwrappedTESelect = <T extends OptionTypeBase>(
+	props: SelectProps<T>,
+	ref: React.Ref<Select<T>>,
+) => {
 	const { className = '', disabled, classNamePrefix = 'TESelect', ...rest } = props
 	const TETheme = useContext(ThemeContext)
 
@@ -19,7 +15,7 @@ export const TESelect = <T extends OptionTypeBase>(props: PropsWithChildren<TESe
 			isDisabled={disabled}
 			className={`TESelect ${className}`}
 			classNamePrefix={classNamePrefix}
-			theme={(theme: Theme) => ({
+			theme={(theme) => ({
 				...theme,
 				borderRadius: 5,
 				colors: {
@@ -54,7 +50,14 @@ export const TESelect = <T extends OptionTypeBase>(props: PropsWithChildren<TESe
 				//   menuGutter: 8
 				// }
 			})}
+			ref={ref}
 			{...rest}
 		/>
 	)
 }
+
+// This is here because of the need to useForward Ref with a generic prop type
+// See: https://stackoverflow.com/a/58473012
+export const TESelect = React.forwardRef(UnwrappedTESelect) as <T extends OptionTypeBase>(
+	props: SelectProps<T> & { ref?: React.Ref<Select<T>> },
+) => ReactElement

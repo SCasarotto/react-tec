@@ -2,8 +2,18 @@
 
 exports[`TECheckboxInput matches snapshot 1`] = `
 <DocumentFragment>
-  <input
-    class="sc-bdnylx dpqFiO TECheckboxInput "
+  .c0 {
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+}
+
+<input
+    class="c0 TECheckboxInput "
     type="checkbox"
   />
 </DocumentFragment>

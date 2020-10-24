@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Container, Content, Ul, Li, Link } from './styledComponents'
-import { TESideNavLinkProps } from 'Navigation/TESideNavLink'
+import { TESideNavLinkProps } from './../TESideNavLink'
 
 export interface TESubNavbarProps {
 	links: TESideNavLinkProps[]

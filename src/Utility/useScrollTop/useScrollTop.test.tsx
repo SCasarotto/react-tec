@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { useScrollTop, TEAppWrapper } from '../..'
-import { mockOnScroll } from '../../helpers/testHelpers'
 import { useLocation } from 'react-router'
+import { useScrollTop } from './useScrollTop'
+import { TEAppWrapper } from '../../Globals/TEAppWrapper'
+import { mockOnScroll } from '../../helpers/testHelpers'
 
 const ScrollTopComponent: React.FC = () => {
 	const location = useLocation()

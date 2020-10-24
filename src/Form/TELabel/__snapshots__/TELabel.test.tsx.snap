@@ -2,8 +2,24 @@
 
 exports[`TELabel matches snapshot 1`] = `
 <DocumentFragment>
-  <label
-    class="sc-bdnylx ffWYrX TELabel "
+  .c0 {
+  position: relative;
+  display: block;
+  width: auto;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+  font-size: 18px;
+  cursor: default;
+}
+
+@media (max-width:550px) {
+  .c0 {
+    font-size: 16px;
+  }
+}
+
+<label
+    class="c0 TELabel "
   />
 </DocumentFragment>
 `;

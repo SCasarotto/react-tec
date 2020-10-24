@@ -2,11 +2,42 @@
 
 exports[`TEPopupMultiStepForm matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-jrsJCI eHRuBa TEPopup sc-iqAbSa gJGAiq TEPopupMultiStepForm "
+  .c0 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  overflow-y: auto;
+  -webkit-transition: visibility 0.25s ease-in-out,opacity 0.25s ease-in-out;
+  transition: visibility 0.25s ease-in-out,opacity 0.25s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.c2 {
+  position: relative;
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 650px;
+}
+
+.c1 .TEPopupContent {
+  width: 90%;
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 30px;
+}
+
+<div
+    class="c0 TEPopup c1 TEPopupMultiStepForm "
   >
     <div
-      class="sc-kEqYlL kePiMs TEPopupContent"
+      class="c2 TEPopupContent"
     />
   </div>
 </DocumentFragment>

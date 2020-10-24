@@ -2,8 +2,34 @@
 
 exports[`TEInput matches snapshot 1`] = `
 <DocumentFragment>
-  <input
-    class="sc-bdnylx fCVeoY TEInput "
+  .c0 {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 0px;
+  border: 1px solid;
+  -webkit-transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+  transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+}
+
+.c0:hover,
+.c0:active {
+  border: 1px solid;
+  box-shadow: 0 0 0 1px inset;
+}
+
+.c0:disabled {
+  border: 1px solid;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+<input
+    class="c0 TEInput "
   />
 </DocumentFragment>
 `;

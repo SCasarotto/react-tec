@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
+import Select, { Props as SelectProps, OptionTypeBase } from 'react-select'
 
 import { TERow, TERowCustomProps } from './../TERow'
 import { TELabel, TELabelCustomProps } from './../TELabel'
-import { TESelect, TESelectProps } from './../TESelect'
+import { TESelect } from './../TESelect'
 
-export interface TESelectRowProps<T>
+// export interface TESelectRowProps<T>
+// 	extends TERowCustomProps,
+// 		TELabelCustomProps,
+// 		TESelectProps<T> {
+// 	labelForKey: string
+// 	title?: string
+// }
+
+export interface TESelectRowProps<T extends OptionTypeBase>
 	extends TERowCustomProps,
 		TELabelCustomProps,
-		TESelectProps<T> {
-	labelForKey: string
-	title?: string
-}
+		SelectProps<T> {}
 
-export const TESelectRow = <T,>(props: TESelectRowProps<T>) => {
+const UnwarppedSearchSelectRow = <T extends OptionTypeBase>(
+	props: TESelectRowProps<T>,
+	ref: React.Ref<Select<T>>,
+) => {
 	const { rowSize, last, className = '', title, disabled, required, labelForKey, ...rest } = props
 
 	return (
@@ -27,7 +36,13 @@ export const TESelectRow = <T,>(props: TESelectRowProps<T>) => {
 					{title}
 				</TELabel>
 			)}
-			<TESelect<T> disabled={disabled} {...rest} />
+			<TESelect<T> disabled={disabled} ref={ref} {...rest} />
 		</TERow>
 	)
 }
+
+// This is here because of the need to useForward Ref with a generic prop type
+// See: https://stackoverflow.com/a/58473012
+export const TESelectRow = React.forwardRef(UnwarppedSearchSelectRow) as <T extends OptionTypeBase>(
+	props: TESelectRowProps<T> & { ref?: React.Ref<Select<T>> },
+) => ReactElement

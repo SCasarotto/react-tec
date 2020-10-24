@@ -2,40 +2,126 @@
 
 exports[`TESegmentedGroup matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnylx bbvaGu TERow sc-hKFyIo bdXmOp TESegmentedGroup "
+  .c0 {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  padding-right: 0px;
+  width: 100%;
+}
+
+.c4 {
+  position: relative;
+  display: block;
+  width: auto;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c2 {
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+}
+
+.c1 {
+  display: inline-block;
+  width: auto;
+}
+
+.c3 {
+  display: none;
+}
+
+.c5 {
+  display: inline-block;
+  width: auto;
+  border: 1px solid;
+  padding: 8px 15px;
+  margin: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.c5:hover,
+.c5:active {
+  border: 1px solid;
+}
+
+.c6 {
+  display: inline-block;
+  width: auto;
+  border: 1px solid;
+  padding: 8px 15px;
+  margin: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.c6:hover,
+.c6:active {
+  border: 1px solid;
+}
+
+@media (max-width:550px) {
+  .c4 {
+    font-size: 16px;
+  }
+}
+
+<div
+    class="c0 TERow TESegmentedGroup "
   >
     <div
-      class="sc-jSFkmK hjRJsp TESegmentedGroupSegmentedContainer"
+      class="TESegmentedGroupSegmentedContainer"
     >
       <div
-        class="sc-gKAblj liMDoA TESegmentedGroupSegmentedLabelWrapper"
+        class="c1 TESegmentedGroupSegmentedLabelWrapper"
       >
         <input
           checked=""
-          class="sc-dlnjPT lmUFUT TERadioButtonInput sc-iCoHVE idOFoX TESegmentedGroupSegmentedInput"
+          class="c2 TERadioButtonInput c3 TESegmentedGroupSegmentedInput"
           id="testTESegmentedGroupsomeValue"
           type="radio"
           value="someValue"
         />
         <label
-          class="sc-gtssRu TgFHa TELabel sc-fujyUd kfbQdp TESegmentedGroupSegmentedLabel"
+          class="c4 TELabel c5 TESegmentedGroupSegmentedLabel"
           for="testTESegmentedGroupsomeValue"
         >
           someValue
         </label>
       </div>
       <div
-        class="sc-gKAblj liMDoA TESegmentedGroupSegmentedLabelWrapper"
+        class="c1 TESegmentedGroupSegmentedLabelWrapper"
       >
         <input
-          class="sc-dlnjPT lmUFUT TERadioButtonInput sc-iCoHVE idOFoX TESegmentedGroupSegmentedInput"
+          class="c2 TERadioButtonInput c3 TESegmentedGroupSegmentedInput"
           id="testTESegmentedGroupanotherValue"
           type="radio"
           value="anotherValue"
         />
         <label
-          class="sc-gtssRu TgFHa TELabel sc-fujyUd ipVJcZ TESegmentedGroupSegmentedLabel"
+          class="c4 TELabel c6 TESegmentedGroupSegmentedLabel"
           for="testTESegmentedGroupanotherValue"
         >
           anotherValue
