@@ -5,6 +5,7 @@ import { TESelect } from './TESelect'
 import { TEThemeProvider } from './../../Globals/TEThemeContext'
 
 describe('TESelect', () => {
+	// Renders Without Error
 	it('matches snapshot', () => {
 		const { asFragment } = render(
 			<TEThemeProvider>

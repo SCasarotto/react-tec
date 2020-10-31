@@ -3,6 +3,7 @@ import { render } from '@testing-library/react'
 import { TEBodyContainer } from './TEBodyContainer'
 
 describe('TEBodyContainer', () => {
+	// Renders Without Error
 	it('matches snapshot', () => {
 		const { asFragment } = render(<TEBodyContainer />)
 		expect(asFragment()).toMatchSnapshot()

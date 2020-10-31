@@ -43,4 +43,43 @@ describe('TEMenuButton', () => {
 		)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TEAppWrapper>
+				<TEMenuButton title='mydropdown' className='myClassName'>
+					{({ hideMenu }) => (
+						<div>
+							<button
+								onClick={() => {
+									alert('Press!1')
+									hideMenu()
+								}}
+							>
+								My Button1
+							</button>
+							<button
+								onClick={() => {
+									alert('Press!2')
+									hideMenu()
+								}}
+							>
+								My Button2
+							</button>
+							<button
+								onClick={() => {
+									alert('Press!3')
+									hideMenu()
+								}}
+							>
+								My Button3
+							</button>
+						</div>
+					)}
+				</TEMenuButton>
+			</TEAppWrapper>,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

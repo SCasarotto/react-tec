@@ -164,11 +164,6 @@ exports[`TEPhoneNumberRow matches snapshot 1`] = `
           class="PhoneInputCountrySelect"
         >
           <option
-            value="ZZ"
-          >
-            International
-          </option>
-          <option
             value="AF"
           >
             Afghanistan
@@ -1402,9 +1397,7 @@ exports[`TEPhoneNumberRow matches snapshot 1`] = `
             viewBox="0 0 75 50"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              International
-            </title>
+            <title />
             <g
               class="PhoneInputInternationalIconGlobe"
               fill="none"

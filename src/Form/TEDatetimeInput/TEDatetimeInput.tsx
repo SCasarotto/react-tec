@@ -6,11 +6,10 @@ import { WithPortalButtonWrapper, WithPortalButton, WithPortalIcon } from './sty
 export interface TEDatetimeInputProps extends Omit<ReactDatePickerProps, 'value'> {
 	//These are used to standardize to other input props
 	placeholder?: string
-	value?: Date | null
-	ref?: ((instance: DatePicker | null) => void) | React.RefObject<DatePicker> | null | undefined
+	value?: ReactDatePickerProps['selected']
 	withPortalButton?: boolean
 }
-export const TEDatetimeInput: React.FC<TEDatetimeInputProps> = React.forwardRef((props, ref) => {
+export const TEDatetimeInput = React.forwardRef<DatePicker, TEDatetimeInputProps>((props, ref) => {
 	const {
 		selected,
 		value,

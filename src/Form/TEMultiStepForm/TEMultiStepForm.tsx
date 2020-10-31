@@ -24,6 +24,7 @@ import {
 export interface TEMultiStepFormStepData {
 	title: string
 	component: React.ReactNode
+	// TODO: Try to make these types better
 	onPrevious?(): Promise<any>
 	onNext?(): Promise<any>
 }
@@ -32,138 +33,134 @@ export interface TEMultiStepFormProps {
 	handleCancelOnClick?(): void
 	stepData: TEMultiStepFormStepData[]
 	// roundedButtons?: boolean
+	// TODO: Try to make these types better
 	onSubmit(): Promise<any>
 	onStepChange?(step: number): void
 	submitButtonId?: string
-	ref?:
-		| ((instance: HTMLFormElement | null) => void)
-		| React.RefObject<HTMLFormElement>
-		| null
-		| undefined
 }
-export const TEMultiStepForm: React.FC<TEMultiStepFormProps> = React.forwardRef((props, ref) => {
-	const [currentStep, setCurrentStep] = useState(0)
+export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepFormProps>(
+	(props, ref) => {
+		const [currentStep, setCurrentStep] = useState(0)
 
-	const updateAndEmitStep = (step: number) => {
-		const { onStepChange } = props
-		setCurrentStep(step)
-		if (onStepChange) {
-			onStepChange(step)
-		}
-	}
-	const handlePreviousPressed = async () => {
-		const { handleCancelOnClick, stepData } = props
-
-		const moveBack = () => {
-			if (currentStep === 0) {
-				if (handleCancelOnClick) {
-					handleCancelOnClick()
-				}
-			} else {
-				updateAndEmitStep(currentStep - 1)
+		const updateAndEmitStep = (step: number) => {
+			const { onStepChange } = props
+			setCurrentStep(step)
+			if (onStepChange) {
+				onStepChange(step)
 			}
 		}
+		const handlePreviousPressed = async () => {
+			const { handleCancelOnClick, stepData } = props
 
-		try {
-			const onPrevious = stepData && stepData[currentStep] && stepData[currentStep].onPrevious
-			if (onPrevious) {
-				await onPrevious()
-				moveBack()
-			} else {
-				moveBack()
-			}
-		} catch (e) {
-			console.log(e)
-		}
-	}
-	const handleNextPressed = async () => {
-		const { onSubmit, stepData } = props
-
-		const moveForward = async () => {
-			try {
-				if (currentStep + 1 === stepData.length) {
-					await onSubmit()
-					updateAndEmitStep(0)
+			const moveBack = () => {
+				if (currentStep === 0) {
+					if (handleCancelOnClick) {
+						handleCancelOnClick()
+					}
 				} else {
-					updateAndEmitStep(currentStep + 1)
+					updateAndEmitStep(currentStep - 1)
+				}
+			}
+
+			try {
+				const onPrevious =
+					stepData && stepData[currentStep] && stepData[currentStep].onPrevious
+				if (onPrevious) {
+					await onPrevious()
+					moveBack()
+				} else {
+					moveBack()
 				}
 			} catch (e) {
 				console.log(e)
 			}
 		}
-		try {
-			const onNext = stepData && stepData[currentStep] && stepData[currentStep].onNext
-			if (onNext) {
-				await onNext()
-				moveForward()
-			} else {
-				moveForward()
+		const handleNextPressed = async () => {
+			const { onSubmit, stepData } = props
+
+			const moveForward = async () => {
+				try {
+					if (currentStep + 1 === stepData.length) {
+						await onSubmit()
+						updateAndEmitStep(0)
+					} else {
+						updateAndEmitStep(currentStep + 1)
+					}
+				} catch (e) {
+					console.log(e)
+				}
 			}
-		} catch (e) {
-			console.log(e)
+			try {
+				const onNext = stepData && stepData[currentStep] && stepData[currentStep].onNext
+				if (onNext) {
+					await onNext()
+					moveForward()
+				} else {
+					moveForward()
+				}
+			} catch (e) {
+				console.log(e)
+			}
 		}
-	}
 
-	const {
-		className = '',
-		handleCancelOnClick,
-		stepData,
-		// roundedButtons,
-		submitButtonId,
-	} = props
-	if (!stepData || (stepData && stepData.length === 0)) {
-		return null
-	}
+		const {
+			className = '',
+			handleCancelOnClick,
+			stepData,
+			// roundedButtons,
+			submitButtonId,
+		} = props
 
-	return (
-		<Container className={`TEMultiStepForm ${className}`}>
-			<StepContainer className='TEMultiStepFormStepContainer'>
-				<StepBar stepCount={stepData.length} className='TEMultiStepFormStepBar' />
-				{stepData.map((step, index) => {
-					const { title } = step
+		return (
+			<Container className={`TEMultiStepForm ${className}`}>
+				<StepContainer className='TEMultiStepFormStepContainer'>
+					<StepBar stepCount={stepData.length} className='TEMultiStepFormStepBar' />
+					{stepData.map((step, index) => {
+						const { title } = step
 
-					return (
-						<StepWrapper
-							key={index}
-							stepCount={stepData.length}
-							className='TEMultiStepFormStepWrapper'
-						>
-							<StepNumber
-								active={currentStep === index}
-								className='TEMultiStepFormStepNumber'
+						return (
+							<StepWrapper
+								key={index}
+								stepCount={stepData.length}
+								className='TEMultiStepFormStepWrapper'
 							>
-								{index + 1}
-							</StepNumber>
-							<StepTitle className='TEMultiStepFormStepTitle'>{title}</StepTitle>
-						</StepWrapper>
-					)
-				})}
-			</StepContainer>
-			<TEForm className='TEMultiStepFormForm' ref={ref}>
-				{stepData[currentStep] && stepData[currentStep].component}
-				<ButtonContainer className='TEMultiStepFormButtonContainer'>
-					{(handleCancelOnClick || currentStep > 0) && (
+								<StepNumber
+									active={currentStep === index}
+									className='TEMultiStepFormStepNumber'
+								>
+									{index + 1}
+								</StepNumber>
+								<StepTitle className='TEMultiStepFormStepTitle'>{title}</StepTitle>
+							</StepWrapper>
+						)
+					})}
+				</StepContainer>
+				<TEForm className='TEMultiStepFormForm' ref={ref}>
+					{stepData && stepData.length > 0 && stepData?.[currentStep]?.component}
+					<ButtonContainer className='TEMultiStepFormButtonContainer'>
+						{(handleCancelOnClick || currentStep > 0) && (
+							<StepButton
+								onClick={handlePreviousPressed}
+								// position="left"
+								// rounded={roundedButtons}
+								className='TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft'
+							>
+								{currentStep === 0 ? 'cancel' : 'previous'}
+							</StepButton>
+						)}
 						<StepButton
-							onClick={handlePreviousPressed}
-							// position="left"
+							onClick={handleNextPressed}
+							// position="right"
 							// rounded={roundedButtons}
-							className='TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft'
+							// singleButton={!handleCancelOnClick && currentStep === 0}
+							className='TEMultiStepFormStepButton TEMultiStepFormStepButtonright'
+							id={submitButtonId}
 						>
-							{currentStep === 0 ? 'cancel' : 'previous'}
+							{currentStep + 1 === stepData.length ? 'submit' : 'next'}
 						</StepButton>
-					)}
-					<StepButton
-						onClick={handleNextPressed}
-						// position="right"
-						// rounded={roundedButtons}
-						// singleButton={!handleCancelOnClick && currentStep === 0}
-						className='TEMultiStepFormStepButton TEMultiStepFormStepButtonright'
-						id={submitButtonId}
-					>
-						{currentStep + 1 === stepData.length ? 'submit' : 'next'}
-					</StepButton>
-				</ButtonContainer>
-			</TEForm>
-		</Container>
-	)
-})
+					</ButtonContainer>
+				</TEForm>
+			</Container>
+		)
+	},
+)

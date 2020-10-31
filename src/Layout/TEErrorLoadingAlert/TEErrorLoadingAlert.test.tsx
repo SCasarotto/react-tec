@@ -3,6 +3,7 @@ import { render } from '@testing-library/react'
 import { TEErrorLoadingAlert } from './TEErrorLoadingAlert'
 
 describe('TEErrorLoadingAlert', () => {
+	// Renders Without Error
 	it('matches snapshot', () => {
 		const { asFragment } = render(<TEErrorLoadingAlert />)
 		expect(asFragment()).toMatchSnapshot()

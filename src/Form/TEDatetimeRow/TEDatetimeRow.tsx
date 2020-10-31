@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDatePicker from 'react-datepicker'
 
 import { TERow, TERowCustomProps } from '../TERow'
 import { TELabel, TELabelCustomProps } from '../TELabel'
@@ -10,7 +11,7 @@ export interface TEDatetimeRowProps
 		TEDatetimeInputProps {
 	labelForKey: string
 }
-export const TEDatetimeRow: React.FC<TEDatetimeRowProps> = React.forwardRef((props, ref) => {
+export const TEDatetimeRow = React.forwardRef<ReactDatePicker, TEDatetimeRowProps>((props, ref) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 
 	return (

@@ -13,22 +13,14 @@ import {
 } from './styledComponents'
 
 export interface TEFileInputProps
-	extends Omit<
-		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-		'onChange'
-	> {
-	ref?:
-		| ((instance: HTMLInputElement | null) => void)
-		| React.RefObject<HTMLInputElement>
-		| null
-		| undefined
+	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
 	onChange?(files: FileList): void
 	placeholder?: string
 	hideClearButton?: boolean
 	filePattern?: RegExp
 	resetKey?: string
 }
-export const TEFileInput: React.FC<TEFileInputProps> = React.forwardRef((props, ref) => {
+export const TEFileInput = React.forwardRef<HTMLInputElement, TEFileInputProps>((props, ref) => {
 	const [active, setActive] = useState(false)
 	const [fileArray, setFileArray] = useState<FileList | undefined>()
 	const [errorData, setErrorData] = useState({ error: false, message: '' })
