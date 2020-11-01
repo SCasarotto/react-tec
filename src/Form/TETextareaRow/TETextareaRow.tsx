@@ -8,41 +8,43 @@ export interface TETextareaRowProps extends TERowCustomProps, TELabelCustomProps
 	labelForKey: string
 }
 
-export const TETextareaRow: React.FC<TETextareaRowProps> = React.forwardRef((props, ref) => {
-	const {
-		rowSize,
-		last,
-		className = '',
-		title,
-		onChange,
-		disabled,
-		value,
-		required,
-		labelForKey,
-		...rest
-	} = props
+export const TETextareaRow = React.forwardRef<HTMLTextAreaElement, TETextareaRowProps>(
+	(props, ref) => {
+		const {
+			rowSize,
+			last,
+			className = '',
+			title,
+			onChange,
+			disabled,
+			value,
+			required,
+			labelForKey,
+			...rest
+		} = props
 
-	return (
-		<TERow rowSize={rowSize} last={last} className={`TEInputRow ${className}`}>
-			{title && (
-				<TELabel
-					htmlFor={labelForKey}
-					required={required}
+		return (
+			<TERow rowSize={rowSize} last={last} className={`TEInputRow ${className}`}>
+				{title && (
+					<TELabel
+						htmlFor={labelForKey}
+						required={required}
+						disabled={disabled}
+						className='TEInputRowTitle'
+					>
+						{title}
+					</TELabel>
+				)}
+				<TETextarea
+					value={value}
+					onChange={onChange}
+					id={labelForKey}
 					disabled={disabled}
-					className='TEInputRowTitle'
-				>
-					{title}
-				</TELabel>
-			)}
-			<TETextarea
-				value={value}
-				onChange={onChange}
-				id={labelForKey}
-				disabled={disabled}
-				className='TEInputRowInput'
-				ref={ref}
-				{...rest}
-			/>
-		</TERow>
-	)
-})
+					className='TEInputRowInput'
+					ref={ref}
+					{...rest}
+				/>
+			</TERow>
+		)
+	},
+)

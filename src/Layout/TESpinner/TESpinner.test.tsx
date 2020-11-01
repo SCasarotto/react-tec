@@ -8,4 +8,10 @@ describe('TESpinner', () => {
 		const { asFragment } = render(<TESpinner />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(<TESpinner className='myClassName' />)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

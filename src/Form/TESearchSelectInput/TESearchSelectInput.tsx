@@ -8,7 +8,7 @@ import { PowerSelect, PowerSelectMultiple } from 'react-power-select'
 //
 
 //TODO: Return to this.
-export const TESearchSelectInput: React.FC<any> = React.forwardRef((props, ref) => {
+export const TESearchSelectInput = React.forwardRef<any, any>((props, ref) => {
 	const { type = 'single', searchEnabled = true, value, className = '', ...rest } = props
 
 	if (type === 'single') {

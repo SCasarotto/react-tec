@@ -6,7 +6,6 @@ import { Li, Link, Title } from './styledComponents'
 export interface TESideNavLinkProps {
 	title: string
 	to: string
-	children?: React.ReactNode
 	activePath?: string
 	exact?: boolean
 	className?: string

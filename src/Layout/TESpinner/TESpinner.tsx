@@ -1,15 +1,17 @@
 import React from 'react'
 
 import { Container, SpinnerWrapper, Ring } from './styledComponents'
+export type SpinnerSize = 'small' | 'medium' | 'large'
 export interface TESpinnerProps {
-	size?: 'small' | 'medium' | 'large'
+	size?: SpinnerSize
 	innerColor?: string
 	outerColor?: string
 	className?: string
 }
 export const TESpinner: React.FC<TESpinnerProps> = (props) => {
+	const { className = '', innerColor, outerColor, size = 'medium' } = props
+
 	const renderRings = () => {
-		const { size, innerColor, outerColor } = props
 		let totalRings = 6
 
 		switch (size) {
@@ -26,8 +28,8 @@ export const TESpinner: React.FC<TESpinnerProps> = (props) => {
 				break
 		}
 
-		let rings = []
-		for (var i = 0; i < totalRings; i++) {
+		const rings = []
+		for (let i = 0; i < totalRings; i++) {
 			rings.push(
 				<Ring
 					key={i}
@@ -41,8 +43,6 @@ export const TESpinner: React.FC<TESpinnerProps> = (props) => {
 		}
 		return rings
 	}
-
-	const { size = 'medium', className = '' } = props
 
 	return (
 		<Container className={`TESpinner ${className}`}>

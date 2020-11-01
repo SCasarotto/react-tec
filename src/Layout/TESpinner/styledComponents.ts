@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { colorBetweenColors } from './../../helpers'
+import { SpinnerSize } from './TESpinner'
 
 interface calculateRingStyles {
 	totalRings: number
@@ -37,7 +38,7 @@ const calculateRingStyles = ({
 export const Container = styled.div`
 	text-align: center;
 `
-export const SpinnerWrapper = styled.div<{ size?: 'small' | 'medium' | 'large' }>`
+export const SpinnerWrapper = styled.div<{ size?: SpinnerSize }>`
 	position: relative;
 	display: inline-block;
 	${(props) => {

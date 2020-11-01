@@ -8,4 +8,12 @@ describe('TESearchSelectInput', () => {
 		const { asFragment } = render(<TESearchSelectInput onChange={() => {}} />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TESearchSelectInput onChange={() => {}} className='myClassName' />,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

@@ -8,4 +8,10 @@ describe('TEPopup', () => {
 		const { asFragment } = render(<TEPopup visible />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(<TEPopup visible className='myClassName' />)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

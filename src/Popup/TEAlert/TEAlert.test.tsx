@@ -8,4 +8,10 @@ describe('TEAlert', () => {
 		const { asFragment } = render(<TEAlert visible />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(<TEAlert visible className='myClassName' />)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

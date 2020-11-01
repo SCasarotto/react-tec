@@ -15,4 +15,18 @@ describe('TESegmentedGroup', () => {
 		)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TESegmentedGroup
+				labelForKey='testTESegmentedGroup'
+				checkedValue='someValue'
+				buttonArray={['someValue', 'anotherValue']}
+				onChange={() => {}}
+				className='myClassName'
+			/>,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

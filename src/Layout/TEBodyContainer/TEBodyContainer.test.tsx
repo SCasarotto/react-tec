@@ -8,4 +8,10 @@ describe('TEBodyContainer', () => {
 		const { asFragment } = render(<TEBodyContainer />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(<TEBodyContainer className='myClassName' />)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

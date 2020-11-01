@@ -15,4 +15,18 @@ describe('TEPopupMultiStepForm', () => {
 		)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TEPopupMultiStepForm
+				visible
+				stepData={[]}
+				onClose={() => {}}
+				onSubmit={async () => {}}
+				className='myClassName'
+			/>,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

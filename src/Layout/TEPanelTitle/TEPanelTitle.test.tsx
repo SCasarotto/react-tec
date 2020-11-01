@@ -8,4 +8,10 @@ describe('TEPanelTitle', () => {
 		const { asFragment } = render(<TEPanelTitle />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(<TEPanelTitle className='myClassName' />)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

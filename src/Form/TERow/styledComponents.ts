@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
+import { TEFormRowSize } from './TERow'
+
 export const Row = styled.div<{
-	rowSize?: 'full' | 'two-third' | 'half' | 'third' | 'forth' | 'condensed'
+	rowSize?: TEFormRowSize
 	last?: boolean
 }>`
 	position: relative;

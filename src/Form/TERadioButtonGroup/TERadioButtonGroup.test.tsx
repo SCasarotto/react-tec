@@ -15,4 +15,18 @@ describe('TERadioButtonGroup', () => {
 		)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TERadioButtonGroup
+				labelForKey='testTERadioButtonGroup'
+				checkedValue='someValue'
+				buttonArray={['someValue', 'otherValue']}
+				onChange={() => {}}
+				className='myClassName'
+			/>,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

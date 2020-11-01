@@ -2,15 +2,8 @@ import React from 'react'
 
 import { Input } from './styledComponents'
 
-export interface TERadioButtonInputProps
-	extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-	ref?:
-		| ((instance: HTMLInputElement | null) => void)
-		| React.RefObject<HTMLInputElement>
-		| null
-		| undefined
-}
-export const TERadioButtonInput: React.FC<TERadioButtonInputProps> = React.forwardRef(
+export interface TERadioButtonInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export const TERadioButtonInput = React.forwardRef<HTMLInputElement, TERadioButtonInputProps>(
 	(props, ref) => {
 		const { className = '', ...rest } = props
 		return (

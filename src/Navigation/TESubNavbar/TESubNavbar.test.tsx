@@ -14,4 +14,14 @@ describe('TESubNavbar', () => {
 		)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TEAppWrapper>
+				<TESubNavbar links={[]} className='myClassName' />
+			</TEAppWrapper>,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

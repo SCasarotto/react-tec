@@ -14,4 +14,14 @@ describe('TESideNavLink', () => {
 		)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TEAppWrapper>
+				<TESideNavLink title='MyTitle' to='/SomeURL' className='myClassName' />
+			</TEAppWrapper>,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

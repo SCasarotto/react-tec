@@ -10,4 +10,16 @@ describe('TESearchSelectRow', () => {
 		)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TESearchSelectRow
+				labelForKey='testTESearchSelectRow'
+				onChange={() => {}}
+				className='myClassName'
+			/>,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

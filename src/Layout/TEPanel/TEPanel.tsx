@@ -4,11 +4,16 @@ import { TEPanelTitle, TEPanelTitleProps } from '../TEPanelTitle'
 
 import { Container } from './styledComponents'
 
-//Extending div handles className and Children but feels weird here because I don't spead the remained of the props
+export type PanelSize =
+	| 'full'
+	| 'three-quarter'
+	| 'two-third'
+	| 'half'
+	| 'third'
+	| 'quarter'
+	| 'condensed'
 export interface TEPanelProps extends TEPanelTitleProps {
-	//TODO: Fix this. styled-components is weird with refs
-	ref?: any
-	size?: 'full' | 'three-quarter' | 'two-third' | 'half' | 'third' | 'quarter' | 'condensed'
+	size?: PanelSize
 }
 export const TEPanel: React.FC<TEPanelProps> = (props) => {
 	const {

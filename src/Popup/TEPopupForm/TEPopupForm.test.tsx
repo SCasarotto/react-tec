@@ -8,4 +8,12 @@ describe('TEPopupForm', () => {
 		const { asFragment } = render(<TEPopupForm visible onClose={() => {}} />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(
+			<TEPopupForm visible onClose={() => {}} className='myClassName' />,
+		)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })

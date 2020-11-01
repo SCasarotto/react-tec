@@ -8,4 +8,10 @@ describe('TEErrorLoadingAlert', () => {
 		const { asFragment } = render(<TEErrorLoadingAlert />)
 		expect(asFragment()).toMatchSnapshot()
 	})
+
+	// Class Name
+	it('accepts custom className', () => {
+		const { container } = render(<TEErrorLoadingAlert className='myClassName' />)
+		expect(container.firstChild).toHaveClass('myClassName')
+	})
 })
