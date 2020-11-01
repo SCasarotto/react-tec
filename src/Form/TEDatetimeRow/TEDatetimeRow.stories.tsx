@@ -12,4 +12,7 @@ export default {
 const Template: Story<TEDatetimeRowProps> = (args) => <TEDatetimeRow {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	labelForKey: 'datetimeRow',
+	title: 'Datetime Row',
+}
