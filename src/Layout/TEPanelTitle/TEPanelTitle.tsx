@@ -9,6 +9,11 @@ export interface TEPanelTitleProps {
 	subtitle?: string
 	rightComponent?: React.ReactNode
 }
+/**
+ *
+ * `TEPanelTitle` simple title row typically used in the `TEPanel`.
+ *
+ */
 export const TEPanelTitle: React.FC<TEPanelTitleProps> = (props) => {
 	const { className = '', title, leftComponent, subtitle, rightComponent } = props
 

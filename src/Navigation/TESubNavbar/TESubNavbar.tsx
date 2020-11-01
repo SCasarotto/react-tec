@@ -8,6 +8,11 @@ export interface TESubNavbarProps {
 	rightComponent?: React.ReactNode
 	className?: string
 }
+/**
+ *
+ * TESubNavbar is the navigational bar just under to top `TETitleBar`.
+ *
+ */
 export const TESubNavbar: React.FC<TESubNavbarProps> = (props) => {
 	const { links, rightComponent, className = '' } = props
 

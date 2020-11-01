@@ -38,6 +38,11 @@ export interface TEMultiStepFormProps {
 	onStepChange?(step: number): void
 	submitButtonId?: string
 }
+/**
+ *
+ * Multiple step form container. `TEMultiStepForm` provides a quick and easy way to break a form into multiple parts and present the user with one part at a time.
+ *
+ */
 export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepFormProps>(
 	(props, ref) => {
 		const {

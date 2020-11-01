@@ -11,7 +11,13 @@ export interface TEPhoneNumberRowProps
 		TEPhoneNumberInputProps {
 	labelForKey: string
 }
-
+/**
+ *
+ * A component containing a `TERow`, a `TELabel` and either a `TEPhoneNumberInput`.
+ *
+ * In addition to the props below, reference all props for `TEPhoneNumberInput`.
+ *
+ */
 export const TEPhoneNumberRow = React.forwardRef<PhoneInput, TEPhoneNumberRowProps>(
 	(props, ref) => {
 		const {

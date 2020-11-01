@@ -7,7 +7,11 @@ import { TETextarea, TETextareaProps } from '../TETextarea'
 export interface TETextareaRowProps extends TERowCustomProps, TELabelCustomProps, TETextareaProps {
 	labelForKey: string
 }
-
+/**
+ *
+ * A component containing a `TERow`, a `TELabel` and either a `TETextarea`. In addition to the props below, reference all props for `TETextarea`.
+ *
+ */
 export const TETextareaRow = React.forwardRef<HTMLTextAreaElement, TETextareaRowProps>(
 	(props, ref) => {
 		const {

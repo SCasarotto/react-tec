@@ -9,7 +9,12 @@ export interface TEPopupMultiStepFormProps extends TEPopupProps, TEMultiStepForm
 	onClose(): void
 	onSubmit(): Promise<any>
 }
-export const TEPopupMultiStepForm: React.FC<TEPopupMultiStepFormProps> = React.forwardRef(
+/**
+ *
+ * TEPopupMultiStepForm is a combination of `TEPopup` and `TEMultiStepForm`. Besides the props below, reference `TEMultiStepForm` for additional props.
+ *
+ */
+export const TEPopupMultiStepForm = React.forwardRef<HTMLFormElement, TEPopupMultiStepFormProps>(
 	(props, ref) => {
 		const { visible, onClose, className = '', ...rest } = props
 

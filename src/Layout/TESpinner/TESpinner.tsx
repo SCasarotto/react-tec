@@ -8,6 +8,11 @@ export interface TESpinnerProps {
 	outerColor?: string
 	className?: string
 }
+/**
+ *
+ * TESpinner is the greatest loading spinner of all time.
+ *
+ */
 export const TESpinner: React.FC<TESpinnerProps> = (props) => {
 	const { className = '', innerColor, outerColor, size = 'medium' } = props
 

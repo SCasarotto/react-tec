@@ -11,7 +11,12 @@ export interface TEPopupFormProps extends TEPopupProps, TEFormProps {
 	onSubmitTitle?: string
 	submitButtonId?: string
 }
-export const TEPopupForm: React.FC<TEPopupFormProps> = React.forwardRef((props, ref) => {
+/**
+ *
+ * `TEPopupForm` is a combination of `TEForm` and `TEPopup`.
+ *
+ */
+export const TEPopupForm = React.forwardRef<HTMLFormElement, TEPopupFormProps>((props, ref) => {
 	const {
 		visible,
 		onClose,

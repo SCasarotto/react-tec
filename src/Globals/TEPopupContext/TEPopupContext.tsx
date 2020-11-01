@@ -51,6 +51,21 @@ let reducer = (state: any, action: any) => {
 	}
 }
 
+/**
+ *
+ * `TEPopupContext` and `TEPopupProvider` are used to globally show `TEAlert`, `TEConfirm` and `TENetworkActivity`. Below are details and examples to dispatch the different actions.
+ *
+ * The examples below are interacting with the `TEAppWrapper` which contains a `TEPopupProvider` of this site. However, you can also set it up as follows:
+ *
+ * ```
+ * <TEPopupProvider><App/></TEPopupProvider>
+ * ```
+ *
+ * And then access it through the `TEPopupContext` via the many different ways of access a context. In this example I use `useContext` as follows:
+ *
+ * In addition, `useTEPopups` is a nice helper hook that provides easy to use funtions instead of the dispatch types. The below example is identical to the one above but uses the `useTEPopups` hook.
+ *
+ */
 export const TEPopupProvider: React.FC = (props) => {
 	const [state, dispatch] = useReducer(reducer, initialState)
 	const {

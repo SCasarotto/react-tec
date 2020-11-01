@@ -7,7 +7,11 @@ import { TEInput, TEInputProps } from '../TEInput'
 export interface TEInputRowProps extends TERowCustomProps, TELabelCustomProps, TEInputProps {
 	labelForKey: string
 }
-
+/**
+ *
+ * A component containing a `TERow`, a `TELabel` and either a `TEInput`. In addition to the props below, reference all props for `TEInput`.
+ *
+ */
 export const TEInputRow = React.forwardRef<HTMLInputElement, TEInputRowProps>((props, ref) => {
 	const { rowSize, last, className = '', title, disabled, required, labelForKey, ...rest } = props
 

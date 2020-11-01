@@ -20,6 +20,13 @@ export interface TEFileInputProps
 	filePattern?: RegExp
 	resetKey?: string
 }
+/**
+ *
+ * A stylized `<input type="file"/>` with the ability to drag and drop and regex test file type.
+ *
+ * Outside of the props below, additional props are passed directly to the input so reference [HTML documentation for more information](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file).
+ *
+ */
 export const TEFileInput = React.forwardRef<HTMLInputElement, TEFileInputProps>((props, ref) => {
 	const [active, setActive] = useState(false)
 	const [fileArray, setFileArray] = useState<FileList | undefined>()

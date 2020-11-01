@@ -9,6 +9,11 @@ export interface TETitleBarProps {
 	subtitle?: string
 	rightComponent?: React.ReactNode
 }
+/**
+ *
+ * TETitleBar simple title bar seen at the top of all of the pages.
+ *
+ */
 export const TETitleBar: React.FC<TETitleBarProps> = (props) => {
 	const { className = '', title, leftComponent, subtitle, rightComponent } = props
 

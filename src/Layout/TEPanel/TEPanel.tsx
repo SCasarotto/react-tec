@@ -15,6 +15,11 @@ export type PanelSize =
 export interface TEPanelProps extends TEPanelTitleProps {
 	size?: PanelSize
 }
+/**
+ *
+ * `TEPanel` simple containing element containing a `TEPanelTitle`. Is expected to be used as a child of `TEPanelWrapper`. In addition to the props below, view `TEPanelTitle` for additional props.
+ *
+ */
 export const TEPanel: React.FC<TEPanelProps> = (props) => {
 	const {
 		size = 'full',

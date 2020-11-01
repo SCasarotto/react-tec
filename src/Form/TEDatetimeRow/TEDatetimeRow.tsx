@@ -11,6 +11,11 @@ export interface TEDatetimeRowProps
 		TEDatetimeInputProps {
 	labelForKey: string
 }
+/**
+ *
+ * A `TERow`, `TELabel` and `TEDatetimeInput`. In addition to the props below, reference all props for `TEDatetimeInput`.
+ *
+ */
 export const TEDatetimeRow = React.forwardRef<ReactDatePicker, TEDatetimeRowProps>((props, ref) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 

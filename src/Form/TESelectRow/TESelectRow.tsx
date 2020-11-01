@@ -43,6 +43,11 @@ const UnwarppedSearchSelectRow = <T extends OptionTypeBase>(
 
 // This is here because of the need to useForward Ref with a generic prop type
 // See: https://stackoverflow.com/a/58473012
+/**
+ *
+ * A form row with title and `TESelect`. In additiona to the props below, reference all props for `TESelect`.
+ *
+ */
 export const TESelectRow = React.forwardRef(UnwarppedSearchSelectRow) as <T extends OptionTypeBase>(
 	props: TESelectRowProps<T> & { ref?: React.Ref<Select<T>> },
 ) => ReactElement

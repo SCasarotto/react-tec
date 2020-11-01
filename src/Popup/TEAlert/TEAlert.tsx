@@ -9,6 +9,11 @@ export interface TEAlertProps extends TEPopupProps {
 	onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 	buttonTitle?: string
 }
+/**
+ *
+ * TEAlert is a simple alert popup typically used to display error or success messages.
+ *
+ */
 export const TEAlert: React.FC<TEAlertProps> = (props) => {
 	const {
 		title,

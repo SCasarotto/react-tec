@@ -58,6 +58,11 @@ const UnwrappedTESelect = <T extends OptionTypeBase>(
 
 // This is here because of the need to useForward Ref with a generic prop type
 // See: https://stackoverflow.com/a/58473012
+/**
+ *
+ * TESelect is simply a styled [React Select](https://github.com/JedWatson/react-select) Component. A few props have been adjusted or defaulted.
+ *
+ */
 export const TESelect = React.forwardRef(UnwrappedTESelect) as <T extends OptionTypeBase>(
 	props: SelectProps<T> & { ref?: React.Ref<Select<T>> },
 ) => ReactElement

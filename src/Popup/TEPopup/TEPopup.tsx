@@ -6,6 +6,11 @@ export interface TEPopupProps {
 	visible: boolean
 	className?: string
 }
+/**
+ *
+ * TEPopup simple popup component.
+ *
+ */
 export const TEPopup: React.FC<TEPopupProps> = (props) => {
 	const { visible, className = '', children } = props
 

@@ -21,6 +21,36 @@ const TEAppWrapperContent: React.FC<TEAppWrapperProps> = (props) => {
 	)
 }
 
+/**
+ *
+ * TEAppWrapper is meant to be the single top level wrapping element you need. Having said that, it does contain a number of things. `TEAppWrapper` contain the following:
+ *
+ * ```
+ * <BrowserRouter>
+ * 	<TEScrollToTop>
+ * 		<TEThemeProvider theme={theme} globalStyles={globalStyles}>
+ *			<TEPopupProvider>{children}</TEPopupProvider>
+ *		</TEThemeProvider>
+ * 	</TEScrollToTop>
+ * </BrowserRouter>
+ * ```
+ *
+ * Here `BrowserRouter` comes from [react-router-dom](https://reacttraining.com/react-router/web/api/BrowserRouter). For all other components, please view thier given documentation page.
+ *
+ * As for props, the only props `TEAppWrapper` accepts are those that `TEThemeProvider` accepts.
+ *
+ * `TEAppWrapper` is implemented like the following in this project:
+ *
+ * ```
+ * const Main = () => (
+ * 	<TEAppWrapper globalStyles={globalStyles}>
+ *		<App />
+ * 	</TEAppWrapper>
+ * )
+ * ReactDOM.render(<Main />, document.getElementById('root'))
+ * ```
+ *
+ */
 export const TEAppWrapper: React.FC<TEAppWrapperProps> = (props) => {
 	return (
 		<BrowserRouter>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { matchPath, useLocation } from 'react-router'
 
 import { Li, Link, Title } from './styledComponents'
@@ -9,7 +9,15 @@ export interface TESideNavLinkProps {
 	activePath?: string
 	exact?: boolean
 	className?: string
+	children?: ReactNode
 }
+/**
+ *
+ * TESideNavLink is a stylized `TENavLink` built specifically for left navbars.
+ *
+ * Note: `TESideNavLink` is a `TENavLink` warpper in an `li`. So its best this component is placed inside of a `ul`.
+ *
+ */
 export const TESideNavLink: React.FC<TESideNavLinkProps> = (props) => {
 	const location = useLocation()
 	const { title, to, children, activePath, exact, className = '', ...rest } = props

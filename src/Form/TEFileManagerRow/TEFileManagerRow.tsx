@@ -29,6 +29,13 @@ export interface TEFileManagerRowOnRemoveData {
 	path: string
 	index: number
 }
+/**
+ *
+ * A component to manage uploading, downloading, and deleting files. This component contains a `TERow`, `TELabel`, `TEFileInput` and some additional components.
+ *
+ * Note: This component is a bit complex and may shift in API over time.
+ *
+ */
 export interface TEFileManagerRowProps extends TERowCustomProps, TELabelCustomProps, TEInputProps {
 	labelForKey: string
 	fileSrcArray: TEFileManagerRowSrcObject[]

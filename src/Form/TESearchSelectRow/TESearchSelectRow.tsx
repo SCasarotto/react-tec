@@ -13,6 +13,11 @@ export interface TESearchSelectRowProps extends TERowCustomProps, TELabelCustomP
 	labelForKey: string
 	[key: string]: any
 }
+/**
+ *
+ * A `TERow`, `TELabel` and `TESearchSelectInput`. In additiona to the props below, reference all props for `TESearchSelectInput`.
+ *
+ */
 export const TESearchSelectRow = React.forwardRef<any, TESearchSelectRowProps>((props, ref) => {
 	const { rowSize, last, className = '', title, labelForKey, ...rest } = props
 

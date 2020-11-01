@@ -22,6 +22,11 @@ export interface TERadioButtonGroupProps
 	buttonArray: (string | TERadioButtonData)[]
 	scrolling?: boolean
 }
+/**
+ *
+ * A component containing a `TERow`, a `TELabel`, and a group of `TERadioInput` cooresponding `TELabel`.
+ *
+ */
 export const TERadioButtonGroup: React.FC<TERadioButtonGroupProps> = (props) => {
 	const {
 		rowSize,

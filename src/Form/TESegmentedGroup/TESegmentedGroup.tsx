@@ -20,6 +20,11 @@ export interface TESegmentedGroupProps
 	inline?: boolean
 	labelForKey: string
 }
+/**
+ *
+ * TESegmentedGroup is a stylized `TERadioButtonGroup`. This component mimics the style of iOS's Segmented Controls.
+ *
+ */
 export const TESegmentedGroup: React.FC<TESegmentedGroupProps> = (props) => {
 	const {
 		title,

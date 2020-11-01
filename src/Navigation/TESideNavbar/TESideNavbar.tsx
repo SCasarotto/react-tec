@@ -13,6 +13,11 @@ export interface TESideNavbarProps {
 	links?: TESideNavLinkProps[]
 	className?: string
 }
+/**
+ *
+ * TESideNavbar is the sidebar component you see to the left of this page.
+ *
+ */
 export const TESideNavbar: React.FC<TESideNavbarProps> = (props) => {
 	const { sidebarWidth = 200, logo, Header, links, className = '', Footer } = props
 	return (

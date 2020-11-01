@@ -11,6 +11,11 @@ export interface TEConfirmProps extends TEPopupProps {
 	rightOnClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 	rightButtonTitle?: string
 }
+/**
+ *
+ * TEConfirm is a simple confirm popup typically used to have the user confirm their action.
+ *
+ */
 export const TEConfirm: React.FC<TEConfirmProps> = (props) => {
 	const {
 		title,

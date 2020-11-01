@@ -9,6 +9,13 @@ export interface TEDatetimeInputProps extends Omit<ReactDatePickerProps, 'value'
 	value?: ReactDatePickerProps['selected']
 	withPortalButton?: boolean
 }
+/**
+ *
+ * A styled [React Datepicker](https://reactdatepicker.com/) Component. A few props have been adjusted or defaulted.
+ *
+ * Note: Styling for this component is not handled the same way as most React TEC components. In order to style everything the React DatePicker css has been internalized in the React TEC global styles. In the future this may be adjusted to make styling easier and more consistent with other components.
+ *
+ */
 export const TEDatetimeInput = React.forwardRef<DatePicker, TEDatetimeInputProps>((props, ref) => {
 	const {
 		selected,

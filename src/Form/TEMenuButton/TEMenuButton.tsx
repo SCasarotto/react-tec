@@ -12,6 +12,15 @@ export interface TEMenuButtonProps extends Omit<PopperProps<any>, 'children'> {
 	title: ReactNode
 	children(props: TEMenuButtonChildrenProps): ReactNode
 }
+/**
+ *
+ * TEMenuButton is a simple dropdown component. This component relies primarily on [React Popper](https://github.com/popperjs/react-popper) Component.
+ *
+ * All the props and types are the same besides having added `hideMenu` function to the data that is returned to the children.
+ *
+ * Please note that in order for this component to function, the app must be wrapped by `TEAppWrapper` because it contains the `Manager` wrapping component required by Popper.
+ *
+ */
 export const TEMenuButton: React.FC<TEMenuButtonProps> = (props) => {
 	const { placement, className = '', title, children, ...rest } = props
 	const [menuVisible, setMenuVisible] = useState(false)

@@ -1153,6 +1153,72 @@ export interface TEThemeProviderProps {
 	}
 	globalStyles?: string
 }
+/**
+ *
+ * TEThemeProvider is required to wrap any React TEC components because it sets up the styled-components theme used by all of them. Theming in React TEC is not fully flusuhed out but you can adjust some properties. By passing an object to prop `theme` you can overwrite these values.
+ *
+ * ```
+ *
+ * const initialTheme = {
+ * 	white: '#FFFFFF',
+ * 	lightestGray: '#F7F7F7',
+ * 	lighterGray: '#F4F4F4',
+ * 	lightGray: '#E5E5E5',
+ * 	gray: '#C5C5C5',
+ * 	darkGray: '#A4A4A4',
+ * 	darkerGray: '#5E5E5E',
+ * 	black: '#39444C',
+ *
+ * 	primary: '#007CC3',
+ * 	secondary: '#4ADEC2',
+ *
+ * 	shadowBottom: 'rgba(0, 0, 0, 0.1) 0px 15px 15px -15px, rgba(0, 0, 0, 0.05) 0px 5px 5px -5px',
+ * 	shadowTop: 'rgba(0, 0, 0, 0.1) 0px -15px 15px -15px, rgba(0, 0, 0, 0.05) 0px -5px 5px -5px',
+ * 	shadowRight: 'rgba(0, 0, 0, 0.1) 15px 0px 15px -15px, rgba(0, 0, 0, 0.05) 5px 0px 5px -5px',
+ * 	shadowCenter: 'rgba(0, 0, 0, 0.1) 0px 0px 6px 0px, rgba(0, 0, 0, 0.05) 0px 0px 2px 0px',
+ * }
+ *
+ * ```
+ *
+ * This is done by:
+ *
+ * ```
+ *
+ * const theme = {
+ * 	primary: '#4adec2'
+ * }
+ *
+ * const Main = () => (
+ * 	<TEThemeProvider theme={theme}>
+ * 		<App />
+ * 	</TEThemeProvider>
+ * )
+ *
+ * ```
+ *
+ * In addition to theme properties, you can add styles to the styled-components globalStyles. This can be done like the following:
+ *
+ * ```
+ *
+ * const globalStyles = `
+ * 	html,
+ * 	body {
+ * 		margin: 0;
+ * 		padding: 0;
+ * 	}
+ * `
+ *
+ * const Main = () => (
+ * 	<TEThemeProvider globalStyles={globalStyles}>
+ * 		<App />
+ * 	</TEThemeProvider>
+ * )
+ *
+ * ```
+ *
+ * These additional styles will be placed at the bottom of the global styles allowing you to overwrite any above.
+ *
+ */
 export const TEThemeProvider: React.FC<TEThemeProviderProps> = (props) => {
 	const { theme, globalStyles } = props
 	return (

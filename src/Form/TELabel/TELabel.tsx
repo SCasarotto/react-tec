@@ -10,7 +10,13 @@ export interface TELabelCustomProps {
 export interface TELabelProps
 	extends React.LabelHTMLAttributes<HTMLLabelElement>,
 		TELabelCustomProps {}
-
+/**
+ *
+ * A simple styling of an html `<label>`.
+ *
+ * Besides the props mentioned below, all props are passed right through to the label. Reference the [HTML documentation for more information](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+ *
+ */
 export const TELabel = React.forwardRef<HTMLLabelElement, TELabelProps>((props, ref) => {
 	const { children, required, className = '', ...rest } = props
 	return (

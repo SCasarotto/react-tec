@@ -9,6 +9,11 @@ export interface TEErrorLoadingAlertProps {
 	buttonTitle?: string
 	onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }
+/**
+ *
+ * TEErrorLoadingAlert in a simple component built inside of a `TEPanelWrapper` and `TEPanel` typically used when there is a loading error for a whole page.
+ *
+ */
 export const TEErrorLoadingAlert: React.FC<TEErrorLoadingAlertProps> = (props) => {
 	const { className = '', title, message, onClick, buttonTitle, children } = props
 	return (

@@ -39,6 +39,15 @@ export interface TEImageRowProps extends TERowCustomProps, TELabelCustomProps, T
 	onRemove(data: TEImageRowOnRemoveData): Promise<any>
 	onUpload({ file, editor }: { file?: File; editor: any }): Promise<any>
 }
+/**
+ *
+ * A component to manage uploading, downloading, and deleting images. This component contains a `TERow`, `TELabel`, `TEFileInput` and some additional components.
+ *
+ * The editor popup is based on [React Avatar Editor](https://github.com/mosch/react-avatar-editor#readme).
+ *
+ * Note: This component is a bit complex and may shift in API over time.
+ *
+ */
 export const TEImageRow: React.FC<TEImageRowProps> = (props) => {
 	const [editorVisible, setEditorVisible] = useState(false)
 	const [file, setFile] = useState<File | undefined>(undefined)

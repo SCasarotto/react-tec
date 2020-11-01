@@ -24,6 +24,11 @@ export interface TECheckboxGroupProps
 	buttonArray: (string | TECheckboxGroupButtonData)[]
 	scrolling?: boolean
 }
+/**
+ *
+ * A form row with title and group of checkboxes and cooresponding labels.
+ *
+ */
 export const TECheckboxGroup: React.FC<TECheckboxGroupProps> = (props) => {
 	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { checkedValues, onChange } = props

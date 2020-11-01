@@ -8,6 +8,15 @@ interface TEPrivateRouteAuthCheck {
 export interface TEPrivateRouteProps extends RouteProps {
 	authChecks?: TEPrivateRouteAuthCheck[]
 }
+/**
+ *
+ * `TEPrivateRoute` provides an easy way to redirect a user if they are not signed in or don't have the appropriate user permissions.
+ *
+ * In addition to the props below, review the props of a `Route` from [react-router](https://reacttraining.com/react-router/web/api/Route).
+ *
+ * You will want to be careful when using a `path='/'` or some other path that also matches to `authPath` or `accessDeniedPath` without `exact=true` because it will result in an infinate loop.
+ *
+ */
 export const TEPrivateRoute: React.FC<TEPrivateRouteProps> = (props) => {
 	const { authChecks, component: Component, ...rest } = props
 
