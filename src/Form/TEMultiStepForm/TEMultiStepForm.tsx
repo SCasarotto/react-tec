@@ -40,18 +40,26 @@ export interface TEMultiStepFormProps {
 }
 export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepFormProps>(
 	(props, ref) => {
+		const {
+			className = '',
+			handleCancelOnClick,
+			stepData,
+			// roundedButtons,
+			submitButtonId,
+			onStepChange,
+			onSubmit,
+		} = props
+		const stepCount = stepData?.length ?? 0
+
 		const [currentStep, setCurrentStep] = useState(0)
 
 		const updateAndEmitStep = (step: number) => {
-			const { onStepChange } = props
 			setCurrentStep(step)
 			if (onStepChange) {
 				onStepChange(step)
 			}
 		}
 		const handlePreviousPressed = async () => {
-			const { handleCancelOnClick, stepData } = props
-
 			const moveBack = () => {
 				if (currentStep === 0) {
 					if (handleCancelOnClick) {
@@ -63,8 +71,7 @@ export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepForm
 			}
 
 			try {
-				const onPrevious =
-					stepData && stepData[currentStep] && stepData[currentStep].onPrevious
+				const onPrevious = stepData && stepData?.[currentStep]?.onPrevious
 				if (onPrevious) {
 					await onPrevious()
 					moveBack()
@@ -76,8 +83,6 @@ export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepForm
 			}
 		}
 		const handleNextPressed = async () => {
-			const { onSubmit, stepData } = props
-
 			const moveForward = async () => {
 				try {
 					if (currentStep + 1 === stepData.length) {
@@ -91,7 +96,7 @@ export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepForm
 				}
 			}
 			try {
-				const onNext = stepData && stepData[currentStep] && stepData[currentStep].onNext
+				const onNext = stepData && stepData?.[currentStep]?.onNext
 				if (onNext) {
 					await onNext()
 					moveForward()
@@ -103,37 +108,32 @@ export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepForm
 			}
 		}
 
-		const {
-			className = '',
-			handleCancelOnClick,
-			stepData,
-			// roundedButtons,
-			submitButtonId,
-		} = props
-
 		return (
 			<Container className={`TEMultiStepForm ${className}`}>
 				<StepContainer className='TEMultiStepFormStepContainer'>
-					<StepBar stepCount={stepData.length} className='TEMultiStepFormStepBar' />
-					{stepData.map((step, index) => {
-						const { title } = step
+					<StepBar stepCount={stepCount} className='TEMultiStepFormStepBar' />
+					{stepData &&
+						stepData.map((step, index) => {
+							const { title } = step
 
-						return (
-							<StepWrapper
-								key={index}
-								stepCount={stepData.length}
-								className='TEMultiStepFormStepWrapper'
-							>
-								<StepNumber
-									active={currentStep === index}
-									className='TEMultiStepFormStepNumber'
+							return (
+								<StepWrapper
+									key={index}
+									stepCount={stepCount}
+									className='TEMultiStepFormStepWrapper'
 								>
-									{index + 1}
-								</StepNumber>
-								<StepTitle className='TEMultiStepFormStepTitle'>{title}</StepTitle>
-							</StepWrapper>
-						)
-					})}
+									<StepNumber
+										active={currentStep === index}
+										className='TEMultiStepFormStepNumber'
+									>
+										{index + 1}
+									</StepNumber>
+									<StepTitle className='TEMultiStepFormStepTitle'>
+										{title}
+									</StepTitle>
+								</StepWrapper>
+							)
+						})}
 				</StepContainer>
 				<TEForm className='TEMultiStepFormForm' ref={ref}>
 					{stepData && stepData.length > 0 && stepData?.[currentStep]?.component}
@@ -156,7 +156,7 @@ export const TEMultiStepForm = React.forwardRef<HTMLFormElement, TEMultiStepForm
 							className='TEMultiStepFormStepButton TEMultiStepFormStepButtonright'
 							id={submitButtonId}
 						>
-							{currentStep + 1 === stepData.length ? 'submit' : 'next'}
+							{currentStep + 1 === stepCount ? 'submit' : 'next'}
 						</StepButton>
 					</ButtonContainer>
 				</TEForm>

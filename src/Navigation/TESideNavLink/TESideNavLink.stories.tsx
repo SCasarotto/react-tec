@@ -12,4 +12,7 @@ export default {
 const Template: Story<TESideNavLinkProps> = (args) => <TESideNavLink {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	to: '/somelink',
+	title: 'some link',
+}
