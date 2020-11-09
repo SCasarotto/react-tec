@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { Container, Content, Ul, Li, Link } from './styledComponents'
-import { TESideNavLinkProps } from './../TESideNavLink'
 
 export interface TESubNavbarProps {
-	links: TESideNavLinkProps[]
+	links: {
+		to: string
+		activePath?: string
+		exact?: boolean
+		className?: string
+		children?: ReactNode
+	}[]
 	rightComponent?: React.ReactNode
 	className?: string
 }
