@@ -16,7 +16,7 @@
 		"lint": "tsdx lint",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"build-and-deploy": "yarn run build-storybook -o ./docs/ && yarn run s3-deploy && yarn run set-cache-control && echo '🚀 Deployed!!!'",
+		"build-and-deploy": "yarn run build-storybook -o ./docs/ --no-dll && yarn run s3-deploy && yarn run set-cache-control && echo '🚀 Deployed!!!'",
 		"s3-deploy": "s3cmd sync ./docs/* s3://www.react-tec.com --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --cf-invalidate-default-index",
 		"set-cache-control": "s3cmd modify --add-header 'Cache-Control: no-cache, must-revalidate' s3://www.react-tec.com/index.html"
 	},
