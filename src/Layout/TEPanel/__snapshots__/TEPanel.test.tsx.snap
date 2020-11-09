@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEPanel matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+@media (max-width:800px) {
+  .c0 {
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width:650px) {
+  .c0 {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width:450px) {
+  .c0 {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+  }
+}
+
+<div
+    class="c0 TEPanel "
+  />
+</DocumentFragment>
+`;

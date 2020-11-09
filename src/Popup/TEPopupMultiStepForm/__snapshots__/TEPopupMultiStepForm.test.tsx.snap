@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEPopupMultiStepForm matches snapshot 1`] = `
+<DocumentFragment>
+  .c5 {
+  position: relative;
+  width: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 5px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  border: 1px solid;
+  -webkit-transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+}
+
+.c7:hover,
+.c7:active {
+  border: 1px solid;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
+  border: 1px solid;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.c4 {
+  position: absolute;
+  top: 14px;
+  height: 2px;
+  width: -Infinity%;
+  left: Infinity%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  overflow-y: auto;
+  -webkit-transition: visibility 0.25s ease-in-out,opacity 0.25s ease-in-out;
+  transition: visibility 0.25s ease-in-out,opacity 0.25s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.c2 {
+  position: relative;
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 650px;
+}
+
+.c1 .TEPopupContent {
+  width: 90%;
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 30px;
+}
+
+@media (max-width:500px) {
+  .c3 {
+    margin-bottom: 15;
+  }
+}
+
+<div
+    class="c0 TEPopup c1 TEPopupMultiStepForm "
+  >
+    <div
+      class="c2 TEPopupContent"
+    >
+      <div
+        class="TEMultiStepForm TEPopupMultiStepFormMultiStepForm"
+      >
+        <div
+          class="c3 TEMultiStepFormStepContainer"
+        >
+          <div
+            class="c4 TEMultiStepFormStepBar"
+          />
+        </div>
+        <form
+          class="c5 TEForm TEMultiStepFormForm"
+        >
+          <div
+            class="c6 TEMultiStepFormButtonContainer"
+          >
+            <button
+              class="c7 TEButton TEMultiStepFormStepButton TEMultiStepFormStepButtonLeft"
+              type="button"
+            >
+              cancel
+            </button>
+            <button
+              class="c7 TEButton TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
+              type="button"
+            >
+              next
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

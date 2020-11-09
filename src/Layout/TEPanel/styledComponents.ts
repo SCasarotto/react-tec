@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { PanelSize } from './TEPanel'
 
-export const Container = styled.div<{ size?: string }>`
+export const Container = styled.div<{ size?: PanelSize }>`
 	position: relative;
 	background-color: ${(props) => props.theme.white};
 	border-radius: 5px;

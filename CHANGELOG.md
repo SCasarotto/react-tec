@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.4.0 - 11-8-2020
+
+This was a really large update.
+
+-   Updated all packages to latest at this date
+-   Greatly improve types of many components
+-   Rebuilt docs with storybook
+-   Add many more tests to all components
+
+## Changes
+
+-   Updated dependencies:
+    -   `@types/react-select` from `^3.0.10` to `^3.0.11`
+    -   `react-phone-number-input` from `^3.0.21` to `^3.0.22`
+
 ## 0.3.6 - 3-15-2020
 
 ## Changes

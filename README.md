@@ -1,10 +1,8 @@
 # React TEC
 
-> React Component Library used at 38th Street Studios
-
 [![NPM](https://img.shields.io/npm/v/react-tec.svg)](https://www.npmjs.com/package/react-tec) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-React TEC is a React component library built and maintained by [38th Street Studios](https://www.38thstreetstudios.com/). These docs will provide you with simple get started instructions and detailed examples of every component in the library.
+These docs will provide you with simple get started instructions and detailed examples of every component in the library.
 
 ## [Documentation](https://www.react-tec.com/)
 

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TESearchSelectInput matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="PowerSelect TESearchSelectInput "
+    tabindex="0"
+  >
+    <div
+      class="PowerSelect__Trigger PowerSelect__Trigger--empty"
+    >
+      <div
+        class="PowerSelect__TriggerLabel"
+      >
+        <span
+          class="PowerSelect__Placeholder"
+        />
+      </div>
+      <span
+        class="PowerSelect__Clear"
+      />
+      <span
+        class="PowerSelect__TriggerStatus"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

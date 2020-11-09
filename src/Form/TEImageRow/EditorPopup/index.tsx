@@ -1,11 +1,7 @@
-//
-//Version 0.3.0
-//
-
 import React, { useState, useRef, FormEvent } from 'react'
-import AvatarEditor from 'react-avatar-editor'
+import AvatarEditor, { AvatarEditorProps } from 'react-avatar-editor'
 
-import { TEPopupForm } from '../../../Popup/TEPopupForm'
+import { TEPopupForm, TEPopupFormProps } from '../../../Popup/TEPopupForm'
 import { TELabel } from '../../TELabel'
 
 import {
@@ -17,11 +13,16 @@ import {
 	RedoRotationIcon,
 } from './styledComponents'
 
-//TODO: Improve this
-export const EditorPopup: React.FC<any> = (props) => {
+interface Props extends Omit<TEPopupFormProps, 'onSubmit' | 'onClose'> {
+	avatarEditorData: Omit<AvatarEditorProps, 'image'>
+	file: string | File //Same as AvatarEditorProps image
+	onSubmit(e: FormEvent<HTMLFormElement>, editor: AvatarEditor | null): void
+	onCancel: TEPopupFormProps['onClose'] // This may have been a mistake in naming but at this time I don't want to make a breaking change.
+}
+export const EditorPopup: React.FC<Props> = (props) => {
 	const [editorScale, setEditorScale] = useState(1.1)
 	const [rotation, setRotation] = useState(0)
-	const editor = useRef(null)
+	const editor = useRef<AvatarEditor>(null)
 
 	const {
 		className = '',

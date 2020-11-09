@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TERadioButtonGroup matches snapshot 1`] = `
+<DocumentFragment>
+  .c6 {
+  position: relative;
+  display: block;
+  width: auto;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0 {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  padding-right: 0px;
+  width: 100%;
+}
+
+.c4 {
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.c4:disabled {
+  cursor: not-allowed;
+}
+
+.c1 {
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 {
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.c7 {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media (max-width:550px) {
+  .c6 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:550px) {
+  .c7 {
+    font-size: 12px;
+  }
+}
+
+<div
+    class="c0 TERow c1 TERadioButtonGroup "
+  >
+    <div
+      class="c2 TERadioButtonGroupInputWrapper"
+    >
+      <div
+        class="c0 TERow c3 TERadioButtonGroupRowWrapper"
+      >
+        <input
+          checked=""
+          class="c4 TERadioButtonInput c5 TERadioButtonGroupRadioButton"
+          id="testTERadioButtonGroupsomeValue"
+          type="radio"
+          value="someValue"
+        />
+        <label
+          class="c6 TELabel c7 TERadioButtonGroupLabel"
+          for="testTERadioButtonGroupsomeValue"
+        >
+          someValue
+        </label>
+      </div>
+      <div
+        class="c0 TERow c3 TERadioButtonGroupRowWrapper"
+      >
+        <input
+          class="c4 TERadioButtonInput c5 TERadioButtonGroupRadioButton"
+          id="testTERadioButtonGroupotherValue"
+          type="radio"
+          value="otherValue"
+        />
+        <label
+          class="c6 TELabel c7 TERadioButtonGroupLabel"
+          for="testTERadioButtonGroupotherValue"
+        >
+          otherValue
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

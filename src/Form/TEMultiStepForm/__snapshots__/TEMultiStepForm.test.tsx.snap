@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEMultiStepForm matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  position: relative;
+  width: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+
+.c4 {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 5px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  border: 1px solid;
+  -webkit-transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+  transition: color 0.2s ease-in,background-color 0.2s ease-in,border 0.2s ease-in;
+}
+
+.c4:hover,
+.c4:active {
+  border: 1px solid;
+}
+
+.c4:disabled {
+  cursor: not-allowed;
+  border: 1px solid;
+}
+
+.c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.c1 {
+  position: absolute;
+  top: 14px;
+  height: 2px;
+  width: -Infinity%;
+  left: Infinity%;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width:500px) {
+  .c0 {
+    margin-bottom: 15;
+  }
+}
+
+<div
+    class="TEMultiStepForm "
+  >
+    <div
+      class="c0 TEMultiStepFormStepContainer"
+    >
+      <div
+        class="c1 TEMultiStepFormStepBar"
+      />
+    </div>
+    <form
+      class="c2 TEForm TEMultiStepFormForm"
+    >
+      <div
+        class="c3 TEMultiStepFormButtonContainer"
+      >
+        <button
+          class="c4 TEButton TEMultiStepFormStepButton TEMultiStepFormStepButtonright"
+          type="button"
+        >
+          next
+        </button>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

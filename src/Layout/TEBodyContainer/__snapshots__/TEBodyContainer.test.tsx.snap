@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEBodyContainer matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  width: calc(100% - 200px);
+  min-height: 100vh;
+  margin-left: 200px;
+}
+
+<div
+    class="c0 TEBodyContainer "
+  />
+</DocumentFragment>
+`;
