@@ -12,4 +12,6 @@ export default {
 const Template: Story<TETextareaProps> = (args) => <TETextarea {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	onChange: (e) => console.log(e.target.value),
+}

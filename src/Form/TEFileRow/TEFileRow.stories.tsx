@@ -13,6 +13,7 @@ const Template: Story<TEFileRowProps> = (args) => <TEFileRow {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	labelForKey: 'fileRow',
-	title: 'File Row',
+	title: 'My FileRow',
+	labelForKey: 'SomeUniqueKey2',
+	onChange: (files) => console.log(files),
 }

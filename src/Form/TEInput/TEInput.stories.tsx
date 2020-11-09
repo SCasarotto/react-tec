@@ -12,4 +12,6 @@ export default {
 const Template: Story<TEInputProps> = (args) => <TEInput {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	onChange: (e) => console.log(e.target.value),
+}

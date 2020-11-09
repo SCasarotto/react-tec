@@ -13,6 +13,6 @@ const Template: Story<TEDatetimeRowProps> = (args) => <TEDatetimeRow {...args} /
 
 export const Default = Template.bind({})
 Default.args = {
-	labelForKey: 'datetimeRow',
+	labelForKey: 'SomeUniqueKey',
 	title: 'Datetime Row',
 }

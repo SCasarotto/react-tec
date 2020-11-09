@@ -12,4 +12,7 @@ export default {
 const Template: Story<TERadioButtonInputProps> = (args) => <TERadioButtonInput {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	onChange: (e) => console.log(e.target.value),
+	value: 'agreeToEmailSpam',
+}

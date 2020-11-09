@@ -12,4 +12,6 @@ export default {
 const Template: Story<TETitleBarProps> = (args) => <TETitleBar {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'Some title',
+}

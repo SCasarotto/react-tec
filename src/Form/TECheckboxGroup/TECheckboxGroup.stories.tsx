@@ -9,11 +9,14 @@ export default {
 	argTypes: {},
 } as Meta
 
-const Template: Story<TECheckboxGroupProps> = (args) => <TECheckboxGroup {...args} />
+const Template: Story<TECheckboxGroupProps> = (args) => {
+	return <TECheckboxGroup {...args} />
+}
 
 export const Default = Template.bind({})
 Default.args = {
 	labelForKey: 'TECheckboxGroup',
 	title: 'TECheckboxGroup',
 	buttonArray: ['one', '2', 'hour'],
+	onChange: (values) => console.log(values),
 }

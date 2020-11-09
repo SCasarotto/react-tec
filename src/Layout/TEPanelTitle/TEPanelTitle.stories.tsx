@@ -12,4 +12,13 @@ export default {
 const Template: Story<TEPanelTitleProps> = (args) => <TEPanelTitle {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'Title',
+	subtitle: 'Subtitle',
+}
+
+export const Components = Template.bind({})
+Components.args = {
+	leftComponent: <button>Some Button</button>,
+	rightComponent: <input />,
+}

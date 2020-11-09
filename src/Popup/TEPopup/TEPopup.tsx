@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { Background, Content } from './styledComponents'
 
 export interface TEPopupProps {
 	visible: boolean
 	className?: string
+	children?: ReactNode
 }
 /**
  *

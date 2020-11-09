@@ -12,4 +12,8 @@ export default {
 const Template: Story<TEPhoneNumberRowProps> = (args) => <TEPhoneNumberRow {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'My Phone Number Input',
+	labelForKey: 'SomeUniqueKey42',
+	onChange: (phoneNumber) => console.log(phoneNumber),
+}

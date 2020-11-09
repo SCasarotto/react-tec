@@ -12,4 +12,16 @@ export default {
 const Template: Story<TEInputRowProps> = (args) => <TEInputRow {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'My Input',
+	labelForKey: 'SomeUniqueKey42',
+	onChange: (e) => console.log(e.target.value),
+}
+
+export const Number = Template.bind({})
+Number.args = {
+	type: 'number',
+	labelForKey: 'SomeUniqueKey666',
+	title: 'My Number Input',
+	onChange: (e) => console.log(e.target.value),
+}

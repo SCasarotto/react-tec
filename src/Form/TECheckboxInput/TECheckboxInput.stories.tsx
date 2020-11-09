@@ -13,5 +13,6 @@ const Template: Story<TECheckboxInputProps> = (args) => <TECheckboxInput {...arg
 
 export const Default = Template.bind({})
 Default.args = {
-	value: 'soemValue',
+	onChange: (e) => console.log(e.target.value),
+	value: 'agreeToEmailSpam',
 }

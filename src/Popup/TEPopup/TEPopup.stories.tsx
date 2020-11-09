@@ -12,4 +12,7 @@ export default {
 const Template: Story<TEPopupProps> = (args) => <TEPopup {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	visible: true,
+	children: <h1 style={{ textAlign: 'center' }}>Some Title</h1>,
+}

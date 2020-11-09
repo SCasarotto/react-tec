@@ -13,4 +13,14 @@ export default {
 const Template: Story = (args) => <TESelectRow {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	labelForKey: 'SomeUniqueKey123',
+	title: 'My Search Select Row',
+	options: [
+		{ label: 'value1', value: 'value1' },
+		{ label: 'otherValue', value: 'otherValue' },
+		{ label: 'Click Me!', value: 'Click Me!' },
+		{ label: 'No No Pick Me!!!', value: 'No No Pick Me!!!' },
+	],
+	onChange: (value: any) => console.log(value),
+}

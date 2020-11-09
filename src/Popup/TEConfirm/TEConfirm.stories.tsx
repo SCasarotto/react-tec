@@ -12,4 +12,12 @@ export default {
 const Template: Story<TEConfirmProps> = (args) => <TEConfirm {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'TEConfirm!',
+	message: 'Are you super sure?',
+	visible: true,
+	leftOnClick: () => console.log('left'),
+	leftButtonTitle: 'No',
+	rightOnClick: () => console.log('right'),
+	rightButtonTitle: 'Yes',
+}

@@ -17,6 +17,7 @@ const Template: Story<TEButtonProps> = (args) => <TEButton {...args} />
 export const Default = Template.bind({})
 Default.args = {
 	children: 'Default',
+	onClick: () => alert('Clicked!'),
 }
 export const Disabled = Template.bind({})
 Disabled.args = {

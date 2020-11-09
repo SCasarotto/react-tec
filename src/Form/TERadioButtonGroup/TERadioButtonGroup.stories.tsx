@@ -12,4 +12,9 @@ export default {
 const Template: Story<TERadioButtonGroupProps> = (args) => <TERadioButtonGroup {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	labelForKey: 'TERadioButtonGroup',
+	title: 'My Radio Button Group',
+	onChange: (e) => console.log(e.target.value),
+	buttonArray: ['value1', 'valueTwo', 'OtherValue'],
+}

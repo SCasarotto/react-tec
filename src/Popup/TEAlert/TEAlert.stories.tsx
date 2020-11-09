@@ -12,4 +12,9 @@ export default {
 const Template: Story<TEAlertProps> = (args) => <TEAlert {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'TEAlert!',
+	message: 'You have been alerted to stay alert.',
+	visible: true,
+	children: <p style={{ textAlign: 'center' }}>Some extra components passed into the body</p>,
+}

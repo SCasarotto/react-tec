@@ -12,4 +12,6 @@ export default {
 const Template: Story<TESpinnerProps> = (args) => <TESpinner {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	size: 'large',
+}

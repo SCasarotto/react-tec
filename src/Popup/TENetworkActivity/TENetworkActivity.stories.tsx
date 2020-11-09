@@ -12,4 +12,7 @@ export default {
 const Template: Story<TENetworkActivityProps> = (args) => <TENetworkActivity {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	message: 'Loading...',
+	visible: true,
+}

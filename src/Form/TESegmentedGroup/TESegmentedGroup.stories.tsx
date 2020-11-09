@@ -12,4 +12,18 @@ export default {
 const Template: Story<TESegmentedGroupProps> = (args) => <TESegmentedGroup {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	labelForKey: 'TESegmentedGroup',
+	title: 'My Radio Button Group',
+	onChange: (e) => console.log(e.target.value),
+	buttonArray: ['value1', 'valueTwo', 'OtherValue'],
+}
+
+export const Inline = Template.bind({})
+Inline.args = {
+	labelForKey: 'TESegmentedGroupInline',
+	title: 'My Radio Button Group',
+	onChange: (e) => console.log(e.target.value),
+	buttonArray: ['value1', 'valueTwo', 'OtherValue'],
+	inline: true,
+}

@@ -12,4 +12,8 @@ export default {
 const Template: Story<TETextareaRowProps> = (args) => <TETextareaRow {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'My Text Area',
+	labelForKey: 'SomeUniqueKey42',
+	onChange: (e) => console.log(e.target.value),
+}

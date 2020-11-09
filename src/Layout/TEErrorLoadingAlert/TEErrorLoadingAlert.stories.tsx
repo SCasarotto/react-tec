@@ -12,4 +12,9 @@ export default {
 const Template: Story<TEErrorLoadingAlertProps> = (args) => <TEErrorLoadingAlert {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	title: 'Error Loading',
+	message: 'There appears to be an error loading the data you requested.',
+	onClick: () => alert('Button Clicked'),
+	buttonTitle: 'Go Back',
+}

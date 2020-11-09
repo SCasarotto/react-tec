@@ -12,4 +12,14 @@ export default {
 const Template: Story<TEFileInputProps> = (args) => <TEFileInput {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	onChange: (files) => console.log(files),
+}
+
+export const Multiple = Template.bind({})
+Default.args = {
+	onChange: (files) => console.log(files),
+	accept: 'image/*',
+	filePattern: /image-*/,
+	multiple: true,
+}
