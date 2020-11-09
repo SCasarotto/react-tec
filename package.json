@@ -1,6 +1,6 @@
 {
 	"name": "react-tec",
-	"version": "0.4.0-beta.7",
+	"version": "0.4.0",
 	"license": "MIT",
 	"author": "Stuart Casarotto",
 	"main": "dist/index.js",
@@ -15,7 +15,10 @@
 		"test": "tsdx test --env=jsdom",
 		"lint": "tsdx lint",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"build-storybook": "build-storybook",
+		"build-and-deploy": "yarn run build-storybook -o ./docs/ && yarn run s3-deploy && yarn run set-cache-control && echo '🚀 Deployed!!!'",
+		"s3-deploy": "s3cmd sync ./docs/* s3://www.react-tec.com --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --cf-invalidate-default-index",
+		"set-cache-control": "s3cmd modify --add-header 'Cache-Control: no-cache, must-revalidate' s3://www.react-tec.com/index.html"
 	},
 	"peerDependencies": {
 		"react": ">=16",
@@ -54,6 +57,7 @@
 		"@types/react-icons": "^3.0.0",
 		"@types/react-router-dom": "^5.1.6",
 		"@types/styled-components": "^5.1.4",
+		"babel-jest": "^26.6.3",
 		"babel-loader": "^8.1.0",
 		"hook": "^0.0.5",
 		"husky": "^4.2.5",
