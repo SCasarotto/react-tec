@@ -4,7 +4,7 @@ import { matchPath, useLocation } from 'react-router'
 import { Li, Link, Title } from './styledComponents'
 
 export interface TESideNavLinkProps {
-	title: string
+	title?: string
 	to: string
 	activePath?: string
 	exact?: boolean
