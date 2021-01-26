@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext } from 'react'
+import React, { createContext, useReducer, useContext, useCallback } from 'react'
 import { TEAlert } from '../../Popup/TEAlert'
 import { TEConfirm } from '../../Popup/TEConfirm'
 import { TENetworkActivity } from '../../Popup/TENetworkActivity'
@@ -137,46 +137,50 @@ export const useTEPopups = (): useTEPopupsFunctions => {
 	const { dispatch } = useContext(TEPopupContext)
 
 	//TEAlert
-	const showAlert = ({ title, message, onClick, buttonTitle }: showAlertData) =>
-		dispatch({
-			type: 'show_alert',
-			payload: {
-				alertTitle: title,
-				alertMessage: message,
-				alertOnClick: onClick,
-				alertButtonTitle: buttonTitle,
-			},
-		})
-	const hideAlert = () => dispatch({ type: 'hide_alert' })
+	const showAlert = useCallback(
+		({ title, message, onClick, buttonTitle }: showAlertData) =>
+			dispatch({
+				type: 'show_alert',
+				payload: {
+					alertTitle: title,
+					alertMessage: message,
+					alertOnClick: onClick,
+					alertButtonTitle: buttonTitle,
+				},
+			}),
+		[dispatch],
+	)
+	const hideAlert = useCallback(() => dispatch({ type: 'hide_alert' }), [dispatch])
 
 	//TEConfirm
-	const showConfirm = ({
-		title,
-		message,
-		leftOnClick,
-		leftTitle,
-		rightOnClick,
-		rightTitle,
-	}: showConfirmData) =>
-		dispatch({
-			type: 'show_confirm',
-			payload: {
-				confirmTitle: title,
-				confirmMessage: message,
-				confirmLeftOnClick: leftOnClick,
-				confirmLeftTitle: leftTitle,
-				confirmRightOnClick: rightOnClick,
-				confirmRightTitle: rightTitle,
-			},
-		})
-	const hideConfirm = () => dispatch({ type: 'hide_confirm' })
+	const showConfirm = useCallback(
+		({ title, message, leftOnClick, leftTitle, rightOnClick, rightTitle }: showConfirmData) =>
+			dispatch({
+				type: 'show_confirm',
+				payload: {
+					confirmTitle: title,
+					confirmMessage: message,
+					confirmLeftOnClick: leftOnClick,
+					confirmLeftTitle: leftTitle,
+					confirmRightOnClick: rightOnClick,
+					confirmRightTitle: rightTitle,
+				},
+			}),
+		[dispatch],
+	)
+	const hideConfirm = useCallback(() => dispatch({ type: 'hide_confirm' }), [dispatch])
 
-	const showNetworkActivity = (message: string) =>
-		dispatch({
-			type: 'show_network_activity',
-			payload: message,
-		})
-	const hideNetworkActivity = () => dispatch({ type: 'hide_network_activity' })
+	const showNetworkActivity = useCallback(
+		(message: string) =>
+			dispatch({
+				type: 'show_network_activity',
+				payload: message,
+			}),
+		[dispatch],
+	)
+	const hideNetworkActivity = useCallback(() => dispatch({ type: 'hide_network_activity' }), [
+		dispatch,
+	])
 
 	return {
 		showAlert,
