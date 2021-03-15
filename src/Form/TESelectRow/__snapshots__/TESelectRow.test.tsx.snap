@@ -23,6 +23,12 @@ exports[`TESelectRow matches snapshot 1`] = `
     <div
       class="TESelect css-2b097c-container"
     >
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
         class="TESelect__control css-1ti3pcm-control"
       >
