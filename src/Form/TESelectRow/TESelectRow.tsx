@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import Select, { Props as SelectProps, OptionTypeBase } from 'react-select'
+import Select, { Props as SelectProps, OptionTypeBase, GroupTypeBase } from 'react-select'
 
 import { TERow, TERowCustomProps } from './../TERow'
 import { TELabel, TELabelCustomProps } from './../TELabel'
@@ -13,14 +13,19 @@ import { TESelect } from './../TESelect'
 // 	title?: string
 // }
 
-export interface TESelectRowProps<T extends OptionTypeBase>
-	extends TERowCustomProps,
-		TELabelCustomProps,
-		SelectProps<T> {}
+export interface TESelectRowProps<
+	OptionType extends OptionTypeBase,
+	IsMulti extends boolean = false,
+	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
+> extends TERowCustomProps, TELabelCustomProps, SelectProps<OptionType, IsMulti, GroupType> {}
 
-const UnwarppedSearchSelectRow = <T extends OptionTypeBase>(
-	props: TESelectRowProps<T>,
-	ref: React.Ref<Select<T>>,
+const UnwarppedSearchSelectRow = <
+	OptionType extends OptionTypeBase,
+	IsMulti extends boolean = false,
+	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
+>(
+	props: TESelectRowProps<OptionType, IsMulti, GroupType>,
+	ref: React.Ref<Select<OptionType, IsMulti, GroupType>>,
 ) => {
 	const { rowSize, last, className = '', title, disabled, required, labelForKey, ...rest } = props
 
@@ -36,7 +41,7 @@ const UnwarppedSearchSelectRow = <T extends OptionTypeBase>(
 					{title}
 				</TELabel>
 			)}
-			<TESelect<T> disabled={disabled} ref={ref} {...rest} />
+			<TESelect<OptionType, IsMulti, GroupType> disabled={disabled} ref={ref} {...rest} />
 		</TERow>
 	)
 }
@@ -48,6 +53,12 @@ const UnwarppedSearchSelectRow = <T extends OptionTypeBase>(
  * A form row with title and `TESelect`. In additiona to the props below, reference all props for `TESelect`.
  *
  */
-export const TESelectRow = React.forwardRef(UnwarppedSearchSelectRow) as <T extends OptionTypeBase>(
-	props: TESelectRowProps<T> & { ref?: React.Ref<Select<T>> },
+export const TESelectRow = React.forwardRef(UnwarppedSearchSelectRow) as <
+	OptionType extends OptionTypeBase,
+	IsMulti extends boolean = false,
+	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
+>(
+	props: TESelectRowProps<OptionType, IsMulti, GroupType> & {
+		ref?: React.Ref<Select<OptionType, IsMulti, GroupType>>
+	},
 ) => ReactElement

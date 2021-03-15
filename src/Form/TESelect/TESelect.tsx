@@ -1,17 +1,21 @@
 import React, { useContext, ReactElement } from 'react'
-import Select, { Props as SelectProps, OptionTypeBase } from 'react-select'
+import Select, { Props as SelectProps, OptionTypeBase, GroupTypeBase } from 'react-select'
 import Color from 'color'
 import { ThemeContext } from 'styled-components'
 
-const UnwrappedTESelect = <T extends OptionTypeBase>(
-	props: SelectProps<T>,
-	ref: React.Ref<Select<T>>,
+const UnwrappedTESelect = <
+	OptionType extends OptionTypeBase,
+	IsMulti extends boolean = false,
+	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
+>(
+	props: SelectProps<OptionType, IsMulti, GroupType>,
+	ref: React.Ref<Select<OptionType, IsMulti, GroupType>>,
 ) => {
 	const { className = '', disabled, classNamePrefix = 'TESelect', ...rest } = props
 	const TETheme = useContext(ThemeContext)
 
 	return (
-		<Select<T>
+		<Select<OptionType, IsMulti, GroupType>
 			isDisabled={disabled}
 			className={`TESelect ${className}`}
 			classNamePrefix={classNamePrefix}
@@ -63,6 +67,12 @@ const UnwrappedTESelect = <T extends OptionTypeBase>(
  * TESelect is simply a styled [React Select](https://github.com/JedWatson/react-select) Component. A few props have been adjusted or defaulted.
  *
  */
-export const TESelect = React.forwardRef(UnwrappedTESelect) as <T extends OptionTypeBase>(
-	props: SelectProps<T> & { ref?: React.Ref<Select<T>> },
+export const TESelect = React.forwardRef(UnwrappedTESelect) as <
+	OptionType extends OptionTypeBase,
+	IsMulti extends boolean = false,
+	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
+>(
+	props: SelectProps<OptionType, IsMulti, GroupType> & {
+		ref?: React.Ref<Select<OptionType, IsMulti, GroupType>>
+	},
 ) => ReactElement
