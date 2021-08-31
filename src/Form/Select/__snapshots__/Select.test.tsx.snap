@@ -2,11 +2,7 @@
 
 exports[`Select matches snapshot 1`] = `
 <DocumentFragment>
-  @media (max-width:400px),(max-height:550px) {
-
-}
-
-<div
+  <div
     class="tec-select css-2b097c-container"
   >
     <span

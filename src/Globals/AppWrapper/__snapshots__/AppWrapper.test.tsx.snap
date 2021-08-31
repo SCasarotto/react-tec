@@ -88,10 +88,6 @@ exports[`AppWrapper matches snapshot 1`] = `
   border-left: none;
 }
 
-@media (max-width:400px),(max-height:550px) {
-
-}
-
 <div
     class="c0 tec-popup c1 tec-alert "
   >
@@ -222,10 +218,6 @@ exports[`AppWrapper matches snapshot 1`] = `
   border-right: none;
   border-bottom: none;
   border-left: 1px solid #007CC3;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 <div
@@ -411,10 +403,6 @@ exports[`AppWrapper matches snapshot 1`] = `
 
 .c4 {
   margin-bottom: 30px;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 <div

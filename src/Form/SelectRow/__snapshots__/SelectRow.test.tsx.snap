@@ -13,10 +13,6 @@ exports[`SelectRow matches snapshot 1`] = `
   width: 100%;
 }
 
-@media (max-width:400px),(max-height:550px) {
-
-}
-
 <div
     class="c0 tec-formRow tec-inputRow "
   >

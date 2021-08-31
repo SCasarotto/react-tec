@@ -47,10 +47,6 @@ exports[`SubNavbar matches snapshot 1`] = `
   overflow-x: auto;
 }
 
-@media (max-width:400px),(max-height:550px) {
-
-}
-
 @media (max-width:800px) {
   .c0 {
     padding-left: 25px;
@@ -185,10 +181,6 @@ exports[`SubNavbar matches snapshot 1`] = `
   border-right: none;
   border-bottom: none;
   border-left: none;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 @media (max-width:800px) {
@@ -345,10 +337,6 @@ exports[`SubNavbar matches snapshot 1`] = `
   border-right: none;
   border-bottom: none;
   border-left: 1px solid #007CC3;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 @media (max-width:800px) {
@@ -558,10 +546,6 @@ exports[`SubNavbar matches snapshot 1`] = `
 
 .c4 {
   margin-bottom: 30px;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 @media (max-width:800px) {

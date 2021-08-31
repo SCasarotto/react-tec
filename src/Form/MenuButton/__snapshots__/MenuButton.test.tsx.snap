@@ -33,10 +33,6 @@ exports[`MenuButton matches snapshot 1`] = `
   border: 1px solid #F4F4F4;
 }
 
-@media (max-width:400px),(max-height:550px) {
-
-}
-
 <div
     class="tec-menuButton "
   >
@@ -131,10 +127,6 @@ exports[`MenuButton matches snapshot 1`] = `
   border-right: none;
   border-bottom: none;
   border-left: none;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 <div
@@ -267,10 +259,6 @@ exports[`MenuButton matches snapshot 1`] = `
   border-right: none;
   border-bottom: none;
   border-left: 1px solid #007CC3;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 <div
@@ -456,10 +444,6 @@ exports[`MenuButton matches snapshot 1`] = `
 
 .c4 {
   margin-bottom: 30px;
-}
-
-@media (max-width:400px),(max-height:550px) {
-
 }
 
 <div

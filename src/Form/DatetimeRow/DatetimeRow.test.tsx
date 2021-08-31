@@ -28,7 +28,7 @@ describe('DatetimeRow', () => {
 
   // Ref
   it('renders with ref', async () => {
-    const ref: { current: DatePicker | null } = { current: null };
+    const ref: { current: DatePicker<any> | null } = { current: null };
     render(
       <DatetimeRow
         labelForKey='myDatetimeRow'
