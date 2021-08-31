@@ -1,2 +1,2 @@
 //This is Temporary
-declare module 'react-power-select'
+declare module 'react-power-select';

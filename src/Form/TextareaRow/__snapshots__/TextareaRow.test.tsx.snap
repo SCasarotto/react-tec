@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextareaRow matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  padding-right: 0px;
+  width: 100%;
+}
+
+.c1 {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 10px;
+  min-height: 140px;
+  border-radius: 5px;
+  line-height: 1.5;
+  margin: 0px;
+  border: 1px solid;
+  -webkit-transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+  transition: border-color 0.2s ease-in,box-shadow 0.2s ease-in;
+}
+
+.c1:hover,
+.c1:active {
+  border: 1px solid;
+  box-shadow: 0 0 0 1px inset;
+}
+
+.c1:disabled {
+  border: 1px solid;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+<div
+    class="c0 tec-formRow tec-inputRow "
+  >
+    <textarea
+      class="c1 tec-textarea tec-inputRowInput"
+      id="testTextareaRow"
+    />
+  </div>
+</DocumentFragment>
+`;

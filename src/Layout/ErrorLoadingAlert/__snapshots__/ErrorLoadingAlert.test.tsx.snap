@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorLoadingAlert matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  position: relative;
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+.c1 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+@media (max-width:800px) {
+  .c2 {
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width:650px) {
+  .c2 {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width:450px) {
+  .c2 {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+  }
+}
+
+@media (max-width:800px) {
+  .c0 {
+    padding: 25px;
+  }
+}
+
+@media (max-width:650px) {
+  .c0 {
+    padding: 20px;
+  }
+}
+
+@media (max-width:450px) {
+  .c0 {
+    padding: 15px;
+  }
+}
+
+<div
+    class="c0 tec-panelWrapper c1 tec-errorLoadingAlert "
+  >
+    <div
+      class="c2 tec-panel c3"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,60 +1,58 @@
-export * from './Form/TEButton'
-export * from './Form/TECheckboxGroup'
-export * from './Form/TECheckboxInput'
-export * from './Form/TEDatetimeInput'
-export * from './Form/TEDatetimeRow'
-export * from './Form/TEFileInput'
-export * from './Form/TEFileManagerRow'
-export * from './Form/TEFileRow'
-export * from './Form/TEForm'
-export * from './Form/TEImageRow'
-export * from './Form/TEInput'
-export * from './Form/TEInputRow'
-export * from './Form/TELabel'
-export * from './Form/TEMenuButton'
-export * from './Form/TEMultiStepForm'
-export * from './Form/TEPhoneNumberInput'
-export * from './Form/TEPhoneNumberRow'
-export * from './Form/TERadioButtonGroup'
-export * from './Form/TERadioButtonInput'
-export * from './Form/TERow'
-export * from './Form/TESelect'
-export * from './Form/TESelectRow'
-export * from './Form/TESearchSelectInput'
-export * from './Form/TESearchSelectRow'
-export * from './Form/TESegmentedGroup'
-export * from './Form/TETextarea'
-export * from './Form/TETextareaRow'
+export * from './Form/Button';
+export * from './Form/CheckboxGroup';
+export * from './Form/CheckboxInput';
+export * from './Form/DatetimeInput';
+export * from './Form/DatetimeRow';
+export * from './Form/FileInput';
+export * from './Form/FileManagerRow';
+export * from './Form/FileRow';
+export * from './Form/Form';
+export * from './Form/FormRow';
+export * from './Form/ImageRow';
+export * from './Form/Input';
+export * from './Form/InputRow';
+export * from './Form/Label';
+export * from './Form/MenuButton';
+export * from './Form/MultiStepForm';
+export * from './Form/PhoneNumberInput';
+export * from './Form/PhoneNumberRow';
+export * from './Form/RadioButtonGroup';
+export * from './Form/RadioButtonInput';
+export * from './Form/Select';
+export * from './Form/SelectRow';
+export * from './Form/SegmentedGroup';
+export * from './Form/Textarea';
+export * from './Form/TextareaRow';
 
-export * from './Layout/TEBodyContainer'
-export * from './Layout/TEErrorLoadingAlert'
-export * from './Layout/TEPanel'
-export * from './Layout/TEPanelTitle'
-export * from './Layout/TEPanelWrapper'
-export * from './Layout/TESpinner'
-export * from './Layout/TETitleBar'
+export * from './Layout/BodyContainer';
+export * from './Layout/ErrorLoadingAlert';
+export * from './Layout/Panel';
+export * from './Layout/PanelTitle';
+export * from './Layout/PanelWrapper';
+export * from './Layout/Spinner';
+export * from './Layout/TitleBar';
 
-export * from './Navigation/TEPrivateRoute'
-export * from './Navigation/TESideNavLink'
-export * from './Navigation/TESideNavbar'
-export * from './Navigation/TESubNavbar'
+export * from './Navigation/PrivateRoute';
+export * from './Navigation/SideNavLink';
+export * from './Navigation/SideNavbar';
+export * from './Navigation/SubNavbar';
 
-export * from './Popup/TEAlert'
-export * from './Popup/TEConfirm'
-export * from './Popup/TENetworkActivity'
-export * from './Popup/TEPopup'
-export * from './Popup/TEPopupForm'
-export * from './Popup/TEPopupMultiStepForm'
+export * from './Popup/Alert';
+export * from './Popup/Confirm';
+export * from './Popup/NetworkActivity';
+export * from './Popup/Popup';
+export * from './Popup/PopupForm';
+export * from './Popup/PopupMultiStepForm';
 
-export * from './helpers'
+export * from './helpers';
 
 // //Utility
-export * from './Utility/useScrollTop'
+export * from './Utility/useScrollTop';
 
 // // import TEEmailLayout from './Email/TEEmailLayout' //Not Sure Yet
 // // import TESimpleEmail from './Email/TESimpleEmail' //Not Sure Yet
 
 // //Globals
-export * from './Globals/TEThemeContext'
-export * from './Globals/TEPopupContext'
-export * from './Globals/TEAppWrapper'
+export * from './Globals/ThemeContext';
+export * from './Globals/PopupContext';
+export * from './Globals/AppWrapper';

@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm matches snapshot 1`] = `
+<DocumentFragment>
+  .c4 {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 5px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  border: 1px solid;
+  -webkit-transition: color 0.2s ease-in,background-color 0.2s ease-in, border 0.2s ease-in;
+  transition: color 0.2s ease-in,background-color 0.2s ease-in, border 0.2s ease-in;
+}
+
+.c4:hover,
+.c4:active {
+  border: 1px solid;
+}
+
+.c4:disabled {
+  cursor: not-allowed;
+  border: 1px solid;
+}
+
+.c0 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  overflow-y: auto;
+  -webkit-transition: visibility 0.25s ease-in-out,opacity 0.25s ease-in-out;
+  transition: visibility 0.25s ease-in-out,opacity 0.25s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.c2 {
+  position: relative;
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 650px;
+}
+
+.c1 .PopupContent {
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+.c3 {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 {
+  width: 50%;
+  font-size: 18px;
+  line-height: 2;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: none;
+  border-left: none;
+}
+
+.c5:hover,
+.c5:active {
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: none;
+  border-left: none;
+}
+
+.c6 {
+  width: 50%;
+  font-size: 18px;
+  line-height: 2;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 20px;
+  border-top: 1px solid;
+  border-right: none;
+  border-bottom: none;
+  border-left: 1px solid;
+}
+
+.c6:hover,
+.c6:active {
+  border-top: 1px solid;
+  border-right: none;
+  border-bottom: none;
+  border-left: 1px solid;
+}
+
+<div
+    class="c0 tec-popup c1 tec-confirm "
+  >
+    <div
+      class="c2 tec-popupContent"
+    >
+      <div
+        class="c3 tec-confirmButtonoContainer"
+      >
+        <button
+          class="c4 tec-button c5 tec-confirmButton tec-confirmLeftButton"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="c4 tec-button c6 tec-confirmButton tec-confirmRightButton"
+          type="button"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
