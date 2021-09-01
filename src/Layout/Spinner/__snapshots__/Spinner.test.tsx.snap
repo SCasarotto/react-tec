@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  text-align: center;
+}
+
+.c1 {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.c2 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  border-top-color: #000000;
+  -webkit-animation: TESpinnerLoading 1s linear infinite;
+  animation: TESpinnerLoading 1s linear infinite;
+}
+
+.c3 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  border-top-color: #404040;
+  -webkit-animation: TESpinnerLoading 1.1538461538461537s linear infinite;
+  animation: TESpinnerLoading 1.1538461538461537s linear infinite;
+}
+
+.c4 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+  border-top-color: #808080;
+  -webkit-animation: TESpinnerLoading 1.3636363636363635s linear infinite;
+  animation: TESpinnerLoading 1.3636363636363635s linear infinite;
+}
+
+.c5 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 30.000000000000004%;
+  top: 30.000000000000004%;
+  width: 39.99999999999999%;
+  height: 39.99999999999999%;
+  border-top-color: #c0c0c0;
+  -webkit-animation: TESpinnerLoading 1.6666666666666667s linear infinite;
+  animation: TESpinnerLoading 1.6666666666666667s linear infinite;
+}
+
+.c6 {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  left: 40%;
+  top: 40%;
+  width: 19.999999999999996%;
+  height: 19.999999999999996%;
+  border-top-color: #ffffff;
+  -webkit-animation: TESpinnerLoading 2.142857142857143s linear infinite;
+  animation: TESpinnerLoading 2.142857142857143s linear infinite;
+}
+
+<div
+    class="c0 tec-spinner "
+  >
+    <div
+      class="c1 tec-spinnerContainer"
+    >
+      <div
+        class="c2 tec-spinnerRing tec-spinnerRing1"
+      />
+      <div
+        class="c3 tec-spinnerRing tec-spinnerRing2"
+      />
+      <div
+        class="c4 tec-spinnerRing tec-spinnerRing3"
+      />
+      <div
+        class="c5 tec-spinnerRing tec-spinnerRing4"
+      />
+      <div
+        class="c6 tec-spinnerRing tec-spinnerRing5"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

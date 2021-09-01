@@ -1,10 +1,10 @@
 import React from 'react'
-import { TEAppWrapper } from '../src/Globals/TEAppWrapper'
+import { AppWrapper } from '../src/Globals/AppWrapper'
 
 export const decorators = [
 	(Story) => (
-		<TEAppWrapper>
+		<AppWrapper>
 			<Story />
-		</TEAppWrapper>
+		</AppWrapper>
 	),
 ]

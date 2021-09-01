@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideNavbar matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  max-height: 100vh;
+  height: 100%;
+  width: 200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 20;
+  overflow-y: auto;
+  box-shadow: rgba(0,0,0,0.1) 0px 0px 15px 0px, rgba(0,0,0,0.05) 1px 0px 5px 0px;
+}
+
+.c1 {
+  height: 100%;
+}
+
+.c2 {
+  margin: 0px;
+  padding: 0px;
+}
+
+<div
+    class="c0 tec-sideNavbar "
+  >
+    <div
+      class="c1 tec-sideNavbarNavContainer"
+    >
+      <ul
+        class="c2 tec-sideNavbarMainUl"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,2 +1,2 @@
-export * from './colorHelpers'
-export * from './manipulateRowData'
+export * from './colorHelpers';
+export * from './manipulateRowData';
