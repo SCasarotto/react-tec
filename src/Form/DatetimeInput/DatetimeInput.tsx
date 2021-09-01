@@ -9,10 +9,12 @@ import {
 } from './styledComponents';
 
 export interface DatetimeInputProps
-  extends Omit<ReactDatePickerProps, 'value'> {
+  // TODO: Improve Type
+  extends Omit<ReactDatePickerProps<any>, 'value'> {
   //These are used to standardize to other input props
   placeholder?: string;
-  value?: ReactDatePickerProps['selected'];
+  // TODO: Improve Type
+  value?: ReactDatePickerProps<any>['selected'];
   withPortalButton?: boolean;
 }
 /**
@@ -22,54 +24,56 @@ export interface DatetimeInputProps
  * Note: Styling for this component is not handled the same way as most React C components. In order to style everything the React DatePicker css has been internalized in the React C global styles. In the future this may be adjusted to make styling easier and more consistent with other components.
  *
  */
-export const DatetimeInput = React.forwardRef<DatePicker, DatetimeInputProps>(
-  (props, ref) => {
-    const {
-      selected,
-      value,
-      placeholderText,
-      placeholder,
-      className = '',
-      withPortalButton,
-      ...rest
-    } = props;
+export const DatetimeInput = React.forwardRef<
+  // TODO: Improve Type
+  DatePicker<any>,
+  DatetimeInputProps
+>((props, ref) => {
+  const {
+    selected,
+    value,
+    placeholderText,
+    placeholder,
+    className = '',
+    withPortalButton,
+    ...rest
+  } = props;
 
-    if (withPortalButton) {
-      return (
-        <WithPortalButtonWrapper>
-          <DatePicker
-            selected={selected || value}
-            placeholderText={placeholderText || placeholder}
-            className={`tec-datetimeInput ${className}`}
-            ref={ref}
-            {...rest}
-          />
-          <DatePicker
-            selected={selected || value}
-            withPortal
-            customInput={
-              <WithPortalButton className='tec-datetimeInputWithPortalButton'>
-                <WithPortalIcon className='tec-datetimeInputWithPortalButtonIcon' />
-              </WithPortalButton>
-            }
-            {...rest}
-            id={rest.id ? rest.id + 'withPortalButton' : rest.id}
-          />
-        </WithPortalButtonWrapper>
-      );
-    }
-
+  if (withPortalButton) {
     return (
-      <DatePicker
-        selected={selected || value}
-        placeholderText={placeholderText || placeholder}
-        className={`tec-datetimeInput ${className}`}
-        ref={ref}
-        {...rest}
-      />
+      <WithPortalButtonWrapper>
+        <DatePicker
+          selected={selected || value}
+          placeholderText={placeholderText || placeholder}
+          className={`tec-datetimeInput ${className}`}
+          ref={ref}
+          {...rest}
+        />
+        <DatePicker
+          selected={selected || value}
+          withPortal
+          customInput={
+            <WithPortalButton className='tec-datetimeInputWithPortalButton'>
+              <WithPortalIcon className='tec-datetimeInputWithPortalButtonIcon' />
+            </WithPortalButton>
+          }
+          {...rest}
+          id={rest.id ? rest.id + 'withPortalButton' : rest.id}
+        />
+      </WithPortalButtonWrapper>
     );
-  },
-);
+  }
+
+  return (
+    <DatePicker
+      selected={selected || value}
+      placeholderText={placeholderText || placeholder}
+      className={`tec-datetimeInput ${className}`}
+      ref={ref}
+      {...rest}
+    />
+  );
+});
 
 DatetimeInput.defaultProps = {
   autoComplete: 'off',

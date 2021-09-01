@@ -22,7 +22,7 @@ describe('DatetimeInput', () => {
 
   // Ref
   it('renders with ref', async () => {
-    const ref: { current: DatePicker | null } = { current: null };
+    const ref: { current: DatePicker<any> | null } = { current: null };
     render(<DatetimeInput onChange={jest.fn()} ref={ref} />);
     waitFor(() => expect(ref.current).toBeTruthy());
   });
