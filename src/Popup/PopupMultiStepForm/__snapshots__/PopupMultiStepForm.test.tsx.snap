@@ -84,7 +84,7 @@ exports[`PopupMultiStepForm matches snapshot 1`] = `
   max-width: 650px;
 }
 
-.c1 .PopupContent {
+.c1 .rec-popupContent {
   width: 90%;
   max-width: 900px;
   margin: 100px auto;

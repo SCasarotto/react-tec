@@ -153,7 +153,7 @@ exports[`SubNavbar matches snapshot 1`] = `
   max-width: 650px;
 }
 
-.c1 .PopupContent {
+.c1 .rec-popupContent {
   width: 90%;
   max-width: 600px;
   margin: 100px auto;
@@ -277,7 +277,7 @@ exports[`SubNavbar matches snapshot 1`] = `
   max-width: 650px;
 }
 
-.c1 .PopupContent {
+.c1 .rec-popupContent {
   width: 90%;
   max-width: 600px;
   margin: 100px auto;
@@ -538,7 +538,7 @@ exports[`SubNavbar matches snapshot 1`] = `
   align-items: center;
 }
 
-.c1 .PopupContent {
+.c1 .tec-popupContent {
   background-color: rgba(0,0,0,0.5);
   padding: 60px;
   text-align: center;

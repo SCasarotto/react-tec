@@ -4,7 +4,7 @@ import { Button } from '../../Form/Button';
 import { Popup as P } from '../Popup';
 
 export const Popup = styled(P)`
-  .PopupContent {
+  .rec-popupContent {
     width: 90%;
     max-width: 600px;
     margin: 100px auto;

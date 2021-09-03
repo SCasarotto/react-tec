@@ -32,46 +32,46 @@ export const Container = styled.div<{ size?: PanelSize }>`
         return 'width: 100%;';
       case 'three-quarter':
         return `
-                    width: calc(75% - 20px);
-                    @media (max-width: 700px) {
-                        width: 100%;
-                    }
-                `;
+            width: calc(75% - 20px);
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+        `;
       case 'two-third':
         return `
-                    width: calc(66.666% - 20px);
-                    @media (max-width: 700px) {
-                        width: 100%;
-                    }
-                `;
+            width: calc(66.666% - 20px);
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+        `;
       case 'half':
         return `
-                    width: calc(50% - 15px);
-                    @media (max-width: 700px) {
-                        width: 100%;
-                    }
-                `;
+            width: calc(50% - 15px);
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+        `;
       case 'third':
         return `
-                    width: calc(33.333% - 10px);
-                    @media (max-width: 700px) {
-                        width: 100%;
-                    }
-                `;
+            width: calc(33.333% - 10px);
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+        `;
       case 'quarter':
         return `
-                    width: calc(25% - 10px);
-                    @media (max-width: 700px) {
-                        width: 100%;
-                    }
-                `;
+            width: calc(25% - 10px);
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+        `;
       case 'condensed':
         return `
-                    width: auto;
-                    @media (max-width: 700px) {
-                        width: 100%;
-                    }
-                `;
+            width: auto;
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+        `;
       default:
         return 'width: 100%;';
     }

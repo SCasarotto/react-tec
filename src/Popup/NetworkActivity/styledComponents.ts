@@ -8,7 +8,7 @@ export const Popup = styled(P)`
   justify-content: center;
   align-items: center;
 
-  .PopupContent {
+  .tec-popupContent {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 60px;
     text-align: center;
